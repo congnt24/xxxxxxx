@@ -18,34 +18,33 @@ struct ConversationModel {
 class ConversationViewController: BaseViewController {
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
-    
+
     // MARK: - General data
     var chatCoor: ChatCoordinator!
     var bag = DisposeBag()
-    
+
     override func bindToViewModel() {
         //create cell
-         fetchConversationList().bind(to: tableView.rx.items(cellIdentifier: "conversation_view_cell")){
+        fetchConversationList().bind(to: tableView.rx.items(cellIdentifier: "conversation_view_cell")) {
             (row, element, cell) in
             cell.textLabel?.text = element.name
         }.addDisposableTo(bag)
-        
+
         //Handle click
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
             self.chatCoor.showChatScreen()
         }).addDisposableTo(bag)
-        
-        
+
     }
     override func responseFromViewModel() {
         // Simple view controller -> Don't need viewmodel
     }
-    
-    
-    func fetchConversationList() -> Observable<[ConversationModel]>{
-        
+
+
+    func fetchConversationList() -> Observable<[ConversationModel]> {
+
         //sample data
-        return Observable.just((0..<20).map {ConversationModel(name: "\($0)")})
+        return Observable.just((0..<20).map { ConversationModel(name: "\($0)") })
     }
     // MARK: - Action
 }

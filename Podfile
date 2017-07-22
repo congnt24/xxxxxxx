@@ -15,4 +15,5 @@ target 'Alemua' do
   pod 'IQKeyboardManagerSwift'
   pod 'JSQMessagesViewController'
   pod 'Kingfisher', '~> 3.0'
+  pod 'XLPagerTabStrip'
 end

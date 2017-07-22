@@ -10,5 +10,7 @@ import Foundation
 import RxSwift
 
 class BaseViewModel {
-    
+    init() {
+        
+    }
 }

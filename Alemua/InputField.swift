@@ -9,31 +9,42 @@
 import UIKit
 import AwesomeMVVM
 
+@IBDesignable
 class InputField: UIView {
-    
-    @IBOutlet weak var label: UILabel!
-    
-    @IBOutlet weak var input: AwesomeTextField!
-    @IBInspectable var textLabel: String = "" {
+
+    private var inputLabel: UILabel!
+    @IBInspectable public var content: String? {
         didSet {
-            label.text = textLabel
+            displayInputLabel(text: content)
         }
     }
+
+    func displayInputLabel(text: String?) {
+        if inputLabel == nil {
+            inputLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+            inputLabel.backgroundColor = UIColor.red
+            addSubview(inputLabel)
+        }
+        inputLabel.text = text
+        inputLabel.frame.origin = CGPoint.zero
+        inputLabel.sizeToFit()
+    }
+
     var view: UIView!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupView()
+//        setupView()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+//        setupView()
     }
-    
-    func setupView(){
+
+    func setupView() {
         view = UINib(nibName: "InputField", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
         view.frame = self.bounds
-        
+
         addSubview(view)
     }
 }

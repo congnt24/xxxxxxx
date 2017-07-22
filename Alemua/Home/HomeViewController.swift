@@ -21,8 +21,16 @@ class HomeViewController: BaseViewController {
     override func responseFromViewModel() {
         
     }
+    
+    @IBAction func onClickDelivery(_ sender: UIButton) {
+        coordinator.showDeliveryScreen()
+    }
+    
+    @IBAction func onClickOrder(_ sender: UIButton) {
+        coordinator.showOrderScreen()
+    }
 
     @IBAction func onClickChat(_ sender: Any) {
-        coordinator.showChatScreen()
+        
     }
 }

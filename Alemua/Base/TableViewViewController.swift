@@ -14,11 +14,18 @@ import RxDataSources
 
 class TableViewViewController: BaseViewController {
     var bad = DisposeBag()
-    var viewModel = TableViewViewModel()
+    
     override func bindToViewModel() {
-
+        
     }
     override func responseFromViewModel() {
 
+    }
+    
+    
+    
+    //Interact API
+    func fetchData() -> Observable<[String]>{
+        return Observable.just((0..<20).map{"\($0)"})
     }
 }

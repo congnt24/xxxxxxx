@@ -21,6 +21,7 @@ PODS:
     - RxCocoa (~> 3.0)
     - RxSwift (~> 3.0)
   - RxSwift (3.5.0)
+  - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
   - AwesomeMVVM (from `https://github.com/congnt24/AwesomeMVVM.git`)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - XLPagerTabStrip
 
 EXTERNAL SOURCES:
   AwesomeMVVM:
@@ -54,7 +56,8 @@ SPEC CHECKSUMS:
   RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
   RxDataSources: b3389acc5fe2eefb8fcd81a2b76a876ad08bc82a
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: a6693441e23933a799fb0c564ab3580de1574327
+PODFILE CHECKSUM: bab51eaa909a586ec8577078af2351e3fe27819d
 
 COCOAPODS: 1.2.1

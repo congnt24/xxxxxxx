@@ -21,11 +21,9 @@ class StarView: UIStackView {
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        setupStar()
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupStar()
     }
     
     

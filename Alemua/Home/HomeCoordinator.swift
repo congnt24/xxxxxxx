@@ -10,21 +10,20 @@ import Foundation
 import AwesomeMVVM
 import UIKit
 
+enum HomeNaviType {
+    case Delivery
+    case Order
+}
+
 protocol HomeCoordinatorDelegate {
-    func showLoginScreen()
-    func showChatScreen()
+    func showDeliveryScreen()
+    func showOrderScreen()
 //    func showDeliveryScreen()
 }
 
 class HomeCoordinator: Coordinator {
     override func start(_ data: Any?) {
         let home: HomeViewController = mainStoryboard.instantiateViewController(withClass: HomeViewController.self)
-        //create and assign view model
-        //create and assign delegate = self
-        //push navigation
-//        let viewModel = HomeViewModel(delegate: self)
-//        viewModel.delegate = self
-//        home.viewModel = viewModel
         home.coordinator = self
         navigation?.popToRootViewController(animated: false)
         navigation?.setViewControllers([home], animated: false)
@@ -33,10 +32,10 @@ class HomeCoordinator: Coordinator {
 }
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
-    func showLoginScreen(){
-        LoginCoordinator(navigation).start(nil)
+    func showDeliveryScreen(){
+        NavTabBarCoordinator(navigation).start(HomeNaviType.Delivery)
     }
-    func showChatScreen(){
-        ChatCoordinator(navigation).start(nil)
+    func showOrderScreen(){
+        NavTabBarCoordinator(navigation).start(HomeNaviType.Order)
     }
 }

@@ -13,10 +13,10 @@ class AwesomeBackBarButton: UIBarButtonItem {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         target = self
-        action = #selector(sayHello(sender:))
+        action = #selector(back(sender:))
     }
     
-    func sayHello(sender: UIBarButtonItem) {
+    func back(sender: UIBarButtonItem) {
         AppCoordinator.sharedInstance.back()
     }
 }

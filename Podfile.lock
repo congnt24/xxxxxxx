@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
-  - AwesomeMVVM (0.2.1)
+  - AwesomeMVVM (0.2.3)
   - IQKeyboardManagerSwift (4.0.10)
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
@@ -41,12 +41,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AwesomeMVVM:
-    :commit: b97e3eaeeab6ecb449f0f029e21d1e18048fe23c
+    :commit: f298be5625ca18b4a9671a31a0d747de39306536
     :git: https://github.com/congnt24/AwesomeMVVM.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AwesomeMVVM: 4838e26f66dd69caa10bc7dc9fde6dfcc57b06ea
+  AwesomeMVVM: abcaf08ec455b33750241345f0905689b3ebb8a1
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d

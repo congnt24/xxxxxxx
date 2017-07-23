@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */; };
+		021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */; };
+		021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */; };
+		021B82971F242FBB00B757D7 /* BaoGiaSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */; };
+		021B829A1F24503200B757D7 /* NotifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82981F24503200B757D7 /* NotifyTableViewCell.swift */; };
+		021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82991F24503200B757D7 /* NotifyTableViewCell.xib */; };
+		021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B829C1F24576800B757D7 /* AwesomeDialog.swift */; };
+		021B82A11F247BCC00B757D7 /* AwesomeCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
 		025D3FFD1F23917B00BCD5F7 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */; };
 		025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */; };
@@ -63,6 +71,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaTableViewCell.swift; path = CustomView/BaoGiaTableViewCell.swift; sourceTree = "<group>"; };
+		021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaoGiaTableViewCell.xib; path = CustomView/BaoGiaTableViewCell.xib; sourceTree = "<group>"; };
+		021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonHangSubViewController.swift; path = Order/DonHangSubViewController.swift; sourceTree = "<group>"; };
+		021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaSubViewController.swift; path = Order/BaoGiaSubViewController.swift; sourceTree = "<group>"; };
+		021B82981F24503200B757D7 /* NotifyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotifyTableViewCell.swift; path = CustomView/NotifyTableViewCell.swift; sourceTree = "<group>"; };
+		021B82991F24503200B757D7 /* NotifyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotifyTableViewCell.xib; path = CustomView/NotifyTableViewCell.xib; sourceTree = "<group>"; };
+		021B829C1F24576800B757D7 /* AwesomeDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDialog.swift; sourceTree = "<group>"; };
+		021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCloseButton.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
 		025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInviteViewController.swift; sourceTree = "<group>"; };
@@ -134,9 +150,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		021B82931F242F8300B757D7 /* DonHangSubView */ = {
+			isa = PBXGroup;
+			children = (
+				021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */,
+				021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */,
+			);
+			name = DonHangSubView;
+			sourceTree = "<group>";
+		};
 		025D40061F23A99000BCD5F7 /* SubViewController */ = {
 			isa = PBXGroup;
 			children = (
+				021B82931F242F8300B757D7 /* DonHangSubView */,
+				025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */,
+				025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */,
 				025D40071F23A9B400BCD5F7 /* DonMuaViewController.swift */,
 				025D40091F23A9C300BCD5F7 /* DonHangViewController.swift */,
 			);
@@ -198,6 +226,8 @@
 				029B09101F207C990036F01F /* TableViewViewController.swift */,
 				02A2AEE51F20F8A7007EB372 /* AwesomeTableViewController.swift */,
 				025D40131F23B27A00BCD5F7 /* AwesomeBackBarButton.swift */,
+				021B829C1F24576800B757D7 /* AwesomeDialog.swift */,
+				021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -217,8 +247,6 @@
 			children = (
 				02BF72681F23338E00F1F4BC /* MainViewController.swift */,
 				02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */,
-				025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */,
-				025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -321,6 +349,10 @@
 				02A2AEF01F21025D007EB372 /* OrderViewCell.xib */,
 				025D40001F2394EA00BCD5F7 /* DonHangTableViewCell.swift */,
 				025D40011F2394EA00BCD5F7 /* DonHangTableViewCell.xib */,
+				021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */,
+				021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */,
+				021B82981F24503200B757D7 /* NotifyTableViewCell.swift */,
+				021B82991F24503200B757D7 /* NotifyTableViewCell.xib */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -414,8 +446,10 @@
 				02BF72651F224B8A00F1F4BC /* DonHang.storyboard in Resources */,
 				02F775321F1F390300556BED /* Login.storyboard in Resources */,
 				02F775331F1F390300556BED /* Main.storyboard in Resources */,
+				021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */,
 				025D40031F2394EA00BCD5F7 /* DonHangTableViewCell.xib in Resources */,
 				02F775311F1F390300556BED /* LaunchScreen.storyboard in Resources */,
+				021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */,
 				02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */,
 				02F775561F1FB46300556BED /* Profile.storyboard in Resources */,
 				027B01381F1E621600D576CE /* Assets.xcassets in Resources */,
@@ -483,6 +517,7 @@
 				02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */,
 				02F7752D1F1F390300556BED /* SettingViewController.swift in Sources */,
 				02F775501F1F731500556BED /* ChatWrapperViewController.swift in Sources */,
+				021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */,
 				0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */,
 				025D40051F23A85D00BCD5F7 /* OrderCoordinator.swift in Sources */,
 				027B01501F1EF14A00D576CE /* AppCoordinator.swift in Sources */,
@@ -491,8 +526,10 @@
 				02F775291F1F390300556BED /* LoginCoordinator.swift in Sources */,
 				02F775541F1FB23100556BED /* InputField.swift in Sources */,
 				025D40021F2394EA00BCD5F7 /* DonHangTableViewCell.swift in Sources */,
+				021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */,
 				025D3FFD1F23917B00BCD5F7 /* AccountSettingViewController.swift in Sources */,
 				027B01311F1E621600D576CE /* AppDelegate.swift in Sources */,
+				021B82A11F247BCC00B757D7 /* AwesomeCloseButton.swift in Sources */,
 				02BF727E1F23708100F1F4BC /* AccountCoordinator.swift in Sources */,
 				02F7752A1F1F390300556BED /* LoginViewController.swift in Sources */,
 				02BF726B1F2333AF00F1F4BC /* MainCoordinator.swift in Sources */,
@@ -508,6 +545,7 @@
 				025D400C1F23A9DD00BCD5F7 /* DangChuyenViewController.swift in Sources */,
 				025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
+				021B829A1F24503200B757D7 /* NotifyTableViewCell.swift in Sources */,
 				025D400E1F23A9E900BCD5F7 /* DaMuaViewController.swift in Sources */,
 				02F7752F1F1F390300556BED /* Token.swift in Sources */,
 				029B09111F207C990036F01F /* BaseViewModel.swift in Sources */,
@@ -517,7 +555,9 @@
 				02BF726D1F23449900F1F4BC /* NavTabBarCoordinator.swift in Sources */,
 				025D40141F23B27A00BCD5F7 /* AwesomeBackBarButton.swift in Sources */,
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
+				021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */,
 				02F775481F1F556100556BED /* ChatViewController.swift in Sources */,
+				021B82971F242FBB00B757D7 /* BaoGiaSubViewController.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,
 				02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */,
 				02BF72711F23451F00F1F4BC /* NavTabBarViewController.swift in Sources */,

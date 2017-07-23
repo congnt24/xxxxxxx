@@ -13,7 +13,7 @@ import AwesomeMVVM
 class InputField: UIView {
 
     private var inputLabel: UILabel!
-    @IBInspectable public var content: String? {
+    @IBInspectable public var content: String = "" {
         didSet {
             displayInputLabel(text: content)
         }
@@ -28,6 +28,10 @@ class InputField: UIView {
         inputLabel.text = text
         inputLabel.frame.origin = CGPoint.zero
         inputLabel.sizeToFit()
+//        view = UINib(nibName: "OrderViewCell", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
+//        view.frame = self.bounds
+//        
+//        addSubview(view)
     }
 
     var view: UIView!

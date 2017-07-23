@@ -30,7 +30,8 @@ class HomeViewController: BaseViewController {
         coordinator.showOrderScreen()
     }
 
-    @IBAction func onClickChat(_ sender: Any) {
+    @IBAction func onClickBoQua(_ sender: Any) {
+        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "aaa")
         
     }
 }

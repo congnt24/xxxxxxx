@@ -23,18 +23,22 @@ class ConversationViewController: BaseViewController {
     var bag = DisposeBag()
 
     override func bindToViewModel() {
+        tableView.register(UINib(nibName: "ConversationTableViewCell", bundle: nil), forCellReuseIdentifier: "ConversationTableViewCell")
         //create cell
-        fetchConversationList().bind(to: tableView.rx.items(cellIdentifier: "conversation_view_cell")) {
+        fetchConversationList().bind(to: tableView.rx.items(cellIdentifier: "ConversationTableViewCell")) {
             (row, element, cell) in
-            cell.textLabel?.text = element.name
+            
         }.addDisposableTo(bag)
 
         //Handle click
-//        tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-////            self.chatCoor.showChatScreen()
-////            NavTabBarCoordinator.sharedInstance.showChatScreen()
-//        }).addDisposableTo(bag)
+        tableView.rx.itemSelected.subscribe(onNext: { (ip) in
+//            self.chatCoor.showChatScreen()
+            NavTabBarCoordinator.sharedInstance.showChatScreen()
+        }).addDisposableTo(bag)
 
+        
+        tableView.estimatedRowHeight = 96 // some constant value
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     override func responseFromViewModel() {
         // Simple view controller -> Don't need viewmodel

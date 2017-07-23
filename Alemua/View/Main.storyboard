@@ -157,11 +157,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="conversation_view_cell" textLabel="zwR-Qr-BZ0" detailTextLabel="vsr-Gu-ra1" style="IBUITableViewCellStyleValue1" id="vOE-zm-JaU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="conversation_view_cell" textLabel="zwR-Qr-BZ0" detailTextLabel="vsr-Gu-ra1" style="IBUITableViewCellStyleValue1" id="vOE-zm-JaU">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOE-zm-JaU" id="CYT-7V-hEt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zwR-Qr-BZ0">
@@ -172,7 +172,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vsr-Gu-ra1">
-                                                    <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                                    <rect key="frame" x="296" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -180,6 +180,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cYy-uy-afd" kind="push" id="pyt-kt-dR6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -197,7 +200,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Trò chuyện" image="ic_conversation" selectedImage="ic_message_blu" id="4uu-9l-Bqi"/>
                     <connections>
-                        <outlet property="tableView" destination="oJn-dj-UbM" id="7en-dB-Q0F"/>
+                        <outlet property="tableView" destination="oJn-dj-UbM" id="GPI-PH-Tnm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQl-sh-IMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -989,10 +992,10 @@
             </objects>
             <point key="canvasLocation" x="3586" y="34"/>
         </scene>
-        <!--Conversation View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="IHY-6k-OpD">
             <objects>
-                <viewController id="XJI-3J-TXb" customClass="ConversationViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XJI-3J-TXb" customClass="ChatViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jMI-GK-Eem"/>
                         <viewControllerLayoutGuide type="bottom" id="8Mb-vh-qIa"/>

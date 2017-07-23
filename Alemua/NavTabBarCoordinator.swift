@@ -16,8 +16,11 @@ protocol NavTabBarCoordinatorDelegate {
 }
 
 class NavTabBarCoordinator: Coordinator {
+    public static var sharedInstance: NavTabBarCoordinator!
+    
     override func start(_ data: Any?) {
         let nav: NavTabBarViewController = mainStoryboard.instantiateViewController(withClass: NavTabBarViewController.self)
+        NavTabBarCoordinator.sharedInstance = self
         nav.coordinator = self
         NavTabBarViewController.AlemuaType = data as! HomeNaviType
         navigation?.popToRootViewController(animated: false)

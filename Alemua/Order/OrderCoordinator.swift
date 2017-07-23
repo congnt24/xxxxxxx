@@ -24,6 +24,13 @@ class OrderCoordinator: Coordinator {
     }
 }
 
+extension OrderCoordinator {
+    func showBaoGiaDetail(){
+        let view: BaoGiaDetailSubViewController = getDonHangStoryboard().instantiateViewController(withClass: BaoGiaDetailSubViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
+}
+
 extension OrderCoordinator: OrderCoordinatorDelegate {
     func showOrder(_ type: OrderType){
         switch type {

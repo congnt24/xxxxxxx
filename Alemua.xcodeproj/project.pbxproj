@@ -15,6 +15,9 @@
 		021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82991F24503200B757D7 /* NotifyTableViewCell.xib */; };
 		021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B829C1F24576800B757D7 /* AwesomeDialog.swift */; };
 		021B82A11F247BCC00B757D7 /* AwesomeCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */; };
+		021B82A31F24894300B757D7 /* AwesomeRadioGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A21F24894300B757D7 /* AwesomeRadioGroup.swift */; };
+		021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */; };
+		021B82A71F2494ED00B757D7 /* BaogiaDetailSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A61F2494ED00B757D7 /* BaogiaDetailSubViewController.swift */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
 		025D3FFD1F23917B00BCD5F7 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */; };
 		025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */; };
@@ -49,7 +52,6 @@
 		02F775151F1F38E900556BED /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775111F1F38E900556BED /* HomeCoordinator.swift */; };
 		02F775161F1F38E900556BED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775121F1F38E900556BED /* HomeViewController.swift */; };
 		02F775171F1F38E900556BED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775131F1F38E900556BED /* HomeViewModel.swift */; };
-		02F775181F1F38E900556BED /* Tab1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775141F1F38E900556BED /* Tab1ViewController.swift */; };
 		02F775291F1F390300556BED /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F7751B1F1F390300556BED /* LoginCoordinator.swift */; };
 		02F7752A1F1F390300556BED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F7751C1F1F390300556BED /* LoginViewController.swift */; };
 		02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F7751D1F1F390300556BED /* LoginViewModel.swift */; };
@@ -79,6 +81,9 @@
 		021B82991F24503200B757D7 /* NotifyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotifyTableViewCell.xib; path = CustomView/NotifyTableViewCell.xib; sourceTree = "<group>"; };
 		021B829C1F24576800B757D7 /* AwesomeDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDialog.swift; sourceTree = "<group>"; };
 		021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCloseButton.swift; sourceTree = "<group>"; };
+		021B82A21F24894300B757D7 /* AwesomeRadioGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeRadioGroup.swift; sourceTree = "<group>"; };
+		021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeRadioGroupCell.swift; sourceTree = "<group>"; };
+		021B82A61F2494ED00B757D7 /* BaogiaDetailSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaogiaDetailSubViewController.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
 		025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInviteViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +120,6 @@
 		02F775111F1F38E900556BED /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		02F775121F1F38E900556BED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		02F775131F1F38E900556BED /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		02F775141F1F38E900556BED /* Tab1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab1ViewController.swift; sourceTree = "<group>"; };
 		02F7751B1F1F390300556BED /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		02F7751C1F1F390300556BED /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02F7751D1F1F390300556BED /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			children = (
 				021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */,
 				021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */,
+				021B82A61F2494ED00B757D7 /* BaogiaDetailSubViewController.swift */,
 			);
 			name = DonHangSubView;
 			sourceTree = "<group>";
@@ -228,6 +233,8 @@
 				025D40131F23B27A00BCD5F7 /* AwesomeBackBarButton.swift */,
 				021B829C1F24576800B757D7 /* AwesomeDialog.swift */,
 				021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */,
+				021B82A21F24894300B757D7 /* AwesomeRadioGroup.swift */,
+				021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -280,7 +287,6 @@
 				029B090D1F207C5F0036F01F /* Controller */,
 				02F775111F1F38E900556BED /* HomeCoordinator.swift */,
 				02F775131F1F38E900556BED /* HomeViewModel.swift */,
-				02F775141F1F38E900556BED /* Tab1ViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -513,7 +519,6 @@
 			files = (
 				025D400A1F23A9C300BCD5F7 /* DonHangViewController.swift in Sources */,
 				02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */,
-				02F775181F1F38E900556BED /* Tab1ViewController.swift in Sources */,
 				02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */,
 				02F7752D1F1F390300556BED /* SettingViewController.swift in Sources */,
 				02F775501F1F731500556BED /* ChatWrapperViewController.swift in Sources */,
@@ -541,6 +546,7 @@
 				02F775171F1F38E900556BED /* HomeViewModel.swift in Sources */,
 				02BF72691F23338E00F1F4BC /* MainViewController.swift in Sources */,
 				02F7754A1F1F56BD00556BED /* ConversationViewController.swift in Sources */,
+				021B82A71F2494ED00B757D7 /* BaogiaDetailSubViewController.swift in Sources */,
 				02F775161F1F38E900556BED /* HomeViewController.swift in Sources */,
 				025D400C1F23A9DD00BCD5F7 /* DangChuyenViewController.swift in Sources */,
 				025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */,
@@ -549,6 +555,7 @@
 				025D400E1F23A9E900BCD5F7 /* DaMuaViewController.swift in Sources */,
 				02F7752F1F1F390300556BED /* Token.swift in Sources */,
 				029B09111F207C990036F01F /* BaseViewModel.swift in Sources */,
+				021B82A31F24894300B757D7 /* AwesomeRadioGroup.swift in Sources */,
 				029B09121F207C990036F01F /* TableViewViewController.swift in Sources */,
 				025D40081F23A9B400BCD5F7 /* DonMuaViewController.swift in Sources */,
 				02A2AEE41F20E569007EB372 /* SingleOrderViewController.swift in Sources */,
@@ -557,6 +564,7 @@
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
 				021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */,
 				02F775481F1F556100556BED /* ChatViewController.swift in Sources */,
+				021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */,
 				021B82971F242FBB00B757D7 /* BaoGiaSubViewController.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,
 				02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */,

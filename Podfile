@@ -16,4 +16,5 @@ target 'Alemua' do
   pod 'JSQMessagesViewController'
   pod 'Kingfisher', '~> 3.0'
   pod 'XLPagerTabStrip'
+  pod 'KMPlaceholderTextView', '~> 1.3.0'
 end

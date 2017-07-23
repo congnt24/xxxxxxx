@@ -15,7 +15,6 @@ class AwesomeCloseButton: UIButton {
     }
     
     func close(_ sender: UIBarButtonItem) {
-        print("Close:")
         self.viewController()?.dismiss(animated: true, completion: nil)
     }
 

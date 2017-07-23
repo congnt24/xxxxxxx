@@ -12,16 +12,19 @@ import UIKit
 
 class ChatCoordinator: Coordinator {
     override func start(_ data: Any?) {
-        let chat: ConversationViewController = mainStoryboard.instantiateViewController(withClass: ConversationViewController.self)
+//        let chat: ConversationViewController = mainStoryboard.instantiateViewController(withClass: ConversationViewController.self)
         //create and assign view model
         //create and assign delegate = self
         //push navigation
         //        let viewModel = HomeViewModel(delegate: self)
         //        viewModel.delegate = self
         //        home.viewModel = viewModel
-        chat.chatCoor = self
-        navigation?.pushViewController(chat)
+//        chat.chatCoor = self
+//        navigation?.pushViewController(chat)
         //        navigation?.pushViewController(home, animated: true)
+        let chat: ChatWrapperViewController = mainStoryboard.instantiateViewController(withClass: ChatWrapperViewController.self)
+        //        chat.chatCoor = self
+        navigation?.pushViewController(chat)
     }
 }
 

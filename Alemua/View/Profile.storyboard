@@ -219,7 +219,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ma-cE-clQ">
                                         <rect key="frame" x="16" y="16" width="288" height="64"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_bell" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-T2-cch">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="EcW-T2-cch">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="W8d-nl-8EA"/>
@@ -589,9 +589,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar" width="105" height="105"/>
         <image name="back" width="13" height="23"/>
         <image name="ic_back_down" width="42" height="42"/>
-        <image name="ic_bell" width="26" height="27"/>
         <image name="ic_info" width="23" height="23"/>
         <image name="ic_logout" width="24" height="19"/>
         <image name="ic_question" width="23" height="23"/>

@@ -20,7 +20,6 @@ class ConversationViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
 
     // MARK: - General data
-    var chatCoor: ChatCoordinator!
     var bag = DisposeBag()
 
     override func bindToViewModel() {
@@ -31,9 +30,10 @@ class ConversationViewController: BaseViewController {
         }.addDisposableTo(bag)
 
         //Handle click
-        tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-            self.chatCoor.showChatScreen()
-        }).addDisposableTo(bag)
+//        tableView.rx.itemSelected.subscribe(onNext: { (ip) in
+////            self.chatCoor.showChatScreen()
+////            NavTabBarCoordinator.sharedInstance.showChatScreen()
+//        }).addDisposableTo(bag)
 
     }
     override func responseFromViewModel() {

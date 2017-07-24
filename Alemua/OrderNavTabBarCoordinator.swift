@@ -15,20 +15,19 @@ protocol NavTabBarCoordinatorDelegate {
     func showChatScreen()
 }
 
-class NavTabBarCoordinator: Coordinator {
-    public static var sharedInstance: NavTabBarCoordinator!
+class OrderNavTabBarCoordinator: Coordinator {
+    public static var sharedInstance: OrderNavTabBarCoordinator!
     
     override func start(_ data: Any?) {
         let nav: NavTabBarViewController = mainStoryboard.instantiateViewController(withClass: NavTabBarViewController.self)
-        NavTabBarCoordinator.sharedInstance = self
+        OrderNavTabBarCoordinator.sharedInstance = self
         nav.coordinator = self
         NavTabBarViewController.AlemuaType = data as! HomeNaviType
-        navigation?.popToRootViewController(animated: false)
         navigation?.pushViewController(nav, animated: true)
     }
 }
 
-extension NavTabBarCoordinator: NavTabBarCoordinatorDelegate {
+extension OrderNavTabBarCoordinator: NavTabBarCoordinatorDelegate {
     func showLoginScreen(){
         LoginCoordinator(navigation).start(nil)
     }
@@ -36,3 +35,4 @@ extension NavTabBarCoordinator: NavTabBarCoordinatorDelegate {
         ChatCoordinator(navigation).start(nil)
     }
 }
+

@@ -27,15 +27,14 @@ class HomeCoordinator: Coordinator {
         home.coordinator = self
         navigation?.popToRootViewController(animated: false)
         navigation?.setViewControllers([home], animated: false)
-        //        navigation?.pushViewController(home, animated: true)
     }
 }
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
     func showDeliveryScreen(){
-        NavTabBarCoordinator(navigation).start(HomeNaviType.Delivery)
+        DeliveryNavTabBarCoordinator(navigation).start(nil)
     }
     func showOrderScreen(){
-        NavTabBarCoordinator(navigation).start(HomeNaviType.Order)
+        OrderNavTabBarCoordinator(navigation).start(HomeNaviType.Order)
     }
 }

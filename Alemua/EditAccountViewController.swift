@@ -12,6 +12,8 @@ import RxSwift
 import RxCocoa
 
 class EditAccountViewController: BaseViewController {
+    @IBOutlet weak var uiMoreDetails: AwesomeToggleViewByHeight!
+    
     var coordinator: AccountCoordinator!
     override func bindToViewModel() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
@@ -24,6 +26,9 @@ class EditAccountViewController: BaseViewController {
     
     override func responseFromViewModel() {
         
+    }
+    @IBAction func onShowMoreDetails(_ sender: Any) {
+        uiMoreDetails.toggleHeight()
     }
 }
 

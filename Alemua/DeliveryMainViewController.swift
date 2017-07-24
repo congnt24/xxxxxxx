@@ -1,8 +1,8 @@
 //
-//  MainTableViewCell.swift
+//  DeliveryMainViewController.swift
 //  Alemua
 //
-//  Created by Cong Nguyen on 7/22/17.
+//  Created by Cong Nguyen on 7/24/17.
 //  Copyright © 2017 cong. All rights reserved.
 //
 
@@ -11,9 +11,8 @@ import AwesomeMVVM
 import RxSwift
 import RxCocoa
 
-class MainViewController: BaseViewController {
+class DeliveryMainViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
-        var coordinator: MainCoordinator!
     var bag = DisposeBag()
     
     override func bindToViewModel() {
@@ -32,4 +31,3 @@ class MainViewController: BaseViewController {
         news!.didMove(toParentViewController: self)
     }
 }
-

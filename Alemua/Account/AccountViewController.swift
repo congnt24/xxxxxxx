@@ -13,6 +13,7 @@ import RxSwift
 import RxCocoa
 
 class AccountViewController: BaseViewController {
+    @IBOutlet weak var uiMoreDetails: AwesomeToggleViewByHeight!
     @IBOutlet weak var uiSwitchNotify: UISwitch!
     @IBOutlet weak var uiNotify: UIStackView!
     @IBOutlet weak var uiSetting: UIStackView!
@@ -45,6 +46,9 @@ class AccountViewController: BaseViewController {
     }
     @IBAction func onNotifyChange(_ sender: UISwitch) {
         print("Switch \(sender.isOn)")
+    }
+    @IBAction func onToggleMoreDetails(_ sender: Any) {
+        uiMoreDetails.toggleHeight()
     }
 }
 

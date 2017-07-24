@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 class NavTabBarViewController: UITabBarController {
-    var coordinator: NavTabBarCoordinator!
+    var coordinator: OrderNavTabBarCoordinator!
     public static var AlemuaType = HomeNaviType.Order
     override func viewDidLoad() {
         super.viewDidLoad()

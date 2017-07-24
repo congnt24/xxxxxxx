@@ -12,7 +12,6 @@ import UIKit
 
 
 protocol AppCoordinatorDelegate {
-    func showOrder()
     func showDelivery()
 }
 
@@ -26,6 +25,7 @@ class AppCoordinator : Coordinator {
         //init account coor
         AccountCoordinator(navigation).start(nil)
         OrderCoordinator(navigation).start(nil)
+        DeliveryCoordinator(navigation).start(nil)
     }
 }
 extension Coordinator {
@@ -41,9 +41,6 @@ extension Coordinator {
 extension AppCoordinator: AppCoordinatorDelegate {
     func back(){
         navigation?.popViewController(animated: true)
-    }
-    func showOrder() {
-        
     }
     func showDelivery() {
         

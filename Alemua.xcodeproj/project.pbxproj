@@ -23,6 +23,10 @@
 		021B82AE1F24F0C500B757D7 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */; };
 		021B82AF1F24F0C500B757D7 /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
+		025CC0761F263625003C0883 /* AwesomeToggleViewByHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */; };
+		025CC0781F263AA8003C0883 /* AwesomeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */; };
+		025CC07C1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC07B1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift */; };
+		025CC07E1F26470B003C0883 /* DeliveryNavTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC07D1F26470B003C0883 /* DeliveryNavTabBarViewController.swift */; };
 		025D3FFD1F23917B00BCD5F7 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */; };
 		025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */; };
 		025D40021F2394EA00BCD5F7 /* DonHangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D40001F2394EA00BCD5F7 /* DonHangTableViewCell.swift */; };
@@ -43,10 +47,13 @@
 		02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEE91F210108007EB372 /* AwesomeUIView.swift */; };
 		02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEEF1F21025D007EB372 /* OrderViewCell.swift */; };
 		02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A2AEF01F21025D007EB372 /* OrderViewCell.xib */; };
+		02BC24C61F25CAB300C917CD /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C51F25CAB300C917CD /* DeliveryViewController.swift */; };
+		02BC24C81F25CB2A00C917CD /* SingleDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */; };
+		02BC24CA1F25CB5800C917CD /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C91F25CB5800C917CD /* DeliveryCoordinator.swift */; };
 		02BF72651F224B8A00F1F4BC /* DonHang.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BF72641F224B8A00F1F4BC /* DonHang.storyboard */; };
 		02BF72691F23338E00F1F4BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72681F23338E00F1F4BC /* MainViewController.swift */; };
 		02BF726B1F2333AF00F1F4BC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF726A1F2333AF00F1F4BC /* MainCoordinator.swift */; };
-		02BF726D1F23449900F1F4BC /* NavTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF726C1F23449900F1F4BC /* NavTabBarCoordinator.swift */; };
+		02BF726D1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */; };
 		02BF72711F23451F00F1F4BC /* NavTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */; };
 		02BF72741F23672000F1F4BC /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72731F23672000F1F4BC /* OrderViewController.swift */; };
 		02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72781F23686100F1F4BC /* AccountViewController.swift */; };
@@ -93,6 +100,10 @@
 		021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewCell.swift; path = CustomView/ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConversationTableViewCell.xib; path = CustomView/ConversationTableViewCell.xib; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
+		025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeToggleViewByHeight.swift; sourceTree = "<group>"; };
+		025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeToggleButton.swift; sourceTree = "<group>"; };
+		025CC07B1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryNavTabBarCoordinator.swift; sourceTree = "<group>"; };
+		025CC07D1F26470B003C0883 /* DeliveryNavTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryNavTabBarViewController.swift; path = Delivery/DeliveryNavTabBarViewController.swift; sourceTree = "<group>"; };
 		025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInviteViewController.swift; sourceTree = "<group>"; };
 		025D40001F2394EA00BCD5F7 /* DonHangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonHangTableViewCell.swift; path = CustomView/DonHangTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,10 +126,13 @@
 		02A2AEE91F210108007EB372 /* AwesomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeUIView.swift; sourceTree = "<group>"; };
 		02A2AEEF1F21025D007EB372 /* OrderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		02A2AEF01F21025D007EB372 /* OrderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewCell.xib; sourceTree = "<group>"; };
+		02BC24C51F25CAB300C917CD /* DeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryViewController.swift; path = Delivery/DeliveryViewController.swift; sourceTree = "<group>"; };
+		02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDeliveryViewController.swift; sourceTree = "<group>"; };
+		02BC24C91F25CB5800C917CD /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
 		02BF72641F224B8A00F1F4BC /* DonHang.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DonHang.storyboard; sourceTree = "<group>"; };
 		02BF72681F23338E00F1F4BC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
 		02BF726A1F2333AF00F1F4BC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		02BF726C1F23449900F1F4BC /* NavTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTabBarCoordinator.swift; sourceTree = "<group>"; };
+		02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNavTabBarCoordinator.swift; sourceTree = "<group>"; };
 		02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTabBarViewController.swift; sourceTree = "<group>"; };
 		02BF72731F23672000F1F4BC /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderViewController.swift; path = Order/OrderViewController.swift; sourceTree = "<group>"; };
 		02BF72781F23686100F1F4BC /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = Account/AccountViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +223,7 @@
 				02F775341F1F39BE00556BED /* CustomView */,
 				02F775101F1F38E900556BED /* Home */,
 				02BF72661F23334E00F1F4BC /* Main */,
+				02BC24C41F25C9A500C917CD /* Delivery */,
 				02BF72721F2366DA00F1F4BC /* Order */,
 				02F775191F1F390300556BED /* Chat */,
 				02BF72771F23683500F1F4BC /* Account */,
@@ -243,8 +258,22 @@
 				021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */,
 				021B82A21F24894300B757D7 /* AwesomeRadioGroup.swift */,
 				021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */,
+				025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */,
+				025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		02BC24C41F25C9A500C917CD /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				02BC24C51F25CAB300C917CD /* DeliveryViewController.swift */,
+				02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */,
+				02BC24C91F25CB5800C917CD /* DeliveryCoordinator.swift */,
+				025CC07B1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift */,
+				025CC07D1F26470B003C0883 /* DeliveryNavTabBarViewController.swift */,
+			);
+			name = Delivery;
 			sourceTree = "<group>";
 		};
 		02BF72661F23334E00F1F4BC /* Main */ = {
@@ -252,7 +281,6 @@
 			children = (
 				02BF72671F23336200F1F4BC /* Controller */,
 				02BF726A1F2333AF00F1F4BC /* MainCoordinator.swift */,
-				02BF726C1F23449900F1F4BC /* NavTabBarCoordinator.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -260,8 +288,6 @@
 		02BF72671F23336200F1F4BC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				02BF72681F23338E00F1F4BC /* MainViewController.swift */,
-				02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,6 +295,9 @@
 		02BF72721F2366DA00F1F4BC /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */,
+				02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */,
+				02BF72681F23338E00F1F4BC /* MainViewController.swift */,
 				025D40061F23A99000BCD5F7 /* SubViewController */,
 				025D40041F23A85D00BCD5F7 /* OrderCoordinator.swift */,
 				02BF72731F23672000F1F4BC /* OrderViewController.swift */,
@@ -531,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025CC0761F263625003C0883 /* AwesomeToggleViewByHeight.swift in Sources */,
 				021B82AA1F24E98600B757D7 /* DeliveryTableViewCell.swift in Sources */,
 				025D400A1F23A9C300BCD5F7 /* DonHangViewController.swift in Sources */,
 				02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */,
@@ -540,8 +570,10 @@
 				021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */,
 				0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */,
 				025D40051F23A85D00BCD5F7 /* OrderCoordinator.swift in Sources */,
+				025CC07C1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift in Sources */,
 				027B01501F1EF14A00D576CE /* AppCoordinator.swift in Sources */,
 				02F7752C1F1F390300556BED /* ProfileViewController.swift in Sources */,
+				025CC0781F263AA8003C0883 /* AwesomeToggleButton.swift in Sources */,
 				02F7754C1F1F57AB00556BED /* ChatCoordinator.swift in Sources */,
 				02F775291F1F390300556BED /* LoginCoordinator.swift in Sources */,
 				02F775541F1FB23100556BED /* InputField.swift in Sources */,
@@ -557,6 +589,7 @@
 				02F775151F1F38E900556BED /* HomeCoordinator.swift in Sources */,
 				02BF72801F23734800F1F4BC /* EditAccountViewController.swift in Sources */,
 				02BF727C1F2368CD00F1F4BC /* NotifyViewController.swift in Sources */,
+				02BC24C81F25CB2A00C917CD /* SingleDeliveryViewController.swift in Sources */,
 				021B82AE1F24F0C500B757D7 /* ConversationTableViewCell.swift in Sources */,
 				02BF72741F23672000F1F4BC /* OrderViewController.swift in Sources */,
 				02F775171F1F38E900556BED /* HomeViewModel.swift in Sources */,
@@ -566,6 +599,7 @@
 				02F775161F1F38E900556BED /* HomeViewController.swift in Sources */,
 				025D400C1F23A9DD00BCD5F7 /* DangChuyenViewController.swift in Sources */,
 				025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */,
+				025CC07E1F26470B003C0883 /* DeliveryNavTabBarViewController.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
 				021B829A1F24503200B757D7 /* NotifyTableViewCell.swift in Sources */,
 				025D400E1F23A9E900BCD5F7 /* DaMuaViewController.swift in Sources */,
@@ -575,7 +609,8 @@
 				029B09121F207C990036F01F /* TableViewViewController.swift in Sources */,
 				025D40081F23A9B400BCD5F7 /* DonMuaViewController.swift in Sources */,
 				02A2AEE41F20E569007EB372 /* SingleOrderViewController.swift in Sources */,
-				02BF726D1F23449900F1F4BC /* NavTabBarCoordinator.swift in Sources */,
+				02BC24CA1F25CB5800C917CD /* DeliveryCoordinator.swift in Sources */,
+				02BF726D1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift in Sources */,
 				025D40141F23B27A00BCD5F7 /* AwesomeBackBarButton.swift in Sources */,
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
 				021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */,
@@ -583,6 +618,7 @@
 				021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */,
 				021B82971F242FBB00B757D7 /* BaoGiaSubViewController.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,
+				02BC24C61F25CAB300C917CD /* DeliveryViewController.swift in Sources */,
 				02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */,
 				02BF72711F23451F00F1F4BC /* NavTabBarViewController.swift in Sources */,
 			);

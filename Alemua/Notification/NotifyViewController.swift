@@ -13,7 +13,6 @@ import RxCocoa
 
 class NotifyViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
-    var coordinator: MainCoordinator!
     var bag = DisposeBag()
     
     override func bindToViewModel() {

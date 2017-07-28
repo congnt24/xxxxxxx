@@ -8,26 +8,33 @@
 
 import UIKit
 
-class AwesomeToggleViewByHeight: UIView {
-    
+open class AwesomeToggleViewByHeight: BaseCustomView {
+
     @IBInspectable var isHide: Bool = false
     var heightConstraint: NSLayoutConstraint?
     var height: CGFloat!
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         heightConstraint = (self.constraints.filter { $0.firstAttribute == .height }.first)
         height = heightConstraint?.constant
     }
-    
-    override func awakeFromNib() {
+
+    override open func awakeFromNib() {
         if isHide {
             heightConstraint?.constant = 0
+            self.alpha = 0
         }
     }
 
-    public func toggleHeight() {
-        heightConstraint?.constant = heightConstraint?.constant == 0 ? height : 0
+    open func toggleHeight() {
+        if heightConstraint?.constant == 0 {
+            heightConstraint?.constant = height
+            self.alpha = 1
+        } else {
+            heightConstraint?.constant = 0
+            self.alpha = 0
+        }
     }
 
 }

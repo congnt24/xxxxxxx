@@ -11,9 +11,8 @@ import AwesomeMVVM
 import RxSwift
 import RxCocoa
 
-class NavTabBarViewController: UITabBarController {
+class OrderNavTabBarViewController: UITabBarController {
     var coordinator: OrderNavTabBarCoordinator!
-    public static var AlemuaType = HomeNaviType.Order
     override func viewDidLoad() {
         super.viewDidLoad()
         

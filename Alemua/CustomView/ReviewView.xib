@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewView" customModule="Alemua" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="99"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="k0c-Jq-TAx">
+                    <rect key="frame" x="8" y="0.0" width="328" height="99"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aKf-CA-hdd">
+                            <rect key="frame" x="0.0" y="0.0" width="328" height="42"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Người đăng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-Gl-JhI">
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AaS-Wz-eMw">
+                                    <rect key="frame" x="107" y="21" width="114" height="21"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoàng Yến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuC-t8-ZTM">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_viet_nam" translatesAutoresizingMaskIntoConstraints="NO" id="XIN-QS-LoF">
+                                            <rect key="frame" x="93" y="0.0" width="21" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="21" id="BOA-ly-i9k"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="EFo-Gl-JhI" firstAttribute="leading" secondItem="aKf-CA-hdd" secondAttribute="leading" id="53b-vf-U1y"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owC-X9-ZNr" customClass="StarView" customModule="Alemua" customModuleProvider="target">
+                            <rect key="frame" x="114" y="48" width="100" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="AuT-Ll-gf9"/>
+                                <constraint firstAttribute="height" constant="20" id="juB-bs-Sgb"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="fillStarImage" value="ic_star_orange"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="unStarImage" value="ic_star_grey"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="number">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đánh giá: 4,1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeI-7l-02b">
+                            <rect key="frame" x="122.5" y="74" width="83" height="25"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aKf-CA-hdd" firstAttribute="leading" secondItem="k0c-Jq-TAx" secondAttribute="leading" id="HL3-Oc-qSQ"/>
+                        <constraint firstAttribute="trailing" secondItem="aKf-CA-hdd" secondAttribute="trailing" id="jRh-gM-8gE"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="k0c-Jq-TAx" secondAttribute="trailing" id="5lT-F4-5sx"/>
+                <constraint firstItem="k0c-Jq-TAx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="DmT-A6-aie"/>
+                <constraint firstAttribute="bottom" secondItem="k0c-Jq-TAx" secondAttribute="bottom" id="cZT-Lk-VdZ"/>
+                <constraint firstItem="k0c-Jq-TAx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nXy-aL-hGq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="59" y="-195.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_star_grey" width="17" height="16"/>
+        <image name="ic_star_orange" width="17" height="16"/>
+        <image name="ic_viet_nam" width="21" height="21"/>
+    </resources>
+</document>

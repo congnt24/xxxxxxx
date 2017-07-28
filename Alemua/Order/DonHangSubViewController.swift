@@ -11,9 +11,19 @@ import XLPagerTabStrip
 
 class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 
+    @IBOutlet weak var btnDeliveryBaoGia: AwesomeCloseButton!
     var itemInfo: IndicatorInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if HomeViewController.homeType == .order {
+            btnDeliveryBaoGia.isHidden = true
+        } else {
+            btnDeliveryBaoGia.isHidden = false
+        }
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -22,4 +32,12 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
         }
         return itemInfo
     }
+    
+    @IBAction func onClickDeliveryBaoGia(_ sender: Any) {
+        //TODO: Check if not logged -> Login else  if chọn chỉ mua khi có giảm giá -> Dialog -> DeliveryBaoGiaFinalViewController
+//        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
+        DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal()
+        
+    }
+    
 }

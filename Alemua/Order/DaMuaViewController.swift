@@ -10,6 +10,7 @@ import UIKit
 
 class DaMuaViewController: UIViewController {
 
+    @IBOutlet weak var uiMoreDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +33,7 @@ class DaMuaViewController: UIViewController {
     }
     */
 
+    @IBAction func onMoreDetail(_ sender: Any) {
+        uiMoreDetail.toggleHeight()
+    }
 }

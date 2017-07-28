@@ -15,6 +15,7 @@ open class AwesomeDialog {
         }
         return Static.instance
     }
+
     public func show(vc: UIViewController!, name: String = "Main", identify: String!) {
         show(vc: vc, popupVC: UIStoryboard(name: name, bundle: nil).instantiateViewController(withIdentifier: identify))
     }

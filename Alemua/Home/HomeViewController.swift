@@ -11,7 +11,12 @@ import AwesomeMVVM
 import RxSwift
 import RxCocoa
 
+enum HomeType {
+    case delivery
+    case order
+}
 class HomeViewController: BaseViewController {
+    public static var homeType = HomeType.order
     var coordinator: HomeCoordinator!
     var bag = DisposeBag()
     
@@ -24,10 +29,12 @@ class HomeViewController: BaseViewController {
     
     @IBAction func onClickDelivery(_ sender: UIButton) {
         coordinator.showDeliveryScreen()
+        HomeViewController.homeType = .delivery
     }
     
     @IBAction func onClickOrder(_ sender: UIButton) {
         coordinator.showOrderScreen()
+        HomeViewController.homeType = .order
     }
 
     @IBAction func onClickBoQua(_ sender: Any) {

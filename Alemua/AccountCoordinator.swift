@@ -39,4 +39,9 @@ extension AccountCoordinator: AccountCoordinatorDelegate {
         account.coordinator = self
         navigation?.pushViewController(account, animated: true)
     }
+    
+    func showNotifyThanhToan(){
+        let view: ThanhToanViewController = mainStoryboard.instantiateViewController(withClass: ThanhToanViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
 }

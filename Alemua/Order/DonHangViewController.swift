@@ -31,7 +31,7 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let donhang: DonHangSubViewController = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: DonHangSubViewController.self)
-        let baogia: BaoGiaSubViewController = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: BaoGiaSubViewController.self)
+        let baogia: OrderBaoGiaSubViewController = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: OrderBaoGiaSubViewController.self)
         
         donhang.itemInfo = IndicatorInfo(title: "Đơn hàng")
         baogia.itemInfo = IndicatorInfo(title: "Báo giá")

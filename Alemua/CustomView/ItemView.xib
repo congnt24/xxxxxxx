@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemView" customModule="Alemua" customModuleProvider="target">
+            <connections>
+                <outlet property="baogia" destination="Awj-Ry-Lyj" id="UGS-CF-x78"/>
+                <outlet property="image" destination="ALj-h1-4Pg" id="uoa-xd-QdL"/>
+                <outlet property="title" destination="qXA-vz-Rrz" id="Tm8-4N-Oii"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="95"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kzy-q5-Na0">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="95"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="ALj-h1-4Pg">
+                            <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ALj-h1-4Pg" secondAttribute="height" multiplier="1:1" id="SHs-Lm-Vn8"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1cp-TL-ZGV">
+                            <rect key="frame" x="104" y="0.0" width="239" height="62"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tai nghe Beat Dr. Dre 2, tai nghe không dây tai nghe không dây tai nghe không dây tai nghe không dây" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXA-vz-Rrz">
+                                    <rect key="frame" x="0.0" y="0.0" width="239" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="42" id="eQt-Jt-4Iv"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 báo giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awj-Ry-Lyj">
+                                    <rect key="frame" x="0.0" y="42" width="239" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="qXA-vz-Rrz" secondAttribute="bottom" constant="20" symbolic="YES" id="CtJ-Ss-Wn0"/>
+                                <constraint firstAttribute="trailing" secondItem="qXA-vz-Rrz" secondAttribute="trailing" id="Qoi-zH-JUc"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="kzy-q5-Na0" secondAttribute="bottom" id="Zy6-rb-jx2"/>
+                <constraint firstItem="kzy-q5-Na0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iky-O5-3yg"/>
+                <constraint firstAttribute="trailing" secondItem="kzy-q5-Na0" secondAttribute="trailing" id="yKO-Qx-dof"/>
+                <constraint firstItem="kzy-q5-Na0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="zlv-2T-K8E"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.5" y="-227"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sample" width="94" height="94"/>
+    </resources>
+</document>

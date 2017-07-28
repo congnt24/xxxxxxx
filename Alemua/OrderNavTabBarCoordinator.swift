@@ -19,10 +19,9 @@ class OrderNavTabBarCoordinator: Coordinator {
     public static var sharedInstance: OrderNavTabBarCoordinator!
     
     override func start(_ data: Any?) {
-        let nav: NavTabBarViewController = mainStoryboard.instantiateViewController(withClass: NavTabBarViewController.self)
+        let nav: OrderNavTabBarViewController = mainStoryboard.instantiateViewController(withClass: OrderNavTabBarViewController.self)
         OrderNavTabBarCoordinator.sharedInstance = self
         nav.coordinator = self
-        NavTabBarViewController.AlemuaType = data as! HomeNaviType
         navigation?.pushViewController(nav, animated: true)
     }
 }

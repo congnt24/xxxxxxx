@@ -10,11 +10,6 @@ import Foundation
 import AwesomeMVVM
 import UIKit
 
-enum HomeNaviType {
-    case Delivery
-    case Order
-}
-
 protocol HomeCoordinatorDelegate {
     func showDeliveryScreen()
     func showOrderScreen()
@@ -35,6 +30,6 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
         DeliveryNavTabBarCoordinator(navigation).start(nil)
     }
     func showOrderScreen(){
-        OrderNavTabBarCoordinator(navigation).start(HomeNaviType.Order)
+        OrderNavTabBarCoordinator(navigation).start(nil)
     }
 }

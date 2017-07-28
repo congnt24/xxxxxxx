@@ -18,12 +18,18 @@ class AccountViewController: BaseViewController {
     @IBOutlet weak var uiNotify: UIStackView!
     @IBOutlet weak var uiSetting: UIStackView!
     @IBOutlet weak var uiInviteFriend: UIStackView!
+    
+    @IBOutlet weak var userView: UserView!
     override func bindToViewModel() {
         let tapSetting = UITapGestureRecognizer(target: self, action: #selector(self.showAccountSetting(_:)))
         let tapInvite = UITapGestureRecognizer(target: self, action: #selector(self.showAccountInvite(_:)))
         uiSetting.addGestureRecognizer(tapSetting)
         uiInviteFriend.addGestureRecognizer(tapInvite)
         uiNotify.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.toggleNotify(_:))))
+        
+        userView.toggleView = {
+            self.uiMoreDetails.toggleHeight()
+        }
     }
 
     func toggleNotify(_ sender: UITapGestureRecognizer) {
@@ -46,9 +52,6 @@ class AccountViewController: BaseViewController {
     }
     @IBAction func onNotifyChange(_ sender: UISwitch) {
         print("Switch \(sender.isOn)")
-    }
-    @IBAction func onToggleMoreDetails(_ sender: Any) {
-        uiMoreDetails.toggleHeight()
     }
 }
 

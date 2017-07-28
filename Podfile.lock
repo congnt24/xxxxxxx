@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.5.0)
   - AwesomeMVVM (0.2.3)
+  - DropDown (2)
   - IQKeyboardManagerSwift (4.0.10)
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
@@ -26,6 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - AwesomeMVVM (from `https://github.com/congnt24/AwesomeMVVM.git`)
+  - DropDown
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
   - Kingfisher (~> 3.0)
@@ -49,6 +51,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AwesomeMVVM: abcaf08ec455b33750241345f0905689b3ebb8a1
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
@@ -61,6 +64,6 @@ SPEC CHECKSUMS:
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 78c40974ea4f2cd7d3a33e67ff56e7a5f2377a27
+PODFILE CHECKSUM: e38df98556d643d8c9b512319526eb78f873175f
 
 COCOAPODS: 1.2.1

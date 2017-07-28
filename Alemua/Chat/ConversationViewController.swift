@@ -33,6 +33,7 @@ class ConversationViewController: BaseViewController {
         //Handle click
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
 //            self.chatCoor.showChatScreen()
+            //TODO: IF ORDER / DELIVERY
             OrderNavTabBarCoordinator.sharedInstance.showChatScreen()
         }).addDisposableTo(bag)
 

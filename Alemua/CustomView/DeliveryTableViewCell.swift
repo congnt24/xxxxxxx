@@ -9,16 +9,26 @@
 import UIKit
 
 class DeliveryTableViewCell: UITableViewCell {
+    @IBOutlet weak var title: UILabel!
 
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var lbOwner: UILabel!
+    @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var lbBaoGia: UILabel!
+    @IBOutlet weak var lbPrice: UILabel!
+    @IBOutlet weak var lbAddress: UILabel!
+    @IBOutlet weak var lbDate: UILabel!
+    
+    var onClickBaoGia: (() -> Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    @IBAction func onClickBaogia(_ sender: UIButton) {
+        print("ASdasdasd")
+        if let onClickBaoGia = onClickBaoGia {
+            onClickBaoGia()
+        }
+    }
 }

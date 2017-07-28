@@ -11,13 +11,14 @@ import AwesomeMVVM
 import RxSwift
 import RxCocoa
 
-class MainViewController: BaseViewController {
+class OrderMainViewController: BaseViewController {
     @IBOutlet weak var containerView: UIView!
-        var coordinator: MainCoordinator!
     var bag = DisposeBag()
     
     override func bindToViewModel() {
-        self.addViewController(vcIdentifier: "Tab1")
+        self.addViewController(vcIdentifier: "OrderMain1ViewController")
+        
+        
     }
     
     override func responseFromViewModel() {

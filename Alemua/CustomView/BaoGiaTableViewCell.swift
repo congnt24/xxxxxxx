@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaoGiaTableViewCell: UITableViewCell {
+class BaoGiaTableViewCell: BaoGiaDeliveryTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

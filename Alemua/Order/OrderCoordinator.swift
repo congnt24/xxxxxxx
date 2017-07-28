@@ -21,13 +21,7 @@ class OrderCoordinator: Coordinator {
     public static var sharedInstance: OrderCoordinator!
     override func start(_ data: Any?) {
         OrderCoordinator.sharedInstance = self
-    }
-}
-
-extension OrderCoordinator {
-    func showBaoGiaDetail(){
-        let view: BaoGiaDetailSubViewController = getDonHangStoryboard().instantiateViewController(withClass: BaoGiaDetailSubViewController.self)
-        navigation?.pushViewController(view, animated: true)
+        OrderOrderCoordinator(navigation).start(nil)
     }
 }
 
@@ -66,5 +60,17 @@ extension OrderCoordinator: OrderCoordinatorDelegate {
     func showDaMua() {
         let view: DaMuaViewController = getDonHangStoryboard().instantiateViewController(withClass: DaMuaViewController.self)
         navigation?.pushViewController(view, animated: true)
+    }
+}
+
+
+extension OrderCoordinator {
+    func showTaoDonHang(){
+        let view: OrderTaoDonMuaViewController = mainStoryboard.instantiateViewController(withClass: OrderTaoDonMuaViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
+    func showOrderTabAfterFinishTaoDonHang(){
+        navigation?.popViewController(animated: false)
+        navigation?.popViewController(animated: false)
     }
 }

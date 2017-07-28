@@ -11,12 +11,6 @@ import RxSwift
 import RxCocoa
 import XLPagerTabStrip
 
-enum DeliveryType {
-    case DonMua
-    case BaoGia
-    case DangChuyen
-    case DaMua
-}
 class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var tableView: UITableView!

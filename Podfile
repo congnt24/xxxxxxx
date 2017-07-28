@@ -17,4 +17,5 @@ target 'Alemua' do
   pod 'Kingfisher', '~> 3.0'
   pod 'XLPagerTabStrip'
   pod 'KMPlaceholderTextView', '~> 1.3.0'
+  pod 'DropDown'
 end

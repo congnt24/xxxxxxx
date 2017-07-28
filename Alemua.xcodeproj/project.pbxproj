@@ -7,22 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0213995F1F286ABB00BB0642 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213995E1F286ABB00BB0642 /* ItemView.swift */; };
+		021399611F286AC700BB0642 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021399601F286AC700BB0642 /* ItemView.xib */; };
+		021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021399621F286B1000BB0642 /* BaseCustomView.swift */; };
 		021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */; };
 		021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */; };
 		021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */; };
-		021B82971F242FBB00B757D7 /* BaoGiaSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */; };
+		021B82971F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82961F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift */; };
 		021B829A1F24503200B757D7 /* NotifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82981F24503200B757D7 /* NotifyTableViewCell.swift */; };
 		021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82991F24503200B757D7 /* NotifyTableViewCell.xib */; };
 		021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B829C1F24576800B757D7 /* AwesomeDialog.swift */; };
 		021B82A11F247BCC00B757D7 /* AwesomeCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */; };
 		021B82A31F24894300B757D7 /* AwesomeRadioGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A21F24894300B757D7 /* AwesomeRadioGroup.swift */; };
 		021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */; };
-		021B82A71F2494ED00B757D7 /* BaogiaDetailSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A61F2494ED00B757D7 /* BaogiaDetailSubViewController.swift */; };
 		021B82AA1F24E98600B757D7 /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82A81F24E98600B757D7 /* DeliveryTableViewCell.swift */; };
 		021B82AB1F24E98600B757D7 /* DeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82A91F24E98600B757D7 /* DeliveryTableViewCell.xib */; };
 		021B82AE1F24F0C500B757D7 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */; };
 		021B82AF1F24F0C500B757D7 /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */; };
+		0222CB321F2964D100B20236 /* TaoDonHangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */; };
+		0223C7EB1F29B9E0005949C9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7EA1F29B9E0005949C9 /* ReviewView.swift */; };
+		0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0223C7EC1F29B9F1005949C9 /* ReviewView.xib */; };
+		0223C7EF1F2A1516005949C9 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7EE1F2A1516005949C9 /* UserView.swift */; };
+		0223C7F11F2A1526005949C9 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0223C7F01F2A1526005949C9 /* UserView.xib */; };
+		0223C7F31F2A2361005949C9 /* DanhGiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7F21F2A2361005949C9 /* DanhGiaView.swift */; };
+		0223C7F51F2A236E005949C9 /* DanhGiaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0223C7F41F2A236E005949C9 /* DanhGiaView.xib */; };
+		0223C7F71F2A36B0005949C9 /* DeliveryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7F61F2A36B0005949C9 /* DeliveryMainViewController.swift */; };
+		0223C7F91F2A4210005949C9 /* DeliveryDaHuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7F81F2A4210005949C9 /* DeliveryDaHuyViewController.swift */; };
+		0223C7FB1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7FA1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift */; };
+		0223C7FD1F2A44A1005949C9 /* ThanhToanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7FC1F2A44A1005949C9 /* ThanhToanViewController.swift */; };
+		022A8D0C1F28F02000D69411 /* OrderTaoDonMuaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A8D0B1F28F02000D69411 /* OrderTaoDonMuaViewController.swift */; };
+		022A8D0F1F28F04200D69411 /* TaoDonHang1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A8D0E1F28F04200D69411 /* TaoDonHang1ViewController.swift */; };
+		022A8D111F28F05000D69411 /* TaoDonHang2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A8D101F28F05000D69411 /* TaoDonHang2ViewController.swift */; };
+		022A8D131F28F05C00D69411 /* TaoDonHang3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A8D121F28F05C00D69411 /* TaoDonHang3ViewController.swift */; };
+		022D72991F2793A600CC548E /* DeliveryOrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72981F2793A600CC548E /* DeliveryOrderCoordinator.swift */; };
+		022D729B1F2793B800CC548E /* DeliveryMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D729A1F2793B800CC548E /* DeliveryMainCoordinator.swift */; };
+		022D729D1F2793D100CC548E /* OrderOrderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D729C1F2793D100CC548E /* OrderOrderCoordinator.swift */; };
+		022D729F1F2793DB00CC548E /* OrderMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D729E1F2793DB00CC548E /* OrderMainCoordinator.swift */; };
+		022D72A71F279C8900CC548E /* OrderBaoGiaDetailSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72A61F279C8900CC548E /* OrderBaoGiaDetailSubViewController.swift */; };
+		022D72A91F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72A81F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift */; };
+		022D72AB1F279F6500CC548E /* OrderDialogBaoGia2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72AA1F279F6500CC548E /* OrderDialogBaoGia2ViewController.swift */; };
+		022D72AD1F279F7100CC548E /* OrderDialogBaoGia3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72AC1F279F7100CC548E /* OrderDialogBaoGia3ViewController.swift */; };
+		022D72AF1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72AE1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift */; };
+		022D72B11F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72B01F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift */; };
+		022D72B31F27A48500CC548E /* OrderDialogDangChuyen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72B21F27A48500CC548E /* OrderDialogDangChuyen2ViewController.swift */; };
+		022D72B51F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72B41F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift */; };
+		022D72B91F27A83200CC548E /* RateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72B81F27A83200CC548E /* RateDetail.swift */; };
+		022D72BB1F27A84000CC548E /* RateDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022D72BA1F27A84000CC548E /* RateDetail.xib */; };
+		023B39D21F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39D01F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift */; };
+		023B39D31F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023B39D11F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib */; };
+		023B39D51F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39D41F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift */; };
+		023B39D81F2B1A7B00E53A6D /* DeliveryDialogBaoGiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39D71F2B1A7B00E53A6D /* DeliveryDialogBaoGiaViewController.swift */; };
+		023B39DA1F2B266100E53A6D /* HTMLLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39D91F2B266100E53A6D /* HTMLLabel.swift */; };
+		023B39DD1F2B43EE00E53A6D /* KhachHangTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39DB1F2B43EE00E53A6D /* KhachHangTableViewCell.swift */; };
+		023B39DE1F2B43EE00E53A6D /* KhachHangTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023B39DC1F2B43EE00E53A6D /* KhachHangTableViewCell.xib */; };
+		023B39E01F2B4EF200E53A6D /* DeliveryAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */; };
+		023B39E21F2B59BB00E53A6D /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39E11F2B59BB00E53A6D /* StepperView.swift */; };
+		023B39E41F2B59CA00E53A6D /* StepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023B39E31F2B59CA00E53A6D /* StepperView.xib */; };
+		023F48861F299C0C00B489D7 /* OrderMain1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
+		02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */; };
+		02525C3E1F2B8AB600EBCBA7 /* ThanhToanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */; };
+		02525C411F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3F1F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift */; };
+		02525C421F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02525C401F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib */; };
+		02525C471F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C451F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.swift */; };
+		02525C481F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02525C461F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib */; };
 		025CC0761F263625003C0883 /* AwesomeToggleViewByHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */; };
 		025CC0781F263AA8003C0883 /* AwesomeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */; };
 		025CC07C1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025CC07B1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift */; };
@@ -47,15 +95,15 @@
 		02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEE91F210108007EB372 /* AwesomeUIView.swift */; };
 		02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEEF1F21025D007EB372 /* OrderViewCell.swift */; };
 		02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A2AEF01F21025D007EB372 /* OrderViewCell.xib */; };
-		02BC24C61F25CAB300C917CD /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C51F25CAB300C917CD /* DeliveryViewController.swift */; };
+		02B5EC0A1F29A1270048B34A /* OrderMain2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */; };
+		02BC24C61F25CAB300C917CD /* DeliveryOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C51F25CAB300C917CD /* DeliveryOrderViewController.swift */; };
 		02BC24C81F25CB2A00C917CD /* SingleDeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */; };
 		02BC24CA1F25CB5800C917CD /* DeliveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC24C91F25CB5800C917CD /* DeliveryCoordinator.swift */; };
 		02BF72651F224B8A00F1F4BC /* DonHang.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BF72641F224B8A00F1F4BC /* DonHang.storyboard */; };
-		02BF72691F23338E00F1F4BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72681F23338E00F1F4BC /* MainViewController.swift */; };
-		02BF726B1F2333AF00F1F4BC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF726A1F2333AF00F1F4BC /* MainCoordinator.swift */; };
+		02BF72691F23338E00F1F4BC /* OrderMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72681F23338E00F1F4BC /* OrderMainViewController.swift */; };
 		02BF726D1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */; };
-		02BF72711F23451F00F1F4BC /* NavTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */; };
-		02BF72741F23672000F1F4BC /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72731F23672000F1F4BC /* OrderViewController.swift */; };
+		02BF72711F23451F00F1F4BC /* OrderNavTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72701F23451F00F1F4BC /* OrderNavTabBarViewController.swift */; };
+		02BF72741F23672000F1F4BC /* OrderOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72731F23672000F1F4BC /* OrderOrderViewController.swift */; };
 		02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF72781F23686100F1F4BC /* AccountViewController.swift */; };
 		02BF727C1F2368CD00F1F4BC /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF727B1F2368CD00F1F4BC /* NotifyViewController.swift */; };
 		02BF727E1F23708100F1F4BC /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF727D1F23708100F1F4BC /* AccountCoordinator.swift */; };
@@ -84,22 +132,70 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0213995E1F286ABB00BB0642 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = CustomView/ItemView.swift; sourceTree = "<group>"; };
+		021399601F286AC700BB0642 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemView.xib; path = CustomView/ItemView.xib; sourceTree = "<group>"; };
+		021399621F286B1000BB0642 /* BaseCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
 		021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaTableViewCell.swift; path = CustomView/BaoGiaTableViewCell.swift; sourceTree = "<group>"; };
 		021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaoGiaTableViewCell.xib; path = CustomView/BaoGiaTableViewCell.xib; sourceTree = "<group>"; };
 		021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DonHangSubViewController.swift; path = Order/DonHangSubViewController.swift; sourceTree = "<group>"; };
-		021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaSubViewController.swift; path = Order/BaoGiaSubViewController.swift; sourceTree = "<group>"; };
+		021B82961F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderBaoGiaSubViewController.swift; path = Order/OrderBaoGiaSubViewController.swift; sourceTree = "<group>"; };
 		021B82981F24503200B757D7 /* NotifyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotifyTableViewCell.swift; path = CustomView/NotifyTableViewCell.swift; sourceTree = "<group>"; };
 		021B82991F24503200B757D7 /* NotifyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotifyTableViewCell.xib; path = CustomView/NotifyTableViewCell.xib; sourceTree = "<group>"; };
 		021B829C1F24576800B757D7 /* AwesomeDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeDialog.swift; sourceTree = "<group>"; };
 		021B82A01F247BCC00B757D7 /* AwesomeCloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeCloseButton.swift; sourceTree = "<group>"; };
 		021B82A21F24894300B757D7 /* AwesomeRadioGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeRadioGroup.swift; sourceTree = "<group>"; };
 		021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeRadioGroupCell.swift; sourceTree = "<group>"; };
-		021B82A61F2494ED00B757D7 /* BaogiaDetailSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaogiaDetailSubViewController.swift; sourceTree = "<group>"; };
 		021B82A81F24E98600B757D7 /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryTableViewCell.swift; path = CustomView/DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		021B82A91F24E98600B757D7 /* DeliveryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeliveryTableViewCell.xib; path = CustomView/DeliveryTableViewCell.xib; sourceTree = "<group>"; };
 		021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewCell.swift; path = CustomView/ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConversationTableViewCell.xib; path = CustomView/ConversationTableViewCell.xib; sourceTree = "<group>"; };
+		0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaoDonHangViewController.swift; path = Order/TaoDonHangViewController.swift; sourceTree = "<group>"; };
+		0223C7EA1F29B9E0005949C9 /* ReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewView.swift; path = CustomView/ReviewView.swift; sourceTree = "<group>"; };
+		0223C7EC1F29B9F1005949C9 /* ReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReviewView.xib; path = CustomView/ReviewView.xib; sourceTree = "<group>"; };
+		0223C7EE1F2A1516005949C9 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserView.swift; path = CustomView/UserView.swift; sourceTree = "<group>"; };
+		0223C7F01F2A1526005949C9 /* UserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserView.xib; path = CustomView/UserView.xib; sourceTree = "<group>"; };
+		0223C7F21F2A2361005949C9 /* DanhGiaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhGiaView.swift; path = CustomView/DanhGiaView.swift; sourceTree = "<group>"; };
+		0223C7F41F2A236E005949C9 /* DanhGiaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DanhGiaView.xib; path = CustomView/DanhGiaView.xib; sourceTree = "<group>"; };
+		0223C7F61F2A36B0005949C9 /* DeliveryMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryMainViewController.swift; path = Delivery/DeliveryMainViewController.swift; sourceTree = "<group>"; };
+		0223C7F81F2A4210005949C9 /* DeliveryDaHuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryDaHuyViewController.swift; path = Delivery/DeliveryDaHuyViewController.swift; sourceTree = "<group>"; };
+		0223C7FA1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryHoanThanhViewController.swift; path = Delivery/DeliveryHoanThanhViewController.swift; sourceTree = "<group>"; };
+		0223C7FC1F2A44A1005949C9 /* ThanhToanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThanhToanViewController.swift; path = Account/ThanhToanViewController.swift; sourceTree = "<group>"; };
+		022A8D0B1F28F02000D69411 /* OrderTaoDonMuaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderTaoDonMuaViewController.swift; path = Order/OrderTaoDonMuaViewController.swift; sourceTree = "<group>"; };
+		022A8D0E1F28F04200D69411 /* TaoDonHang1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaoDonHang1ViewController.swift; path = Order/TaoDonHang1ViewController.swift; sourceTree = "<group>"; };
+		022A8D101F28F05000D69411 /* TaoDonHang2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaoDonHang2ViewController.swift; path = Order/TaoDonHang2ViewController.swift; sourceTree = "<group>"; };
+		022A8D121F28F05C00D69411 /* TaoDonHang3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaoDonHang3ViewController.swift; path = Order/TaoDonHang3ViewController.swift; sourceTree = "<group>"; };
+		022D72981F2793A600CC548E /* DeliveryOrderCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryOrderCoordinator.swift; sourceTree = "<group>"; };
+		022D729A1F2793B800CC548E /* DeliveryMainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMainCoordinator.swift; sourceTree = "<group>"; };
+		022D729C1F2793D100CC548E /* OrderOrderCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderOrderCoordinator.swift; sourceTree = "<group>"; };
+		022D729E1F2793DB00CC548E /* OrderMainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderMainCoordinator.swift; sourceTree = "<group>"; };
+		022D72A61F279C8900CC548E /* OrderBaoGiaDetailSubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderBaoGiaDetailSubViewController.swift; path = Order/OrderBaoGiaDetailSubViewController.swift; sourceTree = "<group>"; };
+		022D72A81F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderDialogBaoGia1ViewController.swift; path = Order/OrderDialogBaoGia1ViewController.swift; sourceTree = "<group>"; };
+		022D72AA1F279F6500CC548E /* OrderDialogBaoGia2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderDialogBaoGia2ViewController.swift; path = Order/OrderDialogBaoGia2ViewController.swift; sourceTree = "<group>"; };
+		022D72AC1F279F7100CC548E /* OrderDialogBaoGia3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderDialogBaoGia3ViewController.swift; path = Order/OrderDialogBaoGia3ViewController.swift; sourceTree = "<group>"; };
+		022D72AE1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderDialogBaoGia4ViewController.swift; path = Order/OrderDialogBaoGia4ViewController.swift; sourceTree = "<group>"; };
+		022D72B01F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderDialogDangChuyen1ViewController.swift; path = Order/OrderDialogDangChuyen1ViewController.swift; sourceTree = "<group>"; };
+		022D72B21F27A48500CC548E /* OrderDialogDangChuyen2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDialogDangChuyen2ViewController.swift; sourceTree = "<group>"; };
+		022D72B41F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDialogDangChuyen3ViewController.swift; sourceTree = "<group>"; };
+		022D72B81F27A83200CC548E /* RateDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateDetail.swift; path = CustomView/RateDetail.swift; sourceTree = "<group>"; };
+		022D72BA1F27A84000CC548E /* RateDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RateDetail.xib; path = CustomView/RateDetail.xib; sourceTree = "<group>"; };
+		023B39D01F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaDeliveryTableViewCell.swift; path = CustomView/BaoGiaDeliveryTableViewCell.swift; sourceTree = "<group>"; };
+		023B39D11F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaoGiaDeliveryTableViewCell.xib; path = CustomView/BaoGiaDeliveryTableViewCell.xib; sourceTree = "<group>"; };
+		023B39D41F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryBaoGiaFinalViewController.swift; path = Delivery/DeliveryBaoGiaFinalViewController.swift; sourceTree = "<group>"; };
+		023B39D71F2B1A7B00E53A6D /* DeliveryDialogBaoGiaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryDialogBaoGiaViewController.swift; path = Delivery/DeliveryDialogBaoGiaViewController.swift; sourceTree = "<group>"; };
+		023B39D91F2B266100E53A6D /* HTMLLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTMLLabel.swift; path = CustomView/HTMLLabel.swift; sourceTree = "<group>"; };
+		023B39DB1F2B43EE00E53A6D /* KhachHangTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KhachHangTableViewCell.swift; path = CustomView/KhachHangTableViewCell.swift; sourceTree = "<group>"; };
+		023B39DC1F2B43EE00E53A6D /* KhachHangTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KhachHangTableViewCell.xib; path = CustomView/KhachHangTableViewCell.xib; sourceTree = "<group>"; };
+		023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryAccountViewController.swift; path = Account/DeliveryAccountViewController.swift; sourceTree = "<group>"; };
+		023B39E11F2B59BB00E53A6D /* StepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StepperView.swift; path = CustomView/StepperView.swift; sourceTree = "<group>"; };
+		023B39E31F2B59CA00E53A6D /* StepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StepperView.xib; path = CustomView/StepperView.xib; sourceTree = "<group>"; };
+		023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain1ViewController.swift; path = Order/OrderMain1ViewController.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
+		02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AwesomeTextField2.swift; path = CustomView/AwesomeTextField2.swift; sourceTree = "<group>"; };
+		02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanhToanModel.swift; sourceTree = "<group>"; };
+		02525C3F1F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMainOnlineTableViewCell.swift; path = CustomView/OrderMainOnlineTableViewCell.swift; sourceTree = "<group>"; };
+		02525C401F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OrderMainOnlineTableViewCell.xib; path = CustomView/OrderMainOnlineTableViewCell.xib; sourceTree = "<group>"; };
+		02525C451F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMainHeaderTableViewCell.swift; path = CustomView/OrderMainHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		02525C461F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OrderMainHeaderTableViewCell.xib; path = CustomView/OrderMainHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeToggleViewByHeight.swift; sourceTree = "<group>"; };
 		025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeToggleButton.swift; sourceTree = "<group>"; };
 		025CC07B1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryNavTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -126,15 +222,15 @@
 		02A2AEE91F210108007EB372 /* AwesomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeUIView.swift; sourceTree = "<group>"; };
 		02A2AEEF1F21025D007EB372 /* OrderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		02A2AEF01F21025D007EB372 /* OrderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewCell.xib; sourceTree = "<group>"; };
-		02BC24C51F25CAB300C917CD /* DeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryViewController.swift; path = Delivery/DeliveryViewController.swift; sourceTree = "<group>"; };
+		02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain2ViewController.swift; path = Order/OrderMain2ViewController.swift; sourceTree = "<group>"; };
+		02BC24C51F25CAB300C917CD /* DeliveryOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryOrderViewController.swift; path = Delivery/DeliveryOrderViewController.swift; sourceTree = "<group>"; };
 		02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDeliveryViewController.swift; sourceTree = "<group>"; };
 		02BC24C91F25CB5800C917CD /* DeliveryCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryCoordinator.swift; sourceTree = "<group>"; };
 		02BF72641F224B8A00F1F4BC /* DonHang.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DonHang.storyboard; sourceTree = "<group>"; };
-		02BF72681F23338E00F1F4BC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
-		02BF726A1F2333AF00F1F4BC /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		02BF72681F23338E00F1F4BC /* OrderMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMainViewController.swift; path = Main/OrderMainViewController.swift; sourceTree = "<group>"; };
 		02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNavTabBarCoordinator.swift; sourceTree = "<group>"; };
-		02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavTabBarViewController.swift; sourceTree = "<group>"; };
-		02BF72731F23672000F1F4BC /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderViewController.swift; path = Order/OrderViewController.swift; sourceTree = "<group>"; };
+		02BF72701F23451F00F1F4BC /* OrderNavTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNavTabBarViewController.swift; sourceTree = "<group>"; };
+		02BF72731F23672000F1F4BC /* OrderOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderOrderViewController.swift; path = Order/OrderOrderViewController.swift; sourceTree = "<group>"; };
 		02BF72781F23686100F1F4BC /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountViewController.swift; path = Account/AccountViewController.swift; sourceTree = "<group>"; };
 		02BF727B1F2368CD00F1F4BC /* NotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
 		02BF727D1F23708100F1F4BC /* AccountCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
@@ -180,15 +276,128 @@
 			isa = PBXGroup;
 			children = (
 				021B82941F242FAD00B757D7 /* DonHangSubViewController.swift */,
-				021B82961F242FBB00B757D7 /* BaoGiaSubViewController.swift */,
-				021B82A61F2494ED00B757D7 /* BaogiaDetailSubViewController.swift */,
+				021B82961F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift */,
+				022D72A61F279C8900CC548E /* OrderBaoGiaDetailSubViewController.swift */,
+				022D72A81F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift */,
+				022D72AA1F279F6500CC548E /* OrderDialogBaoGia2ViewController.swift */,
+				022D72AC1F279F7100CC548E /* OrderDialogBaoGia3ViewController.swift */,
+				022D72AE1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift */,
+				022D72B01F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift */,
+				022D72B21F27A48500CC548E /* OrderDialogDangChuyen2ViewController.swift */,
+				022D72B41F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift */,
 			);
 			name = DonHangSubView;
+			sourceTree = "<group>";
+		};
+		022A8D0D1F28F02A00D69411 /* TaoDonHang */ = {
+			isa = PBXGroup;
+			children = (
+				022A8D0E1F28F04200D69411 /* TaoDonHang1ViewController.swift */,
+				022A8D101F28F05000D69411 /* TaoDonHang2ViewController.swift */,
+				022A8D121F28F05C00D69411 /* TaoDonHang3ViewController.swift */,
+				0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */,
+			);
+			name = TaoDonHang;
+			sourceTree = "<group>";
+		};
+		022D72941F27934A00CC548E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				022D72A21F27940500CC548E /* ViewController */,
+				022D729A1F2793B800CC548E /* DeliveryMainCoordinator.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		022D72951F27935E00CC548E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				022D72A01F2793EB00CC548E /* ViewController */,
+				022D72981F2793A600CC548E /* DeliveryOrderCoordinator.swift */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
+		022D72961F27936700CC548E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				022D72A31F27940E00CC548E /* ViewController */,
+				022D729E1F2793DB00CC548E /* OrderMainCoordinator.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		022D72971F27936B00CC548E /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				022D729C1F2793D100CC548E /* OrderOrderCoordinator.swift */,
+				022D72A11F2793FC00CC548E /* ViewController */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
+		022D72A01F2793EB00CC548E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				023B39D61F2B1A6800E53A6D /* SubViewController */,
+				02BC24C51F25CAB300C917CD /* DeliveryOrderViewController.swift */,
+				02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */,
+				0223C7F81F2A4210005949C9 /* DeliveryDaHuyViewController.swift */,
+				0223C7FA1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift */,
+				023B39D41F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		022D72A11F2793FC00CC548E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02BF72731F23672000F1F4BC /* OrderOrderViewController.swift */,
+				02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */,
+				022A8D0B1F28F02000D69411 /* OrderTaoDonMuaViewController.swift */,
+				025D40061F23A99000BCD5F7 /* SubViewController */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		022D72A21F27940500CC548E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0223C7F61F2A36B0005949C9 /* DeliveryMainViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		022D72A31F27940E00CC548E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02BF72681F23338E00F1F4BC /* OrderMainViewController.swift */,
+				023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */,
+				02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		023B39D61F2B1A6800E53A6D /* SubViewController */ = {
+			isa = PBXGroup;
+			children = (
+				023B39D71F2B1A7B00E53A6D /* DeliveryDialogBaoGiaViewController.swift */,
+			);
+			name = SubViewController;
+			sourceTree = "<group>";
+		};
+		02525C3C1F2B8AA300EBCBA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		025D40061F23A99000BCD5F7 /* SubViewController */ = {
 			isa = PBXGroup;
 			children = (
+				022A8D0D1F28F02A00D69411 /* TaoDonHang */,
 				021B82931F242F8300B757D7 /* DonHangSubView */,
 				025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */,
 				025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */,
@@ -222,7 +431,6 @@
 				029B090E1F207C990036F01F /* Base */,
 				02F775341F1F39BE00556BED /* CustomView */,
 				02F775101F1F38E900556BED /* Home */,
-				02BF72661F23334E00F1F4BC /* Main */,
 				02BC24C41F25C9A500C917CD /* Delivery */,
 				02BF72721F2366DA00F1F4BC /* Order */,
 				02F775191F1F390300556BED /* Chat */,
@@ -260,6 +468,7 @@
 				021B82A41F2489C600B757D7 /* AwesomeRadioGroupCell.swift */,
 				025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */,
 				025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */,
+				021399621F286B1000BB0642 /* BaseCustomView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -267,41 +476,23 @@
 		02BC24C41F25C9A500C917CD /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
-				02BC24C51F25CAB300C917CD /* DeliveryViewController.swift */,
-				02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */,
 				02BC24C91F25CB5800C917CD /* DeliveryCoordinator.swift */,
+				022D72951F27935E00CC548E /* Order */,
+				022D72941F27934A00CC548E /* Main */,
 				025CC07B1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift */,
 				025CC07D1F26470B003C0883 /* DeliveryNavTabBarViewController.swift */,
 			);
 			name = Delivery;
 			sourceTree = "<group>";
 		};
-		02BF72661F23334E00F1F4BC /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				02BF72671F23336200F1F4BC /* Controller */,
-				02BF726A1F2333AF00F1F4BC /* MainCoordinator.swift */,
-			);
-			name = Main;
-			sourceTree = "<group>";
-		};
-		02BF72671F23336200F1F4BC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 		02BF72721F2366DA00F1F4BC /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */,
-				02BF72701F23451F00F1F4BC /* NavTabBarViewController.swift */,
-				02BF72681F23338E00F1F4BC /* MainViewController.swift */,
-				025D40061F23A99000BCD5F7 /* SubViewController */,
 				025D40041F23A85D00BCD5F7 /* OrderCoordinator.swift */,
-				02BF72731F23672000F1F4BC /* OrderViewController.swift */,
-				02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */,
+				022D72971F27936B00CC548E /* Order */,
+				022D72961F27936700CC548E /* Main */,
+				02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */,
+				02BF72701F23451F00F1F4BC /* OrderNavTabBarViewController.swift */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -309,11 +500,14 @@
 		02BF72771F23683500F1F4BC /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				02525C3C1F2B8AA300EBCBA7 /* Model */,
 				02BF72781F23686100F1F4BC /* AccountViewController.swift */,
 				02BF727D1F23708100F1F4BC /* AccountCoordinator.swift */,
 				02BF727F1F23734800F1F4BC /* EditAccountViewController.swift */,
 				025D3FFC1F23917B00BCD5F7 /* AccountSettingViewController.swift */,
 				025D3FFE1F23919500BCD5F7 /* AccountInviteViewController.swift */,
+				0223C7FC1F2A44A1005949C9 /* ThanhToanViewController.swift */,
+				023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -400,6 +594,28 @@
 				021B82A91F24E98600B757D7 /* DeliveryTableViewCell.xib */,
 				021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */,
 				021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */,
+				022D72B81F27A83200CC548E /* RateDetail.swift */,
+				022D72BA1F27A84000CC548E /* RateDetail.xib */,
+				0213995E1F286ABB00BB0642 /* ItemView.swift */,
+				021399601F286AC700BB0642 /* ItemView.xib */,
+				0223C7EA1F29B9E0005949C9 /* ReviewView.swift */,
+				0223C7EC1F29B9F1005949C9 /* ReviewView.xib */,
+				0223C7EE1F2A1516005949C9 /* UserView.swift */,
+				0223C7F01F2A1526005949C9 /* UserView.xib */,
+				0223C7F21F2A2361005949C9 /* DanhGiaView.swift */,
+				0223C7F41F2A236E005949C9 /* DanhGiaView.xib */,
+				023B39D01F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift */,
+				023B39D11F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib */,
+				023B39D91F2B266100E53A6D /* HTMLLabel.swift */,
+				023B39DB1F2B43EE00E53A6D /* KhachHangTableViewCell.swift */,
+				023B39DC1F2B43EE00E53A6D /* KhachHangTableViewCell.xib */,
+				023B39E11F2B59BB00E53A6D /* StepperView.swift */,
+				023B39E31F2B59CA00E53A6D /* StepperView.xib */,
+				02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */,
+				02525C3F1F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift */,
+				02525C401F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib */,
+				02525C451F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.swift */,
+				02525C461F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -491,16 +707,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				021B82AF1F24F0C500B757D7 /* ConversationTableViewCell.xib in Resources */,
+				0223C7F51F2A236E005949C9 /* DanhGiaView.xib in Resources */,
 				02BF72651F224B8A00F1F4BC /* DonHang.storyboard in Resources */,
 				02F775321F1F390300556BED /* Login.storyboard in Resources */,
 				021B82AB1F24E98600B757D7 /* DeliveryTableViewCell.xib in Resources */,
 				02F775331F1F390300556BED /* Main.storyboard in Resources */,
+				023B39D31F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib in Resources */,
 				021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */,
+				0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */,
+				0223C7F11F2A1526005949C9 /* UserView.xib in Resources */,
 				025D40031F2394EA00BCD5F7 /* DonHangTableViewCell.xib in Resources */,
 				02F775311F1F390300556BED /* LaunchScreen.storyboard in Resources */,
 				021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */,
 				02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */,
+				023B39E41F2B59CA00E53A6D /* StepperView.xib in Resources */,
 				02F775561F1FB46300556BED /* Profile.storyboard in Resources */,
+				023B39DE1F2B43EE00E53A6D /* KhachHangTableViewCell.xib in Resources */,
+				021399611F286AC700BB0642 /* ItemView.xib in Resources */,
+				02525C421F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib in Resources */,
+				022D72BB1F27A84000CC548E /* RateDetail.xib in Resources */,
+				02525C481F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib in Resources */,
 				027B01381F1E621600D576CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,67 +786,105 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023B39D21F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift in Sources */,
 				025CC0761F263625003C0883 /* AwesomeToggleViewByHeight.swift in Sources */,
 				021B82AA1F24E98600B757D7 /* DeliveryTableViewCell.swift in Sources */,
 				025D400A1F23A9C300BCD5F7 /* DonHangViewController.swift in Sources */,
+				0223C7EF1F2A1516005949C9 /* UserView.swift in Sources */,
 				02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */,
 				02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */,
 				02F7752D1F1F390300556BED /* SettingViewController.swift in Sources */,
+				0223C7EB1F29B9E0005949C9 /* ReviewView.swift in Sources */,
 				02F775501F1F731500556BED /* ChatWrapperViewController.swift in Sources */,
+				022D72B11F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift in Sources */,
+				023B39D81F2B1A7B00E53A6D /* DeliveryDialogBaoGiaViewController.swift in Sources */,
+				022D729F1F2793DB00CC548E /* OrderMainCoordinator.swift in Sources */,
 				021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */,
 				0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */,
 				025D40051F23A85D00BCD5F7 /* OrderCoordinator.swift in Sources */,
 				025CC07C1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift in Sources */,
 				027B01501F1EF14A00D576CE /* AppCoordinator.swift in Sources */,
+				023B39E01F2B4EF200E53A6D /* DeliveryAccountViewController.swift in Sources */,
+				022D72AD1F279F7100CC548E /* OrderDialogBaoGia3ViewController.swift in Sources */,
+				0222CB321F2964D100B20236 /* TaoDonHangViewController.swift in Sources */,
 				02F7752C1F1F390300556BED /* ProfileViewController.swift in Sources */,
 				025CC0781F263AA8003C0883 /* AwesomeToggleButton.swift in Sources */,
+				0223C7F91F2A4210005949C9 /* DeliveryDaHuyViewController.swift in Sources */,
+				0223C7F71F2A36B0005949C9 /* DeliveryMainViewController.swift in Sources */,
 				02F7754C1F1F57AB00556BED /* ChatCoordinator.swift in Sources */,
+				023B39E21F2B59BB00E53A6D /* StepperView.swift in Sources */,
 				02F775291F1F390300556BED /* LoginCoordinator.swift in Sources */,
 				02F775541F1FB23100556BED /* InputField.swift in Sources */,
+				0223C7F31F2A2361005949C9 /* DanhGiaView.swift in Sources */,
+				02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */,
 				025D40021F2394EA00BCD5F7 /* DonHangTableViewCell.swift in Sources */,
 				021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */,
+				022A8D111F28F05000D69411 /* TaoDonHang2ViewController.swift in Sources */,
 				025D3FFD1F23917B00BCD5F7 /* AccountSettingViewController.swift in Sources */,
+				0213995F1F286ABB00BB0642 /* ItemView.swift in Sources */,
 				027B01311F1E621600D576CE /* AppDelegate.swift in Sources */,
+				022A8D0C1F28F02000D69411 /* OrderTaoDonMuaViewController.swift in Sources */,
 				021B82A11F247BCC00B757D7 /* AwesomeCloseButton.swift in Sources */,
 				02BF727E1F23708100F1F4BC /* AccountCoordinator.swift in Sources */,
 				02F7752A1F1F390300556BED /* LoginViewController.swift in Sources */,
-				02BF726B1F2333AF00F1F4BC /* MainCoordinator.swift in Sources */,
 				02F7752E1F1F390300556BED /* AleApi.swift in Sources */,
 				02F775151F1F38E900556BED /* HomeCoordinator.swift in Sources */,
 				02BF72801F23734800F1F4BC /* EditAccountViewController.swift in Sources */,
 				02BF727C1F2368CD00F1F4BC /* NotifyViewController.swift in Sources */,
+				02525C3E1F2B8AB600EBCBA7 /* ThanhToanModel.swift in Sources */,
+				02525C471F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.swift in Sources */,
 				02BC24C81F25CB2A00C917CD /* SingleDeliveryViewController.swift in Sources */,
+				022A8D131F28F05C00D69411 /* TaoDonHang3ViewController.swift in Sources */,
+				022D72A71F279C8900CC548E /* OrderBaoGiaDetailSubViewController.swift in Sources */,
 				021B82AE1F24F0C500B757D7 /* ConversationTableViewCell.swift in Sources */,
-				02BF72741F23672000F1F4BC /* OrderViewController.swift in Sources */,
+				02BF72741F23672000F1F4BC /* OrderOrderViewController.swift in Sources */,
 				02F775171F1F38E900556BED /* HomeViewModel.swift in Sources */,
-				02BF72691F23338E00F1F4BC /* MainViewController.swift in Sources */,
+				02BF72691F23338E00F1F4BC /* OrderMainViewController.swift in Sources */,
 				02F7754A1F1F56BD00556BED /* ConversationViewController.swift in Sources */,
-				021B82A71F2494ED00B757D7 /* BaogiaDetailSubViewController.swift in Sources */,
 				02F775161F1F38E900556BED /* HomeViewController.swift in Sources */,
+				022D72991F2793A600CC548E /* DeliveryOrderCoordinator.swift in Sources */,
 				025D400C1F23A9DD00BCD5F7 /* DangChuyenViewController.swift in Sources */,
+				023B39D51F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift in Sources */,
 				025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */,
 				025CC07E1F26470B003C0883 /* DeliveryNavTabBarViewController.swift in Sources */,
+				021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
+				023B39DD1F2B43EE00E53A6D /* KhachHangTableViewCell.swift in Sources */,
 				021B829A1F24503200B757D7 /* NotifyTableViewCell.swift in Sources */,
+				02B5EC0A1F29A1270048B34A /* OrderMain2ViewController.swift in Sources */,
 				025D400E1F23A9E900BCD5F7 /* DaMuaViewController.swift in Sources */,
 				02F7752F1F1F390300556BED /* Token.swift in Sources */,
 				029B09111F207C990036F01F /* BaseViewModel.swift in Sources */,
 				021B82A31F24894300B757D7 /* AwesomeRadioGroup.swift in Sources */,
 				029B09121F207C990036F01F /* TableViewViewController.swift in Sources */,
+				022D72B91F27A83200CC548E /* RateDetail.swift in Sources */,
 				025D40081F23A9B400BCD5F7 /* DonMuaViewController.swift in Sources */,
+				023F48861F299C0C00B489D7 /* OrderMain1ViewController.swift in Sources */,
 				02A2AEE41F20E569007EB372 /* SingleOrderViewController.swift in Sources */,
+				022D729D1F2793D100CC548E /* OrderOrderCoordinator.swift in Sources */,
 				02BC24CA1F25CB5800C917CD /* DeliveryCoordinator.swift in Sources */,
+				022D72B51F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift in Sources */,
 				02BF726D1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift in Sources */,
+				022D72AB1F279F6500CC548E /* OrderDialogBaoGia2ViewController.swift in Sources */,
 				025D40141F23B27A00BCD5F7 /* AwesomeBackBarButton.swift in Sources */,
+				023B39DA1F2B266100E53A6D /* HTMLLabel.swift in Sources */,
+				022D729B1F2793B800CC548E /* DeliveryMainCoordinator.swift in Sources */,
+				022D72B31F27A48500CC548E /* OrderDialogDangChuyen2ViewController.swift in Sources */,
+				0223C7FB1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift in Sources */,
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
+				0223C7FD1F2A44A1005949C9 /* ThanhToanViewController.swift in Sources */,
+				022A8D0F1F28F04200D69411 /* TaoDonHang1ViewController.swift in Sources */,
+				022D72A91F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift in Sources */,
 				021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */,
 				02F775481F1F556100556BED /* ChatViewController.swift in Sources */,
 				021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */,
-				021B82971F242FBB00B757D7 /* BaoGiaSubViewController.swift in Sources */,
+				021B82971F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift in Sources */,
+				022D72AF1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,
-				02BC24C61F25CAB300C917CD /* DeliveryViewController.swift in Sources */,
+				02525C411F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift in Sources */,
+				02BC24C61F25CAB300C917CD /* DeliveryOrderViewController.swift in Sources */,
 				02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */,
-				02BF72711F23451F00F1F4BC /* NavTabBarViewController.swift in Sources */,
+				02BF72711F23451F00F1F4BC /* OrderNavTabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

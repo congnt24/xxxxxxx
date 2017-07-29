@@ -2173,7 +2173,7 @@
                                 <rect key="frame" x="16" y="513" width="288" height="39"/>
                                 <color key="backgroundColor" red="0.96528512239456177" green="0.74360918998718262" blue="0.20842945575714111" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="YbP-66-V59"/>
+                                    <constraint firstAttribute="height" constant="39" id="Ye8-ED-FBG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="GỬI MUA HÀNG">
@@ -2189,10 +2189,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hRY-pB-Oqo">
-                                <rect key="frame" x="16" y="20" width="288" height="252"/>
+                                <rect key="frame" x="16" y="52" width="288" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9pd-mT-rtp">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mua từ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evb-JP-xgV">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="17"/>
@@ -2201,7 +2201,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QmJ-Qm-VcD" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                <rect key="frame" x="0.0" y="17" width="288" height="28"/>
+                                                <rect key="frame" x="0.0" y="17" width="288" height="27.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2217,7 +2217,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TJk-JX-pzO">
-                                        <rect key="frame" x="0.0" y="69" width="288" height="45"/>
+                                        <rect key="frame" x="0.0" y="68.5" width="288" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao đến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVg-JA-sTy">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="17"/>
@@ -2226,7 +2226,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="giA-kf-8kQ" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                <rect key="frame" x="0.0" y="17" width="288" height="28"/>
+                                                <rect key="frame" x="0.0" y="17" width="288" height="27.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2242,7 +2242,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RD1-at-gy1">
-                                        <rect key="frame" x="0.0" y="138" width="288" height="45"/>
+                                        <rect key="frame" x="0.0" y="137" width="288" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày giao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5di-rc-TzD">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="17"/>
@@ -2251,7 +2251,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8M-IT-J6c" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                <rect key="frame" x="0.0" y="17" width="288" height="28"/>
+                                                <rect key="frame" x="0.0" y="17" width="288" height="27.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2267,7 +2267,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IDu-78-bQF">
-                                        <rect key="frame" x="0.0" y="207" width="288" height="45"/>
+                                        <rect key="frame" x="0.0" y="205.5" width="288" height="44.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ghi chú" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rop-Qo-NRT">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="17"/>
@@ -2276,7 +2276,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXT-j2-1hj" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                <rect key="frame" x="0.0" y="17" width="288" height="28"/>
+                                                <rect key="frame" x="0.0" y="17" width="288" height="27.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -2293,18 +2293,18 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="252" id="HIM-Ha-Uu3"/>
+                                    <constraint firstAttribute="height" constant="250" id="bEB-bh-c1G"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vZV-1V-zXO" firstAttribute="top" secondItem="jgv-yd-BeW" secondAttribute="bottom" constant="16" id="1Po-jK-PgX"/>
-                            <constraint firstItem="hRY-pB-Oqo" firstAttribute="top" secondItem="x0s-Fs-mgF" secondAttribute="bottom" id="3zI-ac-S1x"/>
-                            <constraint firstItem="jgv-yd-BeW" firstAttribute="leading" secondItem="II2-yC-mqT" secondAttribute="leading" constant="16" id="KMc-HF-sEY"/>
-                            <constraint firstAttribute="trailing" secondItem="jgv-yd-BeW" secondAttribute="trailing" constant="16" id="Yef-KF-z3n"/>
-                            <constraint firstItem="hRY-pB-Oqo" firstAttribute="leading" secondItem="II2-yC-mqT" secondAttribute="leadingMargin" id="pGx-2s-5IC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hRY-pB-Oqo" secondAttribute="trailing" id="qTV-W3-cfP"/>
+                            <constraint firstItem="vZV-1V-zXO" firstAttribute="top" secondItem="jgv-yd-BeW" secondAttribute="bottom" constant="16" id="2rn-k2-pwC"/>
+                            <constraint firstItem="hRY-pB-Oqo" firstAttribute="top" secondItem="x0s-Fs-mgF" secondAttribute="bottom" constant="32" id="3Gx-cg-Lr1"/>
+                            <constraint firstItem="jgv-yd-BeW" firstAttribute="leading" secondItem="II2-yC-mqT" secondAttribute="leading" constant="16" id="GSV-aL-MiP"/>
+                            <constraint firstItem="hRY-pB-Oqo" firstAttribute="leading" secondItem="II2-yC-mqT" secondAttribute="leading" constant="16" id="RWe-s9-Xde"/>
+                            <constraint firstAttribute="trailing" secondItem="jgv-yd-BeW" secondAttribute="trailing" constant="16" id="lwz-Ds-gKi"/>
+                            <constraint firstAttribute="trailing" secondItem="hRY-pB-Oqo" secondAttribute="trailing" constant="16" id="qvA-4T-aaV"/>
                         </constraints>
                     </view>
                 </viewController>

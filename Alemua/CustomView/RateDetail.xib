@@ -19,12 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="310" height="250"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-LZ-XvL">
-                    <rect key="frame" x="48" y="0.0" width="262" height="250"/>
+                    <rect key="frame" x="32" y="0.0" width="278" height="250"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLI-Ad-zhR" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="0.0" width="262" height="35.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="278" height="35.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -37,9 +37,9 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-Hj-pO7" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="35.5" width="262" height="36"/>
+                            <rect key="frame" x="0.0" y="35.5" width="278" height="36"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -52,9 +52,9 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-G0-K0h" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="71.5" width="262" height="35.5"/>
+                            <rect key="frame" x="0.0" y="71.5" width="278" height="35.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -67,9 +67,9 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$2" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-bw-P6g" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="107" width="262" height="36"/>
+                            <rect key="frame" x="0.0" y="107" width="278" height="36"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -82,9 +82,9 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$2" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-dA-5Ct" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="143" width="262" height="35.5"/>
+                            <rect key="frame" x="0.0" y="143" width="278" height="35.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -97,9 +97,9 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$2" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-eO-8kw" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="178.5" width="262" height="36"/>
+                            <rect key="frame" x="0.0" y="178.5" width="278" height="36"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -112,9 +112,9 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-uu-hVW" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="214.5" width="262" height="35.5"/>
+                            <rect key="frame" x="0.0" y="214.5" width="278" height="35.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
@@ -133,7 +133,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="r4D-LZ-XvL" secondAttribute="bottom" id="UUu-3N-So3"/>
                 <constraint firstItem="r4D-LZ-XvL" firstAttribute="top" secondItem="h1H-5k-fgr" secondAttribute="top" id="WQj-DO-oEi"/>
-                <constraint firstItem="r4D-LZ-XvL" firstAttribute="leading" secondItem="h1H-5k-fgr" secondAttribute="leading" constant="48" id="hfA-68-GLa"/>
+                <constraint firstItem="r4D-LZ-XvL" firstAttribute="leading" secondItem="h1H-5k-fgr" secondAttribute="leading" constant="32" id="hfA-68-GLa"/>
                 <constraint firstAttribute="trailing" secondItem="r4D-LZ-XvL" secondAttribute="trailing" id="yPd-9C-eG7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

@@ -13,7 +13,9 @@ import RxDataSources
 import AwesomeMVVM
 
 class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
-
+    
+    @IBOutlet weak var input: AwesomeTextField2!
+    @IBOutlet weak var btnClear: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let bag = DisposeBag()
     let dataSource = RxTableViewSectionedReloadDataSource<SectionOfOrder>()
@@ -27,13 +29,27 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         tableView.register(headerNib, forCellReuseIdentifier: "OrderMainHeaderTableViewCell")
         tableView.register(UINib(nibName: "OrderMainOnlineTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderMainOnlineTableViewCell")
         
-        
+        //handle input link
+        input.rx.controlEvent(.editingDidEndOnExit).subscribe(onNext: { () in
+            //open new screen
+            OrderCoordinator.sharedInstance.showTaoDonHang(text: self.input.text)
+            
+        }).addDisposableTo(bag)
+        input.rx.text.subscribe(onNext: { (text) in
+            if text == "" {
+                self.btnClear.isHidden = true
+            } else {
+                self.btnClear.isHidden = false
+                
+            }
+        }).addDisposableTo(bag)
         
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
         configureDataSource()
     }
 
+    
     func configureDataSource() {
         dataSource.configureCell = { ds, tv, ip, model in
             if ip.section == 0 {
@@ -78,7 +94,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         cell.title.text = dataSource[section].header
         cell.onXemThemDelegate = {
             print("Header clicked")
-            OrderCoordinator.sharedInstance.showSanPhamHot()
+            OrderCoordinator.sharedInstance.showSanPhamHot(section: cell.title.text!)
         }
         return cell
     }
@@ -86,6 +102,13 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         return 48
     }
 
+    @IBAction func onClear(_ sender: Any) {
+        input.text = ""
+        btnClear.isHidden = true
+    }
+    @IBAction func onNotifyClick(_ sender: Any) {
+        
+    }
 }
 
 //Interact API

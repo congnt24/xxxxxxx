@@ -44,8 +44,7 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
         if indexWasChanged {
-            print(toIndex)
-            if toIndex == 0 {
+            if toIndex == 0 || btlFilter.isEnabled {
                 btlFilter.isEnabled = false
                 btlFilter.plainView.isHidden = true
             } else {

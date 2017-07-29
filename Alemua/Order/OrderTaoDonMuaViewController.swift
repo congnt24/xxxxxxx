@@ -16,6 +16,8 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var input: AwesomeTextField2!
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var btnClear: UIButton!
+    
+    var parentUrl: String?
 
     let bag = DisposeBag()
     override func viewDidLoad() {
@@ -35,6 +37,11 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
 
             }
         }).addDisposableTo(bag)
+        
+        if let parentUrl = parentUrl {
+            input.text = parentUrl
+            openPage()
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -42,7 +49,7 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
     func openPage() {
         if let text = self.input.text {
             //format http
-            let strUrl = text.hasPrefix("http://") || text.hasPrefix("https://") ? text : "http://\(text)"
+            let strUrl = text.convertToLink()
             if let url = URL(string: strUrl) {
                 let request = URLRequest(url: url)
                 self.webView.loadRequest(request)
@@ -51,6 +58,7 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
     }
     @IBAction func onClear(_ sender: Any) {
         self.input.text = ""
+        btnClear.isHidden = true
     }
 
     @IBAction func onCancel(_ sender: Any) {

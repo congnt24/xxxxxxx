@@ -53,6 +53,7 @@
 		022D72B51F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72B41F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift */; };
 		022D72B91F27A83200CC548E /* RateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D72B81F27A83200CC548E /* RateDetail.swift */; };
 		022D72BB1F27A84000CC548E /* RateDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022D72BA1F27A84000CC548E /* RateDetail.xib */; };
+		023056D91F2CE59C00D01ECA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023056D81F2CE59C00D01ECA /* Extensions.swift */; };
 		023B39D21F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39D01F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift */; };
 		023B39D31F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023B39D11F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib */; };
 		023B39D51F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39D41F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift */; };
@@ -182,6 +183,7 @@
 		022D72B41F27A49300CC548E /* OrderDialogDangChuyen3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDialogDangChuyen3ViewController.swift; sourceTree = "<group>"; };
 		022D72B81F27A83200CC548E /* RateDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateDetail.swift; path = CustomView/RateDetail.swift; sourceTree = "<group>"; };
 		022D72BA1F27A84000CC548E /* RateDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RateDetail.xib; path = CustomView/RateDetail.xib; sourceTree = "<group>"; };
+		023056D81F2CE59C00D01ECA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		023B39D01F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaDeliveryTableViewCell.swift; path = CustomView/BaoGiaDeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		023B39D11F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaoGiaDeliveryTableViewCell.xib; path = CustomView/BaoGiaDeliveryTableViewCell.xib; sourceTree = "<group>"; };
 		023B39D41F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryBaoGiaFinalViewController.swift; path = Delivery/DeliveryBaoGiaFinalViewController.swift; sourceTree = "<group>"; };
@@ -410,9 +412,9 @@
 				022A8D0D1F28F02A00D69411 /* TaoDonHang */,
 				021B82931F242F8300B757D7 /* DonHangSubView */,
 				025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */,
+				025D40091F23A9C300BCD5F7 /* DonHangViewController.swift */,
 				025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */,
 				025D40071F23A9B400BCD5F7 /* DonMuaViewController.swift */,
-				025D40091F23A9C300BCD5F7 /* DonHangViewController.swift */,
 			);
 			name = SubViewController;
 			sourceTree = "<group>";
@@ -479,6 +481,7 @@
 				025CC0751F263625003C0883 /* AwesomeToggleViewByHeight.swift */,
 				025CC0771F263AA8003C0883 /* AwesomeToggleButton.swift */,
 				021399621F286B1000BB0642 /* BaseCustomView.swift */,
+				023056D81F2CE59C00D01ECA /* Extensions.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				022D72AF1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift in Sources */,
 				02530E8A1F2C85C900334345 /* Prefs.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,
+				023056D91F2CE59C00D01ECA /* Extensions.swift in Sources */,
 				02525C411F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift in Sources */,
 				02BC24C61F25CAB300C917CD /* DeliveryOrderViewController.swift in Sources */,
 				02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */,

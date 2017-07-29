@@ -32,6 +32,7 @@ class OrderBaoGiaSubViewController: UIViewController, IndicatorInfoProvider {
         fetchData().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
             // TODO: Bind data here
             }.addDisposableTo(bag)
+        tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in

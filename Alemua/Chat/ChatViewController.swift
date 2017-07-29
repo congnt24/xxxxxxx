@@ -24,6 +24,21 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         self.senderId = "asdasd"
         self.senderDisplayName = "Cong"
 //        navigationController?.navigationBar.isHidden = false
+        //change send item on inputtoolbar
+        let rightButton = UIButton(frame: CGRect.zero)
+        var sendImage = UIImage(named: "ic_send_message")
+        rightButton.setImage(sendImage, for: .normal)
+        self.inputToolbar.contentView.rightBarButtonItemWidth = CGFloat(10.0)
+        self.inputToolbar.contentView.rightBarButtonItem = rightButton
+        self.inputToolbar.contentView.leftBarButtonItem = nil
+        self.inputToolbar.contentView.textView.placeHolder = "Nhập tin nhắn"
+        self.inputToolbar.contentView.textView.backgroundColor = UIColor.clear
+        self.inputToolbar.contentView.textView.borderWidth = 0
+        self.inputToolbar.contentView.backgroundColor = UIColor.white
+//        backgroundColor = UIColor.red
+        self.collectionView.backgroundColor = UIColor.init(hexString: "#F2F1F1")
+        
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

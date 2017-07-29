@@ -65,8 +65,12 @@ extension OrderCoordinator: OrderCoordinatorDelegate {
 
 
 extension OrderCoordinator {
-    func showTaoDonHang(){
+    func showTaoDonHang(text: String? = nil){
         let view: OrderTaoDonMuaViewController = mainStoryboard.instantiateViewController(withClass: OrderTaoDonMuaViewController.self)
+        if let text = text {
+            view.parentUrl = text
+        }
+        
         navigation?.pushViewController(view, animated: true)
     }
     func showOrderTabAfterFinishTaoDonHang(){
@@ -74,8 +78,9 @@ extension OrderCoordinator {
         navigation?.popViewController(animated: false)
     }
     
-    func showSanPhamHot(){
+    func showSanPhamHot(section: String){
         let view: OrderMain2ViewController = mainStoryboard.instantiateViewController(withClass: OrderMain2ViewController.self)
+        view.sectionName = section
         navigation?.pushViewController(view, animated: true)
     }
 }

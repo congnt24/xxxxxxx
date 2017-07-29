@@ -27,6 +27,8 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 15)
         // Do any additional setup after loading the view.
         super.viewDidLoad()
+        btlFilter.isEnabled = false
+        btlFilter.plainView.isHidden = true
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -39,7 +41,23 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
         return [donhang, baogia]
     }
     
-    override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
+    override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+        super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
+        if indexWasChanged {
+            print(toIndex)
+            if toIndex == 0 {
+                btlFilter.isEnabled = false
+                btlFilter.plainView.isHidden = true
+            } else {
+                btlFilter.isEnabled = true
+                btlFilter.plainView.isHidden = false
+            }
+        }
+    }
+    
+    
+    @IBOutlet weak var btlFilter: UIBarButtonItem!
+    @IBAction func onFilterClick(_ sender: Any) {
         
     }
 }

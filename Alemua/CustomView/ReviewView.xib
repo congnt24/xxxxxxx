@@ -51,11 +51,11 @@
                             </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owC-X9-ZNr" customClass="StarView" customModule="Alemua" customModuleProvider="target">
-                            <rect key="frame" x="114" y="48" width="100" height="20"/>
+                            <rect key="frame" x="114" y="48" width="100" height="18"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="AuT-Ll-gf9"/>
-                                <constraint firstAttribute="height" constant="20" id="juB-bs-Sgb"/>
+                                <constraint firstAttribute="height" constant="18" id="juB-bs-Sgb"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="image" keyPath="fillStarImage" value="ic_star_orange"/>
@@ -66,7 +66,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đánh giá: 4,1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeI-7l-02b">
-                            <rect key="frame" x="122.5" y="74" width="83" height="25"/>
+                            <rect key="frame" x="122.5" y="72" width="83" height="27"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>

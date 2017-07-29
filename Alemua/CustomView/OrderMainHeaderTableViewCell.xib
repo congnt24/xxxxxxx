@@ -11,41 +11,66 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="OrderMainHeaderTableViewCell" customModule="Alemua" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="OrderMainHeaderTableViewCell" customModule="Alemua" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="96.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u7a-SM-s7f">
-                        <rect key="frame" x="8" y="0.0" width="304" height="43.5"/>
+                        <rect key="frame" x="8" y="24.5" width="304" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-dV-Ks2">
-                                <rect key="frame" x="0.0" y="0.0" width="206" height="43.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="196" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xem thêm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-Es-KqY">
-                                <rect key="frame" x="214" y="0.0" width="66" height="43.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.01043901406" green="0.54090380670000004" blue="0.84174031019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_xemthem" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-zq-VIZ">
-                                <rect key="frame" x="288" y="0.0" width="16" height="43.5"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="go8-rP-ub0">
+                                <rect key="frame" x="204" y="0.0" width="100" height="48"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEh-PF-rTX">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xem thêm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-Es-KqY">
+                                                <rect key="frame" x="0.0" y="0.0" width="84" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.01043901406" green="0.54090380670000004" blue="0.84174031019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="ic_xemthem" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-zq-VIZ">
+                                                <rect key="frame" x="84" y="0.0" width="16" height="48"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="GEh-PF-rTX" secondAttribute="bottom" id="Hq3-fC-U7u"/>
+                                    <constraint firstItem="GEh-PF-rTX" firstAttribute="leading" secondItem="go8-rP-ub0" secondAttribute="leading" id="L5F-MU-Qak"/>
+                                    <constraint firstAttribute="trailing" secondItem="GEh-PF-rTX" secondAttribute="trailing" id="u1N-ZL-KND"/>
+                                    <constraint firstItem="GEh-PF-rTX" firstAttribute="top" secondItem="go8-rP-ub0" secondAttribute="top" id="u6c-iX-DAn"/>
+                                    <constraint firstAttribute="width" constant="100" id="v6L-ua-Wnu"/>
+                                </constraints>
+                            </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="PdX-Ci-Ebh"/>
+                        </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" red="0.94901960780000005" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="u7a-SM-s7f" secondAttribute="trailing" constant="8" id="0Zq-d4-T49"/>
-                    <constraint firstAttribute="bottom" secondItem="u7a-SM-s7f" secondAttribute="bottom" id="gUC-hH-7C4"/>
+                    <constraint firstItem="u7a-SM-s7f" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Axx-Hj-HF6"/>
                     <constraint firstItem="u7a-SM-s7f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mPW-Cy-txG"/>
-                    <constraint firstItem="u7a-SM-s7f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uzb-sB-pLb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="title" destination="qa4-dV-Ks2" id="6SQ-Id-ZKw"/>
+                <outlet property="xemthem" destination="go8-rP-ub0" id="ONs-14-TsW"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="78.5"/>
         </tableViewCell>
     </objects>
     <resources>

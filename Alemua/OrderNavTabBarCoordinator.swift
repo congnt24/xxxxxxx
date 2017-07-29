@@ -10,11 +10,6 @@ import Foundation
 import AwesomeMVVM
 import UIKit
 
-protocol NavTabBarCoordinatorDelegate {
-    func showLoginScreen()
-    func showChatScreen()
-}
-
 class OrderNavTabBarCoordinator: Coordinator {
     public static var sharedInstance: OrderNavTabBarCoordinator!
     
@@ -26,12 +21,5 @@ class OrderNavTabBarCoordinator: Coordinator {
     }
 }
 
-extension OrderNavTabBarCoordinator: NavTabBarCoordinatorDelegate {
-    func showLoginScreen(){
-        LoginCoordinator(navigation).start(nil)
-    }
-    func showChatScreen(){
-        ChatCoordinator(navigation).start(nil)
-    }
-}
+
 

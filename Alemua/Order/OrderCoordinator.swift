@@ -73,4 +73,9 @@ extension OrderCoordinator {
         navigation?.popViewController(animated: false)
         navigation?.popViewController(animated: false)
     }
+    
+    func showSanPhamHot(){
+        let view: OrderMain2ViewController = mainStoryboard.instantiateViewController(withClass: OrderMain2ViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
 }

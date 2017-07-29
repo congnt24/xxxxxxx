@@ -25,8 +25,7 @@ class AwesomeTextField2: AwesomeTextField {
             btn.setTitleColor(rightButtonTintColor, for: .normal)
             addSubview(btn)
             btn.frame = CGRect(x: width - height, y: 0, width: height, height: height)
-            //            self.rightView = btn
-            
+            rightViewMode = .always
             let tab = UITapGestureRecognizer(target: self, action: #selector(onClear))
             btn.addGestureRecognizer(tab)
         }
@@ -44,7 +43,7 @@ class AwesomeTextField2: AwesomeTextField {
             addSubview(btn)
             btn.frame = CGRect(x: width - height, y: 0, width: height, height: height)
 //            self.rightView = btn
-            
+            rightViewMode = .always
             let tab = UITapGestureRecognizer(target: self, action: #selector(onClear))
             btn.addGestureRecognizer(tab)
         }

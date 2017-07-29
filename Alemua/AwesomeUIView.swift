@@ -8,7 +8,7 @@
 
 import UIKit
 @IBDesignable
-class AwesomeUIView: UIView {
+open class AwesomeUIView: UIView {
     // MARK: - bottom line
     @IBInspectable var bottomLineWidth: CGFloat = 0 {
         didSet {

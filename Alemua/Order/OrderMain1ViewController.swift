@@ -12,31 +12,41 @@ import RxCocoa
 import RxDataSources
 import AwesomeMVVM
 
-class OrderMain1ViewController: BaseViewController {
+class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     let bag = DisposeBag()
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionOfOrder>()
 
     override func bindToViewModel() {
+        tableView.delegate = self
         let nibName = "DonHangTableViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
+        let headerNib = UINib(nibName: "OrderMainHeaderTableViewCell", bundle: nil)
+        tableView.register(headerNib, forCellReuseIdentifier: "OrderMainHeaderTableViewCell")
+        tableView.register(UINib(nibName: "OrderMainOnlineTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderMainOnlineTableViewCell")
+        
+        
+        
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-            OrderCoordinator.sharedInstance.showTaoDonHang()
-        }).addDisposableTo(bag)
         configureDataSource()
     }
 
     func configureDataSource() {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfOrder>()
         dataSource.configureCell = { ds, tv, ip, model in
-            
-            
-            let cell = tv.dequeueReusableCell(withIdentifier: "DonHangTableViewCell") as! DonHangTableViewCell
-
-            return cell
+            if ip.section == 0 {
+                let cell = tv.dequeueReusableCell(withIdentifier: "OrderMainOnlineTableViewCell") as! OrderMainOnlineTableViewCell
+                
+                return cell
+            }else{
+                let cell = tv.dequeueReusableCell(withIdentifier: "DonHangTableViewCell") as! DonHangTableViewCell
+                
+                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSelectItem)))
+                
+                return cell
+            }
         }
         dataSource.canEditRowAtIndexPath = { (ds, ip) in
             return false
@@ -44,15 +54,36 @@ class OrderMain1ViewController: BaseViewController {
         dataSource.titleForHeaderInSection = { ds, sectionIndex in
             return ds[sectionIndex].header
         }
-        
+
         Observable.from([onlineData(), hotData(), giamgiaData()]).bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(bag)
-        
-        
-//        fetchData().flatMap({ // (todo) -> Observable<[SectionModel<String, [TodoModel]>]> in
-//            Observable.just([SectionOfOrder(header: "Hot", items: $0)])
-//        }).bind(to: tableView.rx.items(dataSource: dataSource))
-//            .addDisposableTo(bag)
+
+        //delegate
+    }
+    
+    func onSelectItem(){
+        OrderCoordinator.sharedInstance.showTaoDonHang()
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderMainHeaderTableViewCell") as! OrderMainHeaderTableViewCell
+        switch section {
+        case 0:
+            cell.xemthem.isHidden = true
+            break
+        default:
+            cell.xemthem.isHidden = false
+            break
+        }
+        cell.title.text = dataSource[section].header
+        cell.onXemThemDelegate = {
+            print("Header clicked")
+            OrderCoordinator.sharedInstance.showSanPhamHot()
+        }
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 48
     }
 
 }

@@ -15,7 +15,8 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var input: AwesomeTextField2!
     @IBOutlet weak var webView: UIWebView!
-    
+    @IBOutlet weak var btnClear: UIButton!
+
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,20 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
         input.rx.controlEvent(.editingDidEndOnExit).subscribe(onNext: { () in
             self.openPage()
         }).addDisposableTo(bag)
-        
-        input.onClearDelegate = {
-            self.input.text = ""
-        }
+
+        input.rx.text.subscribe(onNext: { (text) in
+            if text == "" {
+                self.btnClear.isHidden = true
+            } else {
+                self.btnClear.isHidden = false
+
+            }
+        }).addDisposableTo(bag)
+
         // Do any additional setup after loading the view.
     }
 
-    func openPage(){
+    func openPage() {
         if let text = self.input.text {
             //format http
             let strUrl = text.hasPrefix("http://") || text.hasPrefix("https://") ? text : "http://\(text)"
@@ -42,10 +49,13 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
             }
         }
     }
+    @IBAction func onClear(_ sender: Any) {
+        self.input.text = ""
+    }
 
     @IBAction func onCancel(_ sender: Any) {
         navigationController?.popViewController()
-        
+
     }
 
 }

@@ -15,8 +15,6 @@ protocol MessageReceivedDelegate: class {
 }
 
 class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
-    
-    var chatCoor: ChatCoordinator!
     private var messages = [JSQMessage]()
     private var isOutGoing = true;
     

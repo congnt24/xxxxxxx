@@ -17,29 +17,17 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Kiểm tra")
     }
 
     @IBAction func onGuiMuaHang(_ sender: Any) {
-        OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
+        if Prefs.isUserLogged {
+            OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
+        } else {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+        }
     }
-    
+
 
 }

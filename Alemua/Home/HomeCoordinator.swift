@@ -17,7 +17,9 @@ protocol HomeCoordinatorDelegate {
 }
 
 class HomeCoordinator: Coordinator {
+    public static var sharedInstance: HomeCoordinator!
     override func start(_ data: Any?) {
+        HomeCoordinator.sharedInstance = self
         let home: HomeViewController = mainStoryboard.instantiateViewController(withClass: HomeViewController.self)
         home.coordinator = self
         navigation?.popToRootViewController(animated: false)
@@ -26,10 +28,19 @@ class HomeCoordinator: Coordinator {
 }
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
-    func showDeliveryScreen(){
+    func showDeliveryScreen() {
         DeliveryNavTabBarCoordinator(navigation).start(nil)
     }
-    func showOrderScreen(){
+    func showOrderScreen() {
         OrderNavTabBarCoordinator(navigation).start(nil)
+    }
+}
+
+extension HomeCoordinator {
+    func showLoginScreen() {
+        LoginCoordinator(navigation).start(nil)
+    }
+    func showChatScreen() {
+        ChatCoordinator(navigation).start(nil)
     }
 }

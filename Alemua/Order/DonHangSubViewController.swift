@@ -8,15 +8,26 @@
 
 import UIKit
 import XLPagerTabStrip
+import AwesomeMVVM
 
 class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var btnDeliveryBaoGia: AwesomeCloseButton!
+    
+    @IBOutlet weak var lbMuaTu: AwesomeTextField!
+    @IBOutlet weak var lbGiaoDen: AwesomeTextField!
+    @IBOutlet weak var lbNgay: AwesomeTextField!
+    @IBOutlet weak var lbGia: AwesomeTextField!
+    @IBOutlet weak var lbMota: AwesomeTextField!
+    @IBOutlet weak var lbLuaChon: AwesomeTextField!
+    
+    
+    
     var itemInfo: IndicatorInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+
     }
     override func viewWillAppear(_ animated: Bool) {
         if HomeViewController.homeType == .order {
@@ -25,6 +36,10 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
             btnDeliveryBaoGia.isHidden = false
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         guard itemInfo != nil else {
@@ -32,12 +47,17 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
         }
         return itemInfo
     }
-    
+
     @IBAction func onClickDeliveryBaoGia(_ sender: Any) {
         //TODO: Check if not logged -> Login else  if chọn chỉ mua khi có giảm giá -> Dialog -> DeliveryBaoGiaFinalViewController
 //        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
-        DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal()
-        
+
+        if Prefs.isUserLogged {
+            DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal()
+        } else {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+        }
+
     }
-    
+
 }

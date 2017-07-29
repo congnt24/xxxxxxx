@@ -36,6 +36,19 @@ class NotifyViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //TODO: Check if user is logged
+        if !Prefs.isUserLogged {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+            return
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
     //Interact API
     func fetchData() -> Observable<[String]> {
         return Observable.just((0..<20).map { "\($0)" })

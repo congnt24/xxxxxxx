@@ -24,5 +24,18 @@ class AccountSettingViewController: BaseViewController {
     override func responseFromViewModel() {
         
     }
+    
+    @IBAction func onAccountInfo(_ sender: Any) {
+    }
+    @IBAction func onHelp(_ sender: Any) {
+    }
+    
+    
+    @IBAction func onAppInfo(_ sender: Any) {
+    }
+    @IBAction func onLogout(_ sender: Any) {
+        Prefs.isUserLogged = false
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 

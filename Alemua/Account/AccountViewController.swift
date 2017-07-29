@@ -31,6 +31,17 @@ class AccountViewController: BaseViewController {
             self.uiMoreDetails.toggleHeight()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //TODO: Check if user is logged
+        if !Prefs.isUserLogged {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+            return
+        }
+        
+    }
+    
+    
 
     func toggleNotify(_ sender: UITapGestureRecognizer) {
         uiSwitchNotify.isOn = !uiSwitchNotify.isOn

@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="1os-mL-wmA">
             <objects>
-                <viewController storyboardIdentifier="login" id="Pb7-8a-Yx1" customClass="LoginViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Pb7-8a-Yx1" customClass="LoginViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RjU-Kl-TYm"/>
                         <viewControllerLayoutGuide type="bottom" id="BXK-hj-mOQ"/>
@@ -31,6 +31,9 @@
                                 <state key="normal" title="Bỏ qua">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onIgnore:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="r9E-N6-k05"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iO4-Sl-KSR">
                                 <rect key="frame" x="48" y="355" width="279" height="150"/>
@@ -47,6 +50,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFacebook:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="gBL-t9-JcH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fB-6c-RZ2">
                                         <rect key="frame" x="0.0" y="53.5" width="279" height="43"/>
@@ -60,6 +66,9 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onGoogle:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="3G5-9k-Z46"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apH-M1-2d9">
                                         <rect key="frame" x="0.0" y="106.5" width="279" height="43.5"/>
@@ -78,6 +87,9 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onPhone:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="WUc-CI-ct0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

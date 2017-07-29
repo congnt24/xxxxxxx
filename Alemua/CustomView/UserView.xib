@@ -38,7 +38,7 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Y0a-c1-QYu">
-                            <rect key="frame" x="69" y="4" width="251" height="56.5"/>
+                            <rect key="frame" x="69" y="5" width="251" height="54.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-Yz-sNf">
                                     <rect key="frame" x="0.0" y="0.0" width="135" height="36.5"/>
@@ -65,11 +65,11 @@
                                         </imageView>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OX-uY-d4H">
-                                    <rect key="frame" x="0.0" y="36.5" width="251" height="20"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1OX-uY-d4H">
+                                    <rect key="frame" x="0.0" y="36.5" width="251" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-IL-rdd" customClass="StarView" customModule="Alemua" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="bFf-M7-BK2"/>
                                             </constraints>
@@ -85,14 +85,14 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF8-7Z-TKk">
-                                            <rect key="frame" x="100" y="0.0" width="151" height="20"/>
+                                            <rect key="frame" x="108" y="0.0" width="143" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="3Kz-ng-FeJ"/>
+                                        <constraint firstAttribute="height" constant="18" id="3Kz-ng-FeJ"/>
                                         <constraint firstItem="Uuc-IL-rdd" firstAttribute="leading" secondItem="1OX-uY-d4H" secondAttribute="leading" id="5jl-l1-ea9"/>
                                         <constraint firstItem="Uuc-IL-rdd" firstAttribute="top" secondItem="1OX-uY-d4H" secondAttribute="top" id="5uZ-b3-iuh"/>
                                         <constraint firstAttribute="bottom" secondItem="Uuc-IL-rdd" secondAttribute="bottom" id="Mo2-mz-JQw"/>

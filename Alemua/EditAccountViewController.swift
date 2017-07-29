@@ -13,22 +13,19 @@ import RxCocoa
 
 class EditAccountViewController: BaseViewController {
     @IBOutlet weak var uiMoreDetails: AwesomeToggleViewByHeight!
-    
+
+    @IBOutlet weak var userView: UserView!
     var coordinator: AccountCoordinator!
     override func bindToViewModel() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-    }
-    
-    func handleTap(_ sender: UITapGestureRecognizer) {
-        print("Hello World")
+        userView.toggleView = {
+            self.uiMoreDetails.toggleHeight()
+        }
+
+
     }
     
     override func responseFromViewModel() {
-        
-    }
-    @IBAction func onShowMoreDetails(_ sender: Any) {
-        uiMoreDetails.toggleHeight()
+
     }
 }
 

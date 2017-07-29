@@ -28,7 +28,13 @@ class StarView: UIStackView {
     
     
     override public func awakeFromNib() {
+        spacing = 2.5
         setupStar()
+        setupEvent()
+    }
+    
+    func setupEvent(){
+        
     }
 
     func setupStar() {

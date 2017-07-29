@@ -64,20 +64,20 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Gia hàng đúng hẹn, tác phong làm việc tốt&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7E-Jj-C2S">
-                            <rect key="frame" x="0.0" y="42" width="302.5" height="12"/>
+                            <rect key="frame" x="0.0" y="42" width="302.5" height="14"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QWI-Dg-O48">
-                            <rect key="frame" x="0.0" y="64" width="150" height="20"/>
+                            <rect key="frame" x="0.0" y="66" width="146" height="18"/>
                             <subviews>
                                 <view contentMode="scaleToFill" horizontalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="bcp-MY-vsg">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RV-Ib-nht">
-                                            <rect key="frame" x="9" y="0.0" width="22" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="8.5" y="0.5" width="19.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -85,7 +85,7 @@
                                     <color key="backgroundColor" red="0.96528512239999997" green="0.74360919000000003" blue="0.2084294558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="7RV-Ib-nht" firstAttribute="centerX" secondItem="bcp-MY-vsg" secondAttribute="centerX" id="8rO-hS-DXX"/>
-                                        <constraint firstAttribute="width" constant="40" id="pc7-yh-6o6"/>
+                                        <constraint firstAttribute="width" constant="36" id="pc7-yh-6o6"/>
                                         <constraint firstItem="7RV-Ib-nht" firstAttribute="centerY" secondItem="bcp-MY-vsg" secondAttribute="centerY" id="vI8-TU-UyJ"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -95,7 +95,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eln-rv-fqq" customClass="StarView" customModule="Alemua" customModuleProvider="target">
-                                    <rect key="frame" x="50" y="0.0" width="100" height="20"/>
+                                    <rect key="frame" x="46" y="0.0" width="100" height="18"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="f7J-j3-WnX"/>
@@ -110,7 +110,7 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="tIW-h9-nll"/>
+                                <constraint firstAttribute="height" constant="18" id="tIW-h9-nll"/>
                             </constraints>
                         </stackView>
                     </subviews>

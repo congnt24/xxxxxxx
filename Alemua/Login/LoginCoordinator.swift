@@ -11,5 +11,9 @@ import AwesomeMVVM
 import UIKit
 
 class LoginCoordinator: Coordinator {
-    
+    override func start(_ data: Any?) {
+        let login: LoginViewController = getLoginStoryboard().instantiateViewController(withClass: LoginViewController.self)
+        //        chat.chatCoor = self
+        navigation?.pushViewController(login)
+    }
 }

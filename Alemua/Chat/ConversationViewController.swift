@@ -34,7 +34,7 @@ class ConversationViewController: BaseViewController {
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
 //            self.chatCoor.showChatScreen()
             //TODO: IF ORDER / DELIVERY
-            OrderNavTabBarCoordinator.sharedInstance.showChatScreen()
+            HomeCoordinator.sharedInstance.showChatScreen()
         }).addDisposableTo(bag)
 
         
@@ -43,6 +43,18 @@ class ConversationViewController: BaseViewController {
     }
     override func responseFromViewModel() {
         // Simple view controller -> Don't need viewmodel
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //TODO: Check if user is logged
+        if !Prefs.isUserLogged {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+            return
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
     }
 
 

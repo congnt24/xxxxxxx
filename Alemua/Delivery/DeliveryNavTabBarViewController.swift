@@ -15,5 +15,10 @@ class DeliveryNavTabBarViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // UITabBarDelegate
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("Selected item")
+    }
 
 }

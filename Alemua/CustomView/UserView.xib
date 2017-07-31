@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,9 +38,9 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Y0a-c1-QYu">
-                            <rect key="frame" x="69" y="5" width="251" height="54.5"/>
+                            <rect key="frame" x="69" y="6.5" width="251" height="51.5"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-Yz-sNf">
+                                <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Adw-Yz-sNf">
                                     <rect key="frame" x="0.0" y="0.0" width="135" height="36.5"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NTJ-w2-qrb">
@@ -66,12 +66,13 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1OX-uY-d4H">
-                                    <rect key="frame" x="0.0" y="36.5" width="251" height="18"/>
+                                    <rect key="frame" x="0.0" y="36.5" width="251" height="15"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-IL-rdd" customClass="StarView" customModule="Alemua" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="18"/>
+                                        <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQ9-Mw-FiA" customClass="StarView" customModule="Alemua" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="15"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="bFf-M7-BK2"/>
+                                                <constraint firstAttribute="width" constant="85" id="RBN-yW-ijF"/>
+                                                <constraint firstAttribute="height" constant="15" id="gHQ-U6-vGZ"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="unStarImage" value="ic_star_grey"/>
@@ -79,23 +80,17 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="number">
                                                     <integer key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                    <real key="value" value="1"/>
-                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                        </view>
+                                        </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF8-7Z-TKk">
-                                            <rect key="frame" x="108" y="0.0" width="143" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="93" y="0.0" width="158" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="18" id="3Kz-ng-FeJ"/>
-                                        <constraint firstItem="Uuc-IL-rdd" firstAttribute="leading" secondItem="1OX-uY-d4H" secondAttribute="leading" id="5jl-l1-ea9"/>
-                                        <constraint firstItem="Uuc-IL-rdd" firstAttribute="top" secondItem="1OX-uY-d4H" secondAttribute="top" id="5uZ-b3-iuh"/>
-                                        <constraint firstAttribute="bottom" secondItem="Uuc-IL-rdd" secondAttribute="bottom" id="Mo2-mz-JQw"/>
+                                        <constraint firstAttribute="height" constant="15" id="3Kz-ng-FeJ"/>
                                     </constraints>
                                 </stackView>
                             </subviews>

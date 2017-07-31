@@ -71,6 +71,10 @@ extension DeliveryCoordinator {
         let view: DeliveryBaoGiaFinalViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryBaoGiaFinalViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
+    func showFilter(){
+        let view: DeliveryFilterViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryFilterViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
     
 }
 

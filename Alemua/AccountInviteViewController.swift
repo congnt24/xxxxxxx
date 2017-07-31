@@ -14,16 +14,14 @@ import RxCocoa
 class AccountInviteViewController: BaseViewController {
     var coordinator: AccountCoordinator!
     override func bindToViewModel() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
     }
     
-    func handleTap(_ sender: UITapGestureRecognizer) {
-        print("Hello World")
-    }
     
     override func responseFromViewModel() {
         
+    }
+    
+    @IBAction func onInvite(_ sender: Any) {
     }
 }
 

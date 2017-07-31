@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,19 +64,19 @@
                             </subviews>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Gia hàng đúng hẹn, tác phong làm việc tốt&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7E-Jj-C2S">
-                            <rect key="frame" x="0.0" y="42" width="267.5" height="16"/>
+                            <rect key="frame" x="0.0" y="42" width="267.5" height="19"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QWI-Dg-O48">
-                            <rect key="frame" x="0.0" y="68" width="146" height="18"/>
+                            <rect key="frame" x="0.0" y="71" width="131" height="15"/>
                             <subviews>
                                 <view contentMode="scaleToFill" horizontalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="bcp-MY-vsg">
-                                    <rect key="frame" x="0.0" y="0.0" width="36" height="18"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="15"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RV-Ib-nht">
-                                            <rect key="frame" x="8.5" y="0.5" width="19.5" height="18"/>
+                                            <rect key="frame" x="8.5" y="-1" width="19.5" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -95,10 +95,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eln-rv-fqq" customClass="StarView" customModule="Alemua" customModuleProvider="target">
-                                    <rect key="frame" x="46" y="0.0" width="100" height="18"/>
+                                    <rect key="frame" x="46" y="0.0" width="85" height="15"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="f7J-j3-WnX"/>
+                                        <constraint firstAttribute="width" constant="85" id="f7J-j3-WnX"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="number">
@@ -110,7 +110,7 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="tIW-h9-nll"/>
+                                <constraint firstAttribute="height" constant="15" id="tIW-h9-nll"/>
                             </constraints>
                         </stackView>
                     </subviews>

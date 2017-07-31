@@ -64,6 +64,8 @@
 		023B39E01F2B4EF200E53A6D /* DeliveryAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */; };
 		023B39E21F2B59BB00E53A6D /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023B39E11F2B59BB00E53A6D /* StepperView.swift */; };
 		023B39E41F2B59CA00E53A6D /* StepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023B39E31F2B59CA00E53A6D /* StepperView.xib */; };
+		023E30981F2DD3CA00D16D04 /* FirebaseAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */; };
+		023E309A1F2DD4D600D16D04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023E30991F2DD4D600D16D04 /* GoogleService-Info.plist */; };
 		023F48861F299C0C00B489D7 /* OrderMain1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
 		02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */; };
@@ -194,6 +196,8 @@
 		023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryAccountViewController.swift; path = Account/DeliveryAccountViewController.swift; sourceTree = "<group>"; };
 		023B39E11F2B59BB00E53A6D /* StepperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StepperView.swift; path = CustomView/StepperView.swift; sourceTree = "<group>"; };
 		023B39E31F2B59CA00E53A6D /* StepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StepperView.xib; path = CustomView/StepperView.xib; sourceTree = "<group>"; };
+		023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseAuthHelper.swift; path = Helper/FirebaseAuthHelper.swift; sourceTree = "<group>"; };
+		023E30991F2DD4D600D16D04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain1ViewController.swift; path = Order/OrderMain1ViewController.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
 		02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AwesomeTextField2.swift; path = CustomView/AwesomeTextField2.swift; sourceTree = "<group>"; };
@@ -398,6 +402,14 @@
 			name = SubViewController;
 			sourceTree = "<group>";
 		};
+		023E30961F2DD3AF00D16D04 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		02525C3C1F2B8AA300EBCBA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +452,8 @@
 		027B012F1F1E621600D576CE /* Alemua */ = {
 			isa = PBXGroup;
 			children = (
+				02F775211F1F390300556BED /* Service */,
+				023E30961F2DD3AF00D16D04 /* Helper */,
 				029B090E1F207C990036F01F /* Base */,
 				02F775341F1F39BE00556BED /* CustomView */,
 				02F775101F1F38E900556BED /* Home */,
@@ -449,11 +463,11 @@
 				02BF72771F23683500F1F4BC /* Account */,
 				02F7751A1F1F390300556BED /* Login */,
 				02F775201F1F390300556BED /* Notification */,
-				02F775211F1F390300556BED /* Service */,
 				02F775241F1F390300556BED /* View */,
 				027B01301F1E621600D576CE /* AppDelegate.swift */,
 				027B01371F1E621600D576CE /* Assets.xcassets */,
 				027B013C1F1E621600D576CE /* Info.plist */,
+				023E30991F2DD4D600D16D04 /* GoogleService-Info.plist */,
 				027B014F1F1EF14A00D576CE /* AppCoordinator.swift */,
 			);
 			path = Alemua;
@@ -740,6 +754,7 @@
 				023B39DE1F2B43EE00E53A6D /* KhachHangTableViewCell.xib in Resources */,
 				021399611F286AC700BB0642 /* ItemView.xib in Resources */,
 				02525C421F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib in Resources */,
+				023E309A1F2DD4D600D16D04 /* GoogleService-Info.plist in Resources */,
 				022D72BB1F27A84000CC548E /* RateDetail.xib in Resources */,
 				02525C481F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib in Resources */,
 				027B01381F1E621600D576CE /* Assets.xcassets in Resources */,
@@ -813,6 +828,7 @@
 				0223C7EB1F29B9E0005949C9 /* ReviewView.swift in Sources */,
 				02F775501F1F731500556BED /* ChatWrapperViewController.swift in Sources */,
 				022D72B11F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift in Sources */,
+				023E30981F2DD3CA00D16D04 /* FirebaseAuthHelper.swift in Sources */,
 				023B39D81F2B1A7B00E53A6D /* DeliveryDialogBaoGiaViewController.swift in Sources */,
 				022D729F1F2793DB00CC548E /* OrderMainCoordinator.swift in Sources */,
 				021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */,

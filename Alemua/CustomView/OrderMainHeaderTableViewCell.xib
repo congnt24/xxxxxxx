@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,25 +22,28 @@
                         <rect key="frame" x="8" y="24.5" width="304" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-dV-Ks2">
-                                <rect key="frame" x="0.0" y="0.0" width="196" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="go8-rP-ub0">
-                                <rect key="frame" x="204" y="0.0" width="100" height="48"/>
+                                <rect key="frame" x="214" y="0.0" width="90" height="48"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEh-PF-rTX">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xem thêm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-Es-KqY">
-                                                <rect key="frame" x="0.0" y="0.0" width="84" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.01043901406" green="0.54090380670000004" blue="0.84174031019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="ic_xemthem" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-zq-VIZ">
-                                                <rect key="frame" x="84" y="0.0" width="16" height="48"/>
+                                                <rect key="frame" x="76" y="0.0" width="14" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="cMG-gc-v70"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -50,7 +53,7 @@
                                     <constraint firstItem="GEh-PF-rTX" firstAttribute="leading" secondItem="go8-rP-ub0" secondAttribute="leading" id="L5F-MU-Qak"/>
                                     <constraint firstAttribute="trailing" secondItem="GEh-PF-rTX" secondAttribute="trailing" id="u1N-ZL-KND"/>
                                     <constraint firstItem="GEh-PF-rTX" firstAttribute="top" secondItem="go8-rP-ub0" secondAttribute="top" id="u6c-iX-DAn"/>
-                                    <constraint firstAttribute="width" constant="100" id="v6L-ua-Wnu"/>
+                                    <constraint firstAttribute="width" constant="90" id="v6L-ua-Wnu"/>
                                 </constraints>
                             </view>
                         </subviews>

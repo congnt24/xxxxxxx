@@ -7,32 +7,25 @@
 //
 
 import UIKit
+import AwesomeMVVM
 
 class DaMuaViewController: UIViewController {
+    @IBOutlet weak var itemView: ItemView!
 
+    @IBOutlet weak var tfMuatu: AwesomeTextField!
+    @IBOutlet weak var tfGiaoden: AwesomeTextField!
+    @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var uiMoreDetail: RateDetail!
+    @IBOutlet weak var review1: ReviewView!
+    @IBOutlet weak var review2: ReviewView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
     @IBAction func onMoreDetail(_ sender: Any) {
         uiMoreDetail.toggleHeight()
     }

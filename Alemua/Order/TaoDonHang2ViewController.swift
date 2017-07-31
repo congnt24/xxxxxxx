@@ -8,12 +8,20 @@
 
 import UIKit
 import XLPagerTabStrip
+import AwesomeMVVM
 
 class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
+    @IBOutlet weak var itemView: ItemView!
+    @IBOutlet weak var tfMuaTu: AwesomeTextField!
+    @IBOutlet weak var tfGiaoDen: AwesomeTextField!
+    @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGia: AwesomeTextField!
+    var taodonhangRequest: TaoDonHangRequest!
 
     @IBOutlet weak var uiRateDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
+//        taodonhangRequest = (parent as! TaoDonHangViewController).taodonhangRequest
 
         // Do any additional setup after loading the view.
     }
@@ -31,4 +39,13 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     }
 
 
+    @IBAction func onNext(_ sender: Any) {
+        TaoDonHangViewController.sharedInstance.moveToViewController(at: 2)
+    }
+    
+    func setData(){
+        taodonhangRequest.buyFrom = tfMuaTu.text
+        taodonhangRequest.deliveryTo = tfGiaoDen.text
+        taodonhangRequest.deliveryDate = tfNgay.text
+    }
 }

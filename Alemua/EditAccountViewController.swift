@@ -14,6 +14,10 @@ import RxCocoa
 class EditAccountViewController: BaseViewController {
     @IBOutlet weak var uiMoreDetails: AwesomeToggleViewByHeight!
 
+    @IBOutlet weak var tfTen: AwesomeTextField!
+    @IBOutlet weak var tfDiachi: AwesomeTextField!
+    @IBOutlet weak var tfEmail: AwesomeTextField!
+    @IBOutlet weak var tfGioithieu: AwesomeTextField!
     @IBOutlet weak var userView: UserView!
     var coordinator: AccountCoordinator!
     override func bindToViewModel() {
@@ -26,6 +30,8 @@ class EditAccountViewController: BaseViewController {
     
     override func responseFromViewModel() {
 
+    }
+    @IBAction func onDone(_ sender: Any) {
     }
 }
 

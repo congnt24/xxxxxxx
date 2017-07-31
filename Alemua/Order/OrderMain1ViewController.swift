@@ -22,7 +22,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
 
     override func bindToViewModel() {
         tableView.delegate = self
-        let nibName = "DonHangTableViewCell"
+        let nibName = "OrderViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
         let headerNib = UINib(nibName: "OrderMainHeaderTableViewCell", bundle: nil)
@@ -57,7 +57,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
                 
                 return cell
             }else{
-                let cell = tv.dequeueReusableCell(withIdentifier: "DonHangTableViewCell") as! DonHangTableViewCell
+                let cell = tv.dequeueReusableCell(withIdentifier: "OrderViewCell") as! OrderViewCell
                 
                 cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSelectItem)))
                 

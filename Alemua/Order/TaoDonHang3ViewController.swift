@@ -8,12 +8,18 @@
 
 import UIKit
 import XLPagerTabStrip
+import AwesomeMVVM
 
 class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
-
+    @IBOutlet weak var tfMuaTu: AwesomeTextField!
+    @IBOutlet weak var tfGiaoDen: AwesomeTextField!
+    @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfNote: AwesomeTextField!
+    var taodonhangRequest: TaoDonHangRequest!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //taodonhangRequest = (parent as! TaoDonHangViewController).taodonhangRequest
         // Do any additional setup after loading the view.
     }
 

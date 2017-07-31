@@ -83,4 +83,9 @@ extension OrderCoordinator {
         view.sectionName = section
         navigation?.pushViewController(view, animated: true)
     }
+    
+    func showFilter(){
+        let view: OrderFilterViewController = getDonHangStoryboard().instantiateViewController(withClass: OrderFilterViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
 }

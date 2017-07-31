@@ -14,6 +14,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var btnDeliveryBaoGia: AwesomeCloseButton!
     
+    @IBOutlet weak var itemView: ItemView!
     @IBOutlet weak var lbMuaTu: AwesomeTextField!
     @IBOutlet weak var lbGiaoDen: AwesomeTextField!
     @IBOutlet weak var lbNgay: AwesomeTextField!

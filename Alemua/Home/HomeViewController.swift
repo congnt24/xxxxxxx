@@ -37,8 +37,4 @@ class HomeViewController: BaseViewController {
         HomeViewController.homeType = .order
     }
 
-    @IBAction func onClickBoQua(_ sender: Any) {
-        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "aaa")
-        
-    }
 }

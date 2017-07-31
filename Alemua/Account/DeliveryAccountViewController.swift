@@ -18,6 +18,12 @@ class DeliveryAccountViewController: BaseViewController {
     @IBOutlet weak var uiSetting: UIStackView!
     @IBOutlet weak var uiInviteFriend: UIStackView!
     
+    @IBOutlet weak var danhsachKH: UIStackView!
+    @IBOutlet weak var donhangDunghan: UIStackView!
+    @IBOutlet weak var donhangTruochan: UIStackView!
+    @IBOutlet weak var donhangGiaocham: UIStackView!
+    @IBOutlet weak var donhangBihuy: UIStackView!
+    
     @IBOutlet weak var userView: UserView!
     override func bindToViewModel() {
         let tapSetting = UITapGestureRecognizer(target: self, action: #selector(self.showAccountSetting(_:)))

@@ -529,7 +529,6 @@
                     <connections>
                         <outlet property="tfDiachi" destination="SGI-m2-shx" id="3Ft-Sw-q5F"/>
                         <outlet property="tfEmail" destination="zHs-Hy-dYL" id="nsH-JY-IEE"/>
-                        <outlet property="tfGioithieu" destination="e39-HQ-i97" id="baa-W4-XoH"/>
                         <outlet property="tfTen" destination="zr3-cM-HSD" id="SpX-5y-OCy"/>
                         <outlet property="uiMoreDetails" destination="eDo-uq-HPN" id="ubO-QP-SSJ"/>
                         <outlet property="userView" destination="R6t-hc-wKH" id="UaI-Li-5n4"/>

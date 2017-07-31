@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aKy-A9-bII">
-                        <rect key="frame" x="8" y="0.0" width="304" height="70.5"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="70.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="q4A-HA-qCX">
                                 <rect key="frame" x="0.0" y="3.5" width="63.5" height="64"/>
@@ -29,20 +29,20 @@
                                     <constraint firstAttribute="width" secondItem="q4A-HA-qCX" secondAttribute="height" multiplier="1:1" id="grF-Ee-EgO"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ys2-I2-1xf">
-                                <rect key="frame" x="71.5" y="8" width="216.5" height="54.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ys2-I2-1xf">
+                                <rect key="frame" x="71.5" y="8" width="200.5" height="54.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-fN-aKt">
-                                        <rect key="frame" x="0.0" y="0.0" width="216.5" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200.5" height="23.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Bạn có 1 đơn hàng vào ngày 22/07/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-xA-u3a">
-                                                <rect key="frame" x="0.0" y="0.0" width="216.5" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tai nghe Beat Dr. Dre 2. Tai nghe không dây" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vym-EV-7fq">
-                                                <rect key="frame" x="0.0" y="14.5" width="216.5" height="9"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="200.5" height="9"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="20/07/2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-3g-vnw">
-                                        <rect key="frame" x="0.0" y="31.5" width="64.5" height="23"/>
+                                        <rect key="frame" x="0.0" y="31.5" width="200.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -58,14 +58,15 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="D4z-tY-aef">
-                                <rect key="frame" x="296" y="23.5" width="8" height="24"/>
+                                <rect key="frame" x="280" y="23.5" width="8" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="8" id="pni-g6-HZ4"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ys2-I2-1xf" firstAttribute="top" secondItem="aKy-A9-bII" secondAttribute="top" constant="8" id="qvr-1I-FrB"/>
+                            <constraint firstItem="ys2-I2-1xf" firstAttribute="top" secondItem="aKy-A9-bII" secondAttribute="top" constant="8" id="VqE-dF-I9c"/>
+                            <constraint firstItem="ys2-I2-1xf" firstAttribute="centerY" secondItem="aKy-A9-bII" secondAttribute="centerY" id="YVC-BB-4rr"/>
                         </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VX9-Lx-Q7E">
@@ -78,11 +79,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="VX9-Lx-Q7E" secondAttribute="trailing" id="FEV-gu-2er"/>
-                    <constraint firstAttribute="trailing" secondItem="aKy-A9-bII" secondAttribute="trailing" constant="8" id="QW6-gy-HoD"/>
+                    <constraint firstAttribute="trailing" secondItem="aKy-A9-bII" secondAttribute="trailing" constant="16" id="QW6-gy-HoD"/>
                     <constraint firstItem="VX9-Lx-Q7E" firstAttribute="top" secondItem="aKy-A9-bII" secondAttribute="bottom" id="SBb-cy-2Gf"/>
                     <constraint firstAttribute="bottom" secondItem="VX9-Lx-Q7E" secondAttribute="bottom" id="SV5-CT-W1a"/>
                     <constraint firstItem="VX9-Lx-Q7E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="U62-UW-jTw"/>
-                    <constraint firstItem="aKy-A9-bII" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fuE-LP-GxE"/>
+                    <constraint firstItem="aKy-A9-bII" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fuE-LP-GxE"/>
                     <constraint firstItem="aKy-A9-bII" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tsE-GJ-1aQ"/>
                 </constraints>
             </tableViewCellContentView>

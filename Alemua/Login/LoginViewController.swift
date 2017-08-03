@@ -10,29 +10,86 @@ import UIKit
 import AwesomeMVVM
 import RxSwift
 import RxCocoa
-import FacebookLogin
-import FacebookCore
-import Firebase
+import AccountKit
+import Moya
+import SwiftyJSON
 
-class LoginViewController: BaseViewController {
+class LoginViewController: BaseViewController, AKFViewControllerDelegate {
     var bag = DisposeBag()
+    var accountKit: AKFAccountKit!
+    let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
 
     override func bindToViewModel() {
-
+        if accountKit == nil {
+            accountKit = AKFAccountKit(responseType: .accessToken)
+        }
     }
 
     override func responseFromViewModel() {
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        if (accountKit.currentAccessToken != nil) {
+            // if the user is already logged in, go to the main screen
+            print("User already logged in go to ViewController")
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+    }
+    
+    
+    func viewController(_ viewController: UIViewController!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
+        print("Login succcess with AccessToken")
+        accountKit.requestAccount { (account, err) in
+            if let phone = account?.phoneNumber?.phoneNumber {
+                self.AleProvider.request(AleApi.login(phone_number: phone, token_firebase: accessToken.tokenString, device_type: 2)).subscribe { event in
+                    switch event {
+                    case let .next(response):
+                        let json = JSON(response.data)
+                        print(json)
+                        //TODO: Send to server
+                        Prefs.apiToken = json["result"]["ApiToken"].stringValue
+                        print(Prefs.apiToken)
+                        Prefs.isUserLogged = true
+                        self.navigationController?.popViewController()
+                    case let .error(error):
+                        print(error)
+                    default:
+                        break
+                    }
+                }.addDisposableTo(self.bag)
+            }
+        }
+        
+    }
+    func viewController(_ viewController: UIViewController!, didCompleteLoginWithAuthorizationCode code: String!, state: String!) {
+        print("Login succcess with AuthorizationCode")
+    }
+    private func viewController(_ viewController: UIViewController!, didFailWithError error: NSError!) {
+        print("We have an error \(error)")
+    }
+    func viewControllerDidCancel(_ viewController: UIViewController!) {
+        print("The user cancel the login")
+    }
+    
+    func prepareLoginViewController(_ loginViewController: AKFViewController) {
+        
+        loginViewController.delegate = self
+//        loginViewController.advancedUIManager = nil
+//        
+//        //Costumize the theme
+//        let theme:AKFTheme = AKFTheme.default()
+//        theme.headerBackgroundColor = UIColor(red: 0.325, green: 0.557, blue: 1, alpha: 1)
+//        theme.headerTextColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+//        theme.iconColor = UIColor(red: 0.325, green: 0.557, blue: 1, alpha: 1)
+//        theme.inputTextColor = UIColor(white: 0.4, alpha: 1.0)
+//        theme.statusBarStyle = .default
+//        theme.textColor = UIColor(white: 0.3, alpha: 1.0)
+//        theme.titleColor = UIColor(red: 0.247, green: 0.247, blue: 0.247, alpha: 1)
+//        loginViewController.theme = theme
     }
 
     @IBAction func onIgnore(_ sender: Any) {
@@ -40,40 +97,40 @@ class LoginViewController: BaseViewController {
         Prefs.isUserLogged = false
     }
     @IBAction func onPhone(_ sender: Any) {
-        Prefs.isUserLogged = true
-        navigationController?.popViewController()
+        let inputState: String = UUID().uuidString
+        let viewController:AKFViewController = accountKit.viewControllerForPhoneLogin(with: nil, state: inputState)  as! AKFViewController
+        viewController.enableSendToFacebook = true
+        self.prepareLoginViewController(viewController)
+        self.present(viewController as! UIViewController, animated: true, completion: nil)
+        //login with Email
+//        let inputState: String = UUID().uuidString
+//        let viewController: AKFViewController = accountKit.viewControllerForEmailLogin(withEmail: nil, state: inputState)  as! AKFViewController
+//        self.prepareLoginViewController(viewController)
+//        self.present(viewController as! UIViewController, animated: true, completion: { _ in })
+        
     }
-    @IBAction func onFacebook(_ sender: Any) {
-//        Prefs.isUserLogged = true
-//        navigationController?.popViewController()
-        facebookLogin()
-    }
-    @IBAction func onGoogle(_ sender: Any) {
-        Prefs.isUserLogged = true
-        navigationController?.popViewController()
-    }
-
-
-    func facebookLogin() {
-        let loginManager = LoginManager()
-        loginManager.logIn([.publicProfile, .email], viewController: self) { (result) in
-            switch result {
-            case .cancelled:
-                print("Cancel button click")
-            case .success(let _, let _, let token):
-                print(token.authenticationToken)
-                Prefs.isUserLogged = true
-                self.navigationController?.popViewController()
-//                TODO: AUTHEN BY FACEBOOK
-//                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-                
-                
-            default:
-                print("??")
-            }
-        }
-
-    }
+    
+//
+//    func facebookLogin() {
+//        let loginManager = LoginManager()
+//        loginManager.logIn([.publicProfile, .email], viewController: self) { (result) in
+//            switch result {
+//            case .cancelled:
+//                print("Cancel button click")
+//            case .success(let _, let _, let token):
+//                print(token.authenticationToken)
+//                Prefs.isUserLogged = true
+//                self.navigationController?.popViewController()
+////                TODO: AUTHEN BY FACEBOOK
+////                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+//                
+//                
+//            default:
+//                print("??")
+//            }
+//        }
+//
+//    }
 
 
 }

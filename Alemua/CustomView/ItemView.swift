@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
+
+struct ItemViewData {
+    var title: String
+    var imageUrl: String
+    var baogia: String
+}
 
 class ItemView: BaseCustomView {
 
@@ -24,6 +31,12 @@ class ItemView: BaseCustomView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         super.setupView(nibName: "ItemView")
+    }
+    
+    func bindData(_ itemViewData: ItemViewData){
+        title.text = itemViewData.title
+        baogia.text = itemViewData.baogia
+        image.kf.setImage(with: URL(string: itemViewData.imageUrl))
     }
 
 }

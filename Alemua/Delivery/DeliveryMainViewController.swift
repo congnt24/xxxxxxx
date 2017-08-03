@@ -10,10 +10,13 @@ import UIKit
 import AwesomeMVVM
 import RxCocoa
 import RxSwift
+import Moya
+import SwiftyJSON
 
 class DeliveryMainViewController: BaseViewController {
     let bag = DisposeBag()
     
+    let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
     @IBOutlet weak var tfLink: AwesomeTextField!
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,7 +25,9 @@ class DeliveryMainViewController: BaseViewController {
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
         
-        fetchData().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
+        fetchData().asObservable().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
+            
+            (cell as! DeliveryTableViewCell).bindData(data: item)
             (cell as! DeliveryTableViewCell).onClickBaoGia = {
                 DeliveryCoordinator.sharedInstance.showDeliveryDonHang()
             }
@@ -37,8 +42,12 @@ class DeliveryMainViewController: BaseViewController {
     
     
     //Interact API
-    func fetchData() -> Observable<[String]> {
-        return Observable.just((0..<20).map { "\($0)" })
+    func fetchData() -> Driver<[ModelQuoteData]> {
+        return AleProvider.request(AleApi.getQuoteForShipper(UserID: "0", page_number: 1)).filterSuccessfulStatusCodes()
+        .flatMap { (response) -> Observable<[ModelQuoteData]> in
+            let obj = ModelQuoteResponse(json: JSON(response.data))
+            return Observable.from(optional: obj.result)
+        }.asDriver(onErrorJustReturn: [])
     }
 
 }

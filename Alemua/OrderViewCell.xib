@@ -94,6 +94,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-MT-ayW">
                                                         <rect key="frame" x="0.0" y="0.0" width="49.5" height="15.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="Cik-Jm-BSx"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -117,7 +120,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$900" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9W-UF-zt1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$900" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9W-UF-zt1" customClass="StrikeThroughLabel" customModule="Alemua" customModuleProvider="target">
                                                 <rect key="frame" x="52" y="5.5" width="176" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -147,6 +150,14 @@
                     <constraint firstAttribute="trailing" secondItem="CGM-hB-s2I" secondAttribute="trailing" constant="8" id="unU-5o-f67"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lbGia" destination="10r-eh-DpR" id="Pb9-Ak-sCA"/>
+                <outlet property="lbGiaCu" destination="I9W-UF-zt1" id="8C5-Oc-b09"/>
+                <outlet property="lbNoiMua" destination="PcE-Em-kFa" id="YZL-O3-jum"/>
+                <outlet property="lbWebsite" destination="3WS-qB-WMm" id="m7Y-ab-Sdu"/>
+                <outlet property="productName" destination="X0X-4B-IuS" id="OoS-h3-L54"/>
+                <outlet property="productPhoto" destination="le2-k2-DQF" id="03Q-Xe-YRY"/>
+            </connections>
             <point key="canvasLocation" x="34" y="110"/>
         </tableViewCell>
     </objects>

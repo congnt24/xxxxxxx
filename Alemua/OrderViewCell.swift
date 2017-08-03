@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class OrderViewCell: UITableViewCell {
 
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPhoto: UIImageView!
+    @IBOutlet weak var lbNoiMua: UILabel!
+    @IBOutlet weak var lbWebsite: UILabel!
+    @IBOutlet weak var lbGia: UILabel!
+    @IBOutlet weak var lbGiaCu: StrikeThroughLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +28,17 @@ class OrderViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setPhoto(link: String){
+        productPhoto.kf.setImage(with: URL(string: link))
+    }
+    
+    
+    func bindData(item: ModelOrderData){
+        productName.text = item.name
+        lbNoiMua.text = item.address
+        lbWebsite.text = item.websiteUrl
+        lbGia.text = "$\(item.promotionPrice!)"
+        lbGiaCu.text = "$\(item.originPrice!)"
+        setPhoto(link: item.photo!)
+    }
 }

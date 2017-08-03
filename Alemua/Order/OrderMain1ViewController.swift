@@ -11,14 +11,18 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import AwesomeMVVM
+import Moya
+import SwiftyJSON
 
 class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
-    
+
     @IBOutlet weak var input: AwesomeTextField2!
     @IBOutlet weak var btnClear: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let bag = DisposeBag()
     let dataSource = RxTableViewSectionedReloadDataSource<SectionOfOrder>()
+
+    let aleApi = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
 
     override func bindToViewModel() {
         tableView.delegate = self
@@ -28,56 +32,53 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         let headerNib = UINib(nibName: "OrderMainHeaderTableViewCell", bundle: nil)
         tableView.register(headerNib, forCellReuseIdentifier: "OrderMainHeaderTableViewCell")
         tableView.register(UINib(nibName: "OrderMainOnlineTableViewCell", bundle: nil), forCellReuseIdentifier: "OrderMainOnlineTableViewCell")
-        
+
         //handle input link
         input.rx.controlEvent(.editingDidEndOnExit).subscribe(onNext: { () in
             //open new screen
             OrderCoordinator.sharedInstance.showTaoDonHang(text: self.input.text)
-            
+
         }).addDisposableTo(bag)
         input.rx.text.subscribe(onNext: { (text) in
             if text == "" {
                 self.btnClear.isHidden = true
             } else {
                 self.btnClear.isHidden = false
-                
+
             }
         }).addDisposableTo(bag)
-        
+
         tableView.estimatedRowHeight = 96 // some constant value
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 96
         configureDataSource()
     }
 
-    
+
     func configureDataSource() {
         dataSource.configureCell = { ds, tv, ip, model in
-            if ip.section == 0 {
-                let cell = tv.dequeueReusableCell(withIdentifier: "OrderMainOnlineTableViewCell") as! OrderMainOnlineTableViewCell
-                
-                return cell
-            }else{
+            let section = ds.sectionModels[ip.section]
+            switch section {
+            case .Order:
                 let cell = tv.dequeueReusableCell(withIdentifier: "OrderViewCell") as! OrderViewCell
-                
                 cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSelectItem)))
-                
+                (cell).bindData(item: model as! ModelOrderData)
+                return cell
+            case .Online:
+                let cell = tv.dequeueReusableCell(withIdentifier: "OrderMainOnlineTableViewCell") as! OrderMainOnlineTableViewCell
                 return cell
             }
         }
         dataSource.canEditRowAtIndexPath = { (ds, ip) in
             return false
         }
-        dataSource.titleForHeaderInSection = { ds, sectionIndex in
-            return ds[sectionIndex].header
-        }
-
-        Observable.from([onlineData(), hotData(), giamgiaData()]).bind(to: tableView.rx.items(dataSource: dataSource))
+        
+        fetchData().asObservable().bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(bag)
 
         //delegate
     }
-    
-    func onSelectItem(){
+
+    func onSelectItem() {
         OrderCoordinator.sharedInstance.showTaoDonHang()
     }
 
@@ -86,12 +87,17 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         switch section {
         case 0:
             cell.xemthem.isHidden = true
+            cell.title.text = "Mua hàng Online"
+            break
+        case 1:
+            cell.xemthem.isHidden = false
+            cell.title.text = "Sản phẩm Hot"
             break
         default:
             cell.xemthem.isHidden = false
+            cell.title.text = "Sản phẩm đang giảm giá"
             break
         }
-        cell.title.text = dataSource[section].header
         cell.onXemThemDelegate = {
             print("Header clicked")
             OrderCoordinator.sharedInstance.showSanPhamHot(section: cell.title.text!)
@@ -107,40 +113,58 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         btnClear.isHidden = true
     }
     @IBAction func onNotifyClick(_ sender: Any) {
-        
+
     }
-}
 
-//Interact API
-func fetchData() -> Observable<[OrderData]> {
-    return Observable.just((0..<20).map { OrderData(test: "\($0)") })
-}
-
-func onlineData() -> SectionOfOrder {
-    return SectionOfOrder(header: "Mua hàng Online", items: [OrderData(test: "1")])
-}
-func hotData() -> SectionOfOrder {
-    return SectionOfOrder(header: "Sản phẩm Hot", items: [OrderData(test: "1"), OrderData(test: "1")])
-}
-func giamgiaData() -> SectionOfOrder {
-    return SectionOfOrder(header: "Sản phẩm đang giảm giá", items: [OrderData(test: "1"), OrderData(test: "2")])
 }
 
 
+extension OrderMain1ViewController {
+    //Interact API
+    func fetchData() -> Driver<[SectionOfOrder]> {
+        return aleApi.request(AleApi.getHomeItems()).filterSuccessfulStatusCodes()
+            .flatMap { (response) -> Observable<[SectionOfOrder]> in
+            let json = JSON(response.data)
+            let responseObj = ModelMainHomeResponse(json: json)
+            let array = [
+                
+                SectionOfOrder.Online(datas: (responseObj.result?.buyingOnlineItem)!),
+                SectionOfOrder.Order(datas: (responseObj.result?.hotProducts)!),
+                SectionOfOrder.Order(datas: (responseObj.result?.discountProducts)!)]
+            return Observable.from(optional: array)
+        }.asDriver(onErrorJustReturn: [])
+    }
+
+}
+
+enum SectionOfOrder {
+    case Order(datas: [ModelOrderData])
+    case Online(datas: [ModelBuyingOnlineItem])
+}
 
 struct OrderData {
     var test: String
 }
 
-struct SectionOfOrder {
-    var header: String
-    var items: [Item]
-}
+//struct SectionOfOrder {
+//    var header: String
+//    var items: [Item]
+//}
 
 extension SectionOfOrder: SectionModelType {
-    typealias Item = OrderData
+    typealias Item = Any
+    var items: [Any] {
+        switch self {
+        case let .Order(datas: items):
+            return items
+        case let .Online(datas: items):
+            return items
+        default:
+            return [""]
+        }
+    }
+
     init(original: SectionOfOrder, items: [Item]) {
         self = original
-        self.items = items
     }
 }

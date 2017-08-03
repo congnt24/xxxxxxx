@@ -10,7 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DanhGiaView" customModule="Alemua" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DanhGiaView" customModule="Alemua" customModuleProvider="target">
+            <connections>
+                <outlet property="avatar" destination="05h-SM-kKp" id="y01-wl-mch"/>
+                <outlet property="comment" destination="x7E-Jj-C2S" id="PQE-qq-LrA"/>
+                <outlet property="day" destination="aTN-CF-8JS" id="o8m-J5-5EC"/>
+                <outlet property="name" destination="yMy-4W-dNk" id="0XE-Mx-NFV"/>
+                <outlet property="score" destination="7RV-Ib-nht" id="TDc-0V-nr4"/>
+                <outlet property="star" destination="Eln-rv-fqq" id="2P3-Tg-1V7"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>

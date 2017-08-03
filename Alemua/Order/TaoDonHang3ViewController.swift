@@ -11,15 +11,18 @@ import XLPagerTabStrip
 import AwesomeMVVM
 
 class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
+    @IBOutlet weak var itemView: ItemView!
     @IBOutlet weak var tfMuaTu: AwesomeTextField!
     @IBOutlet weak var tfGiaoDen: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
+    @IBOutlet weak var rateDetail: RateDetail!
     var taodonhangRequest: TaoDonHangRequest!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //taodonhangRequest = (parent as! TaoDonHangViewController).taodonhangRequest
+        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +36,17 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         } else {
             HomeCoordinator.sharedInstance.showLoginScreen()
         }
+    }
+    @IBAction func onShowMoreRate(_ sender: Any) {
+        rateDetail.toggleHeight()
+    }
+    
+    func bindData(){
+        tfMuaTu.text = taodonhangRequest.buyFrom
+        tfGiaoDen.text = taodonhangRequest.deliveryTo
+        tfNgay.text = taodonhangRequest.deliveryDate
+        tfGia.text = String(describing: taodonhangRequest.websitePrice)
+        tfNote.text = taodonhangRequest.note
     }
 
 

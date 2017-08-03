@@ -177,6 +177,17 @@
                     <constraint firstItem="Fgt-CE-ERi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lC6-zD-9fO"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imProduct" destination="jiF-bP-PRU" id="2hC-hz-LdP"/>
+                <outlet property="lbDate" destination="SKN-yt-ysp" id="fLw-E4-Fq3"/>
+                <outlet property="lbName" destination="ntI-xE-ACz" id="fgw-8K-qHT"/>
+                <outlet property="lbNoiMua" destination="be4-ZU-2ZL" id="fcM-0P-RGZ"/>
+                <outlet property="lbNote" destination="gqt-HQ-dDB" id="ovH-Pl-5ui"/>
+                <outlet property="lbPrice" destination="B29-uv-ARz" id="Pth-1f-KgX"/>
+                <outlet property="lbScore" destination="F48-zi-BtW" id="jtc-8o-8Du"/>
+                <outlet property="lbTime" destination="KTP-lD-yiv" id="dFE-rB-zjo"/>
+                <outlet property="star" destination="BaK-Me-2PV" id="wec-FG-rup"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="135.5"/>
         </tableViewCell>
     </objects>

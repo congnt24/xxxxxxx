@@ -8,31 +8,27 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import GoogleSignIn
-import FacebookCore
-import FacebookLogin
-import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let facebookDidHandle = SDKApplicationDelegate.shared.application(app, open: url, options: options)
-        let googleDidHandle = GIDSignIn.sharedInstance().handle(url,
-                                                                sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-                                                                annotation: [:])
-        return googleDidHandle || facebookDidHandle
-    }
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        let facebookDidHandle = SDKApplicationDelegate.shared.application(app, open: url, options: options)
+//        let googleDidHandle = GIDSignIn.sharedInstance().handle(url,
+//                                                                sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+//                                                                annotation: [:])
+//        return googleDidHandle || facebookDidHandle
+//    }
     
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //facebook auth
-        FirebaseAuthHelper.configure()
-        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+//        FirebaseAuthHelper.configure()
+//        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
         //keyboard

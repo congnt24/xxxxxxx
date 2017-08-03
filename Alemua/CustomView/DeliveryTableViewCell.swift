@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DeliveryTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
@@ -30,5 +31,14 @@ class DeliveryTableViewCell: UITableViewCell {
         if let onClickBaoGia = onClickBaoGia {
             onClickBaoGia()
         }
+    }
+    
+    func bindData(data: ModelQuoteData){
+//        img.kf.setImage(with: URL(string: data.photo!.splitted(by: ",")[0]))
+        lbOwner.text = data.userPost
+        lbDate.text = data.deliveryDate
+        lbBaoGia.text = String(describing: data.websitePrice)
+        lbAddress.text = data.deliveryTo
+//        lbTime.text = data.websitePrice
     }
 }

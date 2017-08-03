@@ -426,7 +426,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKe-2Q-6DW">
-                                        <rect key="frame" x="0.0" y="281" width="376" height="844.5"/>
+                                        <rect key="frame" x="0.0" y="281" width="376" height="852.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-9e-zSS" customClass="ItemView" customModule="Alemua" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="344" height="95"/>
@@ -585,7 +585,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Q-Dp-149" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="349" width="344" height="250"/>
+                                                <rect key="frame" x="16" y="357" width="344" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="0AT-k8-9HL"/>
@@ -595,7 +595,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BEG-2N-HeX">
-                                                <rect key="frame" x="16" y="607" width="344" height="112"/>
+                                                <rect key="frame" x="16" y="615" width="344" height="112"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ny0-jA-2kR">
                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="48"/>
@@ -653,7 +653,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOg-2k-cBO" customClass="AwesomeToggleViewByHeight" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="750.5" width="344" height="39"/>
+                                                <rect key="frame" x="16" y="758.5" width="344" height="39"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-VN-7pB">
                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="39"/>
@@ -685,7 +685,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99k-bo-8AI" customClass="HTMLLabel" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="735" width="344" height="0.0"/>
+                                                <rect key="frame" x="16" y="743" width="344" height="0.0"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -696,7 +696,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-2O-xP1">
-                                                <rect key="frame" x="16" y="789.5" width="344" height="39"/>
+                                                <rect key="frame" x="16" y="797.5" width="344" height="39"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a32-o1-dEJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="39"/>
@@ -765,7 +765,7 @@
                                             <constraint firstItem="Y2Q-Dp-149" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="wc8-4p-oJ2"/>
                                             <constraint firstItem="MJs-kk-5zS" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="18" id="wjE-3C-FSi"/>
                                             <constraint firstAttribute="trailing" secondItem="aNj-9e-zSS" secondAttribute="trailing" constant="16" id="x75-xK-gZQ"/>
-                                            <constraint firstItem="Y2Q-Dp-149" firstAttribute="top" secondItem="MJs-kk-5zS" secondAttribute="bottom" id="x7n-YU-NaC"/>
+                                            <constraint firstItem="Y2Q-Dp-149" firstAttribute="top" secondItem="MJs-kk-5zS" secondAttribute="bottom" constant="8" id="x7n-YU-NaC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1016,7 +1016,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5u-VG-PwZ" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="389" width="343" height="250"/>
+                                        <rect key="frame" x="16" y="381" width="343" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="NZQ-Hb-QwE"/>
@@ -1026,7 +1026,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-db-gx4">
-                                        <rect key="frame" x="0.0" y="655" width="375" height="266"/>
+                                        <rect key="frame" x="0.0" y="639" width="375" height="266"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-m4-Asg">
                                                 <rect key="frame" x="16" y="16" width="343" height="230"/>
@@ -1074,7 +1074,7 @@
                                 <constraints>
                                     <constraint firstItem="a9l-7Q-8Qj" firstAttribute="top" secondItem="viM-Zm-pC3" secondAttribute="bottom" constant="32" id="2Kh-Ck-38A"/>
                                     <constraint firstItem="a9l-7Q-8Qj" firstAttribute="leading" secondItem="gWB-zx-B7f" secondAttribute="leading" constant="16" id="2bf-9m-OOj"/>
-                                    <constraint firstItem="ADu-db-gx4" firstAttribute="top" secondItem="f5u-VG-PwZ" secondAttribute="bottom" constant="16" id="4kp-Ar-au4"/>
+                                    <constraint firstItem="ADu-db-gx4" firstAttribute="top" secondItem="f5u-VG-PwZ" secondAttribute="bottom" constant="8" id="4kp-Ar-au4"/>
                                     <constraint firstItem="a9l-7Q-8Qj" firstAttribute="leading" secondItem="gWB-zx-B7f" secondAttribute="leading" constant="16" id="5nH-8u-Ofc"/>
                                     <constraint firstItem="viM-Zm-pC3" firstAttribute="leading" secondItem="gWB-zx-B7f" secondAttribute="leading" constant="16" id="7ij-jI-eyl"/>
                                     <constraint firstItem="viM-Zm-pC3" firstAttribute="top" secondItem="gWB-zx-B7f" secondAttribute="top" constant="16" id="BQF-yi-W2p"/>
@@ -1084,7 +1084,7 @@
                                     <constraint firstItem="f5u-VG-PwZ" firstAttribute="leading" secondItem="gWB-zx-B7f" secondAttribute="leading" constant="16" id="WPR-1k-GHT"/>
                                     <constraint firstItem="ADu-db-gx4" firstAttribute="leading" secondItem="gWB-zx-B7f" secondAttribute="leading" id="XFw-Ta-TAW"/>
                                     <constraint firstAttribute="trailing" secondItem="ADu-db-gx4" secondAttribute="trailing" id="eiw-X3-RUf"/>
-                                    <constraint firstItem="f5u-VG-PwZ" firstAttribute="top" secondItem="a9l-7Q-8Qj" secondAttribute="bottom" constant="16" id="iGb-Jb-bTN"/>
+                                    <constraint firstItem="f5u-VG-PwZ" firstAttribute="top" secondItem="a9l-7Q-8Qj" secondAttribute="bottom" constant="8" id="iGb-Jb-bTN"/>
                                     <constraint firstAttribute="trailing" secondItem="viM-Zm-pC3" secondAttribute="trailing" constant="16" id="xrP-C9-IrA"/>
                                     <constraint firstItem="a9l-7Q-8Qj" firstAttribute="centerX" secondItem="gWB-zx-B7f" secondAttribute="centerX" id="yPI-xq-PR5"/>
                                 </constraints>
@@ -2647,7 +2647,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaV-6D-Uwv" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="373" width="343" height="250"/>
+                                        <rect key="frame" x="16" y="365" width="343" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="kam-ha-JaN"/>
@@ -2805,7 +2805,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sk3-6q-YlR">
-                                        <rect key="frame" x="16" y="639" width="343" height="100"/>
+                                        <rect key="frame" x="16" y="623" width="343" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z70-xr-bny">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
@@ -2863,7 +2863,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-AU-GmE">
-                                        <rect key="frame" x="0.0" y="763" width="375" height="142"/>
+                                        <rect key="frame" x="0.0" y="747" width="375" height="142"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJH-rk-ukt" customClass="ReviewView" customModule="Alemua" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="343" height="110"/>
@@ -2893,7 +2893,7 @@
                                     <constraint firstItem="Vx7-AU-GmE" firstAttribute="leading" secondItem="sTL-wM-shi" secondAttribute="leading" id="B7W-mU-kSV"/>
                                     <constraint firstItem="gaV-6D-Uwv" firstAttribute="leading" secondItem="sTL-wM-shi" secondAttribute="leading" constant="16" id="Bgg-8L-yWb"/>
                                     <constraint firstAttribute="bottom" secondItem="Vx7-AU-GmE" secondAttribute="bottom" id="FFs-6E-bYa"/>
-                                    <constraint firstItem="gaV-6D-Uwv" firstAttribute="top" secondItem="IpD-tB-hu4" secondAttribute="bottom" constant="16" id="P1g-y0-lCy"/>
+                                    <constraint firstItem="gaV-6D-Uwv" firstAttribute="top" secondItem="IpD-tB-hu4" secondAttribute="bottom" constant="8" id="P1g-y0-lCy"/>
                                     <constraint firstAttribute="trailing" secondItem="Vx7-AU-GmE" secondAttribute="trailing" id="SHx-e2-OWt"/>
                                     <constraint firstItem="sk3-6q-YlR" firstAttribute="leading" secondItem="sTL-wM-shi" secondAttribute="leading" constant="16" id="SMh-oc-TLu"/>
                                     <constraint firstItem="IpD-tB-hu4" firstAttribute="top" secondItem="KWd-1b-BTA" secondAttribute="bottom" constant="16" id="Slm-dC-Sgg"/>
@@ -2904,7 +2904,7 @@
                                     <constraint firstItem="IpD-tB-hu4" firstAttribute="leading" secondItem="sTL-wM-shi" secondAttribute="leading" constant="16" id="ofW-vf-DUv"/>
                                     <constraint firstItem="KWd-1b-BTA" firstAttribute="centerX" secondItem="sTL-wM-shi" secondAttribute="centerX" id="uUH-U8-cWZ"/>
                                     <constraint firstAttribute="trailing" secondItem="gaV-6D-Uwv" secondAttribute="trailing" constant="16" id="yW7-6W-oCh"/>
-                                    <constraint firstItem="sk3-6q-YlR" firstAttribute="top" secondItem="gaV-6D-Uwv" secondAttribute="bottom" constant="16" id="zSj-vv-sow"/>
+                                    <constraint firstItem="sk3-6q-YlR" firstAttribute="top" secondItem="gaV-6D-Uwv" secondAttribute="bottom" constant="8" id="zSj-vv-sow"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -3133,7 +3133,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBP-h7-QKN" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="373" width="343" height="250"/>
+                                        <rect key="frame" x="16" y="365" width="343" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="1Dn-IH-4xU"/>
@@ -3143,7 +3143,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-7J-e8X">
-                                        <rect key="frame" x="16" y="639" width="343" height="45"/>
+                                        <rect key="frame" x="16" y="623" width="343" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ghi chú" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRf-Et-rB9">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -3171,7 +3171,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j34-3S-WWB">
-                                        <rect key="frame" x="0.0" y="708" width="375" height="252"/>
+                                        <rect key="frame" x="0.0" y="692" width="375" height="252"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vbp-VV-AiN">
                                                 <rect key="frame" x="16" y="16" width="343" height="220"/>
@@ -3217,7 +3217,7 @@
                                     <constraint firstAttribute="trailing" secondItem="j34-3S-WWB" secondAttribute="trailing" id="DGo-c2-Nkk"/>
                                     <constraint firstAttribute="bottom" secondItem="j34-3S-WWB" secondAttribute="bottom" id="HUb-OI-1uf"/>
                                     <constraint firstItem="3Df-nu-xvk" firstAttribute="top" secondItem="8s0-6v-CbC" secondAttribute="bottom" constant="16" id="IoM-M5-oYT"/>
-                                    <constraint firstItem="G7J-7J-e8X" firstAttribute="top" secondItem="oBP-h7-QKN" secondAttribute="bottom" constant="16" id="Lwk-da-adB"/>
+                                    <constraint firstItem="G7J-7J-e8X" firstAttribute="top" secondItem="oBP-h7-QKN" secondAttribute="bottom" constant="8" id="Lwk-da-adB"/>
                                     <constraint firstItem="8s0-6v-CbC" firstAttribute="leading" secondItem="Kgk-U1-153" secondAttribute="leading" constant="16" id="OSR-oO-zo2"/>
                                     <constraint firstAttribute="trailing" secondItem="oBP-h7-QKN" secondAttribute="trailing" constant="16" id="SZx-gM-hmr"/>
                                     <constraint firstItem="j34-3S-WWB" firstAttribute="leading" secondItem="Kgk-U1-153" secondAttribute="leading" id="TZh-yH-XPA"/>
@@ -3226,7 +3226,7 @@
                                     <constraint firstItem="8s0-6v-CbC" firstAttribute="top" secondItem="Kgk-U1-153" secondAttribute="top" constant="16" id="cM6-OJ-mND"/>
                                     <constraint firstAttribute="trailing" secondItem="3Df-nu-xvk" secondAttribute="trailing" constant="16" id="iea-wE-qb0"/>
                                     <constraint firstItem="j34-3S-WWB" firstAttribute="top" secondItem="G7J-7J-e8X" secondAttribute="bottom" constant="24" id="mt2-4I-7fd"/>
-                                    <constraint firstItem="oBP-h7-QKN" firstAttribute="top" secondItem="3Df-nu-xvk" secondAttribute="bottom" constant="16" id="yYx-w2-wfs"/>
+                                    <constraint firstItem="oBP-h7-QKN" firstAttribute="top" secondItem="3Df-nu-xvk" secondAttribute="bottom" constant="8" id="yYx-w2-wfs"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

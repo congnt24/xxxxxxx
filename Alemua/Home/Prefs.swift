@@ -19,5 +19,14 @@ class Prefs {
         }
     }
     
+    class var apiToken: String? {
+        get {
+            return UserDefaults.standard.string(forKey: AppConstant.API_TOKEN)
+        }
+        set(token){
+            UserDefaults.standard.set(token, forKey: AppConstant.API_TOKEN)
+            UserDefaults.standard.synchronize()
+        }
+    }
     
 }

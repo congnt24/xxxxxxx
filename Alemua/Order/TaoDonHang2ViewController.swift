@@ -11,17 +11,16 @@ import XLPagerTabStrip
 import AwesomeMVVM
 
 class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
-    @IBOutlet weak var itemView: ItemView!
     @IBOutlet weak var tfMuaTu: AwesomeTextField!
     @IBOutlet weak var tfGiaoDen: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
-    @IBOutlet weak var tfGia: AwesomeTextField!
+    @IBOutlet weak var tfNote: AwesomeTextField!
     var taodonhangRequest: TaoDonHangRequest!
 
     @IBOutlet weak var uiRateDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        taodonhangRequest = (parent as! TaoDonHangViewController).taodonhangRequest
+        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
 
         // Do any additional setup after loading the view.
     }
@@ -34,10 +33,6 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Vận chuyển")
     }
-    @IBAction func onShowMoreDetail(_ sender: Any) {
-        uiRateDetail.toggleHeight()
-    }
-
 
     @IBAction func onNext(_ sender: Any) {
         TaoDonHangViewController.sharedInstance.moveToViewController(at: 2)

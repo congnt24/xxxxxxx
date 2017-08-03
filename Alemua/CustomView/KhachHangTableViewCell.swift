@@ -10,6 +10,11 @@ import UIKit
 
 class KhachHangTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var star: StarView!
+    @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var lbBought: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

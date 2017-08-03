@@ -18,11 +18,6 @@ target 'Alemua' do
   pod 'XLPagerTabStrip'
   pod 'KMPlaceholderTextView', '~> 1.3.0'
   pod 'DropDown'
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
   pod 'SwiftyJSON'
   pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
 end

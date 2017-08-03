@@ -27,7 +27,8 @@ class OrderMain2ViewController: UIViewController {
     var section: OrderSection = .spgiamgia
     let aleApi = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
     var currentPage = 1
-    var dataSource = RxTableViewSectionedReloadDataSource<SectionOfProduct>()
+    var bag = DisposeBag()
+    var datas = Variable<[ModelOrderData]>([])
     
     
     var sectionName: String!
@@ -38,6 +39,8 @@ class OrderMain2ViewController: UIViewController {
             section = .sphot
         }
         setupTable()
+        
+        
         // TODO: Bind data to tableview
         
     }
@@ -49,33 +52,34 @@ class OrderMain2ViewController: UIViewController {
 extension OrderMain2ViewController {
     func setupTable(){
         //register nib
+        tableView.register(UINib(nibName: "OrderViewCell", bundle: nil), forCellReuseIdentifier: "OrderViewCell")
         //Configure cell
-        
-        dataSource.configureCell = { ds, tv, ip, model in
-            if ds[ip.section].header == "load" { //handle load more
-                let cell = tv.dequeueReusableCell(withIdentifier: "DonHangTableViewCell") as! DonHangTableViewCell
-                
-                return cell
-            }else{ //handle regular cell
-                let cell = tv.dequeueReusableCell(withIdentifier: "DonHangTableViewCell") as! DonHangTableViewCell
-                
-                return cell
-            }
+        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "OrderViewCell")){ (row, item, cell) in
+            (cell as! OrderViewCell).bindData(item: item)
+            }.addDisposableTo(bag)
+        //Loadmore
+        tableView.addInfiniteScroll { (tv) in
+            // update table view
+            self.fetchData().drive(onNext: { (results) in
+                for result in results {
+                    self.datas.value.append(result)
+                    self.currentPage += 1
+                }
+            }).addDisposableTo(self.bag)
+            // finish infinite scroll animation
+            tv.finishInfiniteScroll()
         }
-//        tableView.addInfiniteScroll { (tv) in
-//            // update table view
-//            self.fetchData()
-//            // finish infinite scroll animation
-//            tv.finishInfiniteScroll()
-//        }
-//        
-//        tableView.beginInfiniteScroll(true)
+        
+        tableView.beginInfiniteScroll(true)
     }
     
-    func fetchData(){ // fetch data and map to ProductData
-        aleApi.request(.getProducts(type: section.rawValue, page: currentPage)).filterSuccessfulStatusCodes().flatMap { (response) in
-            return Observable.just(JSON(data: response.data))
-        }
+    func fetchData() -> Driver<[ModelOrderData]>{ // fetch data and map to ProductData
+        return aleApi.request(.getProducts(type: section.rawValue, page: currentPage))
+            .filterSuccessfulStatusCodes().flatMap({ (response) -> Observable<[ModelOrderData]> in
+                let json = JSON(response.data)
+                let responseObj = ModelMainOrderResponse(json: json)
+                return Observable.from(optional: responseObj.result)
+            }).asDriver(onErrorJustReturn: [])
     }
     
 }
@@ -94,27 +98,3 @@ extension ObservableType {
 //            }.asDriver(onErrorJustReturn: SearchResult.error(msg: "oops"))
 //    }
 }
-
-
-
-
-
-// MARK : DEFINE MODEL HERE
-
-struct ProductData {
-    var test: String
-}
-
-struct SectionOfProduct {
-    var header: String
-    var items: [Item]
-}
-
-extension SectionOfProduct: SectionModelType {
-    typealias Item = ProductData
-    init(original: SectionOfProduct, items: [Item]) {
-        self = original
-        self.items = items
-    }
-}
-

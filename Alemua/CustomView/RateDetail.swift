@@ -9,9 +9,27 @@
 import UIKit
 import AwesomeMVVM
 
+struct RateDetailData {
+    var tonggia: String
+    var thue: String
+    var phichuyennoidia: String
+    var phinguoimua: String
+    var phivanchuyenvealemua: String
+    var phivanchuyenvetaynguoimua: String
+    var phigiaodichquaalemua: String
+    
+}
+
 class RateDetail: AwesomeToggleViewByHeight {
 
     @IBOutlet weak var uiStackView: UIStackView!
+    @IBOutlet weak var tonggia: AwesomeTextField!
+    @IBOutlet weak var thue: AwesomeTextField!
+    @IBOutlet weak var phichuyennoidia: AwesomeTextField!
+    @IBOutlet weak var phinguoimua: AwesomeTextField!
+    @IBOutlet weak var phivanchuyenvealemua: AwesomeTextField!
+    @IBOutlet weak var phivanchuyenvetaynguoimua: AwesomeTextField!
+    @IBOutlet weak var phigiaodichquaalemua: AwesomeTextField!
     
     var listView: [AwesomeTextField] = []
     /*
@@ -33,6 +51,16 @@ class RateDetail: AwesomeToggleViewByHeight {
         for index in 0..<listView.count {
             listView[index].text = values[index]
         }
+    }
+    
+    func bindData(_ rateData: RateDetailData){
+        tonggia.text = rateData.tonggia
+        thue.text = rateData.thue
+        phichuyennoidia.text = rateData.phichuyennoidia
+        phinguoimua.text = rateData.phinguoimua
+        phivanchuyenvealemua.text = rateData.phivanchuyenvealemua
+        phivanchuyenvetaynguoimua.text = rateData.phivanchuyenvetaynguoimua
+        phigiaodichquaalemua.text = rateData.phigiaodichquaalemua
     }
 
 }

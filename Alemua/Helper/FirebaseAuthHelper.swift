@@ -5,7 +5,7 @@
 //  Created by Cong Nguyen on 7/30/17.
 //  Copyright © 2017 cong. All rights reserved.
 //
-
+/*
 import Foundation
 import Firebase
 import GoogleSignIn
@@ -61,3 +61,4 @@ class FirebaseAuthHelper: NSObject, GIDSignInDelegate {
     }
     
 }
+*/

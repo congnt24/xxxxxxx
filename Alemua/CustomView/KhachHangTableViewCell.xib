@@ -105,6 +105,13 @@
                     <constraint firstAttribute="trailing" secondItem="w25-zc-S6C" secondAttribute="trailing" constant="8" id="q90-Bk-om8"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avatar" destination="ISl-po-3UW" id="vSC-s5-cQv"/>
+                <outlet property="lbBought" destination="duM-Fl-eUt" id="xbR-i0-t1U"/>
+                <outlet property="name" destination="6Gu-Xw-op8" id="GTU-Sp-w9q"/>
+                <outlet property="score" destination="kaW-jg-P2T" id="eo9-at-H1x"/>
+                <outlet property="star" destination="q6z-Uu-nDy" id="Ryz-38-WhK"/>
+            </connections>
             <point key="canvasLocation" x="29" y="83.5"/>
         </tableViewCell>
     </objects>

@@ -9,7 +9,7 @@ import Foundation
 import Moya
 import RxSwift
 
-let GitHubProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
+let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
 
 public enum AleApi {
     case login(phone_number: String, token_firebase: String, device_type: Int)
@@ -18,6 +18,17 @@ public enum AleApi {
     case acceptQuote()
     case getHomeItems()
     case getProducts(type: Int, page: Int)
+    case uploadFile(UserID: String, ApiToken: String)
+    case getQuoteForShipper(UserID: String, page_number: Int)
+    case getOrderForClient(UserID: String, ApiToken: String, page_number: Int)//order_type = 0
+    case getOrderForShipper(UserID: String, ApiToken: String, page_number: Int)//order_type=1
+    case cancelOrder()
+    case reportUser()
+    case rateForClient()
+    case getOrderDetailsToQuote()
+    case getOrderDetails()
+    case getCommentOfShipper()
+    case getUserProfile()
 }
 
 extension AleApi: TargetType {
@@ -40,12 +51,34 @@ extension AleApi: TargetType {
             return "/api/order/getHomeItems"
         case .getProducts(_, _):
             return "/api/order/getProducts"
+        case .uploadFile(_, _):
+            return " /api/users/uploadFile"
+        case .getQuoteForShipper(_,_):
+            return "/api/order/getQuoteForShipper"
+        case .getOrderForClient(_,_,_):
+            return "/api/order/getOrderFromClient"
+        case .getOrderForShipper(_,_,_):
+            return "/api/order/getOrderForShipper"
+        case .cancelOrder():
+            return "/api/order/cancelOrder"
+        case .reportUser():
+            return "/api/order/reportUser"
+        case .rateForClient():
+            return "/api/order/rateForClient"
+        case .getOrderDetailsToQuote():
+            return "/api/order/getOrderDetailsToQuote"
+        case .getOrderDetails():
+            return "/api/order/getOrderDetails"
+        case .getCommentOfShipper():
+            return "/api/order/getCommentOfShipper"
+        case .getUserProfile():
+            return "/api/users/getUserProfile"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login(_, _, _), .createOrder(), .acceptQuote():
+        case .login(_, _, _), .createOrder(), .acceptQuote(), .uploadFile(_, _):
             return .post
         default:
             return .get
@@ -99,6 +132,12 @@ extension AleApi: TargetType {
             "product_type": type,
             "page_size": 20,
             "page_number": page
+            ]
+        case .getQuoteForShipper(let UserID, let page_number):
+            return [
+                "UserID": UserID,
+                "page_size": 20,
+                "page_number": page_number
             ]
         default:
             return nil

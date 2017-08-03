@@ -46,25 +46,38 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+<!--    <key>CFBundleURLTypes</key>-->
+<!--    <array>-->
+<!--        <dict>-->
+<!--            <key>CFBundleURLSchemes</key>-->
+<!--            <array>-->
+<!--                <string>fb1065052330294105</string>-->
+<!--            </array>-->
+<!--        </dict>-->
+<!--    </array>-->
+<!--    <key>FacebookAppID</key>-->
+<!--    <string>1065052330294105</string>-->
+<!--    <key>FacebookDisplayName</key>-->
+<!--    <string>iOSAuth</string>-->
+<!--    <key>LSApplicationQueriesSchemes</key>-->
+<!--    <array>-->
+<!--        <string>fbapi</string>-->
+<!--        <string>fb-messenger-api</string>-->
+<!--        <string>fbauth2</string>-->
+<!--        <string>fbshareextension</string>-->
+<!--    </array>-->
+    <key>FacebookAppID</key>
+    <string>1065052330294105</string>
+    <key>AccountKitClientToken</key>
+    <string>8f03e5c1ab272cc8c20035473f12b37c</string>
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>fb1065052330294105</string>
+                <string>ak1065052330294105</string>
             </array>
         </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>1065052330294105</string>
-    <key>FacebookDisplayName</key>
-    <string>iOSAuth</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
     </array>
 </dict>
 </plist>

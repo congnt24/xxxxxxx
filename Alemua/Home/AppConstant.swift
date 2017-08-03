@@ -10,4 +10,6 @@ import Foundation
 
 class AppConstant {
     static let LOGGED_KEY = "islogged"
+    static let API_TOKEN = "api_token"
+    
 }

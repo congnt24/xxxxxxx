@@ -20,7 +20,7 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var uiRateDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
-        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
+//        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
 
         // Do any additional setup after loading the view.
     }

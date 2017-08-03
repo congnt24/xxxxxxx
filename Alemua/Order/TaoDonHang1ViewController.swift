@@ -23,7 +23,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
+//        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
         // Do any additional setup after loading the view.
     }
     

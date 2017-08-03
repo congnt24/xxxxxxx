@@ -65,6 +65,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
                 return cell
             case .Online:
                 let cell = tv.dequeueReusableCell(withIdentifier: "OrderMainOnlineTableViewCell") as! OrderMainOnlineTableViewCell
+                cell.bindData(data: model as! ModelBuyingOnline)
                 return cell
             }
         }
@@ -126,9 +127,9 @@ extension OrderMain1ViewController {
             .flatMap { (response) -> Observable<[SectionOfOrder]> in
             let json = JSON(response.data)
             let responseObj = ModelMainHomeResponse(json: json)
+                let x = ModelBuyingOnline(items: responseObj.result?.buyingOnlineItem)
             let array = [
-                
-                SectionOfOrder.Online(datas: (responseObj.result?.buyingOnlineItem)!),
+                SectionOfOrder.Online(datas: x),
                 SectionOfOrder.Order(datas: (responseObj.result?.hotProducts)!),
                 SectionOfOrder.Order(datas: (responseObj.result?.discountProducts)!)]
             return Observable.from(optional: array)
@@ -139,7 +140,7 @@ extension OrderMain1ViewController {
 
 enum SectionOfOrder {
     case Order(datas: [ModelOrderData])
-    case Online(datas: [ModelBuyingOnlineItem])
+    case Online(datas: ModelBuyingOnline)
 }
 
 struct OrderData {
@@ -158,7 +159,7 @@ extension SectionOfOrder: SectionModelType {
         case let .Order(datas: items):
             return items
         case let .Online(datas: items):
-            return items
+            return [items]
         default:
             return [""]
         }

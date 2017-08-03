@@ -64,5 +64,13 @@ class AccountViewController: BaseViewController {
     @IBAction func onNotifyChange(_ sender: UISwitch) {
         print("Switch \(sender.isOn)")
     }
+    
+    @IBAction func onBack(_ sender: Any) {
+        if HomeViewController.homeType == .order {
+            OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }else{
+            DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }
+    }
 }
 

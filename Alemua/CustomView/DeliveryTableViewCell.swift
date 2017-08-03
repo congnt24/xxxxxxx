@@ -37,7 +37,7 @@ class DeliveryTableViewCell: UITableViewCell {
 //        img.kf.setImage(with: URL(string: data.photo!.splitted(by: ",")[0]))
         lbOwner.text = data.userPost
         lbDate.text = data.deliveryDate
-        lbBaoGia.text = String(describing: data.websitePrice)
+        lbBaoGia.text = "\(data.websitePrice)"
         lbAddress.text = data.deliveryTo
 //        lbTime.text = data.websitePrice
     }

@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="17" width="343" height="142"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
-                                                <rect key="frame" x="30" y="6" width="112" height="130"/>
+                                                <rect key="frame" x="30" y="6" width="111" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="23:27" id="caq-0p-YXS"/>
                                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="208" y="6" width="105" height="130"/>
+                                                <rect key="frame" x="209" y="6" width="104" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="43:54" id="ovk-nU-ZvF"/>
                                                 </constraints>
@@ -118,8 +118,11 @@
                                         <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Trò chuyện" id="YNv-sr-GMv">
-                                                <barButtonItem key="leftBarButtonItem" image="back" id="GdS-aY-ZaD" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                <barButtonItem key="leftBarButtonItem" image="back" id="GdS-aY-ZaD">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onBack:" destination="L7w-Yd-kGR" id="M6s-cU-BmL"/>
+                                                    </connections>
                                                 </barButtonItem>
                                             </navigationItem>
                                         </items>
@@ -209,8 +212,11 @@
                                         <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Thông báo" id="xZy-Rb-1T5">
-                                                <barButtonItem key="leftBarButtonItem" image="back" id="RIa-CZ-i1u" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                <barButtonItem key="leftBarButtonItem" image="back" id="RIa-CZ-i1u">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onBack:" destination="LAA-MN-x18" id="Klg-w7-r2m"/>
+                                                    </connections>
                                                 </barButtonItem>
                                             </navigationItem>
                                         </items>
@@ -292,8 +298,11 @@
                                         <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Thông tin tài khoản" id="BK4-UB-lLy">
-                                                <barButtonItem key="leftBarButtonItem" image="back" id="lYX-al-0mm" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                <barButtonItem key="leftBarButtonItem" image="back" id="lYX-al-0mm">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onBack:" destination="RwB-pv-Q0r" id="ewW-Sr-GLX"/>
+                                                    </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" image="ic_edit" id="EnW-MC-6cE">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -703,6 +712,9 @@
                                             <navigationItem title="Đơn hàng" id="wFa-62-AWc">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="Qf2-Nf-xsf" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onBack:" destination="7H6-ps-BGq" id="cEJ-xp-6Bz"/>
+                                                    </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" image="ic_filter" id="PKF-Yv-o3X">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2530,8 +2542,11 @@
                                         <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn hàng" id="hV3-J9-rf6">
-                                                <barButtonItem key="leftBarButtonItem" image="back" id="8aW-vM-AkN" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                <barButtonItem key="leftBarButtonItem" image="back" id="8aW-vM-AkN">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onBack:" destination="jL9-ms-fsg" id="mMQ-ig-K9M"/>
+                                                    </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" image="ic_filter" id="mD3-AQ-3ds">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3032,8 +3047,11 @@
                                         <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Thông tin tài khoản" id="b0K-UK-xGJ">
-                                                <barButtonItem key="leftBarButtonItem" image="back" id="CBa-AZ-b59" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                <barButtonItem key="leftBarButtonItem" image="back" id="CBa-AZ-b59">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onBack:" destination="mBL-kP-U2Z" id="513-1Z-r8S"/>
+                                                    </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" image="ic_edit" id="hGe-pw-6k5">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3922,8 +3940,8 @@ D4w
         <image name="sample" width="94" height="94"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c6W-pI-I18"/>
         <segue reference="jfi-fd-Tl2"/>
-        <segue reference="wlC-Jw-m1c"/>
+        <segue reference="c6W-pI-I18"/>
+        <segue reference="PDL-tC-oPy"/>
     </inferredMetricsTieBreakers>
 </document>

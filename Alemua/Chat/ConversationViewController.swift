@@ -27,7 +27,7 @@ class ConversationViewController: BaseViewController {
         //create cell
         fetchConversationList().bind(to: tableView.rx.items(cellIdentifier: "ConversationTableViewCell")) {
             (row, element, cell) in
-            
+
         }.addDisposableTo(bag)
 
         //Handle click
@@ -37,23 +37,23 @@ class ConversationViewController: BaseViewController {
             HomeCoordinator.sharedInstance.showChatScreen()
         }).addDisposableTo(bag)
 
-        
+
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     override func responseFromViewModel() {
         // Simple view controller -> Don't need viewmodel
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         //TODO: Check if user is logged
         if !Prefs.isUserLogged {
             HomeCoordinator.sharedInstance.showLoginScreen()
             return
         }
-        
+
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
     }
 
@@ -64,4 +64,11 @@ class ConversationViewController: BaseViewController {
         return Observable.just((0..<20).map { ConversationModel(name: "\($0)") })
     }
     // MARK: - Action
+    @IBAction func onBack(_ sender: Any) {
+        if HomeViewController.homeType == .order {
+            OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        } else {
+            DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }
+    }
 }

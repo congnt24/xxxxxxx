@@ -12,6 +12,13 @@ import XLPagerTabStrip
 
 class OrderOrderViewController: ButtonBarPagerTabStripViewController {
 
+    @IBAction func onBack(_ sender: Any) {
+        if HomeViewController.homeType == .order {
+            OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }else{
+            DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }
+    }
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#3A99D8")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear

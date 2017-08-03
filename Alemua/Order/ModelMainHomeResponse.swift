@@ -32,6 +32,9 @@ class ModelMainHomeResponse{
     }
 
 }
+struct ModelBuyingOnline{
+    var items: [ModelBuyingOnlineItem]?
+}
 
 class ModelMainHomeData: BaseResult {
     private struct SerializationKeys {

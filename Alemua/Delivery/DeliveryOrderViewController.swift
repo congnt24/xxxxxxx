@@ -57,4 +57,12 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     }
     @IBAction func onClickFilter(_ sender: Any) {
     }
+    
+    @IBAction func onBack(_ sender: Any) {
+        if HomeViewController.homeType == .order {
+            OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }else{
+            DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }
+    }
 }

@@ -53,5 +53,12 @@ class NotifyViewController: BaseViewController {
     func fetchData() -> Observable<[String]> {
         return Observable.just((0..<20).map { "\($0)" })
     }
+    @IBAction func onBack(_ sender: Any) {
+        if HomeViewController.homeType == .order {
+            OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }else{
+            DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        }
+    }
 }
 

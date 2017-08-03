@@ -12,10 +12,16 @@ import RxSwift
 import RxCocoa
 
 class OrderNavTabBarViewController: UITabBarController {
+    public static var sharedInstance: OrderNavTabBarViewController!
     var coordinator: OrderNavTabBarCoordinator!
     override func viewDidLoad() {
         super.viewDidLoad()
+        OrderNavTabBarViewController.sharedInstance = self
         
         // Do any additional setup after loading the view.
+    }
+    
+    func switchTab(index: Int){
+        selectedIndex = index
     }
 }

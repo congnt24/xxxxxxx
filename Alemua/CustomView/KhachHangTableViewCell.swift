@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class KhachHangTableViewCell: UITableViewCell {
 
@@ -24,6 +25,17 @@ class KhachHangTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func bindData(data: ClientResponse) {
+        if let photo = data.photo {
+            avatar.kf.setImage(with: URL(string: photo))
+        }
+        name.text = data.name
+        star.number = Int(data.rating ?? 0)
+        star.fillStar()
+        score.text = "\(data.rating?.toFormatedRating() ?? "0")"
+        lbBought.text = "\(data.numberProduct ?? 0)"
     }
     
 }

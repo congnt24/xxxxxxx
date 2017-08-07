@@ -20,7 +20,7 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var uiRateDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
+        taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
 
         // Do any additional setup after loading the view.
     }
@@ -35,7 +35,14 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     }
 
     @IBAction func onNext(_ sender: Any) {
-        TaoDonHangViewController.sharedInstance.moveToViewController(at: 2)
+        setData()
+        if taodonhangRequest.validateStep2() {
+            TaoDonHangViewController.sharedInstance.moveToViewController(at: 2)
+            print("Tao don hang 2")
+            print(taodonhangRequest)
+        } else {
+            print("ERROR")
+        }
     }
     
     func setData(){

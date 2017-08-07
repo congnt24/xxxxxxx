@@ -7,28 +7,39 @@
 //
 import Foundation
 import Moya
-import RxSwift
 
-let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
+
+public class AlemuaApi {
+    public static var shared: AlemuaApi!
+    let aleApi = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure, plugins: [NetworkLoggerPlugin()])
+    init() {
+        AlemuaApi.shared = self
+    }
+}
 
 public enum AleApi {
     case login(phone_number: String, token_firebase: String, device_type: Int)
-    case createOrder()
-    case createQuote()
-    case acceptQuote()
+    case createOrder(data: TaoDonHangRequest)
+    case createQuote(quote: CreateQuoteRequest)
+    case acceptQuote(data: AcceptQuoteRequest)
     case getHomeItems()
     case getProducts(type: Int, page: Int)
-    case uploadFile(UserID: String, ApiToken: String)
-    case getQuoteForShipper(UserID: String, page_number: Int)
-    case getOrderForClient(UserID: String, ApiToken: String, page_number: Int)//order_type = 0
-    case getOrderForShipper(UserID: String, ApiToken: String, page_number: Int)//order_type=1
-    case cancelOrder()
-    case reportUser()
-    case rateForClient()
-    case getOrderDetailsToQuote()
-    case getOrderDetails()
-    case getCommentOfShipper()
-    case getUserProfile()
+    case uploadFile(photos: [UIImage])
+    case getQuoteForShipper(page_number: Int)
+    case getOrderFromClient(page_number: Int, order_type: Int)//order_type = 0-4
+    case getOrderFromShipper(page_number: Int, order_type: Int)//order_type=1
+    case cancelOrder(data: CancelOrderRequest)
+    case reportUser(data: ReportUserRequest)
+    case rateForClient(data: RateForClient)
+    case getOrderDetailsToQuote(order_id: Int)
+    case getOrderDetails(orderType: Int, orderId: Int)
+    case getCommentOfShipper(page_number: Int)
+    case getUserProfile(profileType: Int) //1,2
+    case getListClients()
+    case updateProfile(data: UpdateProfileRequest)
+    //    =1: Cập nhật bật tắt Notification (Chỉ cần truyền lên trường is_notify)
+    //    =2: Cập nhật các thông tin còn lại (Không cần truyền lên trường is_notify)
+
 }
 
 extension AleApi: TargetType {
@@ -41,44 +52,48 @@ extension AleApi: TargetType {
         switch self {
         case .login:
             return "/api/users/loginAndRegister"
-        case .createOrder():
+        case .createOrder(_):
             return "/api/order/createOrder"
-        case .createQuote():
+        case .createQuote(_):
             return "/api/order/createQuote"
-        case .acceptQuote():
+        case .acceptQuote(_):
             return "/api/order/acceptQuote"
         case .getHomeItems():
             return "/api/order/getHomeItems"
         case .getProducts(_, _):
             return "/api/order/getProducts"
-        case .uploadFile(_, _):
-            return " /api/users/uploadFile"
-        case .getQuoteForShipper(_,_):
+        case .uploadFile(_):
+            return "/api/users/uploadFile"
+        case .getQuoteForShipper(_):
             return "/api/order/getQuoteForShipper"
-        case .getOrderForClient(_,_,_):
+        case .getOrderFromClient( _, _):
             return "/api/order/getOrderFromClient"
-        case .getOrderForShipper(_,_,_):
-            return "/api/order/getOrderForShipper"
-        case .cancelOrder():
+        case .getOrderFromShipper(_, _):
+            return "/api/order/getOrderFromShipper"
+        case .cancelOrder(_):
             return "/api/order/cancelOrder"
-        case .reportUser():
+        case .reportUser(_):
             return "/api/order/reportUser"
-        case .rateForClient():
+        case .rateForClient(_):
             return "/api/order/rateForClient"
-        case .getOrderDetailsToQuote():
+        case .getOrderDetailsToQuote(_):
             return "/api/order/getOrderDetailsToQuote"
-        case .getOrderDetails():
+        case .getOrderDetails(_, _):
             return "/api/order/getOrderDetails"
-        case .getCommentOfShipper():
+        case .getCommentOfShipper(_):
             return "/api/order/getCommentOfShipper"
-        case .getUserProfile():
+        case .getUserProfile(_):
             return "/api/users/getUserProfile"
+        case .getListClients():
+            return "/api/users/getListClients"
+        case .updateProfile(_):
+            return "/api/users/updateProfile"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login(_, _, _), .createOrder(), .acceptQuote(), .uploadFile(_, _):
+        case .login(_, _, _), .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile:
             return .post
         default:
             return .get
@@ -88,61 +103,158 @@ extension AleApi: TargetType {
     public var parameters: [String: Any]? {
         switch self {
         case .login(let phone_number, let token_firebase, let device_type):
-            return [
-                "phone_number": phone_number,
-                "token_firebase": token_firebase,
-                "device_type": 2
-            ]
-        case .createOrder():
-            return [
-                "UserID":2,
-                "ApiToken":"4fIVqGZPGQQakv7FBlyzUs671jzerg422UZrP2t4trl761Tekdngg6DSZoe8",
-                "product_name":"Máy nghe nhạc MP3",
-                "product_description":"Máy nghe nhạc xịn",
-                "photo":"image.png,image1.png",
-                "website_url":"amazon.com",
-                "website_price":100,
-                "promotion_code":"",
-                "quantity":1,
-                "product_option":3,
-                "buy_from":"Mỹ",
-                "delivery_to":"Hà Đông - Hà Nội",
-                "delivery_date":"2017-07-28",
-                "note":"Giao hàng đúng giờ",
-                "transaction_option": 1
-            ]
-        case .createQuote():
-            return [
-                "UserID":3,
-                "ApiToken":"gduO4eJFqR9eUnHhdKiEADIyhOBhEh6RF6qQZ5oNWhF9ySLeE4MLlGM5L4Nd",
-                "order_id":2,
-                "total_price":200,
-                "discount":0
-            ]
-        case .acceptQuote():
-            return [
-                "UserID":2,
-                "ApiToken":"4fIVqGZPGQQakv7FBlyzUs671jzerg422UZrP2t4trl761Tekdngg6DSZoe8",
-                "order_id":1,
-                "quote_id":1,
-                "discount":0
-            ]
+            var params = [String: Any]()
+            params["phone_number"] = phone_number
+            params["token_firebase"] = token_firebase
+            params["device_type"] = 2
+            return params
+        case .createOrder(let data):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["product_name"] = data.productName ?? ""
+            params["product_description"] = data.productDescription ?? ""
+            params["buy_from"] = data.buyFrom ?? ""
+            params["delivery_to"] = data.deliveryTo ?? ""
+            params["delivery_date"] = data.deliveryDate ?? ""
+            params["note"] = data.note ?? ""
+            params["website_url"] = data.websiteUrl ?? ""
+            params["website_price"] = data.websitePrice ?? 0
+            params["promotion_code"] = data.promotionCode ?? ""
+            params["transaction_option"] = data.transactionOption ?? 1
+            params["quantity"] = data.quantity ?? 1
+            params["photo"] = data.photo ?? ""
+            params["product_option"] = data.productOption ?? ""
+            return params
+        case .createQuote(let quote):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["order_id"] = quote.orderId!
+            params["buy_from"] = quote.buyFrom!
+            params["delivery_to"] = quote.deliveryTo!
+            params["delivery_date"] = quote.deliveryDate!
+            params["description"] = quote.descriptionValue!
+            params["note"] = quote.note!
+            params["total_price"] = quote.totalPrice!
+            params["buying_price"] = quote.buyingPrice ?? 0
+            params["discount"] = quote.discount ?? 0
+            params["tax"] = quote.tax ?? 0
+            params["transfer_domestic_fee"] = quote.transferDomesticFee ?? 0
+            params["transfer_buyer_fee"] = quote.transferBuyerFee ?? 0
+            params["transfer_alemua_free"] = quote.transferToBuyerFee ?? 0
+            params["transfer_to_buyer_fee"] = quote.transferToBuyerFee ?? 0
+            return params
+        case .acceptQuote(let data):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["order_id"] = data.orderId!
+            params["quote_id"] = data.quoteId!
+            params["transaction_option"] = data.transactionOption!
+            return params
+        case .cancelOrder(let data):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["order_id"] = data.orderId!
+            params["cancel_reason"] = data.cancelReason!
+            return params
+        case .reportUser(let data):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["user_report"] = data.userReport!
+            params["report_content"] = data.reportContent!
+            return params
+        case .rateForClient(let data):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["rating_id"] = data.ratingId
+            params["user_attitude_rating"] =  data.userAttitudeRating ?? 0
+            params["user_payment_rating"] = data.userPaymentRating ?? 0
+            return params
         case .getProducts(let type, let page):
-            return [
-            "product_type": type,
-            "page_size": 20,
-            "page_number": page
-            ]
-        case .getQuoteForShipper(let UserID, let page_number):
-            return [
-                "UserID": UserID,
-                "page_size": 20,
-                "page_number": page_number
-            ]
+            var params = [String: Any]()
+            params["product_type"] = type
+            params["page_size"] = 20
+            params["page_number"] = page
+            return params
+        case .getQuoteForShipper(let page_number):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["page_size"] = 20
+            params["page_number"] = page_number
+            return params
+        case .getOrderFromClient(let page_number, let order_type):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["page_size"] = 20
+            params["page_number"] = page_number
+            params["order_type"] = order_type
+            return params
+        case .getOrderFromShipper(let page_number, let order_type):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiTokenShipper
+            params["page_size"] = 20
+            params["page_number"] = page_number
+            params["order_type"] = order_type
+            return params
+        case .getOrderDetailsToQuote(let order_id):
+            var params = [String: Any]()
+            params["order_id"] = order_id
+            return params
+
+        case .getOrderDetails(let orderType, let orderId):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["order_type"] = orderType
+            params["order_id"] = orderId
+            return params
+        case .getCommentOfShipper(let page_number):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["page_size"] = 20
+            params["page_number"] = page_number
+            return params
+        case .getListClients():
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            return params
+
+        case .getUserProfile(let profile_type):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["profile_type"] = profile_type//1 = client, 2 = shipper
+            return params
+        case .updateProfile(let data):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["address"] = data.address ?? ""
+            params["description"] = data.descriptionValue ?? ""
+            params["email"] = data.email ?? ""
+            params["photo"] = data.photo ?? ""
+            params["profile_type"] = data.profileType ?? 2
+            params["is_notify"] = data.isNotify ?? 0
+            params["name"] = data.name ?? ""
+            return params
+        case .uploadFile(_):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            return params
         default:
             return nil
         }
     }
+    
 
     public /// The method used for parameter encoding.
     var parameterEncoding: ParameterEncoding {
@@ -161,7 +273,17 @@ extension AleApi: TargetType {
 
     public /// The type of HTTP task to be performed.
     var task: Task {
-        return .request
+        switch self {
+        case .uploadFile(let photos):
+            var formData = [MultipartFormData]()
+            for i in 1...photos.count {
+                let imageData = UIImageJPEGRepresentation(photos[i-1], 1.0)
+                formData.append(MultipartFormData(provider: .data(imageData!), name: "FileNo\(i)", fileName: "photo.jpg", mimeType: "image/jpeg"))
+            }
+            return .upload(.multipart(formData))
+        default:
+            return .request
+        }
     }
 
 }
@@ -169,7 +291,7 @@ extension AleApi: TargetType {
 public var endpointClosure = { (target: AleApi) -> Endpoint<AleApi> in
     let url = target.baseURL.appendingPathComponent(target.path).absoluteString
     let endpoint: Endpoint<AleApi> = Endpoint(url: url, sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, parameters: target.parameters)
-    
+
 //    switch target {
 //    case .login(let phone_number, let token, let device_type):
 //        let credentialData = "\(userString):\(passwordString)".data(using: String.Encoding.utf8)!
@@ -183,7 +305,7 @@ public var endpointClosure = { (target: AleApi) -> Endpoint<AleApi> in
 //        }
 //        return endpoint.adding(newHTTPHeaderFields: ["Authorization": "token \(token)"])
 //    }
-     return endpoint
+    return endpoint
 }
 
 extension String {

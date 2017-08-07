@@ -28,8 +28,8 @@ class OrderViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setPhoto(link: String){
-        productPhoto.kf.setImage(with: URL(string: link))
+    func setPhoto(link: String?){
+            productPhoto.kf.setImage(with: URL(string: link ?? ""), placeholder: UIImage(named: "sample"))
     }
     
     
@@ -38,7 +38,7 @@ class OrderViewCell: UITableViewCell {
         lbNoiMua.text = item.address
         lbWebsite.text = item.websiteUrl
         lbGia.text = "$\(item.promotionPrice!)"
-        lbGiaCu.text = "$\(item.originPrice!)"
-        setPhoto(link: item.photo!)
+        lbGiaCu.setText(str: "$\(item.originPrice!)")
+        setPhoto(link: item.photo)
     }
 }

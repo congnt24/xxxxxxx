@@ -9,6 +9,9 @@
 import UIKit
 import XLPagerTabStrip
 import AwesomeMVVM
+import Moya
+import RxSwift
+import RxCocoa
 
 class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var itemView: ItemView!
@@ -19,10 +22,11 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tfNote: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
     var taodonhangRequest: TaoDonHangRequest!
+    let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        taodonhangRequest = TaoDonHangViewController.sharedInstance.taodonhangRequest
+
+        taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
         // Do any additional setup after loading the view.
     }
 
@@ -32,7 +36,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
 
     @IBAction func onGuiMuaHang(_ sender: Any) {
         if Prefs.isUserLogged {
-            OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
+            checkOrderAndSendRequest()
         } else {
             HomeCoordinator.sharedInstance.showLoginScreen()
         }
@@ -40,14 +44,37 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     @IBAction func onShowMoreRate(_ sender: Any) {
         rateDetail.toggleHeight()
     }
-    
-    func bindData(){
+
+    override func viewDidAppear(_ animated: Bool) {
+        print("Appear")
+        bindData()
+    }
+
+    func bindData() {
         tfMuaTu.text = taodonhangRequest.buyFrom
         tfGiaoDen.text = taodonhangRequest.deliveryTo
         tfNgay.text = taodonhangRequest.deliveryDate
-        tfGia.text = String(describing: taodonhangRequest.websitePrice)
+        tfGia.text = "\(taodonhangRequest.websitePrice ?? 0)"
         tfNote.text = taodonhangRequest.note
     }
 
+
+    func checkOrderAndSendRequest() {
+        //TODO: Send request
+        AlemuaApi.shared.aleApi.request(.createOrder(data: taodonhangRequest)).subscribe({ (event) in
+            switch event {
+            case .next(let ele):
+                print("SUCCESS \(ele)")
+                OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
+                break
+            case .error(let err):
+                print("ERROR: \(err)")
+                break
+            default:
+
+                break
+            }
+        }).addDisposableTo(bag)
+    }
 
 }

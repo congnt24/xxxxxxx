@@ -9,10 +9,15 @@
 import UIKit
 import AwesomeMVVM
 import KMPlaceholderTextView
+import SwiftyJSON
+import RxSwift
 
 class OrderDialogDangChuyen3ViewController: UIViewController {
-
+    var orderId: Int!
     @IBOutlet weak var tvLydo: KMPlaceholderTextView!
+    
+    var bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,5 +25,21 @@ class OrderDialogDangChuyen3ViewController: UIViewController {
     }
 
     @IBAction func onDone(_ sender: Any) {
+        //Cancel
+        let cancel = CancelOrderRequest()
+        cancel.orderId = orderId
+        cancel.cancelReason = tvLydo.text
+        AlemuaApi.shared.aleApi.request(.cancelOrder(data: cancel))
+        .filterSuccessfulStatusCodes()
+        .subscribe(onNext: { (response) in
+            let json = JSON(response.data)
+            print(json)
+            if json["code"] == 200 {
+                print("Cancel success")
+                AppCoordinator.sharedInstance.navigation?.popViewController()
+            }else{
+                print("Error")
+            }
+        }).addDisposableTo(bag)
     }
 }

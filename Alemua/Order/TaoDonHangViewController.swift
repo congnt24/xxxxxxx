@@ -9,24 +9,6 @@
 import UIKit
 import XLPagerTabStrip
 
-class TaoDonHangRequest {
-    public var productOption: Int?
-    public var note: String?
-    public var buyFrom: String?
-    public var websitePrice: Int?
-    public var deliveryDate: String?
-    public var websiteUrl: String?
-    public var quantity: Int?
-    public var productName: String?
-    public var promotionCode: String?
-    public var productDescription: String?
-    public var deliveryTo: String?
-    public var transactionOption: Int?
-    public var userID: Int?
-    public var photo: String?
-    public var apiToken: String?
-}
-
 class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
     //create post object and use it in 3 subviews controller
     //call using superviewcontroller
@@ -44,6 +26,8 @@ class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarLeftContentInset = 0
         settings.style.buttonBarRightContentInset = 0
         settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 15)
+        containerView.isScrollEnabled = false
+        
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         TaoDonHangViewController.sharedInstance = self

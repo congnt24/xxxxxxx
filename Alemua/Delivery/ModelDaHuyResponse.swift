@@ -1,27 +1,21 @@
 //
-//  ModelQuoteResponse.swift
+//  ModelDaHuyResponse.swift
 //  Alemua
 //
-//  Created by Cong Nguyen on 8/2/17.
+//  Created by Cong Nguyen on 8/5/17.
 //  Copyright © 2017 cong. All rights reserved.
 //
 
 import SwiftyJSON
 
-public class ModelQuoteResponse: BaseModelResponse<ModelQuoteData> {
-    
-}
-
-public class ModelQuoteData: BaseResult {
-
-    // MARK: Declaration for string constants to be used to decode and also serialize.
+class ModelDaHuyData {
     private struct SerializationKeys {
         static let productOption = "product_option"
         static let note = "note"
         static let buyFrom = "buy_from"
         static let updatedAt = "updated_at"
         static let websitePrice = "website_price"
-        static let numberProduct = "number_product"
+        static let deliveryDate = "delivery_date"
         static let websiteUrl = "website_url"
         static let productName = "product_name"
         static let quantity = "quantity"
@@ -29,6 +23,7 @@ public class ModelQuoteData: BaseResult {
         static let promotionCode = "promotion_code"
         static let isBefore = "is_before"
         static let id = "id"
+        static let cancelReason = "cancel_reason"
         static let productDescription = "product_description"
         static let transactionOption = "transaction_option"
         static let photo = "photo"
@@ -37,18 +32,16 @@ public class ModelQuoteData: BaseResult {
         static let userId = "user_id"
         static let promotionMoney = "promotion_money"
         static let userPost = "user_post"
-        static let numberQuote = "number_quote"
-        static let deliveryDate = "delivery_date"
-        static let timeAgo = "time_ago"
+        static let numberProduct = "number_product"
     }
-
+    
     // MARK: Properties
     public var productOption: Int?
     public var note: String?
     public var buyFrom: String?
     public var updatedAt: String?
     public var websitePrice: Int?
-    public var numberProduct: Int?
+    public var deliveryDate: String?
     public var websiteUrl: String?
     public var productName: String?
     public var quantity: Int?
@@ -56,6 +49,7 @@ public class ModelQuoteData: BaseResult {
     public var promotionCode: String?
     public var isBefore: Int?
     public var id: Int?
+    public var cancelReason: String?
     public var productDescription: String?
     public var transactionOption: Int?
     public var photo: String?
@@ -64,10 +58,8 @@ public class ModelQuoteData: BaseResult {
     public var userId: Int?
     public var promotionMoney: Int?
     public var userPost: String?
-    public var numberQuote: Int?
-    public var deliveryDate: String?
-    public var timeAgo: Int?
-
+    public var numberProduct: Int?
+    
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
     ///
@@ -76,18 +68,17 @@ public class ModelQuoteData: BaseResult {
     public convenience init(object: Any) {
         self.init(json: JSON(object))
     }
-
+    
     /// Initiates the instance based on the JSON that was passed.
     ///
     /// - parameter json: JSON object from SwiftyJSON.
     public required init(json: JSON) {
-        super.init(json: json)
         productOption = json[SerializationKeys.productOption].int
         note = json[SerializationKeys.note].string
         buyFrom = json[SerializationKeys.buyFrom].string
         updatedAt = json[SerializationKeys.updatedAt].string
         websitePrice = json[SerializationKeys.websitePrice].int
-        numberProduct = json[SerializationKeys.numberProduct].int
+        deliveryDate = json[SerializationKeys.deliveryDate].string
         websiteUrl = json[SerializationKeys.websiteUrl].string
         productName = json[SerializationKeys.productName].string
         quantity = json[SerializationKeys.quantity].int
@@ -95,6 +86,7 @@ public class ModelQuoteData: BaseResult {
         promotionCode = json[SerializationKeys.promotionCode].string
         isBefore = json[SerializationKeys.isBefore].int
         id = json[SerializationKeys.id].int
+        cancelReason = json[SerializationKeys.cancelReason].string
         productDescription = json[SerializationKeys.productDescription].string
         transactionOption = json[SerializationKeys.transactionOption].int
         photo = json[SerializationKeys.photo].string
@@ -103,8 +95,7 @@ public class ModelQuoteData: BaseResult {
         userId = json[SerializationKeys.userId].int
         promotionMoney = json[SerializationKeys.promotionMoney].int
         userPost = json[SerializationKeys.userPost].string
-        numberQuote = json[SerializationKeys.numberQuote].int
-        deliveryDate = json[SerializationKeys.deliveryDate].string
-        timeAgo = json[SerializationKeys.timeAgo].int
+        numberProduct = json[SerializationKeys.numberProduct].int
     }
+
 }

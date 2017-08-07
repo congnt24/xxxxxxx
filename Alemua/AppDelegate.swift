@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FirebaseAuthHelper.configure()
 //        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        
+        AlemuaApi()
         //keyboard
         IQKeyboardManager.sharedManager().enable = true
         //init coordinator
@@ -40,7 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appCoor = AppCoordinator(navigation, window)
         appCoor.start(nil)
         window?.rootViewController = navigation
-        
+        print(Prefs.apiToken)
+        print(Prefs.userId)
+//        Prefs.isUserLogged = false
         return true
     }
 

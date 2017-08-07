@@ -9,10 +9,6 @@
 import UIKit
 import AwesomeMVVM
 
-protocol AccountCoordinatorDelegate {
-    func showAccountSetting()
-    func showAccountInvite()
-}
 
 class AccountCoordinator: Coordinator {
     public static var sharedInstance: AccountCoordinator!
@@ -20,23 +16,25 @@ class AccountCoordinator: Coordinator {
         AccountCoordinator.sharedInstance = self
     }
     
-    public func openEditAccount(){
+    public func openEditAccount(data: ProfileData?){
         let account: EditAccountViewController = getProfileStoryboard().instantiateViewController(withClass: EditAccountViewController.self)
         account.coordinator = self
+        account.data = data
         navigation?.pushViewController(account, animated: true)
     }
 }
 
-extension AccountCoordinator: AccountCoordinatorDelegate {
+extension AccountCoordinator {
     func showAccountSetting() {
         let account: AccountSettingViewController = getProfileStoryboard().instantiateViewController(withClass: AccountSettingViewController.self)
         account.coordinator = self
         navigation?.pushViewController(account, animated: true)
     }
     
-    func showAccountInvite() {
+    func showAccountInvite(code: String?) {
         let account: AccountInviteViewController = getProfileStoryboard().instantiateViewController(withClass: AccountInviteViewController.self)
         account.coordinator = self
+        account.inviteCode = code!
         navigation?.pushViewController(account, animated: true)
     }
     

@@ -56,7 +56,6 @@ class StarView: UIStackView {
         subviews[4].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickStar4)))
     }
 
-
     func clickStar0() {
         print("ADSf 1")
         number = 1

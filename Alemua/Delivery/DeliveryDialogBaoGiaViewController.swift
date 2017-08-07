@@ -9,7 +9,7 @@
 import UIKit
 
 class DeliveryDialogBaoGiaViewController: UIViewController {
-
+    public static var orderData: ModelOrderClientData!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,5 +18,6 @@ class DeliveryDialogBaoGiaViewController: UIViewController {
     
 
     @IBAction func onDone(_ sender: Any) {
+        DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal(data: DeliveryDialogBaoGiaViewController.orderData!)
     }
 }

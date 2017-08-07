@@ -8,6 +8,7 @@
 
 import UIKit
 import AwesomeMVVM
+import RxSwift
 
 class DangChuyenViewController: UIViewController {
     @IBOutlet weak var uiReview1: ReviewView!
@@ -23,10 +24,45 @@ class DangChuyenViewController: UIViewController {
     @IBOutlet weak var uiOrder: UIStackView!
 
     @IBOutlet weak var uiRateDetail: RateDetail!
+    let bag = DisposeBag()
+    var orderData: ModelOrderClientData!
+    var modelDangChuyen: ModelDonHangDangChuyenData! {
+        didSet {
+            bindData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        //fetchData
+        AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 2, orderId: orderData.id!))
+        .toJSON().subscribe(onNext: { (res) in
+            switch res {
+            case .done(let result):
+                self.modelDangChuyen = ModelDonHangDangChuyenData(json: result)
+                break
+            case .error(let msg):
+                print("ERROR: \(msg)")
+                break
+            default: break
+            }
+        }).addDisposableTo(bag)
+        
+    }
+    
+    func bindData(){
+        uiItemView.bindData(title: modelDangChuyen.productName!, imageUrl: orderData.photo!, baogia: "\(orderData.quantity!)")
+        tfMuaTu.text = modelDangChuyen.buyFrom
+        tfGiaoDen.text = modelDangChuyen.deliveryTo
+        tfTruocNgay.text = modelDangChuyen.deliveryDate?.toFormatedDate()
+        ifTongGia.text = "\(modelDangChuyen.totalPrice ?? 0)".toFormatedPrice()
+        tfMoTa.text = modelDangChuyen.descriptionValue
+        tfGhiChu.text = modelDangChuyen.note
+        //bind rate detail
+        uiRateDetail.bindData(RateDetailData(tonggia: modelDangChuyen.totalPrice, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree))
+        uiReview1.bindData(name: modelDangChuyen.userPostName, rating: modelDangChuyen.userPostRating, nguoidang: 0)
+        uiReview2.bindData(name: modelDangChuyen.userShipName, rating: modelDangChuyen.userShipRating, nguoidang: 1)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +85,7 @@ class DangChuyenViewController: UIViewController {
     }
 
     @IBAction func onBaoXau(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog1BaoXau()
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog1BaoXau(modelDangChuyen: modelDangChuyen)
     }
 
     @IBAction func onDaGiaoHangDelivery(_ sender: Any) {
@@ -59,7 +95,7 @@ class DangChuyenViewController: UIViewController {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
     }
     @IBAction func onHuyDon(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog3HuyDon()
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog3HuyDon(orderId: orderData.id)
     }
     @IBOutlet weak var onToggleRateView: AwesomeToggleButton!
     @IBAction func onToggleRateDetail(_ sender: Any) {

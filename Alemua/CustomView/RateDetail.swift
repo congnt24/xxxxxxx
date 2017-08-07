@@ -8,19 +8,22 @@
 
 import UIKit
 import AwesomeMVVM
+import RxCocoa
+import RxSwift
 
 struct RateDetailData {
-    var tonggia: String
-    var thue: String
-    var phichuyennoidia: String
-    var phinguoimua: String
-    var phivanchuyenvealemua: String
-    var phivanchuyenvetaynguoimua: String
-    var phigiaodichquaalemua: String
-    
+    var tonggia: Int?
+    var thue: Int?
+    var phichuyennoidia: Int?
+    var phinguoimua: Int?
+    var phivanchuyenvealemua: Int?
+    var phivanchuyenvetaynguoimua: Int?
+    var phigiaodichquaalemua: Int?
+
 }
 
 class RateDetail: AwesomeToggleViewByHeight {
+
 
     @IBOutlet weak var uiStackView: UIStackView!
     @IBOutlet weak var tonggia: AwesomeTextField!
@@ -30,8 +33,13 @@ class RateDetail: AwesomeToggleViewByHeight {
     @IBOutlet weak var phivanchuyenvealemua: AwesomeTextField!
     @IBOutlet weak var phivanchuyenvetaynguoimua: AwesomeTextField!
     @IBOutlet weak var phigiaodichquaalemua: AwesomeTextField!
-    
+
     var listView: [AwesomeTextField] = []
+    var rateData: RateDetailData!
+    let bag = DisposeBag()
+    
+    var onPriceChange: ((_ total: Int?) -> Void)?
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -44,23 +52,109 @@ class RateDetail: AwesomeToggleViewByHeight {
         super.setupView(nibName: "RateDetail")
         //7 item
         listView = uiStackView.arrangedSubviews.map { ($0 as! AwesomeTextField) }
+    }
+
+    public func enableEditing(){
+        tonggia.isUserInteractionEnabled = true
+        thue.isUserInteractionEnabled = true
+        phichuyennoidia.isUserInteractionEnabled = true
+        phinguoimua.isUserInteractionEnabled = true
+        phivanchuyenvealemua.isUserInteractionEnabled = true
+        phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
+        phigiaodichquaalemua.isUserInteractionEnabled = true
         
+        bindData(RateDetailData(tonggia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        //
+        tonggia.rx.text.subscribe(onNext: { (str) in
+            self.rateData.tonggia = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        thue.rx.text.subscribe(onNext: { (str) in
+            self.rateData.thue = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        phichuyennoidia.rx.text.subscribe(onNext: { (str) in
+            self.rateData.phichuyennoidia = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        phinguoimua.rx.text.subscribe(onNext: { (str) in
+            self.rateData.phinguoimua = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        phivanchuyenvealemua.rx.text.subscribe(onNext: { (str) in
+            self.rateData.phivanchuyenvealemua = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        phivanchuyenvetaynguoimua.rx.text.subscribe(onNext: { (str) in
+            self.rateData.phivanchuyenvetaynguoimua = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        phigiaodichquaalemua.rx.text.subscribe(onNext: { (str) in
+            self.rateData.phigiaodichquaalemua = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
     }
     
-    public func setValues(values: [String]){
+    public func setDefaultValue(value: Int?) {
+        bindData(RateDetailData(tonggia: value, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+    }
+
+    public func setValues(values: [String]) {
         for index in 0..<listView.count {
             listView[index].text = values[index]
         }
     }
-    
-    func bindData(_ rateData: RateDetailData){
-        tonggia.text = rateData.tonggia
-        thue.text = rateData.thue
-        phichuyennoidia.text = rateData.phichuyennoidia
-        phinguoimua.text = rateData.phinguoimua
-        phivanchuyenvealemua.text = rateData.phivanchuyenvealemua
-        phivanchuyenvetaynguoimua.text = rateData.phivanchuyenvetaynguoimua
-        phigiaodichquaalemua.text = rateData.phigiaodichquaalemua
+
+    func bindData(_ rateData: RateDetailData) {
+        self.rateData = rateData
+        if thue.isUserInteractionEnabled {
+            tonggia.text = "\(rateData.tonggia!)"
+            thue.text = "\(rateData.thue!)"
+            phichuyennoidia.text = "\(rateData.phichuyennoidia!)"
+            phinguoimua.text = "\(rateData.phinguoimua!)"
+            phivanchuyenvealemua.text = "\(rateData.phivanchuyenvealemua!)"
+            phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)"
+            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"
+        }else{
+            tonggia.text = "\(rateData.tonggia!)".toFormatedPrice()
+            thue.text = "\(rateData.thue!)".toFormatedPrice()
+            phichuyennoidia.text = "\(rateData.phichuyennoidia!)".toFormatedPrice()
+            phinguoimua.text = "\(rateData.phinguoimua!)".toFormatedPrice()
+            phivanchuyenvealemua.text = "\(rateData.phivanchuyenvealemua!)".toFormatedPrice()
+            phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)".toFormatedPrice()
+            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
+        }
+    }
+
+    func calculateTotal() -> Int? {
+        var arr = [Int]()
+        arr.append(rateData.tonggia ?? 0)
+        arr.append(rateData.thue ?? 0)
+        arr.append(rateData.phichuyennoidia ?? 0)
+        arr.append(rateData.phigiaodichquaalemua ?? 0)
+        arr.append(rateData.phinguoimua ?? 0)
+        arr.append(rateData.phivanchuyenvealemua ?? 0)
+        arr.append(rateData.phivanchuyenvetaynguoimua ?? 0)
+        var sum = 0
+        for item in arr {
+            sum += item
+        }
+        return sum
+
     }
 
 }

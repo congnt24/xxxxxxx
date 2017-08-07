@@ -17,8 +17,6 @@ import SwiftyJSON
 class LoginViewController: BaseViewController, AKFViewControllerDelegate {
     var bag = DisposeBag()
     var accountKit: AKFAccountKit!
-    let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
-
     override func bindToViewModel() {
         if accountKit == nil {
             accountKit = AKFAccountKit(responseType: .accessToken)
@@ -45,22 +43,25 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
         print("Login succcess with AccessToken")
         accountKit.requestAccount { (account, err) in
             if let phone = account?.phoneNumber?.phoneNumber {
-                self.AleProvider.request(AleApi.login(phone_number: phone, token_firebase: accessToken.tokenString, device_type: 2)).subscribe { event in
-                    switch event {
-                    case let .next(response):
-                        let json = JSON(response.data)
-                        print(json)
-                        //TODO: Send to server
-                        Prefs.apiToken = json["result"]["ApiToken"].stringValue
-                        print(Prefs.apiToken)
-                        Prefs.isUserLogged = true
-                        self.navigationController?.popViewController()
-                    case let .error(error):
-                        print(error)
-                    default:
-                        break
-                    }
-                }.addDisposableTo(self.bag)
+                AlemuaApi.shared.aleApi.request(AleApi.login(phone_number: phone, token_firebase: accessToken.tokenString, device_type: 2))
+                    .toJSON()
+                    .subscribe(onNext: { (res) in
+                        switch res {
+                        case .done(let result):
+                            //TODO: Send to server
+                            Prefs.apiToken = result["ApiToken"].stringValue
+                            Prefs.userIdClient = result["id"].int!
+                            print(Prefs.apiToken)
+                            Prefs.isUserLogged = true
+                            self.navigationController?.popViewController()
+                            print("Cancel success")
+                            break
+                        case .error(let msg):
+                            print("Error \(msg)")
+                            break
+                        default: break
+                        }
+                    }).addDisposableTo(self.bag)
             }
         }
         

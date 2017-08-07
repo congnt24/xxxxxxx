@@ -9,7 +9,8 @@
 import UIKit
 
 class OrderDialogBaoGia1ViewController: UIViewController {
-
+    var order_id: Int!
+    var quoteId: Int!
     @IBOutlet weak var radioGroup: AwesomeRadioGroup!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class OrderDialogBaoGia1ViewController: UIViewController {
     }
     
     @IBAction func onNext(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog2(index: radioGroup.checkedPosition)
+        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog2(index: radioGroup.checkedPosition, id: order_id, quoteId: quoteId)
         
         
         let parent = OrderOrderCoordinator.sharedInstance.navigation?.topViewController

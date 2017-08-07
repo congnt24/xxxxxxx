@@ -8,9 +8,16 @@
 
 import UIKit
 import XLPagerTabStrip
+import SwiftyJSON
+import RxSwift
 
 class DonHangViewController: ButtonBarPagerTabStripViewController {
-    
+    var bag = DisposeBag()
+    var modelQuoteData: ModelQuoteData!
+    var orderData: ModelOrderClientData!
+    var donhang: DonHangSubViewController!
+    var baogia: OrderBaoGiaSubViewController!
+
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#3A99D8")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -29,18 +36,19 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         btlFilter.isEnabled = false
         btlFilter.plainView.isHidden = true
+        fetchData()
     }
-    
+
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let donhang: DonHangSubViewController = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: DonHangSubViewController.self)
-        let baogia: OrderBaoGiaSubViewController = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: OrderBaoGiaSubViewController.self)
-        
+        donhang = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: DonHangSubViewController.self)
+        baogia = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withClass: OrderBaoGiaSubViewController.self)
+
         donhang.itemInfo = IndicatorInfo(title: "Đơn hàng")
         baogia.itemInfo = IndicatorInfo(title: "Báo giá")
-        
+
         return [donhang, baogia]
     }
-    
+
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         super.updateIndicator(for: viewController, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: progressPercentage, indexWasChanged: indexWasChanged)
         if indexWasChanged {
@@ -53,10 +61,55 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
             }
         }
     }
-    
-    
+
+
     @IBOutlet weak var btlFilter: UIBarButtonItem!
     @IBAction func onFilterClick(_ sender: Any) {
-        
+
     }
 }
+
+extension DonHangViewController {
+    func fetchData(){
+        var orderID = 0
+        if HomeViewController.homeType == .delivery {
+            orderID = modelQuoteData.id!
+            AlemuaApi.shared.aleApi.request(AleApi.getOrderDetailsToQuote(order_id: orderID))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result):
+                        self.donhang.modelQuoteData = self.modelQuoteData
+                        self.donhang.orderData = ModelOrderClientData(json: result)
+                        self.baogia.orderData = ModelOrderClientData(json: result)
+                        print("Cancel success")
+                        break
+                    case .error(let msg):
+                        print("Error \(msg)")
+                        break
+                    default: break
+                    }
+                }).addDisposableTo(bag)
+            
+        }else{
+            orderID = orderData.id!
+            AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 1, orderId: orderID))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result):
+                        self.donhang.orderData = ModelOrderClientData(json: result)
+                        self.baogia.orderData = ModelOrderClientData(json: result)
+                        print("Cancel success")
+                        break
+                    case .error(let msg):
+                        print("Error \(msg)")
+                        break
+                    default: break
+                    }
+                }).addDisposableTo(bag)
+        }
+
+    }
+}
+

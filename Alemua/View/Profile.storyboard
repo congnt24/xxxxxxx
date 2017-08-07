@@ -556,9 +556,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="lbDahuy" destination="6P5-bj-uuy" id="zsR-Ye-mML"/>
+                        <outlet property="lbDangxuly" destination="SvH-ZQ-vcR" id="taW-jS-6Ir"/>
+                        <outlet property="lbDesc" destination="rRz-xw-L7o" id="k77-D1-Qch"/>
+                        <outlet property="lbHoanthanh" destination="PGX-of-PdK" id="jE3-1w-NR9"/>
                         <outlet property="tfDiachi" destination="SGI-m2-shx" id="3Ft-Sw-q5F"/>
                         <outlet property="tfEmail" destination="zHs-Hy-dYL" id="nsH-JY-IEE"/>
                         <outlet property="tfTen" destination="zr3-cM-HSD" id="SpX-5y-OCy"/>
+                        <outlet property="tvGioiThieu" destination="j8c-k2-g1w" id="hye-Ub-9Mh"/>
                         <outlet property="uiMoreDetails" destination="eDo-uq-HPN" id="ubO-QP-SSJ"/>
                         <outlet property="userView" destination="R6t-hc-wKH" id="UaI-Li-5n4"/>
                     </connections>
@@ -690,6 +695,9 @@
                             <constraint firstItem="xFo-WJ-GN3" firstAttribute="leading" secondItem="dtV-Ic-SLS" secondAttribute="leading" id="gMQ-Ij-v7c"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tfInviteCode" destination="jJB-Wf-yR1" id="TGh-OE-NWo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvU-ZO-b2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

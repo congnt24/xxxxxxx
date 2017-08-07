@@ -12,7 +12,7 @@ import Kingfisher
 struct ItemViewData {
     var title: String
     var imageUrl: String
-    var baogia: String
+    var baogia: String?
 }
 
 class ItemView: BaseCustomView {
@@ -27,16 +27,24 @@ class ItemView: BaseCustomView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var baogia: UILabel!
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         super.setupView(nibName: "ItemView")
     }
-    
-    func bindData(_ itemViewData: ItemViewData){
+
+    func bindData(_ itemViewData: ItemViewData) {
         title.text = itemViewData.title
-        baogia.text = itemViewData.baogia
+        baogia.text = itemViewData.baogia!.toFormatedBaoGia()
         image.kf.setImage(with: URL(string: itemViewData.imageUrl))
+    }
+    func bindData(title: String?, imageUrl: String?, baogia: String?) {
+        self.title.text = title
+        self.baogia.text = baogia!.toFormatedBaoGia()
+        if let imageUrl = imageUrl {
+            let arr = imageUrl.splitted(by: ",")
+            (arr.count == 0 ? "" : arr[0]).loadItemImage(img: image)
+        }
     }
 
 }

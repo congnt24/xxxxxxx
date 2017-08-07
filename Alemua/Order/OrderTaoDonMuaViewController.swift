@@ -18,7 +18,7 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var btnClear: UIButton!
     
     var parentUrl: String?
-
+    var orderData: ModelOrderData?
     let bag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,10 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
         
         if let parentUrl = parentUrl {
             input.text = parentUrl
+            openPage()
+        }
+        if let orderData = orderData {
+            input.text = orderData.websiteUrl
             openPage()
         }
 

@@ -57,12 +57,18 @@ extension OrderMain2ViewController {
         datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "OrderViewCell")){ (row, item, cell) in
             (cell as! OrderViewCell).bindData(item: item)
             }.addDisposableTo(bag)
+        tableView.rx.itemSelected
+        .subscribe(onNext: { (ip) in
+                OrderCoordinator.sharedInstance.showTaoDonHang(data: self.datas.value[ip.row])
+        })
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
             self.fetchData().drive(onNext: { (results) in
-                for result in results {
-                    self.datas.value.append(result)
+                if results.count > 0 {
+                    for result in results {
+                        self.datas.value.append(result)
+                    }
                     self.currentPage += 1
                 }
             }).addDisposableTo(self.bag)

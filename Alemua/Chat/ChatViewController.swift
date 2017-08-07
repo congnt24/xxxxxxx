@@ -26,7 +26,7 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
 //        navigationController?.navigationBar.isHidden = false
         //change send item on inputtoolbar
         let rightButton = UIButton(frame: CGRect.zero)
-        var sendImage = UIImage(named: "ic_send_message")
+        let sendImage = UIImage(named: "ic_send_message")
         rightButton.setImage(sendImage, for: .normal)
         self.inputToolbar.contentView.rightBarButtonItemWidth = CGFloat(10.0)
         self.inputToolbar.contentView.rightBarButtonItem = rightButton

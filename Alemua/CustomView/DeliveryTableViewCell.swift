@@ -34,11 +34,18 @@ class DeliveryTableViewCell: UITableViewCell {
     }
     
     func bindData(data: ModelQuoteData){
-//        img.kf.setImage(with: URL(string: data.photo!.splitted(by: ",")[0]))
+        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))
+        if data.photo != "" {
+            img.kf.setImage(with: URL(string: data.photo!.splitted(by: ",")[0]), placeholder: UIImage(named: "sample") , options: [.processor(processor)])
+        }else{
+            img.image = UIImage(named: "sample")
+        }
+        title.text = data.productName
         lbOwner.text = data.userPost
-        lbDate.text = data.deliveryDate
-        lbBaoGia.text = "\(data.websitePrice)"
+        lbDate.text = data.deliveryDate?.toFormatedDate()
+        lbBaoGia.text = "\(data.numberQuote ?? 0)".toFormatedBaoGia()
         lbAddress.text = data.deliveryTo
-//        lbTime.text = data.websitePrice
+        lbPrice.text = "\(data.websitePrice!)".toFormatedPrice()
+        lbTime.text = data.timeAgo?.toFormatedTime()
     }
 }

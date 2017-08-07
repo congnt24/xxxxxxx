@@ -13,7 +13,10 @@ import RxCocoa
 
 class AccountInviteViewController: BaseViewController {
     var coordinator: AccountCoordinator!
+    var inviteCode: String!
+    @IBOutlet weak var tfInviteCode: AwesomeTextField!
     override func bindToViewModel() {
+        tfInviteCode.text = inviteCode
     }
     
     

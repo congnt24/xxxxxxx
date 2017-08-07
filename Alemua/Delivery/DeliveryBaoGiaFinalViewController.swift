@@ -8,9 +8,15 @@
 
 import UIKit
 import AwesomeMVVM
+import RxCocoa
+import RxSwift
+import SwiftyJSON
 
 class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var itemView: ItemView!
+    var modelQuoteData: ModelOrderClientData!
+    var req = CreateQuoteRequest()
+    var bag = DisposeBag()
 
     @IBOutlet weak var tfMuatu: AwesomeTextField!
     @IBOutlet weak var tfGiaoden: AwesomeTextField!
@@ -22,12 +28,53 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        itemView.bindData(title: modelQuoteData.productName, imageUrl: modelQuoteData.photo, baogia: "\(modelQuoteData.numberProduct ?? 0)")
+        tfMuatu.text = modelQuoteData.buyFrom
+        tfGiaoden.text = modelQuoteData.deliveryTo
+        tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
+        tfGia.text = "\(modelQuoteData.websitePrice!)".toFormatedPrice()
+        tfMota.text = modelQuoteData.productDescription
+        tfNote.text = modelQuoteData.note
+        
+        rateDetail.enableEditing()
+        rateDetail.onPriceChange = { (price) in
+            if let price = price {
+                self.tfGia.text = "\(price)".toFormatedPrice()
+            }
+        }
+        
+        
+        req.buyFrom = modelQuoteData.buyFrom
+        req.deliveryDate = modelQuoteData.deliveryDate
+        req.deliveryTo = modelQuoteData.deliveryTo
+        req.totalPrice = modelQuoteData.websitePrice
+        req.descriptionValue = modelQuoteData.productDescription
+        req.note = modelQuoteData.note
+        req.orderId = modelQuoteData.id
     }
 
     @IBAction func onShowMoreRateDetail(_ sender: Any) {
         rateDetail.toggleHeight()
     }
     @IBAction func onFinishBaoGia(_ sender: Any) {
+        
+        AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
+            .toJSON()
+            .catchError({ (error) -> Observable<AleResult> in
+                return Observable.just(AleResult.error(msg: "Invalid params"))
+            })
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done( _):
+                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
+                    print("Cancel success")
+                    break
+                case .error(let msg):
+                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
+                    print("Error \(msg)")
+                    break
+                default: break
+                }
+            }).addDisposableTo(bag)
     }
 }

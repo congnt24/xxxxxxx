@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Splash2" translatesAutoresizingMaskIntoConstraints="NO" id="GrM-sR-ctW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash2" translatesAutoresizingMaskIntoConstraints="NO" id="GrM-sR-ctW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70y-Ga-H2s">
                                 <rect key="frame" x="163" y="605" width="48" height="30"/>
@@ -70,7 +69,11 @@
                             <constraint firstItem="iO4-Sl-KSR" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leadingMargin" constant="32" id="6SY-wg-7Qg"/>
                             <constraint firstItem="70y-Ga-H2s" firstAttribute="centerX" secondItem="UOK-6x-23h" secondAttribute="centerX" id="ClN-IO-lJD"/>
                             <constraint firstItem="70y-Ga-H2s" firstAttribute="top" secondItem="iO4-Sl-KSR" secondAttribute="bottom" constant="100" id="Fe8-RY-VNI"/>
+                            <constraint firstItem="GrM-sR-ctW" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leading" id="PcG-F4-xkH"/>
+                            <constraint firstItem="GrM-sR-ctW" firstAttribute="top" secondItem="UOK-6x-23h" secondAttribute="top" id="Ro9-Ne-V21"/>
+                            <constraint firstItem="BXK-hj-mOQ" firstAttribute="top" secondItem="GrM-sR-ctW" secondAttribute="bottom" id="SK1-Uf-Keh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iO4-Sl-KSR" secondAttribute="trailing" constant="32" id="YuY-mM-TlQ"/>
+                            <constraint firstAttribute="trailing" secondItem="GrM-sR-ctW" secondAttribute="trailing" id="bLk-Fq-nfw"/>
                             <constraint firstItem="BXK-hj-mOQ" firstAttribute="top" secondItem="70y-Ga-H2s" secondAttribute="bottom" constant="32" id="jOh-30-47c"/>
                         </constraints>
                     </view>

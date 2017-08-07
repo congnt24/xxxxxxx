@@ -15,4 +15,9 @@ class StrikeThroughLabel: UILabel {
         attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
         attributedText = attributeString
     }
+    public func setText(str: String){
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: str)
+        attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: NSMakeRange(0, attributeString.length))
+        attributedText = attributeString
+    }
 }

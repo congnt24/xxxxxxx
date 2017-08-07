@@ -12,42 +12,58 @@ import RxCocoa
 import RxSwift
 import Moya
 import SwiftyJSON
+import UIScrollView_InfiniteScroll
 
 class DeliveryMainViewController: BaseViewController {
     let bag = DisposeBag()
-    
-    let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
+
     @IBOutlet weak var tfLink: AwesomeTextField!
-    
+    var datas = Variable<[ModelQuoteData]>([])
+    var currentPage = 1
+
     @IBOutlet weak var tableView: UITableView!
     override func bindToViewModel() {
         let nibName = "DeliveryTableViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
-        
-        fetchData().asObservable().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
-            
+
+        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
             (cell as! DeliveryTableViewCell).bindData(data: item)
             (cell as! DeliveryTableViewCell).onClickBaoGia = {
-                DeliveryCoordinator.sharedInstance.showDeliveryDonHang()
+                DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: item)
             }
-            // TODO: Bind data here
-            }.addDisposableTo(bag)
+        }.addDisposableTo(bag)
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-            DeliveryCoordinator.sharedInstance.showDeliveryDonHang()
+            DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: self.datas.value[ip.row])
         }).addDisposableTo(bag)
+
+        tableView.addInfiniteScroll { (tv) in
+            // update table view
+            self.fetchData().drive(onNext: { (results) in
+                if results.count > 0 {
+                    self.currentPage += 1
+                    for result in results {
+                        self.datas.value.append(result)
+                    }
+                }
+            }).addDisposableTo(self.bag)
+            // finish infinite scroll animation
+            tv.finishInfiniteScroll()
+        }
+
+        tableView.beginInfiniteScroll(true)
     }
-    
-    
+
+
     //Interact API
     func fetchData() -> Driver<[ModelQuoteData]> {
-        return AleProvider.request(AleApi.getQuoteForShipper(UserID: "0", page_number: 1)).filterSuccessfulStatusCodes()
-        .flatMap { (response) -> Observable<[ModelQuoteData]> in
-            let obj = ModelQuoteResponse(json: JSON(response.data))
-            return Observable.from(optional: obj.result)
-        }.asDriver(onErrorJustReturn: [])
+        return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage)).filterSuccessfulStatusCodes()
+            .flatMap { (response) -> Observable<[ModelQuoteData]> in
+                let obj = ModelQuoteResponse(json: JSON(response.data))
+                return Observable.from(optional: obj.result)
+            }.asDriver(onErrorJustReturn: [])
     }
 
 }

@@ -171,6 +171,14 @@
                     <constraint firstItem="SqF-Am-D7g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="iXs-0X-Xsw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lbAddress" destination="ood-ve-L3I" id="g67-au-nwB"/>
+                <outlet property="lbDate" destination="i4p-hh-ZWX" id="odb-Q7-386"/>
+                <outlet property="lbGiadexuat" destination="okj-sb-9Ok" id="v5c-zv-s4e"/>
+                <outlet property="lbGiamua" destination="80Z-I8-CG5" id="FTq-OJ-JWR"/>
+                <outlet property="name" destination="vq1-qv-VRs" id="vxq-kv-Y2i"/>
+                <outlet property="photo" destination="LXa-b6-NgB" id="46y-r0-cdA"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

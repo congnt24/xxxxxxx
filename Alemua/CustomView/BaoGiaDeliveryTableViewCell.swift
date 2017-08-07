@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BaoGiaDeliveryTableViewCell: UITableViewCell {
 
@@ -22,6 +23,19 @@ class BaoGiaDeliveryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    public func bindData(data: ModelOrderBaoGiaData){
+        if let photo = data.userPhoto {
+            photo.loadItemImage(img: imProduct)
+        }
+        lbName.text = data.userPost
+//        lbScore.text = data.
+        lbNote.text = data.note
+        lbNoiMua.text = data.buyFrom
+        lbDate.text = data.deliveryDate?.toFormatedDate()
+        lbPrice.text = "\(data.totalPrice!)".toFormatedPrice()
+        lbTime.text = "\(data.timeAgo!.toFormatedTime())"
     }
 
     

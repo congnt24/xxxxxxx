@@ -13,12 +13,7 @@ import RxCocoa
 class AccountSettingViewController: BaseViewController {
     var coordinator: AccountCoordinator!
     override func bindToViewModel() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-    }
-    
-    func handleTap(_ sender: UITapGestureRecognizer) {
-        print("Hello World")
+       
     }
     
     override func responseFromViewModel() {
@@ -35,6 +30,8 @@ class AccountSettingViewController: BaseViewController {
     }
     @IBAction func onLogout(_ sender: Any) {
         Prefs.isUserLogged = false
+        Prefs.userId = 0
+        Prefs.apiToken = ""
         navigationController?.popToRootViewController(animated: true)
     }
 }

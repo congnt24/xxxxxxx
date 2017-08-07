@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
-  - AwesomeMVVM (0.2.3)
+  - AwesomeMVVM (0.2.6)
   - DropDown (2)
   - IQKeyboardManagerSwift (4.0.10)
   - JSQMessagesViewController (7.3.4):
@@ -49,12 +49,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AwesomeMVVM:
-    :commit: f298be5625ca18b4a9671a31a0d747de39306536
+    :commit: 64beef1d794b2558f9295314684d0b36d189fe83
     :git: https://github.com/congnt24/AwesomeMVVM.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AwesomeMVVM: abcaf08ec455b33750241345f0905689b3ebb8a1
+  AwesomeMVVM: 2a3ec959517a1ed1841011735980906a51a25e0d
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66

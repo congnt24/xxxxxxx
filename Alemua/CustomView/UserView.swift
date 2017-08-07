@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserView: BaseCustomView {
     var toggleView: (() -> Void)?
@@ -28,4 +29,25 @@ class UserView: BaseCustomView {
         }
     }
     
+    func bindData(data: ProfileData?, profileType: Int) {
+        if let photo = data?.photo {
+            avatar.kf.setImage(with: URL(string: photo))
+        }
+        name.text = data?.name ?? ""
+        nguoimua.text = profileType == 1 ? "Người mua" : "Người vận chuyển"
+        star.number = Int(data?.rating ?? 0)
+        star.fillStar()
+        danhgia.text = "\(data?.rating?.toFormatedRating() ?? "0")"
+    }
+    
+    func bindData(photo: String?, name: String?, rating: Float? , profileType: Int) {
+        if let photo = photo {
+            avatar.kf.setImage(with: URL(string: photo))
+        }
+        self.name.text = name ?? ""
+        nguoimua.text = profileType == 1 ? "Người mua" : "Người vận chuyển"
+        star.number = Int(rating ?? 0)
+        star.fillStar()
+        danhgia.text = "\(rating?.toFormatedRating() ?? "0")"
+    }
 }

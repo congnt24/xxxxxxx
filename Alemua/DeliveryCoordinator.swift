@@ -10,7 +10,7 @@ import UIKit
 import AwesomeMVVM
 
 protocol DeliveryCoordinatorDelegate {
-    func showOrder(_: DeliveryType)
+    func showOrder(_: DeliveryType, data: ModelOrderClientData)
 }
 
 class DeliveryCoordinator: Coordinator {
@@ -21,58 +21,69 @@ class DeliveryCoordinator: Coordinator {
 }
 
 extension DeliveryCoordinator: DeliveryCoordinatorDelegate {
-    func showOrder(_ type: DeliveryType){
+    func showOrder(_ type: DeliveryType, data: ModelOrderClientData){
         switch type {
         case .BaoGia:
-            showBaoGia()
+            showBaoGia(data)
             break
         case .DangChuyen:
-            showDangChuyen()
+            showDangChuyen(data)
             break
         case .ThanhCong:
-            showThanhCong()
+            showThanhCong(data)
             break
         case .DaHuy:
-            showDaHuy()
+            showDaHuy(data)
             break
         }
     }
-    func showBaoGia() {
+    func showBaoGia(_ data: ModelOrderClientData) {
         let view: DonMuaViewController = getDonHangStoryboard().instantiateViewController(withClass: DonMuaViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showDangChuyen() {
+    func showDangChuyen(_ data: ModelOrderClientData) {
         let view: DangChuyenViewController = getDonHangStoryboard().instantiateViewController(withClass: DangChuyenViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showThanhCong() {
+    func showThanhCong(_ data: ModelOrderClientData) {
         let view: DeliveryHoanThanhViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryHoanThanhViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showDaHuy() {
+    func showDaHuy(_ data: ModelOrderClientData) {
         let view: DeliveryDaHuyViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryDaHuyViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
 }
 
 extension DeliveryCoordinator {
-    func showDeliveryDonHang(){
+    func showDeliveryDonHang(data: ModelQuoteData){
         let view: DonHangViewController = getDonHangStoryboard().instantiateViewController(withClass: DonHangViewController.self)
+        view.modelQuoteData = data
         navigation?.pushViewController(view, animated: true)
     }
     func showThanhToanViewController(){
         let view: ThanhToanViewController = mainStoryboard.instantiateViewController(withClass: ThanhToanViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
-    func showDeliveryBaoGiaFinal(){
+    func showDeliveryBaoGiaFinal(data: ModelOrderClientData){
         let view: DeliveryBaoGiaFinalViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryBaoGiaFinalViewController.self)
+        view.modelQuoteData = data
         navigation?.pushViewController(view, animated: true)
     }
     func showFilter(){
         let view: DeliveryFilterViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryFilterViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
+    
+    func showDanhSachKH(){
+        let view: DanhSachKHViewController = mainStoryboard.instantiateViewController(withClass: DanhSachKHViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DanhGiaView: BaseCustomView {
     @IBOutlet weak var avatar: UIImageView!
@@ -18,5 +19,18 @@ class DanhGiaView: BaseCustomView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         super.setupNormalView(nibName: "DanhGiaView")
+    }
+    
+    
+    func bindData(commentData: CommentData) {
+        if let photo = commentData.photo {
+            avatar.kf.setImage(with: URL(string: photo))
+        }
+        name.text = commentData.name
+        day.text = commentData.createdAt?.toFormatedDate()
+        comment.text = commentData.shipperComment
+        score.text = "\(commentData.rating?.toFormatedRating() ?? "0")"
+        star.number = Int(commentData.rating ?? 0)
+        star.fillStar()
     }
 }

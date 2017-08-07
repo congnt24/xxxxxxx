@@ -9,13 +9,6 @@
 import UIKit
 import AwesomeMVVM
 
-protocol OrderCoordinatorDelegate {
-    func showDonMua()
-    func showDonHang()
-    func showDangChuyen()
-    func showDaMua()
-    func showOrder(_: OrderType)
-}
 
 class OrderCoordinator: Coordinator {
     public static var sharedInstance: OrderCoordinator!
@@ -25,50 +18,57 @@ class OrderCoordinator: Coordinator {
     }
 }
 
-extension OrderCoordinator: OrderCoordinatorDelegate {
-    func showOrder(_ type: OrderType){
+extension OrderCoordinator {
+    func showOrder(_ type: OrderType, data: ModelOrderClientData){
         switch type {
         case .DonMua:
-            showDonMua()
+            showDonMua(data)
             break
         case .BaoGia:
-            showDonHang()
+            showDonHang(data)
             break
         case .DangChuyen:
-            showDangChuyen()
+            showDangChuyen(data)
             break
         case .DaMua:
-            showDaMua()
+            showDaMua(data)
             break
         }
     }
-    func showDonMua() {
+    func showDonMua(_ data: ModelOrderClientData) {
         let view: DonMuaViewController = getDonHangStoryboard().instantiateViewController(withClass: DonMuaViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showDonHang() {
+    func showDonHang(_ data: ModelOrderClientData) {
         let view: DonHangViewController = getDonHangStoryboard().instantiateViewController(withClass: DonHangViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showDangChuyen() {
+    func showDangChuyen(_ data: ModelOrderClientData) {
         let view: DangChuyenViewController = getDonHangStoryboard().instantiateViewController(withClass: DangChuyenViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showDaMua() {
+    func showDaMua(_ data: ModelOrderClientData) {
         let view: DaMuaViewController = getDonHangStoryboard().instantiateViewController(withClass: DaMuaViewController.self)
+        view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
 }
 
 
 extension OrderCoordinator {
-    func showTaoDonHang(text: String? = nil){
+    func showTaoDonHang(data: ModelOrderData?, text: String? = nil){
         let view: OrderTaoDonMuaViewController = mainStoryboard.instantiateViewController(withClass: OrderTaoDonMuaViewController.self)
         if let text = text {
             view.parentUrl = text
+        }
+        if let data = data {
+            view.orderData = data
         }
         
         navigation?.pushViewController(view, animated: true)

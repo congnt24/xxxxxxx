@@ -11,9 +11,23 @@ import XLPagerTabStrip
 import AwesomeMVVM
 
 class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
-
+    var modelQuoteData: ModelQuoteData!
+    var orderData: ModelOrderClientData? {
+        didSet {
+            if let orderData = orderData {
+                //bind data
+                itemView.bindData(title: orderData.productName!, imageUrl: orderData.photo!, baogia: "\(modelQuoteData.numberQuote ?? 0)")
+                lbMuaTu.text = orderData.buyFrom
+                lbGiaoDen.text = orderData.deliveryTo
+                lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
+                lbGia.text = "\(orderData.websitePrice!)".toFormatedPrice()
+                lbMota.text = orderData.note
+                lbLuaChon.text = orderData.productDescription
+            }
+        }
+    }
     @IBOutlet weak var btnDeliveryBaoGia: AwesomeCloseButton!
-    
+
     @IBOutlet weak var itemView: ItemView!
     @IBOutlet weak var lbMuaTu: AwesomeTextField!
     @IBOutlet weak var lbGiaoDen: AwesomeTextField!
@@ -21,13 +35,33 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var lbGia: AwesomeTextField!
     @IBOutlet weak var lbMota: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!
-    
-    
-    
+
+
+
     var itemInfo: IndicatorInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//
+//        if let modelQuoteData = modelQuoteData {
+//            //bind data
+//            itemView.bindData(title: modelQuoteData.productName!, imageUrl: modelQuoteData.photo!, baogia: "\(modelQuoteData.websitePrice!)")
+//            lbMuaTu.text = modelQuoteData.buyFrom
+//            lbGiaoDen.text = modelQuoteData.deliveryTo
+//            lbNgay.placeholder = modelQuoteData.deliveryDate
+//            lbGia.text = "\(modelQuoteData.websitePrice!)"
+//            lbMota.text = modelQuoteData.note
+//            lbLuaChon.text = modelQuoteData.productDescription
+//        }
+//        if let orderData = orderData {
+//            //bind data
+//            itemView.bindData(title: orderData.productName!, imageUrl: orderData.photo!, baogia: "\(orderData.websitePrice!)")
+//            lbMuaTu.text = orderData.buyFrom
+//            lbGiaoDen.text = orderData.deliveryTo
+//            lbNgay.placeholder = orderData.deliveryDate
+//            lbGia.text = "\(orderData.websitePrice!)"
+//            lbMota.text = orderData.note
+//            lbLuaChon.text = orderData.productDescription
+//        }
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -37,9 +71,9 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
             btnDeliveryBaoGia.isHidden = false
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
-        
+
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -54,7 +88,10 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 //        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
 
         if Prefs.isUserLogged {
-            DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal()
+            if orderData?.productOption == 3 { // chir mua khi có giảm giá
+                DeliveryDialogBaoGiaViewController.orderData = orderData
+                AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
+            }
         } else {
             HomeCoordinator.sharedInstance.showLoginScreen()
         }

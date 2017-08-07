@@ -8,14 +8,15 @@
 import UIKit
 import XLPagerTabStrip
 
-enum DeliveryType {
-    case BaoGia
-    case DangChuyen
-    case ThanhCong
-    case DaHuy
+enum DeliveryType: Int {
+    case BaoGia = 1
+    case DangChuyen = 2
+    case ThanhCong = 3
+    case DaHuy = 4
 }
 class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
 
+    public static var defaultTab = 0
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#3A99D8")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -51,6 +52,11 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
 
         return [child1, child2, child3, child4]
     }
+    override func viewWillAppear(_ animated: Bool) {
+        //change to default index
+        moveToViewController(at: DeliveryOrderViewController.defaultTab)
+    }
+    
 
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
 

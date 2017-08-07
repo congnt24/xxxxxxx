@@ -36,7 +36,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         //handle input link
         input.rx.controlEvent(.editingDidEndOnExit).subscribe(onNext: { () in
             //open new screen
-            OrderCoordinator.sharedInstance.showTaoDonHang(text: self.input.text)
+            OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: self.input.text)
 
         }).addDisposableTo(bag)
         input.rx.text.subscribe(onNext: { (text) in
@@ -53,13 +53,14 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         configureDataSource()
     }
 
-
+    var selectedData: ModelOrderData!
     func configureDataSource() {
         dataSource.configureCell = { ds, tv, ip, model in
             let section = ds.sectionModels[ip.section]
             switch section {
             case .Order:
                 let cell = tv.dequeueReusableCell(withIdentifier: "OrderViewCell") as! OrderViewCell
+                self.selectedData = model as! ModelOrderData
                 cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSelectItem)))
                 (cell).bindData(item: model as! ModelOrderData)
                 return cell
@@ -80,7 +81,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
     }
 
     func onSelectItem() {
-        OrderCoordinator.sharedInstance.showTaoDonHang()
+        OrderCoordinator.sharedInstance.showTaoDonHang(data: selectedData)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

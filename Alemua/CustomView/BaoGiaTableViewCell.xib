@@ -155,6 +155,9 @@
                                                                 <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onXacNhan:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dwc-pf-VSY"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUf-HQ-VTx">
                                                         <rect key="frame" x="148" y="0.0" width="138" height="30"/>
@@ -168,6 +171,9 @@
                                                                 <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onSendMessage:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="v0N-JO-u3F"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -211,6 +217,17 @@
                     <real key="value" value="4"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imProduct" destination="kdG-9t-oBU" id="KTe-Xm-9CD"/>
+                <outlet property="lbDate" destination="3oq-eN-G1j" id="N5j-94-sj8"/>
+                <outlet property="lbName" destination="zkN-TG-6Xe" id="HnU-OO-jKA"/>
+                <outlet property="lbNoiMua" destination="drV-6b-oHo" id="dFo-ue-9c8"/>
+                <outlet property="lbNote" destination="iii-Ud-JIe" id="CEW-H4-CfY"/>
+                <outlet property="lbPrice" destination="nPN-Ey-IZS" id="tJ2-Cb-1TH"/>
+                <outlet property="lbScore" destination="zCo-bV-haK" id="BPk-LC-iSk"/>
+                <outlet property="lbTime" destination="HCq-Af-sxE" id="GYv-8G-ewM"/>
+                <outlet property="star" destination="eNG-HK-B0T" id="l3M-HK-X3d"/>
+            </connections>
             <point key="canvasLocation" x="27.5" y="61"/>
         </tableViewCell>
     </objects>

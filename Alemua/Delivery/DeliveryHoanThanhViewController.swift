@@ -21,6 +21,7 @@ class DeliveryHoanThanhViewController: UIViewController {
     @IBOutlet weak var rateDetail: RateDetail!
     @IBOutlet weak var review1: ReviewView!
     @IBOutlet weak var review2: ReviewView!
+    @IBOutlet weak var danhGia: AwesomeCloseButton!
     
     var orderData: ModelOrderClientData!
     let bag = DisposeBag()
@@ -30,6 +31,9 @@ class DeliveryHoanThanhViewController: UIViewController {
                 review1.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 review2.bindData(name: data.userShipPhone, rating: data.userShipRating, nguoidang: 1)
                 rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree))
+                if data.userRated != 0 {
+                    danhGia.isHidden = true
+                }
             }
         }
     }
@@ -64,5 +68,8 @@ class DeliveryHoanThanhViewController: UIViewController {
 
     @IBAction func onShowMoreRateDetail(_ sender: Any) {
         rateDetail.toggleHeight()
+    }
+    @IBAction func onDanhGia(_ sender: Any) {
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: hoanThanhData?.ratingId)
     }
 }

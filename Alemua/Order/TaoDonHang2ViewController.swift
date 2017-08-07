@@ -18,6 +18,7 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     var taodonhangRequest: TaoDonHangRequest!
 
     @IBOutlet weak var uiRateDetail: RateDetail!
+    @IBOutlet weak var swBefore: AwesomeSwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
@@ -49,5 +50,6 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
         taodonhangRequest.buyFrom = tfMuaTu.text
         taodonhangRequest.deliveryTo = tfGiaoDen.text
         taodonhangRequest.deliveryDate = tfNgay.text
+        taodonhangRequest.isBefore = swBefore.isOn ? 1 : 0
     }
 }

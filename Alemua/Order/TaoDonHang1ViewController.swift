@@ -22,9 +22,9 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBOutlet weak var stSoLuong: StepperView!
     @IBOutlet weak var grSelect: AwesomeRadioGroup!
     @IBOutlet weak var stPhoto: UIStackView!
-    
+
     @IBOutlet weak var btnAdd: UIButton!
-    
+
     var taodonhangRequest = TaoDonHangRequest()
     static var sharedInstance: TaoDonHang1ViewController!
     let bag = DisposeBag()
@@ -43,23 +43,29 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBAction func onNext(_ sender: Any) {
         setData()
         if taodonhangRequest.validateStep1() {
+            if listImage.count > 0 {
+                LoadingOverlay.shared.showOverlay(view: parent?.view)
 //            upload image
-            AlemuaApi.shared.aleApi.request(AleApi.uploadFile(photos: listImage))
-                .toJSON()
-                .subscribe(onNext: { (res) in
-                    switch res {
-                    case .done(let result):
-                        self.taodonhangRequest.photo = result.string
-                        TaoDonHangViewController.sharedInstance.moveToViewController(at: 1)
-                        print("Cancel success")
-                        break
-                    case .error(let msg):
-                        print("Error \(msg)")
-                        break
-                    default: break
-                    }
-                }).addDisposableTo(bag)
-            
+                AlemuaApi.shared.aleApi.request(AleApi.uploadFile(photos: listImage))
+                    .toJSON()
+                    .subscribe(onNext: { (res) in
+                        switch res {
+                        case .done(let result):
+                            LoadingOverlay.shared.hideOverlayView()
+                            self.taodonhangRequest.photo = result.string
+                            TaoDonHangViewController.sharedInstance.moveToViewController(at: 1)
+                            print("Cancel success")
+                            break
+                        case .error(let msg):
+                            print("Error \(msg)")
+                            break
+                        default: break
+                        }
+                    }).addDisposableTo(bag)
+            } else {
+                TaoDonHangViewController.sharedInstance.moveToViewController(at: 1)
+
+            }
         } else {
             print("ERROR")
         }
@@ -72,33 +78,34 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         taodonhangRequest.websitePrice = Int(tfGia.text!)
         taodonhangRequest.promotionCode = tfCode.text
         taodonhangRequest.quantity = stSoLuong.number
-        taodonhangRequest.transactionOption = grSelect.checkedPosition + 1
+        taodonhangRequest.productOption = grSelect.checkedPosition
+        taodonhangRequest.numberProduct = stSoLuong.number
     }
     @IBAction func onAddPhoto(_ sender: Any) {
         if listImage.count < 5 {
             PictureHelper.pickPhoto(delegate: self, vc: self)
-        }else{
+        } else {
             print("Over 5 images is not allowed")
         }
 
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
-        
+
         self.dismiss(animated: true, completion: nil)
-        
+
         if mediaType.isEqual(to: kUTTypeImage as String) {
             let image = info[UIImagePickerControllerOriginalImage]
-                as! UIImage
+            as! UIImage
             stPhoto.removeArrangedSubview(btnAdd)
             listImage.append(image)
             stPhoto.addArrangedSubview(PhotoView(image: image))
             //            self.camera.setImage(image, for: .normal)
             stPhoto.addArrangedSubview(btnAdd)
-            
+
         }
     }
-    
+
 
 }

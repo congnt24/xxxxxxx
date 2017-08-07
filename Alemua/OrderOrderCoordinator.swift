@@ -63,8 +63,9 @@ extension OrderOrderCoordinator {
         view.name = modelDangChuyen.userShipName
         AwesomeDialog.shared.show(vc: navigation?.topViewController, popupVC: view)
     }
-    func showDangChuyenDialog2DaGiao(){
+    func showDangChuyenDialog2DaGiao(id: Int?){
         let view: OrderDialogDangChuyen2ViewController = getDonHangStoryboard().instantiateViewController(withClass: OrderDialogDangChuyen2ViewController.self)
+        view.ratingId = id
         navigation?.pushViewController(view, animated: true)
 //        AwesomeDialog.shared.show(vc: navigation?.topViewController, name: "DonHang", identify: "OrderDialogDangChuyen2ViewController")
     }

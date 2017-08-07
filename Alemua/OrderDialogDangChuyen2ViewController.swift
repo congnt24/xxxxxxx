@@ -28,6 +28,7 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
     @IBOutlet weak var camera: UIButton!
 
     let bag = DisposeBag()
+    var ratingId: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +74,9 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
             let rateData = RateForClient()
             rateData.userAttitudeRating = star1.number
             rateData.userPaymentRating = star2.number
-            rateData.ratingId = 1
+            rateData.ratingId = ratingId ?? 0
+            
+            //upload image
             //send rating
             AlemuaApi.shared.aleApi.request(AleApi.rateForClient(data: rateData))
                 .toJSON()
@@ -85,6 +88,29 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
                         break
                     case .error(let msg):
                        AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
+                        print("Error \(msg)")
+                        break
+                    default: break
+                    }
+                }).addDisposableTo(bag)
+
+        } else {
+            let rateData = DeliveredOrderData()
+            rateData.shipperTimeRating = star1.number
+            rateData.shipperAttitudeRating = star2.number
+            rateData.shipperPaymentRating = star3.number
+            rateData.ratingId = ratingId ?? 0
+            rateData.shipperComment = tvComment.text
+            AlemuaApi.shared.aleApi.request(AleApi.setDeliveredOrder(data: rateData))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(_):
+                        AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarCoordinator.sharedInstance, animated: true)
+                        print("Cancel success")
+                        break
+                    case .error(let msg):
+                        AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarCoordinator.sharedInstance, animated: true)
                         print("Error \(msg)")
                         break
                     default: break

@@ -25,10 +25,12 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kzy-q5-Na0">
                     <rect key="frame" x="0.0" y="0.0" width="343" height="95"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="ALj-h1-4Pg">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="ALj-h1-4Pg">
                             <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="94" id="9JY-JW-3js"/>
                                 <constraint firstAttribute="width" secondItem="ALj-h1-4Pg" secondAttribute="height" multiplier="1:1" id="SHs-Lm-Vn8"/>
+                                <constraint firstAttribute="height" constant="94" id="zTI-XY-1bY"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1cp-TL-ZGV">

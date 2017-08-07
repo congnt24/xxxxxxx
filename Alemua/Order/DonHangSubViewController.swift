@@ -11,12 +11,12 @@ import XLPagerTabStrip
 import AwesomeMVVM
 
 class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
-    var modelQuoteData: ModelQuoteData!
+    var modelQuoteData: ModelQuoteData?
     var orderData: ModelOrderClientData? {
         didSet {
             if let orderData = orderData {
                 //bind data
-                itemView.bindData(title: orderData.productName!, imageUrl: orderData.photo!, baogia: "\(modelQuoteData.numberQuote ?? 0)")
+                itemView.bindData(title: orderData.productName!, imageUrl: orderData.photo!, baogia: "\(orderData.quotes!.count)")
                 lbMuaTu.text = orderData.buyFrom
                 lbGiaoDen.text = orderData.deliveryTo
                 lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
@@ -91,6 +91,8 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
             if orderData?.productOption == 3 { // chir mua khi có giảm giá
                 DeliveryDialogBaoGiaViewController.orderData = orderData
                 AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
+            }else{
+                DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal(data: orderData!)
             }
         } else {
             HomeCoordinator.sharedInstance.showLoginScreen()

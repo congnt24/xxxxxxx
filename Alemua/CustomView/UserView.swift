@@ -30,8 +30,10 @@ class UserView: BaseCustomView {
     }
     
     func bindData(data: ProfileData?, profileType: Int) {
-        if let photo = data?.photo {
+        if let photo = data?.photo, photo != "" {
             avatar.kf.setImage(with: URL(string: photo))
+        }else{
+            avatar.image = UIImage(named: "avatar")
         }
         name.text = data?.name ?? ""
         nguoimua.text = profileType == 1 ? "Người mua" : "Người vận chuyển"
@@ -41,8 +43,10 @@ class UserView: BaseCustomView {
     }
     
     func bindData(photo: String?, name: String?, rating: Float? , profileType: Int) {
-        if let photo = photo {
+        if let photo = photo, photo != "" {
             avatar.kf.setImage(with: URL(string: photo))
+        }else{
+            avatar.image = UIImage(named: "avatar")
         }
         self.name.text = name ?? ""
         nguoimua.text = profileType == 1 ? "Người mua" : "Người vận chuyển"

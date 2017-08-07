@@ -28,12 +28,14 @@ class BaoGiaTableViewCell: UITableViewCell {
             photo.loadItemImage(img: imProduct)
         }
         lbName.text = data.userPost
-        //        lbScore.text = data.
         lbNote.text = data.note
         lbNoiMua.text = data.buyFrom
         lbDate.text = data.deliveryDate?.toFormatedDate()
         lbPrice.text = "\(data.totalPrice!)".toFormatedPrice()
         lbTime.text = "\(data.timeAgo!)"
+        lbScore.text = "\(data.rating?.toFormatedRating() ?? 0)"
+        star.number = Int(data.rating ?? 0)
+        star.fillStar()
     }
     
     @IBAction func onXacNhan(_ sender: Any) {

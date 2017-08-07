@@ -42,6 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigation
         print(Prefs.apiToken)
         print(Prefs.userId)
+        Prefs.apiToken = "4fIVqGZPGQQakv7FBlyzUs671jzerg422UZrP2t4trl761Tekdngg6DSZoe8"
+        Prefs.userIdClient = 2
+//        Prefs.userId = 2
+//        Prefs.apiToken = "ZyyGgYSVi0mTAVDhkVPL6W02DNTU1hY3zB6Ym7odm2rRv8QWq9pIdfFyOJFJ"
+//        Prefs.userIdClient = 10
 //        Prefs.isUserLogged = false
         return true
     }

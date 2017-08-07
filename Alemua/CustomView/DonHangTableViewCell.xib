@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -176,6 +176,7 @@
                 <outlet property="lbDate" destination="i4p-hh-ZWX" id="odb-Q7-386"/>
                 <outlet property="lbGiadexuat" destination="okj-sb-9Ok" id="v5c-zv-s4e"/>
                 <outlet property="lbGiamua" destination="80Z-I8-CG5" id="FTq-OJ-JWR"/>
+                <outlet property="lblbGiaMua" destination="U13-se-A5x" id="53T-9g-voR"/>
                 <outlet property="name" destination="vq1-qv-VRs" id="vxq-kv-Y2i"/>
                 <outlet property="photo" destination="LXa-b6-NgB" id="46y-r0-cdA"/>
             </connections>

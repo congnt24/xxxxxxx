@@ -17,6 +17,7 @@ class DonHangTableViewCell: UITableViewCell {
     @IBOutlet weak var lbGiamua: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
     @IBOutlet weak var lbDate: UILabel!
+    @IBOutlet weak var lblbGiaMua: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -38,9 +39,14 @@ class DonHangTableViewCell: UITableViewCell {
         }
         name.text = data.productName
         lbGiadexuat.text = "\(data.websitePrice!)".toFormatedPrice()
-        lbGiamua.text = "\(data.websitePrice! - data.promotionMoney!)".toFormatedPrice()
+        lbGiamua.text = "\(data.totalPrice ?? 0)".toFormatedPrice()
         lbAddress.text = data.buyFrom
         lbDate.text = data.deliveryDate?.toFormatedDate()
 
+    }
+    
+    func invisibleGiaMua(){
+        lbGiamua.isHidden = true
+        lblbGiaMua.isHidden = true
     }
 }

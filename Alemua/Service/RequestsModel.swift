@@ -24,10 +24,12 @@ public class TaoDonHangRequest {
     public var userID: Int?
     public var photo: String?
     public var apiToken: String?
+    public var isBefore: Int?
+    public var numberProduct: Int?
 
     public func validateStep1() -> Bool {
         if existNil(strs: [websitePrice, websiteUrl, quantity, productName
-                    , productDescription, transactionOption]) {
+                    , productDescription]) {
             return false
         }
         return true
@@ -116,6 +118,53 @@ public class UpdateProfileRequest {
     public var isNotify: Int?
 }
 
+
+public class DeliveredOrderData {
+    private struct SerializationKeys {
+        static let orderId = "order_id"
+        static let shipperAttitudeRating = "shipper_attitude_rating"
+        static let shipperComment = "shipper_comment"
+        static let photo = "photo"
+        static let shipperPaymentRating = "shipper_payment_rating"
+        static let userID = "UserID"
+        static let shipperTimeRating = "shipper_time_rating"
+        static let apiToken = "ApiToken"
+    }
+    
+    // MARK: Properties
+    public var orderId: Int?
+    public var shipperAttitudeRating: Int?
+    public var shipperComment: String?
+    public var photo: String?
+    public var shipperPaymentRating: Int?
+    public var userID: Int?
+    public var shipperTimeRating: Int?
+    public var apiToken: String?
+    
+    // MARK: SwiftyJSON Initializers
+    /// Initiates the instance based on the object.
+    ///
+    /// - parameter object: The object of either Dictionary or Array kind that was passed.
+    /// - returns: An initialized instance of the class.
+    public convenience init(object: Any) {
+        self.init(json: JSON(object))
+    }
+    
+    /// Initiates the instance based on the JSON that was passed.
+    ///
+    /// - parameter json: JSON object from SwiftyJSON.
+    public required init(json: JSON) {
+        orderId = json[SerializationKeys.orderId].int
+        shipperAttitudeRating = json[SerializationKeys.shipperAttitudeRating].int
+        shipperComment = json[SerializationKeys.shipperComment].string
+        photo = json[SerializationKeys.photo].string
+        shipperPaymentRating = json[SerializationKeys.shipperPaymentRating].int
+        userID = json[SerializationKeys.userID].int
+        shipperTimeRating = json[SerializationKeys.shipperTimeRating].int
+        apiToken = json[SerializationKeys.apiToken].string
+    }
+
+}
 
 
 

@@ -33,12 +33,13 @@ public enum AleApi {
     case rateForClient(data: RateForClient)
     case getOrderDetailsToQuote(order_id: Int)
     case getOrderDetails(orderType: Int, orderId: Int)
-    case getCommentOfShipper(page_number: Int)
+    case getCommentOfShipper(shipperId: Int, page_number: Int)
     case getUserProfile(profileType: Int) //1,2
     case getListClients()
     case updateProfile(data: UpdateProfileRequest)
     //    =1: Cập nhật bật tắt Notification (Chỉ cần truyền lên trường is_notify)
     //    =2: Cập nhật các thông tin còn lại (Không cần truyền lên trường is_notify)
+    case setDeliveredOrder()
 
 }
 
@@ -80,7 +81,7 @@ extension AleApi: TargetType {
             return "/api/order/getOrderDetailsToQuote"
         case .getOrderDetails(_, _):
             return "/api/order/getOrderDetails"
-        case .getCommentOfShipper(_):
+        case .getCommentOfShipper(_, _):
             return "/api/order/getCommentOfShipper"
         case .getUserProfile(_):
             return "/api/users/getUserProfile"
@@ -88,6 +89,8 @@ extension AleApi: TargetType {
             return "/api/users/getListClients"
         case .updateProfile(_):
             return "/api/users/updateProfile"
+        case .setDeliveredOrder():
+            return "/api/order/setDeliveredOrder"
         }
     }
 
@@ -124,7 +127,9 @@ extension AleApi: TargetType {
             params["transaction_option"] = data.transactionOption ?? 1
             params["quantity"] = data.quantity ?? 1
             params["photo"] = data.photo ?? ""
-            params["product_option"] = data.productOption ?? ""
+            params["product_option"] = data.productOption ?? 0
+            params["is_before"] = data.isBefore ?? 0
+            params["number_product"] = data.numberProduct ?? 1
             return params
         case .createQuote(let quote):
             var params = [String: Any]()
@@ -215,9 +220,9 @@ extension AleApi: TargetType {
             params["order_type"] = orderType
             params["order_id"] = orderId
             return params
-        case .getCommentOfShipper(let page_number):
+        case .getCommentOfShipper(let shipperId, let page_number):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = 3
             params["page_size"] = 20
             params["page_number"] = page_number
             return params
@@ -249,6 +254,17 @@ extension AleApi: TargetType {
             var params = [String: Any]()
             params["UserID"] = Prefs.userIdClient
             params["ApiToken"] = Prefs.apiToken
+            return params
+        case .setDeliveredOrder():
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userIdClient
+            params["ApiToken"] = Prefs.apiToken
+            params["order_id"] = Prefs.userIdClient
+            params["shipper_time_rating"] = Prefs.apiToken
+            params["shipper_attitude_rating"] = Prefs.userIdClient
+            params["shipper_payment_rating"] = Prefs.apiToken
+            params["shipper_comment"] = Prefs.apiToken
+            params["photo"] = Prefs.userIdClient
             return params
         default:
             return nil
@@ -291,6 +307,7 @@ extension AleApi: TargetType {
 public var endpointClosure = { (target: AleApi) -> Endpoint<AleApi> in
     let url = target.baseURL.appendingPathComponent(target.path).absoluteString
     let endpoint: Endpoint<AleApi> = Endpoint(url: url, sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, parameters: target.parameters)
+    print(target.parameters)
 
 //    switch target {
 //    case .login(let phone_number, let token, let device_type):

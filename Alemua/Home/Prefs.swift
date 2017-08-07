@@ -56,7 +56,7 @@ class Prefs {
             return UserDefaults.standard.integer(forKey: "userId")
         }
         set(id) {
-            UserDefaults.standard.set(id, forKey: "userIdClient")
+            UserDefaults.standard.set(id, forKey: "userId")
             UserDefaults.standard.synchronize()
         }
     }

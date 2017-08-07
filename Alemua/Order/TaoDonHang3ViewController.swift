@@ -21,6 +21,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
+    @IBOutlet weak var grTransaction: AwesomeRadioGroup!
     var taodonhangRequest: TaoDonHangRequest!
     let bag = DisposeBag()
     override func viewDidLoad() {
@@ -61,20 +62,20 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
 
     func checkOrderAndSendRequest() {
         //TODO: Send request
-        AlemuaApi.shared.aleApi.request(.createOrder(data: taodonhangRequest)).subscribe({ (event) in
-            switch event {
-            case .next(let ele):
-                print("SUCCESS \(ele)")
-                OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
-                break
-            case .error(let err):
-                print("ERROR: \(err)")
-                break
-            default:
-
-                break
-            }
-        }).addDisposableTo(bag)
+        taodonhangRequest.transactionOption = grTransaction.checkedPosition
+        AlemuaApi.shared.aleApi.request(.createOrder(data: taodonhangRequest))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(_):
+                    OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                default: break
+                }
+            }).addDisposableTo(bag)
     }
 
 }

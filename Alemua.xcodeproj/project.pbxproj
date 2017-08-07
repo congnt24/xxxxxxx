@@ -10,6 +10,8 @@
 		0213995F1F286ABB00BB0642 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213995E1F286ABB00BB0642 /* ItemView.swift */; };
 		021399611F286AC700BB0642 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021399601F286AC700BB0642 /* ItemView.xib */; };
 		021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021399621F286B1000BB0642 /* BaseCustomView.swift */; };
+		02144A741F38AACF00187481 /* DanhGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */; };
+		02144A751F38AACF00187481 /* DanhGiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */; };
 		0218D7571F35DE6E008C8F6D /* DanhSachKHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */; };
 		021B6EB31F3370FE00DF5CD6 /* ModelOrderClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */; };
 		021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */; };
@@ -160,6 +162,8 @@
 		0213995E1F286ABB00BB0642 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = CustomView/ItemView.swift; sourceTree = "<group>"; };
 		021399601F286AC700BB0642 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemView.xib; path = CustomView/ItemView.xib; sourceTree = "<group>"; };
 		021399621F286B1000BB0642 /* BaseCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
+		02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhGiaTableViewCell.swift; path = CustomView/DanhGiaTableViewCell.swift; sourceTree = "<group>"; };
+		02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DanhGiaTableViewCell.xib; path = CustomView/DanhGiaTableViewCell.xib; sourceTree = "<group>"; };
 		0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhSachKHViewController.swift; path = Account/DanhSachKHViewController.swift; sourceTree = "<group>"; };
 		021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelOrderClientResponse.swift; sourceTree = "<group>"; };
 		021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaTableViewCell.swift; path = CustomView/BaoGiaTableViewCell.swift; sourceTree = "<group>"; };
@@ -714,6 +718,8 @@
 				02525C451F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.swift */,
 				02525C461F2B93A200EBCBA7 /* OrderMainHeaderTableViewCell.xib */,
 				02F6E2951F37FF51000C0B83 /* PhotoView.swift */,
+				02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */,
+				02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -823,6 +829,7 @@
 				02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */,
 				023B39E41F2B59CA00E53A6D /* StepperView.xib in Resources */,
 				02D32B7F1F30BD2700A8A4B6 /* AccountKitStrings.bundle in Resources */,
+				02144A751F38AACF00187481 /* DanhGiaTableViewCell.xib in Resources */,
 				02F775561F1FB46300556BED /* Profile.storyboard in Resources */,
 				023B39DE1F2B43EE00E53A6D /* KhachHangTableViewCell.xib in Resources */,
 				021399611F286AC700BB0642 /* ItemView.xib in Resources */,
@@ -1000,6 +1007,7 @@
 				02F775481F1F556100556BED /* ChatViewController.swift in Sources */,
 				021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */,
 				025860941F3760740012DD49 /* AlemuaResult.swift in Sources */,
+				02144A741F38AACF00187481 /* DanhGiaTableViewCell.swift in Sources */,
 				02D1CBFD1F361F1400E7666A /* ModelDaHuyResponse.swift in Sources */,
 				021B82971F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift in Sources */,
 				022D72AF1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift in Sources */,

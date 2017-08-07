@@ -31,8 +31,9 @@ extension String {
     }
 
     func loadItemImage(img: UIImageView) {
-        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))
-        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"), options: [.processor(processor)])
+//        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))
+//        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"), options: [.processor(processor)])
+        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"))
     }
     
     func toFormatedBaoGia() -> String {

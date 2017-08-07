@@ -33,8 +33,6 @@ class DangChuyenViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         //fetchData
         AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 2, orderId: orderData.id!))
         .toJSON().subscribe(onNext: { (res) in
@@ -53,6 +51,7 @@ class DangChuyenViewController: UIViewController {
     
     func bindData(){
         uiItemView.bindData(title: modelDangChuyen.productName!, imageUrl: orderData.photo!, baogia: "\(orderData.quantity!)")
+        uiItemView.baogia.alpha = 0
         tfMuaTu.text = modelDangChuyen.buyFrom
         tfGiaoDen.text = modelDangChuyen.deliveryTo
         tfTruocNgay.text = modelDangChuyen.deliveryDate?.toFormatedDate()
@@ -89,10 +88,10 @@ class DangChuyenViewController: UIViewController {
     }
 
     @IBAction func onDaGiaoHangDelivery(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
     }
     @IBAction func onDaGiaoHangOrder(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: orderData.ratingID)
     }
     @IBAction func onHuyDon(_ sender: Any) {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog3HuyDon(orderId: orderData.id)

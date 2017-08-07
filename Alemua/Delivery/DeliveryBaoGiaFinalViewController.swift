@@ -47,7 +47,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.buyFrom = modelQuoteData.buyFrom
         req.deliveryDate = modelQuoteData.deliveryDate
         req.deliveryTo = modelQuoteData.deliveryTo
-        req.totalPrice = modelQuoteData.websitePrice
+//        req.totalPrice = modelQuoteData.websitePrice
         req.descriptionValue = modelQuoteData.productDescription
         req.note = modelQuoteData.note
         req.orderId = modelQuoteData.id
@@ -57,7 +57,13 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.toggleHeight()
     }
     @IBAction func onFinishBaoGia(_ sender: Any) {
-        
+        req.totalPrice = rateDetail.rateData.tonggia
+        req.tax = rateDetail.rateData.thue
+        req.buyingPrice = rateDetail.rateData.phinguoimua
+        req.transferAlemuaFree = rateDetail.rateData.phivanchuyenvealemua
+        req.transferBuyerFee = rateDetail.rateData.phigiaodichquaalemua
+        req.transferToBuyerFee = rateDetail.rateData.phivanchuyenvetaynguoimua
+        req.transferDomesticFee = rateDetail.rateData.phichuyennoidia
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
             .toJSON()
             .catchError({ (error) -> Observable<AleResult> in
@@ -66,7 +72,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done( _):
-                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
+                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
                     print("Cancel success")
                     break
                 case .error(let msg):

@@ -91,7 +91,7 @@ class DangChuyenViewController: UIViewController {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
     }
     @IBAction func onDaGiaoHangOrder(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: orderData.ratingID)
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: modelDangChuyen.ratingId)
     }
     @IBAction func onHuyDon(_ sender: Any) {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog3HuyDon(orderId: orderData.id)

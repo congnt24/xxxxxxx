@@ -99,18 +99,18 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
             rateData.shipperTimeRating = star1.number
             rateData.shipperAttitudeRating = star2.number
             rateData.shipperPaymentRating = star3.number
-            rateData.ratingId = ratingId ?? 0
+            rateData.orderId = ratingId ?? 0
             rateData.shipperComment = tvComment.text
             AlemuaApi.shared.aleApi.request(AleApi.setDeliveredOrder(data: rateData))
                 .toJSON()
                 .subscribe(onNext: { (res) in
                     switch res {
                     case .done(_):
-                        AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarCoordinator.sharedInstance, animated: true)
+                        AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
                         print("Cancel success")
                         break
                     case .error(let msg):
-                        AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarCoordinator.sharedInstance, animated: true)
+                        AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
                         print("Error \(msg)")
                         break
                     default: break

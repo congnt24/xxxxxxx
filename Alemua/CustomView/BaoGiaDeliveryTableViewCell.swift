@@ -35,7 +35,7 @@ class BaoGiaDeliveryTableViewCell: UITableViewCell {
         lbDate.text = data.deliveryDate?.toFormatedDate()
         lbPrice.text = "\(data.totalPrice!)".toFormatedPrice()
         lbTime.text = "\(data.timeAgo!.toFormatedTime())"
-        lbScore.text = "\(data.rating?.toFormatedRating() ?? 0)"
+        lbScore.text = "\(data.rating?.toFormatedRating() ?? "0")"
         star.number = Int(data.rating ?? 0)
         star.fillStar()
     }

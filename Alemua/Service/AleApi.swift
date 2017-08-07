@@ -39,7 +39,7 @@ public enum AleApi {
     case updateProfile(data: UpdateProfileRequest)
     //    =1: Cập nhật bật tắt Notification (Chỉ cần truyền lên trường is_notify)
     //    =2: Cập nhật các thông tin còn lại (Không cần truyền lên trường is_notify)
-    case setDeliveredOrder()
+    case setDeliveredOrder(data: DeliveredOrderData)
 
 }
 
@@ -89,14 +89,14 @@ extension AleApi: TargetType {
             return "/api/users/getListClients"
         case .updateProfile(_):
             return "/api/users/updateProfile"
-        case .setDeliveredOrder():
+        case .setDeliveredOrder(_):
             return "/api/order/setDeliveredOrder"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login(_, _, _), .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile:
+        case .login(_, _, _), .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_):
             return .post
         default:
             return .get
@@ -255,16 +255,16 @@ extension AleApi: TargetType {
             params["UserID"] = Prefs.userIdClient
             params["ApiToken"] = Prefs.apiToken
             return params
-        case .setDeliveredOrder():
+        case .setDeliveredOrder(let data):
             var params = [String: Any]()
             params["UserID"] = Prefs.userIdClient
             params["ApiToken"] = Prefs.apiToken
-            params["order_id"] = Prefs.userIdClient
-            params["shipper_time_rating"] = Prefs.apiToken
-            params["shipper_attitude_rating"] = Prefs.userIdClient
-            params["shipper_payment_rating"] = Prefs.apiToken
-            params["shipper_comment"] = Prefs.apiToken
-            params["photo"] = Prefs.userIdClient
+            params["order_id"] = data.orderId
+            params["shipper_time_rating"] = data.shipperTimeRating ?? 0
+            params["shipper_attitude_rating"] = data.shipperAttitudeRating ?? 0
+            params["shipper_payment_rating"] = data.shipperPaymentRating ?? 0
+            params["shipper_comment"] = data.shipperComment ?? ""
+            params["photo"] = data.photo ?? ""
             return params
         default:
             return nil

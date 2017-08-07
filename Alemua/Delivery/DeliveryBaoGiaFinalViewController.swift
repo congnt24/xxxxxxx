@@ -70,7 +70,6 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                     print("Cancel success")
                     break
                 case .error(let msg):
-                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao()
                     print("Error \(msg)")
                     break
                 default: break

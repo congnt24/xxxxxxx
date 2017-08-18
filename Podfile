@@ -20,4 +20,7 @@ target 'Alemua' do
   pod 'DropDown'
   pod 'SwiftyJSON'
   pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
+  pod 'Socket.IO-Client-Swift', '~> 11.0.2'
+  pod 'Realm'
+  pod 'RxRealm'
 end

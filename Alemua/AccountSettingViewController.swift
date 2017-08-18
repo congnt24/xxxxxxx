@@ -12,6 +12,7 @@ import RxCocoa
 
 class AccountSettingViewController: BaseViewController {
     var coordinator: AccountCoordinator!
+    let bag = DisposeBag()
     override func bindToViewModel() {
        
     }
@@ -32,7 +33,19 @@ class AccountSettingViewController: BaseViewController {
         Prefs.isUserLogged = false
         Prefs.userId = 0
         Prefs.apiToken = ""
-        navigationController?.popToRootViewController(animated: true)
+        AlemuaApi.shared.aleApi.request(.logout())
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(_):
+                    self.navigationController?.popToRootViewController(animated: true)
+                    print("Logout success")
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
     }
 }
 

@@ -30,17 +30,40 @@ extension String {
         return "$" + self
     }
 
-    func loadItemImage(img: UIImageView) {
-//        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))
-//        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"), options: [.processor(processor)])
-        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"))
-    }
+//    func loadItemImage(img: UIImageView) {
+////        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))
+////        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"), options: [.processor(processor)])
+//        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"))
+//    }
+//    func loadInto(img: UIImageView) {
+//        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"))
+//    }
     
     func toFormatedBaoGia() -> String {
         return self + " báo giá"
     }
 
 }
+
+extension UIImageView {
+    
+    func setAvatar(url: String?){
+        setImage(url: url, placeholder: "avatar")
+    }
+    
+    func setItem(url: String?){
+        setImage(url: url, placeholder: "sample")
+    }
+    
+    func setImage(url: String?, placeholder: String){
+        if let url = url {
+        self.kf.setImage(with: URL(string: url), placeholder: UIImage(named: placeholder))
+        }else{
+            self.image = UIImage(named: placeholder)
+        }
+    }
+}
+
 extension Int {
 
     func toFormatedTime() -> String {
@@ -92,3 +115,12 @@ extension ObservableType {
         }
     }
 }
+
+extension Collection{
+    func toJSONString() -> String {
+        let rawData = try! JSONSerialization.data(withJSONObject: self, options: [])
+        let jsonData = String(data: rawData, encoding: String.Encoding.utf8)!
+        return jsonData
+    }
+}
+

@@ -73,7 +73,6 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
     }

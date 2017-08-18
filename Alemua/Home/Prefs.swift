@@ -49,7 +49,6 @@ class Prefs {
 
     class var userIdClient: Int {
         get {
-
             if Prefs.isTest {
                 return 2
             }

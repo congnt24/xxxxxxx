@@ -88,4 +88,11 @@ extension OrderCoordinator {
         let view: OrderFilterViewController = getDonHangStoryboard().instantiateViewController(withClass: OrderFilterViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
+    
+    func showTaoDonHang(url: String!){
+        
+        let view: TaoDonHangViewController = mainStoryboard.instantiateViewController(withClass: TaoDonHangViewController.self)
+        view.website_url = url
+        navigation?.pushViewController(view, animated: true)
+    }
 }

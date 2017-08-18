@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import AwesomeMVVM
+import SwiftyJSON
 
 struct ConversationModel {
     var name: String?
@@ -21,13 +22,13 @@ class ConversationViewController: BaseViewController {
 
     // MARK: - General data
     var bag = DisposeBag()
-
+    var datas = Variable<[ConversationUserData]>([])
     override func bindToViewModel() {
         tableView.register(UINib(nibName: "ConversationTableViewCell", bundle: nil), forCellReuseIdentifier: "ConversationTableViewCell")
         //create cell
-        fetchConversationList().bind(to: tableView.rx.items(cellIdentifier: "ConversationTableViewCell")) {
-            (row, element, cell) in
-
+        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "ConversationTableViewCell")) {
+            (row, item, cell) in
+            (cell as! ConversationTableViewCell).bindData(data: item)
         }.addDisposableTo(bag)
 
         //Handle click
@@ -40,6 +41,22 @@ class ConversationViewController: BaseViewController {
 
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
+        //Fetch data
+        AlemuaApi.shared.aleApi.request(AleApi.getListUsersToChat())
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result):
+                        if let result = result.array {
+                            self.datas.value = result.map { ConversationUserData(json: $0) }
+                        }
+                        break
+                    case .error(let msg):
+                        print("Error \(msg)")
+                        break
+                    default: break
+                    }
+                }).addDisposableTo(bag)
     }
     override func responseFromViewModel() {
         // Simple view controller -> Don't need viewmodel

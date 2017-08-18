@@ -24,7 +24,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBOutlet weak var stPhoto: UIStackView!
 
     @IBOutlet weak var btnAdd: UIButton!
-
+    var website_url: String!
     var taodonhangRequest = TaoDonHangRequest()
     static var sharedInstance: TaoDonHang1ViewController!
     let bag = DisposeBag()
@@ -34,6 +34,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         super.viewDidLoad()
         TaoDonHang1ViewController.sharedInstance = self
 //         Do any additional setup after loading the view.
+        getDataFromUrl(website_url: website_url)
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -105,6 +106,27 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
             stPhoto.addArrangedSubview(btnAdd)
 
         }
+    }
+    
+    //tu dong gan link
+    func getDataFromUrl(website_url: String){
+        AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result):
+                    let link = result["link"].string
+                    let title = result["title"].string
+                    let desc = result["description"].string
+                    self.tfMota.text = desc
+                    self.tfTenSP.text = title
+                    
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
     }
 
 

@@ -11,6 +11,7 @@ import Kingfisher
 
 class UserView: BaseCustomView {
     var toggleView: (() -> Void)?
+    var onAvatar: ((_ avatar: UIImageView) -> Void)?
     
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -40,6 +41,14 @@ class UserView: BaseCustomView {
         star.number = Int(data?.rating ?? 0)
         star.fillStar()
         danhgia.text = "\(data?.rating?.toFormatedRating() ?? "0")"
+        
+        //handle image click
+        avatar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onAvatarClick)))
+    }
+    func onAvatarClick(){
+        if let onAvatar = onAvatar {
+            onAvatar(avatar)
+        }
     }
     
     func bindData(photo: String?, name: String?, rating: Float? , profileType: Int) {

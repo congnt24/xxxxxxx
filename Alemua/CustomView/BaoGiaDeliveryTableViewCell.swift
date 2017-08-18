@@ -26,9 +26,7 @@ class BaoGiaDeliveryTableViewCell: UITableViewCell {
     }
     
     public func bindData(data: ModelOrderBaoGiaData){
-        if let photo = data.userPhoto {
-            photo.loadItemImage(img: imProduct)
-        }
+        imProduct.setItem(url: data.userPhoto)
         lbName.text = data.userPost
         lbNote.text = data.note
         lbNoiMua.text = data.buyFrom

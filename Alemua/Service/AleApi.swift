@@ -40,6 +40,11 @@ public enum AleApi {
     //    =1: Cập nhật bật tắt Notification (Chỉ cần truyền lên trường is_notify)
     //    =2: Cập nhật các thông tin còn lại (Không cần truyền lên trường is_notify)
     case setDeliveredOrder(data: DeliveredOrderData)
+    case getListUsersToChat()
+    case addChattingLog(user_receive_id: Int)
+    case activeAccount(phone_number: String, password: String)
+    case getDataFromUrl(website_url: String)
+    case logout()
 
 }
 
@@ -91,12 +96,23 @@ extension AleApi: TargetType {
             return "/api/users/updateProfile"
         case .setDeliveredOrder(_):
             return "/api/order/setDeliveredOrder"
+        case .getListUsersToChat():
+            return "/api/users/getListUsersToChat"
+        case .addChattingLog(_):
+            return "/api/users/addChattingLog"
+        case .activeAccount(_, _):
+            return "/api/users/activeAccount"
+        case .getDataFromUrl(_):
+            return "/api/order/getDataFromUrl"
+        case .logout():
+            return "/api/users/logout"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login(_, _, _), .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_):
+        case .login(_, _, _), .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_)
+             , .logout(), .activeAccount(_, _), .addChattingLog(_):
             return .post
         default:
             return .get
@@ -113,7 +129,7 @@ extension AleApi: TargetType {
             return params
         case .createOrder(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["product_name"] = data.productName ?? ""
             params["product_description"] = data.productDescription ?? ""
@@ -133,7 +149,7 @@ extension AleApi: TargetType {
             return params
         case .createQuote(let quote):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["order_id"] = quote.orderId!
             params["buy_from"] = quote.buyFrom!
@@ -152,7 +168,7 @@ extension AleApi: TargetType {
             return params
         case .acceptQuote(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["order_id"] = data.orderId!
             params["quote_id"] = data.quoteId!
@@ -160,24 +176,24 @@ extension AleApi: TargetType {
             return params
         case .cancelOrder(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["order_id"] = data.orderId!
             params["cancel_reason"] = data.cancelReason!
             return params
         case .reportUser(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["user_report"] = data.userReport!
             params["report_content"] = data.reportContent!
             return params
         case .rateForClient(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["rating_id"] = data.ratingId
-            params["user_attitude_rating"] =  data.userAttitudeRating ?? 0
+            params["user_attitude_rating"] = data.userAttitudeRating ?? 0
             params["user_payment_rating"] = data.userPaymentRating ?? 0
             return params
         case .getProducts(let type, let page):
@@ -194,7 +210,7 @@ extension AleApi: TargetType {
             return params
         case .getOrderFromClient(let page_number, let order_type):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["page_size"] = 20
             params["page_number"] = page_number
@@ -215,32 +231,32 @@ extension AleApi: TargetType {
 
         case .getOrderDetails(let orderType, let orderId):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["order_type"] = orderType
             params["order_id"] = orderId
             return params
         case .getCommentOfShipper(let shipperId, let page_number):
             var params = [String: Any]()
-            params["UserID"] = 3
+            params["UserID"] = shipperId
             params["page_size"] = 20
             params["page_number"] = page_number
             return params
         case .getListClients():
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             return params
 
         case .getUserProfile(let profile_type):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["profile_type"] = profile_type//1 = client, 2 = shipper
             return params
         case .updateProfile(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["address"] = data.address ?? ""
             params["description"] = data.descriptionValue ?? ""
@@ -252,12 +268,12 @@ extension AleApi: TargetType {
             return params
         case .uploadFile(_):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             return params
         case .setDeliveredOrder(let data):
             var params = [String: Any]()
-            params["UserID"] = Prefs.userIdClient
+            params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["order_id"] = data.orderId
             params["shipper_time_rating"] = data.shipperTimeRating ?? 0
@@ -266,11 +282,37 @@ extension AleApi: TargetType {
             params["shipper_comment"] = data.shipperComment ?? ""
             params["photo"] = data.photo ?? ""
             return params
+        case .getListUsersToChat:
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            return params
+        case .addChattingLog(let user_receive_id):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["user_receive_id"] = user_receive_id
+            return params
+        case .activeAccount(let phone_number, let password):
+            var params = [String: Any]()
+            params["phone_number"] = phone_number
+            params["password"] = password
+            return params
+        case .getDataFromUrl(let website_url):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["website_url"] = website_url
+            return params
+        case .logout():
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            return params
         default:
             return nil
         }
     }
-    
+
 
     public /// The method used for parameter encoding.
     var parameterEncoding: ParameterEncoding {
@@ -293,7 +335,7 @@ extension AleApi: TargetType {
         case .uploadFile(let photos):
             var formData = [MultipartFormData]()
             for i in 1...photos.count {
-                let imageData = UIImageJPEGRepresentation(photos[i-1], 1.0)
+                let imageData = UIImageJPEGRepresentation(photos[i - 1], 1.0)
                 formData.append(MultipartFormData(provider: .data(imageData!), name: "FileNo\(i)", fileName: "photo.jpg", mimeType: "image/jpeg"))
             }
             return .upload(.multipart(formData))

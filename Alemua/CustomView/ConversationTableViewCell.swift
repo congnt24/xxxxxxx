@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ConversationTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var lbLastMessage: UILabel!
+    @IBOutlet weak var time: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +25,11 @@ class ConversationTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func bindData(data: ConversationUserData) {
+        avatar.setAvatar(url: data.photo)
+        name.text = data.name != "" ? data.name :"\(data.phoneNumber!)"
+        lbLastMessage.text = data.descriptionValue
+        time.text = data.updatedAt
+    }
 }

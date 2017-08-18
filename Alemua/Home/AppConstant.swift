@@ -11,5 +11,7 @@ import Foundation
 class AppConstant {
     static let LOGGED_KEY = "islogged"
     static let API_TOKEN = "api_token"
+    static let USER_ID = "user_id"
+    static let SOCKETIO_URL = "http://128.199.228.205:3000/"
     
 }

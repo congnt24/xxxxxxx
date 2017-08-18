@@ -10,8 +10,9 @@ import UIKit
 import AwesomeMVVM
 import RxSwift
 import RxCocoa
+import MobileCoreServices
 
-class EditAccountViewController: BaseViewController {
+class EditAccountViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var uiMoreDetails: AwesomeToggleViewByHeight!
 
     @IBOutlet weak var tfTen: AwesomeTextField!
@@ -52,7 +53,9 @@ class EditAccountViewController: BaseViewController {
 
         self.lbDesc.text = self.data?.description
         
-
+        userView.onAvatar = { imgView in
+            PictureHelper.pickPhoto(delegate: self, vc: self)
+        }
     }
     
     override func responseFromViewModel() {
@@ -70,8 +73,31 @@ class EditAccountViewController: BaseViewController {
         req.profileType = 2
         req.isNotify = data?.isNotify
         
+        LoadingOverlay.shared.showOverlay(view: view)
+        //            upload image
+        
+        AlemuaApi.shared.aleApi.request(AleApi.uploadFile(photos: [userView.avatar.image!]))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result):
+                    LoadingOverlay.shared.hideOverlayView()
+                    req.photo = result.string
+                    self.postToServer(req)
+                    print("Cancel success")
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                default: break
+                }
+            }).addDisposableTo(bag)
+        
+        
+    }
+    func postToServer(_ req: UpdateProfileRequest){
         AlemuaApi.shared.aleApi.request(.updateProfile(data: req))
-        .toJSON()
+            .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done( _):
@@ -84,6 +110,20 @@ class EditAccountViewController: BaseViewController {
                 default: break
                 }
             }).addDisposableTo(bag)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+        
+        self.dismiss(animated: true, completion: nil)
+        
+        if mediaType.isEqual(to: kUTTypeImage as String) {
+            let image = info[UIImagePickerControllerOriginalImage]
+                as! UIImage
+            userView.avatar.image = image
+            
+        }
     }
 }
 

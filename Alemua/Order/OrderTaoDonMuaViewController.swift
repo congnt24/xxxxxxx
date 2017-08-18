@@ -70,4 +70,8 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
 
     }
 
+    @IBAction func onTaoDonHang(_ sender: Any) {
+        OrderCoordinator.sharedInstance.showTaoDonHang(url: orderData?.websiteUrl)
+        
+    }
 }

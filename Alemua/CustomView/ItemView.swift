@@ -43,7 +43,7 @@ class ItemView: BaseCustomView {
         self.baogia.text = baogia!.toFormatedBaoGia()
         if let imageUrl = imageUrl {
             let arr = imageUrl.splitted(by: ",")
-            (arr.count == 0 ? "" : arr[0]).loadItemImage(img: image)
+            image.setItem(url: (arr.count == 0 ? "" : arr[0]))
         }
     }
 

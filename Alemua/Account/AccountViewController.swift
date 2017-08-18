@@ -68,7 +68,6 @@ class AccountViewController: BaseViewController {
                     case .error(let msg):
                         print("Error \(msg)")
                         break
-                    default: break
                     }
                 }).addDisposableTo(bag)
         }
@@ -115,7 +114,6 @@ class AccountViewController: BaseViewController {
                     print("Error \(msg)")
                     sender.isOn = !sender.isOn
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
 

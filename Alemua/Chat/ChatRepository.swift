@@ -9,11 +9,25 @@
 import Foundation
 import RealmSwift
 
-class Chat: Object {
-    dynamic var userid = 0
-    dynamic var sendtoid = 0
-    dynamic var message: String?
+class Message: Object {
+    dynamic var userSend = 0
+    dynamic var userSendName: String?
+    dynamic var userSendPhoto: String?
+    dynamic var userRecieve = 0
+    dynamic var userRecieveName: String?
+    dynamic var userRcievePhoto: String?
+    dynamic var data: String?
+    dynamic var dataType = 0
+    dynamic var idSort = 0
+    dynamic var date: String?
+    dynamic var typeAction = 0
+    dynamic var timestamp: String?
 }
-class ChatRepository: Repository<Chat> {
-    
+class ChatRepository: Repository<Message> {
+    func addMessages(_ messages: [Message]){
+        realm.add(messages, update: false)
+    }
+    func getLastMessage(){
+        realm.objects(Message.self).sorted(byKeyPath: "timestamp", ascending: false)
+    }
 }

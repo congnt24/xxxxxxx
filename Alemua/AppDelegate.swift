@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         AlemuaApi()
+        //SOcket io
+        SocketIOHelper()
+        
         //keyboard
         IQKeyboardManager.sharedManager().enable = true
         //init coordinator
@@ -42,8 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigation
         print(Prefs.apiToken)
         print(Prefs.userId)
-        Prefs.apiToken = "4fIVqGZPGQQakv7FBlyzUs671jzerg422UZrP2t4trl761Tekdngg6DSZoe8"
-        Prefs.userIdClient = 2
+//        Prefs.apiToken = "4fIVqGZPGQQakv7FBlyzUs671jzerg422UZrP2t4trl761Tekdngg6DSZoe8"
+//        Prefs.userIdClient = 2
 //        Prefs.userId = 2
 //        Prefs.apiToken = "ZyyGgYSVi0mTAVDhkVPL6W02DNTU1hY3zB6Ym7odm2rRv8QWq9pIdfFyOJFJ"
 //        Prefs.userIdClient = 10
@@ -71,6 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        SocketIOHelper.shared.disconnectToSocketIO()
+        SocketIOHelper.shared.clearAllSubscribe()
     }
 
 

@@ -9,25 +9,46 @@
 import Foundation
 import SocketIO
 
-class SocketIOHelper {
+public class SocketIOHelper {
+    public static var shared: SocketIOHelper!
+    var socket: SocketIOClient!
+    init() {
+        SocketIOHelper.shared = self
+        connectToSocketIO()
+    }
     func connectToSocketIO(){
-        let socket = SocketIOClient(socketURL: URL(string: AppConstant.SOCKETIO_URL)!, config: [.log(true), .compress])
+        socket = SocketIOClient(socketURL: URL(string: AppConstant.SOCKETIO_URL)!, config: [.log(true), .compress])
         
         socket.on(clientEvent: .connect) {data, ack in
             print("socket connected")
         }
         
-        socket.on("currentAmount") {data, ack in
-            if let cur = data[0] as? Double {
-                socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
-                    socket.emit("update", ["amount": cur + 2.50])
-                }
-                
-                ack.with("Got your currentAmount", "dude")
-            }
+        socket.on("16LoadMessage"){ (data, ack) in
+            print("Load mesage success ")
+            print(data)
         }
+
         
+        
+        //Emit online status
+        socket.emit("UserOnline", 16)
         socket.connect()
     }
+    
+    func emitLoadMessage(){
+        socket.emit("LoadMessage", ["userSend": 16, "userRecieve": 14, "timestamp": 0])
+    }
+    
+    
+    
+    
+    
+    func disconnectToSocketIO(){
+        socket.disconnect()
+    }
+    func clearAllSubscribe(){
+        socket.removeAllHandlers()
+    }
+    
 }
 

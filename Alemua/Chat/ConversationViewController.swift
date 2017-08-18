@@ -68,10 +68,11 @@ class ConversationViewController: BaseViewController {
             HomeCoordinator.sharedInstance.showLoginScreen()
             return
         }
-
+        SocketIOHelper.shared.emitLoadMessage()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        
     }
 
 

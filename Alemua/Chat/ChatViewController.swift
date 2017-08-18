@@ -21,7 +21,7 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
     var chatRepo = ChatRepository()
     var messages = [JSQMessage]()
     var isOutGoing = true;
-    var socket: SocketIOClient = SocketIOClient(socketURL: URL(string: AppConstant.SOCKETIO_URL)!, config: [.log(true), .compress])
+    var socket: SocketIOClient = SocketIOHelper.shared.socket
     let bag = DisposeBag()
     
     override func viewDidLoad() {
@@ -43,12 +43,13 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         self.inputToolbar.contentView.backgroundColor = UIColor.white
 //        backgroundColor = UIColor.red
         self.collectionView.backgroundColor = UIColor.init(hexString: "#F2F1F1")
-        initializeSocketIOConnection()
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
 //        navigationController?.navigationBar.isHidden = true
+        disconnect()
+        
     }
 //    
     //MARK: JSQMessageView
@@ -86,10 +87,9 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
     //MARK: Action for JSQMessage
     //SENDING MESSAGE BUTTON
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-//        sendMessage(senderId: senderId, senderName: senderDisplayName, text: text)
-//        collectionView.reloadData()
-        //        finishSendingMessage()
-        fetchAndSyncData()
+        sendMessage(senderId: senderId, senderName: senderDisplayName, text: text)
+        collectionView.reloadData()
+        finishSendingMessage()
     }
 }
 
@@ -97,38 +97,8 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
 // MARK: - Interact with socket io
 
 extension ChatViewController {
-    func initializeSocketIOConnection(){
-        socket.on(clientEvent: .connect) {data, ack in
-            print("socket connected")
-            
-            self.fetchAndSyncData()
-            self.emitOnline()
-        }
-        
-        socket.on("16LoadMessage") { (data, ack) in
-            print("Load mesage success ")
-            print("Load mesage success ")
-            print("Load mesage success ")
-            print(data)
-        }
-        socket.on("14LoadMessage") { (data, ack) in
-            print("Load mesage success 14")
-            print("Load mesage success 14")
-            print("Load mesage success 14")
-            print(data)
-        }
-        socket.connect()
-    }
-    
-    func emitOnline(){
-        socket.emit("UserOnline", 16)
-    }
-    func fetchAndSyncData(){
-        let json  = ["userSend": 16, "userRecieve": 14, "timestamp": 0].toJSONString()
-//        print(json)
-        socket.emit("LoadMessage", ["userSend": "16", "userRecieve": "14", "timestamp": 0])
-//        socket.emit("LoadMessage", ["userSend": 14, "userRecieve": 16, "timestamp": 0])
-        
+    func disconnect(){
+        SocketIOHelper.shared.clearAllSubscribe()
     }
     
     //Delegate to handle receiving text message
@@ -147,7 +117,7 @@ extension ChatViewController {
         Observable.array(from: chatRepo.getAll())
         .subscribe(onNext: { (chats) in
             for chat in chats {
-                self.messages.append(JSQMessage(senderId: "\(chat.userid)", displayName: "\(chat.userid)", text: chat.message))
+//                self.messages.append(JSQMessage(senderId: "\(chat.userid)", displayName: "\(chat.userid)", text: chat.message))
             }
         }).addDisposableTo(bag)
     }

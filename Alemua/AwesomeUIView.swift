@@ -30,5 +30,4 @@ open class AwesomeUIView: UIView {
             layer.masksToBounds = true
         }
     }
-    
 }

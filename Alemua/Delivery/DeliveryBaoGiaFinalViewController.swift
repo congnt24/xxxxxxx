@@ -72,7 +72,8 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done( _):
-                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
+//                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
+                    AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
                     print("Cancel success")
                     break
                 case .error(let msg):

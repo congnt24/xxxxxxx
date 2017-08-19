@@ -11,6 +11,7 @@ import XLPagerTabStrip
 import AwesomeMVVM
 import MobileCoreServices
 import RxSwift
+import Kingfisher
 
 class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -99,10 +100,10 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         if mediaType.isEqual(to: kUTTypeImage as String) {
             let image = info[UIImagePickerControllerOriginalImage]
             as! UIImage
-            stPhoto.removeArrangedSubview(btnAdd)
             listImage.append(image)
             stPhoto.addArrangedSubview(PhotoView(image: image))
             //            self.camera.setImage(image, for: .normal)
+            stPhoto.removeArrangedSubview(btnAdd)
             stPhoto.addArrangedSubview(btnAdd)
 
         }
@@ -115,11 +116,22 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done(let result):
-                    let link = result["link"].string
                     let title = result["title"].string
                     let desc = result["description"].string
                     self.tfMota.text = desc
                     self.tfTenSP.text = title
+                    if let link = result["link"].string {
+                        let arr = link.splitted(by: ",")
+                        for url in arr {
+                            KingfisherManager.shared.retrieveImage(with: URL(string: url)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                                self.stPhoto.addArrangedSubview(PhotoView(image: image))
+                                self.listImage.append(image!)
+                                self.stPhoto.removeArrangedSubview(self.btnAdd)
+                                self.stPhoto.addArrangedSubview(self.btnAdd)
+                            })
+                        }
+                    }
+                    
                     
                     break
                 case .error(let msg):

@@ -30,9 +30,6 @@ class AccountSettingViewController: BaseViewController {
     @IBAction func onAppInfo(_ sender: Any) {
     }
     @IBAction func onLogout(_ sender: Any) {
-        Prefs.isUserLogged = false
-        Prefs.userId = 0
-        Prefs.apiToken = ""
         AlemuaApi.shared.aleApi.request(.logout())
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -46,6 +43,9 @@ class AccountSettingViewController: BaseViewController {
                     break
                 }
             }).addDisposableTo(bag)
+        Prefs.isUserLogged = false
+        Prefs.userId = 0
+        Prefs.apiToken = ""
     }
 }
 

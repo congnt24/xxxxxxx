@@ -44,7 +44,12 @@ class AccountViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         //TODO: Check if user is logged
         if !Prefs.isUserLogged {
-            HomeCoordinator.sharedInstance.showLoginScreen()
+            if LoginViewController.isIgnore {
+                onBack("")
+                LoginViewController.isIgnore = false
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
             return
         }
         if Prefs.isUserLogged {

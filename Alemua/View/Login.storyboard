@@ -82,8 +82,139 @@
             </objects>
             <point key="canvasLocation" x="-588" y="-182.15892053973016"/>
         </scene>
+        <!--Login By Password View Controller-->
+        <scene sceneID="WLP-Ea-gLB">
+            <objects>
+                <viewController storyboardIdentifier="LoginByPasswordViewController" id="yfX-V2-e7z" customClass="LoginByPasswordViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WQ5-5E-fPO"/>
+                        <viewControllerLayoutGuide type="bottom" id="cB7-XE-ewN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vuw-y8-zCl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgS-mV-e3c" userLabel="Navigation">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUy-PL-HPt">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <items>
+                                            <navigationItem title="Đăng nhập" id="fGp-UD-V2o">
+                                                <barButtonItem key="leftBarButtonItem" image="back" id="KKS-DJ-kHl" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="RUy-PL-HPt" firstAttribute="top" secondItem="lgS-mV-e3c" secondAttribute="top" constant="20" id="7Ql-tx-eQR"/>
+                                    <constraint firstItem="RUy-PL-HPt" firstAttribute="leading" secondItem="lgS-mV-e3c" secondAttribute="leading" id="Gz9-eJ-vxc"/>
+                                    <constraint firstAttribute="height" constant="64" id="avS-4N-4r8"/>
+                                    <constraint firstAttribute="bottom" secondItem="RUy-PL-HPt" secondAttribute="bottom" id="eeD-DM-i4E"/>
+                                    <constraint firstAttribute="trailing" secondItem="RUy-PL-HPt" secondAttribute="trailing" id="iTe-W6-tXS"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-nZ-Bh1">
+                                <rect key="frame" x="16" y="80" width="343" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số điện thoại" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5A-YL-bIz" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.18171647191047668" green="0.53281646966934204" blue="0.76973116397857666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mật khẩu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mcR-SV-NCd" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                        <rect key="frame" x="0.0" y="55" width="343" height="45"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.18171647190000001" green="0.53281646969999996" blue="0.76973116399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="R87-Z2-CGZ"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZY-uP-9ew">
+                                <rect key="frame" x="16" y="196" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.18171647190000001" green="0.53281646969999996" blue="0.76973116399999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kHX-Mp-LS4"/>
+                                </constraints>
+                                <state key="normal" title="ĐĂNG NHẬP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onLogin:" destination="yfX-V2-e7z" eventType="touchUpInside" id="DkX-8F-69p"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgg-Ho-rUB">
+                                <rect key="frame" x="32" y="252" width="311" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lgS-mV-e3c" secondAttribute="trailing" id="5c5-2c-nGV"/>
+                            <constraint firstItem="lgS-mV-e3c" firstAttribute="leading" secondItem="Vuw-y8-zCl" secondAttribute="leading" id="BuU-em-vzB"/>
+                            <constraint firstItem="lgS-mV-e3c" firstAttribute="top" secondItem="Vuw-y8-zCl" secondAttribute="top" id="Hlf-OK-bxJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TZY-uP-9ew" secondAttribute="trailing" constant="16" id="Jiy-TZ-o4i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tgg-Ho-rUB" secondAttribute="trailing" constant="16" id="KZl-SX-IR8"/>
+                            <constraint firstItem="TZY-uP-9ew" firstAttribute="leading" secondItem="Vuw-y8-zCl" secondAttribute="leading" constant="16" id="amk-7g-hKx"/>
+                            <constraint firstItem="UCd-nZ-Bh1" firstAttribute="leading" secondItem="Vuw-y8-zCl" secondAttribute="leadingMargin" id="bqG-6m-CMb"/>
+                            <constraint firstItem="UCd-nZ-Bh1" firstAttribute="top" secondItem="lgS-mV-e3c" secondAttribute="bottom" constant="16" id="fvF-Uk-8Yk"/>
+                            <constraint firstItem="Tgg-Ho-rUB" firstAttribute="top" secondItem="TZY-uP-9ew" secondAttribute="bottom" constant="16" id="l3j-1W-W9L"/>
+                            <constraint firstItem="TZY-uP-9ew" firstAttribute="top" secondItem="UCd-nZ-Bh1" secondAttribute="bottom" constant="16" id="msz-3j-0Sq"/>
+                            <constraint firstItem="Tgg-Ho-rUB" firstAttribute="leading" secondItem="Vuw-y8-zCl" secondAttribute="leadingMargin" constant="16" id="pDN-no-JO9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UCd-nZ-Bh1" secondAttribute="trailing" id="z7S-Dn-A73"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lbError" destination="Tgg-Ho-rUB" id="PjH-xy-X49"/>
+                        <outlet property="tfPass" destination="mcR-SV-NCd" id="V6j-bf-JWx"/>
+                        <outlet property="tfUser" destination="w5A-YL-bIz" id="AWI-kB-AH8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9g-v2-Vib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="-182"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Splash2" width="1242" height="2208"/>
+        <image name="back" width="13" height="23"/>
     </resources>
 </document>

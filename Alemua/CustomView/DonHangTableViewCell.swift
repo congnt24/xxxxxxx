@@ -38,7 +38,7 @@ class DonHangTableViewCell: UITableViewCell {
             photo.image = UIImage(named: "sample")
         }
         name.text = data.productName
-        lbGiadexuat.text = "\(data.websitePrice!)".toFormatedPrice()
+        lbGiadexuat.text = "\(data.websitePrice ?? 0)".toFormatedPrice()
         lbGiamua.text = "\(data.totalPrice ?? 0)".toFormatedPrice()
         lbAddress.text = data.buyFrom
         lbDate.text = data.deliveryDate?.toFormatedDate()

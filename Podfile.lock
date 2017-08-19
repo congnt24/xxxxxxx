@@ -1,7 +1,33 @@
 PODS:
   - Alamofire (4.5.0)
-  - AwesomeMVVM (0.2.6)
+  - AwesomeMVVM (0.2.8)
   - DropDown (2)
+  - Firebase/Core (4.0.4):
+    - FirebaseAnalytics (= 4.0.2)
+    - FirebaseCore (= 4.0.4)
+  - Firebase/Messaging (4.0.4):
+    - Firebase/Core
+    - FirebaseMessaging (= 2.0.0)
+  - FirebaseAnalytics (4.0.2):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (4.0.4):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
+  - FirebaseMessaging (2.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/Logger (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - IQKeyboardManagerSwift (4.0.11)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
@@ -16,6 +42,12 @@ PODS:
   - Moya/RxSwift (8.0.5):
     - Moya/Core
     - RxSwift (~> 3.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - Protobuf (3.3.0)
   - Realm (2.9.1):
     - Realm/Headers (= 2.9.1)
   - Realm/Headers (2.9.1)
@@ -41,6 +73,8 @@ PODS:
 DEPENDENCIES:
   - AwesomeMVVM (from `https://github.com/congnt24/AwesomeMVVM.git`)
   - DropDown
+  - Firebase/Core
+  - Firebase/Messaging
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
   - Kingfisher (~> 3.0)
@@ -63,19 +97,27 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AwesomeMVVM:
-    :commit: 64beef1d794b2558f9295314684d0b36d189fe83
+    :commit: 16b9d457ef6c52bc9ae88b4dca6a5e874e36265f
     :git: https://github.com/congnt24/AwesomeMVVM.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AwesomeMVVM: 2a3ec959517a1ed1841011735980906a51a25e0d
+  AwesomeMVVM: 9341a9bb0b6fa4bff4d0e6190f658752d2d74f06
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
+  FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
+  FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   IQKeyboardManagerSwift: 10f0a6b8ea2904c8943c0e1a116c99f5b8ad83af
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   KMPlaceholderTextView: 2bbcd19a273648a80a61e1e48f9743a24d8930e3
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
   RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
@@ -89,6 +131,6 @@ SPEC CHECKSUMS:
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: f04e164e0688f2039bfab3eab7bef6bf5ce87761
+PODFILE CHECKSUM: 468d0876c7ac30b7f6e0ed917ccffc3b15a5e571
 
 COCOAPODS: 1.2.1

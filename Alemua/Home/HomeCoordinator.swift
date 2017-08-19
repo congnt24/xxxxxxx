@@ -40,7 +40,8 @@ extension HomeCoordinator {
     func showLoginScreen() {
         LoginCoordinator(navigation).start(nil)
     }
-    func showChatScreen() {
-        ChatCoordinator(navigation).start(nil)
+    
+    func showChatScreen(friend: ConversationUserData) {
+        ChatCoordinator(navigation).start(friend)
     }
 }

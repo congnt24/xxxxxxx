@@ -80,11 +80,12 @@ extension OrderMain2ViewController {
     }
     
     func fetchData() -> Driver<[ModelOrderData]>{ // fetch data and map to ProductData
-        return aleApi.request(.getProducts(type: section.rawValue, page: currentPage))
+        
+        return aleApi.request(AleApi.getHomeItems(page: currentPage))
             .filterSuccessfulStatusCodes().flatMap({ (response) -> Observable<[ModelOrderData]> in
                 let json = JSON(response.data)
-                let responseObj = ModelMainOrderResponse(json: json)
-                return Observable.from(optional: responseObj.result)
+                let responseObj = ModelMainHomeResponse(json: json)
+                return Observable.from(optional: responseObj.result?.hotProducts)
             }).asDriver(onErrorJustReturn: [])
     }
     

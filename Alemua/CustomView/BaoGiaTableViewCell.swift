@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaoGiaTableViewCell: UITableViewCell {
     @IBOutlet weak var imProduct: UIImageView!
@@ -18,12 +19,16 @@ class BaoGiaTableViewCell: UITableViewCell {
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var lbPrice: UILabel!
     @IBOutlet weak var lbTime: UILabel!
+    
+    let bag = DisposeBag()
+    var data: ModelOrderBaoGiaData!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
     public func bindData(data: ModelOrderBaoGiaData){
+        self.data = data
         imProduct.setItem(url: data.userPhoto)
         lbName.text = data.userPost
         lbNote.text = data.note
@@ -40,5 +45,18 @@ class BaoGiaTableViewCell: UITableViewCell {
     }
     
     @IBAction func onSendMessage(_ sender: Any) {
+        AlemuaApi.shared.aleApi.request(AleApi.addChattingLog(user_receive_id: data.userPostId!))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result):
+                    print("Add Chatting Log success")
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                default: break
+                }
+            }).addDisposableTo(bag)
     }
 }

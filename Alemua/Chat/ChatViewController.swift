@@ -14,20 +14,20 @@ import RxRealm
 import RxSwift
 
 protocol MessageReceivedDelegate: class {
-    func onMessageReceive(senderId: String, senderName: String,  text: String)
+    func onMessageReceive(senderId: String, senderName: String, text: String)
 }
 
 class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
     var chatRepo = ChatRepository()
     var messages = [JSQMessage]()
     var isOutGoing = true;
-    var socket: SocketIOClient = SocketIOHelper.shared.socket
     let bag = DisposeBag()
-    
+    var friend: ConversationUserData!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //init delegate
-        self.senderId = "asdasd"
+        self.senderId = "\(Prefs.userId)"
         self.senderDisplayName = "Cong"
 //        navigationController?.navigationBar.isHidden = false
         //change send item on inputtoolbar
@@ -43,51 +43,63 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         self.inputToolbar.contentView.backgroundColor = UIColor.white
 //        backgroundColor = UIColor.red
         self.collectionView.backgroundColor = UIColor.init(hexString: "#F2F1F1")
-        
+
+        //TODO: Get messages from db
+
+        //        messages
+        let result = chatRepo.getMessage(from: senderId, to: "\(friend.id!)").toArray()
+        print(result.count)
+        for res in result {
+            messages.append(JSQMessage(senderId: "\(res.userSend!)", displayName: "", text: res.data))
+        }
+        collectionView.reloadData()
+        //observable
+        observerFromRealm()
+
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
 //        navigationController?.navigationBar.isHidden = true
-        disconnect()
-        
+//        disconnect()
+
     }
-//    
+//
     //MARK: JSQMessageView
     //START COLLEVTION VIEW FUNC
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return messages.count
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         return cell
-        
+
     }
-    
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
         return messages[indexPath.row]
     }
-    
-    
+
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "avatar"), diameter: 30)
     }
-    
+
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         let message = messages[indexPath.item]
-        
+
         if message.senderId == senderId {
             return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.blue)
         } else {
             return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.blue)
         }
     }
-    
+
     //MARK: Action for JSQMessage
     //SENDING MESSAGE BUTTON
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        sendMessage(senderId: senderId, senderName: senderDisplayName, text: text)
+        sendMessage(sendTo: "\(friend.id!)", senderName: senderDisplayName, text: text)
         collectionView.reloadData()
         finishSendingMessage()
     }
@@ -97,10 +109,10 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
 // MARK: - Interact with socket io
 
 extension ChatViewController {
-    func disconnect(){
-        SocketIOHelper.shared.clearAllSubscribe()
-    }
-    
+//    func disconnect() {
+//        SocketIOHelper.shared.clearAllSubscribe()
+//    }
+
     //Delegate to handle receiving text message
     //we need to display message to JSQMessageView
     func onMessageReceive(senderId: String, senderName: String, text: String) {
@@ -108,17 +120,40 @@ extension ChatViewController {
         collectionView.reloadData()
     }
     //Send message to server and append to view
-    func sendMessage(senderId: String, senderName: String, text: String){
-        socket.emit("sendMessage", ["message": text])
-        messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
+    func sendMessage(sendTo: String, senderName: String, text: String) {
+        let message = Message()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        message.timestamp = Int(Date().timeIntervalSince1970) * 1000
+        message.date = dateFormatter.string(from: Date())
+        message.userSend = senderId
+        message.userSendName = senderName
+        message.userRecieve = sendTo
+        message.data = text
+        //TODO: Save to realm
+        chatRepo.addMessages([message])
+
+//        messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
     }
-    
-    func observerFromRealm(){
-        Observable.array(from: chatRepo.getAll())
-        .subscribe(onNext: { (chats) in
-            for chat in chats {
-//                self.messages.append(JSQMessage(senderId: "\(chat.userid)", displayName: "\(chat.userid)", text: chat.message))
-            }
-        }).addDisposableTo(bag)
+
+    func observerFromRealm() {
+        //Handle send and receive
+        Observable.changeset(from: chatRepo.getMessage(from: senderId, to: "\(friend.id!)"))
+            .subscribe(onNext: { (chats, changes) in
+                if let changes = changes {
+                    let indexes = changes.inserted
+
+                    for index in indexes {
+                        if chats[index].userSend! == self.senderId {
+                            print("asdASdasdas das das das das das")
+                            SocketIOHelper.shared.emitSendToServer(message: chats[index])
+                        }
+                        self.messages.append(JSQMessage(senderId: "\(chats[index].userSend!)", displayName: "", text: chats[index].data))
+                    }
+                    self.collectionView.reloadData()
+                } else {
+                }
+            }).addDisposableTo(bag)
+        
     }
 }

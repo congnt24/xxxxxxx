@@ -8,6 +8,48 @@
 
 import SwiftyJSON
 
+class CurrencyData {
+    private struct SerializationKeys {
+        static let name = "name"
+        static let conversion = "conversion"
+        static let updatedAt = "updated_at"
+        static let id = "id"
+        static let photo = "photo"
+        static let descriptionValue = "description"
+        static let createdAt = "created_at"
+    }
+    
+    // MARK: Properties
+    public var name: String?
+    public var conversion: String?
+    public var updatedAt: String?
+    public var id: Int?
+    public var photo: String?
+    public var descriptionValue: String?
+    public var createdAt: String?
+    
+    // MARK: SwiftyJSON Initializers
+    /// Initiates the instance based on the object.
+    ///
+    /// - parameter object: The object of either Dictionary or Array kind that was passed.
+    /// - returns: An initialized instance of the class.
+    public convenience init(object: Any) {
+        self.init(json: JSON(object))
+    }
+    
+    /// Initiates the instance based on the JSON that was passed.
+    ///
+    /// - parameter json: JSON object from SwiftyJSON.
+    public required init(json: JSON) {
+        name = json[SerializationKeys.name].string
+        conversion = json[SerializationKeys.conversion].string
+        updatedAt = json[SerializationKeys.updatedAt].string
+        id = json[SerializationKeys.id].int
+        photo = json[SerializationKeys.photo].string
+        descriptionValue = json[SerializationKeys.descriptionValue].string
+        createdAt = json[SerializationKeys.createdAt].string
+    }
+}
 class CommentData {
     private struct SerializationKeys {
         static let photo = "photo"

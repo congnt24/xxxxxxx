@@ -38,23 +38,24 @@ struct ModelBuyingOnline{
 
 class ModelMainHomeData: BaseResult {
     private struct SerializationKeys {
-        static let discountProducts = "discount_products"
         static let buyingOnlineItem = "buying_online_item"
         static let hotProducts = "hot_products"
     }
     
     
     // MARK: Properties
-    public var discountProducts: [ModelOrderData]?
     public var buyingOnlineItem: [ModelBuyingOnlineItem]?
     public var hotProducts: [ModelOrderData]?
     
     
     required init(json: JSON) {
         super.init(json: json)
-        if let items = json[SerializationKeys.discountProducts].array { discountProducts = items.map { ModelOrderData(json: $0) } }
+        if let items = json[SerializationKeys.hotProducts].array {
+            print(items)
+            hotProducts = items.map { ModelOrderData(json: $0) }
+        }
+//        if let items = json[SerializationKeys.discountProducts].array { discountProducts = items.map { ModelOrderData(json: $0) } }
         if let items = json[SerializationKeys.buyingOnlineItem].array { buyingOnlineItem = items.map { ModelBuyingOnlineItem(json: $0) } }
-        if let items = json[SerializationKeys.hotProducts].array { hotProducts = items.map { ModelOrderData(json: $0) } }
     }
 }
 

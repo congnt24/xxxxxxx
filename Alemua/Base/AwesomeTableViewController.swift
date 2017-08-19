@@ -12,12 +12,8 @@ import RxCocoa
 
 @IBDesignable
 class AwesomeTableViewController: UITableView {
-    
-    @IBInspectable var nibName: String = "OrderViewCell" {
-        didSet {
-            
-        }
-    }
+
+    @IBInspectable var nibName: String?
     var bag = DisposeBag()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,24 +22,25 @@ class AwesomeTableViewController: UITableView {
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
     }
-    
+
     override func awakeFromNib() {
-        var nib = UINib(nibName: nibName, bundle: nil)
-        self.register(nib, forCellReuseIdentifier: nibName)
-        
-        fetchData().bind(to: self.rx.items(cellIdentifier: nibName)){ (row, item, cell) in
-            
-        }.addDisposableTo(bag)
-        
-        
+        if let nibName = nibName {
+            var nib = UINib(nibName: nibName, bundle: nil)
+            self.register(nib, forCellReuseIdentifier: nibName)
+
+            fetchData().bind(to: self.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
+
+            }.addDisposableTo(bag)
+        }
+
         self.estimatedRowHeight = 96 // some constant value
         self.rowHeight = 96
     }
-    
-    
-    
+
+
+
     //Interact API
-    func fetchData() -> Observable<[String]>{
-        return Observable.just((0..<20).map{"\($0)"})
+    func fetchData() -> Observable<[String]> {
+        return Observable.just((0..<20).map { "\($0)" })
     }
 }

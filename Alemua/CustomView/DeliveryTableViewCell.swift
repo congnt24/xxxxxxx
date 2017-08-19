@@ -45,7 +45,7 @@ class DeliveryTableViewCell: UITableViewCell {
         lbDate.text = data.deliveryDate?.toFormatedDate()
         lbBaoGia.text = "\(data.numberQuote ?? 0)".toFormatedBaoGia()
         lbAddress.text = data.deliveryTo
-        lbPrice.text = "\(data.websitePrice!)".toFormatedPrice()
+        lbPrice.text = "\(data.websitePrice ?? 0)".toFormatedPrice()
         lbTime.text = data.timeAgo?.toFormatedTime()
     }
 }

@@ -35,9 +35,8 @@ class ConversationViewController: BaseViewController {
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
 //            self.chatCoor.showChatScreen()
             //TODO: IF ORDER / DELIVERY
-            HomeCoordinator.sharedInstance.showChatScreen()
+            HomeCoordinator.sharedInstance.showChatScreen(friend: self.datas.value[ip.row])
         }).addDisposableTo(bag)
-
 
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -49,12 +48,14 @@ class ConversationViewController: BaseViewController {
                     case .done(let result):
                         if let result = result.array {
                             self.datas.value = result.map { ConversationUserData(json: $0) }
+                            self.datas.value.forEach({ (user) in
+                                SocketIOHelper.shared.emitLoadMessage(receiveId: user.id!)
+                            })
                         }
                         break
                     case .error(let msg):
                         print("Error \(msg)")
                         break
-                    default: break
                     }
                 }).addDisposableTo(bag)
     }
@@ -63,12 +64,15 @@ class ConversationViewController: BaseViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //TODO: Check if user is logged
         if !Prefs.isUserLogged {
-            HomeCoordinator.sharedInstance.showLoginScreen()
+            if LoginViewController.isIgnore {
+                onBack("")
+                LoginViewController.isIgnore = false
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
             return
         }
-        SocketIOHelper.shared.emitLoadMessage()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

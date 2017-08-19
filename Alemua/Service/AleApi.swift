@@ -18,11 +18,11 @@ public class AlemuaApi {
 }
 
 public enum AleApi {
-    case login(phone_number: String, token_firebase: String, device_type: Int)
+    case login(phone_number: String, token_firebase: String, password: String, device_type: Int)
     case createOrder(data: TaoDonHangRequest)
     case createQuote(quote: CreateQuoteRequest)
     case acceptQuote(data: AcceptQuoteRequest)
-    case getHomeItems()
+    case getHomeItems(page: Int?)
     case getProducts(type: Int, page: Int)
     case uploadFile(photos: [UIImage])
     case getQuoteForShipper(page_number: Int)
@@ -45,6 +45,8 @@ public enum AleApi {
     case activeAccount(phone_number: String, password: String)
     case getDataFromUrl(website_url: String)
     case logout()
+    case getAllCurrency()
+    case loginAndRegisterFacebook(data: FacebookRequest)
 
 }
 
@@ -57,14 +59,14 @@ extension AleApi: TargetType {
     public var path: String {
         switch self {
         case .login:
-            return "/api/users/loginAndRegister"
+            return "/api/users/login"
         case .createOrder(_):
             return "/api/order/createOrder"
         case .createQuote(_):
             return "/api/order/createQuote"
         case .acceptQuote(_):
             return "/api/order/acceptQuote"
-        case .getHomeItems():
+        case .getHomeItems(_):
             return "/api/order/getHomeItems"
         case .getProducts(_, _):
             return "/api/order/getProducts"
@@ -106,13 +108,17 @@ extension AleApi: TargetType {
             return "/api/order/getDataFromUrl"
         case .logout():
             return "/api/users/logout"
+        case .getAllCurrency():
+            return "/api/order/getAllCurrency"
+        case .loginAndRegisterFacebook:
+            return "/api/users/loginAndRegisterFacebook"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .login(_, _, _), .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_)
-             , .logout(), .activeAccount(_, _), .addChattingLog(_):
+        case .login, .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_)
+             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook:
             return .post
         default:
             return .get
@@ -121,9 +127,10 @@ extension AleApi: TargetType {
 
     public var parameters: [String: Any]? {
         switch self {
-        case .login(let phone_number, let token_firebase, let device_type):
+        case .login(let phone_number, let token_firebase, let password, let device_type):
             var params = [String: Any]()
             params["phone_number"] = phone_number
+            params["password"] = password
             params["token_firebase"] = token_firebase
             params["device_type"] = 2
             return params
@@ -308,6 +315,26 @@ extension AleApi: TargetType {
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             return params
+        case .getHomeItems(let page):
+            var params = [String: Any]()
+            params["page_size"] = 20
+            params["page_number"] = page ?? 1
+            return params
+        case .getAllCurrency():
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            return params
+        case .loginAndRegisterFacebook(let data):
+            var params = [String: Any]()
+            params["email"] = data.email
+            params["device_type"] = 2
+            params["token_firebase"] = data.tokenFirebase
+            params["facebook_id"] = data.facebookId
+            params["phone_number"] = data.phoneNumber
+            params["photo"] = data.photo
+            return params
+
         default:
             return nil
         }
@@ -322,7 +349,7 @@ extension AleApi: TargetType {
     public /// Provides stub data for use in testing.
     var sampleData: Data {
         switch self {
-        case .login(_, _, _):
+        case .login:
             return "Half measures are as bad as nothing at all.".data(using: String.Encoding.utf8)!
         default:
             return "Half measures are as bad as nothing at all.".data(using: String.Encoding.utf8)!

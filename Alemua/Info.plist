@@ -38,10 +38,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>&quot;Need to get your photo and video&quot;</string>
 	<key>NSCameraUsageDescription</key>
-	<string>&quot;Using camera&quot;</string>
+	<string>"Using camera"</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>"Need to get your photo and video"</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

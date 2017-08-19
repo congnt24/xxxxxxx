@@ -7,6 +7,14 @@
 //
 
 import Foundation
+public class FacebookRequest {
+    public var deviceType: Int?
+    public var photo: String?
+    public var facebookId: String?
+    public var email: String?
+    public var phoneNumber: String?
+    public var tokenFirebase: String?
+}
 
 public class TaoDonHangRequest {
     public var productOption: Int?

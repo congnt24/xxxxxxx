@@ -10,6 +10,17 @@ import Foundation
 
 class Prefs {
     static let isTest = false
+    
+    class var firebaseToken: String {
+        get {
+            return UserDefaults.standard.string(forKey: "firebaseToken") ?? ""
+        }
+        set(id) {
+            UserDefaults.standard.set(id, forKey: "firebaseToken")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     class var isUserLogged: Bool {
         get {
             return UserDefaults.standard.bool(forKey: AppConstant.LOGGED_KEY)
@@ -37,7 +48,7 @@ class Prefs {
             if Prefs.isTest {
                 return "gduO4eJFqR9eUnHhdKiEADIyhOBhEh6RF6qQZ5oNWhF9ySLeE4MLlGM5L4Nd"
             }
-            return UserDefaults.standard.string(forKey: AppConstant.API_TOKEN)!
+            return UserDefaults.standard.string(forKey: AppConstant.API_TOKEN) ?? "0"
         }
         set(token) {
             UserDefaults.standard.set(token, forKey: AppConstant.API_TOKEN)
@@ -65,7 +76,7 @@ class Prefs {
             if Prefs.isTest {
                 return "4fIVqGZPGQQakv7FBlyzUs671jzerg422UZrP2t4trl761Tekdngg6DSZoe8"
             }
-            return UserDefaults.standard.string(forKey: AppConstant.API_TOKEN)!
+            return UserDefaults.standard.string(forKey: AppConstant.API_TOKEN) ?? "0"
         }
         set(token) {
             UserDefaults.standard.set(token, forKey: AppConstant.API_TOKEN)

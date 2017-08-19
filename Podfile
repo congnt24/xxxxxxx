@@ -23,4 +23,6 @@ target 'Alemua' do
   pod 'Socket.IO-Client-Swift', '~> 11.0.2'
   pod 'Realm'
   pod 'RxRealm'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end

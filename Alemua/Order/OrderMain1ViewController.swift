@@ -93,7 +93,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
             break
         case 1:
             cell.xemthem.isHidden = false
-            cell.title.text = "Sản phẩm Hot"
+            cell.title.text = "Sản phẩm Hot và giảm giá "
             break
         default:
             cell.xemthem.isHidden = false
@@ -124,15 +124,15 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
 extension OrderMain1ViewController {
     //Interact API
     func fetchData() -> Driver<[SectionOfOrder]> {
-        return aleApi.request(AleApi.getHomeItems()).filterSuccessfulStatusCodes()
+        return aleApi.request(AleApi.getHomeItems(page: 1)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[SectionOfOrder]> in
             let json = JSON(response.data)
             let responseObj = ModelMainHomeResponse(json: json)
                 let x = ModelBuyingOnline(items: responseObj.result?.buyingOnlineItem)
             let array = [
                 SectionOfOrder.Online(datas: x),
-                SectionOfOrder.Order(datas: (responseObj.result?.hotProducts)!),
-                SectionOfOrder.Order(datas: (responseObj.result?.discountProducts)!)]
+                SectionOfOrder.Order(datas: (responseObj.result?.hotProducts)!)]
+//                SectionOfOrder.Order(datas: (responseObj.result?.discountProducts)!)]
             return Observable.from(optional: array)
         }.asDriver(onErrorJustReturn: [])
     }

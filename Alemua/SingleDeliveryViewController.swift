@@ -16,6 +16,7 @@ import SwiftyJSON
 class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
     @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl!
     
     let bag = DisposeBag()
     var itemInfo: IndicatorInfo!
@@ -26,7 +27,18 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         setupTableView()
+    }
+    
+    func refresh(_ sender: Any) {
+        reloadPage()
+        refreshControl.endRefreshing()
     }
     
     func setupTableView(){
@@ -40,25 +52,12 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
             DeliveryCoordinator.sharedInstance.showOrder(self.deliveryType, data: self.datas.value[ip.row])
-            // TODO: Pass data here
-            //            if self.orderType == .DonMua {
-            //
-            //            }
-            //
-            //            if self.orderType == .BaoGia {
-            //                print("Bao Gia")
-            //            }
-            //
-            //            if self.orderType == .DangChuyen {
-            //                print("DangChuyen")
-            //            }
-            //
-            //            if self.orderType == .DaMua {
-            //                print("DaMua")
-            //            }
             
         }).addDisposableTo(bag)
-        
+        initData()
+    }
+    
+    func initData(){
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
@@ -70,6 +69,11 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         tableView.beginInfiniteScroll(true)
     }
     
+    func reloadPage(){
+        currentPage = 1
+        self.fetchData()
+    }
+
     
     //Interact API
     func fetchData() {
@@ -78,11 +82,15 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
                 switch res {
                 case .done(let result):
                     if let array = result.array, array.count > 0 {
-                        self.currentPage += 1
                         let arrs = array.map { ModelOrderClientData(json: $0) }
-                        for item in arrs {
-                            self.datas.value.append(item)
+                        if self.currentPage == 1 {
+                            self.datas.value = arrs
+                        }else{
+                            for item in arrs {
+                                self.datas.value.append(item)
+                            }
                         }
+                        self.currentPage += 1
                     }
                     break
                 case .error(let msg):

@@ -22,7 +22,7 @@ enum OrderType: Int {
 class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var tableView: UITableView!
-
+    var refreshControl: UIRefreshControl!
     let bag = DisposeBag()
     var itemInfo: IndicatorInfo!
     var orderType: OrderType!
@@ -35,8 +35,19 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         super.viewDidLoad()
         setupTableView()
     }
+    
+    func refresh(_ sender: Any) {
+        reloadPage()
+        refreshControl.endRefreshing()
+    }
 
     func setupTableView() {
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let nibName = "DonHangTableViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
@@ -50,42 +61,38 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
             OrderCoordinator.sharedInstance.showOrder(self.orderType, data: self.datas.value[ip.row])
-            // TODO: Pass data here
-            //            if self.orderType == .DonMua {
-            //
-            //            }
-            //
-            //            if self.orderType == .BaoGia {
-            //                print("Bao Gia")
-            //            }
-            //
-            //            if self.orderType == .DangChuyen {
-            //                print("DangChuyen")
-            //            }
-            //
-            //            if self.orderType == .DaMua {
-            //                print("DaMua")
-            //            }
 
         }).addDisposableTo(bag)
-
+        initData()
+    }
+    
+    func initData(){
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
             self.fetchData().drive(onNext: { (results) in
                 print(results)
                 if results.count > 0 {
-                    for result in results {
-                        self.datas.value.append(result)
-                    }
+                    self.datas.value.append(contentsOf: results)
                     self.currentPage += 1
                 }
             }).addDisposableTo(self.bag)
             // finish infinite scroll animation
             tv.finishInfiniteScroll()
         }
-
+        
         tableView.beginInfiniteScroll(true)
+    }
+    
+    func reloadPage(){
+        currentPage = 1
+        self.fetchData().drive(onNext: { (results) in
+            print(results)
+            if results.count > 0 {
+                self.datas.value = results
+                self.currentPage = 2
+            }
+        }).addDisposableTo(self.bag)
     }
 
 

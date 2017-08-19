@@ -23,15 +23,16 @@ class ChatCoordinator: Coordinator {
 //        navigation?.pushViewController(chat)
         //        navigation?.pushViewController(home, animated: true)
         let chat: ChatWrapperViewController = mainStoryboard.instantiateViewController(withClass: ChatWrapperViewController.self)
+        chat.friend = data as! ConversationUserData
         //        chat.chatCoor = self
         navigation?.pushViewController(chat)
     }
 }
 
 extension ChatCoordinator {
-    func showChatScreen() {
+    func showChatScreen(friend: ConversationUserData) {
         let chat: ChatWrapperViewController = mainStoryboard.instantiateViewController(withClass: ChatWrapperViewController.self)
-//        chat.chatCoor = self
+        chat.friend = friend
         navigation?.pushViewController(chat)
     }
 }

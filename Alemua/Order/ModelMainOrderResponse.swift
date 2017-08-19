@@ -17,15 +17,16 @@ class ModelOrderData: BaseResult {
         static let name = "name"
         static let promotionPercent = "promotion_percent"
         static let updatedAt = "updated_at"
-        static let isHot = "is_hot"
         static let promotionPrice = "promotion_price"
         static let websiteUrl = "website_url"
         static let address = "address"
         static let isDiscount = "is_discount"
+        static let isHot = "is_hot"
+        static let categoryId = "category_id"
         static let originPrice = "origin_price"
         static let id = "id"
-        static let createdAt = "created_at"
         static let photo = "photo"
+        static let createdAt = "created_at"
         static let currencyId = "currency_id"
     }
     
@@ -33,15 +34,16 @@ class ModelOrderData: BaseResult {
     public var name: String?
     public var promotionPercent: Int?
     public var updatedAt: String?
-    public var isHot: Int?
     public var promotionPrice: Int?
     public var websiteUrl: String?
     public var address: String?
     public var isDiscount: Int?
+    public var isHot: Int?
+    public var categoryId: Int?
     public var originPrice: Int?
     public var id: Int?
-    public var createdAt: String?
     public var photo: String?
+    public var createdAt: String?
     public var currencyId: Int?
     
     // MARK: SwiftyJSON Initializers
@@ -61,15 +63,16 @@ class ModelOrderData: BaseResult {
         name = json[SerializationKeys.name].string
         promotionPercent = json[SerializationKeys.promotionPercent].int
         updatedAt = json[SerializationKeys.updatedAt].string
-        isHot = json[SerializationKeys.isHot].int
         promotionPrice = json[SerializationKeys.promotionPrice].int
         websiteUrl = json[SerializationKeys.websiteUrl].string
         address = json[SerializationKeys.address].string
         isDiscount = json[SerializationKeys.isDiscount].int
+        isHot = json[SerializationKeys.isHot].int
+        categoryId = json[SerializationKeys.categoryId].int
         originPrice = json[SerializationKeys.originPrice].int
         id = json[SerializationKeys.id].int
-        createdAt = json[SerializationKeys.createdAt].string
         photo = json[SerializationKeys.photo].string
+        createdAt = json[SerializationKeys.createdAt].string
         currencyId = json[SerializationKeys.currencyId].int
     }
 

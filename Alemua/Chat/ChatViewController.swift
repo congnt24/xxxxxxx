@@ -131,7 +131,9 @@ extension ChatViewController {
         message.userRecieve = sendTo
         message.data = text
         //TODO: Save to realm
-        chatRepo.addMessages([message])
+//        chatRepo.addMessages([message])
+        
+        SocketIOHelper.shared.emitSendToServer(message: message)
 
 //        messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
     }
@@ -146,7 +148,6 @@ extension ChatViewController {
                     for index in indexes {
                         if chats[index].userSend! == self.senderId {
                             print("asdASdasdas das das das das das")
-                            SocketIOHelper.shared.emitSendToServer(message: chats[index])
                         }
                         self.messages.append(JSQMessage(senderId: "\(chats[index].userSend!)", displayName: "", text: chats[index].data))
                     }

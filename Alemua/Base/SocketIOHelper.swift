@@ -39,7 +39,6 @@ public class SocketIOHelper {
         //receive
         socket.on("\(Prefs.userId)") { (data, ack) in
             print("Receive message")
-            print(data)
             let dict = ((data[0] as! NSDictionary)["Content"] as! NSDictionary)
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -54,11 +53,17 @@ public class SocketIOHelper {
         }
         
         socket.on("\(Prefs.userId)CorrectTime") { (data, ack) in
-//            print("Load message success ")
-//            let array = (data[0] as! NSDictionary)["Content"] as! NSArray
-//            print("xxxxxx \(array.count)")
-//            let mw = MessageWrapper(json: array.map({ $0 }).toJSONString())
-//            mw.saveToDB()
+            let dict = ((data[0] as! NSDictionary)["Content"] as! NSDictionary)
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let str =  String(data: jsonData, encoding: String.Encoding.utf8)!
+                let message = Message().bindData(json: JSON(data: str.data(using: String.Encoding.utf8)!))
+                print(message)
+                self.chatRepo.add(message)
+                
+            } catch {
+                print("Error")
+            }
         }
         
         socket.on("\(Prefs.userId)StopTyping") { (data, ack) in

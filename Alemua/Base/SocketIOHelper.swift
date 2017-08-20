@@ -25,7 +25,7 @@ public class SocketIOHelper {
         socket.on(clientEvent: .connect) { data, ack in
             print("socket connected")
             //Emit online status
-            self.socket.emit("UserOnline", Prefs.userId)
+            self.socket.emit("UserOnline", "\(Prefs.userId)")
         }
 
         socket.on("\(Prefs.userId)LoadMessage") { (data, ack) in
@@ -39,11 +39,26 @@ public class SocketIOHelper {
         //receive
         socket.on("\(Prefs.userId)") { (data, ack) in
             print("Receive message")
-            let str = (data[0] as! NSDictionary)["Content"] as! String
-            let message = Message()
-            message.bindData(json: JSON(data: str.data(using: String.Encoding.utf8)!))
-            print(message)
-            self.chatRepo.add(message)
+            print(data)
+            let dict = ((data[0] as! NSDictionary)["Content"] as! NSDictionary)
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let str =  String(data: jsonData, encoding: String.Encoding.utf8)!
+                let message = Message().bindData(json2: JSON(data: str.data(using: String.Encoding.utf8)!))
+                print(message)
+                self.chatRepo.add(message)
+
+            } catch {
+                print("Error")
+            }
+        }
+        
+        socket.on("\(Prefs.userId)CorrectTime") { (data, ack) in
+//            print("Load message success ")
+//            let array = (data[0] as! NSDictionary)["Content"] as! NSArray
+//            print("xxxxxx \(array.count)")
+//            let mw = MessageWrapper(json: array.map({ $0 }).toJSONString())
+//            mw.saveToDB()
         }
         
         socket.on("\(Prefs.userId)StopTyping") { (data, ack) in

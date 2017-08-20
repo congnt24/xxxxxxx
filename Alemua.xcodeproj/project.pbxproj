@@ -229,7 +229,7 @@
 		023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseAuthHelper.swift; path = Helper/FirebaseAuthHelper.swift; sourceTree = "<group>"; };
 		023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain1ViewController.swift; path = Order/OrderMain1ViewController.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
-		024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIOHelper.swift; path = Base/SocketIOHelper.swift; sourceTree = "<group>"; };
+		024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIOHelper.swift; path = ../Base/SocketIOHelper.swift; sourceTree = "<group>"; };
 		02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AwesomeTextField2.swift; path = CustomView/AwesomeTextField2.swift; sourceTree = "<group>"; };
 		02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanhToanModel.swift; sourceTree = "<group>"; };
 		02525C3F1F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMainOnlineTableViewCell.swift; path = CustomView/OrderMainOnlineTableViewCell.swift; sourceTree = "<group>"; };
@@ -461,7 +461,6 @@
 			children = (
 				023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */,
 				028AF0EA1F35C3C500387FFC /* PictureHelper.swift */,
-				024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */,
 			);
 			name = Helper;
 			path = ..;
@@ -630,6 +629,7 @@
 			isa = PBXGroup;
 			children = (
 				029B090D1F207C5F0036F01F /* Controller */,
+				024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */,
 				02F775111F1F38E900556BED /* HomeCoordinator.swift */,
 				02F775131F1F38E900556BED /* HomeViewModel.swift */,
 				02530E891F2C85C900334345 /* Prefs.swift */,

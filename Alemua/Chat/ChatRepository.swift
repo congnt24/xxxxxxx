@@ -53,6 +53,20 @@ class Message: Object {
         
         return self
     }
+    public func bindData(json2: JSON) -> Message {
+        data = json2[SerializationKeys.data].string
+        typeAction = json2[SerializationKeys.typeAction].int ?? 0
+        userSendName = json2[SerializationKeys.userSendName].string
+        userSend = json2[SerializationKeys.userSend].string
+        idSort = json2[SerializationKeys.idSort].int ?? 0
+        userRecieve = json2[SerializationKeys.userRecieve].string
+        date = json2[SerializationKeys.date].string
+        timestamp = Int(json2[SerializationKeys.timestamp].string!)!
+        dataType = json2[SerializationKeys.dataType].int ?? 0
+        
+        return self
+    }
+    
     func toDict() -> [String: Any]{
         var params = [String: Any]()
         params["userSend"] = userSend!

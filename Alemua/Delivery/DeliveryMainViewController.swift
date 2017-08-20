@@ -22,7 +22,22 @@ class DeliveryMainViewController: BaseViewController {
     var currentPage = 1
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    var refreshControl: UIRefreshControl!
+    
+    func refresh(_ sender: Any) {
+        reloadPage()
+        refreshControl.endRefreshing()
+    }
+    
     override func bindToViewModel() {
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let nibName = "DeliveryTableViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
@@ -44,9 +59,7 @@ class DeliveryMainViewController: BaseViewController {
             self.fetchData().drive(onNext: { (results) in
                 if results.count > 0 {
                     self.currentPage += 1
-                    for result in results {
-                        self.datas.value.append(result)
-                    }
+                    self.datas.value.append(contentsOf: results)
                 }
             }).addDisposableTo(self.bag)
             // finish infinite scroll animation
@@ -56,7 +69,16 @@ class DeliveryMainViewController: BaseViewController {
         tableView.beginInfiniteScroll(true)
     }
 
-
+    func reloadPage(){
+        currentPage = 1
+        self.fetchData().drive(onNext: { (results) in
+            if results.count > 0 {
+                self.currentPage += 1
+                self.datas.value = results
+                
+            }
+        }).addDisposableTo(self.bag)
+    }
     //Interact API
     func fetchData() -> Driver<[ModelQuoteData]> {
         return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage)).filterSuccessfulStatusCodes()

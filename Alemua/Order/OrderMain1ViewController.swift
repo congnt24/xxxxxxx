@@ -23,8 +23,18 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
     let dataSource = RxTableViewSectionedReloadDataSource<SectionOfOrder>()
 
     let aleApi = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
-
+    var refreshControl: UIRefreshControl!
+    func refresh(_ sender: Any) {
+        reloadPage()
+        refreshControl.endRefreshing()
+    }
     override func bindToViewModel() {
+        
+//        refreshControl = UIRefreshControl()
+//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+//        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//        tableView.addSubview(refreshControl)
+        
         tableView.delegate = self
         let nibName = "OrderViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
@@ -116,6 +126,11 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
     }
     @IBAction func onNotifyClick(_ sender: Any) {
 
+    }
+    
+    func reloadPage(){
+//        fetchData().asObservable().bind(to: tableView.rx.items(dataSource: dataSource))
+//            .addDisposableTo(bag)
     }
 
 }

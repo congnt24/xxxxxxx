@@ -42,6 +42,7 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
             input.text = parentUrl
             openPage()
         }
+        print(orderData!.websiteUrl)
         if let orderData = orderData {
             input.text = orderData.websiteUrl
             openPage()

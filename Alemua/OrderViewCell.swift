@@ -17,6 +17,7 @@ class OrderViewCell: UITableViewCell {
     @IBOutlet weak var lbWebsite: UILabel!
     @IBOutlet weak var lbGia: UILabel!
     @IBOutlet weak var lbGiaCu: StrikeThroughLabel!
+    var data: ModelOrderData!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +25,6 @@ class OrderViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -34,11 +34,17 @@ class OrderViewCell: UITableViewCell {
     
     
     func bindData(item: ModelOrderData){
+        self.data = item
         productName.text = item.name
         lbNoiMua.text = item.address
         lbWebsite.text = item.websiteUrl
         lbGia.text = "$\(item.promotionPrice!)"
         lbGiaCu.setText(str: "$\(item.originPrice!)")
         setPhoto(link: item.photo)
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClick)))
+    }
+    
+    func onClick() {
+        OrderCoordinator.sharedInstance.showTaoDonHang(data: data)
     }
 }

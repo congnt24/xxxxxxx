@@ -29,7 +29,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpP-nM-vrP">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Cài đặt" id="cAS-sL-y8s">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="gWY-8O-hoj" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -39,7 +39,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FpP-nM-vrP" secondAttribute="trailing" id="XBT-I8-u8i"/>
                                     <constraint firstAttribute="bottom" secondItem="FpP-nM-vrP" secondAttribute="bottom" id="ZNn-xJ-jiw"/>
@@ -190,7 +190,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-IU-vl8">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.9137254901960784" green="0.30980392156862746" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Thông tin tài khoản" id="wWa-0D-eqe">
                                                 <barButtonItem key="rightBarButtonItem" title="Hủy" id="dn9-KI-wT4" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -200,7 +200,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="7fJ-yI-OaP"/>
                                     <constraint firstAttribute="trailing" secondItem="Wad-IU-vl8" secondAttribute="trailing" id="FGz-5q-vPw"/>
@@ -220,7 +220,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOs-LU-Y9E">
-                                        <rect key="frame" x="0.0" y="240" width="375" height="340"/>
+                                        <rect key="frame" x="0.0" y="254" width="375" height="340"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ujv-tc-cyX">
                                                 <rect key="frame" x="16" y="16" width="343" height="210"/>
@@ -365,22 +365,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDo-uq-HPN" customClass="AwesomeToggleViewByHeight" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="104" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="104" width="375" height="142"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uy4-NH-yKq">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vXI-8E-AmN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Thao tác làm việc nhanh nhẹn chuyên nghiệp&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRz-xw-L7o">
-                                                                <rect key="frame" x="16" y="0.0" width="343" height="64"/>
+                                                                <rect key="frame" x="16" y="0.0" width="343" height="71"/>
                                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u5E-io-aru">
-                                                                <rect key="frame" x="0.0" y="64" width="375" height="64"/>
+                                                                <rect key="frame" x="0.0" y="71" width="375" height="71"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cry-4E-by2">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -390,13 +390,13 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JbA-lj-z5v">
-                                                                        <rect key="frame" x="0.0" y="1" width="375" height="63"/>
+                                                                        <rect key="frame" x="0.0" y="1" width="375" height="70"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1DW-ZU-DAV">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="125" height="63"/>
+                                                                                <rect key="frame" x="0.0" y="2" width="125" height="66"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g7v-wa-33z">
-                                                                                        <rect key="frame" x="0.0" y="8" width="124" height="47"/>
+                                                                                        <rect key="frame" x="0.0" y="0.5" width="124" height="65"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvH-ZQ-vcR">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="29"/>
@@ -404,8 +404,8 @@
                                                                                                 <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang xử lý" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-Ga-ubD">
-                                                                                                <rect key="frame" x="0.0" y="29" width="124" height="18"/>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao dịch qua Alemua" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxY-Ga-ubD">
+                                                                                                <rect key="frame" x="0.0" y="29" width="124" height="36"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -413,7 +413,7 @@
                                                                                         </subviews>
                                                                                     </stackView>
                                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-2J-kfP">
-                                                                                        <rect key="frame" x="124" y="8" width="1" height="47"/>
+                                                                                        <rect key="frame" x="124" y="8" width="1" height="50"/>
                                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="1" id="tOP-1G-x6A"/>
@@ -425,10 +425,10 @@
                                                                                 </constraints>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2z8-22-FDG">
-                                                                                <rect key="frame" x="125" y="0.0" width="125" height="63"/>
+                                                                                <rect key="frame" x="125" y="2" width="125" height="66"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MJg-Cc-Fse">
-                                                                                        <rect key="frame" x="0.0" y="8" width="124" height="47"/>
+                                                                                        <rect key="frame" x="0.0" y="0.5" width="124" height="65"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGX-of-PdK">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="29"/>
@@ -436,8 +436,8 @@
                                                                                                 <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoàn thành" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-44-zuk">
-                                                                                                <rect key="frame" x="0.0" y="29" width="124" height="18"/>
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao dịch tự thỏa thuận" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-44-zuk">
+                                                                                                <rect key="frame" x="0.0" y="29" width="124" height="36"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -445,7 +445,7 @@
                                                                                         </subviews>
                                                                                     </stackView>
                                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="EjF-lz-5zd">
-                                                                                        <rect key="frame" x="124" y="8" width="1" height="47"/>
+                                                                                        <rect key="frame" x="124" y="8" width="1" height="50"/>
                                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="1" id="BLK-YN-kJQ"/>
@@ -457,7 +457,7 @@
                                                                                 </constraints>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="U7C-7u-0hj">
-                                                                                <rect key="frame" x="250" y="8" width="125" height="47"/>
+                                                                                <rect key="frame" x="250" y="2.5" width="125" height="65"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P5-bj-uuy">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="29"/>
@@ -465,8 +465,10 @@
                                                                                         <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã hủy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u5-sn-hnQ">
-                                                                                        <rect key="frame" x="0.0" y="29" width="125" height="18"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3u5-sn-hnQ">
+                                                                                        <rect key="frame" x="0.0" y="29" width="125" height="36"/>
+                                                                                        <string key="text">Tổng số tiền
+</string>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                                         <nil key="highlightedColor"/>
@@ -494,7 +496,7 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Uy4-NH-yKq" secondAttribute="bottom" id="JrE-Lz-gZ0"/>
                                             <constraint firstItem="Uy4-NH-yKq" firstAttribute="top" secondItem="eDo-uq-HPN" secondAttribute="top" id="OpG-KW-0Jq"/>
-                                            <constraint firstAttribute="height" constant="128" id="pPK-iy-CPQ"/>
+                                            <constraint firstAttribute="height" constant="142" id="pPK-iy-CPQ"/>
                                             <constraint firstAttribute="trailing" secondItem="Uy4-NH-yKq" secondAttribute="trailing" id="vI5-zE-4PV"/>
                                             <constraint firstItem="Uy4-NH-yKq" firstAttribute="leading" secondItem="eDo-uq-HPN" secondAttribute="leading" id="yfF-lC-Op0"/>
                                         </constraints>
@@ -503,7 +505,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9K-tA-hH0">
-                                        <rect key="frame" x="16" y="612" width="343" height="46.5"/>
+                                        <rect key="frame" x="16" y="626" width="343" height="46.5"/>
                                         <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="H9K-tA-hH0" secondAttribute="height" multiplier="96:13" id="Y7C-SS-w2W"/>
@@ -590,7 +592,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehl-60-XLF">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Chia sẻ mã giới thiệu" id="zXI-Lo-0lt">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="jXF-iO-maB" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -600,7 +602,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="6u8-r2-8wv"/>
                                     <constraint firstAttribute="bottom" secondItem="ehl-60-XLF" secondAttribute="bottom" id="HXB-RZ-VJq"/>

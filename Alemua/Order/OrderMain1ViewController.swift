@@ -71,7 +71,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
             case .Order:
                 let cell = tv.dequeueReusableCell(withIdentifier: "OrderViewCell") as! OrderViewCell
                 self.selectedData = model as! ModelOrderData
-                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSelectItem)))
+//                cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSelectItem)))
                 (cell).bindData(item: model as! ModelOrderData)
                 return cell
             case .Online:
@@ -90,9 +90,8 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         //delegate
     }
 
-    func onSelectItem() {
-        OrderCoordinator.sharedInstance.showTaoDonHang(data: selectedData)
-    }
+//    func onSelectItem() {
+//    }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderMainHeaderTableViewCell") as! OrderMainHeaderTableViewCell

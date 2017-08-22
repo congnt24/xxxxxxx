@@ -72,6 +72,13 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
+        let message = messages[indexPath.item]
+        if message.senderId == senderId {
+            cell.textView.textColor = UIColor.white
+        } else {
+            cell.textView.textColor = UIColor.init(hexString: "E94F2E")
+            
+        }
         return cell
 
     }
@@ -89,10 +96,12 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         let bubbleFactory = JSQMessagesBubbleImageFactory()
         let message = messages[indexPath.item]
 
+//        let tailessIncomingBubble = JSQMessagesBubbleImageFactory(bubble: UIImage(named: "tailessMessageBubble"), capInsets: UIEdgeInsets.zero).incomingMessagesBubbleImage(with: UIColor.white)
         if message.senderId == senderId {
-            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.blue)
+            return bubbleFactory?.outgoingMessagesBubbleImage(with: UIColor.init(hexString: "E94F2E"))
         } else {
-            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.blue)
+            return bubbleFactory?.incomingMessagesBubbleImage(with: UIColor.white)
+
         }
     }
 

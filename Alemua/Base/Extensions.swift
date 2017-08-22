@@ -29,6 +29,23 @@ extension String {
     func toFormatedPrice() -> String {
         return "$" + self
     }
+    
+    
+    func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss" //Your date format
+//        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7:00") //Current time zone
+        return dateFormatter.date(from: self) //according to date format your date string
+    }
+    func toFormatedHour() -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "hh:mm"
+//        print(self)
+//        let date = self.toDate()
+//        return dateFormatter.string(from: date!)
+        return self.splitted(by: " ")[1]
+    }
+    
 
 //    func loadItemImage(img: UIImageView) {
 ////        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))

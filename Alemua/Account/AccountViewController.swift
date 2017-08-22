@@ -65,7 +65,7 @@ class AccountViewController: BaseViewController {
                         self.lbDangxuly.text = "\(self.data?.numberInProgress ?? 0)"
                         self.lbHoanthanh.text = "\(self.data?.numberDone ?? 0)"
                         self.lbDahuy.text = "\(self.data?.numberCancelled ?? 0)"
-                        self.lbDesc.text = self.data?.description
+                        self.lbDesc.text = "\"\(self.data?.description ?? "")\""
                         
                         
                         print("Get Profile success")

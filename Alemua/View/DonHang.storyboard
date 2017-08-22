@@ -29,7 +29,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb1-xG-aK9">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn mua" id="OCb-9O-BCK">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="0Bs-w6-dWz" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -39,7 +39,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Kb1-xG-aK9" secondAttribute="trailing" id="5nQ-2U-Aml"/>
                                     <constraint firstItem="Kb1-xG-aK9" firstAttribute="leading" secondItem="Zqm-HQ-SLt" secondAttribute="leading" id="6se-wu-4zb"/>
@@ -260,7 +260,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR5-VU-lra">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn đang vận chuyển" id="qYK-HM-Jej">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="nF0-2X-rs0" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -270,7 +270,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="ZR5-VU-lra" secondAttribute="bottom" id="1M8-Fk-ymJ"/>
                                     <constraint firstAttribute="trailing" secondItem="ZR5-VU-lra" secondAttribute="trailing" id="4Nb-bd-hx9"/>
@@ -320,31 +320,31 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGX-QW-kdJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="24.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRl-5v-MqT">
                                                         <rect key="frame" x="34.5" y="0.0" width="6.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPd-jP-Mho">
                                                         <rect key="frame" x="51" y="0.0" width="21.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDU-uh-lUI">
                                                         <rect key="frame" x="82.5" y="0.0" width="6.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lI-a3-kSX">
                                                         <rect key="frame" x="99" y="0.0" width="24.5" height="23"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -691,7 +691,7 @@
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="htmlText">
-                                                        <string key="value">&lt;p&gt;Nếu đơn hàng giao chậm vui lòng &lt;b style="color: #3A99D8"&gt;nhập lại ngày tháng nhận hàng&lt;/b&gt; hoặc &lt;b style="color: #FF0000"&gt;gửi report cho admin.&lt;/b&gt;&lt;/p&gt;</string>
+                                                        <string key="value">&lt;p&gt;Nếu đơn hàng giao chậm vui lòng &lt;b style="color: #E94F2E"&gt;nhập lại ngày tháng nhận hàng&lt;/b&gt; hoặc &lt;b style="color: #FF0000"&gt;gửi report cho admin.&lt;/b&gt;&lt;/p&gt;</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
@@ -719,7 +719,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGW-7n-0kd">
                                                         <rect key="frame" x="177" y="0.0" width="167" height="39"/>
-                                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="39" id="Goq-PB-y5I"/>
                                                         </constraints>
@@ -840,7 +840,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBs-Ll-QYm">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn hàng đã mua" id="2tq-ee-8am">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="ZRF-j2-9kJ" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -850,7 +850,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gBs-Ll-QYm" secondAttribute="trailing" id="9hn-Jf-JeK"/>
                                     <constraint firstItem="gBs-Ll-QYm" firstAttribute="top" secondItem="gvY-lR-3mG" secondAttribute="top" constant="20" id="AiF-5M-LRB"/>
@@ -1137,7 +1137,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z24-Yn-LkG">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn hàng" id="5QI-Of-IGi">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="Z2p-zm-n64" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -1154,7 +1154,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="z24-Yn-LkG" firstAttribute="top" secondItem="PXf-Lt-gYy" secondAttribute="top" constant="20" id="6hk-3r-vm7"/>
                                     <constraint firstItem="z24-Yn-LkG" firstAttribute="leading" secondItem="PXf-Lt-gYy" secondAttribute="leading" id="D0K-PX-hCd"/>
@@ -1391,7 +1391,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNl-ml-76i" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="20" y="525" width="335" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="6pY-aV-AcN"/>
                                         </constraints>
@@ -1500,7 +1500,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnR-Dv-n5i">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Thông tin báo giá" id="bRm-ig-OMW">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="yac-zg-rb6" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -1510,7 +1510,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="5N7-He-j0T"/>
                                     <constraint firstAttribute="trailing" secondItem="VnR-Dv-n5i" secondAttribute="trailing" id="Mt5-BA-tXP"/>
@@ -1527,7 +1527,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpB-BX-Y67">
                                                 <rect key="frame" x="16" y="24" width="343" height="39"/>
-                                                <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="ĐẶT MUA">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1835,7 +1835,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78M-0R-CFF" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="185" width="239" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="VyH-JY-S9l"/>
                                         </constraints>
@@ -2098,7 +2098,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDW-Eo-VUs" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="139.5" width="239" height="39"/>
-                                        <color key="backgroundColor" red="0.20224562287330627" green="0.5951007604598999" blue="0.85695862770080566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="wSe-RG-ys1"/>
                                         </constraints>
@@ -2224,7 +2224,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBD-5G-QYx">
                                                 <rect key="frame" x="164.5" y="0.0" width="58.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -2241,7 +2241,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-qj-Py4" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="244.5" width="239" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="zlg-SY-F5y"/>
                                         </constraints>
@@ -2392,7 +2392,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqW-n7-Bfn">
                                                 <rect key="frame" x="164.5" y="0.0" width="58.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -2409,7 +2409,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYG-Td-Fea" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="168" width="239" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="bGI-h5-dVd"/>
                                         </constraints>
@@ -2509,7 +2509,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123456" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-3V-Cuq">
                                                 <rect key="frame" x="164.5" y="0.0" width="58.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -2526,7 +2526,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-eI-xIh" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="157.5" width="239" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="wmv-uW-P61"/>
                                         </constraints>
@@ -2608,7 +2608,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-tv-xnk">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn đang đã hủy" id="vTv-9F-VKK">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="Qi7-IC-0nH" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -2618,7 +2618,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="cDw-tv-xnk" firstAttribute="top" secondItem="Anu-Bj-AER" secondAttribute="top" constant="20" id="MTw-J5-BqZ"/>
                                     <constraint firstItem="cDw-tv-xnk" firstAttribute="leading" secondItem="Anu-Bj-AER" secondAttribute="leading" id="Nfz-g7-f6a"/>
@@ -2946,7 +2946,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-Ke-C0d">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn đã hoàn thành" id="f9r-kK-EcM">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="hEf-cH-2uX" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -2956,7 +2956,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="wak-Ke-C0d" secondAttribute="bottom" id="7yw-Bw-sLa"/>
                                     <constraint firstAttribute="trailing" secondItem="wak-Ke-C0d" secondAttribute="trailing" id="RMH-gd-Yhn"/>
@@ -3200,7 +3200,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeJ-cg-J7M" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="960" width="343" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="7wj-Oa-1pp"/>
                                             <constraint firstAttribute="height" constant="39" id="JbL-A9-1CR"/>
@@ -3293,7 +3293,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ets-vB-Qj8">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Bộ lọc" id="jNO-hz-00F">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="LoV-DO-sxZ" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -3303,7 +3303,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ets-vB-Qj8" firstAttribute="leading" secondItem="ch3-6Y-TOU" secondAttribute="leading" id="4AS-Y9-Fub"/>
                                     <constraint firstItem="ets-vB-Qj8" firstAttribute="top" secondItem="ch3-6Y-TOU" secondAttribute="top" constant="20" id="65K-aF-PXC"/>
@@ -3500,7 +3500,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNh-Ek-OGt">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Báo giá" id="YBN-VM-Mzp">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="ErR-pD-Fah" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -3510,7 +3510,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rNh-Ek-OGt" secondAttribute="trailing" id="WDe-Cn-r5j"/>
                                     <constraint firstItem="rNh-Ek-OGt" firstAttribute="leading" secondItem="aOZ-tB-4Ah" secondAttribute="leading" id="oaE-01-DfX"/>
@@ -3850,7 +3850,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tye-cJ-Eea" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="144.5" width="239" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="Cgy-rz-jE1"/>
                                         </constraints>
@@ -3919,7 +3919,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpL-Kb-2Gs">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem id="ppC-uk-yPt">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="yNi-F5-vQ5" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -3929,7 +3929,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="XpL-Kb-2Gs" secondAttribute="bottom" id="50h-aJ-acq"/>
                                     <constraint firstAttribute="trailing" secondItem="XpL-Kb-2Gs" secondAttribute="trailing" id="FNJ-wK-PMQ"/>
@@ -3943,7 +3943,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-p2-P0W">
                                         <rect key="frame" x="16" y="522.5" width="343" height="39"/>
-                                        <color key="backgroundColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="7Uh-zd-oY7"/>
                                         </constraints>

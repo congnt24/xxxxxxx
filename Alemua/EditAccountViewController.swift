@@ -51,7 +51,7 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
             self.lbDahuy.text = "\(self.data?.totalMoney ?? 0)"
         }
 
-        self.lbDesc.text = self.data?.description
+        self.lbDesc.text = "\"\(self.data?.description ?? "")\""
         
         userView.onAvatar = { imgView in
             PictureHelper.pickPhoto(delegate: self, vc: self)

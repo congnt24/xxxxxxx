@@ -30,6 +30,6 @@ class ConversationTableViewCell: UITableViewCell {
         avatar.setAvatar(url: data.photo)
         name.text = data.name != "" ? data.name :"\(data.phoneNumber!)"
         lbLastMessage.text = data.descriptionValue
-        time.text = data.updatedAt
+        time.text = data.updatedAt!.toFormatedHour()
     }
 }

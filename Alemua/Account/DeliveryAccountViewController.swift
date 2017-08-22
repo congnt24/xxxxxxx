@@ -61,8 +61,7 @@ class DeliveryAccountViewController: BaseViewController {
                         self.lbDangxuly.text = "\(self.data?.numberOrder ?? 0)"
                         self.lbHoanthanh.text = "\(self.data?.numberUser ?? 0)"
                         self.lbDahuy.text = "\(self.data?.totalMoney ?? 0)"
-                        self.lbDesc.text = self.data?.description
-                        
+                        self.lbDesc.text = "\"\(self.data?.description ?? "")\""
                         
                         print("Get Profile success")
                         break

@@ -17,7 +17,7 @@ class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
     public static var sharedInstance: TaoDonHangViewController!
     
     override func viewDidLoad() {
-        settings.style.buttonBarBackgroundColor = UIColor(hexString: "#3A99D8")!
+        settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
         settings.style.selectedBarHeight = 2
         settings.style.selectedBarBackgroundColor = UIColor.white

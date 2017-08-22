@@ -66,8 +66,8 @@
                         </subviews>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOy-Zs-2yw">
-                        <rect key="frame" x="8" y="74.5" width="359" height="1"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="0.0" y="74.5" width="375" height="1"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Ton-gc-ZKa"/>
                         </constraints>
@@ -76,10 +76,10 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="wLZ-jO-8En" secondAttribute="trailing" constant="8" id="8Uo-ks-OXv"/>
                     <constraint firstItem="jOy-Zs-2yw" firstAttribute="top" secondItem="wLZ-jO-8En" secondAttribute="bottom" constant="12" id="A9i-Wj-XPd"/>
+                    <constraint firstAttribute="trailing" secondItem="jOy-Zs-2yw" secondAttribute="trailing" id="Bxt-Fw-J54"/>
                     <constraint firstItem="wLZ-jO-8En" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="GvE-AB-vRn"/>
+                    <constraint firstItem="jOy-Zs-2yw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Kqc-Xn-VGJ"/>
                     <constraint firstItem="wLZ-jO-8En" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="WRa-1u-vO7"/>
-                    <constraint firstItem="jOy-Zs-2yw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ZmE-qZ-mcA"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="jOy-Zs-2yw" secondAttribute="trailing" id="hRb-M8-N9r"/>
                     <constraint firstAttribute="bottomMargin" secondItem="jOy-Zs-2yw" secondAttribute="bottom" id="vUY-aH-htC"/>
                 </constraints>
             </tableViewCellContentView>

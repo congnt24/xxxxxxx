@@ -76,6 +76,7 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
         //        theme.textColor = UIColor(white: 0.3, alpha: 1.0)
         //        theme.titleColor = UIColor(red: 0.247, green: 0.247, blue: 0.247, alpha: 1)
         //        loginViewController.theme = theme
+        loginViewController.defaultCountryCode = "VN"
     }
 
     

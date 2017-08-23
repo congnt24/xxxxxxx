@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="25" width="319" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
-                                                <rect key="frame" x="186.5" y="6" width="102.5" height="120"/>
+                                                <rect key="frame" x="186" y="6" width="103" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="23:27" id="caq-0p-YXS"/>
                                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="30" y="6" width="96" height="120"/>
+                                                <rect key="frame" x="30" y="6" width="96.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="43:54" id="ovk-nU-ZvF"/>
                                                 </constraints>
@@ -3977,8 +3977,8 @@ D4w
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jfi-fd-Tl2"/>
         <segue reference="CX0-EY-bs5"/>
+        <segue reference="bgW-2G-sdD"/>
         <segue reference="5Og-fK-XcW"/>
     </inferredMetricsTieBreakers>
 </document>

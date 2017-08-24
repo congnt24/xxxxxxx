@@ -2509,7 +2509,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvR-JT-MdT">
                                         <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm kiếm đơn hàng mới" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yD-bb-RH0" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm kiếm đơn hàng mới" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3yD-bb-RH0" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                 <rect key="frame" x="16" y="8" width="343" height="28"/>
                                                 <color key="backgroundColor" white="1" alpha="0.34563891267123281" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>

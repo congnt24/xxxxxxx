@@ -25,7 +25,7 @@ public enum AleApi {
     case getHomeItems(page: Int?)
     case getProducts(type: Int, page: Int)
     case uploadFile(photos: [UIImage])
-    case getQuoteForShipper(page_number: Int)
+    case getQuoteForShipper(page_number: Int, text_search: String)
     case getOrderFromClient(page_number: Int, order_type: Int)//order_type = 0-4
     case getOrderFromShipper(page_number: Int, order_type: Int)//order_type=1
     case cancelOrder(data: CancelOrderRequest)
@@ -47,6 +47,8 @@ public enum AleApi {
     case logout()
     case getAllCurrency()
     case loginAndRegisterFacebook(data: FacebookRequest)
+    case getNotifications(page_number: Int, is_shipper: Int)
+    case readNotification(notification_id: Int)
 
 }
 
@@ -72,7 +74,7 @@ extension AleApi: TargetType {
             return "/api/order/getProducts"
         case .uploadFile(_):
             return "/api/users/uploadFile"
-        case .getQuoteForShipper(_):
+        case .getQuoteForShipper:
             return "/api/order/getQuoteForShipper"
         case .getOrderFromClient( _, _):
             return "/api/order/getOrderFromClient"
@@ -112,13 +114,17 @@ extension AleApi: TargetType {
             return "/api/order/getAllCurrency"
         case .loginAndRegisterFacebook:
             return "/api/users/loginAndRegisterFacebook"
+        case .getNotifications:
+            return "/api/order/getNotifications"
+        case .readNotification:
+            return "/api/order/readNotification"
         }
     }
 
     public var method: Moya.Method {
         switch self {
         case .login, .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_)
-             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook:
+             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook, .readNotification(_):
             return .post
         default:
             return .get
@@ -209,11 +215,12 @@ extension AleApi: TargetType {
             params["page_size"] = 20
             params["page_number"] = page
             return params
-        case .getQuoteForShipper(let page_number):
+        case .getQuoteForShipper(let page_number, let text_search):
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["page_size"] = 20
             params["page_number"] = page_number
+            params["text_search"] = text_search
             return params
         case .getOrderFromClient(let page_number, let order_type):
             var params = [String: Any]()
@@ -334,7 +341,22 @@ extension AleApi: TargetType {
             params["phone_number"] = data.phoneNumber
             params["photo"] = data.photo
             return params
-
+            
+        case .getNotifications(let page_number, let is_shipper):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["page_size"] = 20
+            params["page_number"] = page_number
+            params["is_shipper"] = is_shipper
+            return params
+        case .readNotification(let notification_id):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["notification_id"] = notification_id
+            return params
+            
         default:
             return nil
         }

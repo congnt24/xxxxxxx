@@ -18,7 +18,8 @@ class NotifyViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     var refreshControl: UIRefreshControl!
 
-    var datas = Variable<[String]>([])
+    var datas = Variable<[NotifyData]>([])
+    var currentPage = 1
 
     func refresh(_ sender: Any) {
         reloadPage()
@@ -38,6 +39,7 @@ class NotifyViewController: BaseViewController {
 
         datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
             // TODO: Bind data here
+            (cell as! NotifyTableViewCell).bindData(data: item)
         }.addDisposableTo(bag)
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -74,7 +76,24 @@ class NotifyViewController: BaseViewController {
 
     //Interact API
     func fetchData() {
-        datas.value = (0..<20).map { "\($0)" }
+        let isShipper = HomeViewController.homeType == .order ? 0 : 1
+        AlemuaApi.shared.aleApi.request(.getNotifications(page_number: currentPage, is_shipper: isShipper))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result):
+                    if let arr = result.array {
+                        self.datas.value.append(contentsOf: arr.map { NotifyData(json: $0) })
+                    }
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
+        
+        
+        
     }
     @IBAction func onBack(_ sender: Any) {
         if HomeViewController.homeType == .order {

@@ -20,6 +20,8 @@ class DeliveryMainViewController: BaseViewController {
     @IBOutlet weak var tfLink: AwesomeTextField!
     var datas = Variable<[ModelQuoteData]>([])
     var currentPage = 1
+    
+    var textSearch = Variable<String>("")
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -67,6 +69,19 @@ class DeliveryMainViewController: BaseViewController {
         }
 
         tableView.beginInfiniteScroll(true)
+        
+        
+        
+        //search
+        tfLink.rx.text.subscribe(onNext: { (str) in
+            if let txt = str {
+                self.textSearch.value = txt
+            }
+        }).addDisposableTo(bag)
+        tfLink.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
+            self.reloadPage()
+        }).addDisposableTo(bag)
+        
     }
 
     func reloadPage(){
@@ -81,7 +96,7 @@ class DeliveryMainViewController: BaseViewController {
     }
     //Interact API
     func fetchData() -> Driver<[ModelQuoteData]> {
-        return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage)).filterSuccessfulStatusCodes()
+        return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage, text_search: textSearch.value)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelQuoteData]> in
                 let obj = ModelQuoteResponse(json: JSON(response.data))
                 return Observable.from(optional: obj.result)

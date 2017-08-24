@@ -14,7 +14,7 @@ import RxSwift
 import Kingfisher
 import Toaster
 
-class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var tfTenSP: AwesomeTextField!
     @IBOutlet weak var tfMota: AwesomeTextField!
@@ -28,19 +28,25 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBOutlet weak var btnAdd: UIButton!
     var website_url: String?
     var data: ModelOrderData?
-    
+
     var taodonhangRequest = TaoDonHangRequest()
     static var sharedInstance: TaoDonHang1ViewController!
     let bag = DisposeBag()
     var listImage = [UIImage]()
-
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        AwesomeDialog.shared.show(vc: self.parent, name: "Main", identify: "DialogTaoDonHang")
+        DialogTaoDonHang.shared.input.text = tfGia.text
+        return false;
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         TaoDonHang1ViewController.sharedInstance = self
-//         Do any additional setup after loading the view.
         if let url = website_url {
             getDataFromUrl(website_url: url)
         }
+        tfGia.delegate = self
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -112,10 +118,10 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
 
         }
     }
-    
+
     //tu dong gan link
-    func getDataFromUrl(website_url: String){
-        
+    func getDataFromUrl(website_url: String) {
+
         self.tfGia.text = "\(self.data?.promotionPrice ?? 0)"
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
@@ -139,8 +145,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                             })
                         }
                     }
-                    
-                    
+
+
                     break
                 case .error(let msg):
                     print("Error \(msg)")

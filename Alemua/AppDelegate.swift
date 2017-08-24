@@ -31,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FirebaseAuthHelper.configure()
 //        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
-        AlemuaApi()
+        let _ = AlemuaApi()
         //SOcket io
-        SocketIOHelper()
+        let _ = SocketIOHelper()
 
         //keyboard
         IQKeyboardManager.sharedManager().enable = true
@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID1: \(messageID)")
         }
 
         // Print full message.
@@ -107,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID2: \(messageID)")
         }
 
         // Print full message.
@@ -178,14 +178,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID3: \(messageID)")
         }
-        
+          let aps = userInfo["aps"] as! [String: AnyObject]
         // Print full message.
-        print(userInfo)
-        
         // Change this to your preferred presentation option
-        completionHandler([])
+        completionHandler([.alert])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -194,7 +192,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let userInfo = response.notification.request.content.userInfo
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID: \(messageID)")
+            print("Message ID4: \(messageID)")
         }
         
         // Print full message.

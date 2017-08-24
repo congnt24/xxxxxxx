@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1040059667817-mb1pk1s59vuvvh3ofnf86h2khogmnqks.apps.googleusercontent.com</string>
+	<string>259311042399-kj2fts3n54g1keqmobkporpm3h8b2v0v.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1040059667817-mb1pk1s59vuvvh3ofnf86h2khogmnqks</string>
+	<string>com.googleusercontent.apps.259311042399-kj2fts3n54g1keqmobkporpm3h8b2v0v</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCbC22qka7GCxefWt1WjcU9wHfbkh39-a8</string>
+	<string>AIzaSyAuWWf6MEwQrNbYxtxqTn61JZfgz2ZjWeQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1040059667817</string>
+	<string>259311042399</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.redix.Alemua</string>
 	<key>PROJECT_ID</key>
-	<string>chatappios10</string>
+	<string>alemua-eaa6d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>chatappios10.appspot.com</string>
+	<string>alemua-eaa6d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1040059667817:ios:92d0cb30a6403c1d</string>
+	<string>1:259311042399:ios:92d0cb30a6403c1d</string>
 	<key>DATABASE_URL</key>
-	<string>https://chatappios10.firebaseio.com</string>
+	<string>https://alemua-eaa6d.firebaseio.com</string>
 </dict>
 </plist>

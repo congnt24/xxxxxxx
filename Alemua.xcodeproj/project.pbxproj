@@ -98,7 +98,6 @@
 		025D400C1F23A9DD00BCD5F7 /* DangChuyenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */; };
 		025D400E1F23A9E900BCD5F7 /* DaMuaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */; };
 		025D40141F23B27A00BCD5F7 /* AwesomeBackBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025D40131F23B27A00BCD5F7 /* AwesomeBackBarButton.swift */; };
-		026493B21F485C58000E0FEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 026493B11F485C58000E0FEE /* GoogleService-Info.plist */; };
 		027262BC1F322EA600D1FB08 /* ModelQuoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027262BB1F322EA600D1FB08 /* ModelQuoteResponse.swift */; };
 		027B01311F1E621600D576CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B01301F1E621600D576CE /* AppDelegate.swift */; };
 		027B01381F1E621600D576CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027B01371F1E621600D576CE /* Assets.xcassets */; };
@@ -115,6 +114,9 @@
 		02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEEF1F21025D007EB372 /* OrderViewCell.swift */; };
 		02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A2AEF01F21025D007EB372 /* OrderViewCell.xib */; };
 		02A647461F3410E4006D66D4 /* RequestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A647451F3410E4006D66D4 /* RequestsModel.swift */; };
+		02AD2A6A1F4F0F8600DDEFE9 /* DialogTaoDonHang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD2A691F4F0F8600DDEFE9 /* DialogTaoDonHang.swift */; };
+		02AD2A6C1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD2A6B1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift */; };
+		02AD2A6E1F4F20B200DDEFE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */; };
 		02B340321F4551050027803A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B340311F4551050027803A /* Repository.swift */; };
 		02B340341F45547D0027803A /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B340331F45547D0027803A /* ChatRepository.swift */; };
 		02B5EC0A1F29A1270048B34A /* OrderMain2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */; };
@@ -256,7 +258,6 @@
 		025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DangChuyenViewController.swift; path = Order/DangChuyenViewController.swift; sourceTree = "<group>"; };
 		025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DaMuaViewController.swift; path = Order/DaMuaViewController.swift; sourceTree = "<group>"; };
 		025D40131F23B27A00BCD5F7 /* AwesomeBackBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeBackBarButton.swift; sourceTree = "<group>"; };
-		026493B11F485C58000E0FEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		027262BB1F322EA600D1FB08 /* ModelQuoteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelQuoteResponse.swift; path = Delivery/ModelQuoteResponse.swift; sourceTree = "<group>"; };
 		027B012D1F1E621600D576CE /* Alemua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alemua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027B01301F1E621600D576CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +276,9 @@
 		02A2AEEF1F21025D007EB372 /* OrderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		02A2AEF01F21025D007EB372 /* OrderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewCell.xib; sourceTree = "<group>"; };
 		02A647451F3410E4006D66D4 /* RequestsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsModel.swift; sourceTree = "<group>"; };
+		02AD2A691F4F0F8600DDEFE9 /* DialogTaoDonHang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogTaoDonHang.swift; path = Order/DialogTaoDonHang.swift; sourceTree = "<group>"; };
+		02AD2A6B1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogTaoDonHang2.swift; path = Order/DialogTaoDonHang2.swift; sourceTree = "<group>"; };
+		02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02B340311F4551050027803A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		02B340331F45547D0027803A /* ChatRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
 		02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain2ViewController.swift; path = Order/OrderMain2ViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 				022A8D101F28F05000D69411 /* TaoDonHang2ViewController.swift */,
 				022A8D121F28F05C00D69411 /* TaoDonHang3ViewController.swift */,
 				0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */,
+				02AD2A691F4F0F8600DDEFE9 /* DialogTaoDonHang.swift */,
+				02AD2A6B1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift */,
 			);
 			name = TaoDonHang;
 			sourceTree = "<group>";
@@ -524,8 +530,8 @@
 		027B012F1F1E621600D576CE /* Alemua */ = {
 			isa = PBXGroup;
 			children = (
+				02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */,
 				02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */,
-				026493B11F485C58000E0FEE /* GoogleService-Info.plist */,
 				027B013C1F1E621600D576CE /* Info.plist */,
 				027B014F1F1EF14A00D576CE /* AppCoordinator.swift */,
 				027B01301F1E621600D576CE /* AppDelegate.swift */,
@@ -829,11 +835,11 @@
 				02BF72651F224B8A00F1F4BC /* DonHang.storyboard in Resources */,
 				02F775321F1F390300556BED /* Login.storyboard in Resources */,
 				021B82AB1F24E98600B757D7 /* DeliveryTableViewCell.xib in Resources */,
+				02AD2A6E1F4F20B200DDEFE9 /* GoogleService-Info.plist in Resources */,
 				02F775331F1F390300556BED /* Main.storyboard in Resources */,
 				023B39D31F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib in Resources */,
 				021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */,
 				0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */,
-				026493B21F485C58000E0FEE /* GoogleService-Info.plist in Resources */,
 				0223C7F11F2A1526005949C9 /* UserView.xib in Resources */,
 				025D40031F2394EA00BCD5F7 /* DonHangTableViewCell.xib in Resources */,
 				02F775311F1F390300556BED /* LaunchScreen.storyboard in Resources */,
@@ -964,6 +970,7 @@
 				02BF72801F23734800F1F4BC /* EditAccountViewController.swift in Sources */,
 				02B340341F45547D0027803A /* ChatRepository.swift in Sources */,
 				02530E8E1F2C886F00334345 /* ChatCoordinator.swift in Sources */,
+				02AD2A6A1F4F0F8600DDEFE9 /* DialogTaoDonHang.swift in Sources */,
 				02BF727C1F2368CD00F1F4BC /* NotifyViewController.swift in Sources */,
 				02525C3E1F2B8AB600EBCBA7 /* ThanhToanModel.swift in Sources */,
 				028AF0EB1F35C3C500387FFC /* PictureHelper.swift in Sources */,
@@ -993,6 +1000,7 @@
 				02F7752F1F1F390300556BED /* Token.swift in Sources */,
 				029B09111F207C990036F01F /* BaseViewModel.swift in Sources */,
 				021B82A31F24894300B757D7 /* AwesomeRadioGroup.swift in Sources */,
+				02AD2A6C1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift in Sources */,
 				029B09121F207C990036F01F /* TableViewViewController.swift in Sources */,
 				02D32B861F30E00100A8A4B6 /* ModelMainHomeResponse.swift in Sources */,
 				022D72B91F27A83200CC548E /* RateDetail.swift in Sources */,

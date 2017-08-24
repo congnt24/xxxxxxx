@@ -18,7 +18,7 @@ public class AlemuaApi {
 }
 
 public enum AleApi {
-    case login(phone_number: String, token_firebase: String, password: String, device_type: Int)
+    case login(phone_number: String, password: String)
     case createOrder(data: TaoDonHangRequest)
     case createQuote(quote: CreateQuoteRequest)
     case acceptQuote(data: AcceptQuoteRequest)
@@ -127,11 +127,11 @@ extension AleApi: TargetType {
 
     public var parameters: [String: Any]? {
         switch self {
-        case .login(let phone_number, let token_firebase, let password, let device_type):
+        case .login(let phone_number, let password):
             var params = [String: Any]()
             params["phone_number"] = phone_number
             params["password"] = password
-            params["token_firebase"] = token_firebase
+            params["token_firebase"] = Prefs.firebaseToken
             params["device_type"] = 2
             return params
         case .createOrder(let data):

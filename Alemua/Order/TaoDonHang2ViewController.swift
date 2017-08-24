@@ -9,6 +9,7 @@
 import UIKit
 import XLPagerTabStrip
 import AwesomeMVVM
+import Toaster
 
 class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tfMuaTu: AwesomeTextField!
@@ -19,10 +20,11 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var uiRateDetail: RateDetail!
     @IBOutlet weak var swBefore: AwesomeSwitch!
+    var data: ModelOrderData?
     override func viewDidLoad() {
         super.viewDidLoad()
         taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
-
+        tfMuaTu.text = data?.address
         // Do any additional setup after loading the view.
     }
 
@@ -42,7 +44,7 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
             print("Tao don hang 2")
             print(taodonhangRequest)
         } else {
-            print("ERROR")
+            Toast(text: "Vui lòng nhập đầy đủ thông tin").show()
         }
     }
     

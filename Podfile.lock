@@ -67,6 +67,7 @@ PODS:
     - StarscreamSocketIO (~> 8.0.2)
   - StarscreamSocketIO (8.0.2)
   - SwiftyJSON (3.1.4)
+  - Toaster (2.0.4)
   - UIScrollView-InfiniteScroll (1.0.2)
   - XLPagerTabStrip (7.0.0)
 
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - RxSwift
   - Socket.IO-Client-Swift (~> 11.0.2)
   - SwiftyJSON
+  - Toaster
   - UIScrollView-InfiniteScroll (~> 1.0.0)
   - XLPagerTabStrip
 
@@ -128,9 +130,10 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 17d4daf85d74125c33481d9bc40cbe678f0d631a
   StarscreamSocketIO: c02ffb2920bd38de6658ce213071fc4ae0e35423
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toaster: f13031c636ef065281bc11857be9a16c7659e04f
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 468d0876c7ac30b7f6e0ed917ccffc3b15a5e571
+PODFILE CHECKSUM: 7be0396e590e605ad1b159b7be73411f3583c726
 
 COCOAPODS: 1.2.1

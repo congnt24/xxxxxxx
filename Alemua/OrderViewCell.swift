@@ -11,6 +11,7 @@ import Kingfisher
 
 class OrderViewCell: UITableViewCell {
 
+    @IBOutlet weak var btnPromo: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPhoto: UIImageView!
     @IBOutlet weak var lbNoiMua: UILabel!
@@ -27,13 +28,13 @@ class OrderViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-    
-    func setPhoto(link: String?){
-            productPhoto.kf.setImage(with: URL(string: link ?? ""), placeholder: UIImage(named: "sample"))
+
+    func setPhoto(link: String?) {
+        productPhoto.kf.setImage(with: URL(string: link ?? ""), placeholder: UIImage(named: "sample"))
     }
-    
-    
-    func bindData(item: ModelOrderData){
+
+
+    func bindData(item: ModelOrderData) {
         self.data = item
         productName.text = item.name
         lbNoiMua.text = item.address
@@ -42,8 +43,18 @@ class OrderViewCell: UITableViewCell {
         lbGiaCu.setText(str: "$\(item.originPrice!)")
         setPhoto(link: item.photo)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClick)))
+        if let promo = item.promotionPercent {
+            if promo == 0 {
+                btnPromo.isHidden = true
+            } else {
+                btnPromo.isHidden = false
+                btnPromo.setTitle("\(Int(promo * 100))%", for: .normal)
+            }
+        }else{
+            print("XXXX")
+        }
     }
-    
+
     func onClick() {
         OrderCoordinator.sharedInstance.showTaoDonHang(data: data)
     }

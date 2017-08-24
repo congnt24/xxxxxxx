@@ -399,8 +399,11 @@
 		022D72971F27936B00CC548E /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				022D729C1F2793D100CC548E /* OrderOrderCoordinator.swift */,
+				022A8D0D1F28F02A00D69411 /* TaoDonHang */,
+				021B82931F242F8300B757D7 /* DonHangSubView */,
+				025D40061F23A99000BCD5F7 /* SubViewController */,
 				022D72A11F2793FC00CC548E /* ViewController */,
+				022D729C1F2793D100CC548E /* OrderOrderCoordinator.swift */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -424,7 +427,6 @@
 				02BF72731F23672000F1F4BC /* OrderOrderViewController.swift */,
 				02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */,
 				022A8D0B1F28F02000D69411 /* OrderTaoDonMuaViewController.swift */,
-				025D40061F23A99000BCD5F7 /* SubViewController */,
 				02530E7D1F2C70EC00334345 /* OrderFilterViewController.swift */,
 			);
 			name = ViewController;
@@ -469,17 +471,21 @@
 		02525C3C1F2B8AA300EBCBA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02D32B811F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift */,
+				02D32B851F30E00100A8A4B6 /* ModelMainHomeResponse.swift */,
+				021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */,
+				028AF0E61F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift */,
+				02D1CBFA1F36164000E7666A /* ModelHoanThanhResponse.swift */,
 				02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */,
 				028AF0EC1F35C7B400387FFC /* ProfileResponse.swift */,
 			);
 			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		025D40061F23A99000BCD5F7 /* SubViewController */ = {
 			isa = PBXGroup;
 			children = (
-				022A8D0D1F28F02A00D69411 /* TaoDonHang */,
-				021B82931F242F8300B757D7 /* DonHangSubView */,
 				025D400B1F23A9DD00BCD5F7 /* DangChuyenViewController.swift */,
 				025D40091F23A9C300BCD5F7 /* DonHangViewController.swift */,
 				025D400D1F23A9E900BCD5F7 /* DaMuaViewController.swift */,
@@ -588,7 +594,6 @@
 			isa = PBXGroup;
 			children = (
 				022D72961F27936700CC548E /* Main */,
-				02D32B801F30D3CD00A8A4B6 /* Model */,
 				022D72971F27936B00CC548E /* Order */,
 				025D40041F23A85D00BCD5F7 /* OrderCoordinator.swift */,
 				02BF726C1F23449900F1F4BC /* OrderNavTabBarCoordinator.swift */,
@@ -607,22 +612,9 @@
 				0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */,
 				023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */,
 				02BF727F1F23734800F1F4BC /* EditAccountViewController.swift */,
-				02525C3C1F2B8AA300EBCBA7 /* Model */,
 				0223C7FC1F2A44A1005949C9 /* ThanhToanViewController.swift */,
 			);
 			name = Account;
-			sourceTree = "<group>";
-		};
-		02D32B801F30D3CD00A8A4B6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				02D32B811F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift */,
-				02D32B851F30E00100A8A4B6 /* ModelMainHomeResponse.swift */,
-				021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */,
-				028AF0E61F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift */,
-				02D1CBFA1F36164000E7666A /* ModelHoanThanhResponse.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		02F775101F1F38E900556BED /* Home */ = {
@@ -675,6 +667,7 @@
 		02F775211F1F390300556BED /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				02525C3C1F2B8AA300EBCBA7 /* Model */,
 				02F775221F1F390300556BED /* AleApi.swift */,
 				02F775231F1F390300556BED /* Token.swift */,
 				02A647451F3410E4006D66D4 /* RequestsModel.swift */,

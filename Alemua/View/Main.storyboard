@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="25" width="319" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
-                                                <rect key="frame" x="186" y="6" width="103" height="120"/>
+                                                <rect key="frame" x="186.5" y="6" width="102.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="23:27" id="caq-0p-YXS"/>
                                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="30" y="6" width="96.5" height="120"/>
+                                                <rect key="frame" x="30" y="6" width="96" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="43:54" id="ovk-nU-ZvF"/>
                                                 </constraints>
@@ -95,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="1021.6" y="33.733133433283363"/>
         </scene>
-        <!--Trò chuyện-->
+        <!--Chat-->
         <scene sceneID="ni6-Y2-xEB">
             <objects>
                 <viewController storyboardIdentifier="ConversationViewController" id="L7w-Yd-kGR" customClass="ConversationViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,7 +180,7 @@
                             <constraint firstItem="oJn-dj-UbM" firstAttribute="top" secondItem="ghP-GZ-yqX" secondAttribute="bottom" id="eYr-Ti-xYd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trò chuyện" image="ic_conversation" selectedImage="ic_message_blu" id="4uu-9l-Bqi"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="ic_conversation" selectedImage="ic_message_blu" id="4uu-9l-Bqi"/>
                     <connections>
                         <outlet property="tableView" destination="oJn-dj-UbM" id="GPI-PH-Tnm"/>
                     </connections>
@@ -262,6 +262,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.91537410020828247" green="0.30967700481414795" blue="0.18278723955154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="7s7-BP-0DO" kind="relationship" relationship="viewControllers" id="cFt-MO-CdR"/>
@@ -366,7 +372,7 @@
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-Jr-Fhx">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="29"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao dịch qua Alemua" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPp-4Z-uY5">
@@ -398,7 +404,7 @@
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zx-rK-fin">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="29"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                                        <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao dịch tự thỏa thuận" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRo-Rr-1wS">
@@ -427,7 +433,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jl-DY-2gv">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="29"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wa-a2-EXb">
@@ -507,7 +513,7 @@
                                                                     </button>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qs7-Jt-w1r" customClass="AwesomeSwitch" customModule="Alemua" customModuleProvider="target">
                                                                         <rect key="frame" x="278" y="8" width="51" height="31"/>
-                                                                        <color key="onTintColor" red="0.010439014062285423" green="0.54090380668640137" blue="0.84174031019210815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="onTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="scaleY">
                                                                                 <real key="value" value="0.80000000000000004"/>
@@ -860,9 +866,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.91537410020828247" green="0.30967700481414795" blue="0.18278723955154419" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
@@ -1507,11 +1517,17 @@
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHq-q5-gFY">
                                 <rect key="frame" x="279" y="571" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="VNc-AU-IfS"/>
                                     <constraint firstAttribute="width" secondItem="cHq-q5-gFY" secondAttribute="height" multiplier="1:1" id="pTH-YS-aik"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="ic_shoping_circle"/>
+                                <state key="normal" image="ic_shopping_cart"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onTaoDonHang:" destination="4Rg-j2-WJd" eventType="touchUpInside" id="TKz-6w-NPB"/>
                                 </connections>
@@ -1662,7 +1678,7 @@
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="In fact, we don’t even need to access the range, we just need to know whether it exists:" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GmR-tM-1D0" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GmR-tM-1D0" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                         <rect key="frame" x="0.0" y="17" width="343" height="26"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
@@ -1799,10 +1815,13 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="0Tf-ui-ROD"/>
+                                            <constraint firstAttribute="height" constant="120" id="0Tf-ui-ROD"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="stringData" value="  Chỉ mua tại web đã chỉ định; Đúng sản phẩm, giá cạnh tranh, không chỉ định nơi mua;  Hàng có sẵn;  Chỉ mua khi có giảm giá"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="checkedPosition">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                 </subviews>
@@ -2204,7 +2223,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPj-Lj-f7W">
                                         <rect key="frame" x="16" y="843.5" width="343" height="45"/>
-                                        <color key="backgroundColor" red="0.96528512239999997" green="0.74360919000000003" blue="0.2084294558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="e9o-15-ZvJ"/>
                                         </constraints>
@@ -2359,11 +2378,15 @@
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd-MM-yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8M-IT-J6c" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="yyyy-MM-dd" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8M-IT-J6c" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                                 <rect key="frame" x="0.0" y="17" width="179" height="27.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="yyyy-MM-dd"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -2375,6 +2398,7 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJb-j3-xGk" customClass="AwesomeSwitch" customModule="Alemua" customModuleProvider="target">
                                                         <rect key="frame" x="290" y="7" width="51" height="31"/>
+                                                        <color key="onTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
                                                                 <real key="value" value="0.75"/>
@@ -3165,7 +3189,7 @@
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQA-ht-itx">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="29"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang xử lý" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfb-dd-zlB">
@@ -3197,7 +3221,7 @@
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZW-iA-ulS">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="29"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoàn thành" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vr-tp-O3C">
@@ -3229,7 +3253,7 @@
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JQ-lM-dO8">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="29"/>
                                                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                                                <color key="textColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã hủy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJ1-s9-zaE">
@@ -3595,7 +3619,7 @@
                                                                             </button>
                                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mof-mr-aZ4" customClass="AwesomeSwitch" customModule="Alemua" customModuleProvider="target">
                                                                                 <rect key="frame" x="250" y="7.5" width="51" height="31"/>
-                                                                                <color key="onTintColor" red="0.01043901406" green="0.54090380670000004" blue="0.84174031019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="onTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
                                                                                         <real key="value" value="0.80000000000000004"/>
@@ -3821,7 +3845,7 @@
                                     <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-gY-TiE">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="barTintColor" red="0.2022456229" green="0.59510076050000005" blue="0.85695862769999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Đơn hàng" id="ClX-dm-93o">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="biE-Yr-Mx2" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
@@ -3831,7 +3855,7 @@
                                         </items>
                                     </navigationBar>
                                 </subviews>
-                                <color key="backgroundColor" red="0.203024447" green="0.59433299299999998" blue="0.85572063919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0oY-gY-TiE" secondAttribute="trailing" id="2xe-8f-b76"/>
                                     <constraint firstItem="0oY-gY-TiE" firstAttribute="leading" secondItem="fKN-84-hoN" secondAttribute="leading" id="4RO-PN-7eb"/>
@@ -3884,7 +3908,7 @@
         <image name="ic_conversation" width="26" height="24"/>
         <image name="ic_earth" width="27" height="27"/>
         <image name="ic_edit" width="24" height="24"/>
-        <image name="ic_exhibition_blu" width="27" height="27"/>
+        <image name="ic_exhibition_blu" width="23" height="27"/>
         <image name="ic_filter" width="24" height="22"/>
         <image name="ic_filter_new" width="23" height="24"/>
         <image name="ic_filter_price_down" width="24" height="23"/>
@@ -3896,8 +3920,8 @@
         <image name="ic_search" width="42" height="42"/>
         <image name="ic_selected_circle_blu" width="42" height="42"/>
         <image name="ic_setting" width="27" height="27"/>
-        <image name="ic_shoping_circle" width="42" height="42"/>
         <image name="ic_shopping" width="21" height="26"/>
+        <image name="ic_shopping_cart" width="42" height="42"/>
         <image name="ic_unchecked_circle" width="15" height="15"/>
         <image name="ic_user" width="21" height="27"/>
         <image name="ic_user_blu" width="27" height="27"/>
@@ -3981,4 +4005,5 @@ D4w
         <segue reference="bgW-2G-sdD"/>
         <segue reference="5Og-fK-XcW"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

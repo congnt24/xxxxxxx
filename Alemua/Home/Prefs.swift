@@ -70,7 +70,7 @@ class Prefs {
             UserDefaults.standard.synchronize()
         }
     }
-
+    
     class var apiToken: String {
         get {
             if Prefs.isTest {
@@ -80,6 +80,15 @@ class Prefs {
         }
         set(token) {
             UserDefaults.standard.set(token, forKey: AppConstant.API_TOKEN)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    class var phoneNumber: String {
+        get {
+            return UserDefaults.standard.string(forKey: "phone") ?? ""
+        }
+        set(token) {
+            UserDefaults.standard.set(token, forKey: "phone")
             UserDefaults.standard.synchronize()
         }
     }

@@ -80,7 +80,7 @@ class LoginByPasswordViewController: BaseViewController, AKFViewControllerDelega
     }
 
     func login(phone: String, pass: String) {
-        AlemuaApi.shared.aleApi.request(AleApi.login(phone_number: phone, token_firebase: "", password: pass, device_type: 2))
+        AlemuaApi.shared.aleApi.request(AleApi.login(phone_number: phone, password: pass))
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {

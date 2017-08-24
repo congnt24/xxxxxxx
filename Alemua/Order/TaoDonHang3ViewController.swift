@@ -12,6 +12,7 @@ import AwesomeMVVM
 import Moya
 import RxSwift
 import RxCocoa
+import Toaster
 
 class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var itemView: ItemView!
@@ -28,6 +29,11 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         super.viewDidLoad()
 
         taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
+        itemView.bindData(title: taodonhangRequest.productName, imageUrl: "", baogia: nil)
+        
+        if TaoDonHang1ViewController.sharedInstance.listImage.count > 0 {
+            itemView.image.image = TaoDonHang1ViewController.sharedInstance.listImage[0]
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -71,7 +77,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
                     OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
                     break
                 case .error(let msg):
-                    print("Error \(msg)")
+                    Toast(text: msg).show()
                     break
                 }
             }).addDisposableTo(bag)

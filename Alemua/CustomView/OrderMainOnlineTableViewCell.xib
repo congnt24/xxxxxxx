@@ -6,51 +6,52 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="OrderMainOnlineTableViewCell" customModule="Alemua" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="83.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a70-i3-RkH">
-                        <rect key="frame" x="16" y="8" width="288" height="64"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-xc-oPF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                         <subviews>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TYR-dI-aOR">
-                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="64"/>
-                            </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-hQ-3mZ">
-                                <rect key="frame" x="98.5" y="0.0" width="91" height="64"/>
-                            </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZoR-Rs-31d">
-                                <rect key="frame" x="197.5" y="0.0" width="90.5" height="64"/>
-                            </imageView>
+                            <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-xb-1mo">
+                                <rect key="frame" x="8" y="8" width="601" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="5bd-mO-8Jk"/>
+                                    <constraint firstAttribute="width" constant="601" id="vAm-gh-1w0"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="64" id="KmO-I1-1e6"/>
+                            <constraint firstAttribute="bottom" secondItem="w7y-xb-1mo" secondAttribute="bottom" constant="8" id="Ahi-s8-dyd"/>
+                            <constraint firstItem="w7y-xb-1mo" firstAttribute="top" secondItem="fuz-xc-oPF" secondAttribute="top" constant="8" id="JCB-PN-RYr"/>
+                            <constraint firstItem="w7y-xb-1mo" firstAttribute="leading" secondItem="fuz-xc-oPF" secondAttribute="leading" constant="8" id="dDC-18-zms"/>
+                            <constraint firstAttribute="trailing" secondItem="w7y-xb-1mo" secondAttribute="trailing" constant="8" id="vda-es-NLX"/>
                         </constraints>
-                    </stackView>
+                    </scrollView>
                 </subviews>
                 <color key="backgroundColor" red="0.94901960784313721" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="a70-i3-RkH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="AKu-Pc-3Hz"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="a70-i3-RkH" secondAttribute="trailing" constant="8" id="Hew-j3-GD8"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="a70-i3-RkH" secondAttribute="bottom" constant="3.5" id="LTj-uC-aSG"/>
-                    <constraint firstItem="a70-i3-RkH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Q5q-p0-oeS"/>
+                    <constraint firstItem="fuz-xc-oPF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="312-re-f2S"/>
+                    <constraint firstAttribute="trailing" secondItem="fuz-xc-oPF" secondAttribute="trailing" id="NCn-dm-HyL"/>
+                    <constraint firstItem="fuz-xc-oPF" firstAttribute="width" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="width" id="O50-TS-lfQ"/>
+                    <constraint firstItem="fuz-xc-oPF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ucz-Uk-4tL"/>
+                    <constraint firstItem="fuz-xc-oPF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="qFA-wx-5ii"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="item1" destination="TYR-dI-aOR" id="NYq-t9-4TQ"/>
-                <outlet property="item2" destination="WeQ-hQ-3mZ" id="we5-vR-4OT"/>
-                <outlet property="item3" destination="ZoR-Rs-31d" id="6Ey-4a-4Bp"/>
+                <outlet property="scroll" destination="fuz-xc-oPF" id="Ryt-9L-Ag5"/>
+                <outlet property="stack" destination="w7y-xb-1mo" id="WTO-IE-eqj"/>
+                <outlet property="widthConstraint" destination="vAm-gh-1w0" id="Kuc-Px-hGg"/>
             </connections>
-            <point key="canvasLocation" x="-107" y="31"/>
+            <point key="canvasLocation" x="-107.5" y="31"/>
         </tableViewCell>
     </objects>
 </document>

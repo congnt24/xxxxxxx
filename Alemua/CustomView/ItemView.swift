@@ -40,7 +40,11 @@ class ItemView: BaseCustomView {
     }
     func bindData(title: String?, imageUrl: String?, baogia: String?) {
         self.title.text = title
-        self.baogia.text = baogia!.toFormatedBaoGia()
+        if let bg = baogia{
+            self.baogia.text = bg.toFormatedBaoGia()
+        }else {
+            self.baogia.text = ""
+        }
         if let imageUrl = imageUrl {
             let arr = imageUrl.splitted(by: ",")
             image.setItem(url: (arr.count == 0 ? "" : arr[0]))

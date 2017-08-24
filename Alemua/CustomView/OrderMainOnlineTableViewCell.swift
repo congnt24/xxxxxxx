@@ -11,17 +11,13 @@ import Kingfisher
 
 class OrderMainOnlineTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var item1: UIImageView!
-    @IBOutlet weak var item2: UIImageView!
-    @IBOutlet weak var item3: UIImageView!
-    
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scroll: UIScrollView!
+    @IBOutlet weak var stack: UIStackView!
     var data: ModelBuyingOnline?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        item1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectItem1)))
-        item2.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectItem2)))
-        item3.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectItem3)))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,25 +27,36 @@ class OrderMainOnlineTableViewCell: UITableViewCell {
 
 
     func bindData(data: ModelBuyingOnline) {
+        self.stack.removeSubviews()
         self.data = data
-        item1.kf.setImage(with: URL(string: (data.items?[0].photo)!))
-        item2.kf.setImage(with: URL(string: (data.items?[1].photo)!))
-        item3.kf.setImage(with: URL(string: (data.items?[2].photo)!))
+        let width = Int(((bounds.width - 16) / 3)) * data.items!.count + (data.items!.count-1) * 8
+        widthConstraint.constant = CGFloat(width)
+        for item in data.items! {
+            KingfisherManager.shared.retrieveImage(with: URL(string: item.photo!)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                let img = OnlinePhoto(image: image)
+                img.data = item
+                self.stack.addArrangedSubview(img)
+            })
+        }
+    }
+}
+
+
+class OnlinePhoto: UIImageView {
+    var data: ModelBuyingOnlineItem!
+    
+    override init(image: UIImage?) {
+        super.init(image: image)
+        isUserInteractionEnabled = true
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectItem)))
     }
     
-    func selectItem1(){
-        if let data = data {
-            OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: data.items?[0].websiteUrl)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
     }
-    func selectItem2(){
-        if let data = data {
-            OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: data.items?[1].websiteUrl)
-        }
-    }
-    func selectItem3(){
-        if let data = data {
-            OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: data.items?[2].websiteUrl)
-        }
+    func selectItem(){
+        print("LLLLLLLLLLL")
+        OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: data.websiteUrl)
     }
 }

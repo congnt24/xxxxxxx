@@ -13,7 +13,8 @@ class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
     //create post object and use it in 3 subviews controller
     //call using superviewcontroller
     var taodonhangRequest = TaoDonHangRequest()
-    var website_url: String!
+    var website_url: String?
+    var data: ModelOrderData?
     public static var sharedInstance: TaoDonHangViewController!
     
     override func viewDidLoad() {
@@ -37,7 +38,9 @@ class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let child1: TaoDonHang1ViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: TaoDonHang1ViewController.self)
         child1.website_url = website_url
+        child1.data = data
         let child2: TaoDonHang2ViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: TaoDonHang2ViewController.self)
+        child2.data = data
         let child3: TaoDonHang3ViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: TaoDonHang3ViewController.self)
         return [child1, child2, child3]
     }

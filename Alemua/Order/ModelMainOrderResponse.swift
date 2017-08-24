@@ -32,7 +32,7 @@ class ModelOrderData: BaseResult {
     
     // MARK: Properties
     public var name: String?
-    public var promotionPercent: Int?
+    public var promotionPercent: Float?
     public var updatedAt: String?
     public var promotionPrice: Int?
     public var websiteUrl: String?
@@ -61,7 +61,7 @@ class ModelOrderData: BaseResult {
     public required init(json: JSON) {
         super.init(json: json)
         name = json[SerializationKeys.name].string
-        promotionPercent = json[SerializationKeys.promotionPercent].int
+        promotionPercent = json[SerializationKeys.promotionPercent].float
         updatedAt = json[SerializationKeys.updatedAt].string
         promotionPrice = json[SerializationKeys.promotionPrice].int
         websiteUrl = json[SerializationKeys.websiteUrl].string

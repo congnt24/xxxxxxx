@@ -89,10 +89,11 @@ extension OrderCoordinator {
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showTaoDonHang(url: String!){
+    func showTaoDonHang(url: String!, data: ModelOrderData?){
         
         let view: TaoDonHangViewController = mainStoryboard.instantiateViewController(withClass: TaoDonHangViewController.self)
         view.website_url = url
+        view.data = data
         navigation?.pushViewController(view, animated: true)
     }
 }

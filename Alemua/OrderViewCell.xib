@@ -30,32 +30,24 @@
                                             <constraint firstAttribute="width" constant="60" id="5Qe-bY-Bxt"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_giamgia" translatesAutoresizingMaskIntoConstraints="NO" id="sjL-vA-6KG">
-                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TU-8d-nXI">
+                                        <rect key="frame" x="8" y="8" width="22" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="SOt-Gm-M01"/>
-                                            <constraint firstAttribute="height" constant="20" id="ShR-De-bQL"/>
+                                            <constraint firstAttribute="height" constant="24" id="WPV-XY-9HA"/>
+                                            <constraint firstAttribute="width" constant="22" id="ibC-u6-gzA"/>
                                         </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUF-Rc-SFp">
-                                        <rect key="frame" x="8" y="8" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="BFF-AC-pLj"/>
-                                            <constraint firstAttribute="height" constant="20" id="sxL-EY-Gez"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <state key="normal" title="100%" backgroundImage="bookmark">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="sjL-vA-6KG" firstAttribute="top" secondItem="tCY-oe-Nrm" secondAttribute="top" constant="8" id="DJX-bQ-l2R"/>
-                                    <constraint firstItem="tUF-Rc-SFp" firstAttribute="top" secondItem="tCY-oe-Nrm" secondAttribute="top" constant="8" id="GpU-4i-INX"/>
+                                    <constraint firstItem="9TU-8d-nXI" firstAttribute="top" secondItem="tCY-oe-Nrm" secondAttribute="top" constant="8" id="BO3-wr-LgQ"/>
                                     <constraint firstItem="le2-k2-DQF" firstAttribute="top" secondItem="tCY-oe-Nrm" secondAttribute="top" constant="8" id="JLT-m9-4Zm"/>
                                     <constraint firstAttribute="trailing" secondItem="le2-k2-DQF" secondAttribute="trailing" constant="8" id="UYN-OI-ZBU"/>
-                                    <constraint firstItem="sjL-vA-6KG" firstAttribute="leading" secondItem="tCY-oe-Nrm" secondAttribute="leading" constant="8" id="adV-rr-NKj"/>
-                                    <constraint firstItem="tUF-Rc-SFp" firstAttribute="leading" secondItem="tCY-oe-Nrm" secondAttribute="leading" constant="8" id="nUL-hi-eeR"/>
+                                    <constraint firstItem="9TU-8d-nXI" firstAttribute="leading" secondItem="tCY-oe-Nrm" secondAttribute="leading" constant="8" id="cu6-DN-rTy"/>
                                     <constraint firstAttribute="bottom" secondItem="le2-k2-DQF" secondAttribute="bottom" constant="8" id="nvk-lH-sgV"/>
                                     <constraint firstItem="le2-k2-DQF" firstAttribute="leading" secondItem="tCY-oe-Nrm" secondAttribute="leading" constant="8" id="szy-NY-bd9"/>
                                 </constraints>
@@ -151,6 +143,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnPromo" destination="9TU-8d-nXI" id="uWg-O4-s6H"/>
                 <outlet property="lbGia" destination="10r-eh-DpR" id="Pb9-Ak-sCA"/>
                 <outlet property="lbGiaCu" destination="I9W-UF-zt1" id="8C5-Oc-b09"/>
                 <outlet property="lbNoiMua" destination="PcE-Em-kFa" id="YZL-O3-jum"/>
@@ -162,7 +155,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_giamgia" width="21" height="24"/>
+        <image name="bookmark" width="37" height="50"/>
         <image name="sample" width="94" height="94"/>
     </resources>
 </document>

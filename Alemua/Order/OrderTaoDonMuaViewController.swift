@@ -42,8 +42,8 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
             input.text = parentUrl
             openPage()
         }
-        print(orderData!.websiteUrl)
         if let orderData = orderData {
+            print(orderData.websiteUrl)
             input.text = orderData.websiteUrl
             openPage()
         }
@@ -72,7 +72,7 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
     }
 
     @IBAction func onTaoDonHang(_ sender: Any) {
-        OrderCoordinator.sharedInstance.showTaoDonHang(url: orderData?.websiteUrl)
+        OrderCoordinator.sharedInstance.showTaoDonHang(url: orderData?.websiteUrl, data: orderData)
         
     }
 }

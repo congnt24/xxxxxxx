@@ -12,6 +12,7 @@ import AwesomeMVVM
 import MobileCoreServices
 import RxSwift
 import Kingfisher
+import Toaster
 
 class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -25,7 +26,9 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBOutlet weak var stPhoto: UIStackView!
 
     @IBOutlet weak var btnAdd: UIButton!
-    var website_url: String!
+    var website_url: String?
+    var data: ModelOrderData?
+    
     var taodonhangRequest = TaoDonHangRequest()
     static var sharedInstance: TaoDonHang1ViewController!
     let bag = DisposeBag()
@@ -35,7 +38,9 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         super.viewDidLoad()
         TaoDonHang1ViewController.sharedInstance = self
 //         Do any additional setup after loading the view.
-        getDataFromUrl(website_url: website_url)
+        if let url = website_url {
+            getDataFromUrl(website_url: url)
+        }
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -61,7 +66,6 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                         case .error(let msg):
                             print("Error \(msg)")
                             break
-                        default: break
                         }
                     }).addDisposableTo(bag)
             } else {
@@ -69,7 +73,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
 
             }
         } else {
-            print("ERROR")
+            Toast(text: "Vui lòng nhập đầy đủ thông tin").show()
         }
     }
 
@@ -111,6 +115,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     
     //tu dong gan link
     func getDataFromUrl(website_url: String){
+        
+        self.tfGia.text = "\(self.data?.promotionPrice ?? 0)"
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -124,10 +130,12 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                         let arr = link.splitted(by: ",")
                         for url in arr {
                             KingfisherManager.shared.retrieveImage(with: URL(string: url)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
-                                self.stPhoto.addArrangedSubview(PhotoView(image: image))
-                                self.listImage.append(image!)
-                                self.stPhoto.removeArrangedSubview(self.btnAdd)
-                                self.stPhoto.addArrangedSubview(self.btnAdd)
+                                if let img = image {
+                                    self.stPhoto.addArrangedSubview(PhotoView(image: img))
+                                    self.listImage.append(img)
+                                    self.stPhoto.removeArrangedSubview(self.btnAdd)
+                                    self.stPhoto.addArrangedSubview(self.btnAdd)
+                                }
                             })
                         }
                     }

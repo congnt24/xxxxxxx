@@ -25,4 +25,5 @@ target 'Alemua' do
   pod 'RxRealm'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Toaster'
 end

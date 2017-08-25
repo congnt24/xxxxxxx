@@ -39,6 +39,9 @@ extension Coordinator {
     func getLoginStoryboard() -> UIStoryboard {
         return UIStoryboard(name: "Login", bundle: nil)
     }
+    func getBaoGiaStoryboard() -> UIStoryboard {
+        return UIStoryboard(name: "RaoVat", bundle: nil)
+    }
 }
 
 extension AppCoordinator: AppCoordinatorDelegate {

@@ -34,6 +34,9 @@ extension HomeCoordinator: HomeCoordinatorDelegate {
     func showOrderScreen() {
         OrderNavTabBarCoordinator(navigation).start(nil)
     }
+    func showRaoVatScreen(){
+        RaoVatCoordinator(navigation).start(nil)
+    }
 }
 
 extension HomeCoordinator {

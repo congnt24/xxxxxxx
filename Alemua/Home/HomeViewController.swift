@@ -36,5 +36,8 @@ class HomeViewController: BaseViewController {
         coordinator.showOrderScreen()
         HomeViewController.homeType = .order
     }
+    @IBAction func onRaoVat(_ sender: Any) {
+        coordinator.showRaoVatScreen()
+    }
 
 }

@@ -28,6 +28,20 @@
 		021B82AB1F24E98600B757D7 /* DeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82A91F24E98600B757D7 /* DeliveryTableViewCell.xib */; };
 		021B82AE1F24F0C500B757D7 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */; };
 		021B82AF1F24F0C500B757D7 /* ConversationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */; };
+		021C97CE1F505D240058CBF0 /* RaoVat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021C97CD1F505D240058CBF0 /* RaoVat.storyboard */; };
+		021C97F21F5070CE0058CBF0 /* RaoVatCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97E71F5070CE0058CBF0 /* RaoVatCategoryViewController.swift */; };
+		021C97F31F5070CE0058CBF0 /* RaoVatCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97E81F5070CE0058CBF0 /* RaoVatCommentViewController.swift */; };
+		021C97F41F5070CE0058CBF0 /* RaoVatCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97E91F5070CE0058CBF0 /* RaoVatCoordinator.swift */; };
+		021C97F51F5070CE0058CBF0 /* RaoVatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97EA1F5070CE0058CBF0 /* RaoVatDetailViewController.swift */; };
+		021C97F61F5070CE0058CBF0 /* RaoVatFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97EB1F5070CE0058CBF0 /* RaoVatFilterViewController.swift */; };
+		021C97F71F5070CE0058CBF0 /* RaoVatMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97EC1F5070CE0058CBF0 /* RaoVatMenuViewController.swift */; };
+		021C97F81F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97ED1F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift */; };
+		021C97F91F5070CE0058CBF0 /* RaoVatProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97EE1F5070CE0058CBF0 /* RaoVatProfileViewController.swift */; };
+		021C97FA1F5070CE0058CBF0 /* RaoVatPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97EF1F5070CE0058CBF0 /* RaoVatPublishViewController.swift */; };
+		021C97FB1F5070CF0058CBF0 /* RaoVatReplyCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97F01F5070CE0058CBF0 /* RaoVatReplyCommentViewController.swift */; };
+		021C97FC1F5070CF0058CBF0 /* RaoVatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97F11F5070CE0058CBF0 /* RaoVatViewController.swift */; };
+		021C98001F5070EB0058CBF0 /* RaoVatUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021C97FE1F5070EB0058CBF0 /* RaoVatUserView.swift */; };
+		021C98011F5070EB0058CBF0 /* RaoVatUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021C97FF1F5070EB0058CBF0 /* RaoVatUserView.xib */; };
 		0222CB321F2964D100B20236 /* TaoDonHangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */; };
 		0223C7EB1F29B9E0005949C9 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0223C7EA1F29B9E0005949C9 /* ReviewView.swift */; };
 		0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0223C7EC1F29B9F1005949C9 /* ReviewView.xib */; };
@@ -188,6 +202,20 @@
 		021B82A91F24E98600B757D7 /* DeliveryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DeliveryTableViewCell.xib; path = CustomView/DeliveryTableViewCell.xib; sourceTree = "<group>"; };
 		021B82AC1F24F0C500B757D7 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationTableViewCell.swift; path = CustomView/ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		021B82AD1F24F0C500B757D7 /* ConversationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConversationTableViewCell.xib; path = CustomView/ConversationTableViewCell.xib; sourceTree = "<group>"; };
+		021C97CD1F505D240058CBF0 /* RaoVat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RaoVat.storyboard; sourceTree = "<group>"; };
+		021C97E71F5070CE0058CBF0 /* RaoVatCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatCategoryViewController.swift; path = RaoVat/RaoVatCategoryViewController.swift; sourceTree = "<group>"; };
+		021C97E81F5070CE0058CBF0 /* RaoVatCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatCommentViewController.swift; path = RaoVat/RaoVatCommentViewController.swift; sourceTree = "<group>"; };
+		021C97E91F5070CE0058CBF0 /* RaoVatCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatCoordinator.swift; path = RaoVat/RaoVatCoordinator.swift; sourceTree = "<group>"; };
+		021C97EA1F5070CE0058CBF0 /* RaoVatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatDetailViewController.swift; path = RaoVat/RaoVatDetailViewController.swift; sourceTree = "<group>"; };
+		021C97EB1F5070CE0058CBF0 /* RaoVatFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatFilterViewController.swift; path = RaoVat/RaoVatFilterViewController.swift; sourceTree = "<group>"; };
+		021C97EC1F5070CE0058CBF0 /* RaoVatMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatMenuViewController.swift; path = RaoVat/RaoVatMenuViewController.swift; sourceTree = "<group>"; };
+		021C97ED1F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatProfileListActionViewController.swift; path = RaoVat/RaoVatProfileListActionViewController.swift; sourceTree = "<group>"; };
+		021C97EE1F5070CE0058CBF0 /* RaoVatProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatProfileViewController.swift; path = RaoVat/RaoVatProfileViewController.swift; sourceTree = "<group>"; };
+		021C97EF1F5070CE0058CBF0 /* RaoVatPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatPublishViewController.swift; path = RaoVat/RaoVatPublishViewController.swift; sourceTree = "<group>"; };
+		021C97F01F5070CE0058CBF0 /* RaoVatReplyCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatReplyCommentViewController.swift; path = RaoVat/RaoVatReplyCommentViewController.swift; sourceTree = "<group>"; };
+		021C97F11F5070CE0058CBF0 /* RaoVatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatViewController.swift; path = RaoVat/RaoVatViewController.swift; sourceTree = "<group>"; };
+		021C97FE1F5070EB0058CBF0 /* RaoVatUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaoVatUserView.swift; sourceTree = "<group>"; };
+		021C97FF1F5070EB0058CBF0 /* RaoVatUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RaoVatUserView.xib; sourceTree = "<group>"; };
 		0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaoDonHangViewController.swift; path = Order/TaoDonHangViewController.swift; sourceTree = "<group>"; };
 		0223C7EA1F29B9E0005949C9 /* ReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewView.swift; path = CustomView/ReviewView.swift; sourceTree = "<group>"; };
 		0223C7EC1F29B9F1005949C9 /* ReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReviewView.xib; path = CustomView/ReviewView.xib; sourceTree = "<group>"; };
@@ -361,6 +389,35 @@
 			name = DonHangSubView;
 			sourceTree = "<group>";
 		};
+		021C97CF1F505D490058CBF0 /* RaoVat */ = {
+			isa = PBXGroup;
+			children = (
+				021C97FD1F5070EB0058CBF0 /* CustomView */,
+				021C97F11F5070CE0058CBF0 /* RaoVatViewController.swift */,
+				021C97E71F5070CE0058CBF0 /* RaoVatCategoryViewController.swift */,
+				021C97E81F5070CE0058CBF0 /* RaoVatCommentViewController.swift */,
+				021C97E91F5070CE0058CBF0 /* RaoVatCoordinator.swift */,
+				021C97EA1F5070CE0058CBF0 /* RaoVatDetailViewController.swift */,
+				021C97EB1F5070CE0058CBF0 /* RaoVatFilterViewController.swift */,
+				021C97EC1F5070CE0058CBF0 /* RaoVatMenuViewController.swift */,
+				021C97ED1F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift */,
+				021C97EE1F5070CE0058CBF0 /* RaoVatProfileViewController.swift */,
+				021C97EF1F5070CE0058CBF0 /* RaoVatPublishViewController.swift */,
+				021C97F01F5070CE0058CBF0 /* RaoVatReplyCommentViewController.swift */,
+			);
+			name = RaoVat;
+			sourceTree = "<group>";
+		};
+		021C97FD1F5070EB0058CBF0 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				021C97FE1F5070EB0058CBF0 /* RaoVatUserView.swift */,
+				021C97FF1F5070EB0058CBF0 /* RaoVatUserView.xib */,
+			);
+			name = CustomView;
+			path = RaoVat/CustomView;
+			sourceTree = "<group>";
+		};
 		022A8D0D1F28F02A00D69411 /* TaoDonHang */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +587,7 @@
 		027B012F1F1E621600D576CE /* Alemua */ = {
 			isa = PBXGroup;
 			children = (
+				021C97CF1F505D490058CBF0 /* RaoVat */,
 				02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */,
 				02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */,
 				027B013C1F1E621600D576CE /* Info.plist */,
@@ -691,6 +749,7 @@
 				02F775281F1F390300556BED /* Main.storyboard */,
 				02F775551F1FB46300556BED /* Profile.storyboard */,
 				02BF72641F224B8A00F1F4BC /* DonHang.storyboard */,
+				021C97CD1F505D240058CBF0 /* RaoVat.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -839,11 +898,13 @@
 				02F775331F1F390300556BED /* Main.storyboard in Resources */,
 				023B39D31F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib in Resources */,
 				021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */,
+				021C97CE1F505D240058CBF0 /* RaoVat.storyboard in Resources */,
 				0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */,
 				0223C7F11F2A1526005949C9 /* UserView.xib in Resources */,
 				025D40031F2394EA00BCD5F7 /* DonHangTableViewCell.xib in Resources */,
 				02F775311F1F390300556BED /* LaunchScreen.storyboard in Resources */,
 				021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */,
+				021C98011F5070EB0058CBF0 /* RaoVatUserView.xib in Resources */,
 				02A2AEF21F21025D007EB372 /* OrderViewCell.xib in Resources */,
 				023B39E41F2B59CA00E53A6D /* StepperView.xib in Resources */,
 				02D32B7F1F30BD2700A8A4B6 /* AccountKitStrings.bundle in Resources */,
@@ -913,14 +974,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021C97FC1F5070CF0058CBF0 /* RaoVatViewController.swift in Sources */,
+				021C97FB1F5070CF0058CBF0 /* RaoVatReplyCommentViewController.swift in Sources */,
 				023B39D21F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift in Sources */,
+				021C97F21F5070CE0058CBF0 /* RaoVatCategoryViewController.swift in Sources */,
 				025CC0761F263625003C0883 /* AwesomeToggleViewByHeight.swift in Sources */,
 				021B82AA1F24E98600B757D7 /* DeliveryTableViewCell.swift in Sources */,
 				025D400A1F23A9C300BCD5F7 /* DonHangViewController.swift in Sources */,
 				0223C7EF1F2A1516005949C9 /* UserView.swift in Sources */,
 				02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */,
+				021C97F91F5070CE0058CBF0 /* RaoVatProfileViewController.swift in Sources */,
 				02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */,
 				02530E881F2C83BD00334345 /* DeliveryFilterViewController.swift in Sources */,
+				021C97FA1F5070CE0058CBF0 /* RaoVatPublishViewController.swift in Sources */,
 				02F7752D1F1F390300556BED /* SettingViewController.swift in Sources */,
 				0223C7EB1F29B9E0005949C9 /* ReviewView.swift in Sources */,
 				02F775501F1F731500556BED /* ChatWrapperViewController.swift in Sources */,
@@ -935,8 +1001,10 @@
 				02530E7E1F2C70EC00334345 /* OrderFilterViewController.swift in Sources */,
 				025D40051F23A85D00BCD5F7 /* OrderCoordinator.swift in Sources */,
 				025CC07C1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift in Sources */,
+				021C97F61F5070CE0058CBF0 /* RaoVatFilterViewController.swift in Sources */,
 				021B6EB31F3370FE00DF5CD6 /* ModelOrderClientResponse.swift in Sources */,
 				027B01501F1EF14A00D576CE /* AppCoordinator.swift in Sources */,
+				021C97F31F5070CE0058CBF0 /* RaoVatCommentViewController.swift in Sources */,
 				023B39E01F2B4EF200E53A6D /* DeliveryAccountViewController.swift in Sources */,
 				022D72AD1F279F7100CC548E /* OrderDialogBaoGia3ViewController.swift in Sources */,
 				0222CB321F2964D100B20236 /* TaoDonHangViewController.swift in Sources */,
@@ -971,6 +1039,7 @@
 				02B340341F45547D0027803A /* ChatRepository.swift in Sources */,
 				02530E8E1F2C886F00334345 /* ChatCoordinator.swift in Sources */,
 				02AD2A6A1F4F0F8600DDEFE9 /* DialogTaoDonHang.swift in Sources */,
+				021C97F51F5070CE0058CBF0 /* RaoVatDetailViewController.swift in Sources */,
 				02BF727C1F2368CD00F1F4BC /* NotifyViewController.swift in Sources */,
 				02525C3E1F2B8AB600EBCBA7 /* ThanhToanModel.swift in Sources */,
 				028AF0EB1F35C3C500387FFC /* PictureHelper.swift in Sources */,
@@ -992,6 +1061,7 @@
 				025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */,
 				025CC07E1F26470B003C0883 /* DeliveryNavTabBarViewController.swift in Sources */,
 				021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */,
+				021C97F81F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
 				023B39DD1F2B43EE00E53A6D /* KhachHangTableViewCell.swift in Sources */,
 				021B829A1F24503200B757D7 /* NotifyTableViewCell.swift in Sources */,
@@ -1015,6 +1085,7 @@
 				022D72AB1F279F6500CC548E /* OrderDialogBaoGia2ViewController.swift in Sources */,
 				025D40141F23B27A00BCD5F7 /* AwesomeBackBarButton.swift in Sources */,
 				023B39DA1F2B266100E53A6D /* HTMLLabel.swift in Sources */,
+				021C97F71F5070CE0058CBF0 /* RaoVatMenuViewController.swift in Sources */,
 				02FDFD2E1F4843A500F3A72B /* LoginByPasswordViewController.swift in Sources */,
 				028AF0E71F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift in Sources */,
 				02F1AE8E1F35587000AD4466 /* ResponseModel.swift in Sources */,
@@ -1022,6 +1093,7 @@
 				022D72B31F27A48500CC548E /* OrderDialogDangChuyen2ViewController.swift in Sources */,
 				0223C7FB1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift in Sources */,
 				0218D7571F35DE6E008C8F6D /* DanhSachKHViewController.swift in Sources */,
+				021C97F41F5070CE0058CBF0 /* RaoVatCoordinator.swift in Sources */,
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
 				0223C7FD1F2A44A1005949C9 /* ThanhToanViewController.swift in Sources */,
 				022A8D0F1F28F04200D69411 /* TaoDonHang1ViewController.swift in Sources */,
@@ -1042,6 +1114,7 @@
 				02BC24C61F25CAB300C917CD /* DeliveryOrderViewController.swift in Sources */,
 				02F7752B1F1F390300556BED /* LoginViewModel.swift in Sources */,
 				02BF72711F23451F00F1F4BC /* OrderNavTabBarViewController.swift in Sources */,
+				021C98001F5070EB0058CBF0 /* RaoVatUserView.swift in Sources */,
 				78A47DC6789735EDFE8C79F6 /* ConversationUserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

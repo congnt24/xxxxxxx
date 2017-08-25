@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="25" width="319" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
-                                                <rect key="frame" x="185.5" y="6" width="103.5" height="120"/>
+                                                <rect key="frame" x="186" y="6" width="103" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="23:27" id="caq-0p-YXS"/>
                                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="30" y="6" width="97" height="120"/>
+                                                <rect key="frame" x="30" y="6" width="96.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="43:54" id="ovk-nU-ZvF"/>
                                                 </constraints>
@@ -74,9 +74,27 @@
                                     <constraint firstAttribute="bottom" secondItem="tQZ-KW-vZk" secondAttribute="bottom" id="yw2-rz-wrC"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-Vg-BRa">
+                                <rect key="frame" x="157" y="589" width="61" height="30"/>
+                                <state key="normal" title=" Rao Vặt ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onRaoVat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDi-2f-vds"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9gb-Vg-BRa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7V-fy-uRM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kgj-Bw-r7B" secondAttribute="bottom" id="CwW-VR-cNu"/>
                             <constraint firstItem="Bzr-yn-ZR1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Dkb-Rg-v43"/>
                             <constraint firstItem="Kgj-Bw-r7B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lvr-Z0-Wag"/>
@@ -85,6 +103,7 @@
                             <constraint firstItem="Bzr-yn-ZR1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="Z7V-iQ-8Br"/>
                             <constraint firstItem="Kgj-Bw-r7B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dAE-cH-9Ce"/>
                             <constraint firstItem="Bzr-yn-ZR1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kS6-zq-SoM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9gb-Vg-BRa" secondAttribute="bottom" constant="48" id="tsN-1x-Kg5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cy9-HO-cIC">
@@ -4263,9 +4282,9 @@ D4w
         </image>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CX0-EY-bs5"/>
-        <segue reference="bgW-2G-sdD"/>
+        <segue reference="wlC-Jw-m1c"/>
         <segue reference="5Og-fK-XcW"/>
+        <segue reference="bgW-2G-sdD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

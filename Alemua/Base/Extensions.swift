@@ -27,7 +27,7 @@ extension String {
         return dateFormatterPrint.string(from: date!)
     }
     func toFormatedPrice() -> String {
-        return "$" + self
+        return self + " VND"
     }
     
     
@@ -43,7 +43,9 @@ extension String {
 //        print(self)
 //        let date = self.toDate()
 //        return dateFormatter.string(from: date!)
-        return self.splitted(by: " ")[1]
+        let str = self.splitted(by: " ")[1]
+        
+        return str.substring(to: str.index(str.startIndex, offsetBy: 5))
     }
     
 

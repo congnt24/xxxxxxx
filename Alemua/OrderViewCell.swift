@@ -39,8 +39,8 @@ class OrderViewCell: UITableViewCell {
         productName.text = item.name
         lbNoiMua.text = item.address
         lbWebsite.text = item.websiteUrl
-        lbGia.text = "$\(item.promotionPrice!)"
-        lbGiaCu.setText(str: "$\(item.originPrice!)")
+        lbGia.text = "\(item.promotionPrice!)".toFormatedPrice()
+        lbGiaCu.setText(str: "\(item.originPrice!)".toFormatedPrice())
         setPhoto(link: item.photo)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClick)))
         if let promo = item.promotionPercent {

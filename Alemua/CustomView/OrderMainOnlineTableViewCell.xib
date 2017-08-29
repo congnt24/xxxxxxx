@@ -18,19 +18,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-xc-oPF">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuz-xc-oPF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
                         <subviews>
                             <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-xb-1mo">
-                                <rect key="frame" x="8" y="8" width="601" height="80"/>
+                                <rect key="frame" x="8" y="8" width="359" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="5bd-mO-8Jk"/>
-                                    <constraint firstAttribute="width" constant="601" id="vAm-gh-1w0"/>
+                                    <constraint firstAttribute="width" constant="359" id="vAm-gh-1w0"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="w7y-xb-1mo" secondAttribute="bottom" constant="8" id="Ahi-s8-dyd"/>
+                            <constraint firstAttribute="bottom" secondItem="w7y-xb-1mo" secondAttribute="bottom" constant="25.5" id="Ahi-s8-dyd"/>
                             <constraint firstItem="w7y-xb-1mo" firstAttribute="top" secondItem="fuz-xc-oPF" secondAttribute="top" constant="8" id="JCB-PN-RYr"/>
                             <constraint firstItem="w7y-xb-1mo" firstAttribute="leading" secondItem="fuz-xc-oPF" secondAttribute="leading" constant="8" id="dDC-18-zms"/>
                             <constraint firstAttribute="trailing" secondItem="w7y-xb-1mo" secondAttribute="trailing" constant="8" id="vda-es-NLX"/>

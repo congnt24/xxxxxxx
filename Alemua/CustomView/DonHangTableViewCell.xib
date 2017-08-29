@@ -131,6 +131,9 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="13I-c8-nB7"/>
+                        </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-Tp-etD">
                         <rect key="frame" x="0.0" y="94.5" width="320" height="1"/>
@@ -163,6 +166,6 @@
     </objects>
     <resources>
         <image name="ic_agle_right_blu" width="42" height="42"/>
-        <image name="sample" width="94" height="94"/>
+        <image name="sample" width="400" height="266"/>
     </resources>
 </document>

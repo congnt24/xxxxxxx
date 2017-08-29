@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="25" width="319" height="132"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
-                                                <rect key="frame" x="185.5" y="6" width="103.5" height="120"/>
+                                                <rect key="frame" x="186.5" y="6" width="102.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="23:27" id="caq-0p-YXS"/>
                                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="30" y="6" width="97" height="120"/>
+                                                <rect key="frame" x="30" y="6" width="96" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="43:54" id="ovk-nU-ZvF"/>
                                                 </constraints>
@@ -1003,12 +1003,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O0D-gL-uKv">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_filter_price_up2" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-D9-yMH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="53"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_filter_new" translatesAutoresizingMaskIntoConstraints="NO" id="FD9-D9-yMH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="23" height="53"/>
                                                     </imageView>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9h-Xq-kI0" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                        <rect key="frame" x="34" y="0.0" width="279" height="53"/>
-                                                        <state key="normal" title="Giá từ thấp đến cao">
+                                                        <rect key="frame" x="33" y="0.0" width="280" height="53"/>
+                                                        <state key="normal" title="Theo thể loại">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -1042,7 +1042,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-Vx-bMh" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                    <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-Vx-bMh" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="106.5" width="343" height="53.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VLi-Cn-xzw">
@@ -4195,7 +4195,6 @@
         <image name="ic_filter" width="24" height="22"/>
         <image name="ic_filter_new" width="23" height="24"/>
         <image name="ic_filter_price_down" width="24" height="23"/>
-        <image name="ic_filter_price_up2" width="24" height="23"/>
         <image name="ic_gift" width="21" height="23"/>
         <image name="ic_home" width="27" height="27"/>
         <image name="ic_home_blu" width="27" height="27"/>

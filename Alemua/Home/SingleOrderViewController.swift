@@ -30,10 +30,19 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
     var datas = Variable<[ModelOrderClientData]>([])
     var currentPage = 1
 
+    var cacheFilter = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        cacheFilter = OrderFilterViewController.orderOrderFilterType
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if cacheFilter != OrderFilterViewController.orderOrderFilterType {
+            cacheFilter = OrderFilterViewController.orderOrderFilterType
+            reloadPage()
+        }
     }
     
     func refresh(_ sender: Any) {
@@ -87,11 +96,8 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
     func reloadPage(){
         currentPage = 1
         self.fetchData().drive(onNext: { (results) in
-            print(results)
-            if results.count > 0 {
-                self.datas.value = results
-                self.currentPage = 2
-            }
+            self.datas.value = results
+            self.currentPage = 2
         }).addDisposableTo(self.bag)
     }
 

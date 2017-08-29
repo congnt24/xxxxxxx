@@ -11,7 +11,7 @@ import UIKit
 import XLPagerTabStrip
 
 class OrderOrderViewController: ButtonBarPagerTabStripViewController {
-
+    public static var shared: OrderOrderViewController!
     @IBAction func onBack(_ sender: Any) {
         if HomeViewController.homeType == .order {
             OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
@@ -19,6 +19,8 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
             DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
         }
     }
+    
+    var selectViewController = -1
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -35,6 +37,14 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 15)
         // Do any additional setup after loading the view.
         super.viewDidLoad()
+        OrderOrderViewController.shared = self
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if selectViewController > 0 {
+            
+            moveToViewController(at: selectViewController)
+            selectViewController = -1
+        }
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

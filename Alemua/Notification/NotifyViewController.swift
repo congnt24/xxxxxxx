@@ -71,7 +71,21 @@ class NotifyViewController: BaseViewController {
     }
 
     func reloadPage() {
-        fetchData()
+        let isShipper = HomeViewController.homeType == .order ? 0 : 1
+        AlemuaApi.shared.aleApi.request(.getNotifications(page_number: currentPage, is_shipper: isShipper))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    if let arr = result.array {
+                        self.datas.value = arr.map { NotifyData(json: $0) }
+                    }
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
     }
 
     //Interact API

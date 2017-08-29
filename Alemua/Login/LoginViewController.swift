@@ -44,6 +44,10 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
                             Prefs.userId = result["id"].int!
                             Prefs.apiToken = result["ApiToken"].string!
                             Prefs.phoneNumber = phone
+                            Prefs.photo = result["photo"].string ?? ""
+                            //start socketio
+                            
+                            SocketIOHelper.shared.connectToSocketIO()
                             self.navigationController?.popViewController(animated: false)
                             break
                         case .error(let msg):

@@ -28,6 +28,26 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBOutlet weak var btnAdd: UIButton!
     var website_url: String?
     var data: ModelOrderData?
+    
+    //from exchange dialog
+    var currencyData: CurrencyData? {
+        didSet {
+            taodonhangRequest.currencyId = currencyData?.id
+        }
+    }
+    var gia: String? {
+        didSet {
+            if let gia = gia, let currencyData = currencyData {
+                let f = Float(gia) ?? 0
+                taodonhangRequest.websiteRealPrice = f
+                let exchange = Float(currencyData.conversion!) ?? 0
+                let vnd = Int(exchange * f)
+                taodonhangRequest.websitePrice = vnd
+                tfGia.text = "\(f) \(currencyData.name!) - \(vnd) VND"
+            }
+        }
+    }
+    
 
     var taodonhangRequest = TaoDonHangRequest()
     static var sharedInstance: TaoDonHang1ViewController!
@@ -89,7 +109,6 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         taodonhangRequest.productName = tfTenSP.text
         taodonhangRequest.productDescription = tfMota.text
         taodonhangRequest.websiteUrl = tfWebsite.text
-        taodonhangRequest.websitePrice = Int(tfGia.text!)
         taodonhangRequest.promotionCode = tfCode.text
         taodonhangRequest.quantity = stSoLuong.number
         taodonhangRequest.productOption = grSelect.checkedPosition

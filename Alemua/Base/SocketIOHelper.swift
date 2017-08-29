@@ -20,6 +20,9 @@ public class SocketIOHelper {
         connectToSocketIO()
     }
     func connectToSocketIO() {
+        if !Prefs.isUserLogged {
+            return
+        }
         socket = SocketIOClient(socketURL: URL(string: AppConstant.SOCKETIO_URL)!, config: [.log(true), .compress])
         print(Prefs.userId)
         socket.on(clientEvent: .connect) { data, ack in

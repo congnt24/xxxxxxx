@@ -83,13 +83,13 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
                 case .done(let result, _):
                     LoadingOverlay.shared.hideOverlayView()
                     req.photo = result.string
+                    Prefs.photo = result.string ?? ""
                     self.postToServer(req)
                     print("Cancel success")
                     break
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
         

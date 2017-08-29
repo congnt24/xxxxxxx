@@ -159,6 +159,8 @@ extension AleApi: TargetType {
             params["product_option"] = data.productOption ?? 0
             params["is_before"] = data.isBefore ?? 0
             params["number_product"] = data.numberProduct ?? 1
+            params["currency_id"] = data.currencyId ?? 1
+            params["website_real_price"] = data.websiteRealPrice ?? 1
             return params
         case .createQuote(let quote):
             var params = [String: Any]()

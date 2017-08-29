@@ -29,7 +29,7 @@ class OrderMain2ViewController: UIViewController {
     var currentPage = 1
     var bag = DisposeBag()
     var datas = Variable<[ModelOrderData]>([])
-    
+    var cacheFilter = 0
     
     var sectionName: String!
     override func viewDidLoad() {
@@ -45,6 +45,20 @@ class OrderMain2ViewController: UIViewController {
         
     }
     @IBAction func onClickFilter(_ sender: Any) {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if cacheFilter != OrderFilterViewController.orderOrderFilterType {
+            cacheFilter = OrderFilterViewController.orderOrderFilterType
+            reloadPage()
+        }
+    }
+    
+    func reloadPage(){
+        self.fetchData().drive(onNext: { (results) in
+            self.datas.value = results
+            self.currentPage = 2
+        }).addDisposableTo(self.bag)
     }
 }
 

@@ -11,13 +11,13 @@ import SwiftyJSON
 import RxSwift
 
 class OrderDialogBaoGia3ViewController: UIViewController {
-    var order_id: Int!
+    var order_id: Int?
     var quoteId: Int!
     var bag = DisposeBag()
     @IBOutlet weak var lbSoDonHang: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbSoDonHang.text = "\(order_id)"
+        lbSoDonHang.text = "\(order_id ?? 0)"
 
         // Do any additional setup after loading the view.
     }

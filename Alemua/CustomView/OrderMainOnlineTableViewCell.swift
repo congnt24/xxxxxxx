@@ -29,12 +29,15 @@ class OrderMainOnlineTableViewCell: UITableViewCell {
     func bindData(data: ModelBuyingOnline) {
         self.stack.removeSubviews()
         self.data = data
-        let width = Int(((bounds.width - 16) / 3)) * data.items!.count + (data.items!.count-1) * 8
-        widthConstraint.constant = CGFloat(width)
+        let count = data.items!.count
+        let width = Int(((bounds.width - 32) / 3)) * count + (count-1) * 8
+        let wid = CGFloat(width/count)
+        widthConstraint.constant = 0
         for item in data.items! {
             KingfisherManager.shared.retrieveImage(with: URL(string: item.photo!)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                 let img = OnlinePhoto(image: image)
                 img.data = item
+                self.widthConstraint.constant += wid
                 self.stack.addArrangedSubview(img)
             })
         }

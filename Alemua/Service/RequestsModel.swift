@@ -34,6 +34,8 @@ public class TaoDonHangRequest {
     public var apiToken: String?
     public var isBefore: Int?
     public var numberProduct: Int?
+    public var currencyId: Int?
+    public var websiteRealPrice: Float?
 
     public func validateStep1() -> Bool {
         if existNil(strs: [websitePrice, websiteUrl, quantity, productName

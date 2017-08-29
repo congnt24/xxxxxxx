@@ -60,7 +60,7 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         self.inputToolbar.contentView.backgroundColor = UIColor.white
 //        backgroundColor = UIColor.red
         self.collectionView.backgroundColor = UIColor.init(hexString: "#F2F1F1")
-
+        automaticallyScrollsToMostRecentMessage = true
         //TODO: Get messages from db
 
         //        messages
@@ -155,6 +155,7 @@ extension ChatViewController {
     func onMessageReceive(senderId: String, senderName: String, text: String) {
         messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
         collectionView.reloadData()
+        finishReceivingMessage()
     }
     //Send message to server and append to view
     func sendMessage(sendTo: String, senderName: String, text: String) {
@@ -189,6 +190,7 @@ extension ChatViewController {
                         self.messages.append(JSQMessage(senderId: "\(chats[index].userSend!)", displayName: "", text: chats[index].data))
                     }
                     self.collectionView.reloadData()
+                    self.finishReceivingMessage()
                 } else {
                 }
             }).addDisposableTo(bag)

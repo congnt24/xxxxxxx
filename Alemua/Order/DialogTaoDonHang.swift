@@ -36,7 +36,8 @@ class DialogTaoDonHang: UIViewController {
         AwesomeDialog.shared.show(vc: DialogTaoDonHang.shared, name: "Main", identify: "DialogTaoDonHang2")
     }
     @IBAction func onDone(_ sender: Any) {
-        TaoDonHang1ViewController.sharedInstance.tfGia.text = input.text
+        TaoDonHang1ViewController.sharedInstance.currencyData = data
+        TaoDonHang1ViewController.sharedInstance.gia = input.text
         
     }
 }

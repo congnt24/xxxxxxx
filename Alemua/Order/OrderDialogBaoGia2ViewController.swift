@@ -9,12 +9,12 @@
 import UIKit
 
 class OrderDialogBaoGia2ViewController: UIViewController {
-    var order_id: Int!
+    var order_id: Int?
     var quoteId: Int!
     @IBOutlet weak var lbSoDonHang: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        lbSoDonHang.text = "\(order_id)"
+        lbSoDonHang.text = "\(order_id ?? 0)"
         // Do any additional setup after loading the view.
     }
     

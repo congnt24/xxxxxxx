@@ -68,7 +68,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     if let arrayComment = result.array {
                         self.listComment.value = arrayComment.map{ CommentData(json: $0)}
                     }

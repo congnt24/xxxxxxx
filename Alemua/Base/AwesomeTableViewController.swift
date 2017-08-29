@@ -25,7 +25,7 @@ class AwesomeTableViewController: UITableView {
 
     override func awakeFromNib() {
         if let nibName = nibName {
-            var nib = UINib(nibName: nibName, bundle: nil)
+            let nib = UINib(nibName: nibName, bundle: nil)
             self.register(nib, forCellReuseIdentifier: nibName)
 
             fetchData().bind(to: self.rx.items(cellIdentifier: nibName)) { (row, item, cell) in

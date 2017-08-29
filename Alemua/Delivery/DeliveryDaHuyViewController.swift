@@ -47,13 +47,12 @@ class DeliveryDaHuyViewController: UIViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     self.dahuyData = ModelDaHuyData(json: result)
                     break
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
     }

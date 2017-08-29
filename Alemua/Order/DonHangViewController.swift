@@ -78,7 +78,7 @@ extension DonHangViewController {
                 .toJSON()
                 .subscribe(onNext: { (res) in
                     switch res {
-                    case .done(let result):
+                    case .done(let result, _):
                         self.donhang.modelQuoteData = self.modelQuoteData
                         self.donhang.orderData = ModelOrderClientData(json: result)
                         self.baogia.orderData = ModelOrderClientData(json: result)
@@ -96,7 +96,7 @@ extension DonHangViewController {
                 .toJSON()
                 .subscribe(onNext: { (res) in
                     switch res {
-                    case .done(let result):
+                    case .done(let result, _):
                         self.donhang.orderData = ModelOrderClientData(json: result)
                         self.baogia.orderData = ModelOrderClientData(json: result)
                         print("Cancel success")

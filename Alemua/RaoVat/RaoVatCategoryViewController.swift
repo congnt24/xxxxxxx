@@ -11,6 +11,7 @@ import UIKit
 import AwesomeMVVM
 import RxSwift
 import RxCocoa
+import SwipeCellKit
 
 class RaoVatCategoryViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -72,6 +73,7 @@ class RaoVatCategoryViewController: BaseViewController {
     }
 
     @IBAction func onFilter(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showRaoVatFilter(data: "")
     }
     
     @IBAction func onDangTin(_ sender: Any) {
@@ -81,7 +83,7 @@ class RaoVatCategoryViewController: BaseViewController {
 
 
 
-class RaoVatCategoryTableViewCell: UITableViewCell {
+class RaoVatCategoryTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var discount: UIButton!
     @IBOutlet weak var name: UILabel!

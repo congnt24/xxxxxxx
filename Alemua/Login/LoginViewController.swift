@@ -39,7 +39,7 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
                     .toJSON()
                     .subscribe(onNext: { (res) in
                         switch res {
-                        case .done(let result):
+                        case .done(let result, _):
                             Prefs.isUserLogged = true
                             Prefs.userId = result["id"].int!
                             Prefs.apiToken = result["ApiToken"].string!

@@ -37,13 +37,12 @@ class DangChuyenViewController: UIViewController {
         AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 2, orderId: orderData.id!))
         .toJSON().subscribe(onNext: { (res) in
             switch res {
-            case .done(let result):
+            case .done(let result, _):
                 self.modelDangChuyen = ModelDonHangDangChuyenData(json: result)
                 break
             case .error(let msg):
                 print("ERROR: \(msg)")
                 break
-            default: break
             }
         }).addDisposableTo(bag)
         

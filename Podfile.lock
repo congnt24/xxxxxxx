@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
-  - AwesomeMVVM (0.2.8)
+  - AwesomeMVVM (0.3.2)
   - DropDown (2)
   - Firebase/Core (4.0.4):
     - FirebaseAnalytics (= 4.0.2)
@@ -67,6 +67,7 @@ PODS:
     - StarscreamSocketIO (~> 8.0.2)
   - StarscreamSocketIO (8.0.2)
   - SwiftyJSON (3.1.4)
+  - SwipeCellKit (1.9.0)
   - Toaster (2.0.4)
   - UIScrollView-InfiniteScroll (1.0.2)
   - XLPagerTabStrip (7.0.0)
@@ -89,6 +90,7 @@ DEPENDENCIES:
   - RxSwift
   - Socket.IO-Client-Swift (~> 11.0.2)
   - SwiftyJSON
+  - SwipeCellKit
   - Toaster
   - UIScrollView-InfiniteScroll (~> 1.0.0)
   - XLPagerTabStrip
@@ -99,12 +101,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AwesomeMVVM:
-    :commit: 16b9d457ef6c52bc9ae88b4dca6a5e874e36265f
+    :commit: 36964e8067cae6b2f2ddc6b1a490e07d776d524c
     :git: https://github.com/congnt24/AwesomeMVVM.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AwesomeMVVM: 9341a9bb0b6fa4bff4d0e6190f658752d2d74f06
+  AwesomeMVVM: 32fe35af1fc1cd7c475fca0fb3b2fcf215456348
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
@@ -130,10 +132,11 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 17d4daf85d74125c33481d9bc40cbe678f0d631a
   StarscreamSocketIO: c02ffb2920bd38de6658ce213071fc4ae0e35423
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  SwipeCellKit: 893661973276ae3512a84ac0a47055923b10731e
   Toaster: f13031c636ef065281bc11857be9a16c7659e04f
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 7be0396e590e605ad1b159b7be73411f3583c726
+PODFILE CHECKSUM: a15e3ae77804ba47cbedea5eec8fedba1bfe1641
 
 COCOAPODS: 1.2.1

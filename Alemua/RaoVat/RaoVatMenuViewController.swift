@@ -15,12 +15,27 @@ import RxCocoa
 class RaoVatMenuViewController: BaseViewController {
     var bag = DisposeBag()
     
+    @IBOutlet weak var uiSwitch: AwesomeSwitch!
     override func bindToViewModel() {
         
     }
     
     override func responseFromViewModel() {
         
+    }
+    @IBAction func onTrangChu(_ sender: Any) {
+    }
+    @IBAction func onProfile(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showRaoVatProfile(data: "")
+    }
+    @IBAction func onFavorite(_ sender: Any) {
+    }
+    @IBAction func onPublished(_ sender: Any) {
+    }
+    @IBAction func onNotify(_ sender: Any) {
+        uiSwitch.isOn = !uiSwitch.isOn
+    }
+    @IBAction func onSwitchNotify(_ sender: Any) {
     }
 }
 

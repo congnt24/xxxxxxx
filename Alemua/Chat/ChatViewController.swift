@@ -24,8 +24,25 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
     let bag = DisposeBag()
     var friend: ConversationUserData!
 
+    var myPhoto: UIImage?
+    var friendPhoto: UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Prefs.photo != "" {
+            KingfisherManager.shared.retrieveImage(with: URL(string: Prefs.photo)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                self.myPhoto = image
+            })
+        }
+        if let photo = friend.photo {
+            KingfisherManager.shared.retrieveImage(with: URL(string: photo)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                self.friendPhoto = image
+            })
+        }
+        //Download photo
+
+
+
         //init delegate
         self.senderId = "\(Prefs.userId)"
         self.senderDisplayName = "Cong"
@@ -77,7 +94,7 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
             cell.textView.textColor = UIColor.white
         } else {
             cell.textView.textColor = UIColor.init(hexString: "E94F2E")
-            
+
         }
         return cell
 
@@ -89,6 +106,17 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
 
 
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
+
+        let message = messages[indexPath.item]
+        if message.senderId == senderId {
+            if let photo = myPhoto {
+                return JSQMessagesAvatarImageFactory.avatarImage(with: myPhoto, diameter: 30)
+            }
+        } else {
+            if let photo = friendPhoto {
+                return JSQMessagesAvatarImageFactory.avatarImage(with: photo, diameter: 30)
+            }
+        }
         return JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "avatar"), diameter: 30)
     }
 
@@ -141,7 +169,7 @@ extension ChatViewController {
         message.data = text
         //TODO: Save to realm
 //        chatRepo.addMessages([message])
-        
+
         SocketIOHelper.shared.emitSendToServer(message: message)
 
 //        messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
@@ -164,6 +192,6 @@ extension ChatViewController {
                 } else {
                 }
             }).addDisposableTo(bag)
-        
+
     }
 }

@@ -29,7 +29,7 @@ class DanhSachKHViewController: UIViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     self.datas.value = result.array!
                         .map { ClientResponse(json: $0) }
                     print("Cancel success")

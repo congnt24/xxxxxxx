@@ -55,7 +55,6 @@ class BaoGiaTableViewCell: UITableViewCell {
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
     }

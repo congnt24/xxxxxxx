@@ -13,6 +13,7 @@
 		02144A741F38AACF00187481 /* DanhGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */; };
 		02144A751F38AACF00187481 /* DanhGiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */; };
 		0218D7571F35DE6E008C8F6D /* DanhSachKHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */; };
+		021915521F51792E007E18EE /* CheckedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021915511F51792E007E18EE /* CheckedButton.swift */; };
 		021B6EB31F3370FE00DF5CD6 /* ModelOrderClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */; };
 		021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */; };
 		021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */; };
@@ -187,6 +188,7 @@
 		02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhGiaTableViewCell.swift; path = CustomView/DanhGiaTableViewCell.swift; sourceTree = "<group>"; };
 		02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DanhGiaTableViewCell.xib; path = CustomView/DanhGiaTableViewCell.xib; sourceTree = "<group>"; };
 		0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhSachKHViewController.swift; path = Account/DanhSachKHViewController.swift; sourceTree = "<group>"; };
+		021915511F51792E007E18EE /* CheckedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckedButton.swift; path = CustomView/CheckedButton.swift; sourceTree = "<group>"; };
 		021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelOrderClientResponse.swift; sourceTree = "<group>"; };
 		021B828F1F241F8100B757D7 /* BaoGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaoGiaTableViewCell.swift; path = CustomView/BaoGiaTableViewCell.swift; sourceTree = "<group>"; };
 		021B82901F241F8100B757D7 /* BaoGiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaoGiaTableViewCell.xib; path = CustomView/BaoGiaTableViewCell.xib; sourceTree = "<group>"; };
@@ -392,17 +394,17 @@
 		021C97CF1F505D490058CBF0 /* RaoVat */ = {
 			isa = PBXGroup;
 			children = (
+				021C97E91F5070CE0058CBF0 /* RaoVatCoordinator.swift */,
 				021C97FD1F5070EB0058CBF0 /* CustomView */,
 				021C97F11F5070CE0058CBF0 /* RaoVatViewController.swift */,
 				021C97E71F5070CE0058CBF0 /* RaoVatCategoryViewController.swift */,
 				021C97E81F5070CE0058CBF0 /* RaoVatCommentViewController.swift */,
-				021C97E91F5070CE0058CBF0 /* RaoVatCoordinator.swift */,
+				021C97EF1F5070CE0058CBF0 /* RaoVatPublishViewController.swift */,
 				021C97EA1F5070CE0058CBF0 /* RaoVatDetailViewController.swift */,
 				021C97EB1F5070CE0058CBF0 /* RaoVatFilterViewController.swift */,
 				021C97EC1F5070CE0058CBF0 /* RaoVatMenuViewController.swift */,
-				021C97ED1F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift */,
 				021C97EE1F5070CE0058CBF0 /* RaoVatProfileViewController.swift */,
-				021C97EF1F5070CE0058CBF0 /* RaoVatPublishViewController.swift */,
+				021C97ED1F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift */,
 				021C97F01F5070CE0058CBF0 /* RaoVatReplyCommentViewController.swift */,
 			);
 			name = RaoVat;
@@ -587,13 +589,13 @@
 		027B012F1F1E621600D576CE /* Alemua */ = {
 			isa = PBXGroup;
 			children = (
-				021C97CF1F505D490058CBF0 /* RaoVat */,
 				02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */,
 				02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */,
 				027B013C1F1E621600D576CE /* Info.plist */,
 				027B014F1F1EF14A00D576CE /* AppCoordinator.swift */,
 				027B01301F1E621600D576CE /* AppDelegate.swift */,
 				027B01371F1E621600D576CE /* Assets.xcassets */,
+				021C97CF1F505D490058CBF0 /* RaoVat */,
 				02F775211F1F390300556BED /* Service */,
 				02BF72771F23683500F1F4BC /* Account */,
 				029B090E1F207C990036F01F /* Base */,
@@ -685,7 +687,6 @@
 			isa = PBXGroup;
 			children = (
 				029B090D1F207C5F0036F01F /* Controller */,
-				024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */,
 				02F775111F1F38E900556BED /* HomeCoordinator.swift */,
 				02F775131F1F38E900556BED /* HomeViewModel.swift */,
 				02530E891F2C85C900334345 /* Prefs.swift */,
@@ -697,6 +698,7 @@
 		02F775191F1F390300556BED /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */,
 				02530E8D1F2C886F00334345 /* ChatCoordinator.swift */,
 				02F775471F1F556100556BED /* ChatViewController.swift */,
 				02F775491F1F56BD00556BED /* ConversationViewController.swift */,
@@ -798,6 +800,7 @@
 				02F6E2951F37FF51000C0B83 /* PhotoView.swift */,
 				02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */,
 				02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */,
+				021915511F51792E007E18EE /* CheckedButton.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				021C97FB1F5070CF0058CBF0 /* RaoVatReplyCommentViewController.swift in Sources */,
 				023B39D21F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift in Sources */,
 				021C97F21F5070CE0058CBF0 /* RaoVatCategoryViewController.swift in Sources */,
+				021915521F51792E007E18EE /* CheckedButton.swift in Sources */,
 				025CC0761F263625003C0883 /* AwesomeToggleViewByHeight.swift in Sources */,
 				021B82AA1F24E98600B757D7 /* DeliveryTableViewCell.swift in Sources */,
 				025D400A1F23A9C300BCD5F7 /* DonHangViewController.swift in Sources */,

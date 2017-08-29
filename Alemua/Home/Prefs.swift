@@ -92,5 +92,14 @@ class Prefs {
             UserDefaults.standard.synchronize()
         }
     }
+    class var photo: String {
+        get {
+            return UserDefaults.standard.string(forKey: "photo") ?? ""
+        }
+        set(token) {
+            UserDefaults.standard.set(token, forKey: "photo")
+            UserDefaults.standard.synchronize()
+        }
+    }
 
 }

@@ -73,7 +73,8 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(_):
+                case .done(_, let msg):
+                    Toast(text: msg).show()
                     OrderCoordinator.sharedInstance.showOrderTabAfterFinishTaoDonHang()
                     break
                 case .error(let msg):

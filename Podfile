@@ -26,4 +26,5 @@ target 'Alemua' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Toaster'
+  pod 'SwipeCellKit'
 end

@@ -9,6 +9,6 @@
 import SwiftyJSON
 
 public enum AleResult {
-    case done(result: JSON)
+    case done(result: JSON, msg: String?)
     case error(msg: String)
 }

@@ -31,8 +31,11 @@
                                         <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="RAO VẶT ALEMUA" id="emd-Kf-N5D">
-                                                <barButtonItem key="leftBarButtonItem" image="back" id="hwE-oX-tpb" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
+                                                <barButtonItem key="leftBarButtonItem" image="ic_menu" id="hwE-oX-tpb" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onMenu:" destination="OPm-5K-gg1" id="OoS-01-mzh"/>
+                                                    </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" image="ic_bell" id="vqn-fW-h3X">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,7 +545,7 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eka-WV-lx9">
                                         <rect key="frame" x="8" y="331" width="359" height="203"/>
-                                        <mutableString key="text">Ngày hôm qua 23/08, tại Mỹ đã diễn ra sự kiện ra mắt mẫu Smartphone Samsung Galaxy Note8. Sau khi sự kiện kết thúc, mẫu điện thoại này hiện đang được bán với mức giá 929,99 USD. Tại thị trường Việt Nam, mức giá của Galaxy Note8 được phân phối chính hãng dự kiến cũng lên tới gần 23 triệu. đây là mức giá khá hiếm hoi, khi thông thường, các mẫu điện thoại cao cấp chúng ta từng biết đều không có giá vượt quá 900 USD.</mutableString>
+                                        <string key="text">Ngày hôm qua 23/08, tại Mỹ đã diễn ra sự kiện ra mắt mẫu Smartphone Samsung Galaxy Note8. Sau khi sự kiện kết thúc, mẫu điện thoại này hiện đang được bán với mức giá 929,99 USD. Tại thị trường Việt Nam, mức giá của Galaxy Note8 được phân phối chính hãng dự kiến cũng lên tới gần 23 triệu. đây là mức giá khá hiếm hoi, khi thông thường, các mẫu điện thoại cao cấp chúng ta từng biết đều không có giá vượt quá 900 USD.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -685,7 +688,7 @@
                         <viewControllerLayoutGuide type="top" id="fuh-zV-L0R"/>
                         <viewControllerLayoutGuide type="bottom" id="8up-5Y-UbL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0TZ-Pa-dgS">
+                    <view key="view" contentMode="scaleToFill" id="0TZ-Pa-dgS" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -743,7 +746,13 @@
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="4"/>
                                                                     </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onAddPhoto:" destination="a2E-VX-fBO" eventType="touchUpInside" id="a8w-Ca-1NS"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -766,7 +775,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w32-P2-vb0">
-                                        <rect key="frame" x="16" y="716" width="343" height="45"/>
+                                        <rect key="frame" x="16" y="835" width="343" height="45"/>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="7yk-qY-gK6"/>
@@ -780,12 +789,15 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onPublish:" destination="a2E-VX-fBO" eventType="touchUpInside" id="6h2-ux-1wL"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Bhp-pV-tua">
-                                        <rect key="frame" x="16" y="127" width="343" height="380"/>
+                                        <rect key="frame" x="16" y="127" width="343" height="280"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tGk-2a-KqO">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên tiêu đề" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-GD-q8b">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -794,7 +806,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qR2-fp-PnB" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="40"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="35"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -810,7 +822,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TaN-bH-4Mp">
-                                                <rect key="frame" x="0.0" y="81" width="343" height="56.5"/>
+                                                <rect key="frame" x="0.0" y="76" width="343" height="52"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mô tả" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-2V-7wq">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -819,7 +831,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vmn-0k-0lX" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="39.5"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="35"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -834,17 +846,28 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mvo-Zd-F4m">
-                                                <rect key="frame" x="0.0" y="161.5" width="343" height="57"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RXz-Ov-g7x">
+                                                <rect key="frame" x="0.0" y="152" width="343" height="52"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gm-HQ-Fq9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gc4-W1-1Lh" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="40"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mZ-C3-yvq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh mục cha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTv-TJ-4gX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back_down" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-pG-zBs">
+                                                                <rect key="frame" x="333" y="0.0" width="10" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="10" id="TSy-TD-oLf"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x6G-FH-VOM" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="32" width="343" height="20"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -859,42 +882,28 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-AN-1DO">
-                                                <rect key="frame" x="0.0" y="242.5" width="343" height="56.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uYH-i0-ZeY">
+                                                <rect key="frame" x="0.0" y="228" width="343" height="52"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá trên web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBw-6e-gmG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="btI-Tf-4LA" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="39.5"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NfT-mF-lcs">
-                                                <rect key="frame" x="0.0" y="323" width="343" height="57"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhập mã khuyễn mãi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h6-zY-k8a">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1rt-un-vor" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="40"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jz-Hy-JVh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh mục con" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7X-mU-uKV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="333" height="32"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_back_down" translatesAutoresizingMaskIntoConstraints="NO" id="fG1-E5-mtn">
+                                                                <rect key="frame" x="333" y="0.0" width="10" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="10" id="NcS-4N-R2m"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvR-Fl-gXS" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="32" width="343" height="20"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -911,7 +920,189 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="380" id="e5q-fD-DXm"/>
+                                            <constraint firstAttribute="height" constant="280" id="e5q-fD-DXm"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44O-Ai-pf6">
+                                        <rect key="frame" x="16" y="423" width="343" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xAz-0B-ey8">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aII-Td-Oh2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s88-mt-Hef" customClass="CheckedButton" customModule="Alemua">
+                                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="50"/>
+                                                                <state key="normal" title="   Hàng có sẵn" image="ic_unchecked_circle">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_checked_circle"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flw-Zw-fuQ" customClass="CheckedButton" customModule="Alemua">
+                                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="50"/>
+                                                                <state key="normal" title="   Hàng sang tay" image="ic_unchecked_circle">
+                                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_checked_circle"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaU-Yv-Wno" customClass="CheckedButton" customModule="Alemua">
+                                                        <rect key="frame" x="0.0" y="50" width="343" height="50"/>
+                                                        <state key="normal" title="   Đã qua sử dụng" image="ic_unchecked_circle">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_checked_circle"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="xAz-0B-ey8" firstAttribute="top" secondItem="44O-Ai-pf6" secondAttribute="top" id="C8c-EH-t9i"/>
+                                            <constraint firstAttribute="trailing" secondItem="xAz-0B-ey8" secondAttribute="trailing" id="h9D-n6-htw"/>
+                                            <constraint firstAttribute="height" constant="100" id="jIo-Rg-eL3"/>
+                                            <constraint firstAttribute="bottom" secondItem="xAz-0B-ey8" secondAttribute="bottom" id="kF3-1H-OEb"/>
+                                            <constraint firstItem="xAz-0B-ey8" firstAttribute="leading" secondItem="44O-Ai-pf6" secondAttribute="leading" id="l7K-YS-AlS"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="kIE-pb-xkE">
+                                        <rect key="frame" x="16" y="539" width="343" height="280"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-Ng-Ovp">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-Jf-OAX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="52"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá sản phẩm (VNĐ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3P-ih-1mQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="169.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8CZ-PP-YGt" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                                <rect key="frame" x="0.0" y="17" width="169.5" height="35"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MVs-Fr-kns">
+                                                        <rect key="frame" x="173.5" y="0.0" width="169.5" height="52"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khuyến mãi (%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiA-rO-beb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="169.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dri-dw-qpX" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                                <rect key="frame" x="0.0" y="17" width="169.5" height="35"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5av-aJ-N2l">
+                                                <rect key="frame" x="0.0" y="76" width="343" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá khuyến mãi (VNĐ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTj-8a-A1M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="272" height="52"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="1.000.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hji-wF-cNm">
+                                                        <rect key="frame" x="272" y="0.0" width="71" height="52"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oKB-uL-IyF">
+                                                <rect key="frame" x="0.0" y="152" width="343" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa chỉ giao dịch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-6i-S02">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-02-tdN" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="35"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="31E-Ej-E4B">
+                                                <rect key="frame" x="0.0" y="228" width="343" height="52"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày hết hạn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-R3-QXv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-q9-GBK" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="35"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="yyyy-MM-dd"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="280" id="e32-Zg-Sud"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -919,15 +1110,21 @@
                                     <constraint firstItem="Urt-Bb-Wbd" firstAttribute="leading" secondItem="fpT-1i-jKe" secondAttribute="leading" constant="16" id="1OQ-uL-9eF"/>
                                     <constraint firstItem="Bhp-pV-tua" firstAttribute="top" secondItem="Urt-Bb-Wbd" secondAttribute="bottom" constant="16" id="1kJ-qA-Tkt"/>
                                     <constraint firstAttribute="bottom" secondItem="w32-P2-vb0" secondAttribute="bottom" constant="16" id="2OP-u3-bHN"/>
+                                    <constraint firstItem="44O-Ai-pf6" firstAttribute="leading" secondItem="fpT-1i-jKe" secondAttribute="leading" constant="16" id="2P5-zx-wdN"/>
                                     <constraint firstItem="w32-P2-vb0" firstAttribute="leading" secondItem="fpT-1i-jKe" secondAttribute="leading" constant="16" id="2pa-iY-wIK"/>
+                                    <constraint firstAttribute="trailing" secondItem="kIE-pb-xkE" secondAttribute="trailing" constant="16" id="EEL-Xe-YDn"/>
                                     <constraint firstAttribute="trailing" secondItem="Bhp-pV-tua" secondAttribute="trailing" constant="16" id="ExG-zn-pzW"/>
                                     <constraint firstAttribute="trailing" secondItem="w32-P2-vb0" secondAttribute="trailing" constant="16" id="KHR-wA-OTc"/>
+                                    <constraint firstItem="w32-P2-vb0" firstAttribute="top" secondItem="kIE-pb-xkE" secondAttribute="bottom" constant="16" id="Lyu-tV-He9"/>
                                     <constraint firstAttribute="trailing" secondItem="Urt-Bb-Wbd" secondAttribute="trailing" constant="16" id="Mp9-LU-Xvw"/>
-                                    <constraint firstItem="w32-P2-vb0" firstAttribute="top" secondItem="Bhp-pV-tua" secondAttribute="bottom" constant="209" id="PLY-dA-XqG"/>
+                                    <constraint firstItem="kIE-pb-xkE" firstAttribute="top" secondItem="44O-Ai-pf6" secondAttribute="bottom" constant="16" id="Z3j-UC-W3c"/>
                                     <constraint firstItem="Urt-Bb-Wbd" firstAttribute="top" secondItem="fpT-1i-jKe" secondAttribute="top" constant="16" id="ax7-C5-a24"/>
                                     <constraint firstItem="Bhp-pV-tua" firstAttribute="leading" secondItem="fpT-1i-jKe" secondAttribute="leading" constant="16" id="bdS-nz-f92"/>
                                     <constraint firstItem="w32-P2-vb0" firstAttribute="centerX" secondItem="fpT-1i-jKe" secondAttribute="centerX" id="fDT-0K-O5b"/>
                                     <constraint firstItem="Urt-Bb-Wbd" firstAttribute="centerX" secondItem="fpT-1i-jKe" secondAttribute="centerX" id="lkf-jC-c92"/>
+                                    <constraint firstItem="kIE-pb-xkE" firstAttribute="leading" secondItem="fpT-1i-jKe" secondAttribute="leading" constant="16" id="s6O-MO-3Sb"/>
+                                    <constraint firstItem="44O-Ai-pf6" firstAttribute="top" secondItem="Bhp-pV-tua" secondAttribute="bottom" constant="16" id="tcr-Wr-U2F"/>
+                                    <constraint firstAttribute="trailing" secondItem="44O-Ai-pf6" secondAttribute="trailing" constant="16" id="xAf-V0-f07"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -944,10 +1141,28 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="btnAdd" destination="0bU-eX-hS0" id="OD3-NL-cop"/>
+                        <outlet property="btnCoSan" destination="s88-mt-Hef" id="ydp-HB-RYt"/>
+                        <outlet property="btnDaSuDung" destination="HaU-Yv-Wno" id="9tN-EY-H2V"/>
+                        <outlet property="btnSangTay" destination="flw-Zw-fuQ" id="kGr-Qa-Icw"/>
+                        <outlet property="lbGiaKM" destination="hji-wF-cNm" id="y7a-Qc-HI5"/>
+                        <outlet property="stPhoto" destination="7uK-Jt-w3U" id="seQ-FD-i0l"/>
+                        <outlet property="stackDanhMucCha" destination="RXz-Ov-g7x" id="d8M-Gg-K5S"/>
+                        <outlet property="stackDanhMucCon" destination="uYH-i0-ZeY" id="WEA-SV-RVh"/>
+                        <outlet property="tfAddress" destination="6Wk-02-tdN" id="NyC-Fa-mD7"/>
+                        <outlet property="tfDanhMucCha" destination="x6G-FH-VOM" id="noV-hY-qN5"/>
+                        <outlet property="tfDanhMucCon" destination="fvR-Fl-gXS" id="77i-RG-4Mo"/>
+                        <outlet property="tfDate" destination="UAW-q9-GBK" id="L1J-Ve-m0q"/>
+                        <outlet property="tfGia" destination="8CZ-PP-YGt" id="YFv-qy-GEw"/>
+                        <outlet property="tfKhuyenMai" destination="Dri-dw-qpX" id="D4s-bM-ebc"/>
+                        <outlet property="tfMota" destination="Vmn-0k-0lX" id="Bth-e1-WOF"/>
+                        <outlet property="tfTieuDe" destination="qR2-fp-PnB" id="prp-ub-2lO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MN1-79-s9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="498"/>
+            <point key="canvasLocation" x="-55.200000000000003" y="497.45127436281865"/>
         </scene>
         <!--Rao Vat Comment View Controller-->
         <scene sceneID="IBv-BS-KH7">
@@ -1245,8 +1460,8 @@
                                     <constraint firstAttribute="bottom" secondItem="E9N-Vi-J2g" secondAttribute="bottom" id="ozl-Ob-5Bn"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="chf-QO-WAn">
-                                <rect key="frame" x="8" y="564" width="359" height="95"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="chf-QO-WAn">
+                                <rect key="frame" x="8" y="561" width="359" height="98"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rng-Me-sEy">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="45"/>
@@ -1263,9 +1478,12 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSearch:" destination="HYm-6y-VuQ" eventType="touchUpInside" id="T3W-WS-Lll"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztk-tz-iwD">
-                                        <rect key="frame" x="0.0" y="50" width="359" height="45"/>
+                                        <rect key="frame" x="0.0" y="53" width="359" height="45"/>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="1ac-TE-hmM"/>
@@ -1279,7 +1497,271 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onResetFilter:" destination="HYm-6y-VuQ" eventType="touchUpInside" id="GT4-SI-MA8"/>
+                                        </connections>
                                     </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2g3-6O-jKc">
+                                <rect key="frame" x="0.0" y="80" width="375" height="449"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jdv-3x-F60" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7uN-iW-PYF">
+                                                <rect key="frame" x="20" y="15.5" width="335" height="60.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sắp xếp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ua-rv-WcB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckR-3g-Uky" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="28.5" width="335" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="PMj-ng-Vh8"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="ic_xemthem"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="7uN-iW-PYF" firstAttribute="leading" secondItem="Jdv-3x-F60" secondAttribute="leading" constant="20" id="cge-0k-Xna"/>
+                                            <constraint firstItem="7uN-iW-PYF" firstAttribute="centerY" secondItem="Jdv-3x-F60" secondAttribute="centerY" id="n35-aX-WRa"/>
+                                            <constraint firstAttribute="trailing" secondItem="7uN-iW-PYF" secondAttribute="trailing" constant="20" id="wPk-3N-soQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWe-tm-Hb8" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="89.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gfk-BU-Ahh">
+                                                <rect key="frame" x="20" y="14.5" width="335" height="60.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh mục" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7De-7o-jJW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sba-hG-Rh6" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="28.5" width="335" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="ov3-cj-cpQ"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="ic_xemthem"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Gfk-BU-Ahh" secondAttribute="trailing" constant="20" id="3tr-F0-w6s"/>
+                                            <constraint firstItem="Gfk-BU-Ahh" firstAttribute="centerY" secondItem="sWe-tm-Hb8" secondAttribute="centerY" id="5su-EB-EDD"/>
+                                            <constraint firstItem="Gfk-BU-Ahh" firstAttribute="leading" secondItem="sWe-tm-Hb8" secondAttribute="leading" constant="20" id="stD-Qo-Gg6"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-j0-bo6" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="179.5" width="375" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BRs-kH-h4G">
+                                                <rect key="frame" x="20" y="15" width="335" height="60.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tình trạng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyS-8q-rf3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n3Z-Ju-Ktp" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="28.5" width="335" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="KoR-U4-Voq"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="ic_xemthem"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="BRs-kH-h4G" secondAttribute="trailing" constant="20" id="NjG-k0-kRK"/>
+                                            <constraint firstItem="BRs-kH-h4G" firstAttribute="centerY" secondItem="pZ3-j0-bo6" secondAttribute="centerY" id="fqq-7o-7LY"/>
+                                            <constraint firstItem="BRs-kH-h4G" firstAttribute="leading" secondItem="pZ3-j0-bo6" secondAttribute="leading" constant="20" id="rDD-HR-2Lf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vv-2d-ZS1" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="269.5" width="375" height="89.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="afX-vZ-v4W">
+                                                <rect key="frame" x="20" y="15" width="335" height="60.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAB-lP-b9L">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AgH-tw-gQP" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                        <rect key="frame" x="0.0" y="28.5" width="335" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="dGA-pm-x2g"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="rightImage" value="ic_xemthem"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="afX-vZ-v4W" secondAttribute="trailing" constant="20" id="0kA-3Z-8kF"/>
+                                            <constraint firstItem="afX-vZ-v4W" firstAttribute="leading" secondItem="2vv-2d-ZS1" secondAttribute="leading" constant="20" id="1XC-Sa-N7W"/>
+                                            <constraint firstItem="afX-vZ-v4W" firstAttribute="centerY" secondItem="2vv-2d-ZS1" secondAttribute="centerY" id="ipS-4j-ReO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzy-p3-vKJ" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="359" width="375" height="90"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Iie-uA-xfw">
+                                                <rect key="frame" x="20" y="10" width="335" height="71"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoảng cách" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIf-Bu-jMg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BJB-0u-GjG">
+                                                        <rect key="frame" x="-2" y="20.5" width="339" height="31"/>
+                                                        <color key="tintColor" red="0.29678484799999999" green="0.7643579841" blue="0.84903675320000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" red="0.9464378953" green="0.40556666250000001" blue="0.269415766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="onSliderChange:" destination="HYm-6y-VuQ" eventType="valueChanged" id="ZJv-jN-9Bo"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0O-h8-y79">
+                                                        <rect key="frame" x="0.0" y="50.5" width="335" height="20.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpg-qk-3QY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="268.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJc-Bh-GoI">
+                                                                <rect key="frame" x="268.5" y="0.0" width="66.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Iie-uA-xfw" secondAttribute="trailing" constant="20" id="Hia-2U-q1l"/>
+                                            <constraint firstItem="Iie-uA-xfw" firstAttribute="centerY" secondItem="mzy-p3-vKJ" secondAttribute="centerY" id="YB7-Zz-84o"/>
+                                            <constraint firstItem="Iie-uA-xfw" firstAttribute="leading" secondItem="mzy-p3-vKJ" secondAttribute="leading" constant="20" id="eV4-sp-4Mc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -1288,11 +1770,22 @@
                             <constraint firstAttribute="trailing" secondItem="chf-QO-WAn" secondAttribute="trailing" constant="8" id="0Ho-72-OcS"/>
                             <constraint firstItem="FQ4-cE-s0c" firstAttribute="top" secondItem="7ol-GI-ZpE" secondAttribute="top" id="Edk-MY-bBS"/>
                             <constraint firstItem="chf-QO-WAn" firstAttribute="leading" secondItem="7ol-GI-ZpE" secondAttribute="leading" constant="8" id="IsP-MY-JsT"/>
+                            <constraint firstItem="chf-QO-WAn" firstAttribute="top" secondItem="2g3-6O-jKc" secondAttribute="bottom" constant="32" id="KcL-nQ-j5t"/>
+                            <constraint firstAttribute="trailing" secondItem="2g3-6O-jKc" secondAttribute="trailing" id="LWp-ao-2GI"/>
                             <constraint firstItem="FQ4-cE-s0c" firstAttribute="leading" secondItem="7ol-GI-ZpE" secondAttribute="leading" id="UMb-Th-XAN"/>
                             <constraint firstAttribute="trailing" secondItem="FQ4-cE-s0c" secondAttribute="trailing" id="hKv-ix-EX8"/>
+                            <constraint firstItem="2g3-6O-jKc" firstAttribute="leading" secondItem="7ol-GI-ZpE" secondAttribute="leading" id="low-ah-Nq4"/>
+                            <constraint firstItem="2g3-6O-jKc" firstAttribute="top" secondItem="FQ4-cE-s0c" secondAttribute="bottom" constant="16" id="puv-5o-VOe"/>
                             <constraint firstItem="SsE-BQ-kIj" firstAttribute="top" secondItem="chf-QO-WAn" secondAttribute="bottom" constant="8" id="xlg-Y6-tIv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sliderDistance" destination="BJB-0u-GjG" id="oPb-Xe-tuq"/>
+                        <outlet property="tfCategory" destination="Sba-hG-Rh6" id="Uaf-yf-ph3"/>
+                        <outlet property="tfPrice" destination="AgH-tw-gQP" id="DpE-zL-d48"/>
+                        <outlet property="tfSort" destination="ckR-3g-Uky" id="pui-cB-5JD"/>
+                        <outlet property="tfState" destination="n3Z-Ju-Ktp" id="X7x-2i-H7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzB-Wf-ozG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1318,12 +1811,15 @@
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
-                                            <navigationItem title="Title" id="Lhv-4e-Fch">
+                                            <navigationItem title="Sản phẩm yêu thích" id="Lhv-4e-Fch">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="mn8-bJ-r5W" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" image="ic_search" id="paO-Kd-Cyy">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="onSearch:" destination="ZuR-zt-HH5" id="NOz-fi-0bq"/>
+                                                    </connections>
                                                 </barButtonItem>
                                             </navigationItem>
                                         </items>
@@ -1489,6 +1985,10 @@
                             <constraint firstItem="a5d-sF-TDN" firstAttribute="leading" secondItem="F8i-qd-EMz" secondAttribute="leading" id="xKl-yk-Iqv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navTitle" destination="Lhv-4e-Fch" id="PsN-Sg-KDa"/>
+                        <outlet property="tableView" destination="a5d-sF-TDN" id="MWE-xu-QL0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zl4-KJ-6hq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1520,6 +2020,9 @@
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" title="Edit" id="rFA-ph-2sQ">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <action selector="onEdit:" destination="dZA-45-BU5" id="h1b-6z-MnR"/>
+                                                    </connections>
                                                 </barButtonItem>
                                             </navigationItem>
                                         </items>
@@ -1550,7 +2053,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU1-X9-TYa">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh sách khách hàng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-RF-ovz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm yêu thích (10 sản phẩm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-RF-ovz">
                                                         <rect key="frame" x="0.0" y="0.0" width="291" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1600,7 +2103,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u22-rl-lN6">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đơn hàng giao đúng hạn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-vH-ZSo">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm đã đăng (10 sản phẩm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-vH-ZSo">
                                                         <rect key="frame" x="0.0" y="0.0" width="291" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -1657,12 +2160,15 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                                        <real key="value" value="1"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onLogout:" destination="dZA-45-BU5" eventType="touchUpInside" id="kjg-Wg-RFJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1685,6 +2191,11 @@
                             <constraint firstItem="JOM-xP-Fbi" firstAttribute="leading" secondItem="dFo-a4-8MF" secondAttribute="leading" constant="16" id="xZF-BS-UdP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stFavorite" destination="aJH-cd-ehG" id="0ib-GS-ocm"/>
+                        <outlet property="stPublished" destination="XYR-5z-402" id="8oa-Uw-J3j"/>
+                        <outlet property="userView" destination="6hM-wW-1XB" id="6rV-e2-PSn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZSB-Pa-Uz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1752,6 +2263,9 @@
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onTrangChu:" destination="R0p-TS-EJC" eventType="touchUpInside" id="nAm-Vo-aRJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1774,6 +2288,9 @@
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onProfile:" destination="R0p-TS-EJC" eventType="touchUpInside" id="vlg-KV-XJy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1796,6 +2313,9 @@
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onFavorite:" destination="R0p-TS-EJC" eventType="touchUpInside" id="cru-z7-9YV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1818,31 +2338,37 @@
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onPublished:" destination="R0p-TS-EJC" eventType="touchUpInside" id="md0-LD-n0z"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7KQ-ja-Wot">
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7KQ-ja-Wot">
                                         <rect key="frame" x="0.0" y="192" width="343" height="48"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logout" translatesAutoresizingMaskIntoConstraints="NO" id="t9I-nU-L1l">
-                                                <rect key="frame" x="0.0" y="0.0" width="24" height="48"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="24" height="19"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlK-bo-A9Y" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="34" y="0.0" width="250" height="48"/>
+                                                <rect key="frame" x="34" y="9" width="250" height="30"/>
                                                 <state key="normal" title="Thông báo">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                                        <real key="value" value="1"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onNotify:" destination="R0p-TS-EJC" eventType="touchUpInside" id="kY9-Te-deF"/>
+                                                </connections>
                                             </button>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nRL-Ev-INh" customClass="AwesomeSwitch" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="294" y="0.0" width="51" height="48"/>
+                                                <rect key="frame" x="294" y="8.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="scaleX">
@@ -1852,6 +2378,9 @@
                                                         <real key="value" value="0.75"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onSwitchNotify:" destination="R0p-TS-EJC" eventType="valueChanged" id="3ig-7y-y0g"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -1871,6 +2400,9 @@
                             <constraint firstItem="CXn-Ba-56b" firstAttribute="top" secondItem="hyv-ww-OxH" secondAttribute="top" id="wBj-fT-nJT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="uiSwitch" destination="nRL-Ev-INh" id="5Jm-3V-N4U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O54-Dg-eUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1880,19 +2412,24 @@
     <resources>
         <image name="Splash" width="621" height="1104"/>
         <image name="arrow_right" width="14" height="24"/>
-        <image name="avatar" width="105" height="105"/>
+        <image name="avatar" width="400" height="266"/>
         <image name="back" width="13" height="23"/>
         <image name="bookmark" width="37" height="50"/>
+        <image name="ic_back_down" width="42" height="42"/>
         <image name="ic_bell" width="26" height="27"/>
+        <image name="ic_checked_circle" width="15" height="15"/>
         <image name="ic_home" width="27" height="27"/>
         <image name="ic_info" width="23" height="23"/>
         <image name="ic_logout" width="24" height="19"/>
+        <image name="ic_menu" width="26" height="26"/>
         <image name="ic_question" width="23" height="23"/>
         <image name="ic_search" width="42" height="42"/>
         <image name="ic_send_message" width="27" height="27"/>
         <image name="ic_setting" width="27" height="27"/>
         <image name="ic_shopping_cart" width="42" height="42"/>
+        <image name="ic_unchecked_circle" width="15" height="15"/>
         <image name="ic_user" width="21" height="27"/>
-        <image name="sample" width="94" height="94"/>
+        <image name="ic_xemthem" width="16" height="16"/>
+        <image name="sample" width="400" height="266"/>
     </resources>
 </document>

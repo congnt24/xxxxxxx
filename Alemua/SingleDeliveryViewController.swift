@@ -80,7 +80,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         return AleProvider.request(AleApi.getOrderFromShipper(page_number: currentPage, order_type: deliveryType.rawValue)).toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     if let array = result.array, array.count > 0 {
                         let arrs = array.map { ModelOrderClientData(json: $0) }
                         if self.currentPage == 1 {

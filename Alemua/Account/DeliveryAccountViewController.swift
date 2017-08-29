@@ -53,7 +53,7 @@ class DeliveryAccountViewController: BaseViewController {
                 .toJSON()
                 .subscribe(onNext: { (res) in
                     switch res {
-                    case .done(let result):
+                    case .done(let result, _):
                         self.data = ProfileData(json: result)
                         self.userView.bindData(data: self.data!, profileType: 1)
                         self.uiSwitchNotify.isOn = self.data?.isNotify! == 0 ? false : true
@@ -68,7 +68,6 @@ class DeliveryAccountViewController: BaseViewController {
                     case .error(let msg):
                         print("Error \(msg)")
                         break
-                    default: break
                     }
                 }).addDisposableTo(bag)
         }
@@ -115,7 +114,6 @@ class DeliveryAccountViewController: BaseViewController {
                     print("Error \(msg)")
                     sender.isOn = !sender.isOn
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
         

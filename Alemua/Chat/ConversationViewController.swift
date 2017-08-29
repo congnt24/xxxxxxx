@@ -80,7 +80,7 @@ class ConversationViewController: BaseViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     if let result = result.array {
                         self.datas.value = result.map { ConversationUserData(json: $0) }
                     }
@@ -97,7 +97,7 @@ class ConversationViewController: BaseViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     if let result = result.array {
                         self.datas.value = result.map { ConversationUserData(json: $0) }
                         self.datas.value.forEach({ (user) in

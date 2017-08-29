@@ -43,8 +43,8 @@ public class SocketIOHelper {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
                 let str =  String(data: jsonData, encoding: String.Encoding.utf8)!
-                let message = Message().bindData(json2: JSON(data: str.data(using: String.Encoding.utf8)!))
-                print(message)
+                let message = Message().bindData(json: JSON(data: str.data(using: String.Encoding.utf8)!))
+//                print(message)
                 self.chatRepo.add(message)
 
             } catch {
@@ -53,12 +53,13 @@ public class SocketIOHelper {
         }
         
         socket.on("\(Prefs.userId)CorrectTime") { (data, ack) in
+            print("correct time")
             let dict = ((data[0] as! NSDictionary)["Content"] as! NSDictionary)
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
                 let str =  String(data: jsonData, encoding: String.Encoding.utf8)!
                 let message = Message().bindData(json: JSON(data: str.data(using: String.Encoding.utf8)!))
-                print(message)
+//                print(message)
                 self.chatRepo.add(message)
                 
             } catch {

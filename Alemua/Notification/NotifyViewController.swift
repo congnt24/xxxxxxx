@@ -81,7 +81,7 @@ class NotifyViewController: BaseViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     if let arr = result.array {
                         self.datas.value.append(contentsOf: arr.map { NotifyData(json: $0) })
                     }

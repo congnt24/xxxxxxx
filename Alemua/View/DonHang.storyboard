@@ -4203,7 +4203,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar" width="105" height="105"/>
+        <image name="avatar" width="400" height="266"/>
         <image name="back" width="13" height="23"/>
         <image name="ic_back_down" width="42" height="42"/>
         <image name="ic_back_up" width="42" height="42"/>

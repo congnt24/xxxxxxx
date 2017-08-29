@@ -127,7 +127,7 @@ extension ObservableType {
             let json = JSON(response.data)
             print(json)
             if json["code"] == 200 {
-                return AleResult.done(result: json["result"])
+                return AleResult.done(result: json["result"], msg: json["message"].string)
             } else {
                 return AleResult.error(msg: json["message"].string!)
             }

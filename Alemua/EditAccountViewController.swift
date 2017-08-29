@@ -80,7 +80,7 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     LoadingOverlay.shared.hideOverlayView()
                     req.photo = result.string
                     self.postToServer(req)

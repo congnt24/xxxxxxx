@@ -47,6 +47,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
             getDataFromUrl(website_url: url)
         }
         tfGia.delegate = self
+        tfWebsite.text = website_url
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -63,7 +64,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     .toJSON()
                     .subscribe(onNext: { (res) in
                         switch res {
-                        case .done(let result):
+                        case .done(let result, _):
                             LoadingOverlay.shared.hideOverlayView()
                             self.taodonhangRequest.photo = result.string
                             TaoDonHangViewController.sharedInstance.moveToViewController(at: 1)
@@ -71,6 +72,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                             break
                         case .error(let msg):
                             print("Error \(msg)")
+                            Toast(text: msg).show()
                             break
                         }
                     }).addDisposableTo(bag)
@@ -121,13 +123,15 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
 
     //tu dong gan link
     func getDataFromUrl(website_url: String) {
-
+        
+        LoadingOverlay.shared.showOverlay(view: parent?.view)
         self.tfGia.text = "\(self.data?.promotionPrice ?? 0)"
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
+                    LoadingOverlay.shared.hideOverlayView()
                     let title = result["title"].string
                     let desc = result["description"].string
                     self.tfMota.text = desc
@@ -149,6 +153,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
 
                     break
                 case .error(let msg):
+                    LoadingOverlay.shared.hideOverlayView()
+                    Toast(text: msg).show()
                     print("Error \(msg)")
                     break
                 }

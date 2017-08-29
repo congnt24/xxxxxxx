@@ -39,6 +39,11 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
         RaoVatCoordinator.sharedInstance.showRaoVatPublish(data: "")
     }
     
+    @IBAction func onMenu(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showRaoVatMenu(data: "")
+    }
+    
+    
     func fetchData(){
         datas.value = (0...10).map {"\($0)"}
     }

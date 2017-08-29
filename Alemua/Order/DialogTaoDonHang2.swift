@@ -39,7 +39,7 @@ class DialogTaoDonHang2: UIViewController {
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     if let res = result.array {
                         self.datas.value = res.map { CurrencyData(json: $0) }
                     }

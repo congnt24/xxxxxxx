@@ -51,13 +51,18 @@ extension RaoVatCoordinator {
         //        data = data
         navigation?.pushViewController(view, animated: true)
     }
-    func showRaoVatListAction(data: Any) {
+    func showRaoVatListAction(data: ActionType) {
         let view: RaoVatProfileListActionViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatProfileListActionViewController.self)
-        //        data = data
+        view.actionType = data
         navigation?.pushViewController(view, animated: true)
     }
     func showRaoVatFilter(data: Any) {
         let view: RaoVatFilterViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatFilterViewController.self)
+        //        data = data
+        navigation?.pushViewController(view, animated: true)
+    }
+    func showRaoVatMenu(data: Any) {
+        let view: RaoVatMenuViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatMenuViewController.self)
         //        data = data
         navigation?.pushViewController(view, animated: true)
     }

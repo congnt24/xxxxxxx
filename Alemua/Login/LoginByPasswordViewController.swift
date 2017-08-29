@@ -84,7 +84,7 @@ class LoginByPasswordViewController: BaseViewController, AKFViewControllerDelega
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done(let result):
+                case .done(let result, _):
                     //TODO: Send to server
                     Prefs.apiToken = result["ApiToken"].string!
                     Prefs.userIdClient = result["id"].int!

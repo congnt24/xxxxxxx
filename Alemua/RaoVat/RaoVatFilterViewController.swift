@@ -80,7 +80,7 @@ class RaoVatFilterViewController: BaseViewController, UITextFieldDelegate {
         vPrice.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onPrice)))
         
         
-        onResetFilter("")
+        resetFilter()
     }
     
     func collectData() -> FilterRequest {
@@ -125,7 +125,13 @@ class RaoVatFilterViewController: BaseViewController, UITextFieldDelegate {
         RaoVatCoordinator.sharedInstance.navigation?.popViewController()
     }
     @IBAction func onResetFilter(_ sender: Any) {
+        resetFilter()
         
+        RaoVatCategoryViewController.shared.filterRequest = collectData()
+        RaoVatCoordinator.sharedInstance.navigation?.popViewController()
+    }
+    
+    func resetFilter(){
         ddSort.selectRow(at: 0)
         tfSort.text = ddSort.dataSource[0]
         ddCategory.selectRow(at: 0)
@@ -134,8 +140,6 @@ class RaoVatFilterViewController: BaseViewController, UITextFieldDelegate {
         tfState.text = ddState.dataSource[0]
         ddPrice.selectRow(at: 0)
         tfPrice.text = ddPrice.dataSource[0]
-        RaoVatCategoryViewController.shared.filterRequest = collectData()
-        RaoVatCoordinator.sharedInstance.navigation?.popViewController()
     }
 }
 

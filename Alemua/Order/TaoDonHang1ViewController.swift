@@ -68,6 +68,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         }
         tfGia.delegate = self
         tfWebsite.text = website_url
+        tfTenSP.text = data?.name
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -154,7 +155,9 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     let title = result["title"].string
                     let desc = result["description"].string
                     self.tfMota.text = desc
-                    self.tfTenSP.text = title
+                    if let title = title, title != "" {
+                        self.tfTenSP.text = title
+                    }
                     if let link = result["link"].string {
                         let arr = link.splitted(by: ",")
                         for url in arr {

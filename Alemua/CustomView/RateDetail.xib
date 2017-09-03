@@ -41,7 +41,7 @@
                                 <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
                                     <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Tổng giá mua"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Giá mua"/>
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujT-g9-HN3" customClass="AwesomeTextField" customModule="AwesomeMVVM">

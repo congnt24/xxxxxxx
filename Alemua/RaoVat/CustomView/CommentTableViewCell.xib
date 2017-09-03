@@ -115,11 +115,21 @@
                             </view>
                         </subviews>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVh-lB-sIa">
+                        <rect key="frame" x="0.0" y="75" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="nm8-hY-wVa"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Gfo-mH-0mV" secondAttribute="bottom" id="25V-EW-tEw"/>
+                    <constraint firstAttribute="trailing" secondItem="CVh-lB-sIa" secondAttribute="trailing" id="B3h-2I-zI6"/>
+                    <constraint firstAttribute="bottom" secondItem="CVh-lB-sIa" secondAttribute="bottom" id="BQ7-vC-pdK"/>
                     <constraint firstAttribute="trailing" secondItem="Gfo-mH-0mV" secondAttribute="trailing" id="HSX-eJ-Wan"/>
                     <constraint firstItem="Gfo-mH-0mV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aWD-hD-MdL"/>
+                    <constraint firstItem="CVh-lB-sIa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gD8-gb-Mnt"/>
                     <constraint firstItem="Gfo-mH-0mV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wSh-AT-zlU"/>
                 </constraints>
             </tableViewCellContentView>

@@ -131,7 +131,7 @@ class RaoVatCommentViewController: BaseViewController {
     
     
     @IBAction func onSendComment(_ sender: Any) {
-        if let content = tfContent.text {
+        if let content = tfContent.text, content != "" {
             self.tfContent.text = ""
             RaoVatService.shared.api.request(RaoVatApi.addComment(adv_detail_id: data.id!, comment_id: 0, content: content))
                 .toJSON()
@@ -147,6 +147,8 @@ class RaoVatCommentViewController: BaseViewController {
                     }
                 }).addDisposableTo(bag)
 
+        }else{
+            
         }
     }
 }
@@ -168,7 +170,7 @@ class CommentTableViewCell: UITableViewCell {
         }
         lbName.text = data.userName
         lbComment.text = data.content
-        lbTimeAgo.text = data.timeAgo?.toFormatedTime()
+        lbTimeAgo.text = data.timeAgo?.toFormatedRaoVatTime()
         if advDetail == nil {
             btnReply.isHidden = true
         }
@@ -192,7 +194,7 @@ class ReplyCommentTableViewCell: UITableViewCell {
         }
         lbName.text = data.userName
         lbComment.text = data.content
-        lbTimeAgo.text = data.timeAgo?.toFormatedTime()
+        lbTimeAgo.text = data.timeAgo?.toFormatedRaoVatTime()
         
     }
 }

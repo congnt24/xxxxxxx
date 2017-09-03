@@ -2414,7 +2414,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="yyyy-MM-dd"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd-MM-yyyy"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>

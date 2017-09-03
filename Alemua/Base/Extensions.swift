@@ -33,6 +33,22 @@ extension Date {
 }
 
 extension Int {
+//    =1: Chỉ mua tại web đã chỉ định
+//    =2: Đúng sản phẩm, giá cạnh tranh, không chỉ định nơi mua
+//    =3: Hàng có sẵn
+//    =4: Chỉ mua khi có giảm giá
+    func toProductOptionName() -> String {
+        switch self {
+        case 1:
+            return "Chỉ mua tại web đã chỉ định"
+        case 2:
+            return "Đúng sản phẩm, giá cạnh tranh, không chỉ định nơi mua"
+        case 3:
+            return "Hàng có sẵn"
+        default:
+            return "Chỉ mua khi có giảm giá"
+        }
+    }
     
     func toDistanceFormated() -> String {
         
@@ -64,7 +80,7 @@ extension String {
         return dateFormatterPrint.string(from: date!)
     }
     func toFormatedPrice() -> String {
-        return self + " VND"
+        return self.toRaoVatPriceFormat() + " VND"
     }
     
     
@@ -121,6 +137,9 @@ extension UIImageView {
 }
 
 extension Int {
+    func toFormatedRaoVatTime() -> String {
+        return "\(self) phút trước"
+    }
     func toFormatedTime() -> String {
         return "\(self / 60) phút trước"
     }

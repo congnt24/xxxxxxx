@@ -48,48 +48,49 @@ class RaoVatDetailViewController: BaseViewController {
                 //photo
 
                 if let p = data.photo {
+                    imageSlider.contentScaleMode = .scaleAspectFill
                     let photos = p.splitted(by: ",")
                     imageSlider.setImageInputs(photos.map { KingfisherSource(urlString: $0)! })
-                    
+
                 }
-                btnFav.onChange = {bo in
+                btnFav.onChange = { bo in
                     if !bo {
                         self.btnFav.borderColor = UIColor.init(hexString: "#E94F2E")
                         self.btnFav.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
-                    }else{
+                    } else {
                         self.btnFav.borderColor = UIColor.lightGray
                         self.btnFav.setTitleColor(UIColor.lightGray, for: .normal)
                     }
                 }
-                
-                btnShare.onChange = {bo in
+
+                btnShare.onChange = { bo in
                     if !bo {
                         self.btnShare.borderColor = UIColor.init(hexString: "#E94F2E")
                         self.btnShare.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
-                    }else{
+                    } else {
                         self.btnShare.borderColor = UIColor.lightGray
                         self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
                     }
                 }
                 btnFav.isChecked = !(data.isLike! == 1)
                 btnShare.isChecked = !(data.isSafe! == 1)
-                
-                btnFav.onChange = {bo in
+
+                btnFav.onChange = { bo in
                     if !bo {
                         self.btnFav.borderColor = UIColor.init(hexString: "#E94F2E")
                         self.btnFav.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
-                    }else{
+                    } else {
                         self.btnFav.borderColor = UIColor.lightGray
                         self.btnFav.setTitleColor(UIColor.lightGray, for: .normal)
                     }
                     self.btnLike("")
                 }
-                
-                btnShare.onChange = {bo in
+
+                btnShare.onChange = { bo in
                     if !bo {
                         self.btnShare.borderColor = UIColor.init(hexString: "#E94F2E")
                         self.btnShare.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
-                    }else{
+                    } else {
                         self.btnShare.borderColor = UIColor.lightGray
                         self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
                     }
@@ -120,10 +121,10 @@ class RaoVatDetailViewController: BaseViewController {
                     break
                 }
             }).addDisposableTo(self.bag)
-        
-        
-        
-        
+
+
+
+
         imageSlider.activityIndicator = DefaultActivityIndicator(style: .whiteLarge, color: UIColor.init(hexString: "#E94F2E"))
         relateDatas.asObservable().bind(to: vcRelate.rx.items(cellIdentifier: "RelateCollectionViewCell")) { (index, item, cell) in
             (cell as! RelateCollectionViewCell).bindData(data: item)
@@ -174,70 +175,80 @@ class RaoVatDetailViewController: BaseViewController {
         RaoVatCoordinator.sharedInstance.showRaoVatComment(data: productDetail!)
     }
     @IBAction func onGoiDien(_ sender: Any) {
-        sendMessage(numbers: [productDetail?.userPhoneNumber ?? ""])
-    }
-    @IBAction func onGuiSMS(_ sender: Any) {
         call(number: productDetail?.userPhoneNumber ?? "")
     }
+    @IBAction func onGuiSMS(_ sender: Any) {
+        sendMessage(numbers: [productDetail?.userPhoneNumber ?? ""])
+    }
     @IBAction func btnLike(_ sender: Any) {
-        RaoVatService.shared.api.request(RaoVatApi.addFavorite(adv_detail_id: data.id!))
-            .toJSON()
-            .subscribe(onNext: { (res) in
-                switch res {
-                case .done(let result, let msg):
-                    Toast.init(text: msg).show()
-                    break
-                case .error(let msg):
-                    print("Error \(msg)")
-                    break
-                }
-            }).addDisposableTo(bag)
+        if !Prefs.isUserLogged {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+        } else {
+
+            RaoVatService.shared.api.request(RaoVatApi.addFavorite(adv_detail_id: data.id!))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result, let msg):
+                        Toast.init(text: msg).show()
+                        break
+                    case .error(let msg):
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(bag)
+        }
 
     }
     @IBAction func obMap(_ sender: Any) {
         RaoVatCoordinator.sharedInstance.showMapViewController(data: data)
     }
     @IBAction func onShare(_ sender: Any) {
+        if !Prefs.isUserLogged {
+            HomeCoordinator.sharedInstance.showLoginScreen()
+        } else {
+            
+        }
     }
 }
 
 
 
 extension RaoVatDetailViewController: MFMessageComposeViewControllerDelegate {
-    
-    
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult){
-        
+
+
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+
         switch (result) {
-            
+
         case .cancelled:
             break
-            
+
         case .failed:
-            
+
             break
-            
+
         case .sent:
-            
+
             break
-            
+
         default:
             break
         }
-        
+
         self.dismiss(animated: true) { () -> Void in
-            
+
         }
     }
-    
+
     func sendMessage(numbers: [String]) {
-        
+
         let messageVC = MFMessageComposeViewController()
-        
+
 //        messageVC.body = "My first custom SMS";
         messageVC.recipients = ["0123456789"]
         messageVC.messageComposeDelegate = self;
-        
+
         self.present(messageVC, animated: false, completion: nil)
     }
     func call(number: String) {
@@ -262,7 +273,7 @@ class RelateCollectionViewCell: UICollectionViewCell {
         lbOldPrice.setText(str: "\(data.price!)".toRaoVatPriceFormat().toFormatedPrice())
         lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toRaoVatPriceFormat().toFormatedPrice()
         btnPromo.setTitle("\(data.promotion ?? 0)%", for: .normal)
-        
+
     }
 }
 

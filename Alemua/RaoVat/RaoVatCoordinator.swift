@@ -76,7 +76,13 @@ extension RaoVatCoordinator {
     
     func showMapViewController(data: ProductResponse){
         let view: RaoVatMapViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatMapViewController.self)
-                view.data = data
+        view.data = data
+        navigation?.pushViewController(view, animated: true)
+    }
+    
+    func showSearchViewController(){
+        let view: RaoVatSearchViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatSearchViewController.self)
+//        view.data = data
         navigation?.pushViewController(view, animated: true)
     }
 }

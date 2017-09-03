@@ -26,6 +26,7 @@ class RaoVatCategoryViewController: BaseViewController {
     var filterRequest: FilterRequest?
 
     var reload = false
+    var textSearch: String?
 
 
     var refreshControl: UIRefreshControl!
@@ -75,8 +76,17 @@ class RaoVatCategoryViewController: BaseViewController {
 
         tableView.beginInfiniteScroll(true)
     }
+    
+    func onSearch(text: String?){
+        LoadingOverlay.shared.showOverlay(view: view)
+        textSearch = text
+        reload = true
+        currentPage = 1
+        fetchData()
+    }
 
     func reloadPage() {
+        textSearch = nil
         reload = true
         currentPage = 1
         fetchData()
@@ -95,6 +105,7 @@ class RaoVatCategoryViewController: BaseViewController {
                             self.reload = false
                             self.datas.value.removeAll()
                         }
+                        LoadingOverlay.shared.hideOverlayView()
                         if let arr = result.array {
                             self.datas.value.append(contentsOf: arr.map { ProductResponse(json: $0) })
                         }
@@ -108,7 +119,7 @@ class RaoVatCategoryViewController: BaseViewController {
                     }
                 }).addDisposableTo(bag)
         } else {
-            RaoVatService.shared.api.request(RaoVatApi.getAllAdv(adv_type: 1, category_id: data.id!, latitude: 0, longitude: 0, page_number: currentPage, text_search: nil))
+            RaoVatService.shared.api.request(RaoVatApi.getAllAdv(adv_type: 1, category_id: data.id!, latitude: 0, longitude: 0, page_number: currentPage, text_search: self.textSearch))
                 .toJSON()
                 .subscribe(onNext: { (res) in
                     switch res {
@@ -117,6 +128,7 @@ class RaoVatCategoryViewController: BaseViewController {
                             self.reload = false
                             self.datas.value.removeAll()
                         }
+                        LoadingOverlay.shared.hideOverlayView()
                         if let arr = result.array {
                             self.datas.value.append(contentsOf: arr.map { ProductResponse(json: $0) })
                         }
@@ -140,6 +152,9 @@ class RaoVatCategoryViewController: BaseViewController {
 
     @IBAction func onDangTin(_ sender: Any) {
         RaoVatCoordinator.sharedInstance.showRaoVatPublish(data: "")
+    }
+    @IBAction func onSearch(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showSearchViewController()
     }
 }
 

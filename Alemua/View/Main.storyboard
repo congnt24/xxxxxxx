@@ -4094,7 +4094,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lE1-4K-H1T">
-                                                                    <rect key="frame" x="0.0" y="4" width="200" height="35.5"/>
+                                                                    <rect key="frame" x="0.0" y="4" width="255" height="35.5"/>
                                                                     <subviews>
                                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="ic_viet_nam" translatesAutoresizingMaskIntoConstraints="NO" id="kMH-g2-xw9">
                                                                             <rect key="frame" x="0.0" y="0.0" width="64" height="35.5"/>
@@ -4114,7 +4114,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-WB-RYK">
-                                                                            <rect key="frame" x="107.5" y="0.0" width="92.5" height="35.5"/>
+                                                                            <rect key="frame" x="107.5" y="0.0" width="147.5" height="35.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>

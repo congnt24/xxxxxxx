@@ -14,6 +14,7 @@ import RxCocoa
 import Toaster
 import Kingfisher
 import ImageSlideshow
+import MessageUI
 
 class RaoVatDetailViewController: BaseViewController {
     var bag = DisposeBag()
@@ -173,8 +174,10 @@ class RaoVatDetailViewController: BaseViewController {
         RaoVatCoordinator.sharedInstance.showRaoVatComment(data: productDetail!)
     }
     @IBAction func onGoiDien(_ sender: Any) {
+        sendMessage(numbers: [productDetail?.userPhoneNumber ?? ""])
     }
     @IBAction func onGuiSMS(_ sender: Any) {
+        call(number: productDetail?.userPhoneNumber ?? "")
     }
     @IBAction func btnLike(_ sender: Any) {
         RaoVatService.shared.api.request(RaoVatApi.addFavorite(adv_detail_id: data.id!))
@@ -195,6 +198,50 @@ class RaoVatDetailViewController: BaseViewController {
         RaoVatCoordinator.sharedInstance.showMapViewController(data: data)
     }
     @IBAction func onShare(_ sender: Any) {
+    }
+}
+
+
+
+extension RaoVatDetailViewController: MFMessageComposeViewControllerDelegate {
+    
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult){
+        
+        switch (result) {
+            
+        case .cancelled:
+            break
+            
+        case .failed:
+            
+            break
+            
+        case .sent:
+            
+            break
+            
+        default:
+            break
+        }
+        
+        self.dismiss(animated: true) { () -> Void in
+            
+        }
+    }
+    
+    func sendMessage(numbers: [String]) {
+        
+        let messageVC = MFMessageComposeViewController()
+        
+//        messageVC.body = "My first custom SMS";
+        messageVC.recipients = ["0123456789"]
+        messageVC.messageComposeDelegate = self;
+        
+        self.present(messageVC, animated: false, completion: nil)
+    }
+    func call(number: String) {
+        UIApplication.shared.openURL(URL(string: "tel://\(number)")!)
     }
 }
 

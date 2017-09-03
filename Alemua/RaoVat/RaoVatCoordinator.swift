@@ -20,14 +20,14 @@ class RaoVatCoordinator: Coordinator {
 }
 
 extension RaoVatCoordinator {
-    func showRaoVatCategory(data: Any) {
+    func showRaoVatCategory(data: AdvCategoryResponse) {
         let view: RaoVatCategoryViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatCategoryViewController.self)
-        //        data = data
+            view.data = data
         navigation?.pushViewController(view, animated: true)
     }
-    func showRaoVatDetail(data: Any) {
+    func showRaoVatDetail(data: ProductResponse) {
         let view: RaoVatDetailViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatDetailViewController.self)
-        //        data = data
+        view.data = data
         navigation?.pushViewController(view, animated: true)
     }
     func showRaoVatPublish(data: Any) {
@@ -35,15 +35,21 @@ extension RaoVatCoordinator {
         //        data = data
         navigation?.pushViewController(view, animated: true)
     }
-    func showRaoVatComment(data: Any) {
+    func showRaoVatPublishForEdit(data: ProductResponse) {
+        let view: RaoVatPublishViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatPublishViewController.self)
+            view.data = data
+        navigation?.pushViewController(view, animated: true)
+    }
+    func showRaoVatComment(data: ProductDetailResponse) {
         let view: RaoVatCommentViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatCommentViewController.self)
-        //        data = data
+            view.data = data
         navigation?.pushViewController(view, animated: true)
     }
 
-    func showRaoVatReplyComment(data: Any) {
+    func showRaoVatReplyComment(data: CommentResponse, advDetail: ProductDetailResponse) {
         let view: RaoVatReplyCommentViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatReplyCommentViewController.self)
-        //        data = data
+            view.data = data
+            view.advDetail = advDetail
         navigation?.pushViewController(view, animated: true)
     }
     func showRaoVatProfile(data: Any) {
@@ -56,14 +62,21 @@ extension RaoVatCoordinator {
         view.actionType = data
         navigation?.pushViewController(view, animated: true)
     }
-    func showRaoVatFilter(data: Any) {
+    func showRaoVatFilter(data: AdvCategoryResponse) {
         let view: RaoVatFilterViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatFilterViewController.self)
-        //        data = data
+                view.data = data
         navigation?.pushViewController(view, animated: true)
     }
     func showRaoVatMenu(data: Any) {
         let view: RaoVatMenuViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatMenuViewController.self)
         //        data = data
+        navigation?.pushViewController(view, animated: true)
+    }
+    
+    
+    func showMapViewController(data: ProductResponse){
+        let view: RaoVatMapViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatMapViewController.self)
+                view.data = data
         navigation?.pushViewController(view, animated: true)
     }
 }

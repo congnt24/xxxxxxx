@@ -16,15 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-//        let facebookDidHandle = SDKApplicationDelegate.shared.application(app, open: url, options: options)
-//        let googleDidHandle = GIDSignIn.sharedInstance().handle(url,
-//                                                                sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
-//                                                                annotation: [:])
-//        return googleDidHandle || facebookDidHandle
-//    }
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //facebook auth
@@ -32,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         let _ = AlemuaApi()
+        let _ = RaoVatService()
         //SOcket io
         let _ = SocketIOHelper()
-
+        GoogleMapHelper.configure()
         //keyboard
         IQKeyboardManager.sharedManager().enable = true
         //init coordinator
@@ -56,12 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
-        // [START set_messaging_delegate]
+        
         Messaging.messaging().delegate = self
-        // [END set_messaging_delegate]
-        // Register for remote notifications. This shows a permission dialog on first run, to
-        // show the dialog at a more appropriate time move this registration accordingly.
-        // [START register_for_notifications]
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -83,14 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // [START receive_message]
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print message ID.
-        if let messageID = userInfo[gcmMessageIDKey] {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {        if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID1: \(messageID)")
         }
 
@@ -100,12 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID2: \(messageID)")
         }

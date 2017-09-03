@@ -12,43 +12,59 @@ import AwesomeMVVM
 import RxSwift
 import RxCocoa
 import SwipeCellKit
+import Toaster
+import Kingfisher
 
 class RaoVatCategoryViewController: BaseViewController {
+    public static var shared: RaoVatCategoryViewController!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     var bag = DisposeBag()
     var currentPage = 1
-    var datas = Variable<[String]>([])
-    
-    
+    var datas = Variable<[ProductResponse]>([])
+    var data: AdvCategoryResponse!
+    var filterRequest: FilterRequest?
+
+    var reload = false
+
+
     var refreshControl: UIRefreshControl!
     override func bindToViewModel() {
+        RaoVatCategoryViewController.shared = self
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        
+
         initData()
+        navBar.title = data.name
     }
-    
+
     func refresh(_ sender: Any) {
         reloadPage()
         refreshControl.endRefreshing()
     }
     override func responseFromViewModel() {
-        
+
     }
-    
-    
-    func initData(){
+
+    override func viewWillAppear(_ animated: Bool) {
+        if (filterRequest != nil) {
+            refresh("")
+        }
+    }
+
+
+    func initData() {
+        tableView.register(nib: UINib(nibName: "RaoVatCategoryTableViewCell", bundle: nil), withCellClass: RaoVatCategoryTableViewCell.self)
         datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "RaoVatCategoryTableViewCell")) { (ip, item, cell) in
             (cell as RaoVatCategoryTableViewCell).bindData(data: item)
-            }.addDisposableTo(bag)
-        
+        }.addDisposableTo(bag)
+
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
             RaoVatCoordinator.sharedInstance.showRaoVatDetail(data: self.datas.value[ip.row])
         }).addDisposableTo(bag)
-        
+
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
@@ -56,26 +72,72 @@ class RaoVatCategoryViewController: BaseViewController {
             self.fetchData()
             tv.finishInfiniteScroll()
         }
-        
+
         tableView.beginInfiniteScroll(true)
     }
-    
-    func reloadPage(){
+
+    func reloadPage() {
+        reload = true
         currentPage = 1
-        datas.value = (0...10).map {"\($0)"}
+        fetchData()
     }
-    
-    
+
+
     //Interact API
     func fetchData() {
-        datas.value.append(contentsOf: (0...10).map {"\($0)"})
-        currentPage+=1
+        if let data = filterRequest {
+            RaoVatService.shared.api.request(RaoVatApi.filterAdv(filterRequest: data, lat: 0, lon: 0, page_number: currentPage))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result, _):
+                        if self.reload {
+                            self.reload = false
+                            self.datas.value.removeAll()
+                        }
+                        if let arr = result.array {
+                            self.datas.value.append(contentsOf: arr.map { ProductResponse(json: $0) })
+                        }
+                        self.currentPage += 1
+
+                        break
+                    case .error(let msg):
+                        Toast.init(text: msg).show()
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(bag)
+        } else {
+            RaoVatService.shared.api.request(RaoVatApi.getAllAdv(adv_type: 1, category_id: data.id!, latitude: 0, longitude: 0, page_number: currentPage, text_search: nil))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result, _):
+                        if self.reload {
+                            self.reload = false
+                            self.datas.value.removeAll()
+                        }
+                        if let arr = result.array {
+                            self.datas.value.append(contentsOf: arr.map { ProductResponse(json: $0) })
+                        }
+                        self.currentPage += 1
+
+                        break
+                    case .error(let msg):
+                        Toast.init(text: msg).show()
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(bag)
+        }
+
+
     }
 
     @IBAction func onFilter(_ sender: Any) {
-        RaoVatCoordinator.sharedInstance.showRaoVatFilter(data: "")
+        RaoVatCoordinator.sharedInstance.showRaoVatFilter(data: data)
     }
-    
+
     @IBAction func onDangTin(_ sender: Any) {
         RaoVatCoordinator.sharedInstance.showRaoVatPublish(data: "")
     }
@@ -93,13 +155,35 @@ class RaoVatCategoryTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var oldPrice: StrikeThroughLabel!
     @IBOutlet weak var views: UILabel!
     @IBOutlet weak var duration: UILabel!
-    
+
     override func awakeFromNib() {
-        
+
     }
-    
-    func bindData(data: Any) {
-        
+
+    func bindData(data: ProductResponse) {
+        if let p = data.photo, p != "" {
+            let arr = p.splitted(by: ",")
+            photo.kf.setImage(with: URL(string: arr[0]), placeholder: UIImage(named: "no_image"))
+        }
+        if let pro = data.promotion, pro > 0 {
+            discount.isHidden = false
+            discount.setTitle("\(pro)%", for: .normal)
+        } else {
+            discount.isHidden = true
+        }
+        name.text = data.title
+        distance.text = "\((data.distance ?? 0).toDistanceFormated())"
+        if data.productType! == 1 {
+            newItem.text = "Hàng mới"
+        } else if data.productType! == 2 {
+            newItem.text = "Hàng sang tay"
+        } else {
+            newItem.text = "Đã qua sử dụng"
+        }
+        oldPrice.setText(str: "\(data.price!)".toRaoVatPriceFormat().toFormatedPrice())
+        newPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toRaoVatPriceFormat().toFormatedPrice()
+        views.text = "\(data.numberViewed ?? 0)"
+        duration.text = data.endDate?.toDate()?.toFormatedDuration()
     }
 }
 

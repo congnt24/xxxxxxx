@@ -27,14 +27,36 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var rateDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("DeliveryBaoGiaFinalViewController")
 
-        itemView.bindData(title: modelQuoteData.productName, imageUrl: modelQuoteData.photo, baogia: "\(modelQuoteData.numberProduct ?? 0)")
+        itemView.bindData(title: modelQuoteData.productName, imageUrl: modelQuoteData.photo, baogia: "\(modelQuoteData.quotes?.count ?? 0)")
         tfMuatu.text = modelQuoteData.buyFrom
         tfGiaoden.text = modelQuoteData.deliveryTo
         tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(modelQuoteData.websitePrice!)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
+        
+        if modelQuoteData.productOption == 4 {
+            rateDetail.showGiamGia()
+        }
+//        let rate = RateDetailData()
+        
+//        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 1, orderId: self.modelQuoteData.id!))
+//            .toJSON()
+//            .subscribe(onNext: { (res) in
+//                switch res {
+//                case .done(let result, _):
+//                    let orderDetail = ModelOrderBaoGiaData(json: result)
+//                    self.rateDetail.bindData(order: orderDetail)
+//                    print("Cancel success")
+//                    break
+//                case .error(let msg):
+//                    print("Error \(msg)")
+//                    break
+//                default: break
+//                }
+//            }).addDisposableTo(bag)
         
         rateDetail.enableEditing()
         rateDetail.onPriceChange = { (price) in

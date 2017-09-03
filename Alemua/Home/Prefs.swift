@@ -42,7 +42,17 @@ class Prefs {
             UserDefaults.standard.synchronize()
         }
     }
-
+    
+    class var userName: String {
+        get {
+            return UserDefaults.standard.string(forKey: "userName") ?? ""
+        }
+        set(token) {
+            UserDefaults.standard.set(token, forKey: "userName")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     class var apiTokenShipper: String {
         get {
             if Prefs.isTest {

@@ -111,7 +111,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         taodonhangRequest.websiteUrl = tfWebsite.text
         taodonhangRequest.promotionCode = tfCode.text
         taodonhangRequest.quantity = stSoLuong.number
-        taodonhangRequest.productOption = grSelect.checkedPosition
+        taodonhangRequest.productOption = grSelect.checkedPosition + 1
         taodonhangRequest.numberProduct = stSoLuong.number
     }
     @IBAction func onAddPhoto(_ sender: Any) {

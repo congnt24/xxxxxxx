@@ -102,6 +102,7 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
                 switch res {
                 case .done( _):
                     AppCoordinator.sharedInstance.navigation?.popViewController()
+                    Prefs.userName = req.name ?? ""
                     print("Update profile success")
                     break
                 case .error(let msg):

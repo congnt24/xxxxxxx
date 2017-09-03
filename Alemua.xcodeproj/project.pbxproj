@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0207F21C1F5BA4A900FDB7CA /* LikeShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */; };
+		0207F21E1F5BAC7E00FDB7CA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F21D1F5BAC7E00FDB7CA /* MapViewController.swift */; };
+		0207F2201F5BAD9600FDB7CA /* GoogleMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F21F1F5BAD9600FDB7CA /* GoogleMapHelper.swift */; };
+		0207F2221F5BAED100FDB7CA /* RaoVatMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F2211F5BAED100FDB7CA /* RaoVatMapViewController.swift */; };
+		0207F2261F5BB6B300FDB7CA /* ReplyCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0207F2241F5BB6B300FDB7CA /* ReplyCommentTableViewCell.xib */; };
+		0207F2281F5BB9F200FDB7CA /* RaoVatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F2271F5BB9F200FDB7CA /* RaoVatSearchViewController.swift */; };
 		0213995F1F286ABB00BB0642 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213995E1F286ABB00BB0642 /* ItemView.swift */; };
 		021399611F286AC700BB0642 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021399601F286AC700BB0642 /* ItemView.xib */; };
 		021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021399621F286B1000BB0642 /* BaseCustomView.swift */; };
 		02144A741F38AACF00187481 /* DanhGiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */; };
 		02144A751F38AACF00187481 /* DanhGiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */; };
+		0218B7A41F59B2EE0042E54B /* RaoVatApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B7A31F59B2EE0042E54B /* RaoVatApi.swift */; };
+		0218B7A61F59B54F0042E54B /* RaoVatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B7A51F59B54F0042E54B /* RaoVatRequest.swift */; };
+		0218B7A81F59B55C0042E54B /* RaoVatResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218B7A71F59B55C0042E54B /* RaoVatResponse.swift */; };
 		0218D7571F35DE6E008C8F6D /* DanhSachKHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */; };
 		021915521F51792E007E18EE /* CheckedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021915511F51792E007E18EE /* CheckedButton.swift */; };
 		021B6EB31F3370FE00DF5CD6 /* ModelOrderClientResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */; };
@@ -123,6 +132,8 @@
 		028AF0ED1F35C7B400387FFC /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0EC1F35C7B400387FFC /* ProfileResponse.swift */; };
 		029B09111F207C990036F01F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B090F1F207C990036F01F /* BaseViewModel.swift */; };
 		029B09121F207C990036F01F /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B09101F207C990036F01F /* TableViewViewController.swift */; };
+		02A21E3B1F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */; };
+		02A21E411F5AF8A10036326C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A21E3F1F5AF8A10036326C /* CommentTableViewCell.xib */; };
 		02A2AEE41F20E569007EB372 /* SingleOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */; };
 		02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEE51F20F8A7007EB372 /* AwesomeTableViewController.swift */; };
 		02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEE91F210108007EB372 /* AwesomeUIView.swift */; };
@@ -182,11 +193,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeShareButton.swift; sourceTree = "<group>"; };
+		0207F21D1F5BAC7E00FDB7CA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = RaoVat/MapViewController.swift; sourceTree = "<group>"; };
+		0207F21F1F5BAD9600FDB7CA /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleMapHelper.swift; path = RaoVat/GoogleMapHelper.swift; sourceTree = "<group>"; };
+		0207F2211F5BAED100FDB7CA /* RaoVatMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaoVatMapViewController.swift; sourceTree = "<group>"; };
+		0207F2241F5BB6B300FDB7CA /* ReplyCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReplyCommentTableViewCell.xib; sourceTree = "<group>"; };
+		0207F2271F5BB9F200FDB7CA /* RaoVatSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatSearchViewController.swift; path = RaoVat/RaoVatSearchViewController.swift; sourceTree = "<group>"; };
 		0213995E1F286ABB00BB0642 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = CustomView/ItemView.swift; sourceTree = "<group>"; };
 		021399601F286AC700BB0642 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemView.xib; path = CustomView/ItemView.xib; sourceTree = "<group>"; };
 		021399621F286B1000BB0642 /* BaseCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
 		02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhGiaTableViewCell.swift; path = CustomView/DanhGiaTableViewCell.swift; sourceTree = "<group>"; };
 		02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DanhGiaTableViewCell.xib; path = CustomView/DanhGiaTableViewCell.xib; sourceTree = "<group>"; };
+		0218B7A31F59B2EE0042E54B /* RaoVatApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaoVatApi.swift; sourceTree = "<group>"; };
+		0218B7A51F59B54F0042E54B /* RaoVatRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaoVatRequest.swift; sourceTree = "<group>"; };
+		0218B7A71F59B55C0042E54B /* RaoVatResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaoVatResponse.swift; sourceTree = "<group>"; };
 		0218D7561F35DE6E008C8F6D /* DanhSachKHViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DanhSachKHViewController.swift; path = Account/DanhSachKHViewController.swift; sourceTree = "<group>"; };
 		021915511F51792E007E18EE /* CheckedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckedButton.swift; path = CustomView/CheckedButton.swift; sourceTree = "<group>"; };
 		021B6EB21F3370FE00DF5CD6 /* ModelOrderClientResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelOrderClientResponse.swift; sourceTree = "<group>"; };
@@ -300,6 +320,8 @@
 		028AF0EC1F35C7B400387FFC /* ProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileResponse.swift; path = Account/ProfileResponse.swift; sourceTree = "<group>"; };
 		029B090F1F207C990036F01F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		029B09101F207C990036F01F /* TableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
+		02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RaoVatCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		02A21E3F1F5AF8A10036326C /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleOrderViewController.swift; path = Home/SingleOrderViewController.swift; sourceTree = "<group>"; };
 		02A2AEE51F20F8A7007EB372 /* AwesomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTableViewController.swift; sourceTree = "<group>"; };
 		02A2AEE91F210108007EB372 /* AwesomeUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeUIView.swift; sourceTree = "<group>"; };
@@ -398,14 +420,18 @@
 				021C97FD1F5070EB0058CBF0 /* CustomView */,
 				021C97F11F5070CE0058CBF0 /* RaoVatViewController.swift */,
 				021C97E71F5070CE0058CBF0 /* RaoVatCategoryViewController.swift */,
-				021C97E81F5070CE0058CBF0 /* RaoVatCommentViewController.swift */,
 				021C97EF1F5070CE0058CBF0 /* RaoVatPublishViewController.swift */,
 				021C97EA1F5070CE0058CBF0 /* RaoVatDetailViewController.swift */,
 				021C97EB1F5070CE0058CBF0 /* RaoVatFilterViewController.swift */,
 				021C97EC1F5070CE0058CBF0 /* RaoVatMenuViewController.swift */,
 				021C97EE1F5070CE0058CBF0 /* RaoVatProfileViewController.swift */,
 				021C97ED1F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift */,
+				021C97E81F5070CE0058CBF0 /* RaoVatCommentViewController.swift */,
 				021C97F01F5070CE0058CBF0 /* RaoVatReplyCommentViewController.swift */,
+				0207F21D1F5BAC7E00FDB7CA /* MapViewController.swift */,
+				0207F2211F5BAED100FDB7CA /* RaoVatMapViewController.swift */,
+				0207F21F1F5BAD9600FDB7CA /* GoogleMapHelper.swift */,
+				0207F2271F5BB9F200FDB7CA /* RaoVatSearchViewController.swift */,
 			);
 			name = RaoVat;
 			sourceTree = "<group>";
@@ -415,6 +441,10 @@
 			children = (
 				021C97FE1F5070EB0058CBF0 /* RaoVatUserView.swift */,
 				021C97FF1F5070EB0058CBF0 /* RaoVatUserView.xib */,
+				02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */,
+				02A21E3F1F5AF8A10036326C /* CommentTableViewCell.xib */,
+				0207F2241F5BB6B300FDB7CA /* ReplyCommentTableViewCell.xib */,
+				0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */,
 			);
 			name = CustomView;
 			path = RaoVat/CustomView;
@@ -739,6 +769,9 @@
 				02A647451F3410E4006D66D4 /* RequestsModel.swift */,
 				02F1AE8D1F35587000AD4466 /* ResponseModel.swift */,
 				025860931F3760740012DD49 /* AlemuaResult.swift */,
+				0218B7A31F59B2EE0042E54B /* RaoVatApi.swift */,
+				0218B7A51F59B54F0042E54B /* RaoVatRequest.swift */,
+				0218B7A71F59B55C0042E54B /* RaoVatResponse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -898,10 +931,13 @@
 				02F775321F1F390300556BED /* Login.storyboard in Resources */,
 				021B82AB1F24E98600B757D7 /* DeliveryTableViewCell.xib in Resources */,
 				02AD2A6E1F4F20B200DDEFE9 /* GoogleService-Info.plist in Resources */,
+				02A21E3B1F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib in Resources */,
 				02F775331F1F390300556BED /* Main.storyboard in Resources */,
+				02A21E411F5AF8A10036326C /* CommentTableViewCell.xib in Resources */,
 				023B39D31F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.xib in Resources */,
 				021B82921F241F8100B757D7 /* BaoGiaTableViewCell.xib in Resources */,
 				021C97CE1F505D240058CBF0 /* RaoVat.storyboard in Resources */,
+				0207F2261F5BB6B300FDB7CA /* ReplyCommentTableViewCell.xib in Resources */,
 				0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */,
 				0223C7F11F2A1526005949C9 /* UserView.xib in Resources */,
 				025D40031F2394EA00BCD5F7 /* DonHangTableViewCell.xib in Resources */,
@@ -994,6 +1030,7 @@
 				02F7752D1F1F390300556BED /* SettingViewController.swift in Sources */,
 				0223C7EB1F29B9E0005949C9 /* ReviewView.swift in Sources */,
 				02F775501F1F731500556BED /* ChatWrapperViewController.swift in Sources */,
+				0218B7A41F59B2EE0042E54B /* RaoVatApi.swift in Sources */,
 				028AF0E91F35BB2100387FFC /* BaseResponse.swift in Sources */,
 				022D72B11F27A47B00CC548E /* OrderDialogDangChuyen1ViewController.swift in Sources */,
 				023E30981F2DD3CA00D16D04 /* FirebaseAuthHelper.swift in Sources */,
@@ -1003,6 +1040,7 @@
 				021B829D1F24576800B757D7 /* AwesomeDialog.swift in Sources */,
 				0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */,
 				02530E7E1F2C70EC00334345 /* OrderFilterViewController.swift in Sources */,
+				0207F21E1F5BAC7E00FDB7CA /* MapViewController.swift in Sources */,
 				025D40051F23A85D00BCD5F7 /* OrderCoordinator.swift in Sources */,
 				025CC07C1F2646C0003C0883 /* DeliveryNavTabBarCoordinator.swift in Sources */,
 				021C97F61F5070CE0058CBF0 /* RaoVatFilterViewController.swift in Sources */,
@@ -1025,10 +1063,12 @@
 				02F775541F1FB23100556BED /* InputField.swift in Sources */,
 				0223C7F31F2A2361005949C9 /* DanhGiaView.swift in Sources */,
 				02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */,
+				0207F21C1F5BA4A900FDB7CA /* LikeShareButton.swift in Sources */,
 				025D40021F2394EA00BCD5F7 /* DonHangTableViewCell.swift in Sources */,
 				021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */,
 				02530E8C1F2C864C00334345 /* AppConstant.swift in Sources */,
 				022A8D111F28F05000D69411 /* TaoDonHang2ViewController.swift in Sources */,
+				0218B7A81F59B55C0042E54B /* RaoVatResponse.swift in Sources */,
 				025D3FFD1F23917B00BCD5F7 /* AccountSettingViewController.swift in Sources */,
 				0213995F1F286ABB00BB0642 /* ItemView.swift in Sources */,
 				027B01311F1E621600D576CE /* AppDelegate.swift in Sources */,
@@ -1053,6 +1093,7 @@
 				022A8D131F28F05C00D69411 /* TaoDonHang3ViewController.swift in Sources */,
 				022D72A71F279C8900CC548E /* OrderBaoGiaDetailSubViewController.swift in Sources */,
 				021B82AE1F24F0C500B757D7 /* ConversationTableViewCell.swift in Sources */,
+				0207F2221F5BAED100FDB7CA /* RaoVatMapViewController.swift in Sources */,
 				02BF72741F23672000F1F4BC /* OrderOrderViewController.swift in Sources */,
 				02F775171F1F38E900556BED /* HomeViewModel.swift in Sources */,
 				02BF72691F23338E00F1F4BC /* OrderMainViewController.swift in Sources */,
@@ -1065,6 +1106,7 @@
 				025D3FFF1F23919500BCD5F7 /* AccountInviteViewController.swift in Sources */,
 				025CC07E1F26470B003C0883 /* DeliveryNavTabBarViewController.swift in Sources */,
 				021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */,
+				0207F2281F5BB9F200FDB7CA /* RaoVatSearchViewController.swift in Sources */,
 				021C97F81F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
 				023B39DD1F2B43EE00E53A6D /* KhachHangTableViewCell.swift in Sources */,
@@ -1098,6 +1140,7 @@
 				0223C7FB1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift in Sources */,
 				0218D7571F35DE6E008C8F6D /* DanhSachKHViewController.swift in Sources */,
 				021C97F41F5070CE0058CBF0 /* RaoVatCoordinator.swift in Sources */,
+				0218B7A61F59B54F0042E54B /* RaoVatRequest.swift in Sources */,
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
 				0223C7FD1F2A44A1005949C9 /* ThanhToanViewController.swift in Sources */,
 				022A8D0F1F28F04200D69411 /* TaoDonHang1ViewController.swift in Sources */,
@@ -1112,6 +1155,7 @@
 				022D72AF1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift in Sources */,
 				02530E8A1F2C85C900334345 /* Prefs.swift in Sources */,
 				024C6A101F3AA01100D31868 /* SocketIOHelper.swift in Sources */,
+				0207F2201F5BAD9600FDB7CA /* GoogleMapHelper.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,
 				023056D91F2CE59C00D01ECA /* Extensions.swift in Sources */,
 				02525C411F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift in Sources */,

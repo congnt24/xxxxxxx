@@ -11,6 +11,7 @@ import Kingfisher
 
 class NotifyTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var content: UIView!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!
@@ -31,6 +32,11 @@ class NotifyTableViewCell: UITableViewCell {
         title.text = "Notification"
         if let p = data.photo {
             photo.kf.setImage(with: URL(string: p))
+        }
+        if data.isRead ?? 0 == 1 {
+            content.backgroundColor = UIColor.init(hexString: "#F5FAFD")
+        } else {
+            content.backgroundColor = UIColor.clear
         }
     }
 }

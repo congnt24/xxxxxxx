@@ -13,6 +13,7 @@ import RxSwift
 
 struct RateDetailData {
     var tonggia: Int?
+    var discount: Int?
     var thue: Int?
     var phichuyennoidia: Int?
     var phinguoimua: Int?
@@ -25,6 +26,7 @@ struct RateDetailData {
 class RateDetail: AwesomeToggleViewByHeight {
 
 
+    @IBOutlet weak var giamgia: AwesomeTextField!
     @IBOutlet weak var uiStackView: UIStackView!
     @IBOutlet weak var tonggia: AwesomeTextField!
     @IBOutlet weak var thue: AwesomeTextField!
@@ -54,6 +56,9 @@ class RateDetail: AwesomeToggleViewByHeight {
         listView = uiStackView.arrangedSubviews.map { ($0 as! AwesomeTextField) }
     }
 
+    public func showGiamGia(){
+        giamgia.isHidden = false
+    }
     public func enableEditing(){
         tonggia.isUserInteractionEnabled = true
         thue.isUserInteractionEnabled = true
@@ -62,9 +67,21 @@ class RateDetail: AwesomeToggleViewByHeight {
         phivanchuyenvealemua.isUserInteractionEnabled = true
         phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
         phigiaodichquaalemua.isUserInteractionEnabled = true
+        giamgia.isUserInteractionEnabled = true
         
-        bindData(RateDetailData(tonggia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        
+        bindData(RateDetailData(tonggia: 0, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
         //
+        
+        
+        
+        giamgia.rx.text.subscribe(onNext: { (str) in
+            self.rateData.discount = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
+        
         tonggia.rx.text.subscribe(onNext: { (str) in
             self.rateData.tonggia = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
@@ -110,7 +127,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     }
     
     public func setDefaultValue(value: Int?) {
-        bindData(RateDetailData(tonggia: value, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: value, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
     }
 
     public func setValues(values: [String]) {
@@ -139,10 +156,23 @@ class RateDetail: AwesomeToggleViewByHeight {
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
         }
     }
+    
+    func bindData(order: ModelOrderBaoGiaData) {
+        tonggia.text = "\(order.totalPrice!)".toFormatedPrice()
+        thue.text = "\(order.tax!)".toFormatedPrice()
+        phichuyennoidia.text = "\(order.transferDomesticFee!)".toFormatedPrice()
+        phinguoimua.text = "\(order.transferBuyerFee!)".toFormatedPrice()
+        phivanchuyenvealemua.text = "\(order.transferAlemuaFree!)".toFormatedPrice()
+        phivanchuyenvetaynguoimua.text = "\(order.transferToBuyerFee!)".toFormatedPrice()
+        phigiaodichquaalemua.text = "\(order.buyingPrice!)".toFormatedPrice()
+    }
 
     func calculateTotal() -> Int? {
         var arr = [Int]()
-        arr.append(rateData.tonggia ?? 0)
+        let dis = Float(rateData.discount ?? 0) / Float(100)
+        let tong = Float(rateData.tonggia ?? 0)
+        let discount = dis * tong
+        arr.append(Int(tong - discount))
         arr.append(rateData.thue ?? 0)
         arr.append(rateData.phichuyennoidia ?? 0)
         arr.append(rateData.phigiaodichquaalemua ?? 0)

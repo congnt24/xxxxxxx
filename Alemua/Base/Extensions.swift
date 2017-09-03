@@ -13,7 +13,44 @@ import RxSwift
 import SwiftyJSON
 import Moya
 
+
+extension Date {
+    func toFormatedDuration() -> String {
+        let now = Date()
+        let components = Calendar.current.dateComponents([.day, .hour, .minute], from: self, to: now)
+        
+        let day = components.day ?? 0
+        let hour = components.hour ?? 0
+        let min = components.minute ?? 0
+        if day > 0 {
+            return "\(day) ngày trước"
+        }
+        if hour > 0 {
+            return "\(hour) giờ trước"
+        }
+        return "\(min) phút trước"
+    }
+}
+
+extension Int {
+    
+    func toDistanceFormated() -> String {
+        
+        return "\(self/1000) km"
+    }
+}
+
 extension String {
+    
+    func toRaoVatPriceFormat() -> String {
+        let price = (Int(self) ?? 0) as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "vi_VN")
+        var f = (formatter.string(from: price) ?? "d 0") // $123"
+        f = f.substring(from: f.index(f.startIndex, offsetBy: 2))
+        return f
+    }
     func convertToLink() -> String {
         return self.hasPrefix("http://") || self.hasPrefix("https://") ? self : "http://\(self)"
     }
@@ -84,7 +121,6 @@ extension UIImageView {
 }
 
 extension Int {
-
     func toFormatedTime() -> String {
         return "\(self / 60) phút trước"
     }

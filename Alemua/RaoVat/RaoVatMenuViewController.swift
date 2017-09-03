@@ -24,16 +24,21 @@ class RaoVatMenuViewController: BaseViewController {
         
     }
     @IBAction func onTrangChu(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.navigation?.popToRootViewController(animated: true)
     }
     @IBAction func onProfile(_ sender: Any) {
         RaoVatCoordinator.sharedInstance.showRaoVatProfile(data: "")
     }
     @IBAction func onFavorite(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showRaoVatListAction(data: .Favorite)
     }
     @IBAction func onPublished(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showRaoVatListAction(data: .Published)
     }
     @IBAction func onNotify(_ sender: Any) {
         uiSwitch.isOn = !uiSwitch.isOn
+        
+        
     }
     @IBAction func onSwitchNotify(_ sender: Any) {
     }

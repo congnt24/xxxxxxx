@@ -20,3 +20,15 @@ class AwesomeBackBarButton: UIBarButtonItem {
         AppCoordinator.sharedInstance.back()
     }
 }
+
+class AwesomeBackButton: UIButton {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addTarget(self, action: #selector(back), for: .touchUpInside)
+    }
+    
+    func back(sender: UIButton) {
+        AppCoordinator.sharedInstance.back()
+    }
+}

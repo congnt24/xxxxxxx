@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="ReplyCommentTableViewCell" customModule="Alemua" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lAv-3o-BkF">
+                        <rect key="frame" x="48" y="0.0" width="272" height="76"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bmn-ja-kR1">
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="72"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="eB9-SH-B24">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="qVR-I5-LZf">
+                                                <rect key="frame" x="8" y="8" width="56" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="56" id="js7-BD-jXN"/>
+                                                    <constraint firstAttribute="height" constant="56" id="kZu-zt-9kL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="qVR-I5-LZf" firstAttribute="top" secondItem="eB9-SH-B24" secondAttribute="top" constant="8" id="FiM-9g-k6h"/>
+                                            <constraint firstAttribute="bottom" secondItem="qVR-I5-LZf" secondAttribute="bottom" constant="8" id="GWE-WC-n6A"/>
+                                            <constraint firstAttribute="trailing" secondItem="qVR-I5-LZf" secondAttribute="trailing" constant="8" id="GWr-nR-5vc"/>
+                                            <constraint firstAttribute="height" constant="72" id="O6d-pJ-w2D"/>
+                                            <constraint firstItem="qVR-I5-LZf" firstAttribute="leading" secondItem="eB9-SH-B24" secondAttribute="leading" constant="8" id="dvK-mB-uH4"/>
+                                            <constraint firstAttribute="width" constant="72" id="hie-QP-NEt"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-8i-w90">
+                                        <rect key="frame" x="80" y="0.0" width="192" height="72"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Pn-Ps-wuT">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Nguyện thị trà mi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whd-iZ-cnh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="17"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hàng zin nhé" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9k-8r-ZU9">
+                                                        <rect key="frame" x="0.0" y="17" width="192" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HYa-2i-3TQ">
+                                                <rect key="frame" x="0.0" y="48" width="192" height="24"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-clock" translatesAutoresizingMaskIntoConstraints="NO" id="l5Z-qa-tXL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="EAa-r9-8hQ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 phút trước" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfs-KH-LRu">
+                                                        <rect key="frame" x="24" y="0.0" width="168" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="PkD-Mk-lLy"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dGa-8i-w90" firstAttribute="centerY" secondItem="Bmn-ja-kR1" secondAttribute="centerY" id="W0Z-yv-SBc"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2F-2k-Xfl">
+                                <rect key="frame" x="0.0" y="72" width="272" height="4"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="NZc-yL-Zxa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="lAv-3o-BkF" secondAttribute="bottom" id="A6w-bt-hlD"/>
+                    <constraint firstAttribute="trailing" secondItem="lAv-3o-BkF" secondAttribute="trailing" id="N7o-Aw-b83"/>
+                    <constraint firstItem="lAv-3o-BkF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="c2z-Kg-rnY"/>
+                    <constraint firstItem="lAv-3o-BkF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="48" id="vAG-rE-ZNx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lbComment" destination="N9k-8r-ZU9" id="XXx-p3-bIh"/>
+                <outlet property="lbName" destination="Whd-iZ-cnh" id="Gon-OF-Mek"/>
+                <outlet property="lbTimeAgo" destination="bfs-KH-LRu" id="a4K-EV-ERc"/>
+                <outlet property="photo" destination="qVR-I5-LZf" id="eZE-j6-FKl"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="155"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="avatar" width="400" height="266"/>
+        <image name="icons8-clock" width="24" height="24"/>
+    </resources>
+</document>

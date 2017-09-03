@@ -22,7 +22,7 @@ public enum AleApi {
     case createOrder(data: TaoDonHangRequest)
     case createQuote(quote: CreateQuoteRequest)
     case acceptQuote(data: AcceptQuoteRequest)
-    case getHomeItems(page: Int?)
+    case getHomeItems(page: Int?, filter_type: Int)
     case getProducts(type: Int, page: Int)
     case uploadFile(photos: [UIImage])
     case getQuoteForShipper(page_number: Int, text_search: String)
@@ -68,7 +68,7 @@ extension AleApi: TargetType {
             return "/api/order/createQuote"
         case .acceptQuote(_):
             return "/api/order/acceptQuote"
-        case .getHomeItems(_):
+        case .getHomeItems:
             return "/api/order/getHomeItems"
         case .getProducts(_, _):
             return "/api/order/getProducts"
@@ -324,10 +324,11 @@ extension AleApi: TargetType {
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             return params
-        case .getHomeItems(let page):
+        case .getHomeItems(let page, let filter_type):
             var params = [String: Any]()
             params["page_size"] = 20
             params["page_number"] = page ?? 1
+            params["filter_type"] = filter_type
             return params
         case .getAllCurrency():
             var params = [String: Any]()

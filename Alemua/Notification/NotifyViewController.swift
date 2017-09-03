@@ -44,6 +44,20 @@ class NotifyViewController: BaseViewController {
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
+//            AlemuaApi.shared.aleApi.request(AleApi.readNotification(notification_id: self.datas.value[ip.row].id!))
+//                .toJSON()
+//                .subscribe(onNext: { (res) in
+//                    switch res {
+//                    case .done(let result):
+//                        
+//                        print("Cancel success")
+//                        break
+//                    case .error(let msg):
+//                        print("Error \(msg)")
+//                        break
+//                    default: break
+//                    }
+//                }).addDisposableTo(self.bag)
             AccountCoordinator.sharedInstance.showNotifyThanhToan()
         }).addDisposableTo(bag)
         fetchData()

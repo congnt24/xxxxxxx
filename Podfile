@@ -27,4 +27,8 @@ target 'Alemua' do
   pod 'Firebase/Messaging'
   pod 'Toaster'
   pod 'SwipeCellKit'
+  pod 'ImageSlideshow', '~> 1.3'
+  pod 'ImageSlideshow/Kingfisher'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

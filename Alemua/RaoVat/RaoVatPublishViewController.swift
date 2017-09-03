@@ -39,12 +39,40 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     @IBOutlet weak var tfAddress: AwesomeTextField!
     @IBOutlet weak var tfDate: AwesomeTextField!
     
+    var advRequest = AdvRequest()
+    var data: ProductResponse?
+    var categoryData = [AdvCategoryResponse]()
+    
+    
+    func bindRequest(){
+        advRequest.title = tfTieuDe.text
+        advRequest.descriptionValue = tfMota.text
+        advRequest.price = Int(tfGia.text?.replacing(".", with: "") ?? "0")
+        advRequest.transactionAddress = tfAddress.text
+        advRequest.promotion = Int(tfKhuyenMai.text ?? "0")
+        advRequest.photo = data?.photo ?? ""
+        advRequest.latitude = 21.0
+        advRequest.longitude = 105.81
+        advRequest.endDate = tfDate.text
+        if btnCoSan.isChecked {
+            advRequest.productType = 1
+        } else if btnSangTay.isChecked {
+            advRequest.productType = 2
+        } else {
+            advRequest.productType = 3
+        }
+        
+    }
+    
+    
     //Drop down
     let danhMucCha = DropDown()
     let danhMucCon = DropDown()
 
     
     override func bindToViewModel() {
+        
+        categoryData = RaoVatViewController.shared.datas.value
         btnCoSan.onChange = {bo in
             self.btnDaSuDung.isChecked = false
             self.btnSangTay.isChecked = false
@@ -60,23 +88,51 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
         
         
         danhMucCha.anchorView = stackDanhMucCha
-        danhMucCha.dataSource = ["1", "2", "3"]
+        danhMucCha.dataSource = RaoVatViewController.shared.datas.value.map { $0.name! }
         danhMucCha.width = 180
         
         danhMucCon.anchorView = stackDanhMucCon
-        danhMucCon.dataSource = ["1", "2", "3"]
+        danhMucCon.dataSource = [""]
         danhMucCon.width = 180
         danhMucCha.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.advRequest.categoryId = RaoVatViewController.shared.datas.value[index].id
             self.tfDanhMucCha.text = item
+            self.danhMucCon.dataSource = self.categoryData[self.danhMucCha.indexForSelectedRow!].subCategory!.map { $0.name! }
+            self.danhMucCon.selectRow(at: 0)
+            self.tfDanhMucCon.text = self.danhMucCon.dataSource[0]
         }
         danhMucCon.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.advRequest.subCategoryId = self.categoryData[self.danhMucCha.indexForSelectedRow!].subCategory?[index].id
             self.tfDanhMucCon.text = item
         }
         
         stackDanhMucCha.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectCha)))
         stackDanhMucCon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectCon)))
 
-
+        
+        tfGia.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
+            self.tfGia.text = (self.tfGia.text ?? "0").toRaoVatPriceFormat()
+            self.updateGiaKM()
+        }).addDisposableTo(bag)
+        tfKhuyenMai.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
+            self.updateGiaKM()
+        }).addDisposableTo(bag)
+        
+        //default dropdown
+        
+//        self.danhMucCha.selectRow(at: 0)
+//        self.tfDanhMucCha.text = self.danhMucCha.dataSource[0]
+//        self.danhMucCon.selectRow(at: 0)
+//        self.tfDanhMucCon.text = self.danhMucCon.dataSource[0]
+        
+        bindDataForEditting()
+    }
+    
+    func updateGiaKM(){
+        let gia = Int((tfGia.text ?? "0").replacing(".", with: "")) ?? 0
+        let km = Int((tfKhuyenMai.text ?? "0").replacing(".", with: "")) ?? 0
+        let giaKm = gia * (100 - km) / 100
+        lbGiaKM.text = "\(giaKm)".toRaoVatPriceFormat()
     }
     
     
@@ -92,8 +148,64 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
         
     }
     
-    
-    
+    func bindDataForEditting() {
+        if (data != nil) {
+            tfTieuDe.text = data?.title ?? ""
+            tfMota.text = data?.descriptionValue ?? ""
+            tfGia.text = "\(data?.price ?? 0)"
+            tfAddress.text = data?.transactionAddress ?? ""
+            tfKhuyenMai.text = "\(data?.promotion ?? 0)"
+            //photos
+            
+            
+            tfDate.text = data?.endDate?.splitted(by: " ")[0]
+            if data?.productType! == 1 {
+                btnCoSan.setState(check: true)
+            }else if data?.productType == 2{
+                btnSangTay.setState(check: true)
+            }else{
+                btnDaSuDung.setState(check: true)
+            }
+            updateGiaKM()
+            for index in 0..<categoryData.count {
+                if(categoryData[index].id! == data!.categoryId!){
+                    self.danhMucCha.selectRow(at: index)
+                    self.tfDanhMucCha.text = categoryData[index].name
+                    self.advRequest.categoryId = categoryData[index].id
+                    self.danhMucCon.dataSource = categoryData[index].subCategory!.map { $0.name! }
+
+                    for j in 0..<categoryData[index].subCategory!.count {
+                        if(categoryData[index].subCategory![j].id! == data!.subCategoryId!){
+                            self.danhMucCon.selectRow(at: j)
+                            self.advRequest.subCategoryId = categoryData[index].subCategory![j].id
+                            self.tfDanhMucCon.text = categoryData[index].subCategory![j].name
+                            break
+                        }
+                    }
+                    break
+                }
+            }
+            
+            
+            
+            
+//                    self.danhMucCha.selectRow(at: categoryData[data!.categoryId!])
+            //        self.tfDanhMucCha.text = self.danhMucCha.dataSource[0]
+            //        self.danhMucCon.selectRow(at: 0)
+            //        self.tfDanhMucCon.text = self.danhMucCon.dataSource[0]
+        }
+        
+        if let p = data?.photo {
+            let listPhoto = p.splitted(by: ",")
+            for item in listPhoto {
+                KingfisherManager.shared.retrieveImage(with: URL(string: item)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                    self.stPhoto.addArrangedSubview(PhotoView(image: image))
+                    self.stPhoto.removeArrangedSubview(self.btnAdd)
+                    self.stPhoto.addArrangedSubview(self.btnAdd)
+                })
+            }
+        }
+    }
     
     @IBAction func onAddPhoto(_ sender: Any) {
         if listImage.count < 5 {
@@ -120,19 +232,22 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
             
         }
     }
-    
-    
     @IBAction func onPublish(_ sender: Any) {
+        bindRequest()
+        
         if listImage.count > 0 {
             LoadingOverlay.shared.showOverlay(view: self.view)
             //            upload image
             AlemuaApi.shared.aleApi.request(AleApi.uploadFile(photos: listImage))
                 .toJSON()
                 .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
                     switch res {
-                    case .done(_, let msg):
-                        Toast(text: msg).show()
-                        LoadingOverlay.shared.hideOverlayView()
+                    case .done(let result, let msg):
+                        var photos = self.advRequest.photo?.splitted(by: ",") ?? []
+                        photos.append(contentsOf: result.string?.splitted(by: ",") ?? [])
+                        self.advRequest.photo? = photos.joined(separator: ",")
+                        self.postData()
 //                        TaoDonHangViewController.sharedInstance.moveToViewController(at: 1)
                         break
                     case .error(let msg):
@@ -142,7 +257,46 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
                 }).addDisposableTo(bag)
         } else {
 //            TaoDonHangViewController.sharedInstance.moveToViewController(at: 1)
-            
+            postData()
+        }
+    }
+    
+    func postData(){
+        if (data != nil) {
+            advRequest.adv_detail_id = data?.id
+            LoadingOverlay.shared.showOverlay(view: self.view)
+            RaoVatService.shared.api.request(RaoVatApi.updateAdv(advRequest: advRequest))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
+                    switch res {
+                    case .done(let result, let msg):
+                        Toast(text: msg).show()
+                        RaoVatCoordinator.sharedInstance.navigation?.popViewController()
+                        break
+                    case .error(let msg):
+                        Toast(text: msg).show()
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(bag)
+        }else{
+            LoadingOverlay.shared.showOverlay(view: self.view)
+            RaoVatService.shared.api.request(RaoVatApi.createAdv(advRequest: advRequest))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
+                    switch res {
+                    case .done(let result, let msg):
+                        Toast(text: msg).show()
+                        RaoVatCoordinator.sharedInstance.navigation?.popViewController()
+                        break
+                    case .error(let msg):
+                        Toast(text: msg).show()
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(bag)
         }
     }
 }

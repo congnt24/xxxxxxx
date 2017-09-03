@@ -21,4 +21,14 @@ class RaoVatUserView: BaseCustomView {
     }
     
     func onAvatarClick(){
-    }}
+    }
+    
+    
+    func bindData(name: String?, address: String?, photo: String?){
+        self.name.text = name
+        self.address.text = address
+        if let p = photo {
+            avatar.kf.setImage(with: URL(string: p), placeholder: UIImage(named: "no_image"))
+        }
+    }
+}

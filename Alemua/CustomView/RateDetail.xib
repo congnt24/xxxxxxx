@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
             <connections>
+                <outlet property="giamgia" destination="ujT-g9-HN3" id="XmN-4a-ZfP"/>
                 <outlet property="phichuyennoidia" destination="m7C-G0-K0h" id="jkJ-4R-jOq"/>
                 <outlet property="phigiaodichquaalemua" destination="c4E-uu-hVW" id="TN4-UJ-4JU"/>
                 <outlet property="phinguoimua" destination="Vrz-bw-P6g" id="hVh-UV-6iQ"/>
@@ -41,6 +42,21 @@
                                     <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Tổng giá mua"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujT-g9-HN3" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                            <rect key="frame" x="0.0" y="35.5" width="278" height="0.0"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Giảm giá"/>
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-Hj-pO7" customClass="AwesomeTextField" customModule="AwesomeMVVM">

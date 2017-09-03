@@ -88,7 +88,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 //        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
 
         if Prefs.isUserLogged {
-            if orderData?.productOption == 3 { // chir mua khi có giảm giá
+            if orderData?.productOption == 4 { // chir mua khi có giảm giá
                 DeliveryDialogBaoGiaViewController.orderData = orderData
                 AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
             }else{

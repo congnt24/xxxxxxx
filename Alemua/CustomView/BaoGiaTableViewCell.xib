@@ -234,6 +234,6 @@
     <resources>
         <image name="ic_star_grey" width="17" height="16"/>
         <image name="ic_star_orange" width="17" height="16"/>
-        <image name="sample" width="94" height="94"/>
+        <image name="sample" width="400" height="266"/>
     </resources>
 </document>

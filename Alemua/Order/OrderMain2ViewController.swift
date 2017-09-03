@@ -29,7 +29,7 @@ class OrderMain2ViewController: UIViewController {
     var currentPage = 1
     var bag = DisposeBag()
     var datas = Variable<[ModelOrderData]>([])
-    var cacheFilter = 0
+    var cacheFilter = -1
     
     var sectionName: String!
     override func viewDidLoad() {
@@ -55,10 +55,20 @@ class OrderMain2ViewController: UIViewController {
     }
     
     func reloadPage(){
-        self.fetchData().drive(onNext: { (results) in
-            self.datas.value = results
-            self.currentPage = 2
-        }).addDisposableTo(self.bag)
+        print("On reload")
+        AlemuaApi.shared.aleApi.request(AleApi.getHomeItems(page: 1, filter_type: cacheFilter + 1))
+            .toJSON().subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    let model = ModelMainHomeData(json: result)
+                    self.datas.value = model.hotProducts ?? []
+                    self.currentPage = 2
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
     }
 }
 
@@ -74,33 +84,31 @@ extension OrderMain2ViewController {
         tableView.rx.itemSelected
         .subscribe(onNext: { (ip) in
                 OrderCoordinator.sharedInstance.showTaoDonHang(data: self.datas.value[ip.row])
-        })
+        }).addDisposableTo(bag)
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
-            self.fetchData().drive(onNext: { (results) in
-                if results.count > 0 {
-                    for result in results {
-                        self.datas.value.append(result)
-                    }
-                    self.currentPage += 1
-                }
-            }).addDisposableTo(self.bag)
-            // finish infinite scroll animation
+            self.fetchData()            // finish infinite scroll animation
             tv.finishInfiniteScroll()
         }
         
         tableView.beginInfiniteScroll(true)
     }
     
-    func fetchData() -> Driver<[ModelOrderData]>{ // fetch data and map to ProductData
-        
-        return aleApi.request(AleApi.getHomeItems(page: currentPage))
-            .filterSuccessfulStatusCodes().flatMap({ (response) -> Observable<[ModelOrderData]> in
-                let json = JSON(response.data)
-                let responseObj = ModelMainHomeResponse(json: json)
-                return Observable.from(optional: responseObj.result?.hotProducts)
-            }).asDriver(onErrorJustReturn: [])
+    func fetchData() { // fetch data and map to ProductData
+        AlemuaApi.shared.aleApi.request(AleApi.getHomeItems(page: currentPage, filter_type: cacheFilter + 1))
+            .toJSON().subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    let model = ModelMainHomeData(json: result)
+                    self.datas.value.append(contentsOf: model.hotProducts ?? [])
+                    self.currentPage += 1
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+        }).addDisposableTo(bag)
     }
     
 }

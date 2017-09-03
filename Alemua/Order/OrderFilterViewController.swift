@@ -11,8 +11,8 @@ import UIKit
 class OrderFilterViewController: UIViewController {
 
 
-    public static var deliveryOrderFilterType = 0
-    public static var orderOrderFilterType = 0
+    public static var deliveryOrderFilterType = -1
+    public static var orderOrderFilterType = -1
     @IBOutlet weak var view1: AwesomeUIView!
     @IBOutlet weak var view2: AwesomeUIView!
     @IBOutlet weak var view3: AwesomeUIView!
@@ -22,16 +22,13 @@ class OrderFilterViewController: UIViewController {
         super.viewDidLoad()
 
         listChecked = [view1.subviews[0].subviews[2], view2.subviews[0].subviews[2], view3.subviews[0].subviews[2]]
-
-        if HomeViewController.homeType == .order {
-            for check in listChecked {
-                check.isHidden = true
-            }
+        for check in listChecked {
+            check.isHidden = true
+        }
+        if HomeViewController.homeType == .order && OrderFilterViewController.orderOrderFilterType >= 0 {
             listChecked[OrderFilterViewController.orderOrderFilterType].isHidden = false
-        } else {
-            for check in listChecked {
-                check.isHidden = true
-            }
+        } else  if OrderFilterViewController.deliveryOrderFilterType >= 0 {
+            
             listChecked[OrderFilterViewController.deliveryOrderFilterType].isHidden = false
         }
         view1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onView1)))

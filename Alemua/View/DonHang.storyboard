@@ -3631,7 +3631,7 @@
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVj-wT-Lde" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lVj-wT-Lde" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                                         <rect key="frame" x="0.0" y="17" width="323" height="28.5"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -4214,7 +4214,7 @@
         <image name="ic_filter_calendar" width="23" height="23"/>
         <image name="ic_filter_price_tag" width="24" height="24"/>
         <image name="ic_filter_star_outline" width="24" height="23"/>
-        <image name="ic_selected_circle_blu" width="42" height="42"/>
+        <image name="ic_selected_circle_blu" width="63" height="63"/>
         <image name="ic_star_grey" width="17" height="16"/>
         <image name="ic_star_orange" width="17" height="16"/>
         <image name="ic_unchecked_circle" width="15" height="15"/>

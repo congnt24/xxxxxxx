@@ -54,7 +54,7 @@ class DangChuyenViewController: UIViewController {
         tfMuaTu.text = modelDangChuyen.buyFrom
         tfGiaoDen.text = modelDangChuyen.deliveryTo
         tfTruocNgay.text = modelDangChuyen.deliveryDate?.toFormatedDate()
-        ifTongGia.text = "\(modelDangChuyen.totalPrice ?? 0)".toFormatedPrice()
+        ifTongGia.text = "\(modelDangChuyen.getTotal())".toFormatedPrice()
         tfMoTa.text = modelDangChuyen.descriptionValue
         tfGhiChu.text = modelDangChuyen.note
         //bind rate detail

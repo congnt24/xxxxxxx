@@ -11,6 +11,7 @@ import AwesomeMVVM
 import RxCocoa
 import RxSwift
 import SwiftyJSON
+import Toaster
 
 class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var itemView: ItemView!
@@ -97,12 +98,14 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             })
             .subscribe(onNext: { (res) in
                 switch res {
-                case .done( _):
+                case .done( _, let msg):
+                    Toast.init(text: msg).show()
 //                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
                     AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
                     print("Cancel success")
                     break
                 case .error(let msg):
+                    Toast.init(text: msg).show()
                     print("Error \(msg)")
                     break
                 }

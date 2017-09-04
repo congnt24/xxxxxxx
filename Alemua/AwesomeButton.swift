@@ -16,7 +16,7 @@ class AwesomeButton: UIButton {
         didSet {
             let border = CALayer()
             border.borderColor = UIColor.lightGray.cgColor
-            border.frame = CGRect(x: 0, y: frame.size.height - bottomLineWidth, width: frame.size.width, height: frame.size.height)
+            border.frame = CGRect(x: 0, y: frame.size.height - bottomLineWidth, width: UIScreen.main.bounds.width, height: frame.size.height)
             border.borderWidth = bottomLineWidth
             layer.addSublayer(border)
             layer.masksToBounds = true
@@ -26,7 +26,7 @@ class AwesomeButton: UIButton {
         didSet {
             let border = CALayer()
             border.borderColor = bottomLineColor.cgColor
-            border.frame = CGRect(x: 0, y: frame.size.height - bottomLineWidth, width: frame.size.width, height: frame.size.height)
+            border.frame = CGRect(x: 0, y: frame.size.height - bottomLineWidth, width: UIScreen.main.bounds.width, height: frame.size.height)
             border.borderWidth = bottomLineWidth
             layer.addSublayer(border)
             layer.masksToBounds = true

@@ -88,14 +88,6 @@ class RaoVatCommentViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if shouldReload {
-            
-            reloadPage()
-            shouldReload = false
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {
                 LoginViewController.isIgnore = false
@@ -105,6 +97,15 @@ class RaoVatCommentViewController: BaseViewController {
             }
             return
         }
+        if shouldReload {
+            
+            reloadPage()
+            shouldReload = false
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     func reloadPage(){

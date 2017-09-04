@@ -39,7 +39,7 @@
                                         <rect key="frame" x="0.0" y="24" width="319" height="260"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
-                                                <rect key="frame" x="180.5" y="10" width="102.5" height="120"/>
+                                                <rect key="frame" x="188.5" y="10" width="102.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="17:20" id="295-bt-7vS"/>
                                                     <constraint firstAttribute="height" constant="120" id="VVz-EW-ToM"/>
@@ -50,7 +50,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="39.5" y="10" width="96.5" height="120"/>
+                                                <rect key="frame" x="31.5" y="10" width="96.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="4:5" id="nKd-mb-q1x"/>
                                                     <constraint firstAttribute="height" constant="120" id="vad-Y2-8F8"/>
@@ -86,13 +86,13 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="58T-Sa-CQU" firstAttribute="centerX" secondItem="tQZ-KW-vZk" secondAttribute="centerX" constant="72" id="0h0-GN-dIa"/>
+                                            <constraint firstItem="58T-Sa-CQU" firstAttribute="centerX" secondItem="tQZ-KW-vZk" secondAttribute="centerX" constant="80" id="0h0-GN-dIa"/>
                                             <constraint firstItem="9nA-gQ-EAi" firstAttribute="centerY" secondItem="tQZ-KW-vZk" secondAttribute="centerY" constant="-60" id="5BX-Lb-gxo"/>
                                             <constraint firstItem="9gb-Vg-BRa" firstAttribute="centerX" secondItem="tQZ-KW-vZk" secondAttribute="centerX" id="9Zy-tg-v71"/>
                                             <constraint firstItem="9gb-Vg-BRa" firstAttribute="centerY" secondItem="tQZ-KW-vZk" secondAttribute="centerY" constant="72" id="TbF-gj-jgF"/>
                                             <constraint firstAttribute="height" constant="260" id="fbX-Ld-FLA"/>
                                             <constraint firstItem="58T-Sa-CQU" firstAttribute="centerY" secondItem="tQZ-KW-vZk" secondAttribute="centerY" constant="-60" id="hfT-ae-cWd"/>
-                                            <constraint firstItem="9nA-gQ-EAi" firstAttribute="centerX" secondItem="tQZ-KW-vZk" secondAttribute="centerX" constant="-72" id="uki-8x-J3z"/>
+                                            <constraint firstItem="9nA-gQ-EAi" firstAttribute="centerX" secondItem="tQZ-KW-vZk" secondAttribute="centerX" constant="-80" id="uki-8x-J3z"/>
                                         </constraints>
                                     </view>
                                 </subviews>

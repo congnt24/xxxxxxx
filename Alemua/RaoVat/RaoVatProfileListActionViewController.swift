@@ -51,6 +51,20 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
 
         let deleteAction = SwipeAction(style: .destructive, title: "XÓA") { action, indexPath in
             // handle action by updating model with deletion
+            RaoVatService.shared.api.request(RaoVatApi.deleteAdv(adv_detail_id: self.datas.value[indexPath.row].id!))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result, let msg):
+                        Toast.init(text: msg).show()
+                        self.datas.value.remove(at: indexPath.row)
+                        break
+                    case .error(let msg):
+                        Toast.init(text: msg).show()
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(self.bag)
 
         }
         // customize the action appearance

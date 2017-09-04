@@ -52,12 +52,18 @@ class NotifyViewController: BaseViewController {
                 .subscribe(onNext: { (res) in
                     switch res {
                     case .done(let result):
-
+                        self.datas.value[ip.row].isRead = 1
+                        self.tableView.reloadData()
+                        
+                        if HomeViewController.homeType == .order {
+                            OrderNavTabBarViewController.sharedInstance.fetchUnreadNoti()
+                        }else{
+                            DeliveryNavTabBarViewController.sharedInstance.fetchUnreadNoti()
+                        }
                         break
                     case .error(let msg):
                         print("Error \(msg)")
                         break
-                    default: break
                     }
                 }).addDisposableTo(self.bag)
 

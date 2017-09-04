@@ -311,6 +311,7 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
                     switch res {
                     case .done(let result, let msg):
                         Toast(text: msg).show()
+                        RaoVatCategoryViewController.shared.reload = true
                         RaoVatCoordinator.sharedInstance.navigation?.popViewController()
                         break
                     case .error(let msg):

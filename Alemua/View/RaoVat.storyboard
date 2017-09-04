@@ -961,31 +961,31 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s88-mt-Hef" customClass="CheckedButton" customModule="Alemua">
                                                                 <rect key="frame" x="0.0" y="0.0" width="171.5" height="50"/>
-                                                                <state key="normal" title="   Hàng mới 100%" image="ic_unchecked_circle">
+                                                                <state key="normal" title="   Hàng mới 100%" image="radio_button_off">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_checked_circle"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="radio_button_on"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flw-Zw-fuQ" customClass="CheckedButton" customModule="Alemua">
                                                                 <rect key="frame" x="171.5" y="0.0" width="171.5" height="50"/>
-                                                                <state key="normal" title="   Hàng sang tay" image="ic_unchecked_circle">
+                                                                <state key="normal" title="   Hàng sang tay" image="radio_button_off">
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_checked_circle"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="radio_button_on"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaU-Yv-Wno" customClass="CheckedButton" customModule="Alemua">
                                                         <rect key="frame" x="0.0" y="50" width="343" height="50"/>
-                                                        <state key="normal" title="   Đã qua sử dụng" image="ic_unchecked_circle">
+                                                        <state key="normal" title="   Đã qua sử dụng" image="radio_button_off">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_checked_circle"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="radio_button_on"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
@@ -1103,28 +1103,82 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="31E-Ej-E4B">
                                                 <rect key="frame" x="0.0" y="192" width="343" height="48"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ngày hết hạn" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-q9-GBK" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9i-6u-Mtw">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd-MM-yyyy"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="4"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5e-ql-SVH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="223" height="48"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2f-F5-ar3">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="223" height="48"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ngày hết hạn" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-q9-GBK" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="48"/>
+                                                                                <nil key="textColor"/>
+                                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                                                                <textInputTraits key="textInputTraits"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                        <real key="value" value="0.0"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                                        <real key="value" value="0.0"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd-MM-yyyy"/>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="0.0"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-o8-6Bl">
+                                                                                <rect key="frame" x="193" y="0.0" width="1" height="48"/>
+                                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="1" id="Fk7-pV-yui"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJT-ux-Grb">
+                                                                                <rect key="frame" x="194" y="0.0" width="4" height="48"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="4" id="IQa-00-swD"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-calendar" translatesAutoresizingMaskIntoConstraints="NO" id="yig-ni-sD0">
+                                                                                <rect key="frame" x="198" y="0.0" width="25" height="48"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="b2f-F5-ar3" firstAttribute="leading" secondItem="w5e-ql-SVH" secondAttribute="leading" id="CEe-gX-cVh"/>
+                                                                    <constraint firstItem="b2f-F5-ar3" firstAttribute="top" secondItem="w5e-ql-SVH" secondAttribute="top" id="exm-Mh-35M"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="b2f-F5-ar3" secondAttribute="bottom" id="uLJ-xN-eqN"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="b2f-F5-ar3" secondAttribute="trailing" id="uSK-SQ-ed1"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-5w-IQa">
+                                                                <rect key="frame" x="223" y="0.0" width="120" height="48"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="5F4-bz-sfo"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -1880,7 +1934,7 @@
                                     <constraint firstItem="x2b-oo-012" firstAttribute="leading" secondItem="pXj-eG-AcN" secondAttribute="leading" id="ooA-eO-Jgc"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a5d-sF-TDN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a5d-sF-TDN">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -2668,7 +2722,6 @@
         <image name="back" width="13" height="23"/>
         <image name="ic_advertising" width="33" height="33"/>
         <image name="ic_bell" width="26" height="27"/>
-        <image name="ic_checked_circle" width="15" height="15"/>
         <image name="ic_favorites_grey" width="16" height="16"/>
         <image name="ic_favorites_red" width="16" height="16"/>
         <image name="ic_filter" width="24" height="22"/>
@@ -2679,12 +2732,14 @@
         <image name="ic_send_message" width="27" height="27"/>
         <image name="ic_share_grey" width="16" height="16"/>
         <image name="ic_share_red" width="16" height="16"/>
-        <image name="ic_unchecked_circle" width="15" height="15"/>
         <image name="ic_user" width="21" height="27"/>
         <image name="icons8-ball_point_pen" width="25" height="25"/>
+        <image name="icons8-calendar" width="25" height="25"/>
         <image name="icons8-filled_flag" width="24" height="24"/>
         <image name="icons8-like" width="25" height="25"/>
         <image name="icons8-search" width="25" height="25"/>
         <image name="icons8-sort_down" width="16" height="16"/>
+        <image name="radio_button_off" width="24" height="24"/>
+        <image name="radio_button_on" width="24" height="24"/>
     </resources>
 </document>

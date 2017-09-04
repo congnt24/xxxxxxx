@@ -16,6 +16,7 @@ import SwiftyJSON
 
 class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
 
+    @IBOutlet weak var nitifyBarButton: UIBarButtonItem!
     @IBOutlet weak var input: AwesomeTextField2!
     @IBOutlet weak var btnClear: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -29,11 +30,10 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         refreshControl.endRefreshing()
     }
     override func bindToViewModel() {
-        
-//        refreshControl = UIRefreshControl()
-//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-//        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//        tableView.addSubview(refreshControl)
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         
         tableView.delegate = self
         let nibName = "OrderViewCell"
@@ -124,10 +124,13 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
         btnClear.isHidden = true
     }
     @IBAction func onNotifyClick(_ sender: Any) {
-
+        OrderNavTabBarViewController.sharedInstance.switchTab(index: 3)
     }
     
     func reloadPage(){
+        tableView.dataSource = nil
+        fetchData().asObservable().bind(to: tableView.rx.items(dataSource: dataSource))
+            .addDisposableTo(bag)
 //        fetchData().asObservable().bind(to: tableView.rx.items(dataSource: dataSource))
 //            .addDisposableTo(bag)
     }

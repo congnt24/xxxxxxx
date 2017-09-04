@@ -1348,6 +1348,7 @@
                     <connections>
                         <outlet property="btnClear" destination="rxT-Ff-EW5" id="bTE-uU-pj4"/>
                         <outlet property="input" destination="Web-U4-JhF" id="qiG-eo-AcT"/>
+                        <outlet property="nitifyBarButton" destination="fmV-hG-1hC" id="0TC-4K-nDT"/>
                         <outlet property="tableView" destination="CQz-WB-vTe" id="aeQ-vw-1JE"/>
                     </connections>
                 </viewController>
@@ -4210,7 +4211,7 @@
         <image name="ic_home_blu" width="27" height="27"/>
         <image name="ic_message_blu" width="27" height="27"/>
         <image name="ic_search" width="42" height="42"/>
-        <image name="ic_selected_circle_blu" width="42" height="42"/>
+        <image name="ic_selected_circle_blu" width="63" height="63"/>
         <image name="ic_setting" width="27" height="27"/>
         <image name="ic_shopping" width="21" height="26"/>
         <image name="ic_shopping_cart" width="42" height="42"/>

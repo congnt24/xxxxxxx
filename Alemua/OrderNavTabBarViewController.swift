@@ -29,6 +29,10 @@ class OrderNavTabBarViewController: UITabBarController {
         selectedIndex = index
     }
     
+    func reduceNoti(){
+//        let x = Int(self.tabBar.items![3].badgeValue ?? "0")
+//        self.tabBar.items![3].badgeValue = "\(x-1)"
+    }
     func fetchUnreadNoti(){
         
         AlemuaApi.shared.aleApi.request(AleApi.getUnreadNotification(isShipper: HomeViewController.homeType == .order ? 0 : 1))

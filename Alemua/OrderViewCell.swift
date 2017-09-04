@@ -47,10 +47,11 @@ class OrderViewCell: UITableViewCell {
             if promo == 0 {
                 btnPromo.isHidden = true
                 lbGiaCu.isHidden = true
+                lbGia.text = "\(item.originPrice!)".toFormatedPrice()
             } else {
                 lbGiaCu.isHidden = false
                 btnPromo.isHidden = false
-                btnPromo.setTitle("\(Int(promo * 100))%", for: .normal)
+                btnPromo.setTitle("\(Int(promo))%", for: .normal)
             }
         }else{
             print("XXXX")

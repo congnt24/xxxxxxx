@@ -90,7 +90,6 @@ class DeliveryMainViewController: BaseViewController {
             if results.count > 0 {
                 self.currentPage += 1
                 self.datas.value = results
-                
             }
         }).addDisposableTo(self.bag)
     }

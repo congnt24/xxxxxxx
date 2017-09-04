@@ -40,6 +40,14 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         OrderOrderViewController.shared = self
     }
     override func viewDidAppear(_ animated: Bool) {
+        if !Prefs.isUserLogged {
+            if LoginViewController.isIgnore {
+                onBack("")
+                LoginViewController.isIgnore = false
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
+        }
         if selectViewController > 0 {
             
             moveToViewController(at: selectViewController)

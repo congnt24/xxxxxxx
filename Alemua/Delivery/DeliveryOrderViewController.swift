@@ -54,6 +54,14 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         //change to default index
+        if !Prefs.isUserLogged {
+            if LoginViewController.isIgnore {
+                onBack("")
+                LoginViewController.isIgnore = false
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
+        }
         moveToViewController(at: DeliveryOrderViewController.defaultTab)
     }
     

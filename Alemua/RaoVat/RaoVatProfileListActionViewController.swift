@@ -79,7 +79,7 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
         editAction.backgroundColor = UIColor(hexString: "#4CC3D9")!
         editAction.image = UIImage(named: "ic_trash")
 
-        return [editAction, deleteAction]
+        return [deleteAction, editAction]
     }
 
 

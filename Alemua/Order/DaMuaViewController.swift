@@ -29,6 +29,7 @@ class DaMuaViewController: UIViewController {
                 review1.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 review2.bindData(name: data.userShipPhone, rating: data.userShipRating, nguoidang: 1)
                 uiMoreDetail.bindData(RateDetailData(tonggia: data.totalPrice, discount: data.discount, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree))
+                tfGia.text = "\(uiMoreDetail.calculateTotal() ?? 0)".toFormatedPrice()
             }
         }
     }
@@ -57,7 +58,6 @@ class DaMuaViewController: UIViewController {
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
         

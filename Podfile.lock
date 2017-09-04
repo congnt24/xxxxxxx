@@ -1,7 +1,25 @@
 PODS:
   - Alamofire (4.5.0)
   - AwesomeMVVM (0.3.2)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - DropDown (2)
+  - FacebookCore (0.2.0):
+    - Bolts (~> 1.8)
+    - FBSDKCoreKit (~> 4.15)
+  - FacebookLogin (0.2.0):
+    - Bolts (~> 1.8)
+    - FacebookCore (~> 0.2)
+    - FBSDKCoreKit (~> 4.15)
+    - FBSDKLoginKit (~> 4.15)
+  - FBSDKCoreKit (4.26.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.26.0):
+    - FBSDKCoreKit
   - Firebase/Core (4.0.4):
     - FirebaseAnalytics (= 4.0.2)
     - FirebaseCore (= 4.0.4)
@@ -107,6 +125,8 @@ PODS:
 DEPENDENCIES:
   - AwesomeMVVM (from `https://github.com/congnt24/AwesomeMVVM.git`)
   - DropDown
+  - FacebookCore
+  - FacebookLogin
   - Firebase/Core
   - Firebase/Messaging
   - GoogleMaps
@@ -144,7 +164,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AwesomeMVVM: 32fe35af1fc1cd7c475fca0fb3b2fcf215456348
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
+  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
+  FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
+  FBSDKLoginKit: f3f03b94c21eb834af243c0a881d48641f47ca60
   Firebase: 1492bf04e1b73a7353b4fb2cf5a20bac9692f341
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseCore: cfc042628ef9f20debe09c0eb683135fcd404cb4
@@ -180,6 +205,6 @@ SPEC CHECKSUMS:
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: a25a6de0c2e6fb6e295d4e5e10d02dfd837b0ea2
+PODFILE CHECKSUM: 5827068cdb7e69c7a8253f482ae9827eca3cfd7f
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

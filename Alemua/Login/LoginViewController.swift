@@ -14,18 +14,22 @@ import AccountKit
 import Moya
 import SwiftyJSON
 import GoogleSignIn
-//import FacebookLogin
-//import FBSDKLoginKit
+import FacebookLogin
+import FBSDKLoginKit
+import Toaster
 
-class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
+class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSignInUIDelegate {
+
+    public static var shared: LoginViewController!
 
     public static var isIgnore = false;
 
     var bag = DisposeBag()
     var accountKit: AKFAccountKit!
     override func bindToViewModel() {
+        LoginViewController.shared = self
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().delegate = self
         if accountKit == nil {
             accountKit = AKFAccountKit(responseType: .accessToken)
         }
@@ -110,11 +114,11 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
     @IBAction func onFacebook(_ sender: Any) {
         facebookLogin()
     }
-    
+
     @IBAction func onGoogle(_ sender: Any) {
         googleLogin()
     }
-    
+
     @IBAction func onPhone(_ sender: Any) {
 //        LoginCoordinator.sharedInstance.showLoginByPassword()
         //active account by accoutkit//Show login by account kit
@@ -130,47 +134,89 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
 extension LoginViewController {
     func facebookLogin() {
         let loginManager = LoginManager()
-        loginManager.logIn([.publicProfile, .email], viewController: self) { (result) in
+        loginManager.logIn([.publicProfile, .email, .userFriends], viewController: self) { (result) in
             switch result {
             case .cancelled:
                 print("Cancel button click")
-            case .success(let _, let _, let token):
-                print("facebook")
-                print(token.authenticationToken)
-//                print()
-//                Prefs.isUserLogged = true
-                self.navigationController?.popViewController()
-                //                TODO: AUTHEN BY FACEBOOK
-                //                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            case .success( _, _, let token):
+                let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name,email, picture.type(large)"], tokenString: token.authenticationToken, version: nil, httpMethod: "GET")
+                graphRequest?.start(completionHandler: { (connection, result, error) in
+                    
+                    if ((error) != nil){
+                        print("Error: \(String(describing: error))")
+                    }else{
+                        let data:[String:AnyObject] = result as! [String : AnyObject]
+                        let email = data["email"]
+                        let name = data["name"]
+                        let photo = ((data["picture"] as! [String: Any])["data"] as! [String: Any])["url"]
+                        let req = FacebookRequest()
+                        req.email = (email as? String) ?? ""
+                        req.name = (name as? String) ?? ""
+                        req.facebookId = (data["id"] as? String) ?? ""
+                        req.photo = (photo as? String) ?? ""
+                        self.sendToServer(data: req)
+                    }
+                })                //                TODO: AUTHEN BY FACEBOOK
+//                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+//                credential.
             default:
                 print("??")
             }
         }
     }
-    func googleLogin(){
+    func googleLogin() {
+        GIDSignIn.sharedInstance().signIn()
 //        GIDSignIn.sharedInstance().
     }
+
     
-    
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
+    func sendToServer(data: FacebookRequest){
+        LoadingOverlay.shared.showOverlay(view: view)
+        data.deviceType = 2
+        data.phoneNumber = ""
+        data.tokenFirebase = Prefs.firebaseToken
+        AlemuaApi.shared.aleApi.request(AleApi.loginAndRegisterFacebook(data: data))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                LoadingOverlay.shared.hideOverlayView()
+                switch res {
+                case .done(let result, let msg):
+                    Prefs.isUserLogged = true
+                    Prefs.userId = result["id"].int!
+                    Prefs.apiToken = result["ApiToken"].string!
+//                    Prefs.phoneNumber = phone
+                    Prefs.photo = result["photo"].string ?? ""
+                    Prefs.userName = result["name"].string ?? "" //start socketio
+                    self.navigationController?.popViewController()
+
+                    Toast.init(text: msg).show()
+                    break
+                case .error(let msg):
+                    
+                    Toast.init(text: msg).show()
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
     }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            onLoginEvent.onError(error)
-            return
-        }
-        
-        guard let authen = user.authentication else {
-            onLoginEvent.onError(error)
-            return
-        }
-        //        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        let credential = GoogleAuthProvider.credential(withIDToken: authen.idToken, accessToken: authen.accessToken)
-        //success
-        self.onLoginEvent.onNext(user)
+
+
+    // Stop the UIActivityIndicatorView animation that was started when the user
+    // pressed the Sign In button
+    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+//        myActivityIndicator.stopAnimating()
+    }
+
+    // Present a view that prompts the user to sign in with Google
+    func signIn(signIn: GIDSignIn!,
+                presentViewController viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+
+    // Dismiss the "Sign in with Google" view
+    func signIn(signIn: GIDSignIn!,
+                dismissViewController viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

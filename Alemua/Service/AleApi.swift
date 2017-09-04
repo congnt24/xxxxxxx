@@ -50,7 +50,6 @@ public enum AleApi {
     case getNotifications(page_number: Int, is_shipper: Int)
     case readNotification(notification_id: Int)
     case getUnreadNotification(isShipper: Int)
-
 }
 
 extension AleApi: TargetType {
@@ -346,6 +345,7 @@ extension AleApi: TargetType {
             params["facebook_id"] = data.facebookId
             params["phone_number"] = data.phoneNumber
             params["photo"] = data.photo
+            params["name"] = data.name
             return params
             
         case .getNotifications(let page_number, let is_shipper):

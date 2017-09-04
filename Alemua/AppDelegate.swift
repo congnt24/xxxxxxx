@@ -10,24 +10,31 @@ import UIKit
 import IQKeyboardManagerSwift
 import Firebase
 import UserNotifications
-//import FBSDKCoreKit
+import FBSDKCoreKit
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
+
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-
-    func application(application: UIApplication,
-                     openURL url: NSURL, options: [String: AnyObject]) -> Bool {
-        return GIDSignIn.sharedInstance().handleURL(url,
-                                                    sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String,
-                                                    annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        let googleDidHandle = GIDSignIn.sharedInstance().handle(url,
+                                                                   sourceApplication: sourceApplication,
+                                                                   annotation: annotation)
+        
+        let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            open: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+        
+        return googleDidHandle || facebookDidHandle
     }
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-//        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
-//    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -36,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize sign-in
 
 //        FirebaseAuthHelper.configure()
-//        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+//        FBSDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
         let _ = AlemuaApi()
         let _ = RaoVatService()
@@ -83,7 +90,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        return true
+        
+        
+        
+        // Initialize sign-in
+//        var configureError: NSError?
+//        GGLContext.sharedInstance().configureWithError(&configureError)
+//        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().clientID = "259311042399-kj2fts3n54g1keqmobkporpm3h8b2v0v.apps.googleusercontent.com"
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//        return true
     }
 
     // [START receive_message]
@@ -153,17 +171,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
                 withError error: NSError!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
             // Perform any operations on signed in user here.
             let userId = user.userID // For client-side use only!
             let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
+            let name = user.profile.name
             let email = user.profile.email
-            // ...
+            let photo = user.profile.imageURL(withDimension: 100)
+            
+            
+            let req = FacebookRequest()
+            req.email = (email as? String) ?? ""
+            req.name = (name as? String) ?? ""
+            req.facebookId = userId
+            req.photo = (photo as? String) ?? ""
+            LoginViewController.shared.sendToServer(data: req)
         } else {
             print("\(error.localizedDescription)")
         }

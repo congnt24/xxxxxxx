@@ -80,7 +80,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onGoogle:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="VeL-Li-4g6"/>
-                                            <action selector="onPhone:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="KGw-lJ-0JD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kza-5q-7HG">

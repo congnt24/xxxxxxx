@@ -14,6 +14,7 @@ public class FacebookRequest {
     public var email: String?
     public var phoneNumber: String?
     public var tokenFirebase: String?
+    public var name: String?
 }
 
 public class TaoDonHangRequest {

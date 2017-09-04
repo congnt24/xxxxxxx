@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import RxSwift
+import Toaster
 
 class OrderDialogBaoGia4ViewController: UIViewController {
     var order_id: Int?
@@ -27,19 +28,21 @@ class OrderDialogBaoGia4ViewController: UIViewController {
         accept.orderId = order_id
         accept.quoteId = quoteId
         accept.transactionOption = 2
-        AlemuaApi.shared.aleApi.request(.acceptQuote(data: accept)).filterSuccessfulStatusCodes()
-        .subscribe(onNext: { (response) in
-            let json = JSON(response.data)
-            print(json)
-            if json["code"] == 200 {
-                //success
-//                AppCoordinator.sharedInstance.navigation?.popViewController()
-                OrderOrderViewController.shared.selectViewController = 2
-                AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
-            }else{
-                //error
-                print("error")
-            }
-        })//.addDisposableTo(bag)
+        AlemuaApi.shared.aleApi.request(.acceptQuote(data: accept))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, let msg):
+                    Toast.init(text: msg).show()
+                    OrderOrderViewController.shared.selectViewController = 2
+                    AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
+                    break
+                case .error(let msg):
+                    Toast.init(text: msg).show()
+                    print("Error \(msg)")
+                    break
+                default: break
+                }
+            })//.addDisposableTo(bag)
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import RxSwift
+import Toaster
 
 class OrderDialogBaoGia3ViewController: UIViewController {
     var order_id: Int?
@@ -27,17 +28,21 @@ class OrderDialogBaoGia3ViewController: UIViewController {
         accept.orderId = order_id
         accept.quoteId = quoteId
         accept.transactionOption = 1
-        AlemuaApi.shared.aleApi.request(.acceptQuote(data: accept)).filterSuccessfulStatusCodes()
-            .subscribe(onNext: { (response) in
-                let json = JSON(response.data)
-                print(json)
-                if json["code"] == 200 {
-                    //success
+        
+        AlemuaApi.shared.aleApi.request(.acceptQuote(data: accept))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, let msg):
+                    Toast.init(text: msg).show()
                     AppCoordinator.sharedInstance.navigation?.popViewController()
-                }else{
-                    //error
-                    print("error")
+                    break
+                case .error(let msg):
+                    Toast.init(text: msg).show()
+                    print("Error \(msg)")
+                    break
+                default: break
                 }
-            }).addDisposableTo(bag)
+            })//.addDisposableTo(bag)
     }
 }

@@ -8,10 +8,12 @@
 
 import Foundation
 import AwesomeMVVM
+import RxSwift
 
 class RaoVatSelectMapViewController: BaseViewController{
     
     var mapVc: MapViewController!
+    let bag = DisposeBag()
     
     @IBOutlet weak var tfSearch: AwesomeTextField!
     override func bindToViewModel() {
@@ -22,6 +24,11 @@ class RaoVatSelectMapViewController: BaseViewController{
             RaoVatPublishViewController.shared.selectedLon = location?.longitude ?? 105.81
         }
         
+        tfSearch.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
+            if let search = self.tfSearch.text {
+                self.mapVc.searchlocation(locSearch: search)
+            }
+        }).addDisposableTo(bag)
     }
     
     

@@ -1964,7 +1964,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU1-X9-TYa">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm yêu thích (10 sản phẩm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-RF-ovz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm yêu thích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-RF-ovz">
                                                         <rect key="frame" x="0.0" y="0.0" width="291" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -2014,7 +2014,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u22-rl-lN6">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="54"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm đã đăng (100 sản phẩm)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-vH-ZSo">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm đã đăng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-vH-ZSo">
                                                         <rect key="frame" x="0.0" y="0.0" width="291" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -2370,6 +2370,15 @@
                                     <segue destination="jtI-C2-5tf" kind="embed" id="45O-ut-fHk"/>
                                 </connections>
                             </containerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SG1-ZA-Md1" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                <rect key="frame" x="16" y="80" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jqT-aC-cYB"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2378,10 +2387,16 @@
                             <constraint firstItem="ncG-w1-EUj" firstAttribute="leading" secondItem="a9q-FO-7ke" secondAttribute="leading" id="5NH-pg-QGQ"/>
                             <constraint firstAttribute="trailing" secondItem="PgH-Ft-B8k" secondAttribute="trailing" id="9vZ-Uu-fMV"/>
                             <constraint firstItem="PgH-Ft-B8k" firstAttribute="top" secondItem="ncG-w1-EUj" secondAttribute="bottom" id="Cg5-EM-Vjd"/>
+                            <constraint firstItem="SG1-ZA-Md1" firstAttribute="leading" secondItem="a9q-FO-7ke" secondAttribute="leading" constant="16" id="EvY-dO-8Fu"/>
+                            <constraint firstItem="SG1-ZA-Md1" firstAttribute="top" secondItem="ncG-w1-EUj" secondAttribute="bottom" constant="16" id="IKs-Qj-ScD"/>
                             <constraint firstItem="ncG-w1-EUj" firstAttribute="top" secondItem="a9q-FO-7ke" secondAttribute="top" id="XXS-uh-pO2"/>
                             <constraint firstAttribute="trailing" secondItem="ncG-w1-EUj" secondAttribute="trailing" id="YXJ-gJ-pTE"/>
+                            <constraint firstAttribute="trailing" secondItem="SG1-ZA-Md1" secondAttribute="trailing" constant="16" id="sod-m0-vzf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tfSearch" destination="SG1-ZA-Md1" id="SI3-YF-4tj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3g-Ls-pLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2632,6 +2647,10 @@
         <scene sceneID="iGT-b7-Ot0">
             <objects>
                 <viewController id="VoN-WI-Arf" customClass="MapViewController" customModule="Alemua" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SDm-ux-3wD"/>
+                        <viewControllerLayoutGuide type="bottom" id="sR8-sa-Jyk"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ozn-Zd-JYi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

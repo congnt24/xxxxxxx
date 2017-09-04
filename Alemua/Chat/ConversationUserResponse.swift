@@ -80,4 +80,8 @@ class ConversationUserData {
         last_message = json[SerializationKeys.last_message].string
         last_time = json[SerializationKeys.last_time].string
     }
+    
+    init() {
+        
+    }
 }

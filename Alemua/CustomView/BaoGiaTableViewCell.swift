@@ -35,7 +35,7 @@ class BaoGiaTableViewCell: UITableViewCell {
         lbNoiMua.text = data.buyFrom
         lbDate.text = data.deliveryDate?.toFormatedDate()
         lbPrice.text = "\(data.totalPrice!)".toFormatedPrice()
-        lbTime.text = "\(data.timeAgo!)"
+        lbTime.text = "\(data.timeAgo!.toFormatedRaoVatTime())"
         lbScore.text = "\(data.rating?.toFormatedRating() ?? "0")"
         star.number = Int(data.rating ?? 0)
         star.fillStar()
@@ -51,9 +51,11 @@ class BaoGiaTableViewCell: UITableViewCell {
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done(let result):
-//                    OrderOrderCoordinator.sharedInstance.
-//                    OrderNavTabBarViewController.sharedInstance.switchTab(index: 2)
-// todo:                    showchat view controller
+                    
+                    let friend = ConversationUserData()
+                    friend.id = self.data.userPostId
+                    friend.photo = self.data.userPhoto
+                    ChatCoordinator(OrderOrderCoordinator.sharedInstance.navigation).start(friend)
                     print("Add Chatting Log success")
                     break
                 case .error(let msg):

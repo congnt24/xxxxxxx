@@ -48,6 +48,15 @@ class DeliveryAccountViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if !Prefs.isUserLogged {
+            if LoginViewController.isIgnore {
+                LoginViewController.isIgnore = false
+                onBack("")
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
+            return
+        }
         if Prefs.isUserLogged {
             AlemuaApi.shared.aleApi.request(.getUserProfile(profileType: 2))
                 .toJSON()
@@ -157,9 +166,6 @@ extension DeliveryAccountViewController {
         DeliveryOrderViewController.defaultTab = 3
         DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
     }
-    
-    
-    
     
     
     

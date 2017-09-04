@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
     var movingCamera = GMSCameraPosition.camera(withLatitude: 21.005, longitude: 105.811, zoom: 14.0)
     var centerMarker = GMSMarker()
     var centerAddress = ""
-
+    
     var onMovingMap: ((String?, CLLocationCoordinate2D?) -> Void)?
 
     override func viewDidLoad() {
@@ -110,6 +110,19 @@ extension MapViewController: GMSMapViewDelegate {
                     self.centerMarker.map = mapView
                     onMovingMap(result.lines?[0], cameraPosition.target)
                 }
+            }
+        }
+    }
+    
+    func getAddressFromLocation(lat: Float, lon: Float, onAddress: @escaping (String?) -> Void){
+        let location = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
+        geocoder.reverseGeocodeCoordinate(location) { (response, error) in
+            guard error == nil else {
+                return
+            }
+            
+            if let result = response?.firstResult() {
+                onAddress(result.lines?[0])
             }
         }
     }

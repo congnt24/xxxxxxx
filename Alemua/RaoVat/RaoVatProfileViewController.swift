@@ -36,6 +36,18 @@ class RaoVatProfileViewController: BaseViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if !Prefs.isUserLogged {
+            if LoginViewController.isIgnore {
+                LoginViewController.isIgnore = false
+                RaoVatCoordinator.sharedInstance.navigation?.popViewController()
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
+            return
+        }
+    }
+    
     func fetchProfile() {
         AlemuaApi.shared.aleApi.request(AleApi.getUserProfile(profileType: 1))
             .toJSON()

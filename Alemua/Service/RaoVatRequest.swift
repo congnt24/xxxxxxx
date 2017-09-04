@@ -22,7 +22,6 @@ public class AdvRequest {
     public var productType: Int?
     public var endDate: String?
     public var adv_detail_id: Int?
-
 }
 
 public struct FilterRequest {

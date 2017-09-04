@@ -40,6 +40,6 @@ class OrderDialogBaoGia4ViewController: UIViewController {
                 //error
                 print("error")
             }
-        }).addDisposableTo(bag)
+        })//.addDisposableTo(bag)
     }
 }

@@ -198,8 +198,8 @@ class RaoVatCategoryTableViewCell: SwipeTableViewCell {
         } else {
             newItem.text = "Đã qua sử dụng"
         }
-        oldPrice.setText(str: "\(data.price!)".toRaoVatPriceFormat().toFormatedPrice())
-        newPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toRaoVatPriceFormat().toFormatedPrice()
+        oldPrice.setText(str: "\(data.price!)".toFormatedPrice())
+        newPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
         views.text = "\(data.numberViewed ?? 0)"
         duration.text = data.endDate?.toDate()?.toFormatedDuration()
     }

@@ -47,7 +47,20 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     public static var shared: RaoVatPublishViewController!
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        if !Prefs.isUserLogged {
+            if LoginViewController.isIgnore {
+                LoginViewController.isIgnore = false
+                RaoVatCoordinator.sharedInstance.navigation?.popViewController()
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
+            return
+        }
+    }
+    
     func bindRequest(){
+        
         advRequest.title = tfTieuDe.text
         advRequest.descriptionValue = tfMota.text
         advRequest.price = Int(tfGia.text?.replacing(".", with: "") ?? "0")
@@ -130,8 +143,12 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
         
         self.danhMucCha.selectRow(at: 0)
         self.tfDanhMucCha.text = self.danhMucCha.dataSource[0]
+        self.danhMucCon.dataSource = self.categoryData[0].subCategory!.map { $0.name! }
+        
+        self.advRequest.categoryId = RaoVatViewController.shared.datas.value[0].id
         self.danhMucCon.selectRow(at: 0)
         self.tfDanhMucCon.text = self.danhMucCon.dataSource[0]
+        self.advRequest.subCategoryId = self.categoryData[0].subCategory?[0].id
         
         //map view for address
 //        tfAddress.rx.controlEvent(UIControlEvents.editingDidBegin).subscribe(onNext: {
@@ -249,6 +266,13 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     }
     @IBAction func onPublish(_ sender: Any) {
         bindRequest()
+        
+        //validation
+        if advRequest.title ?? "" == "" || advRequest.price ?? 0 == 0 {
+            Toast.init(text: "Vui lòng nhập đầy đủ thông tin").show()
+            return
+        }
+        
         
         if listImage.count > 0 {
             LoadingOverlay.shared.showOverlay(view: self.view)

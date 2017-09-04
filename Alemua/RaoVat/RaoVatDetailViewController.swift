@@ -39,8 +39,8 @@ class RaoVatDetailViewController: BaseViewController {
                 } else {
                     lbHandMoi.text = "Đã qua sử dụng"
                 }
-                lbOldPrice.setText(str: "\(data.price!)".toRaoVatPriceFormat().toFormatedPrice())
-                lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toRaoVatPriceFormat().toFormatedPrice()
+                lbOldPrice.setText(str: "\(data.price!)".toFormatedPrice())
+                lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
                 lbAddress.text = data.transactionAddress
                 lbDesc.text = data.descriptionValue
                 userView.bindData(name: data.userName, address: data.userAddress, photo: data.userPhoto)
@@ -270,8 +270,8 @@ class RelateCollectionViewCell: UICollectionViewCell {
             photo.kf.setImage(with: URL(string: arr[0]), placeholder: UIImage(named: "no_image"))
         }
         lbName.text = data.title
-        lbOldPrice.setText(str: "\(data.price!)".toRaoVatPriceFormat().toFormatedPrice())
-        lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toRaoVatPriceFormat().toFormatedPrice()
+        lbOldPrice.setText(str: "\(data.price!)".toFormatedPrice())
+        lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
         btnPromo.setTitle("\(data.promotion ?? 0)%", for: .normal)
 
     }

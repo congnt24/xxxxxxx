@@ -69,6 +69,14 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         tfGia.delegate = self
         tfWebsite.text = website_url
         tfTenSP.text = data?.name
+        //get
+        if let p = data?.photo, let url = URL(string: p) {
+            KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                if let image = image {
+                    self.addPhoto(image: image)
+                }
+            })
+        }
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -132,13 +140,16 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         if mediaType.isEqual(to: kUTTypeImage as String) {
             let image = info[UIImagePickerControllerOriginalImage]
             as! UIImage
-            listImage.append(image)
-            stPhoto.addArrangedSubview(PhotoView(image: image))
-            //            self.camera.setImage(image, for: .normal)
-            stPhoto.removeArrangedSubview(btnAdd)
-            stPhoto.addArrangedSubview(btnAdd)
+            addPhoto(image: image)
 
         }
+    }
+    
+    func addPhoto(image: UIImage){
+        listImage.append(image)
+        stPhoto.addArrangedSubview(PhotoView(image: image))
+        stPhoto.removeArrangedSubview(btnAdd)
+        stPhoto.addArrangedSubview(btnAdd)
     }
 
     //tu dong gan link
@@ -146,6 +157,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         
         LoadingOverlay.shared.showOverlay(view: parent?.view)
         self.tfGia.text = "\(self.data?.promotionPrice ?? 0)"
+        taodonhangRequest.websitePrice = self.data?.promotionPrice ?? 0
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
             .subscribe(onNext: { (res) in

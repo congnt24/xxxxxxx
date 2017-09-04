@@ -55,6 +55,7 @@ class BaoGiaTableViewCell: UITableViewCell {
                     let friend = ConversationUserData()
                     friend.id = self.data.userPostId
                     friend.photo = self.data.userPhoto
+                    friend.name = self.data.userPost
                     ChatCoordinator(OrderOrderCoordinator.sharedInstance.navigation).start(friend)
                     print("Add Chatting Log success")
                     break

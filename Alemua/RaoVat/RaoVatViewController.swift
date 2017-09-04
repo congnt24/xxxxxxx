@@ -30,7 +30,6 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
         refreshControl.endRefreshing()
     }
     override func bindToViewModel() {
-        
         refreshControl = UIRefreshControl()
         collectionView!.alwaysBounceVertical = true
         refreshControl.attributedTitle = NSAttributedString(string: "")

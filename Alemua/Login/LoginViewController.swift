@@ -13,15 +13,19 @@ import RxCocoa
 import AccountKit
 import Moya
 import SwiftyJSON
+import GoogleSignIn
+//import FacebookLogin
+//import FBSDKLoginKit
 
-class LoginViewController: BaseViewController, AKFViewControllerDelegate {
-    
+class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
+
     public static var isIgnore = false;
-    
+
     var bag = DisposeBag()
     var accountKit: AKFAccountKit!
     override func bindToViewModel() {
-        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
         if accountKit == nil {
             accountKit = AKFAccountKit(responseType: .accessToken)
         }
@@ -29,8 +33,8 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 
     override func responseFromViewModel() {
     }
-    
-    
+
+
     func viewController(_ viewController: UIViewController!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
         print("Login succcess with AccessToken")
         accountKit.requestAccount { (account, err) in
@@ -45,20 +49,19 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
                             Prefs.apiToken = result["ApiToken"].string!
                             Prefs.phoneNumber = phone
                             Prefs.photo = result["photo"].string ?? ""
-                            Prefs.userName = result["name"].string ?? ""                            //start socketio
-                            
+                            Prefs.userName = result["name"].string ?? "" //start socketio
+
                             SocketIOHelper.shared.connectToSocketIO()
                             self.navigationController?.popViewController(animated: false)
                             break
                         case .error(let msg):
                             print("Error \(msg)")
                             break
-                        default: break
                         }
                     }).addDisposableTo(self.bag)
             }
         }
-        
+
     }
     func viewController(_ viewController: UIViewController!, didCompleteLoginWithAuthorizationCode code: String!, state: String!) {
         print("Login succcess with AuthorizationCode")
@@ -69,7 +72,7 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
     func viewControllerDidCancel(_ viewController: UIViewController!) {
         print("The user cancel the login")
     }
-    
+
     func prepareLoginViewController(_ loginViewController: AKFViewController) {
         loginViewController.delegate = self
         //        loginViewController.advancedUIManager = nil
@@ -87,14 +90,14 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
         loginViewController.defaultCountryCode = "VN"
     }
 
-    
+
     override func viewWillAppear(_ animated: Bool) {
         LoginViewController.isIgnore = false
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         if Prefs.isUserLogged {
             self.navigationController?.popViewController()
         }
-        
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -104,6 +107,14 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
         LoginViewController.isIgnore = true
         navigationController?.popViewController()
     }
+    @IBAction func onFacebook(_ sender: Any) {
+        facebookLogin()
+    }
+    
+    @IBAction func onGoogle(_ sender: Any) {
+        googleLogin()
+    }
+    
     @IBAction func onPhone(_ sender: Any) {
 //        LoginCoordinator.sharedInstance.showLoginByPassword()
         //active account by accoutkit//Show login by account kit
@@ -115,6 +126,54 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
     }
 }
 
+//MARK: Social Login
+extension LoginViewController {
+    func facebookLogin() {
+        let loginManager = LoginManager()
+        loginManager.logIn([.publicProfile, .email], viewController: self) { (result) in
+            switch result {
+            case .cancelled:
+                print("Cancel button click")
+            case .success(let _, let _, let token):
+                print("facebook")
+                print(token.authenticationToken)
+//                print()
+//                Prefs.isUserLogged = true
+                self.navigationController?.popViewController()
+                //                TODO: AUTHEN BY FACEBOOK
+                //                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            default:
+                print("??")
+            }
+        }
+    }
+    func googleLogin(){
+//        GIDSignIn.sharedInstance().
+    }
+    
+    
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            onLoginEvent.onError(error)
+            return
+        }
+        
+        guard let authen = user.authentication else {
+            onLoginEvent.onError(error)
+            return
+        }
+        //        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        let credential = GoogleAuthProvider.credential(withIDToken: authen.idToken, accessToken: authen.accessToken)
+        //success
+        self.onLoginEvent.onNext(user)
+    }
+}
+
 
 
 
@@ -122,28 +181,28 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 
 
 //class LoginViewController: BaseViewController {
-//    
+//
 //    public static var isIgnore = false;
-//    
+//
 //    var bag = DisposeBag()
 //    override func bindToViewModel() {
 //    }
-//    
+//
 //    override func responseFromViewModel() {
 //    }
-//    
+//
 //    override func viewWillAppear(_ animated: Bool) {
 //        LoginViewController.isIgnore = false
 //        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 //        if Prefs.isUserLogged {
 //            self.navigationController?.popViewController()
 //        }
-//        
+//
 //    }
 //    override func viewWillDisappear(_ animated: Bool) {
 //        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
 //    }
-//    
+//
 //    @IBAction func onIgnore(_ sender: Any) {
 //        LoginViewController.isIgnore = true
 //        navigationController?.popViewController()
@@ -166,18 +225,18 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 //class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 //    public static var isIgnore = false;
 //    @IBOutlet weak var loginFacebook: UIView!
-//    
+//
 //    var bag = DisposeBag()
 //    var accountKit: AKFAccountKit!
-//    
-//    
+//
+//
 //    override func bindToViewModel() {
 //        loginFacebook.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onLoginFacebook)))
 //        if accountKit == nil {
 //            accountKit = AKFAccountKit(responseType: .accessToken)
 //        }
 //    }
-//    
+//
 //    func viewController(_ viewController: UIViewController!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
 //        print("Login succcess with AccessToken")
 //        accountKit.requestAccount { (account, err) in
@@ -205,7 +264,7 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 //                    }).addDisposableTo(self.bag)
 //            }
 //        }
-//        
+//
 //    }
 //    func viewController(_ viewController: UIViewController!, didCompleteLoginWithAuthorizationCode code: String!, state: String!) {
 //        print("Login succcess with AuthorizationCode")
@@ -216,7 +275,7 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 //    func viewControllerDidCancel(_ viewController: UIViewController!) {
 //        print("The user cancel the login")
 //    }
-//    
+//
 //    func prepareLoginViewController(_ loginViewController: AKFViewController) {
 //        loginViewController.delegate = self
 //        //                loginViewController.setAdvancedUIManager(nil)
@@ -232,15 +291,15 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 //        loginViewController.setTheme(theme)
 //        loginViewController.defaultCountryCode = "VN"
 //    }
-//    
-//    
+//
+//
 //    override func viewWillAppear(_ animated: Bool) {
 //        if Prefs.isUserLogged {
 //            HomeCoordinator.sharedInstance.showHome()
 //        }
-//        
+//
 //    }
-//    
+//
 //    func onLoginFacebook() {
 //        //active account by accoutkit//Show login by account kit
 //        let inputState: String = UUID().uuidString
@@ -249,7 +308,7 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate {
 //        self.prepareLoginViewController(viewController)
 //        self.present(viewController as! UIViewController, animated: true, completion: nil)
 //    }
-//    
+//
 //    @IBAction func onSkip(_ sender: Any) {
 //        Prefs.isUserLogged = false
 //        HomeCoordinator.sharedInstance.showHome()

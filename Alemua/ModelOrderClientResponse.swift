@@ -39,6 +39,7 @@ public class ModelOrderClientData: BaseResult {
         static let quotes = "quotes"
         static let cancelReason = "cancel_reason"
         static let totalPrice = "total_price"
+        static let transaction_alemua_free = "transaction_alemua_free"
         
     }
     
@@ -67,6 +68,7 @@ public class ModelOrderClientData: BaseResult {
     public var cancelReason: String?
     public var quotes: [ModelOrderBaoGiaData]?
     public var totalPrice: Int?
+    public var transaction_alemua_free: Int?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -105,6 +107,7 @@ public class ModelOrderClientData: BaseResult {
         deliveryDate = json[SerializationKeys.deliveryDate].string
         cancelReason = json[SerializationKeys.cancelReason].string
         totalPrice = json[SerializationKeys.totalPrice].int
+        transaction_alemua_free = json[SerializationKeys.transaction_alemua_free].int
         if let items = json[SerializationKeys.quotes].array { quotes = items.map { ModelOrderBaoGiaData(json: $0) } }
 
     }

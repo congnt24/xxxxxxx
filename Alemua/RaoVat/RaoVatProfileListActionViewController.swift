@@ -80,7 +80,7 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
         }.addDisposableTo(bag)
 
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-//            RaoVatCoordinator.sharedInstance.showRaoVatDetail(data: self.datas.value[ip.row])
+            RaoVatCoordinator.sharedInstance.showRaoVatDetail(data: self.datas.value[ip.row])
         }).addDisposableTo(bag)
 
         //Loadmore

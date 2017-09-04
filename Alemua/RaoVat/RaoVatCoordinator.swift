@@ -80,6 +80,11 @@ extension RaoVatCoordinator {
         navigation?.pushViewController(view, animated: true)
     }
     
+    func showSelectMapViewController(){
+        let view: RaoVatSelectMapViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatSelectMapViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
+    
     func showSearchViewController(){
         let view: RaoVatSearchViewController = getBaoGiaStoryboard().instantiateViewController(withClass: RaoVatSearchViewController.self)
 //        view.data = data

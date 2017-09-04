@@ -63,11 +63,13 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         tfNgay.text = taodonhangRequest.deliveryDate
         tfGia.text = "\(taodonhangRequest.websitePrice ?? 0)"
         tfNote.text = taodonhangRequest.note
+        
     }
 
 
     func checkOrderAndSendRequest() {
         //TODO: Send request
+        taodonhangRequest.deliveryDate = taodonhangRequest.deliveryDate?.fromReadableToDate()?.formatDate(format: "yyyy-MM-dd")
         taodonhangRequest.transactionOption = grTransaction.checkedPosition
         AlemuaApi.shared.aleApi.request(.createOrder(data: taodonhangRequest))
             .toJSON()

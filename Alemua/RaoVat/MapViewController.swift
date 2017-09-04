@@ -12,6 +12,8 @@ import GoogleMaps
 import GooglePlaces
 
 class MapViewController: UIViewController {
+
+    let ZOOM: Float = 14.0
     var locationManager = CLLocationManager()
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
@@ -19,10 +21,12 @@ class MapViewController: UIViewController {
     var selectedPlace: GMSPlace?
     let geocoder = GMSGeocoder()
     var curLocation: CLLocation?
-    
-    var centerMarker  = GMSMarker()
+    var movingCamera = GMSCameraPosition.camera(withLatitude: 21.005, longitude: 105.811, zoom: 14.0)
+    var centerMarker = GMSMarker()
     var centerAddress = ""
-    
+
+    var onMovingMap: ((String?, CLLocationCoordinate2D?) -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -31,13 +35,11 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         //setting delegate and request permission for current location
         locationManager.delegate = self
-        
+
         placesClient = GMSPlacesClient.shared()
         //setup current location
-        
-        
-        let camera = GMSCameraPosition.camera(withLatitude: 21.005, longitude: 105.811, zoom: 15.0)
-        mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
+
+        mapView = GMSMapView.map(withFrame: view.bounds, camera: movingCamera)
         mapView.mapType = .normal
         mapView.accessibilityElementsHidden = false
         //mapView.settings.myLocationButton = true
@@ -50,6 +52,27 @@ class MapViewController: UIViewController {
         // Add the map to the view, hide it until we've got a location update.
         mapView.delegate = self
         view.addSubview(mapView)
+    }
+
+
+    func searchlocation(locSearch: String) {
+        CLGeocoder().geocodeAddressString(locSearch, completionHandler: { placemark, error in
+            if error == nil {
+                if let location = placemark?.first?.location?.coordinate {
+
+                    let camera = GMSCameraPosition.camera(withLatitude: location.latitude,
+                                                          longitude: location.longitude,
+                                                          zoom: self.ZOOM)
+                    self.mapView.animate(to: camera)
+                }
+            } else {
+                print(error.debugDescription)
+            }
+        })
+    }
+
+    func moveToPosition(lat: Float, long: Float) {
+        movingCamera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long), zoom: ZOOM)
     }
 }
 
@@ -67,21 +90,41 @@ extension MapViewController: GMSMapViewDelegate {
         infoMarker.map = mapView
         mapView.selectedMarker = infoMarker
     }
-    
+
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         //        marker.position = position.target
     }
+
+    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
+        if let onMovingMap = onMovingMap {
+            geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
+                guard error == nil else {
+                    return
+                }
+
+                if let result = response?.firstResult() {
+                    self.centerMarker.position = cameraPosition.target
+                    self.centerMarker.title = result.lines?[0]
+                    self.centerMarker.snippet = result.lines?[1]
+                    self.centerAddress = result.lines?[0] ?? ""
+                    self.centerMarker.map = mapView
+                    onMovingMap(result.lines?[0], cameraPosition.target)
+                }
+            }
+        }
+    }
+
 }
 //MARK: Moving camera
 //MARK: Add marker
 extension MapViewController {
-    
-    func movingCameraToLocation(lat: Float, lon: Float){
-        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon), zoom: 15.0)
+
+    func movingCameraToLocation(lat: Float, lon: Float) {
+        let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon), zoom: ZOOM)
         mapView.animate(to: camera)
     }
-    
-    func addMarkerToLocation(lat: Float, lon: Float, image: UIImage?){
+
+    func addMarkerToLocation(lat: Float, lon: Float, image: UIImage?) {
         var marker = GMSMarker()
         let position = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
         marker = GMSMarker(position: position)
@@ -89,8 +132,8 @@ extension MapViewController {
         marker.isFlat = true
         marker.map = mapView
     }
-    
-    func addMarkerToCurrentLocation(image: UIImage){
+
+    func addMarkerToCurrentLocation(image: UIImage) {
         if let curLocation = curLocation {
             var marker = GMSMarker()
             print(curLocation)
@@ -103,7 +146,7 @@ extension MapViewController {
             marker.map = mapView
         }
     }
-    func addMarkerToCurrentLocation(view: UIView){
+    func addMarkerToCurrentLocation(view: UIView) {
         if let curLocation = curLocation {
             var marker = GMSMarker()
             print(curLocation)
@@ -116,15 +159,15 @@ extension MapViewController {
             marker.map = mapView
         }
     }
-    
-    
+
+
     func addCircleToLocation(location: CLLocation) {
-        
+
     }
     func addCircleToLocation(lat: Float, lon: Float, radius: Float) {
         let circleCenter = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lon))
         let circ = GMSCircle(position: circleCenter, radius: CLLocationDistance(radius))
-        
+
         circ.fillColor = UIColor.init(hexString: "#4CC3D9", transparency: 0.3)
         circ.strokeColor = UIColor.init(hexString: "#4CC3D9")
         circ.strokeWidth = 1
@@ -133,18 +176,18 @@ extension MapViewController {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
-    
-    
+
+
     func getPlace() {
-        
+
         let geocoder = CLGeocoder()
-        
+
         geocoder.reverseGeocodeLocation(CLLocation(latitude: 21, longitude: 105.81)) { (place, error) in
             if let error = error {
                 print("Pick Place error: \(error.localizedDescription)")
                 return
             }
-            
+
             //            if let placeLikelihoodList = placeLikelihoodList {
             //                let place = placeLikelihoodList.likelihoods.first?.place
             if let p = place {
@@ -157,17 +200,17 @@ extension MapViewController: CLLocationManagerDelegate {
             //            }
         }
     }
-    func getCurrentPlace(){
+    func getCurrentPlace() {
         placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
             if let error = error {
                 print("Pick Place error: \(error.localizedDescription)")
                 return
             }
-            
+
             if let placeLikelihoodList = placeLikelihoodList {
                 let place = placeLikelihoodList.likelihoods.first?.place
                 if let place = place {
-                    
+
                 }
             }
         })
@@ -175,19 +218,19 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         self.curLocation = locations.last
-        
+
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
-                                              zoom: 15.0)
+                                              zoom: ZOOM)
         if mapView.isHidden {
             mapView.isHidden = false
             mapView.camera = camera
         } else {
             mapView.animate(to: camera)
         }
-        
+
     }
-    
+
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -204,7 +247,7 @@ extension MapViewController: CLLocationManagerDelegate {
             print("Location status is OK.")
         }
     }
-    
+
     // Handle location manager errors.
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()

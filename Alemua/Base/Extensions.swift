@@ -18,7 +18,7 @@ extension Date {
     func toFormatedDuration() -> String {
         let now = Date()
         let components = Calendar.current.dateComponents([.day, .hour, .minute], from: self, to: now)
-        
+
         let day = components.day ?? 0
         let hour = components.hour ?? 0
         let min = components.minute ?? 0
@@ -29,6 +29,31 @@ extension Date {
             return "\(hour) giờ trước"
         }
         return "\(min) phút trước"
+    }
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
+    
+    func lastDayInMonth() -> Int {
+        let lastDate = self.endOfMonth()
+        return Calendar.current.component(.day, from: lastDate)
+    }
+    func getMonth() -> Int {
+        let calendar = Calendar.current
+        return calendar.component(.month, from: self)
+    }
+    func getDay() -> Int {
+        let calendar = Calendar.current
+        return calendar.component(.day, from: self)
+    }
+    func formatDate(format: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
     }
 }
 
@@ -49,14 +74,27 @@ extension Int {
             return "Chỉ mua khi có giảm giá"
         }
     }
-    
+
     func toDistanceFormated() -> String {
-        
-        return "\(self/1000) km"
+
+        return "\(self / 1000) km"
     }
 }
 
 extension String {
+    func fromReadableToDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy" //Your date format
+        //        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7:00") //Current time zone
+        return dateFormatter.date(from: self) //according to date format your date string
+    }
+
+    func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss" //Your date format
+        //        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7:00") //Current time zone
+        return dateFormatter.date(from: self) //according to date format your date string
+    }
     
     func toRaoVatPriceFormat() -> String {
         let price = (Int(self) ?? 0) as NSNumber
@@ -82,14 +120,6 @@ extension String {
     func toFormatedPrice() -> String {
         return self.toRaoVatPriceFormat() + " VND"
     }
-    
-    
-    func toDate() -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss" //Your date format
-//        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7:00") //Current time zone
-        return dateFormatter.date(from: self) //according to date format your date string
-    }
     func toFormatedHour() -> String {
 //        let dateFormatter = DateFormatter()
 //        dateFormatter.dateFormat = "hh:mm"
@@ -97,10 +127,10 @@ extension String {
 //        let date = self.toDate()
 //        return dateFormatter.string(from: date!)
         let str = self.splitted(by: " ")[1]
-        
+
         return str.substring(to: str.index(str.startIndex, offsetBy: 5))
     }
-    
+
 
 //    func loadItemImage(img: UIImageView) {
 ////        let processor = ResizingImageProcessor(referenceSize: CGSize(width: 100, height: 100))
@@ -110,7 +140,7 @@ extension String {
 //    func loadInto(img: UIImageView) {
 //        img.kf.setImage(with: URL(string: self), placeholder: UIImage(named: "sample"))
 //    }
-    
+
     func toFormatedBaoGia() -> String {
         return self + " báo giá"
     }
@@ -118,19 +148,19 @@ extension String {
 }
 
 extension UIImageView {
-    
-    func setAvatar(url: String?){
+
+    func setAvatar(url: String?) {
         setImage(url: url, placeholder: "avatar")
     }
-    
-    func setItem(url: String?){
+
+    func setItem(url: String?) {
         setImage(url: url, placeholder: "sample")
     }
-    
-    func setImage(url: String?, placeholder: String){
+
+    func setImage(url: String?, placeholder: String) {
         if let url = url {
-        self.kf.setImage(with: URL(string: url), placeholder: UIImage(named: placeholder))
-        }else{
+            self.kf.setImage(with: URL(string: url), placeholder: UIImage(named: placeholder))
+        } else {
             self.image = UIImage(named: placeholder)
         }
     }
@@ -138,12 +168,18 @@ extension UIImageView {
 
 extension Int {
     func toFormatedRaoVatTime() -> String {
+        if self > 60 * 24 {
+            return "\(self / 60 / 24) ngày trước"
+        }
+        if self > 60 {
+            return "\(self / 60) giờ trước"
+        }
         return "\(self) phút trước"
     }
     func toFormatedTime() -> String {
-        return "\(self / 60) phút trước"
+        return self.toFormatedRaoVatTime()
     }
-    
+
     func toNguoiDangOrNguoiVanChuyen() -> String {
         return self == 0 ? "Người mua" : "Người vận chuyển"
     }
@@ -190,7 +226,7 @@ extension ObservableType {
     }
 }
 
-extension Collection{
+extension Collection {
     func toJSONString() -> String {
         let rawData = try! JSONSerialization.data(withJSONObject: self, options: [])
         let jsonData = String(data: rawData, encoding: String.Encoding.utf8)!

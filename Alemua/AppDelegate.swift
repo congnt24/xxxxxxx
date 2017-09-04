@@ -10,16 +10,31 @@ import UIKit
 import IQKeyboardManagerSwift
 import Firebase
 import UserNotifications
+//import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-    
+
+    func application(application: UIApplication,
+                     openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        return GIDSignIn.sharedInstance().handleURL(url,
+                                                    sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String,
+                                                    annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+    }
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+//    }
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //facebook auth
+        // Initialize sign-in
+
 //        FirebaseAuthHelper.configure()
 //        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
 
@@ -49,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
-        
+
         Messaging.messaging().delegate = self
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -72,12 +87,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // [START receive_message]
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {        if let messageID = userInfo[gcmMessageIDKey] {
-            print("Message ID1: \(messageID)")
-        }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) { if let messageID = userInfo[gcmMessageIDKey] {
+        print("Message ID1: \(messageID)")
+    }
 
-        // Print full message.
-        print(userInfo)
+    // Print full message.
+    print(userInfo)
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
@@ -137,31 +152,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
+                withError error: NSError!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            let userId = user.userID // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            // ...
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+}
+
 
 
 
 // [START ios_10_message_handling]
 @available(iOS 10, *)
-extension AppDelegate : UNUserNotificationCenterDelegate {
-    
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
     // Receive displayed notifications for iOS 10 devices.
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
-        
+
         // With swizzling disabled you must let Messaging know about the message, for Analytics
         // Messaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID3: \(messageID)")
         }
-          let aps = userInfo["aps"] as! [String: AnyObject]
+        let aps = userInfo["aps"] as! [String: AnyObject]
         // Print full message.
         // Change this to your preferred presentation option
         completionHandler([.alert])
     }
-    
+
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -170,16 +203,16 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID4: \(messageID)")
         }
-        
+
         // Print full message.
         print(userInfo)
-        
+
         completionHandler()
     }
 }
 // [END ios_10_message_handling]
 
-extension AppDelegate : MessagingDelegate {
+extension AppDelegate: MessagingDelegate {
     // [START refresh_token]
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")

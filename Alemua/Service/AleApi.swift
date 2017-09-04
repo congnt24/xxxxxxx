@@ -49,6 +49,7 @@ public enum AleApi {
     case loginAndRegisterFacebook(data: FacebookRequest)
     case getNotifications(page_number: Int, is_shipper: Int)
     case readNotification(notification_id: Int)
+    case getUnreadNotification(isShipper: Int)
 
 }
 
@@ -118,6 +119,8 @@ extension AleApi: TargetType {
             return "/api/order/getNotifications"
         case .readNotification:
             return "/api/order/readNotification"
+        case .getUnreadNotification:
+            return "/api/order/getUnreadNotification"
         }
     }
 
@@ -359,6 +362,13 @@ extension AleApi: TargetType {
             params["ApiToken"] = Prefs.apiToken
             params["notification_id"] = notification_id
             return params
+        case .getUnreadNotification(let is_shipper):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["is_shipper"] = is_shipper
+            return params
+            
             
         default:
             return nil

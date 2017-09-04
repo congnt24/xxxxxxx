@@ -35,7 +35,13 @@ class OrderMainOnlineTableViewCell: UITableViewCell {
         widthConstraint.constant = 0
         for item in data.items! {
             KingfisherManager.shared.retrieveImage(with: URL(string: item.photo!)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
-                let img = OnlinePhoto(image: image)
+                var img: OnlinePhoto!
+                if let image = image {
+                    img = OnlinePhoto(image: image)
+                }else{
+                    img = OnlinePhoto(image: UIImage(named: "no_image"))
+                }
+                
                 img.data = item
                 self.widthConstraint.constant += wid
                 self.stack.addArrangedSubview(img)
@@ -59,7 +65,6 @@ class OnlinePhoto: UIImageView {
         super.init(coder: aDecoder)
     }
     func selectItem(){
-        print("LLLLLLLLLLL")
         OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: data.websiteUrl)
     }
 }

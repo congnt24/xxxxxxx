@@ -131,7 +131,7 @@ class RaoVatDetailViewController: BaseViewController {
         }.addDisposableTo(bag)
 
         vcRelate.rx.itemSelected.subscribe(onNext: { (ip) in
-
+            RaoVatCoordinator.sharedInstance.showRaoVatDetail(data: self.relateDatas.value[ip.row])
         }).addDisposableTo(bag)
         fetchDetail()
     }

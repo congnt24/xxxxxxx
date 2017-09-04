@@ -11,16 +11,31 @@ import UIKit
 import AwesomeMVVM
 import RxSwift
 import RxCocoa
+import GooglePlaces
 
 class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
     var bag = DisposeBag()
     var datas = Variable<[AdvCategoryResponse]>([])
     let itemsPerRow: CGFloat = 2
+    var locationManager = CLLocationManager()
+    var curLocation: CLLocation?
+    var placesClient: GMSPlacesClient!
     
     public static var shared: RaoVatViewController!
+    var refreshControl: UIRefreshControl!
     
+    func refresh(_ sender: Any) {
+        fetchData()
+        refreshControl.endRefreshing()
+    }
     override func bindToViewModel() {
+        
+        refreshControl = UIRefreshControl()
+        collectionView!.alwaysBounceVertical = true
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
         RaoVatViewController.shared = self
         collectionView.delegate = self
         datas.asObservable().bind(to: collectionView.rx.items(cellIdentifier: "RaoVatViewCell")) { (ip, item, cell) in
@@ -31,6 +46,7 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
             RaoVatCoordinator.sharedInstance.showRaoVatCategory(data: self.datas.value[ip.row])
         }).addDisposableTo(bag)
         fetchData()
+        getCurrentPlace()
     }
     
     override func responseFromViewModel() {
@@ -72,6 +88,47 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
         return CGSize(width: widthPerItem, height: widthPerItem * 0.7)
     }
     
+    func getCurrentPlace(){
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.distanceFilter = 50
+        locationManager.startUpdatingLocation()
+        //setting delegate and request permission for current location
+        locationManager.delegate = self
+        
+        placesClient = GMSPlacesClient.shared()
+        //setup current location
+
+    }
+    
+}
+
+extension RaoVatViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        curLocation = locations.last
+        print("Location is updated")
+    }
+    
+    // Handle authorization for the location manager.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted:
+            print("Location access was restricted.")
+        case .denied:
+            print("User denied access to location.")
+        case .notDetermined:
+            print("Location status not determined.")
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK.")
+        }
+    }
+    
+    // Handle location manager errors.
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationManager.stopUpdatingLocation()
+        print("Error: \(error)")
+    }
 }
 
 

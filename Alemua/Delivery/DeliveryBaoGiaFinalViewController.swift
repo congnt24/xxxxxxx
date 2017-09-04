@@ -33,7 +33,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfMuatu.text = modelQuoteData.buyFrom
         tfGiaoden.text = modelQuoteData.deliveryTo
         tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
-        tfGia.text = "\(modelQuoteData.websitePrice!)".toFormatedPrice()
+        tfGia.text = "\(modelQuoteData.websitePrice! + modelQuoteData.transaction_alemua_free!)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
         
@@ -64,6 +64,10 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                 self.tfGia.text = "\(price)".toFormatedPrice()
             }
         }
+        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)"
+        rateDetail.rateData.tonggia = modelQuoteData.websitePrice ?? 0
+        rateDetail.phigiaodichquaalemua.text = "\(modelQuoteData.transaction_alemua_free ?? 0)"
+        rateDetail.rateData.phigiaodichquaalemua = modelQuoteData.transaction_alemua_free ?? 0
         
         
         req.buyFrom = modelQuoteData.buyFrom

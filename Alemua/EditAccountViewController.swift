@@ -54,7 +54,9 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
         
         userView.onAvatar = { imgView in
-            PictureHelper.pickPhoto(delegate: self, vc: self)
+//            PictureHelper.pickPhoto(delegate: self, vc: self)
+            
+            PictureHelper.showDialogChoosePhoto(delegate: self, vc: self)
         }
     }
     

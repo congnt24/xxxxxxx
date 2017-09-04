@@ -24,6 +24,8 @@ class ConversationUserData {
         static let photo = "photo"
         static let createdAt = "created_at"
         static let introduceCode = "introduce_code"
+        static let last_message = "last_message"
+        static let last_time = "last_time"
     }
 
     // MARK: Properties
@@ -43,6 +45,8 @@ class ConversationUserData {
     public var photo: String?
     public var createdAt: String?
     public var introduceCode: String?
+    public var last_message: String?
+    public var last_time: String?
 
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -73,5 +77,7 @@ class ConversationUserData {
         photo = json[SerializationKeys.photo].string
         createdAt = json[SerializationKeys.createdAt].string
         introduceCode = json[SerializationKeys.introduceCode].string
+        last_message = json[SerializationKeys.last_message].string
+        last_time = json[SerializationKeys.last_time].string
     }
 }

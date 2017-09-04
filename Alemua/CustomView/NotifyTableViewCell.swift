@@ -33,7 +33,7 @@ class NotifyTableViewCell: UITableViewCell {
         if let p = data.photo {
             photo.kf.setImage(with: URL(string: p))
         }
-        if data.isRead ?? 0 == 1 {
+        if data.isRead ?? 0 == 0 {
             content.backgroundColor = UIColor.init(hexString: "#F5FAFD")
         } else {
             content.backgroundColor = UIColor.clear

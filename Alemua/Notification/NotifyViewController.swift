@@ -12,7 +12,10 @@ import RxSwift
 import RxCocoa
 
 class NotifyViewController: BaseViewController {
+    public static var shared: NotifyViewController!
+    
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var notifyBar: UITabBarItem!
     var bag = DisposeBag()
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,7 +30,7 @@ class NotifyViewController: BaseViewController {
     }
 
     override func bindToViewModel() {
-
+        NotifyViewController.shared = self
         refreshControl = UIRefreshControl()
 //        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -44,21 +47,43 @@ class NotifyViewController: BaseViewController {
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-//            AlemuaApi.shared.aleApi.request(AleApi.readNotification(notification_id: self.datas.value[ip.row].id!))
-//                .toJSON()
-//                .subscribe(onNext: { (res) in
-//                    switch res {
-//                    case .done(let result):
-//                        
-//                        print("Cancel success")
-//                        break
-//                    case .error(let msg):
-//                        print("Error \(msg)")
-//                        break
-//                    default: break
-//                    }
-//                }).addDisposableTo(self.bag)
-            AccountCoordinator.sharedInstance.showNotifyThanhToan()
+            AlemuaApi.shared.aleApi.request(AleApi.readNotification(notification_id: self.datas.value[ip.row].id!))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done(let result):
+
+                        break
+                    case .error(let msg):
+                        print("Error \(msg)")
+                        break
+                    default: break
+                    }
+                }).addDisposableTo(self.bag)
+
+            switch self.datas.value[ip.row].notificationType! {
+            case 1:
+                OrderNavTabBarViewController.sharedInstance.switchTab(index: 1)
+                OrderOrderViewController.shared.selectViewController = 1
+                break
+            case 2:
+                DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
+                DeliveryOrderViewController.defaultTab = 1
+                break
+            case 3:
+                DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
+                DeliveryOrderViewController.defaultTab = 3
+                break
+            case 4:
+                DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
+                DeliveryOrderViewController.defaultTab = 2
+                break
+            default:
+                AccountCoordinator.sharedInstance.showNotifyThanhToan()
+                break
+            }
+
+
         }).addDisposableTo(bag)
         fetchData()
     }
@@ -119,9 +144,9 @@ class NotifyViewController: BaseViewController {
                     break
                 }
             }).addDisposableTo(bag)
-        
-        
-        
+
+
+
     }
     @IBAction func onBack(_ sender: Any) {
         if HomeViewController.homeType == .order {

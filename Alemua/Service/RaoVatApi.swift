@@ -31,6 +31,7 @@ public enum RaoVatApi {
     case filterAdv(filterRequest: FilterRequest, lat: Float?, lon: Float?, page_number: Int)
     case getAllComments(adv_detail_id: Int, page_number: Int)
     case addComment(adv_detail_id: Int, comment_id: Int, content: String)
+    case deleteAdv(adv_detail_id: Int)
 }
 
 extension RaoVatApi: TargetType {
@@ -62,6 +63,8 @@ extension RaoVatApi: TargetType {
             return "/api/adv/getAllComments"
         case .addComment:
             return "/api/adv/addComment"
+        case .deleteAdv:
+            return "/api/adv/deleteAdv"
         }
     }
 
@@ -105,7 +108,7 @@ extension RaoVatApi: TargetType {
             params["latitude"] = latitude ?? 0
             params["longitude"] = longitude ?? 0
             return params
-        case .addFavorite(let adv_detail_id):
+        case .addFavorite(let adv_detail_id), .deleteAdv(let adv_detail_id):
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
@@ -157,7 +160,7 @@ extension RaoVatApi: TargetType {
     public /// The HTTP method used in the request.
     var method: Moya.Method {
         switch self {
-        case .createAdv, .updateAdv, .addFavorite, .increaseView, .addComment:
+        case .createAdv, .updateAdv, .addFavorite, .increaseView, .addComment, .deleteAdv:
             return .post
         default:
             return .get

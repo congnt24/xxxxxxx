@@ -42,6 +42,7 @@ class BaoGiaTableViewCell: UITableViewCell {
     }
     
     @IBAction func onXacNhan(_ sender: Any) {
+        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog1(id: data.orderId, quoteId: data.id)
     }
     
     @IBAction func onSendMessage(_ sender: Any) {
@@ -50,6 +51,9 @@ class BaoGiaTableViewCell: UITableViewCell {
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done(let result):
+//                    OrderOrderCoordinator.sharedInstance.
+//                    OrderNavTabBarViewController.sharedInstance.switchTab(index: 2)
+// todo:                    showchat view controller
                     print("Add Chatting Log success")
                     break
                 case .error(let msg):

@@ -117,7 +117,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     }
     @IBAction func onAddPhoto(_ sender: Any) {
         if listImage.count < 5 {
-            PictureHelper.pickPhoto(delegate: self, vc: self)
+            PictureHelper.showDialogChoosePhoto(delegate: self, vc: self)
         } else {
             print("Over 5 images is not allowed")
         }
@@ -184,4 +184,6 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     }
 
 
+    
+    
 }

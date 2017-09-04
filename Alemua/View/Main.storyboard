@@ -27,16 +27,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bzr-yn-ZR1">
-                                <rect key="frame" x="28" y="191" width="319" height="285"/>
+                                <rect key="frame" x="28" y="192" width="319" height="284"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng chọn một hình thức" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0B-PA-XxV">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQZ-KW-vZk">
-                                        <rect key="frame" x="0.0" y="25" width="319" height="260"/>
+                                        <rect key="frame" x="0.0" y="24" width="319" height="260"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
                                                 <rect key="frame" x="180.5" y="10" width="102.5" height="120"/>
@@ -271,8 +271,9 @@
                             <constraint firstAttribute="trailing" secondItem="jAi-MU-gwn" secondAttribute="trailing" id="fGS-ug-T7s"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Thông báo" image="ic_bell" badgeValue="1" selectedImage="ic_bell_blu" id="QTn-Bw-6P8"/>
+                    <tabBarItem key="tabBarItem" title="Thông báo" image="ic_bell" selectedImage="ic_bell_blu" id="QTn-Bw-6P8"/>
                     <connections>
+                        <outlet property="notifyBar" destination="QTn-Bw-6P8" id="ysA-uc-lco"/>
                         <outlet property="tableView" destination="jAi-MU-gwn" id="Mkm-Oo-q53"/>
                     </connections>
                 </viewController>
@@ -903,6 +904,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
+                        <outlet property="navItems" destination="2H3-Tb-IVQ" id="7xZ-fv-Dfk"/>
                         <segue destination="yaT-Av-Q2a" kind="relationship" relationship="viewControllers" id="HXA-dQ-J5B"/>
                         <segue destination="7H6-ps-BGq" kind="relationship" relationship="viewControllers" id="3B5-Mh-Erz"/>
                         <segue destination="L7w-Yd-kGR" kind="relationship" relationship="viewControllers" id="c6W-pI-I18"/>

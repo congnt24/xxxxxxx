@@ -29,7 +29,7 @@ class ConversationTableViewCell: UITableViewCell {
     func bindData(data: ConversationUserData) {
         avatar.setAvatar(url: data.photo)
         name.text = data.name != "" ? data.name :"\(data.phoneNumber!)"
-        lbLastMessage.text = data.descriptionValue
-        time.text = data.updatedAt!.toFormatedHour()
+        lbLastMessage.text = data.last_message
+        time.text = data.last_time!.toFormatedHour()
     }
 }

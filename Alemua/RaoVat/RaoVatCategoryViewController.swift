@@ -96,7 +96,10 @@ class RaoVatCategoryViewController: BaseViewController {
     //Interact API
     func fetchData() {
         if let data = filterRequest {
-            RaoVatService.shared.api.request(RaoVatApi.filterAdv(filterRequest: data, lat: 0, lon: 0, page_number: currentPage))
+            let location = RaoVatViewController.shared.curLocation
+            let lat = Float(location?.coordinate.latitude ?? 0)
+            let lon = Float(location?.coordinate.longitude ?? 0)
+            RaoVatService.shared.api.request(RaoVatApi.filterAdv(filterRequest: data, lat: lat, lon: lon, page_number: currentPage))
                 .toJSON()
                 .subscribe(onNext: { (res) in
                     switch res {

@@ -49,9 +49,10 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
 
     @IBAction func onCamera(_ sender: Any) {
 //        navigationController?.popViewController(animated: true)
-        print("open camera")
-        PictureHelper.pickPhoto(delegate: self, vc: self)
-
+//        print("open camera")
+//        PictureHelper.pickPhoto(delegate: self, vc: self)
+        
+        PictureHelper.showDialogChoosePhoto(delegate: self, vc: self)
 
     }
 

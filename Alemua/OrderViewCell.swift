@@ -46,7 +46,9 @@ class OrderViewCell: UITableViewCell {
         if let promo = item.promotionPercent {
             if promo == 0 {
                 btnPromo.isHidden = true
+                lbGiaCu.isHidden = true
             } else {
+                lbGiaCu.isHidden = false
                 btnPromo.isHidden = false
                 btnPromo.setTitle("\(Int(promo * 100))%", for: .normal)
             }

@@ -31,4 +31,8 @@ target 'Alemua' do
   pod 'ImageSlideshow/Kingfisher'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'GoogleSignIn'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+
 end

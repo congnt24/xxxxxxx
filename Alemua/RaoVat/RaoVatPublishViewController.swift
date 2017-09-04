@@ -16,7 +16,7 @@ import Kingfisher
 import Toaster
 import DropDown
 
-class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     var bag = DisposeBag()
     
     @IBOutlet weak var stPhoto: UIStackView!
@@ -38,10 +38,13 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     @IBOutlet weak var lbGiaKM: UILabel!
     @IBOutlet weak var tfAddress: AwesomeTextField!
     @IBOutlet weak var tfDate: AwesomeTextField!
+    var selectedLat = 21.0
+    var selectedLon = 105.81
     
     var advRequest = AdvRequest()
     var data: ProductResponse?
     var categoryData = [AdvCategoryResponse]()
+    public static var shared: RaoVatPublishViewController!
     
     
     func bindRequest(){
@@ -51,9 +54,9 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
         advRequest.transactionAddress = tfAddress.text
         advRequest.promotion = Int(tfKhuyenMai.text ?? "0")
         advRequest.photo = data?.photo ?? ""
-        advRequest.latitude = 21.0
-        advRequest.longitude = 105.81
-        advRequest.endDate = tfDate.text
+        advRequest.latitude = Float(selectedLat)
+        advRequest.longitude = Float(selectedLon)
+        advRequest.endDate = tfDate.text?.fromReadableToDate()?.formatDate(format: "yyyy-MM-dd")
         if btnCoSan.isChecked {
             advRequest.productType = 1
         } else if btnSangTay.isChecked {
@@ -68,10 +71,15 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     //Drop down
     let danhMucCha = DropDown()
     let danhMucCon = DropDown()
-
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        RaoVatCoordinator.sharedInstance.showSelectMapViewController()
+        return false;
+    }
     
     override func bindToViewModel() {
-        
+        RaoVatPublishViewController.shared = self
         categoryData = RaoVatViewController.shared.datas.value
         btnCoSan.onChange = {bo in
             self.btnDaSuDung.isChecked = false
@@ -111,7 +119,7 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
 
         
         tfGia.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
-            self.tfGia.text = (self.tfGia.text ?? "0").toRaoVatPriceFormat()
+            self.tfGia.text = ((self.tfGia.text ?? "0").replacing(".", with: "")).toRaoVatPriceFormat()
             self.updateGiaKM()
         }).addDisposableTo(bag)
         tfKhuyenMai.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
@@ -120,10 +128,16 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
         
         //default dropdown
         
-//        self.danhMucCha.selectRow(at: 0)
-//        self.tfDanhMucCha.text = self.danhMucCha.dataSource[0]
-//        self.danhMucCon.selectRow(at: 0)
-//        self.tfDanhMucCon.text = self.danhMucCon.dataSource[0]
+        self.danhMucCha.selectRow(at: 0)
+        self.tfDanhMucCha.text = self.danhMucCha.dataSource[0]
+        self.danhMucCon.selectRow(at: 0)
+        self.tfDanhMucCon.text = self.danhMucCon.dataSource[0]
+        
+        //map view for address
+//        tfAddress.rx.controlEvent(UIControlEvents.editingDidBegin).subscribe(onNext: {
+//            
+//        })
+            tfAddress.delegate = self
         
         bindDataForEditting()
     }
@@ -209,7 +223,8 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     
     @IBAction func onAddPhoto(_ sender: Any) {
         if listImage.count < 5 {
-            PictureHelper.pickPhoto(delegate: self, vc: self)
+//            PictureHelper.pickPhoto(delegate: self, vc: self)
+            PictureHelper.showDialogChoosePhoto(delegate: self, vc: self)
         } else {
             print("Over 5 images is not allowed")
         }

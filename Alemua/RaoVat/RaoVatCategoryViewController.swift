@@ -154,6 +154,9 @@ class RaoVatCategoryViewController: BaseViewController {
     }
 
     @IBAction func onDangTin(_ sender: Any) {
+        if datas.value.count <= 0 {
+            return
+        }
         RaoVatCoordinator.sharedInstance.showRaoVatPublish(data: "")
     }
     @IBAction func onSearch(_ sender: Any) {

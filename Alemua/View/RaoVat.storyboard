@@ -1113,7 +1113,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="223" height="48"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ngày hết hạn" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAW-q9-GBK" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="48"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="189" height="48"/>
                                                                                 <nil key="textColor"/>
                                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                                                 <textInputTraits key="textInputTraits"/>
@@ -1135,21 +1135,27 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </textField>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-o8-6Bl">
-                                                                                <rect key="frame" x="193" y="0.0" width="1" height="48"/>
+                                                                                <rect key="frame" x="189" y="0.0" width="1" height="48"/>
                                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="1" id="Fk7-pV-yui"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJT-ux-Grb">
-                                                                                <rect key="frame" x="194" y="0.0" width="4" height="48"/>
+                                                                                <rect key="frame" x="190" y="0.0" width="4" height="48"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="4" id="IQa-00-swD"/>
                                                                                 </constraints>
                                                                             </view>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-calendar" translatesAutoresizingMaskIntoConstraints="NO" id="yig-ni-sD0">
-                                                                                <rect key="frame" x="198" y="0.0" width="25" height="48"/>
+                                                                                <rect key="frame" x="194" y="0.0" width="25" height="48"/>
                                                                             </imageView>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmu-vT-rIb">
+                                                                                <rect key="frame" x="219" y="0.0" width="4" height="48"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="4" id="RUk-IG-c8o"/>
+                                                                                </constraints>
+                                                                            </view>
                                                                         </subviews>
                                                                     </stackView>
                                                                 </subviews>

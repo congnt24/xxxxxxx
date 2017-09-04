@@ -185,9 +185,11 @@ class RaoVatCategoryTableViewCell: SwipeTableViewCell {
         }
         if let pro = data.promotion, pro > 0 {
             discount.isHidden = false
+            oldPrice.isHidden = false
             discount.setTitle("\(pro)%", for: .normal)
         } else {
             discount.isHidden = true
+            oldPrice.isHidden = true
         }
         name.text = data.title
         distance.text = "\((data.distance ?? 0).toDistanceFormated())"

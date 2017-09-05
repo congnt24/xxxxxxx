@@ -84,6 +84,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
             return false
         }
         
+        LoadingOverlay.shared.showOverlay(view: view)
         fetchData().asObservable().bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(bag)
 
@@ -143,6 +144,7 @@ extension OrderMain1ViewController {
     func fetchData() -> Driver<[SectionOfOrder]> {
         return aleApi.request(AleApi.getHomeItems(page: 1, filter_type: 0)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[SectionOfOrder]> in
+                LoadingOverlay.shared.hideOverlayView()
             let json = JSON(response.data)
             let responseObj = ModelMainHomeResponse(json: json)
                 let x = ModelBuyingOnline(items: responseObj.result?.buyingOnlineItem)

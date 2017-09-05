@@ -16,7 +16,7 @@ import Kingfisher
 import ImageSlideshow
 import MessageUI
 
-class RaoVatDetailViewController: BaseViewController {
+class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFlowLayout {
     var bag = DisposeBag()
 
     @IBOutlet weak var imageSlider: ImageSlideshow!
@@ -122,7 +122,7 @@ class RaoVatDetailViewController: BaseViewController {
                 }
             }).addDisposableTo(self.bag)
 
-
+        vcRelate.delegate = self
 
 
         imageSlider.activityIndicator = DefaultActivityIndicator(style: .whiteLarge, color: UIColor.init(hexString: "#E94F2E"))
@@ -168,6 +168,13 @@ class RaoVatDetailViewController: BaseViewController {
 
 
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    
     override func responseFromViewModel() {
 
     }
@@ -267,7 +274,9 @@ class RelateCollectionViewCell: UICollectionViewCell {
     func bindData(data: ProductResponse) {
         if let p = data.photo, p != "" {
             let arr = p.splitted(by: ",")
-            photo.kf.setImage(with: URL(string: arr[0]), placeholder: UIImage(named: "no_image"))
+            if arr.count > 0 {
+                photo.kf.setImage(with: URL(string: arr[0]), placeholder: UIImage(named: "no_image"))
+            }
         }
         lbName.text = data.title
         lbOldPrice.setText(str: "\(data.price!)".toFormatedPrice())

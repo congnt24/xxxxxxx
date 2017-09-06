@@ -18,7 +18,7 @@ public class FacebookRequest {
 }
 
 public class TaoDonHangRequest {
-    public var productOption: Int?
+    public var productOption: String?
     public var note: String?
     public var buyFrom: String?
     public var websitePrice: Int?

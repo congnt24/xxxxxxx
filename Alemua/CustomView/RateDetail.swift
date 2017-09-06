@@ -84,7 +84,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         }).addDisposableTo(bag)
         
         tonggia.rx.text.subscribe(onNext: { (str) in
-            self.rateData.tonggia = Int(str ?? "0")
+            self.rateData.giamua = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }

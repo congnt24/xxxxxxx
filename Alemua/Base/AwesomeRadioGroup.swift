@@ -12,6 +12,9 @@ import UIKit
 /// We need to set distribution field to "fill equally"
 /// To set sample data, we set string for stringData field, each item separate by a semicolon ';'
 public class AwesomeRadioGroup: UIStackView {
+    
+    @IBInspectable var enableMultiSelect = false
+    
     @IBInspectable var stringData: String = ""
     public var onValueChange: ((Int) -> Void)?
     
@@ -54,13 +57,21 @@ public class AwesomeRadioGroup: UIStackView {
     
     public func checkAt(position: Int){
         checkedPosition = position
-        uncheckAll()
+        if !enableMultiSelect {
+            uncheckAll()
+        }
         (subviews[position] as! AwesomeRadioGroupCell).check()
     }
     
     func checkItem(position: Int) {
-        uncheckAll()
-        checkedPosition = position
+        if !enableMultiSelect {
+            uncheckAll()
+            checkedPosition = position
+        }
+    }
+    
+    func getCheckedPositions() -> [Int]{
+        return arrangedSubviews.map { $0 as! AwesomeRadioGroupCell }.filter { $0.isChecked }.map { $0.position }
     }
     
     private func uncheckAll() {

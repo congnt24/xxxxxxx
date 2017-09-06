@@ -12,10 +12,12 @@ import RxSwift
 import RxCocoa
 
 class OrderMainViewController: BaseViewController {
+    public static var shared: OrderMainViewController!
     @IBOutlet weak var containerView: UIView!
     var bag = DisposeBag()
     
     override func bindToViewModel() {
+        OrderMainViewController.shared = self
         self.addViewController(vcIdentifier: "OrderMain1ViewController")
         
         

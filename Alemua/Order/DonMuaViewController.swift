@@ -35,7 +35,7 @@ class DonMuaViewController: UIViewController {
         lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
         lbGiaTrenWeb.text = "\(orderData.websitePrice!)".toFormatedPrice()
         lbMau.text = orderData.productDescription
-        lbLuaChon.text = "\(orderData.productOption!.toProductOptionName())"
+//        lbLuaChon.text = "\(orderData.productOption!.toProductOptionName())"
     }
 
 }

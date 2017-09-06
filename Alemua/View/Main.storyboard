@@ -1854,6 +1854,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="checkedPosition">
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableMultiSelect" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                 </subviews>

@@ -15,7 +15,7 @@ enum DeliveryType: Int {
     case DaHuy = 4
 }
 class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
-
+    public static var shared: DeliveryOrderViewController!
     public static var defaultTab = 0
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
@@ -33,6 +33,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 15)
         // Do any additional setup after loading the view.
         super.viewDidLoad()
+        DeliveryOrderViewController.shared = self
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

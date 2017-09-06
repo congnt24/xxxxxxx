@@ -22,7 +22,12 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
                 lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
                 lbGia.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
                 lbMota.text = orderData.note
-                lbLuaChon.text = orderData.productDescription
+                lbLuaChon.text =
+                    (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
+                if HomeViewController.homeType == .order {
+//                    print()
+//                    rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice, giamua: orderData.buying_price,  discount: orderData.discount, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
+                }
             }
         }
     }
@@ -36,8 +41,13 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var lbMota: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!
 
+    @IBOutlet weak var showDetailButton: AwesomeToggleButton!
+    @IBOutlet weak var rateDetail: RateDetail!
 
 
+    @IBAction func onShowMore(_ sender: Any) {
+        rateDetail.toggleHeight()
+    }
     var itemInfo: IndicatorInfo!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,8 +77,10 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
     override func viewWillAppear(_ animated: Bool) {
         if HomeViewController.homeType == .order {
             btnDeliveryBaoGia.isHidden = true
+            showDetailButton.isHidden = true
         } else {
             btnDeliveryBaoGia.isHidden = false
+            showDetailButton.isHidden = true
         }
     }
 
@@ -88,7 +100,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 //        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
 
         if Prefs.isUserLogged {
-            if orderData?.productOption == 4 { // chir mua khi có giảm giá
+            if orderData!.productOption!.contains("4") { // chir mua khi có giảm giá
                 DeliveryDialogBaoGiaViewController.orderData = orderData
                 AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
             }else{

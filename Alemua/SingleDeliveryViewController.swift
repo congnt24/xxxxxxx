@@ -12,6 +12,7 @@ import RxCocoa
 import XLPagerTabStrip
 import Moya
 import SwiftyJSON
+import AwesomeMVVM
 
 class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
@@ -77,9 +78,12 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
     //Interact API
     func fetchData() {
-        LoadingOverlay.shared.showOverlay(view: view)
+        if currentPage > 1 {
+            LoadingOverlay.shared.showOverlay(view: DeliveryOrderViewController.shared.view)
+        }
         return AleProvider.request(AleApi.getOrderFromShipper(page_number: currentPage, order_type: deliveryType.rawValue)).toJSON()
             .subscribe(onNext: { (res) in
+                LoadingOverlay.shared.hideOverlayView()
                 switch res {
                 case .done(let result, _):
                     if let array = result.array, array.count > 0 {

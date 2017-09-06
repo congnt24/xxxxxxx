@@ -33,10 +33,16 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
+        
+        if listComment.value.count == 0 {
+            uiMoreDetail.height = 50
+//            self.uiMoreDetail.toggleHeight()
+        }
+        
         userView.toggleView = {
             self.uiMoreDetail.toggleHeight()
             if self.first {
-            self.listComment.asObservable()
+                self.listComment.asObservable()
                 .bind(to: self.tableView.rx.items(cellIdentifier: "DanhGiaTableViewCell")){ (row, item, cell) in
                     (cell as! DanhGiaTableViewCell).bindData(commentData: item)
                 }.addDisposableTo(self.bag)

@@ -38,7 +38,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
         
-        if modelQuoteData.productOption == 4 {
+        if modelQuoteData.productOption!.contains("4") {
             rateDetail.showGiamGia()
         }
 //        let rate = RateDetailData()
@@ -84,9 +84,9 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.toggleHeight()
     }
     @IBAction func onFinishBaoGia(_ sender: Any) {
-        req.totalPrice = rateDetail.rateData.tonggia
+        req.totalPrice = rateDetail.calculateTotal() ?? 0
         req.tax = rateDetail.rateData.thue
-        req.buyingPrice = rateDetail.rateData.giamua
+        req.buyingPrice = rateDetail.rateData.tonggia
         req.transferAlemuaFree = rateDetail.rateData.phivanchuyenvealemua
         req.transferBuyerFee = rateDetail.rateData.phinguoimua
         req.transferToBuyerFee = rateDetail.rateData.phivanchuyenvetaynguoimua
@@ -103,7 +103,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                     Toast.init(text: msg).show()
 //                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
                     AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
-                    print("Cancel success")
+                    DeliveryMainViewController.shared.reloadPage()
                     break
                 case .error(let msg):
                     Toast.init(text: msg).show()

@@ -2818,8 +2818,8 @@
         <image name="ic_bell" width="26" height="27"/>
         <image name="ic_edit_red" width="24" height="24"/>
         <image name="ic_favo_red" width="24" height="24"/>
-        <image name="ic_favorites_grey" width="16" height="16"/>
-        <image name="ic_favorites_red" width="16" height="16"/>
+        <image name="ic_favorites_grey" width="25" height="25"/>
+        <image name="ic_favorites_red" width="25" height="25"/>
         <image name="ic_filter" width="24" height="22"/>
         <image name="ic_home_red" width="24" height="24"/>
         <image name="ic_location_red" width="42" height="42"/>
@@ -2827,8 +2827,8 @@
         <image name="ic_menu" width="26" height="26"/>
         <image name="ic_noti_red" width="24" height="24"/>
         <image name="ic_send_message" width="27" height="27"/>
-        <image name="ic_share_grey" width="16" height="16"/>
-        <image name="ic_share_red" width="16" height="16"/>
+        <image name="ic_share_grey" width="25" height="25"/>
+        <image name="ic_share_red" width="25" height="25"/>
         <image name="ic_user_red" width="24" height="24"/>
         <image name="icons8-calendar" width="25" height="25"/>
         <image name="icons8-filled_flag" width="24" height="24"/>

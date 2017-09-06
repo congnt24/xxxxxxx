@@ -31,8 +31,17 @@ open class AwesomeRadioGroupCell: UIButton {
     }
     
     public func check(){
-        isChecked = true
-        setImage(checkedImage, for: .normal)
+        if (superview as! AwesomeRadioGroup).enableMultiSelect {
+            isChecked = !isChecked
+            if isChecked {
+                setImage(checkedImage, for: .normal)
+            }else{
+                setImage(normalImage, for: .normal)
+            }
+        }else{
+            isChecked = true
+            setImage(checkedImage, for: .normal)
+        }
     }
     
     func groupCheck() {

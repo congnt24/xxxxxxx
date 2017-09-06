@@ -11,6 +11,9 @@ import AwesomeMVVM
 import RxSwift
 
 class DangChuyenViewController: UIViewController {
+    @IBOutlet weak var lbNgay: UILabel!
+    @IBOutlet weak var lbGio: UILabel!
+    @IBOutlet weak var lbPhut: UILabel!
     @IBOutlet weak var uiReview1: ReviewView!
     @IBOutlet weak var uiReview2: ReviewView!
     @IBOutlet weak var uiItemView: ItemView!
@@ -61,6 +64,14 @@ class DangChuyenViewController: UIViewController {
         uiRateDetail.bindData(RateDetailData(tonggia: modelDangChuyen.totalPrice, giamua: modelDangChuyen.buyingPrice,  discount: modelDangChuyen.discount, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree))
         uiReview1.bindData(name: modelDangChuyen.userPostName, rating: modelDangChuyen.userPostRating, nguoidang: 0)
         uiReview2.bindData(name: modelDangChuyen.userShipName, rating: modelDangChuyen.userShipRating, nguoidang: 1)
+        
+        
+        let diffDate = Date().diffDate(toDate: orderData.createdAt?.toDate() ?? Date())
+        
+        lbGio.text = "\(diffDate.hour ?? 0)"
+        lbNgay.text = "\(diffDate.day ?? 0)"
+        lbPhut.text = "\(diffDate.minute ?? 0)"
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {

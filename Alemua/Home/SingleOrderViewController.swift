@@ -105,7 +105,9 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
 
     //Interact API
     func fetchData() -> Driver<[ModelOrderClientData]> {
-        LoadingOverlay.shared.showOverlay(view: view)
+        if currentPage > 1 {
+            LoadingOverlay.shared.showOverlay(view: OrderOrderViewController.shared.view)
+        }
         return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelOrderClientData]> in
                 LoadingOverlay.shared.hideOverlayView()

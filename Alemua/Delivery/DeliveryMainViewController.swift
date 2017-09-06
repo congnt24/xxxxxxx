@@ -16,10 +16,12 @@ import UIScrollView_InfiniteScroll
 
 class DeliveryMainViewController: BaseViewController {
     let bag = DisposeBag()
+    public static var shared: DeliveryMainViewController!
 
     @IBOutlet weak var tfLink: AwesomeTextField!
     var datas = Variable<[ModelQuoteData]>([])
     var currentPage = 1
+    var shouldReload = false
     
     var textSearch = Variable<String>("")
 
@@ -34,7 +36,7 @@ class DeliveryMainViewController: BaseViewController {
     }
     
     override func bindToViewModel() {
-        
+        DeliveryMainViewController.shared = self
         refreshControl = UIRefreshControl()
 //        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -55,7 +57,8 @@ class DeliveryMainViewController: BaseViewController {
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
             DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: self.datas.value[ip.row])
         }).addDisposableTo(bag)
-
+        
+        LoadingOverlay.shared.showOverlay(view: DeliveryNavTabBarViewController.sharedInstance.view)
         tableView.addInfiniteScroll { (tv) in
             // update table view
             self.fetchData().drive(onNext: { (results) in
@@ -63,6 +66,7 @@ class DeliveryMainViewController: BaseViewController {
                     self.currentPage += 1
                     self.datas.value.append(contentsOf: results)
                 }
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(self.bag)
             // finish infinite scroll animation
             tv.finishInfiniteScroll()
@@ -82,6 +86,13 @@ class DeliveryMainViewController: BaseViewController {
             self.reloadPage()
         }).addDisposableTo(bag)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if shouldReload {
+            reloadPage()
+            shouldReload = false
+        }
     }
 
     func reloadPage(){

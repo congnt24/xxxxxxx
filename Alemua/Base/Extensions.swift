@@ -15,6 +15,12 @@ import Moya
 
 
 extension Date {
+    
+    func diffDate(toDate: Date) -> DateComponents{
+        return Calendar.current.dateComponents([.day, .hour, .minute], from: self, to: toDate)
+    }
+    
+    
     func toFormatedDuration() -> String {
         let now = Date()
         let components = Calendar.current.dateComponents([.day, .hour, .minute], from: self, to: now)
@@ -91,7 +97,7 @@ extension String {
 
     func toDate() -> Date? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss" //Your date format
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss" //Your date format
         //        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7:00") //Current time zone
         return dateFormatter.date(from: self) //according to date format your date string
     }
@@ -111,7 +117,7 @@ extension String {
 
     func toFormatedDate() -> String {
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "dd/MM/yyyy"
         let date = dateFormatterGet.date(from: self)

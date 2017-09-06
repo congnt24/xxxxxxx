@@ -120,8 +120,10 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         taodonhangRequest.websiteUrl = tfWebsite.text
         taodonhangRequest.promotionCode = tfCode.text
         taodonhangRequest.quantity = stSoLuong.number
-        taodonhangRequest.productOption = grSelect.checkedPosition + 1
+        taodonhangRequest.productOption = grSelect.getCheckedPositions().map {"\($0 + 1)"}.joined(separator: ",")
         taodonhangRequest.numberProduct = stSoLuong.number
+        print("asd")
+        print(grSelect.getCheckedPositions().map {"\($0)"}.joined(separator: ","))
     }
     @IBAction func onAddPhoto(_ sender: Any) {
         if listImage.count < 5 {

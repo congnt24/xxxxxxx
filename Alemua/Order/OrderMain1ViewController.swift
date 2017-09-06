@@ -84,7 +84,7 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
             return false
         }
         
-        LoadingOverlay.shared.showOverlay(view: view)
+        LoadingOverlay.shared.showOverlay(view: OrderNavTabBarViewController.sharedInstance.view)
         fetchData().asObservable().bind(to: tableView.rx.items(dataSource: dataSource))
             .addDisposableTo(bag)
 

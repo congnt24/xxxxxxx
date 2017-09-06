@@ -103,7 +103,8 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                     Toast.init(text: msg).show()
 //                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
                     AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
-                    DeliveryMainViewController.shared.reloadPage()
+                    SingleDeliveryViewController.shouldReloadPage = 1
+//                    DeliveryMainViewController.shared.reloadPage()
                     break
                 case .error(let msg):
                     Toast.init(text: msg).show()

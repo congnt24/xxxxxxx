@@ -25,6 +25,10 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfLuachon: AwesomeTextField!
     
+    @IBOutlet weak var rateDetail: RateDetail!
+    @IBAction func onShowMore(_ sender: Any) {
+        rateDetail.toggleHeight()
+    }
     let bag = DisposeBag()
     
     var datas = Variable<[CommentData]>([])
@@ -66,6 +70,11 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
         tfNgay.labelLeft = modelOrderBaoGia.deliveryDate!.toFormatedDate()
         tfGia.text = "\(modelOrderBaoGia.totalPrice!)".toFormatedPrice()
         tfMota.text = modelOrderBaoGia.descriptionValue
+        tfLuachon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
+        
+        rateDetail.bindData(RateDetailData(tonggia: modelOrderBaoGia.totalPrice, giamua: modelOrderBaoGia.buyingPrice,  discount: modelOrderBaoGia.discount, thue: modelOrderBaoGia.tax, phichuyennoidia: modelOrderBaoGia.transferDomesticFee, phinguoimua: modelOrderBaoGia.transferBuyerFee, phivanchuyenvealemua: modelOrderBaoGia.transferAlemuaFree, phivanchuyenvetaynguoimua: modelOrderBaoGia.transferToBuyerFee, phigiaodichquaalemua: modelOrderBaoGia.transactionAlemuaFree))
+        
+        
         userView.bindData(photo: modelOrderBaoGia.userPhoto, name: modelOrderBaoGia.userPost, rating: modelOrderBaoGia.rating!, profileType: 2)
         let headerNib = UINib(nibName: "DanhGiaTableViewCell", bundle: nil)
         tableView.register(headerNib, forCellReuseIdentifier: "DanhGiaTableViewCell")

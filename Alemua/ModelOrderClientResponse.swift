@@ -142,6 +142,7 @@ public class ModelOrderBaoGiaData {
         static let userPost = "user_post"
         static let transferBuyerFee = "transfer_buyer_fee"
         static let transferAlemuaFree = "transfer_alemua_free"
+        static let transactionAlemuaFree = "transaction_alemua_free"
     }
     
     // MARK: Properties
@@ -167,6 +168,7 @@ public class ModelOrderBaoGiaData {
     public var userPost: String?
     public var transferBuyerFee: Int?
     public var transferAlemuaFree: Int?
+    public var transactionAlemuaFree: Int?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -203,6 +205,7 @@ public class ModelOrderBaoGiaData {
         userPost = json[SerializationKeys.userPost].string
         transferBuyerFee = json[SerializationKeys.transferBuyerFee].int
         transferAlemuaFree = json[SerializationKeys.transferAlemuaFree].int
+        transactionAlemuaFree = json[SerializationKeys.transactionAlemuaFree].int
     }
 
 }

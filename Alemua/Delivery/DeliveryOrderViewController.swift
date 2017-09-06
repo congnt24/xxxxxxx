@@ -17,6 +17,7 @@ enum DeliveryType: Int {
 class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     public static var shared: DeliveryOrderViewController!
     public static var defaultTab = 0
+    public var listVC = [SingleDeliveryViewController]()
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -50,8 +51,8 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         child2.deliveryType = .DangChuyen
         child3.deliveryType = .ThanhCong
         child4.deliveryType = .DaHuy
-
-        return [child1, child2, child3, child4]
+        listVC = [child1, child2, child3, child4]
+        return listVC
     }
     override func viewWillAppear(_ animated: Bool) {
         //change to default index
@@ -62,6 +63,10 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
             }else{
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
+        }
+        if SingleDeliveryViewController.shouldReloadPage > 0 {
+            listVC[0].reloadPage()
+            SingleDeliveryViewController.shouldReloadPage = -1
         }
     }
     

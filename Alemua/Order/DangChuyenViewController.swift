@@ -67,10 +67,15 @@ class DangChuyenViewController: UIViewController {
         
         
         let diffDate = Date().diffDate(toDate: orderData.createdAt?.toDate() ?? Date())
-        
-        lbGio.text = "\(diffDate.hour ?? 0)"
-        lbNgay.text = "\(diffDate.day ?? 0)"
-        lbPhut.text = "\(diffDate.minute ?? 0)"
+        if diffDate.day ?? -1 < 0 || diffDate.hour ?? -1 < 0 || diffDate.minute ?? -1 < 0 {
+            lbGio.text = "0"
+            lbNgay.text = "0"
+            lbPhut.text = "0"
+        }else{
+            lbGio.text = "\(diffDate.hour ?? 0)"
+            lbNgay.text = "\(diffDate.day ?? 0)"
+            lbPhut.text = "\(diffDate.minute ?? 0)"
+        }
         
     }
 

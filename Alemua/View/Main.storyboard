@@ -3879,7 +3879,7 @@
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.38823529410000002" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="barTintColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
-                                            <navigationItem title="Đơn hàng" id="ClX-dm-93o">
+                                            <navigationItem title="Danh sách khách hàng" id="ClX-dm-93o">
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="biE-Yr-Mx2" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </barButtonItem>
@@ -3898,7 +3898,7 @@
                                     <constraint firstAttribute="height" constant="64" id="tsE-bN-52m"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-Cl-UpX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-Cl-UpX">
                                 <rect key="frame" x="8" y="72" width="359" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -3922,7 +3922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r89-C4-BG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490" y="2007"/>
+            <point key="canvasLocation" x="89" y="1594"/>
         </scene>
         <!--Dialog Tao Don Hang-->
         <scene sceneID="Rch-s9-zrE">

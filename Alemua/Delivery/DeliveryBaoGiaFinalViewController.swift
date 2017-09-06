@@ -86,11 +86,12 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBAction func onFinishBaoGia(_ sender: Any) {
         req.totalPrice = rateDetail.rateData.tonggia
         req.tax = rateDetail.rateData.thue
-        req.buyingPrice = rateDetail.rateData.phinguoimua
+        req.buyingPrice = rateDetail.rateData.giamua
         req.transferAlemuaFree = rateDetail.rateData.phivanchuyenvealemua
-        req.transferBuyerFee = rateDetail.rateData.phigiaodichquaalemua
+        req.transferBuyerFee = rateDetail.rateData.phinguoimua
         req.transferToBuyerFee = rateDetail.rateData.phivanchuyenvetaynguoimua
         req.transferDomesticFee = rateDetail.rateData.phichuyennoidia
+        req.transactionAlemuaFree = rateDetail.rateData.phigiaodichquaalemua
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
             .toJSON()
             .catchError({ (error) -> Observable<AleResult> in

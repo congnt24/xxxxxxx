@@ -11,7 +11,7 @@ import Moya
 
 public class RaoVatService {
     public static var shared: RaoVatService!
-    let api = RxMoyaProvider<RaoVatApi>(endpointClosure: endpointClosure2, plugins: [NetworkLoggerPlugin()])
+    let api = RxMoyaProvider<RaoVatApi>(endpointClosure: endpointClosure2, manager: DefaultAlamofireManager.sharedManager, plugins: [NetworkLoggerPlugin()])
     init() {
         RaoVatService.shared = self
     }

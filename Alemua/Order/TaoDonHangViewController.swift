@@ -34,6 +34,17 @@ class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
         TaoDonHangViewController.sharedInstance = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !Prefs.isUserLogged {
+            if LoginViewController.isIgnore {
+                OrderOrderCoordinator.sharedInstance.navigation?.popViewController()
+                LoginViewController.isIgnore = false
+            }else{
+                HomeCoordinator.sharedInstance.showLoginScreen()
+            }
+        }
+    }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let child1: TaoDonHang1ViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: TaoDonHang1ViewController.self)

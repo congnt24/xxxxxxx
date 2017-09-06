@@ -169,6 +169,7 @@
 		02D32B821F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D32B811F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift */; };
 		02D32B861F30E00100A8A4B6 /* ModelMainHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D32B851F30E00100A8A4B6 /* ModelMainHomeResponse.swift */; };
 		02F1AE8E1F35587000AD4466 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1AE8D1F35587000AD4466 /* ResponseModel.swift */; };
+		02F328A71F5FADB600DB4E0E /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F328A61F5FADB600DB4E0E /* AlamofireManager.swift */; };
 		02F6E2961F37FF51000C0B83 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6E2951F37FF51000C0B83 /* PhotoView.swift */; };
 		02F775151F1F38E900556BED /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775111F1F38E900556BED /* HomeCoordinator.swift */; };
 		02F775161F1F38E900556BED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775121F1F38E900556BED /* HomeViewController.swift */; };
@@ -359,6 +360,7 @@
 		02D32B811F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelMainOrderResponse.swift; path = Order/ModelMainOrderResponse.swift; sourceTree = "<group>"; };
 		02D32B851F30E00100A8A4B6 /* ModelMainHomeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelMainHomeResponse.swift; path = Order/ModelMainHomeResponse.swift; sourceTree = "<group>"; };
 		02F1AE8D1F35587000AD4466 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		02F328A61F5FADB600DB4E0E /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		02F6E2951F37FF51000C0B83 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoView.swift; path = CustomView/PhotoView.swift; sourceTree = "<group>"; };
 		02F775111F1F38E900556BED /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		02F775121F1F38E900556BED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 				0218B7A31F59B2EE0042E54B /* RaoVatApi.swift */,
 				0218B7A51F59B54F0042E54B /* RaoVatRequest.swift */,
 				0218B7A71F59B55C0042E54B /* RaoVatResponse.swift */,
+				02F328A61F5FADB600DB4E0E /* AlamofireManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1192,6 +1195,7 @@
 				025CC07E1F26470B003C0883 /* DeliveryNavTabBarViewController.swift in Sources */,
 				021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */,
 				0207F2281F5BB9F200FDB7CA /* RaoVatSearchViewController.swift in Sources */,
+				02F328A71F5FADB600DB4E0E /* AlamofireManager.swift in Sources */,
 				021C97F81F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
 				023B39DD1F2B43EE00E53A6D /* KhachHangTableViewCell.swift in Sources */,

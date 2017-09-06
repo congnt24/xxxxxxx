@@ -13,6 +13,7 @@ import RxSwift
 
 struct RateDetailData {
     var tonggia: Int?
+    var giamua: Int?
     var discount: Int?
     var thue: Int?
     var phichuyennoidia: Int?
@@ -70,7 +71,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         giamgia.isUserInteractionEnabled = true
         
         
-        bindData(RateDetailData(tonggia: 0, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
         //
         
         
@@ -127,7 +128,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     }
     
     public func setDefaultValue(value: Int?) {
-        bindData(RateDetailData(tonggia: value, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
     }
 
     public func setValues(values: [String]) {

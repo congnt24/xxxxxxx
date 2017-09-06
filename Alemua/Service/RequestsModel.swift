@@ -80,6 +80,7 @@ public class CreateQuoteRequest {
     public var userID: Int?
     public var transferBuyerFee: Int?
     public var transferAlemuaFree: Int?
+    public var transactionAlemuaFree: Int?
 }
 
 public class AcceptQuoteRequest {

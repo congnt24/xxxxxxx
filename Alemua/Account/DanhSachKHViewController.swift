@@ -22,6 +22,8 @@ class DanhSachKHViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        tableView.estimatedRowHeight = 77 // some constant value
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.register(UINib(nibName: "KhachHangTableViewCell", bundle: nil), forCellReuseIdentifier: "KhachHangTableViewCell")
         //Configure cell
@@ -37,7 +39,6 @@ class DanhSachKHViewController: UIViewController {
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
             }).addDisposableTo(bag)
         datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "KhachHangTableViewCell")){ (row, item, cell) in

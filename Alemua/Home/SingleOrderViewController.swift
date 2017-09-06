@@ -12,6 +12,7 @@ import RxCocoa
 import XLPagerTabStrip
 import Moya
 import SwiftyJSON
+import AwesomeMVVM
 
 enum OrderType: Int {
     case DonMua = 0
@@ -104,8 +105,10 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
 
     //Interact API
     func fetchData() -> Driver<[ModelOrderClientData]> {
+        LoadingOverlay.shared.showOverlay(view: view)
         return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelOrderClientData]> in
+                LoadingOverlay.shared.hideOverlayView()
                 let json = JSON(data: response.data)
                 let obj = ModelOrderClientResponse(json: json)
                 print(json)

@@ -12,25 +12,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="KhachHangTableViewCell" customModule="Alemua" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="134" id="KGk-i7-Jjw" customClass="KhachHangTableViewCell" customModule="Alemua" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQs-a8-SaH">
+                        <rect key="frame" x="0.0" y="132.5" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="yoj-Ra-Axz"/>
+                        </constraints>
+                    </view>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="w25-zc-S6C">
-                        <rect key="frame" x="8" y="8" width="304" height="76.5"/>
+                        <rect key="frame" x="16" y="4" width="300" height="113.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ISl-po-3UW">
-                                <rect key="frame" x="0.0" y="6.5" width="64" height="64"/>
+                                <rect key="frame" x="0.0" y="25" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="Hgt-Cl-IlA"/>
                                     <constraint firstAttribute="width" secondItem="ISl-po-3UW" secondAttribute="height" multiplier="1:1" id="beT-gg-Y3R"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KAv-5R-N6i">
-                                <rect key="frame" x="69" y="5.5" width="235" height="65.5"/>
+                                <rect key="frame" x="69" y="24" width="231" height="65.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wgU-ng-NRv">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="39.5"/>
@@ -99,10 +106,13 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="w25-zc-S6C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8Mw-zD-Sb7"/>
-                    <constraint firstItem="w25-zc-S6C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lyV-zi-MK0"/>
-                    <constraint firstAttribute="bottom" secondItem="w25-zc-S6C" secondAttribute="bottom" constant="8" id="pBZ-K3-PkD"/>
-                    <constraint firstAttribute="trailing" secondItem="w25-zc-S6C" secondAttribute="trailing" constant="8" id="q90-Bk-om8"/>
+                    <constraint firstAttribute="trailing" secondItem="xQs-a8-SaH" secondAttribute="trailing" id="1jd-0F-Kon"/>
+                    <constraint firstItem="w25-zc-S6C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8Mw-zD-Sb7"/>
+                    <constraint firstItem="xQs-a8-SaH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WlR-O1-I8l"/>
+                    <constraint firstItem="w25-zc-S6C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="lyV-zi-MK0"/>
+                    <constraint firstAttribute="bottom" secondItem="xQs-a8-SaH" secondAttribute="bottom" id="oZJ-aj-9Al"/>
+                    <constraint firstAttribute="bottom" secondItem="w25-zc-S6C" secondAttribute="bottom" constant="16" id="pBZ-K3-PkD"/>
+                    <constraint firstAttribute="trailing" secondItem="w25-zc-S6C" secondAttribute="trailing" constant="4" id="q90-Bk-om8"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -112,11 +122,11 @@
                 <outlet property="score" destination="kaW-jg-P2T" id="eo9-at-H1x"/>
                 <outlet property="star" destination="q6z-Uu-nDy" id="Ryz-38-WhK"/>
             </connections>
-            <point key="canvasLocation" x="29" y="83.5"/>
+            <point key="canvasLocation" x="-35" y="-34"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="avatar" width="105" height="105"/>
+        <image name="avatar" width="400" height="266"/>
         <image name="ic_star_grey" width="17" height="16"/>
         <image name="ic_star_orange" width="17" height="16"/>
     </resources>

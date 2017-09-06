@@ -11,7 +11,7 @@ import Moya
 
 public class AlemuaApi {
     public static var shared: AlemuaApi!
-    let aleApi = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure, plugins: [NetworkLoggerPlugin()])
+    let aleApi = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure, manager: DefaultAlamofireManager.sharedManager, plugins: [NetworkLoggerPlugin()])
     init() {
         AlemuaApi.shared = self
     }
@@ -182,6 +182,7 @@ extension AleApi: TargetType {
             params["transfer_buyer_fee"] = quote.transferBuyerFee ?? 0
             params["transfer_alemua_free"] = quote.transferToBuyerFee ?? 0
             params["transfer_to_buyer_fee"] = quote.transferToBuyerFee ?? 0
+            params["transaction_alemua_free"] = quote.transactionAlemuaFree ?? 0
             return params
         case .acceptQuote(let data):
             var params = [String: Any]()

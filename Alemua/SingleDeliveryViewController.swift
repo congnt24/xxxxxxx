@@ -77,6 +77,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
     //Interact API
     func fetchData() {
+        LoadingOverlay.shared.showOverlay(view: view)
         return AleProvider.request(AleApi.getOrderFromShipper(page_number: currentPage, order_type: deliveryType.rawValue)).toJSON()
             .subscribe(onNext: { (res) in
                 switch res {

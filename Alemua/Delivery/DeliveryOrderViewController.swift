@@ -62,6 +62,10 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         moveToViewController(at: DeliveryOrderViewController.defaultTab)
     }
     

@@ -180,7 +180,7 @@ extension AleApi: TargetType {
             params["tax"] = quote.tax ?? 0
             params["transfer_domestic_fee"] = quote.transferDomesticFee ?? 0
             params["transfer_buyer_fee"] = quote.transferBuyerFee ?? 0
-            params["transfer_alemua_free"] = quote.transferToBuyerFee ?? 0
+            params["transfer_alemua_free"] = quote.transferAlemuaFree ?? 0
             params["transfer_to_buyer_fee"] = quote.transferToBuyerFee ?? 0
             params["transaction_alemua_free"] = quote.transactionAlemuaFree ?? 0
             return params

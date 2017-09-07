@@ -92,6 +92,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.transferToBuyerFee = rateDetail.rateData.phivanchuyenvetaynguoimua
         req.transferDomesticFee = rateDetail.rateData.phichuyennoidia
         req.transactionAlemuaFree = rateDetail.rateData.phigiaodichquaalemua
+        req.discount = rateDetail.rateData.discount
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
             .toJSON()
             .catchError({ (error) -> Observable<AleResult> in

@@ -15,6 +15,7 @@ struct RateDetailData {
     var tonggia: Int?
     var giamua: Int?
     var discount: Int?
+    var magiamgia: String?
     var thue: Int?
     var phichuyennoidia: Int?
     var phinguoimua: Int?
@@ -37,6 +38,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     @IBOutlet weak var phivanchuyenvetaynguoimua: AwesomeTextField!
     @IBOutlet weak var phigiaodichquaalemua: AwesomeTextField!
 
+    @IBOutlet weak var magiamgia: AwesomeTextField!
     var listView: [AwesomeTextField] = []
     var rateData: RateDetailData!
     let bag = DisposeBag()
@@ -71,10 +73,17 @@ class RateDetail: AwesomeToggleViewByHeight {
         giamgia.isUserInteractionEnabled = true
         
         
-        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: "", thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
         //
         
         
+        
+        magiamgia.rx.text.subscribe(onNext: { (str) in
+            self.rateData.discount = Int(str ?? "0")
+            if let onPriceChange = self.onPriceChange {
+                onPriceChange(self.calculateTotal())
+            }
+        }).addDisposableTo(bag)
         
         giamgia.rx.text.subscribe(onNext: { (str) in
             self.rateData.discount = Int(str ?? "0")
@@ -128,7 +137,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     }
     
     public func setDefaultValue(value: Int?) {
-        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, magiamgia: "", thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
     }
 
     public func setValues(values: [String]) {
@@ -184,6 +193,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         for item in arr {
             sum += item
         }
+        sum -= rateData.discount ?? 0
         return sum
 
     }

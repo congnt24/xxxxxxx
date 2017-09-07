@@ -156,6 +156,7 @@ class RateDetail: AwesomeToggleViewByHeight {
             phivanchuyenvealemua.text = "\(rateData.phivanchuyenvealemua!)"
             phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)"
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"
+            magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
         }else{
             tonggia.text = "\(rateData.giamua!)".toFormatedPrice()
             thue.text = "\(rateData.thue!)".toFormatedPrice()
@@ -164,6 +165,7 @@ class RateDetail: AwesomeToggleViewByHeight {
             phivanchuyenvealemua.text = "\(rateData.phivanchuyenvealemua!)".toFormatedPrice()
             phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)".toFormatedPrice()
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
+            magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
         }
     }
     
@@ -175,6 +177,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         phivanchuyenvealemua.text = "\(order.transferAlemuaFree!)".toFormatedPrice()
         phivanchuyenvetaynguoimua.text = "\(order.transferToBuyerFee!)".toFormatedPrice()
         phigiaodichquaalemua.text = "\(order.buyingPrice!)".toFormatedPrice()
+        magiamgia.text = "\(order.promotion_money!)".toFormatedPrice()
     }
 
     func calculateTotal() -> Int? {

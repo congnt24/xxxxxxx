@@ -41,6 +41,7 @@ public class ModelDonHangDangChuyenData {
         static let deliveryDate = "delivery_date"
         static let userRated = "user_rated"
         static let ratingId = "rating_id"
+        static let promotion_money = "promotion_money"
     }
 
     // MARK: Properties
@@ -73,6 +74,7 @@ public class ModelDonHangDangChuyenData {
     public var deliveryDate: String?
     public var userRated: Int?
     public var ratingId: Int?
+    public var promotion_money: Int?
 
     func getTotal() -> Int {
         return totalPrice! + transferAlemuaFree! + transactionAlemuaFree! + transferBuyerFee! + transferDomesticFee! + transferToBuyerFee! + tax!
@@ -119,5 +121,6 @@ public class ModelDonHangDangChuyenData {
         deliveryDate = json[SerializationKeys.deliveryDate].string
         userRated = json[SerializationKeys.userRated].int
         ratingId = json[SerializationKeys.ratingId].int
+        promotion_money = json[SerializationKeys.promotion_money].int
     }
 }

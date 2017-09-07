@@ -29,13 +29,12 @@ class DonMuaViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func bindData(){
-        itemView.bindData(title: orderData.productName, imageUrl: orderData.photo, baogia: "\(orderData.quantity!)")
+        itemView.bindData(title: orderData.productName, imageUrl: orderData.photo, baogia: "\(orderData.quotes?.count ?? 0)")
         lbMuaTu.text = orderData.buyFrom
         lbGiaoDen.text = orderData.deliveryTo
         lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
         lbGiaTrenWeb.text = "\(orderData.websitePrice!)".toFormatedPrice()
         lbMau.text = orderData.productDescription
-//        lbLuaChon.text = "\(orderData.productOption!.toProductOptionName())"
-    }
+        lbLuaChon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")    }
 
 }

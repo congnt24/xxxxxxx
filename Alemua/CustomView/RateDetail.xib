@@ -12,13 +12,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
             <connections>
                 <outlet property="giamgia" destination="ujT-g9-HN3" id="XmN-4a-ZfP"/>
-                <outlet property="magiamgia" destination="oaK-Hj-pO7" id="f4S-6A-OGT"/>
+                <outlet property="magiamgia" destination="BHW-tL-cmr" id="Gad-fO-out"/>
                 <outlet property="phichuyennoidia" destination="m7C-G0-K0h" id="jkJ-4R-jOq"/>
                 <outlet property="phigiaodichquaalemua" destination="c4E-uu-hVW" id="TN4-UJ-4JU"/>
                 <outlet property="phinguoimua" destination="Vrz-bw-P6g" id="hVh-UV-6iQ"/>
                 <outlet property="phivanchuyenvealemua" destination="UD9-dA-5Ct" id="fyP-yl-rSm"/>
                 <outlet property="phivanchuyenvetaynguoimua" destination="xsk-eO-8kw" id="m81-ke-xEU"/>
-                <outlet property="thue" destination="oaK-Hj-pO7" id="Eam-uc-bxO"/>
+                <outlet property="thue" destination="oaK-Hj-pO7" id="wsc-Ns-CrV"/>
                 <outlet property="tonggia" destination="QLI-Ad-zhR" id="tem-WL-N2x"/>
                 <outlet property="uiStackView" destination="r4D-LZ-XvL" id="WCe-6z-gPR"/>
             </connections>

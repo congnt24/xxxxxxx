@@ -81,6 +81,7 @@ public class CreateQuoteRequest {
     public var transferBuyerFee: Int?
     public var transferAlemuaFree: Int?
     public var transactionAlemuaFree: Int?
+    public var promotion_money: Int?
 }
 
 public class AcceptQuoteRequest {

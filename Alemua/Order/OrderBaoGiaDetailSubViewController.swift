@@ -72,7 +72,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
         tfMota.text = modelOrderBaoGia.descriptionValue
         tfLuachon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
         
-        rateDetail.bindData(RateDetailData(tonggia: modelOrderBaoGia.totalPrice, giamua: modelOrderBaoGia.buyingPrice,  discount: modelOrderBaoGia.discount, magiamgia: "", thue: modelOrderBaoGia.tax, phichuyennoidia: modelOrderBaoGia.transferDomesticFee, phinguoimua: modelOrderBaoGia.transferBuyerFee, phivanchuyenvealemua: modelOrderBaoGia.transferAlemuaFree, phivanchuyenvetaynguoimua: modelOrderBaoGia.transferToBuyerFee, phigiaodichquaalemua: modelOrderBaoGia.transactionAlemuaFree))
+        rateDetail.bindData(RateDetailData(tonggia: modelOrderBaoGia.totalPrice, giamua: modelOrderBaoGia.buyingPrice,  discount: modelOrderBaoGia.discount, magiamgia: modelOrderBaoGia.promotion_money, thue: modelOrderBaoGia.tax, phichuyennoidia: modelOrderBaoGia.transferDomesticFee, phinguoimua: modelOrderBaoGia.transferBuyerFee, phivanchuyenvealemua: modelOrderBaoGia.transferAlemuaFree, phivanchuyenvetaynguoimua: modelOrderBaoGia.transferToBuyerFee, phigiaodichquaalemua: modelOrderBaoGia.transactionAlemuaFree))
         
         
         userView.bindData(photo: modelOrderBaoGia.userPhoto, name: modelOrderBaoGia.userPost, rating: modelOrderBaoGia.rating!, profileType: 2)

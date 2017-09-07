@@ -15,7 +15,7 @@ struct RateDetailData {
     var tonggia: Int?
     var giamua: Int?
     var discount: Int?
-    var magiamgia: String?
+    var magiamgia: Int?
     var thue: Int?
     var phichuyennoidia: Int?
     var phinguoimua: Int?
@@ -73,7 +73,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         giamgia.isUserInteractionEnabled = true
         
         
-        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: "", thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
         //
         
         
@@ -137,7 +137,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     }
     
     public func setDefaultValue(value: Int?) {
-        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, magiamgia: "", thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
     }
 
     public func setValues(values: [String]) {
@@ -149,7 +149,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     func bindData(_ rateData: RateDetailData) {
         self.rateData = rateData
         if thue.isUserInteractionEnabled {
-            tonggia.text = "\(rateData.tonggia!)"
+            tonggia.text = "\(rateData.giamua!)"
             thue.text = "\(rateData.thue!)"
             phichuyennoidia.text = "\(rateData.phichuyennoidia!)"
             phinguoimua.text = "\(rateData.phinguoimua!)"
@@ -157,7 +157,7 @@ class RateDetail: AwesomeToggleViewByHeight {
             phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)"
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"
         }else{
-            tonggia.text = "\(rateData.tonggia!)".toFormatedPrice()
+            tonggia.text = "\(rateData.giamua!)".toFormatedPrice()
             thue.text = "\(rateData.thue!)".toFormatedPrice()
             phichuyennoidia.text = "\(rateData.phichuyennoidia!)".toFormatedPrice()
             phinguoimua.text = "\(rateData.phinguoimua!)".toFormatedPrice()
@@ -168,7 +168,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     }
     
     func bindData(order: ModelOrderBaoGiaData) {
-        tonggia.text = "\(order.totalPrice!)".toFormatedPrice()
+        tonggia.text = "\(order.buyingPrice!)".toFormatedPrice()
         thue.text = "\(order.tax!)".toFormatedPrice()
         phichuyennoidia.text = "\(order.transferDomesticFee!)".toFormatedPrice()
         phinguoimua.text = "\(order.transferBuyerFee!)".toFormatedPrice()
@@ -193,7 +193,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         for item in arr {
             sum += item
         }
-        sum -= rateData.discount ?? 0
+//        sum -= rateData.discount ?? 0
         return sum
 
     }

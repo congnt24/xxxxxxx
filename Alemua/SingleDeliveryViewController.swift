@@ -40,10 +40,14 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        if SingleDeliveryViewController.shouldReloadPage > -1 {
+            reloadPage()
+            SingleDeliveryViewController.shouldReloadPage = -1
+        }
     }
     
     func refresh(_ sender: Any) {
+        print("reload")
         reloadPage()
         refreshControl.endRefreshing()
     }

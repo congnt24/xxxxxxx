@@ -69,7 +69,8 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.rateData.tonggia = modelQuoteData.websitePrice ?? 0
         rateDetail.phigiaodichquaalemua.text = "\(modelQuoteData.transaction_alemua_free ?? 0)"
         rateDetail.rateData.phigiaodichquaalemua = modelQuoteData.transaction_alemua_free ?? 0
-        
+        rateDetail.magiamgia.text = "\(modelQuoteData.promotionMoney ?? 0)"
+        rateDetail.rateData.magiamgia = modelQuoteData.promotionMoney ?? 0
         
         req.buyFrom = modelQuoteData.buyFrom
         req.deliveryDate = modelQuoteData.deliveryDate
@@ -93,6 +94,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.transferDomesticFee = rateDetail.rateData.phichuyennoidia
         req.transactionAlemuaFree = rateDetail.rateData.phigiaodichquaalemua
         req.discount = rateDetail.rateData.discount
+//        req.promotion_money = rateDetail.rateData.promotion_money
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
             .toJSON()
             .catchError({ (error) -> Observable<AleResult> in

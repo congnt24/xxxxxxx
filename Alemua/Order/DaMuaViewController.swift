@@ -28,7 +28,7 @@ class DaMuaViewController: UIViewController {
             if let data = hoanThanhData {
                 review1.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 review2.bindData(name: data.userShipPhone, rating: data.userShipRating, nguoidang: 1)
-                uiMoreDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice,  discount: data.discount, magiamgia: "", thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree))
+                uiMoreDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice,  discount: data.discount, magiamgia: data.promotion_money, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree))
                 tfGia.text = "\(uiMoreDetail.calculateTotal() ?? 0)".toFormatedPrice()
             }
         }

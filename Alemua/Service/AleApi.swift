@@ -183,6 +183,7 @@ extension AleApi: TargetType {
             params["transfer_alemua_free"] = quote.transferAlemuaFree ?? 0
             params["transfer_to_buyer_fee"] = quote.transferToBuyerFee ?? 0
             params["transaction_alemua_free"] = quote.transactionAlemuaFree ?? 0
+            params["promotion_money"] = quote.promotion_money ?? 0
             return params
         case .acceptQuote(let data):
             var params = [String: Any]()

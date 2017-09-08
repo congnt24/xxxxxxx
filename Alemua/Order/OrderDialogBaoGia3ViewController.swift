@@ -35,7 +35,9 @@ class OrderDialogBaoGia3ViewController: UIViewController {
                 switch res {
                 case .done(let result, let msg):
                     Toast.init(text: msg).show()
-                    AppCoordinator.sharedInstance.navigation?.popViewController()
+                    OrderOrderViewController.selectViewController = 2
+                    OrderOrderViewController.shared.indexShouldReload.append(contentsOf: [1,2])
+                    AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
                     break
                 case .error(let msg):
                     Toast.init(text: msg).show()

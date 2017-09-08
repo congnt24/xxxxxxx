@@ -63,7 +63,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         giamgia.isHidden = false
     }
     public func enableEditing(){
-        tonggia.isUserInteractionEnabled = true
+//        tonggia.isUserInteractionEnabled = true
         thue.isUserInteractionEnabled = true
         phichuyennoidia.isUserInteractionEnabled = true
         phinguoimua.isUserInteractionEnabled = true
@@ -74,11 +74,12 @@ class RateDetail: AwesomeToggleViewByHeight {
         
         
         bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
-        //
         
+    
         
         
         magiamgia.rx.text.subscribe(onNext: { (str) in
+            print("sadasd " + (str ?? ""))
             self.rateData.discount = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
@@ -134,6 +135,14 @@ class RateDetail: AwesomeToggleViewByHeight {
                 onPriceChange(self.calculateTotal())
             }
         }).addDisposableTo(bag)
+        
+        
+        
+        phigiaodichquaalemua.rx.controlEvent(UIControlEvents.editingDidBegin).subscribe(onNext: {
+//            if self.phigiaodichquaalemua.text = 0 {
+//                self.phigiaodichquaalemua.text = ""
+//            }
+        }).addDisposableTo(bag)
     }
     
     public func setDefaultValue(value: Int?) {
@@ -150,11 +159,11 @@ class RateDetail: AwesomeToggleViewByHeight {
         self.rateData = rateData
         if thue.isUserInteractionEnabled {
             tonggia.text = "\(rateData.giamua!)"
-            thue.text = "\(rateData.thue!)"
-            phichuyennoidia.text = "\(rateData.phichuyennoidia!)"
-            phinguoimua.text = "\(rateData.phinguoimua!)"
-            phivanchuyenvealemua.text = "\(rateData.phivanchuyenvealemua!)"
-            phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)"
+            thue.text = ""
+            phichuyennoidia.text = ""
+            phinguoimua.text = ""
+            phivanchuyenvealemua.text = ""
+            phivanchuyenvetaynguoimua.text = ""
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
         }else{

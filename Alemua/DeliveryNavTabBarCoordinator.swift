@@ -15,6 +15,19 @@ class DeliveryNavTabBarCoordinator: Coordinator {
     
     override func start(_ data: Any?) {
         let nav: DeliveryNavTabBarViewController = mainStoryboard.instantiateViewController(withClass: DeliveryNavTabBarViewController.self)
+//        if let data = data as? Int, data > -1 {
+//            switch data {
+//            case 2:
+//                break
+//                
+//            default:
+//                <#code#>
+//            }
+            
+//            DeliveryOrderViewController.defaultTab = 1
+//            nav.defaultTab = 1
+            
+//        }
         DeliveryNavTabBarCoordinator.sharedInstance = self
         navigation?.pushViewController(nav, animated: true)
     }

@@ -14,6 +14,7 @@ import RxCocoa
 enum HomeType {
     case delivery
     case order
+    case adv
 }
 class HomeViewController: BaseViewController {
     public static var homeType = HomeType.order
@@ -38,6 +39,7 @@ class HomeViewController: BaseViewController {
     }
     @IBAction func onRaoVat(_ sender: Any) {
         coordinator.showRaoVatScreen()
+        HomeViewController.homeType = .adv
     }
 
 }

@@ -20,7 +20,11 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         }
     }
     
-    var selectViewController = -1
+    public static var selectViewController = -1
+    
+    var indexShouldReload = [Int]()
+    
+    
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -40,6 +44,7 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         OrderOrderViewController.shared = self
     }
     override func viewDidAppear(_ animated: Bool) {
+        print("OrderOrderViewController viewDidAppear \(OrderOrderViewController.selectViewController)")
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {
                 onBack("")
@@ -48,10 +53,10 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
         }
-        if selectViewController > 0 {
+        if OrderOrderViewController.selectViewController > 0 {
             
-            moveToViewController(at: selectViewController)
-            selectViewController = -1
+            moveToViewController(at: OrderOrderViewController.selectViewController)
+            OrderOrderViewController.selectViewController = -1
         }
     }
 

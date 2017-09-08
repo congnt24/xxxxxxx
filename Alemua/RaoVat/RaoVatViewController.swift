@@ -52,6 +52,7 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
         
     }
     @IBAction func onNotify(_ sender: Any) {
+        RaoVatCoordinator.sharedInstance.showNotifyViewController()
     }
     @IBAction func onDangTin(_ sender: Any) {
         RaoVatCoordinator.sharedInstance.showRaoVatPublish(data: "")

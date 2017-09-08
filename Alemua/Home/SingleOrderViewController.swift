@@ -39,11 +39,16 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         cacheFilter = OrderFilterViewController.orderOrderFilterType
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if cacheFilter != OrderFilterViewController.orderOrderFilterType {
             cacheFilter = OrderFilterViewController.orderOrderFilterType
             reloadPage()
         }
+//        if OrderOrderViewController.shared.indexShouldReload.contains(orderType.rawValue) {
+//            OrderOrderViewController.shared.indexShouldReload = OrderOrderViewController.shared.indexShouldReload.filter { $0 != orderType.rawValue }
+//            reloadPage()
+//        }
+        print("SingleOrderViewController will appear \(orderType.rawValue)")
     }
     
     func refresh(_ sender: Any) {
@@ -86,6 +91,8 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
                     self.datas.value.append(contentsOf: results)
                     self.currentPage += 1
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(self.bag)
             // finish infinite scroll animation
             tv.finishInfiniteScroll()
@@ -105,7 +112,7 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
 
     //Interact API
     func fetchData() -> Driver<[ModelOrderClientData]> {
-        if currentPage > 1 {
+        if currentPage < 2 && orderType.rawValue > 0 {
             LoadingOverlay.shared.showOverlay(view: OrderOrderViewController.shared.view)
         }
         return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue)).filterSuccessfulStatusCodes()

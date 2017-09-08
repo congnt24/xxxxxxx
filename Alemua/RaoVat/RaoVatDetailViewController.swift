@@ -43,7 +43,7 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
                 lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
                 lbAddress.text = data.transactionAddress
                 lbDesc.text = data.descriptionValue
-                userView.bindData(name: data.userName, address: data.userAddress, photo: data.userPhoto)
+                userView.bindData(name: data.userName, address: data.userAddress, photo: data.userPhoto, isSafe: data.isSafe)
 
                 //photo
 

@@ -12,6 +12,10 @@ import RxSwift
 import RxCocoa
 
 class OrderNavTabBarViewController: UITabBarController {
+    var notiNavigate: Any?
+    var defaultTab = 0
+    
+    
     let bag = DisposeBag()
     public static var sharedInstance: OrderNavTabBarViewController!
     @IBOutlet weak var navItems: UINavigationItem!
@@ -22,6 +26,8 @@ class OrderNavTabBarViewController: UITabBarController {
         
         // Do any additional setup after loading the view.
         fetchUnreadNoti()
+        
+        switchTab(index: defaultTab)
         
     }
     

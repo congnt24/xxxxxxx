@@ -23,7 +23,8 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
     var isOutGoing = true;
     let bag = DisposeBag()
     var friend: ConversationUserData!
-
+    var id_friend: Int?
+    
     var myPhoto: UIImage?
     var friendPhoto: UIImage?
 
@@ -72,6 +73,11 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         collectionView.reloadData()
         //observable
         observerFromRealm()
+        
+        
+        
+        
+        
 
     }
 

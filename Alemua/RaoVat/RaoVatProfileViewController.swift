@@ -18,7 +18,7 @@ class RaoVatProfileViewController: BaseViewController {
     var profileData: ProfileData? {
         didSet {
             if let data = profileData {
-                userView.bindData(name: data.name, address: data.address, photo: data.photo)
+                userView.bindData(name: data.name, address: data.address, photo: data.photo, isSafe: data.is_safe)
             }
         }
     }

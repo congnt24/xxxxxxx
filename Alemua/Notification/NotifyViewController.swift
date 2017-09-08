@@ -35,7 +35,6 @@ class NotifyViewController: BaseViewController {
 //        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-
         let nibName = "NotifyTableViewCell"
         let nib = UINib(nibName: nibName, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: nibName)
@@ -70,7 +69,7 @@ class NotifyViewController: BaseViewController {
             switch self.datas.value[ip.row].notificationType! {
             case 1:
                 OrderNavTabBarViewController.sharedInstance.switchTab(index: 1)
-                OrderOrderViewController.shared.selectViewController = 1
+                OrderOrderViewController.selectViewController = 1
                 break
             case 2:
                 DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
@@ -135,7 +134,7 @@ class NotifyViewController: BaseViewController {
 
     //Interact API
     func fetchData() {
-        let isShipper = HomeViewController.homeType == .order ? 0 : 1
+        let isShipper = HomeViewController.homeType == .order ? 0 : HomeViewController.homeType == .delivery ? 1 : 2
         AlemuaApi.shared.aleApi.request(.getNotifications(page_number: currentPage, is_shipper: isShipper))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -157,8 +156,10 @@ class NotifyViewController: BaseViewController {
     @IBAction func onBack(_ sender: Any) {
         if HomeViewController.homeType == .order {
             OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
-        } else {
+        } else if HomeViewController.homeType == .delivery {
             DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+        } else {
+            RaoVatCoordinator.sharedInstance.navigation?.popViewController()
         }
     }
 }

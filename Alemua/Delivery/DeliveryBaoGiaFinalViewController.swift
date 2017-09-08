@@ -69,8 +69,17 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.rateData.tonggia = modelQuoteData.websitePrice ?? 0
         rateDetail.phigiaodichquaalemua.text = "\(modelQuoteData.transaction_alemua_free ?? 0)"
         rateDetail.rateData.phigiaodichquaalemua = modelQuoteData.transaction_alemua_free ?? 0
-        rateDetail.magiamgia.text = "\(modelQuoteData.promotionMoney ?? 0)"
+        if (modelQuoteData.promotionMoney ?? 0) == 0 {
+            rateDetail.magiamgia.text = ""
+        }else{
+            rateDetail.magiamgia.text = "\(modelQuoteData.promotionMoney ?? 0)"
+        }
         rateDetail.rateData.magiamgia = modelQuoteData.promotionMoney ?? 0
+        rateDetail.thue.text = ""
+        rateDetail.phichuyennoidia.text = ""
+        rateDetail.phinguoimua.text = ""
+        rateDetail.phivanchuyenvealemua.text = ""
+        rateDetail.phivanchuyenvetaynguoimua.text = ""
         
         req.buyFrom = modelQuoteData.buyFrom
         req.deliveryDate = modelQuoteData.deliveryDate

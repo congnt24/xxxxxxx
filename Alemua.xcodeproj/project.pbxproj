@@ -652,7 +652,6 @@
 		029B090D1F207C5F0036F01F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				02F775121F1F38E900556BED /* HomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -725,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				029B090D1F207C5F0036F01F /* Controller */,
+				02F775121F1F38E900556BED /* HomeViewController.swift */,
 				02F775111F1F38E900556BED /* HomeCoordinator.swift */,
 				02F775131F1F38E900556BED /* HomeViewModel.swift */,
 				02530E891F2C85C900334345 /* Prefs.swift */,

@@ -15,24 +15,24 @@ import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    
+
 
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-    
+
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        
+
         let googleDidHandle = GIDSignIn.sharedInstance().handle(url,
-                                                                   sourceApplication: sourceApplication,
-                                                                   annotation: annotation)
-        
+                                                                sourceApplication: sourceApplication,
+                                                                annotation: annotation)
+
         let facebookDidHandle = FBSDKApplicationDelegate.sharedInstance().application(
             application,
             open: url,
             sourceApplication: sourceApplication,
             annotation: annotation)
-        
+
         return googleDidHandle || facebookDidHandle
     }
 
@@ -90,14 +90,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         application.registerForRemoteNotifications()
 
         // [END register_for_notifications]
-        
-        
-        
+
+
+
         // Initialize sign-in
 //        var configureError: NSError?
 //        GGLContext.sharedInstance().configureWithError(&configureError)
 //        assert(configureError == nil, "Error configuring Google services: \(configureError)")
-        
+
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().clientID = "259311042399-kj2fts3n54g1keqmobkporpm3h8b2v0v.apps.googleusercontent.com"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -171,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 }
 
 extension AppDelegate {
-    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user: GIDGoogleUser!,
                 withError error: NSError!) {
         // Perform any operations when the user disconnects from app here.
         // ...
@@ -184,8 +184,8 @@ extension AppDelegate {
             let name = user.profile.name
             let email = user.profile.email
             let photo = user.profile.imageURL(withDimension: 100)
-            
-            
+
+
             let req = FacebookRequest()
             req.email = (email as? String) ?? ""
             req.name = (name as? String) ?? ""
@@ -231,9 +231,48 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID4: \(messageID)")
         }
-
+        let aps = userInfo["aps"] as! [String: AnyObject]
         // Print full message.
-        print(userInfo)
+        
+//        if let vibrate = userInfo["gcm.notification.vibrate"] as? NSNumber {
+//            print(vibrate)
+//        }
+        if let sound = aps["sound"] {
+            print(sound)
+            print("sound \(type(of: sound))")
+            
+            HomeCoordinator.sharedInstance.showOrderScreen()
+        }
+        //        if vibrate == 0 {
+//            HomeCoordinator.sharedInstance.showChatScreen(friend:)
+//        }
+//        if vibrate == 1 {
+//            switch sound {
+//            case 1:
+                //User nhận được thông báo báo giá của người gửi(Sang màn 5.1)
+        
+//                break
+//            case 2:
+//                //Shipper nhận được thông báo đống ý báo giá của user(Sang màn 11)
+//                break
+//            case 3:
+//                //Shipper nhận được thông báo hủy đơn hàng của user(Sang màn 11.2)
+//
+//                break
+//            case 4:
+//                //Shipper nhận được thông báo đơn hàng thành công của user(Sang màn 11.1)
+//
+//                break
+//            default:
+//                //User nhận được thông báo nhận được tiền chuyển khoản từ admin(Sang màn 9.1)
+//
+//                break
+//            }
+//        }
+
+        //handle onclick notification
+
+//        HomeCoordinator.sharedInstance.show
 
         completionHandler()
     }
@@ -241,18 +280,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 // [END ios_10_message_handling]
 
 extension AppDelegate: MessagingDelegate {
-    // [START refresh_token]
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
         Prefs.firebaseToken = fcmToken
     }
-    // [END refresh_token]
-    // [START ios_10_data_message]
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
-    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         print("Received data message: \(remoteMessage.appData)")
     }
-    // [END ios_10_data_message]
 }
 

@@ -11,6 +11,7 @@ import RxSwift
 
 class DeliveryNavTabBarViewController: UITabBarController {
     let bag = DisposeBag()
+    var defaultTab = 0
     
     public static var sharedInstance: DeliveryNavTabBarViewController!
     override func viewDidLoad() {
@@ -18,6 +19,7 @@ class DeliveryNavTabBarViewController: UITabBarController {
         DeliveryNavTabBarViewController.sharedInstance = self
         // Do any additional setup after loading the view.
         fetchUnreadNoti()
+        switchTab(index: defaultTab)
     }
     
     // UITabBarDelegate

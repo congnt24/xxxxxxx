@@ -11,8 +11,8 @@ import AwesomeMVVM
 import UIKit
 
 protocol HomeCoordinatorDelegate {
-    func showDeliveryScreen()
-    func showOrderScreen()
+//    func showDeliveryScreen()
+//    func showOrderScreen()
 //    func showDeliveryScreen()
 }
 
@@ -28,14 +28,19 @@ class HomeCoordinator: Coordinator {
 }
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
-    func showDeliveryScreen() {
+    func showDeliveryScreen(_ navigate: Int = -1) {
         DeliveryNavTabBarCoordinator(navigation).start(nil)
     }
-    func showOrderScreen() {
-        OrderNavTabBarCoordinator(navigation).start(nil)
+    func showOrderScreen(_ navigate: Int = -1) {
+        OrderNavTabBarCoordinator(navigation).start(navigate)
     }
     func showRaoVatScreen(){
         RaoVatCoordinator(navigation).start(nil)
+    }
+    
+    
+    func showOrderScreenNoti1() {
+        OrderNavTabBarCoordinator(navigation).start(nil)
     }
 }
 
@@ -46,5 +51,11 @@ extension HomeCoordinator {
     
     func showChatScreen(friend: ConversationUserData) {
         ChatCoordinator(navigation).start(friend)
+    }
+    func showChatScreen(id_friend: Int?) {
+        let chat: ChatWrapperViewController = mainStoryboard.instantiateViewController(withClass: ChatWrapperViewController.self)
+        chat.id_friend = id_friend
+        //        chat.chatCoor = self
+        navigation?.pushViewController(chat)
     }
 }

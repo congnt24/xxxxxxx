@@ -15,9 +15,17 @@ class OrderNavTabBarCoordinator: Coordinator {
     
     override func start(_ data: Any?) {
         let nav: OrderNavTabBarViewController = mainStoryboard.instantiateViewController(withClass: OrderNavTabBarViewController.self)
+        if let data = data as? Int, data > -1 {
+            OrderOrderViewController.selectViewController = 1
+            //                nav.notiNavigate = data
+            nav.defaultTab = 1
+        }
         OrderNavTabBarCoordinator.sharedInstance = self
         nav.coordinator = self
-        navigation?.pushViewController(nav, animated: true)
+        navigation?.pushViewController(nav, completion: {
+            
+//            OrderOrderViewController.shared.selectViewController = 1
+        })
     }
 }
 

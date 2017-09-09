@@ -49,6 +49,7 @@ class RaoVatProfileViewController: BaseViewController {
     }
     
     func fetchProfile() {
+        LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(AleApi.getUserProfile(profileType: 1))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -59,8 +60,9 @@ class RaoVatProfileViewController: BaseViewController {
                 case .error(let msg):
                     print("Error \(msg)")
                     break
-                default: break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
     }
     

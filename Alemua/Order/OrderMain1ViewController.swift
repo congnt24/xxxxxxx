@@ -142,7 +142,8 @@ class OrderMain1ViewController: BaseViewController, UITableViewDelegate {
 extension OrderMain1ViewController {
     //Interact API
     func fetchData() -> Driver<[SectionOfOrder]> {
-        return aleApi.request(AleApi.getHomeItems(page: 1, filter_type: 0)).filterSuccessfulStatusCodes()
+        return aleApi.request(AleApi.getHomeItems(page: 1, filter_type: 0))
+            //.filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[SectionOfOrder]> in
                 LoadingOverlay.shared.hideOverlayView()
             let json = JSON(response.data)

@@ -46,7 +46,7 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         }
         if OrderOrderViewController.shared.indexShouldReload.contains(orderType.rawValue) {
             OrderOrderViewController.shared.indexShouldReload = OrderOrderViewController.shared.indexShouldReload.filter { $0 != orderType.rawValue }
-            reloadPage()
+            reloadPage(true)
         }
         print("SingleOrderViewController will appear \(orderType.rawValue)")
     }
@@ -85,7 +85,7 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
-            self.fetchData().drive(onNext: { (results) in
+            self.fetchData(self.currentPage == 1).drive(onNext: { (results) in
                 print(results)
                 if results.count > 0 {
                     self.datas.value.append(contentsOf: results)
@@ -101,9 +101,9 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         tableView.beginInfiniteScroll(true)
     }
     
-    func reloadPage(){
+    func reloadPage(_ isShowDialog: Bool = false){
         currentPage = 1
-        self.fetchData().drive(onNext: { (results) in
+        self.fetchData(isShowDialog).drive(onNext: { (results) in
             self.datas.value = results
             self.currentPage = 2
         }).addDisposableTo(self.bag)
@@ -111,11 +111,11 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
 
 
     //Interact API
-    func fetchData() -> Driver<[ModelOrderClientData]> {
-        if currentPage < 2 && orderType.rawValue > 0 {
+    func fetchData(_ isShowDialog: Bool = false) -> Driver<[ModelOrderClientData]> {
+        if isShowDialog{
             LoadingOverlay.shared.showOverlay(view: OrderOrderViewController.shared.view)
         }
-        return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue)).filterSuccessfulStatusCodes()
+        return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue))//.filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelOrderClientData]> in
                 LoadingOverlay.shared.hideOverlayView()
                 let json = JSON(data: response.data)

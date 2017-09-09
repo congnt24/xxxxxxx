@@ -51,15 +51,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="167" height="18"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBk-OG-odG">
-                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1" height="18"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="18" id="eSl-sO-pFa"/>
+                                                <constraint firstAttribute="width" constant="1" id="eSl-sO-pFa"/>
                                                 <constraint firstAttribute="height" constant="18" id="mUv-FW-2en"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tm-gi-eOX">
-                                            <rect key="frame" x="18" y="0.0" width="149" height="18"/>
+                                            <rect key="frame" x="1" y="0.0" width="166" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                 </stackView>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tpc-fG-nRs">
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tpc-fG-nRs">
                             <rect key="frame" x="241" y="11" width="64" height="42"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verified" translatesAutoresizingMaskIntoConstraints="NO" id="5fj-Jx-JUo">

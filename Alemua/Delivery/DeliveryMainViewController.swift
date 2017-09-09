@@ -58,15 +58,13 @@ class DeliveryMainViewController: BaseViewController {
             DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: self.datas.value[ip.row])
         }).addDisposableTo(bag)
         
-        LoadingOverlay.shared.showOverlay(view: DeliveryNavTabBarViewController.sharedInstance.view)
         tableView.addInfiniteScroll { (tv) in
             // update table view
-            self.fetchData().drive(onNext: { (results) in
+            self.fetchData(self.currentPage == 1).drive(onNext: { (results) in
                 if results.count > 0 {
                     self.currentPage += 1
                     self.datas.value.append(contentsOf: results)
                 }
-                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(self.bag)
             // finish infinite scroll animation
             tv.finishInfiniteScroll()
@@ -83,7 +81,7 @@ class DeliveryMainViewController: BaseViewController {
             }
         }).addDisposableTo(bag)
         tfLink.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
-            self.reloadPage()
+            self.reloadPage(true)
         }).addDisposableTo(bag)
         
     }
@@ -95,9 +93,9 @@ class DeliveryMainViewController: BaseViewController {
         }
     }
 
-    func reloadPage(){
+    func reloadPage(_ isReload: Bool = false){
         currentPage = 1
-        self.fetchData().drive(onNext: { (results) in
+        self.fetchData(isReload).drive(onNext: { (results) in
             if results.count > 0 {
                 self.currentPage += 1
                 self.datas.value = results
@@ -105,9 +103,13 @@ class DeliveryMainViewController: BaseViewController {
         }).addDisposableTo(self.bag)
     }
     //Interact API
-    func fetchData() -> Driver<[ModelQuoteData]> {
+    func fetchData(_ isReload: Bool = false) -> Driver<[ModelQuoteData]> {
+        if isReload {
+            LoadingOverlay.shared.showOverlay(view: DeliveryNavTabBarViewController.sharedInstance.view)
+        }
         return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage, text_search: textSearch.value)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelQuoteData]> in
+                LoadingOverlay.shared.hideOverlayView()
                 let obj = ModelQuoteResponse(json: JSON(response.data))
                 return Observable.from(optional: obj.result)
             }.asDriver(onErrorJustReturn: [])

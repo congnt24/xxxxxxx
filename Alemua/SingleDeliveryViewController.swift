@@ -81,7 +81,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         //Loadmore
         tableView.addInfiniteScroll { (tv) in
             // update table view
-            self.fetchData()
+            self.fetchData( self.currentPage != 1)
             // finish infinite scroll animation
             tv.finishInfiniteScroll()
         }
@@ -91,13 +91,14 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
     func reloadPage(){
         currentPage = 1
-        self.fetchData()
+        self.fetchData(true)
     }
 
     
     //Interact API
-    func fetchData() {
-        if currentPage > 1 {
+    func fetchData(_ isReload: Bool = false) {
+//        if deliveryType.rawValue > 1 {
+        if !isReload {
             LoadingOverlay.shared.showOverlay(view: DeliveryOrderViewController.shared.view)
         }
         return AleProvider.request(AleApi.getOrderFromShipper(page_number: currentPage, order_type: deliveryType.rawValue)).toJSON()
@@ -121,6 +122,8 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
                     print("Error \(msg)")
                     break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
     }
     

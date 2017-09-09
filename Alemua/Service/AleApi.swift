@@ -50,6 +50,7 @@ public enum AleApi {
     case getNotifications(page_number: Int, is_shipper: Int)
     case readNotification(notification_id: Int)
     case getUnreadNotification(isShipper: Int)
+    case getTransferMoney(order_id: Int?, weight: Float?)
 }
 
 extension AleApi: TargetType {
@@ -120,6 +121,8 @@ extension AleApi: TargetType {
             return "/api/order/readNotification"
         case .getUnreadNotification:
             return "/api/order/getUnreadNotification"
+        case .getTransferMoney:
+            return "/api/order/getTransferMoney"
         }
     }
 
@@ -184,6 +187,7 @@ extension AleApi: TargetType {
             params["transfer_to_buyer_fee"] = quote.transferToBuyerFee ?? 0
             params["transaction_alemua_free"] = quote.transactionAlemuaFree ?? 0
             params["promotion_money"] = quote.promotion_money ?? 0
+            params["weight"] = quote.weight ?? 0
             return params
         case .acceptQuote(let data):
             var params = [String: Any]()
@@ -369,6 +373,11 @@ extension AleApi: TargetType {
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["is_shipper"] = is_shipper
+            return params
+        case .getTransferMoney(let order_id, let weight):
+            var params = [String: Any]()
+            params["order_id"] = order_id
+            params["weight"] = weight
             return params
             
             

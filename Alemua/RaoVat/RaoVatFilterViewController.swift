@@ -34,7 +34,7 @@ class RaoVatFilterViewController: BaseViewController, UITextFieldDelegate {
     var data: AdvCategoryResponse!
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+        //show dialog for set weight
         return false;
     }
     

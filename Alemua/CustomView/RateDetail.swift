@@ -22,11 +22,22 @@ struct RateDetailData {
     var phivanchuyenvealemua: Int?
     var phivanchuyenvetaynguoimua: Int?
     var phigiaodichquaalemua: Int?
+    var weight: Float?
 
 }
 
-class RateDetail: AwesomeToggleViewByHeight {
-
+class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        onShowTransfer()
+        return false;
+    }
+    func onShowTransfer(){
+        
+        let dialog = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withIdentifier: "DialogSetWeight") as! DialogSetWeight
+        dialog.txtWeight = tfWeight.text ?? ""
+        AwesomeDialog.shared.show(vc: viewController(), popupVC: dialog)
+    }
 
     @IBOutlet weak var giamgia: AwesomeTextField!
     @IBOutlet weak var uiStackView: UIStackView!
@@ -39,6 +50,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     @IBOutlet weak var phigiaodichquaalemua: AwesomeTextField!
 
     @IBOutlet weak var magiamgia: AwesomeTextField!
+    @IBOutlet weak var tfWeight: AwesomeTextField!
     var listView: [AwesomeTextField] = []
     var rateData: RateDetailData!
     let bag = DisposeBag()
@@ -68,18 +80,17 @@ class RateDetail: AwesomeToggleViewByHeight {
         phichuyennoidia.isUserInteractionEnabled = true
         phinguoimua.isUserInteractionEnabled = true
         phivanchuyenvealemua.isUserInteractionEnabled = true
-        phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
-        phigiaodichquaalemua.isUserInteractionEnabled = true
+//        phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
+//        phigiaodichquaalemua.isUserInteractionEnabled = true
         giamgia.isUserInteractionEnabled = true
+        tfWeight.isUserInteractionEnabled = true
+        tfWeight.delegate = self
+        tfWeight.leftView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onShowTransfer)))
+        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0, weight: 0))
         
-        
-        bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
-        
-    
         
         
         magiamgia.rx.text.subscribe(onNext: { (str) in
-            print("sadasd " + (str ?? ""))
             self.rateData.discount = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
@@ -146,7 +157,7 @@ class RateDetail: AwesomeToggleViewByHeight {
     }
     
     public func setDefaultValue(value: Int?) {
-        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0))
+        bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0, weight: 0))
     }
 
     public func setValues(values: [String]) {
@@ -166,6 +177,7 @@ class RateDetail: AwesomeToggleViewByHeight {
             phivanchuyenvetaynguoimua.text = ""
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
+            tfWeight.text = ""
         }else{
             tonggia.text = "\(rateData.giamua!)".toFormatedPrice()
             thue.text = "\(rateData.thue!)".toFormatedPrice()
@@ -175,6 +187,7 @@ class RateDetail: AwesomeToggleViewByHeight {
             phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)".toFormatedPrice()
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
+            tfWeight.text = "\(rateData.weight!)"
         }
     }
     
@@ -187,6 +200,7 @@ class RateDetail: AwesomeToggleViewByHeight {
         phivanchuyenvetaynguoimua.text = "\(order.transferToBuyerFee!)".toFormatedPrice()
         phigiaodichquaalemua.text = "\(order.buyingPrice!)".toFormatedPrice()
         magiamgia.text = "\(order.promotion_money!)".toFormatedPrice()
+        tfWeight.text = "\(order.weight!)"
     }
 
     func calculateTotal() -> Int? {
@@ -208,6 +222,28 @@ class RateDetail: AwesomeToggleViewByHeight {
 //        sum -= rateData.discount ?? 0
         return sum
 
+    }
+    
+    func onUpdateWeight(weight: String?){
+        tfWeight.text = weight
+        if let weight = weight {
+            self.rateData.weight = Float(weight)
+            let vc = viewController() as! DeliveryBaoGiaFinalViewController
+            AlemuaApi.shared.aleApi.request(AleApi.getTransferMoney(order_id: vc.modelQuoteData.id, weight: Float(weight)))
+                .toJSON()
+                .subscribe(onNext: { (res) in
+                    switch res {
+                    case .done( let result, _):
+                        let money = result["money"].int
+                        self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)"
+                        break
+                    case .error(let msg):
+                        print("Error \(msg)")
+                        break
+                    }
+                }).addDisposableTo(bag)
+
+        }
     }
 
 }

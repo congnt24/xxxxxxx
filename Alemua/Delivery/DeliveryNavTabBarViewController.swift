@@ -35,8 +35,7 @@ class DeliveryNavTabBarViewController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         if SingleDeliveryViewController.shouldReloadPage > -1 {
-            
-            DeliveryOrderViewController.shared.listVC[0].reloadPage()
+//            DeliveryOrderViewController.shared.listVC[0].reloadPage()
             SingleDeliveryViewController.shouldReloadPage = -1
         }
     }

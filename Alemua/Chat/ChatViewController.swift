@@ -24,12 +24,15 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
     let bag = DisposeBag()
     var friend: ConversationUserData!
     var id_friend: Int?
-    
+
+    var data: String?
     var myPhoto: UIImage?
     var friendPhoto: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
         if Prefs.photo != "" {
             KingfisherManager.shared.retrieveImage(with: URL(string: Prefs.photo)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
                 self.myPhoto = image
@@ -73,11 +76,11 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         collectionView.reloadData()
         //observable
         observerFromRealm()
-        
-        
-        
-        
-        
+
+
+
+
+
 
     }
 
@@ -146,6 +149,7 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
         collectionView.reloadData()
         finishSendingMessage()
     }
+
 }
 
 

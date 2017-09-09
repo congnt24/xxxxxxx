@@ -48,8 +48,8 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if DeliveryOrderViewController.shared.indexShouldReload.contains(deliveryType.rawValue - 1) {
-            DeliveryOrderViewController.shared.indexShouldReload = DeliveryOrderViewController.shared.indexShouldReload.filter { $0 != (deliveryType.rawValue - 1) }
+        if DeliveryOrderViewController.indexShouldReload.contains(deliveryType.rawValue - 1) {
+            DeliveryOrderViewController.indexShouldReload = DeliveryOrderViewController.indexShouldReload.filter { $0 != (deliveryType.rawValue - 1) }
             reloadPage()
         }
         print("SingleOrderViewController will appear \(deliveryType.rawValue)")

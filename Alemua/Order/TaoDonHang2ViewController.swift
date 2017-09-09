@@ -11,7 +11,16 @@ import XLPagerTabStrip
 import AwesomeMVVM
 import Toaster
 
-class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
+class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider, UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        //show map
+        
+        OrderCoordinator.sharedInstance.showOrderSelectMap()
+        
+        return false;
+    }
+    public static var shared: TaoDonHang2ViewController!
     @IBOutlet weak var tfMuaTu: AwesomeTextField!
     @IBOutlet weak var tfGiaoDen: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
@@ -23,8 +32,10 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider {
     var data: ModelOrderData?
     override func viewDidLoad() {
         super.viewDidLoad()
+        TaoDonHang2ViewController.shared = self
         taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
         tfMuaTu.text = data?.address
+        tfGiaoDen.delegate = self
         // Do any additional setup after loading the view.
     }
 

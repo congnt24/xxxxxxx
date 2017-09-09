@@ -233,15 +233,42 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         let aps = userInfo["aps"] as! [String: AnyObject]
         // Print full message.
-        
+
 //        if let vibrate = userInfo["gcm.notification.vibrate"] as? NSNumber {
 //            print(vibrate)
 //        }
-        if let sound = aps["sound"] {
-            print(sound)
-            print("sound \(type(of: sound))")
-            
-            HomeCoordinator.sharedInstance.showOrderScreen()
+        print(aps)
+        if let vibrate = userInfo["gcm.notification.vibrate"] as? String {
+            print("vibrate")
+            print(vibrate)
+            if let sound = aps["sound"] as? String {
+                print("sound")
+                print(sound)
+                if vibrate == "0" {
+                    HomeCoordinator.sharedInstance.showChatScreen(data: sound)
+                } else {
+                    print(sound)
+                    print("sound \(type(of: sound))")
+                    switch sound {
+                    case "1":
+                        HomeCoordinator.sharedInstance.showOrderScreen(1)
+                            break
+                    case "2":
+                        HomeCoordinator.sharedInstance.showDeliveryScreen(2)
+                        break
+                    case "3":
+                        HomeCoordinator.sharedInstance.showDeliveryScreen(3)
+                        break
+                    case "4":
+                            HomeCoordinator.sharedInstance.showDeliveryScreen(4)
+                        break
+                    default:
+                        HomeCoordinator.sharedInstance.showDeliveryScreen(5)
+                        break
+                    }
+
+                }
+            }
         }
         //        if vibrate == 0 {
 //            HomeCoordinator.sharedInstance.showChatScreen(friend:)
@@ -249,8 +276,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 //        if vibrate == 1 {
 //            switch sound {
 //            case 1:
-                //User nhận được thông báo báo giá của người gửi(Sang màn 5.1)
-        
+        //User nhận được thông báo báo giá của người gửi(Sang màn 5.1)
+
 //                break
 //            case 2:
 //                //Shipper nhận được thông báo đống ý báo giá của user(Sang màn 11)

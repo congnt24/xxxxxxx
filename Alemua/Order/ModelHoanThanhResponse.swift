@@ -40,6 +40,7 @@ class ModelHoanThanhData {
         static let userRated = "user_rated"
         static let ratingId = "rating_id"
         static let promotion_money = "promotion_money"
+        static let weight = "weight"
     }
     
     // MARK: Properties
@@ -73,6 +74,7 @@ class ModelHoanThanhData {
     public var userRated: Int?
     public var ratingId: Int?
     public var promotion_money: Int?
+    public var weight: Float?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -117,6 +119,7 @@ class ModelHoanThanhData {
         userRated = json[SerializationKeys.userRated].int
         ratingId = json[SerializationKeys.ratingId].int
         promotion_money = json[SerializationKeys.promotion_money].int
+        weight = json[SerializationKeys.weight].float
     }
 
 }

@@ -42,7 +42,7 @@ class MapViewController: UIViewController {
         mapView = GMSMapView.map(withFrame: view.bounds, camera: movingCamera)
         mapView.mapType = .normal
         mapView.accessibilityElementsHidden = false
-        //mapView.settings.myLocationButton = true
+        mapView.settings.myLocationButton = true
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true // show blue bubble for current location
         mapView.settings.compassButton = true

@@ -18,6 +18,7 @@
                 <outlet property="phinguoimua" destination="Vrz-bw-P6g" id="hVh-UV-6iQ"/>
                 <outlet property="phivanchuyenvealemua" destination="UD9-dA-5Ct" id="fyP-yl-rSm"/>
                 <outlet property="phivanchuyenvetaynguoimua" destination="xsk-eO-8kw" id="m81-ke-xEU"/>
+                <outlet property="tfWeight" destination="AbE-ki-sfC" id="zTE-Br-sHg"/>
                 <outlet property="thue" destination="oaK-Hj-pO7" id="wsc-Ns-CrV"/>
                 <outlet property="tonggia" destination="QLI-Ad-zhR" id="tem-WL-N2x"/>
                 <outlet property="uiStackView" destination="r4D-LZ-XvL" id="WCe-6z-gPR"/>
@@ -25,13 +26,13 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-5k-fgr" customClass="AwesomeToggleViewByHeight" customModule="Alemua" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="310" height="280"/>
+            <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
             <subviews>
                 <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-LZ-XvL">
-                    <rect key="frame" x="32" y="0.0" width="278" height="280"/>
+                    <rect key="frame" x="32" y="0.0" width="311" height="300"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLI-Ad-zhR" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="0.0" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -46,7 +47,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujT-g9-HN3" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="35" width="278" height="0.0"/>
+                            <rect key="frame" x="0.0" y="33.5" width="311" height="0.0"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -61,7 +62,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-tL-cmr" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="35" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="33.5" width="311" height="33"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -76,7 +77,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-Hj-pO7" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="70" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="66.5" width="311" height="33.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -91,7 +92,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-G0-K0h" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="105" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="100" width="311" height="33.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -106,7 +107,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-bw-P6g" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="140" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="133.5" width="311" height="33"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -121,7 +122,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-dA-5Ct" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="175" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="166.5" width="311" height="33.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -136,7 +137,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-eO-8kw" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="210" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="200" width="311" height="33.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -151,7 +152,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-uu-hVW" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="245" width="278" height="35"/>
+                            <rect key="frame" x="0.0" y="233.5" width="311" height="33"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
@@ -163,6 +164,21 @@
                                     <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí giao dịch qua Alemua"/>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-ki-sfC" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                            <rect key="frame" x="0.0" y="266.5" width="311" height="33.5"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Khối lượng kiện hàng dự tính(kg)"/>
                             </userDefinedRuntimeAttributes>
                         </textField>
                     </subviews>
@@ -180,7 +196,7 @@
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isHide" value="NO"/>
             </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="-32" y="1041"/>
+            <point key="canvasLocation" x="-42" y="875"/>
         </view>
     </objects>
 </document>

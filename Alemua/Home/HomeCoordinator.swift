@@ -52,9 +52,9 @@ extension HomeCoordinator {
     func showChatScreen(friend: ConversationUserData) {
         ChatCoordinator(navigation).start(friend)
     }
-    func showChatScreen(id_friend: Int?) {
+    func showChatScreen(data: String) {
         let chat: ChatWrapperViewController = mainStoryboard.instantiateViewController(withClass: ChatWrapperViewController.self)
-        chat.id_friend = id_friend
+        chat.data = data
         //        chat.chatCoor = self
         navigation?.pushViewController(chat)
     }

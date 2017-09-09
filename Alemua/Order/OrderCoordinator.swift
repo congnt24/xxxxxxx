@@ -58,6 +58,13 @@ extension OrderCoordinator {
         view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }
+    
+    
+    func showOrderSelectMap() {
+        let view: TaoDonHangSelectMapViewController = mainStoryboard.instantiateViewController(withClass: TaoDonHangSelectMapViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
+    
 }
 
 

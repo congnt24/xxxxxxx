@@ -14,6 +14,8 @@ import SwiftyJSON
 import Toaster
 
 class DeliveryBaoGiaFinalViewController: UIViewController {
+    public static var shared: DeliveryBaoGiaFinalViewController!
+    
     @IBOutlet weak var itemView: ItemView!
     var modelQuoteData: ModelOrderClientData!
     var req = CreateQuoteRequest()
@@ -28,6 +30,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var rateDetail: RateDetail!
     override func viewDidLoad() {
         super.viewDidLoad()
+        DeliveryBaoGiaFinalViewController.shared = self
         print("DeliveryBaoGiaFinalViewController")
 
         itemView.bindData(title: modelQuoteData.productName, imageUrl: modelQuoteData.photo, baogia: "\(modelQuoteData.quotes?.count ?? 0)")
@@ -94,6 +97,13 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.toggleHeight()
     }
     @IBAction func onFinishBaoGia(_ sender: Any) {
+        
+        
+        if (rateDetail.rateData.weight ?? 0.0) == 0.0 {
+            Toast.init(text: "Vui lòng nhập khối lượng kiện hàng dự tính.").show()
+            return
+        }
+        
         req.totalPrice = rateDetail.calculateTotal() ?? 0
         req.tax = rateDetail.rateData.thue
         req.buyingPrice = rateDetail.rateData.tonggia
@@ -103,7 +113,8 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.transferDomesticFee = rateDetail.rateData.phichuyennoidia
         req.transactionAlemuaFree = rateDetail.rateData.phigiaodichquaalemua
         req.discount = rateDetail.rateData.discount
-//        req.promotion_money = rateDetail.rateData.promotion_money
+        //        req.promotion_money = rateDetail.rateData.promotion_money
+        req.weight = rateDetail.rateData.weight
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
             .toJSON()
             .catchError({ (error) -> Observable<AleResult> in
@@ -113,9 +124,12 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                 switch res {
                 case .done( _, let msg):
                     Toast.init(text: msg).show()
+//                    OrderOrderViewController.selectViewController = 2
+                    DeliveryOrderViewController.indexShouldReload.append(contentsOf: [0])
 //                    OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
                     AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
                     SingleDeliveryViewController.shouldReloadPage = 1
+                    
 //                    DeliveryMainViewController.shared.reloadPage()
                     break
                 case .error(let msg):

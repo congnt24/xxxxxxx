@@ -61,7 +61,7 @@ class DangChuyenViewController: UIViewController {
         tfMoTa.text = modelDangChuyen.descriptionValue
         tfGhiChu.text = modelDangChuyen.note
         //bind rate detail
-        uiRateDetail.bindData(RateDetailData(tonggia: modelDangChuyen.totalPrice, giamua: modelDangChuyen.buyingPrice,  discount: modelDangChuyen.discount, magiamgia: modelDangChuyen.promotion_money, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree))
+        uiRateDetail.bindData(RateDetailData(tonggia: modelDangChuyen.totalPrice, giamua: modelDangChuyen.buyingPrice,  discount: modelDangChuyen.discount, magiamgia: modelDangChuyen.promotion_money, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree, weight: modelDangChuyen.weight))
         uiReview1.bindData(name: modelDangChuyen.userPostName, rating: modelDangChuyen.userPostRating, nguoidang: 0)
         uiReview2.bindData(name: modelDangChuyen.userShipName, rating: modelDangChuyen.userShipRating, nguoidang: 1)
         

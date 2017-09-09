@@ -144,6 +144,7 @@ public class ModelOrderBaoGiaData {
         static let transferAlemuaFree = "transfer_alemua_free"
         static let transactionAlemuaFree = "transaction_alemua_free"
         static let promotion_money = "promotion_money"
+        static let weight = "weight"
     }
     
     // MARK: Properties
@@ -171,6 +172,7 @@ public class ModelOrderBaoGiaData {
     public var transferAlemuaFree: Int?
     public var transactionAlemuaFree: Int?
     public var promotion_money: Int?
+    public var weight: Float?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -209,6 +211,7 @@ public class ModelOrderBaoGiaData {
         transferAlemuaFree = json[SerializationKeys.transferAlemuaFree].int
         transactionAlemuaFree = json[SerializationKeys.transactionAlemuaFree].int
         promotion_money = json[SerializationKeys.promotion_money].int
+        weight = json[SerializationKeys.weight].float
     }
 
 }

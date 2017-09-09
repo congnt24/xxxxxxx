@@ -168,6 +168,8 @@
 		02D32B7F1F30BD2700A8A4B6 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 02D32B7E1F30BD2700A8A4B6 /* AccountKitStrings.bundle */; };
 		02D32B821F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D32B811F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift */; };
 		02D32B861F30E00100A8A4B6 /* ModelMainHomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D32B851F30E00100A8A4B6 /* ModelMainHomeResponse.swift */; };
+		02DC0F7E1F643C8900F98ECE /* DialogSetWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC0F7D1F643C8900F98ECE /* DialogSetWeight.swift */; };
+		02DC0F801F644E8300F98ECE /* TaoDonHangSelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DC0F7F1F644E8300F98ECE /* TaoDonHangSelectMapViewController.swift */; };
 		02F1AE8E1F35587000AD4466 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F1AE8D1F35587000AD4466 /* ResponseModel.swift */; };
 		02F328A71F5FADB600DB4E0E /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F328A61F5FADB600DB4E0E /* AlamofireManager.swift */; };
 		02F6E2961F37FF51000C0B83 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F6E2951F37FF51000C0B83 /* PhotoView.swift */; };
@@ -359,6 +361,8 @@
 		02D32B7E1F30BD2700A8A4B6 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
 		02D32B811F30D3FC00A8A4B6 /* ModelMainOrderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelMainOrderResponse.swift; path = Order/ModelMainOrderResponse.swift; sourceTree = "<group>"; };
 		02D32B851F30E00100A8A4B6 /* ModelMainHomeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelMainHomeResponse.swift; path = Order/ModelMainHomeResponse.swift; sourceTree = "<group>"; };
+		02DC0F7D1F643C8900F98ECE /* DialogSetWeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogSetWeight.swift; sourceTree = "<group>"; };
+		02DC0F7F1F644E8300F98ECE /* TaoDonHangSelectMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaoDonHangSelectMapViewController.swift; sourceTree = "<group>"; };
 		02F1AE8D1F35587000AD4466 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		02F328A61F5FADB600DB4E0E /* AlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		02F6E2951F37FF51000C0B83 /* PhotoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoView.swift; path = CustomView/PhotoView.swift; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				022A8D0E1F28F04200D69411 /* TaoDonHang1ViewController.swift */,
+				02DC0F7F1F644E8300F98ECE /* TaoDonHangSelectMapViewController.swift */,
 				022A8D101F28F05000D69411 /* TaoDonHang2ViewController.swift */,
 				022A8D121F28F05C00D69411 /* TaoDonHang3ViewController.swift */,
 				0222CB311F2964D100B20236 /* TaoDonHangViewController.swift */,
@@ -515,6 +520,7 @@
 			children = (
 				023B39D61F2B1A6800E53A6D /* SubViewController */,
 				02BC24C51F25CAB300C917CD /* DeliveryOrderViewController.swift */,
+				02DC0F7D1F643C8900F98ECE /* DialogSetWeight.swift */,
 				02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */,
 				0223C7F81F2A4210005949C9 /* DeliveryDaHuyViewController.swift */,
 				0223C7FA1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift */,
@@ -1101,6 +1107,7 @@
 			files = (
 				020D42651F5CECE800A13464 /* RaoVatSelectMapViewController.swift in Sources */,
 				021C97FC1F5070CF0058CBF0 /* RaoVatViewController.swift in Sources */,
+				02DC0F801F644E8300F98ECE /* TaoDonHangSelectMapViewController.swift in Sources */,
 				021C97FB1F5070CF0058CBF0 /* RaoVatReplyCommentViewController.swift in Sources */,
 				023B39D21F2B02BD00E53A6D /* BaoGiaDeliveryTableViewCell.swift in Sources */,
 				021C97F21F5070CE0058CBF0 /* RaoVatCategoryViewController.swift in Sources */,
@@ -1150,6 +1157,7 @@
 				02F775541F1FB23100556BED /* InputField.swift in Sources */,
 				0223C7F31F2A2361005949C9 /* DanhGiaView.swift in Sources */,
 				02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */,
+				02DC0F7E1F643C8900F98ECE /* DialogSetWeight.swift in Sources */,
 				0207F21C1F5BA4A900FDB7CA /* LikeShareButton.swift in Sources */,
 				025D40021F2394EA00BCD5F7 /* DonHangTableViewCell.swift in Sources */,
 				021B82911F241F8100B757D7 /* BaoGiaTableViewCell.swift in Sources */,

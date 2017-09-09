@@ -18,6 +18,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     public static var shared: DeliveryOrderViewController!
     public static var defaultTab = 0
     public var listVC = [SingleDeliveryViewController]()
+    var indexShouldReload = [Int]()
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -35,6 +36,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         DeliveryOrderViewController.shared = self
+        moveToViewController(at: DeliveryOrderViewController.defaultTab)
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -73,6 +75,11 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         moveToViewController(at: DeliveryOrderViewController.defaultTab)
+        
+        
+        for vc in indexShouldReload {
+            listVC[vc].viewDidAppear(false)
+        }
     }
     
 

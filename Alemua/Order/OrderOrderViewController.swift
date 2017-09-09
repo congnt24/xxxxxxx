@@ -20,6 +20,7 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         }
     }
     
+    var listVc = [SingleOrderViewController]()
     public static var selectViewController = -1
     
     var indexShouldReload = [Int]()
@@ -54,10 +55,14 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
             }
         }
         if OrderOrderViewController.selectViewController > 0 {
-            
             moveToViewController(at: OrderOrderViewController.selectViewController)
             OrderOrderViewController.selectViewController = -1
         }
+        
+        for vc in indexShouldReload {
+            listVc[vc].viewDidAppear(false)
+        }
+        
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -75,7 +80,8 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         child3.orderType = .DangChuyen
         child4.orderType = .DaMua
         
-        return [child1, child2, child3, child4]
+        listVc = [child1, child2, child3, child4]
+        return listVc
     }
 
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {

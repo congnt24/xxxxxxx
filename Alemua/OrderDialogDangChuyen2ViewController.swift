@@ -105,6 +105,7 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
             AlemuaApi.shared.aleApi.request(AleApi.setDeliveredOrder(data: rateData))
                 .toJSON()
                 .subscribe(onNext: { (res) in
+                    OrderOrderViewController.shared.indexShouldReload.append(2)
                     switch res {
                     case .done(_):
                         AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)

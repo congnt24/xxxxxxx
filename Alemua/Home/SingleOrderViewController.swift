@@ -44,10 +44,10 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
             cacheFilter = OrderFilterViewController.orderOrderFilterType
             reloadPage()
         }
-//        if OrderOrderViewController.shared.indexShouldReload.contains(orderType.rawValue) {
-//            OrderOrderViewController.shared.indexShouldReload = OrderOrderViewController.shared.indexShouldReload.filter { $0 != orderType.rawValue }
-//            reloadPage()
-//        }
+        if OrderOrderViewController.shared.indexShouldReload.contains(orderType.rawValue) {
+            OrderOrderViewController.shared.indexShouldReload = OrderOrderViewController.shared.indexShouldReload.filter { $0 != orderType.rawValue }
+            reloadPage()
+        }
         print("SingleOrderViewController will appear \(orderType.rawValue)")
     }
     

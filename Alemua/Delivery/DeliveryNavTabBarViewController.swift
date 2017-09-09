@@ -12,6 +12,7 @@ import RxSwift
 class DeliveryNavTabBarViewController: UITabBarController {
     let bag = DisposeBag()
     var defaultTab = 0
+    var showThanhToan = false
     
     public static var sharedInstance: DeliveryNavTabBarViewController!
     override func viewDidLoad() {
@@ -20,6 +21,10 @@ class DeliveryNavTabBarViewController: UITabBarController {
         // Do any additional setup after loading the view.
         fetchUnreadNoti()
         switchTab(index: defaultTab)
+        if showThanhToan {
+            showThongTinThanhToan()
+            showThanhToan = false
+        }
     }
     
     // UITabBarDelegate
@@ -63,5 +68,9 @@ class DeliveryNavTabBarViewController: UITabBarController {
                 default: break
                 }
             }).addDisposableTo(bag)
+    }
+    
+    func showThongTinThanhToan(){
+        DeliveryCoordinator.sharedInstance.showThanhToanViewController()
     }
 }

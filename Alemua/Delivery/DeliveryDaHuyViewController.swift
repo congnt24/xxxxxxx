@@ -33,7 +33,7 @@ class DeliveryDaHuyViewController: UIViewController {
 //                rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree))
                 tfMuatu.text = data.buyFrom
                 tfNgay.text = data.deliveryDate?.toFormatedDate()
-                tfGia.text = "\(data.websitePrice ?? 0)".toFormatedPrice()
+                tfGia.text = "\(orderData.totalPrice ?? 0)".toFormatedPrice()
                 tfLydo.text = data.cancelReason
                 tfGhichu.text = data.note
             }

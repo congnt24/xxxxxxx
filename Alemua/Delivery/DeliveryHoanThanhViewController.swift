@@ -48,7 +48,7 @@ class DeliveryHoanThanhViewController: UIViewController {
         tfMuatu.text = orderData.buyFrom
         tfGiaoden.text = orderData.deliveryTo
         tfNgay.text = orderData.deliveryDate?.toFormatedDate()
-        tfGia.text = "\(orderData.websitePrice!)"
+        tfGia.text = "\(orderData.totalPrice!)"
         
         AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 3, orderId: orderData.id!))
             .toJSON()

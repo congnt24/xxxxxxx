@@ -11,6 +11,7 @@ import AwesomeMVVM
 import KMPlaceholderTextView
 import SwiftyJSON
 import RxSwift
+import Toaster
 
 class OrderDialogDangChuyen3ViewController: UIViewController {
     var orderId: Int!
@@ -29,6 +30,7 @@ class OrderDialogDangChuyen3ViewController: UIViewController {
         let cancel = CancelOrderRequest()
         cancel.orderId = orderId
         cancel.cancelReason = tvLydo.text
+        LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.cancelOrder(data: cancel))
         .filterSuccessfulStatusCodes()
         .subscribe(onNext: { (response) in
@@ -36,10 +38,12 @@ class OrderDialogDangChuyen3ViewController: UIViewController {
             print(json)
             if json["code"] == 200 {
                 print("Cancel success")
-                AppCoordinator.sharedInstance.navigation?.popViewController()
+                AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
             }else{
                 print("Error")
             }
-        }).addDisposableTo(bag)
+        }, onDisposed: {
+            LoadingOverlay.shared.hideOverlayView()
+        })//.addDisposableTo(bag)
     }
 }

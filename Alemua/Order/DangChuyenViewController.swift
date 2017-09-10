@@ -98,7 +98,7 @@ class DangChuyenViewController: UIViewController {
             uiDelivery.heightConstraint?.constant = 0
         } else {
             uiOrder.isHidden = true
-            uiDelivery.heightConstraint?.constant = 39
+            uiDelivery.heightConstraint?.constant = 0
         }
     }
 

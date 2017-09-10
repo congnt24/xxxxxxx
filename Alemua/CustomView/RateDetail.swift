@@ -236,6 +236,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
                     case .done( let result, _):
                         let money = result["money"].int
                         self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)"
+                        self.rateData.phivanchuyenvetaynguoimua = money ?? 0
                         break
                     case .error(let msg):
                         print("Error \(msg)")

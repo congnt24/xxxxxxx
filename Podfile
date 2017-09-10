@@ -5,7 +5,7 @@ target 'Alemua' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   
-  pod 'AwesomeMVVM', :git=> 'https://github.com/congnt24/AwesomeMVVM.git'
+  pod 'AwesomeMVVM', :git=> 'https://github.com/congnt24/AwesomeMVVM.git', :tag=>'0.3.5'
   # Pods for Alemua
   pod 'RxSwift'
   pod 'RxCocoa'

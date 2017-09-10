@@ -16,18 +16,16 @@ class DeliveryNavTabBarCoordinator: Coordinator {
     override func start(_ data: Any?) {
         let nav: DeliveryNavTabBarViewController = mainStoryboard.instantiateViewController(withClass: DeliveryNavTabBarViewController.self)
         if let data = data as? Int, data > -1 {
+            nav.defaultTab = 1
             switch data {
             case 2:
                 DeliveryOrderViewController.defaultTab = 1
-                nav.defaultTab = 1
                 break
             case 3:
                 DeliveryOrderViewController.defaultTab = 3
-                nav.defaultTab = 1
                 break
             case 4:
                 DeliveryOrderViewController.defaultTab = 2
-                nav.defaultTab = 1
                 break
             default:  //-> 9.1
                 nav.defaultTab = 0

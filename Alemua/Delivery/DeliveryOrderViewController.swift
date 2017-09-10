@@ -73,8 +73,10 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
+        if DeliveryOrderViewController.defaultTab > 0 {
+            moveToViewController(at: DeliveryOrderViewController.defaultTab)
+            DeliveryOrderViewController.defaultTab = 0
+        }
         
         for vc in DeliveryOrderViewController.indexShouldReload {
             listVC[vc].viewDidAppear(false)

@@ -64,10 +64,11 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
     
     
     func fetchData(){
-        
+        LoadingOverlay.shared.showOverlay(view: view)
         RaoVatService.shared.api.request(RaoVatApi.getAllAdvCategory())
             .toJSON()
             .subscribe(onNext: { (res) in
+                LoadingOverlay.shared.hideOverlayView()
                 switch res {
                 case .done(let result, _):
                     if let arrs = result.array {
@@ -78,6 +79,8 @@ class RaoVatViewController: BaseViewController, UICollectionViewDelegateFlowLayo
                     print("Error \(msg)")
                     break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
     }
     

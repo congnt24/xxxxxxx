@@ -10,6 +10,7 @@ import UIKit
 import XLPagerTabStrip
 import SwiftyJSON
 import RxSwift
+import AwesomeMVVM
 
 class DonHangViewController: ButtonBarPagerTabStripViewController {
     var bag = DisposeBag()
@@ -72,11 +73,13 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
 extension DonHangViewController {
     func fetchData(){
         var orderID = 0
+        LoadingOverlay.shared.showOverlay(view: view)
         if HomeViewController.homeType == .delivery {
             orderID = modelQuoteData.id!
             AlemuaApi.shared.aleApi.request(AleApi.getOrderDetailsToQuote(order_id: orderID))
                 .toJSON()
                 .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
                     switch res {
                     case .done(let result, _):
                         self.donhang.modelQuoteData = self.modelQuoteData
@@ -88,6 +91,8 @@ extension DonHangViewController {
                         print("Error \(msg)")
                         break
                     }
+                }, onDisposed: {
+                    LoadingOverlay.shared.hideOverlayView()
                 }).addDisposableTo(bag)
             
         }else{
@@ -95,6 +100,7 @@ extension DonHangViewController {
             AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 1, orderId: orderID))
                 .toJSON()
                 .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
                     switch res {
                     case .done(let result, _):
                         self.donhang.orderData = ModelOrderClientData(json: result)
@@ -105,6 +111,8 @@ extension DonHangViewController {
                         print("Error \(msg)")
                         break
                     }
+                }, onDisposed: {
+                    LoadingOverlay.shared.hideOverlayView()
                 }).addDisposableTo(bag)
         }
 

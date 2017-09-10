@@ -79,7 +79,7 @@ public class ModelDonHangDangChuyenData {
     public var weight: Float?
 
     func getTotal() -> Int {
-        return totalPrice! + transferAlemuaFree! + transactionAlemuaFree! + transferBuyerFee! + transferDomesticFee! + transferToBuyerFee! + tax!
+        return totalPrice!// + transferAlemuaFree! + transactionAlemuaFree! + transferBuyerFee! + transferDomesticFee! + transferToBuyerFee! + tax!
     }
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.

@@ -70,7 +70,7 @@ class RaoVatCategoryViewController: BaseViewController {
         tableView.addInfiniteScroll { (tv) in
             // update table view
             // finish infinite scroll animation
-            self.fetchData()
+            self.fetchData(self.currentPage == 1)
             tv.finishInfiniteScroll()
         }
 
@@ -94,7 +94,10 @@ class RaoVatCategoryViewController: BaseViewController {
 
 
     //Interact API
-    func fetchData() {
+    func fetchData(_ showLoading: Bool = false) {
+        if showLoading {
+            LoadingOverlay.shared.showOverlay(view: view)
+        }
         if let data = filterRequest {
             let location = RaoVatViewController.shared.curLocation
             let lat = Float(location?.coordinate.latitude ?? 0)
@@ -102,6 +105,7 @@ class RaoVatCategoryViewController: BaseViewController {
             RaoVatService.shared.api.request(RaoVatApi.filterAdv(filterRequest: data, lat: lat, lon: lon, page_number: currentPage))
                 .toJSON()
                 .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
                     switch res {
                     case .done(let result, _):
                         if self.reload {
@@ -120,11 +124,14 @@ class RaoVatCategoryViewController: BaseViewController {
                         print("Error \(msg)")
                         break
                     }
+                }, onDisposed: {
+                    LoadingOverlay.shared.hideOverlayView()
                 }).addDisposableTo(bag)
         } else {
             RaoVatService.shared.api.request(RaoVatApi.getAllAdv(adv_type: 1, category_id: data.id!, latitude: 0, longitude: 0, page_number: currentPage, text_search: self.textSearch))
                 .toJSON()
                 .subscribe(onNext: { (res) in
+                    LoadingOverlay.shared.hideOverlayView()
                     switch res {
                     case .done(let result, _):
                         if self.reload {
@@ -143,6 +150,8 @@ class RaoVatCategoryViewController: BaseViewController {
                         print("Error \(msg)")
                         break
                     }
+                }, onDisposed: {
+                    LoadingOverlay.shared.hideOverlayView()
                 }).addDisposableTo(bag)
         }
 

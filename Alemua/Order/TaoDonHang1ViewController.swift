@@ -51,6 +51,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     print(intgia)
                     print(gia)
                     tfGia.text = "\(intgia)".toFormatedPrice()
+                    taodonhangRequest.websitePrice = intgia
                 }
             }
         }

@@ -30,6 +30,10 @@ class TaoDonHangSelectMapViewController: BaseViewController{
                 self.mapVc.searchlocation(locSearch: search)
             }
         }).addDisposableTo(bag)
+        
+        if let lat = TaoDonHangSelectMapViewController.lat {
+            mapVc.moveToPosition(lat: lat, long: TaoDonHangSelectMapViewController.lon!)
+        }
     }
     
     

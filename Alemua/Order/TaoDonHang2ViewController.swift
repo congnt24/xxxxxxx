@@ -64,5 +64,7 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider, UIText
         taodonhangRequest.deliveryTo = tfGiaoDen.text
         taodonhangRequest.deliveryDate = tfNgay.text
         taodonhangRequest.isBefore = swBefore.isOn ? 1 : 0
+        taodonhangRequest.latitude = TaoDonHangSelectMapViewController.lat
+        taodonhangRequest.longitude = TaoDonHangSelectMapViewController.lon
     }
 }

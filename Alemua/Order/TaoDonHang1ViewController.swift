@@ -37,13 +37,21 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     }
     var gia: String? {
         didSet {
-            if let gia = gia, let currencyData = currencyData {
-                let f = Float(gia) ?? 0
-                taodonhangRequest.websiteRealPrice = f
-                let exchange = Float(currencyData.conversion!) ?? 0
-                let vnd = Int(exchange * f)
-                taodonhangRequest.websitePrice = vnd
-                tfGia.text = "\(f) \(currencyData.name!) - \(vnd) VND"
+            if var gia = gia {
+//                gia = String(gia.characters.filter { Int("\($0)") != nil })
+                let f = Double(gia) ?? 0
+                taodonhangRequest.websiteRealPrice = Float(f)
+                if let currencyData = currencyData, currencyData.conversion != "1" {
+                    let exchange = Float(currencyData.conversion!) ?? 0
+                    let vnd = Int(Double(exchange) * f)
+                    taodonhangRequest.websitePrice = vnd
+                    tfGia.text = "\(f) \(currencyData.name!) - \("\(vnd)".toFormatedPrice())"
+                } else {
+                    let intgia = Int(Double(gia) ?? 0) ?? 0
+                    print(intgia)
+                    print(gia)
+                    tfGia.text = "\(intgia)".toFormatedPrice()
+                }
             }
         }
     }
@@ -57,7 +65,17 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         AwesomeDialog.shared.show(vc: self.parent, name: "Main", identify: "DialogTaoDonHang")
-        DialogTaoDonHang.shared.input.text = tfGia.text
+        if let price = taodonhangRequest.websiteRealPrice {
+            DialogTaoDonHang.shared.input.text = "\(Double(price) ?? 0)"
+        }else{
+            let tmp = (tfGia.text ?? "").splitted(by: " ")
+            if tmp.count > 0 {
+                let gia = String(tmp[0].characters.filter { Int("\($0)") != nil })
+                DialogTaoDonHang.shared.input.text = gia
+            }else{
+                
+            }
+        }
         return false;
     }
     override func viewDidLoad() {
@@ -158,7 +176,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     func getDataFromUrl(website_url: String) {
         
         LoadingOverlay.shared.showOverlay(view: parent?.view)
-        self.tfGia.text = "\(self.data?.promotionPrice ?? 0)"
+        self.tfGia.text = "\(self.data?.promotionPrice ?? 0)".toFormatedPrice()
         taodonhangRequest.websitePrice = self.data?.promotionPrice ?? 0
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()

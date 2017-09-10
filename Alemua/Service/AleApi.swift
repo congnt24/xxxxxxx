@@ -166,6 +166,8 @@ extension AleApi: TargetType {
             params["number_product"] = data.numberProduct ?? 1
             params["currency_id"] = data.currencyId ?? 1
             params["website_real_price"] = data.websiteRealPrice ?? 1
+            params["latitude"] = data.latitude
+            params["longitude"] = data.longitude
             return params
         case .createQuote(let quote):
             var params = [String: Any]()

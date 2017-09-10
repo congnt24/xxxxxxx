@@ -37,6 +37,8 @@ public class TaoDonHangRequest {
     public var numberProduct: Int?
     public var currencyId: Int?
     public var websiteRealPrice: Float?
+    public var latitude: Float?
+    public var longitude: Float?
 
     public func validateStep1() -> Bool {
         if existNil(strs: [websitePrice, websiteUrl, quantity, productName

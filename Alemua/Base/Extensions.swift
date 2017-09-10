@@ -88,6 +88,12 @@ extension Int {
 }
 
 extension String {
+    
+    func share(vc: UIViewController) {
+        let vc2 = UIActivityViewController(activityItems: [self], applicationActivities: nil)
+        vc.present(vc2, animated: true)
+    }
+    
     func fromReadableToDate() -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy" //Your date format

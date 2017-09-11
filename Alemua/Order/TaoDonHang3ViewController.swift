@@ -70,7 +70,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     func checkOrderAndSendRequest() {
         //TODO: Send request
         taodonhangRequest.deliveryDate = taodonhangRequest.deliveryDate?.fromReadableToDate()?.formatDate(format: "yyyy-MM-dd")
-        taodonhangRequest.transactionOption = grTransaction.checkedPosition
+        taodonhangRequest.transactionOption = (grTransaction.checkedPosition + 1)
         LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.createOrder(data: taodonhangRequest))
             .toJSON()

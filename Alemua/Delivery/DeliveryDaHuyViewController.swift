@@ -32,7 +32,7 @@ class DeliveryDaHuyViewController: UIViewController {
                 
                 itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(0)")
                 
-                rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice, discount: data.discount, magiamgia: 0, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
+                rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice ?? 0, discount: data.discount, magiamgia: data.promotion_money, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
 
                 //
 //                rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice,giamua: 0, discount: 0, magiamgia: 0, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
@@ -48,7 +48,7 @@ class DeliveryDaHuyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 5, orderId: orderData.id!))
+        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 4, orderId: orderData.id!))
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {

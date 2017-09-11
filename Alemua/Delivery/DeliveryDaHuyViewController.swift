@@ -30,7 +30,7 @@ class DeliveryDaHuyViewController: UIViewController {
             if let data = dahuyData {
                 review.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 
-                itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(0)")
+                itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(data.number_quote ?? 0)")
                 
                 rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice ?? 0, discount: data.discount, magiamgia: data.promotion_money, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
 

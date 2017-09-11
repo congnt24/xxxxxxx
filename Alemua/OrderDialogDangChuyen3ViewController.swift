@@ -38,6 +38,7 @@ class OrderDialogDangChuyen3ViewController: UIViewController {
             print(json)
             if json["code"] == 200 {
                 print("Cancel success")
+                OrderOrderViewController.shared.indexShouldReload.append(2)
                 AppCoordinator.sharedInstance.navigation?.popToViewController(OrderNavTabBarViewController.sharedInstance, animated: true)
             }else{
                 print("Error")

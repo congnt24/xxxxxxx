@@ -188,6 +188,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
             phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
             tfWeight.text = "\(rateData.weight!)"
+            giamgia.text = "\(rateData.discount ?? 0)"
         }
     }
     
@@ -201,6 +202,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         phigiaodichquaalemua.text = "\(order.buyingPrice!)".toFormatedPrice()
         magiamgia.text = "\(order.promotion_money!)".toFormatedPrice()
         tfWeight.text = "\(order.weight!)"
+        giamgia.text = "\(order.discount ?? 0)"
     }
 
     func calculateTotal() -> Int? {

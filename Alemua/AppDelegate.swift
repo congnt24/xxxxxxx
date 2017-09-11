@@ -260,7 +260,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                         HomeCoordinator.sharedInstance.showDeliveryScreen(3)
                         break
                     case "4":
-                            HomeCoordinator.sharedInstance.showDeliveryScreen(4)
+                        HomeCoordinator.sharedInstance.showDeliveryScreen(4)
                         break
                     default:
                         HomeCoordinator.sharedInstance.showDeliveryScreen(5)

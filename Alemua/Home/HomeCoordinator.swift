@@ -29,7 +29,7 @@ class HomeCoordinator: Coordinator {
 
 extension HomeCoordinator: HomeCoordinatorDelegate {
     func showDeliveryScreen(_ navigate: Int = -1) {
-        DeliveryNavTabBarCoordinator(navigation).start(nil)
+        DeliveryNavTabBarCoordinator(navigation).start(navigate)
     }
     func showOrderScreen(_ navigate: Int = -1) {
         OrderNavTabBarCoordinator(navigation).start(navigate)

@@ -71,9 +71,11 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         //TODO: Send request
         taodonhangRequest.deliveryDate = taodonhangRequest.deliveryDate?.fromReadableToDate()?.formatDate(format: "yyyy-MM-dd")
         taodonhangRequest.transactionOption = grTransaction.checkedPosition
+        LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.createOrder(data: taodonhangRequest))
             .toJSON()
             .subscribe(onNext: { (res) in
+                LoadingOverlay.shared.hideOverlayView()
                 switch res {
                 case .done(_, let msg):
                     Toast(text: msg).show()
@@ -83,6 +85,8 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
                     Toast(text: msg).show()
                     break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
     }
 

@@ -25,12 +25,17 @@ class DeliveryDaHuyViewController: UIViewController {
     
     var orderData: ModelOrderClientData!
     let bag = DisposeBag()
-    var dahuyData: ModelDaHuyData? {
+    var dahuyData: ModelHoanThanhData? {
         didSet {
             if let data = dahuyData {
-                review.bindData(name: data.userPost, rating: 3, nguoidang: 0)
-                itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(data.productOption ?? 0)")
-//                rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree))
+                review.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
+                
+                itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(0)")
+                
+                rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice, discount: data.discount, magiamgia: 0, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
+
+                //
+//                rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice,giamua: 0, discount: 0, magiamgia: 0, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
                 tfMuatu.text = data.buyFrom
                 tfNgay.text = data.deliveryDate?.toFormatedDate()
                 tfGia.text = "\(orderData.totalPrice ?? 0)".toFormatedPrice()
@@ -48,7 +53,7 @@ class DeliveryDaHuyViewController: UIViewController {
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done(let result, _):
-                    self.dahuyData = ModelDaHuyData(json: result)
+                    self.dahuyData = ModelHoanThanhData(json: result)
                     break
                 case .error(let msg):
                     print("Error \(msg)")

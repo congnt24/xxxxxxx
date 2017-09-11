@@ -115,12 +115,15 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.discount = rateDetail.rateData.discount
         //        req.promotion_money = rateDetail.rateData.promotion_money
         req.weight = rateDetail.rateData.weight
+        
+        LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))
             .toJSON()
             .catchError({ (error) -> Observable<AleResult> in
                 return Observable.just(AleResult.error(msg: "Invalid params"))
             })
             .subscribe(onNext: { (res) in
+                LoadingOverlay.shared.hideOverlayView()
                 switch res {
                 case .done( _, let msg):
                     Toast.init(text: msg).show()
@@ -137,6 +140,8 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                     print("Error \(msg)")
                     break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
     }
 }

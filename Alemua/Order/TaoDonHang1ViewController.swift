@@ -177,8 +177,15 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     func getDataFromUrl(website_url: String) {
         
         LoadingOverlay.shared.showOverlay(view: parent?.view)
-        self.tfGia.text = "\(self.data?.promotionPrice ?? 0)".toFormatedPrice()
-        taodonhangRequest.websitePrice = self.data?.promotionPrice ?? 0
+        if let proPrice = data?.promotionPrice {
+            if proPrice == 0 {
+                self.tfGia.text = "\(self.data?.originPrice ?? 0)".toFormatedPrice()
+                taodonhangRequest.websitePrice = self.data?.originPrice ?? 0
+            }else{
+                self.tfGia.text = "\(proPrice)".toFormatedPrice()
+                taodonhangRequest.websitePrice = proPrice
+            }
+        }
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -191,6 +198,11 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     if let title = title, title != "" {
                         self.tfTenSP.text = title
                     }
+                    
+                    if let price = result["price"].int, price > 0 {
+                        self.tfGia.text = "\(price)".toFormatedPrice()
+                    }
+                    
                     if let link = result["link"].string {
                         let arr = link.splitted(by: ",")
                         for url in arr {

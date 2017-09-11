@@ -34,5 +34,6 @@ target 'Alemua' do
   pod 'GoogleSignIn'
   pod 'FacebookCore'
   pod 'FacebookLogin'
-
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

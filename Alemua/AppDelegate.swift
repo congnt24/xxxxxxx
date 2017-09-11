@@ -12,6 +12,9 @@ import Firebase
 import UserNotifications
 import FBSDKCoreKit
 import GoogleSignIn
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -44,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
 //        FirebaseAuthHelper.configure()
 //        FBSDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-
+      Fabric.with([Crashlytics.self])
         let _ = AlemuaApi()
         let _ = RaoVatService()
         //SOcket io

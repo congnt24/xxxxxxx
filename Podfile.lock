@@ -7,7 +7,10 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Crashlytics (3.8.5):
+    - Fabric (~> 1.6.3)
   - DropDown (2)
+  - Fabric (1.6.12)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -124,7 +127,9 @@ PODS:
 
 DEPENDENCIES:
   - AwesomeMVVM (from `https://github.com/congnt24/AwesomeMVVM.git`, tag `0.3.5`)
+  - Crashlytics
   - DropDown
+  - Fabric
   - FacebookCore
   - FacebookLogin
   - Firebase/Core
@@ -166,7 +171,9 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AwesomeMVVM: 32140996fe53888240af1171a13e82bd6488a5d3
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: c8b8582311ec11b145451d8b9717dc6cc2ae5a76
@@ -206,6 +213,6 @@ SPEC CHECKSUMS:
   UIScrollView-InfiniteScroll: c132d6d5851daff229ab4a1060ccf70a05a051c9
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: ceb0a8529d24fb1efbea4286341b8c6fc6f0ad4f
+PODFILE CHECKSUM: 55ea751543c0506dace213dc2acaff43d7e6af36
 
 COCOAPODS: 1.3.1

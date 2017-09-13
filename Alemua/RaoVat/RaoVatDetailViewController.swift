@@ -64,13 +64,13 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
                 }
 
                 btnShare.onChange = { bo in
-                    if !bo {
-                        self.btnShare.borderColor = UIColor.init(hexString: "#E94F2E")
-                        self.btnShare.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
-                    } else {
-                        self.btnShare.borderColor = UIColor.lightGray
-                        self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
-                    }
+//                    if !bo {
+//                        self.btnShare.borderColor = UIColor.init(hexString: "#E94F2E")
+//                        self.btnShare.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
+//                    } else {
+//                        self.btnShare.borderColor = UIColor.lightGray
+//                        self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
+//                    }
                 }
                 btnFav.isChecked = !(data.isLike! == 1)
                 btnShare.isChecked = !(data.isSafe! == 1)
@@ -87,13 +87,13 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
                 }
 
                 btnShare.onChange = { bo in
-                    if !bo {
-                        self.btnShare.borderColor = UIColor.init(hexString: "#E94F2E")
-                        self.btnShare.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
-                    } else {
-                        self.btnShare.borderColor = UIColor.lightGray
-                        self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
-                    }
+//                    if !bo {
+//                        self.btnShare.borderColor = UIColor.init(hexString: "#E94F2E")
+//                        self.btnShare.setTitleColor(UIColor.init(hexString: "#E94F2E"), for: .normal)
+//                    } else {
+//                        self.btnShare.borderColor = UIColor.lightGray
+//                        self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
+//                    }
                     self.onShare("")
                 }
             }
@@ -214,7 +214,7 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
         if !Prefs.isUserLogged {
             HomeCoordinator.sharedInstance.showLoginScreen()
         } else {
-            
+            "".share(vc: self)
         }
     }
 }

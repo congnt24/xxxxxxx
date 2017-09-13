@@ -41,11 +41,14 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
 
     func viewController(_ viewController: UIViewController!, didCompleteLoginWith accessToken: AKFAccessToken!, state: String!) {
         print("Login succcess with AccessToken")
+        
+        LoadingOverlay.shared.showOverlay(view: view)
         accountKit.requestAccount { (account, err) in
             if let phone = account?.phoneNumber?.phoneNumber {
                 AlemuaApi.shared.aleApi.request(AleApi.login(phone_number: phone, password: ""))
                     .toJSON()
                     .subscribe(onNext: { (res) in
+                        LoadingOverlay.shared.hideOverlayView()
                         switch res {
                         case .done(let result, _):
                             Prefs.isUserLogged = true
@@ -139,13 +142,15 @@ extension LoginViewController {
             case .cancelled:
                 print("Cancel button click")
             case .success( _, _, let token):
+                
+                LoadingOverlay.shared.showOverlay(view: self.view)
                 let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name,email, picture.type(large)"], tokenString: token.authenticationToken, version: nil, httpMethod: "GET")
                 graphRequest?.start(completionHandler: { (connection, result, error) in
-                    
-                    if ((error) != nil){
+
+                    if ((error) != nil) {
                         print("Error: \(String(describing: error))")
-                    }else{
-                        let data:[String:AnyObject] = result as! [String : AnyObject]
+                    } else {
+                        let data: [String: AnyObject] = result as! [String: AnyObject]
                         let email = data["email"]
                         let name = data["name"]
                         let photo = ((data["picture"] as! [String: Any])["data"] as! [String: Any])["url"]
@@ -156,7 +161,7 @@ extension LoginViewController {
                         req.photo = (photo as? String) ?? ""
                         self.sendToServer(data: req)
                     }
-                })                //                TODO: AUTHEN BY FACEBOOK
+                }) //                TODO: AUTHEN BY FACEBOOK
 //                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
 //                credential.
             default:
@@ -169,8 +174,8 @@ extension LoginViewController {
 //        GIDSignIn.sharedInstance().
     }
 
-    
-    func sendToServer(data: FacebookRequest){
+
+    func sendToServer(data: FacebookRequest) {
         LoadingOverlay.shared.showOverlay(view: view)
         data.deviceType = 2
         data.phoneNumber = ""
@@ -192,7 +197,7 @@ extension LoginViewController {
                     Toast.init(text: msg).show()
                     break
                 case .error(let msg):
-                    
+
                     Toast.init(text: msg).show()
                     print("Error \(msg)")
                     break

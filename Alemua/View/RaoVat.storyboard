@@ -490,7 +490,7 @@
                                                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_share_red"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="ic_share_grey"/>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                         <real key="value" value="0.0"/>
                                                                     </userDefinedRuntimeAttribute>
@@ -2895,7 +2895,6 @@
         <image name="ic_noti_red" width="24" height="24"/>
         <image name="ic_send_message" width="27" height="27"/>
         <image name="ic_share_grey" width="25" height="25"/>
-        <image name="ic_share_red" width="25" height="25"/>
         <image name="ic_user_red" width="24" height="24"/>
         <image name="icons8-calendar" width="25" height="25"/>
         <image name="icons8-filled_flag" width="24" height="24"/>

@@ -15,8 +15,10 @@ class AccountInviteViewController: BaseViewController {
     var coordinator: AccountCoordinator!
     var inviteCode: String!
     @IBOutlet weak var tfInviteCode: AwesomeTextField!
+    @IBOutlet weak var lbDesc: UILabel!
     override func bindToViewModel() {
         tfInviteCode.text = inviteCode
+        lbDesc.text = "Mình đã dùng thử Alemua và thấy đây là ứng dụng đăng và tìm đơn hàng vận chuyển rất hay và bổ ích nên muốn giới thiệu cho bạn. Nhớ nhập mã giớp thiệu \(inviteCode ?? "") để nhân được nhiều ưu đãi khi tải ứng dụng lần đầu nhé"
     }
     
     
@@ -25,6 +27,7 @@ class AccountInviteViewController: BaseViewController {
     }
     
     @IBAction func onInvite(_ sender: Any) {
+        "Alemua".share(vc: self)
     }
 }
 

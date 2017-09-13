@@ -698,6 +698,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lbDesc" destination="2dU-Fh-iop" id="Hsi-EC-Ulf"/>
                         <outlet property="tfInviteCode" destination="jJB-Wf-yR1" id="TGh-OE-NWo"/>
                     </connections>
                 </viewController>

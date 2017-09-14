@@ -18,7 +18,7 @@ class AccountInviteViewController: BaseViewController {
     @IBOutlet weak var lbDesc: UILabel!
     override func bindToViewModel() {
         tfInviteCode.text = inviteCode
-        lbDesc.text = "Mình đã dùng thử Alemua và thấy đây là ứng dụng đăng và tìm đơn hàng vận chuyển rất hay và bổ ích nên muốn giới thiệu cho bạn. Nhớ nhập mã giớp thiệu \(inviteCode ?? "") để nhân được nhiều ưu đãi khi tải ứng dụng lần đầu nhé"
+        lbDesc.text = "Mình đã dùng thử Alemua và thấy đây là ứng dụng mua và bán hàng xách tay tiện lợi và giá cạnh tranh nhất nên muốn giới thiệu cho bạn. Nhớ nhập mã giớp thiệu \(inviteCode ?? "") để nhân được nhiều ưu đãi khi tải ứng dụng lần đầu nhé"
     }
     
     

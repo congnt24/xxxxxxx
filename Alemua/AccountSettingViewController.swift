@@ -22,6 +22,8 @@ class AccountSettingViewController: BaseViewController {
     }
     
     @IBAction func onAccountInfo(_ sender: Any) {
+        
+        self.navigationController?.popViewController()
     }
     @IBAction func onHelp(_ sender: Any) {
     }

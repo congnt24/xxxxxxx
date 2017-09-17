@@ -315,12 +315,24 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hal-h8-mHu">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="39"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ang-xr-gq3">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ang-xr-gq3" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="39"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Bình luận">
                                                             <color key="titleColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <state key="selected" title="Bình luận">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                                <color key="value" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="onBinhLuan:" destination="o9x-TL-gnR" eventType="touchUpInside" id="niG-lQ-Llr"/>
                                                         </connections>
@@ -337,12 +349,24 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vI5-3J-NGY">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="39"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-0I-nBh">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-0I-nBh" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="39"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Gọi điện">
                                                             <color key="titleColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <state key="selected" title="Gọi điện">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                                <color key="value" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="onGoiDien:" destination="o9x-TL-gnR" eventType="touchUpInside" id="1wI-Mt-81r"/>
                                                         </connections>
@@ -356,12 +380,22 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4e-q4-LMA">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4e-q4-LMA" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="39"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Gửi SMS">
                                                     <color key="titleColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <state key="selected" title="Gửi SMS">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" title="Gửi SMS"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedColor">
+                                                        <color key="value" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="onGuiSMS:" destination="o9x-TL-gnR" eventType="touchUpInside" id="5un-Bh-3TA"/>
                                                 </connections>
@@ -788,7 +822,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="900"/>
                     <connections>
+                        <outlet property="btnCall" destination="iwT-0I-nBh" id="UBY-A8-Yr4"/>
+                        <outlet property="btnComment" destination="Ang-xr-gq3" id="D7z-gh-rze"/>
                         <outlet property="btnFav" destination="a3h-kg-MgV" id="jP2-Fi-pjV"/>
+                        <outlet property="btnSMS" destination="Q4e-q4-LMA" id="vex-fJ-OJ2"/>
                         <outlet property="btnShare" destination="fLf-90-bV0" id="9Zf-iL-hTh"/>
                         <outlet property="imageSlider" destination="Dkz-j2-pMn" id="sZY-hk-yme"/>
                         <outlet property="lbAddress" destination="0fv-Og-XBP" id="VGM-96-z8u"/>

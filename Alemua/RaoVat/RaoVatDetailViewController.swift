@@ -22,6 +22,9 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
     @IBOutlet weak var imageSlider: ImageSlideshow!
     @IBOutlet weak var btnFav: CheckedButton!
     @IBOutlet weak var btnShare: CheckedButton!
+    @IBOutlet weak var btnComment: UIButton!
+    @IBOutlet weak var btnCall: UIButton!
+    @IBOutlet weak var btnSMS: UIButton!
 
     var data: ProductResponse!
     var currrentPage = 1
@@ -259,6 +262,7 @@ extension RaoVatDetailViewController: MFMessageComposeViewControllerDelegate {
         self.present(messageVC, animated: false, completion: nil)
     }
     func call(number: String) {
+        print(number)
         UIApplication.shared.openURL(URL(string: "tel://\(number)")!)
     }
 }

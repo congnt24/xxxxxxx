@@ -10,7 +10,27 @@ import UIKit
 
 @IBDesignable
 class AwesomeButton: UIButton {
-   
+    
+    @IBInspectable var selectedColor: UIColor?
+    
+    override var isHighlighted: Bool {
+        didSet {
+            if (selectedColor != nil) {
+                if isHighlighted {
+                    backgroundColor = selectedColor
+                    alpha = 1
+                    titleLabel?.textColor = .white
+                    
+                } else {
+                    backgroundColor = UIColor.white
+                    alpha = 1
+                    titleLabel?.textColor = selectedColor
+                }
+            }
+        }
+    }
+    
+    
     // MARK: - bottom line
     @IBInspectable var bottomLineWidth: CGFloat = 0 {
         didSet {

@@ -151,7 +151,7 @@ extension OrderMain1ViewController {
                 let x = ModelBuyingOnline(items: responseObj.result?.buyingOnlineItem)
             let array = [
                 SectionOfOrder.Online(datas: x),
-                SectionOfOrder.Order(datas: (responseObj.result?.hotProducts)!)]
+                SectionOfOrder.Order(datas: (responseObj.result?.hotProducts) ?? [])]
 //                SectionOfOrder.Order(datas: (responseObj.result?.discountProducts)!)]
             return Observable.from(optional: array)
         }.asDriver(onErrorJustReturn: [])

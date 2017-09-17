@@ -68,6 +68,11 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
 
 
     func checkOrderAndSendRequest() {
+        if grTransaction.checkedPosition < 0 {
+            Toast.init(text: "Vui lòng chọn hình thức giao dịch").show()
+            return
+        }
+        
         //TODO: Send request
         taodonhangRequest.deliveryDate = taodonhangRequest.deliveryDate?.fromReadableToDate()?.formatDate(format: "yyyy-MM-dd")
         taodonhangRequest.transactionOption = (grTransaction.checkedPosition + 1)

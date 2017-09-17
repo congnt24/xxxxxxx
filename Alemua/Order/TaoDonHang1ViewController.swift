@@ -105,6 +105,13 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBAction func onNext(_ sender: Any) {
         setData()
         if taodonhangRequest.validateStep1() {
+            
+            if taodonhangRequest.productOption == "" {
+                Toast.init(text: "Vui lòng lựa chọn sản phẩm").show()
+                return
+            }
+            
+            
             if listImage.count > 0 {
                 LoadingOverlay.shared.showOverlay(view: parent?.view)
 //            upload image

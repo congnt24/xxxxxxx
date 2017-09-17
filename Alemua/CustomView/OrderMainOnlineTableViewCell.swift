@@ -29,7 +29,7 @@ class OrderMainOnlineTableViewCell: UITableViewCell {
     func bindData(data: ModelBuyingOnline) {
         self.stack.removeSubviews()
         self.data = data
-        let count = data.items!.count
+        let count = data.items?.count ?? 0
         let width = Int(((bounds.width - 32) / 3)) * count + (count-1) * 8
         let wid = CGFloat(width/count)
         widthConstraint.constant = 0

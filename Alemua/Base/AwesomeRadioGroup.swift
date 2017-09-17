@@ -52,7 +52,9 @@ public class AwesomeRadioGroup: UIStackView {
             btn.titleLabel?.font = cell.titleLabel?.font
             addArrangedSubview(btn)
         }
-        checkAt(position: checkedPosition)
+        if checkedPosition >= 0 {
+            checkAt(position: checkedPosition)
+        }
     }
     
     public func checkAt(position: Int){

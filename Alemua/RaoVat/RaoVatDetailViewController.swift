@@ -256,7 +256,7 @@ extension RaoVatDetailViewController: MFMessageComposeViewControllerDelegate {
         let messageVC = MFMessageComposeViewController()
 
 //        messageVC.body = "My first custom SMS";
-        messageVC.recipients = ["0123456789"]
+        messageVC.recipients = numbers
         messageVC.messageComposeDelegate = self;
 
         self.present(messageVC, animated: false, completion: nil)

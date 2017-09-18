@@ -193,6 +193,7 @@
 		02F775541F1FB23100556BED /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F775531F1FB23100556BED /* InputField.swift */; };
 		02F775561F1FB46300556BED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02F775551F1FB46300556BED /* Profile.storyboard */; };
 		02FDFD2E1F4843A500F3A72B /* LoginByPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FDFD2D1F4843A500F3A72B /* LoginByPasswordViewController.swift */; };
+		02FF30571F70067800452CA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02FF30551F70067800452CA8 /* Localizable.strings */; };
 		24C5FF5AB26952A9B36F5E70 /* Pods_Alemua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9052E9F90A054DFAA1105007 /* Pods_Alemua.framework */; };
 		78A47DC6789735EDFE8C79F6 /* ConversationUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A47C9815B1D2DF7936B4DA /* ConversationUserResponse.swift */; };
 /* End PBXBuildFile section */
@@ -387,6 +388,8 @@
 		02F775551F1FB46300556BED /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		02FDFD2D1F4843A500F3A72B /* LoginByPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginByPasswordViewController.swift; sourceTree = "<group>"; };
 		02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Alemua.entitlements; sourceTree = "<group>"; };
+		02FF30561F70067800452CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		02FF30581F70068E00452CA8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54291CC0F55F9222FD2AFA2C /* Pods-Alemua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alemua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alemua/Pods-Alemua.debug.xcconfig"; sourceTree = "<group>"; };
 		78A47C9815B1D2DF7936B4DA /* ConversationUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationUserResponse.swift; sourceTree = "<group>"; };
 		9052E9F90A054DFAA1105007 /* Pods_Alemua.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alemua.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -651,6 +654,7 @@
 				02F775201F1F390300556BED /* Notification */,
 				02BF72721F2366DA00F1F4BC /* Order */,
 				02F775241F1F390300556BED /* View */,
+				02FF30551F70067800452CA8 /* Localizable.strings */,
 			);
 			path = Alemua;
 			sourceTree = "<group>";
@@ -923,7 +927,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				Base,
+				vi,
 			);
 			mainGroup = 027B01241F1E621600D576CE;
 			productRefGroup = 027B012E1F1E621600D576CE /* Products */;
@@ -956,6 +961,7 @@
 				0223C7ED1F29B9F1005949C9 /* ReviewView.xib in Resources */,
 				0223C7F11F2A1526005949C9 /* UserView.xib in Resources */,
 				025D40031F2394EA00BCD5F7 /* DonHangTableViewCell.xib in Resources */,
+				02FF30571F70067800452CA8 /* Localizable.strings in Resources */,
 				02F775311F1F390300556BED /* LaunchScreen.storyboard in Resources */,
 				021B829B1F24503200B757D7 /* NotifyTableViewCell.xib in Resources */,
 				021C98011F5070EB0058CBF0 /* RaoVatUserView.xib in Resources */,
@@ -1279,11 +1285,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		02FF30551F70067800452CA8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02FF30561F70067800452CA8 /* Base */,
+				02FF30581F70068E00452CA8 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		027B013D1F1E621600D576CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1335,6 +1354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

@@ -28,6 +28,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
+    @IBOutlet weak var hightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         DeliveryBaoGiaFinalViewController.shared = self
@@ -62,13 +63,23 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
 //                }
 //            }).addDisposableTo(bag)
         
+        
+        
+        
+        if modelQuoteData.transactionOption == 2 {
+            rateDetail.phivanchuyenvealemua.isHidden = true
+            rateDetail.phigiaodichquaalemua.isHidden = true
+            rateDetail.phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
+            rateDetail.height = 240
+        }
+        
         rateDetail.enableEditing()
         rateDetail.onPriceChange = { (price) in
             if let price = price {
                 self.tfGia.text = "\(price)".toFormatedPrice()
             }
         }
-        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)"
+        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
         rateDetail.rateData.tonggia = modelQuoteData.websitePrice ?? 0
         rateDetail.phigiaodichquaalemua.text = "\(modelQuoteData.transaction_alemua_free ?? 0)"
         rateDetail.rateData.phigiaodichquaalemua = modelQuoteData.transaction_alemua_free ?? 0
@@ -83,6 +94,9 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.phinguoimua.text = ""
         rateDetail.phivanchuyenvealemua.text = ""
         rateDetail.phivanchuyenvetaynguoimua.text = ""
+        
+        
+        tfGia.text = "\(rateDetail.calculateTotal() ?? 0)".toFormatedPrice()
         
         req.buyFrom = modelQuoteData.buyFrom
         req.deliveryDate = modelQuoteData.deliveryDate

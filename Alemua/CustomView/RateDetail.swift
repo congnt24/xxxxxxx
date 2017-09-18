@@ -32,8 +32,8 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         onShowTransfer()
         return false;
     }
-    func onShowTransfer(){
-        
+    func onShowTransfer() {
+
         let dialog = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withIdentifier: "DialogSetWeight") as! DialogSetWeight
         dialog.txtWeight = tfWeight.text ?? ""
         AwesomeDialog.shared.show(vc: viewController(), popupVC: dialog)
@@ -54,7 +54,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
     var listView: [AwesomeTextField] = []
     var rateData: RateDetailData!
     let bag = DisposeBag()
-    
+
     var onPriceChange: ((_ total: Int?) -> Void)?
 
     /*
@@ -71,10 +71,10 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         listView = uiStackView.arrangedSubviews.map { ($0 as! AwesomeTextField) }
     }
 
-    public func showGiamGia(){
+    public func showGiamGia() {
         giamgia.isHidden = false
     }
-    public func enableEditing(){
+    public func enableEditing() {
 //        tonggia.isUserInteractionEnabled = true
         thue.isUserInteractionEnabled = true
         phichuyennoidia.isUserInteractionEnabled = true
@@ -87,23 +87,23 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         tfWeight.delegate = self
         tfWeight.leftView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onShowTransfer)))
         bindData(RateDetailData(tonggia: 0, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0, weight: 0))
-        
-        
-        
+
+
+
         magiamgia.rx.text.subscribe(onNext: { (str) in
             self.rateData.discount = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
         }).addDisposableTo(bag)
-        
+
         giamgia.rx.text.subscribe(onNext: { (str) in
             self.rateData.discount = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
         }).addDisposableTo(bag)
-        
+
         tonggia.rx.text.subscribe(onNext: { (str) in
             self.rateData.giamua = Int(str ?? "0")
             if let onPriceChange = self.onPriceChange {
@@ -146,16 +146,16 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
                 onPriceChange(self.calculateTotal())
             }
         }).addDisposableTo(bag)
-        
-        
-        
+
+
+
         phigiaodichquaalemua.rx.controlEvent(UIControlEvents.editingDidBegin).subscribe(onNext: {
 //            if self.phigiaodichquaalemua.text = 0 {
 //                self.phigiaodichquaalemua.text = ""
 //            }
         }).addDisposableTo(bag)
     }
-    
+
     public func setDefaultValue(value: Int?) {
         bindData(RateDetailData(tonggia: value, giamua: 0, discount: 0, magiamgia: 0, thue: 0, phichuyennoidia: 0, phinguoimua: 0, phivanchuyenvealemua: 0, phivanchuyenvetaynguoimua: 0, phigiaodichquaalemua: 0, weight: 0))
     }
@@ -169,16 +169,16 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
     func bindData(_ rateData: RateDetailData) {
         self.rateData = rateData
         if thue.isUserInteractionEnabled {
-            tonggia.text = "\(rateData.giamua!)"
+            tonggia.text = "\(rateData.giamua!)".toFormatedPrice()
             thue.text = ""
             phichuyennoidia.text = ""
             phinguoimua.text = ""
             phivanchuyenvealemua.text = ""
             phivanchuyenvetaynguoimua.text = ""
-            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"
+            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
             tfWeight.text = ""
-        }else{
+        } else {
             tonggia.text = "\(rateData.giamua!)".toFormatedPrice()
             thue.text = "\(rateData.thue!)".toFormatedPrice()
             phichuyennoidia.text = "\(rateData.phichuyennoidia!)".toFormatedPrice()
@@ -191,7 +191,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
             giamgia.text = "\(rateData.discount ?? 0)"
         }
     }
-    
+
     func bindData(order: ModelOrderBaoGiaData) {
         tonggia.text = "\(order.buyingPrice!)".toFormatedPrice()
         thue.text = "\(order.tax!)".toFormatedPrice()
@@ -213,7 +213,8 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         arr.append(Int(tong - discount))
         arr.append(rateData.thue ?? 0)
         arr.append(rateData.phichuyennoidia ?? 0)
-        arr.append(rateData.phigiaodichquaalemua ?? 0)
+        let xx = (rateData.phigiaodichquaalemua!) * Int(tong) / 100
+        arr.append(xx)
         arr.append(rateData.phinguoimua ?? 0)
         arr.append(rateData.phivanchuyenvealemua ?? 0)
         arr.append(rateData.phivanchuyenvetaynguoimua ?? 0)
@@ -225,8 +226,8 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         return sum
 
     }
-    
-    func onUpdateWeight(weight: String?){
+
+    func onUpdateWeight(weight: String?) {
         tfWeight.text = weight
         if let weight = weight {
             self.rateData.weight = Float(weight)
@@ -247,6 +248,23 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
                 }).addDisposableTo(bag)
 
         }
+    }
+
+
+
+    func setupRateDetailForMuaHang(_ rateData: RateDetailData) {
+        giamgia.isHidden = true
+        thue.isHidden = true
+        phichuyennoidia.isHidden = true
+        phinguoimua.isHidden = true
+        phivanchuyenvealemua.isHidden = true
+        phigiaodichquaalemua.isHidden = true
+
+        tonggia.text = "\(rateData.giamua! + rateData.thue! + rateData.phinguoimua! + rateData.phigiaodichquaalemua!)".toFormatedPrice()
+        phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua! + rateData.phivanchuyenvealemua! + rateData.phichuyennoidia!)".toFormatedPrice()
+        tfWeight.text = "\(rateData.weight!)"
+        magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
+
     }
 
 }

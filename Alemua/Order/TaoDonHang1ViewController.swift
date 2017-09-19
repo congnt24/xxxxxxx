@@ -36,8 +36,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     
     var listBranch = [Int]()
     var listCountry = [Int]()
-    var branch = 1
-    var country = 1
+    var branch = -1
+    var country = -1
     
     //from exchange dialog
     var currencyData: CurrencyData? {
@@ -114,7 +114,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         }
         nhomHangDr.anchorView = drNhomHang
         nhomHangDr.dataSource = ["Tất cả"]
-        nhomHangDr.width = 180
+//        nhomHangDr.width = 180
         nhomHangDr.selectionAction = { [unowned self] (index: Int, item: String) in
             self.tfNhomHang.text = item
             self.branch = self.listBranch[index]
@@ -122,7 +122,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         
         quocGiaDr.anchorView = drQuocGia
         quocGiaDr.dataSource = ["Hàng mới 100%", "Hàng sang tay", "Đã qua sử dụng"]
-        quocGiaDr.width = 180
+//        quocGiaDr.width = 180
         quocGiaDr.selectionAction = { [unowned self] (index: Int, item: String) in
             self.tfQuocGia.text = item
             self.country = self.listCountry[index]
@@ -150,6 +150,10 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
             
             if taodonhangRequest.productOption == "" {
                 Toast.init(text: "Vui lòng lựa chọn sản phẩm").show()
+                return
+            }
+            if branch < 0 || country < 0 {
+                Toast(text: "Vui lòng nhập đầy đủ thông tin").show()
                 return
             }
             

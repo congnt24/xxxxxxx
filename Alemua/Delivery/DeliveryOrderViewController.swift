@@ -19,6 +19,8 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     public static var defaultTab = 0
     public var listVC = [SingleDeliveryViewController]()
     public static var indexShouldReload = [Int]()
+    var cacheFilter = -1
+    
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -66,6 +68,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
         }
+        
         if SingleDeliveryViewController.shouldReloadPage > 0 {
             listVC[0].reloadPage()
             SingleDeliveryViewController.shouldReloadPage = -1
@@ -76,6 +79,11 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         if DeliveryOrderViewController.defaultTab > 0 {
             moveToViewController(at: DeliveryOrderViewController.defaultTab)
             DeliveryOrderViewController.defaultTab = 0
+        }
+        
+        
+        if cacheFilter != OrderFilterViewController.deliveryOrderFilterType {
+            DeliveryOrderViewController.indexShouldReload.append(contentsOf: [0,1,2,3])
         }
         
         for vc in DeliveryOrderViewController.indexShouldReload {

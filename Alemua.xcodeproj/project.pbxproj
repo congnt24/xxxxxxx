@@ -96,6 +96,7 @@
 		023B39E41F2B59CA00E53A6D /* StepperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023B39E31F2B59CA00E53A6D /* StepperView.xib */; };
 		023E30981F2DD3CA00D16D04 /* FirebaseAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */; };
 		023F48861F299C0C00B489D7 /* OrderMain1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */; };
+		0242FF441F71616B00AC1D37 /* DeliveryFilter2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242FF431F71616B00AC1D37 /* DeliveryFilter2ViewController.swift */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
 		024C6A101F3AA01100D31868 /* SocketIOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */; };
 		02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */; };
@@ -288,6 +289,7 @@
 		023B39E31F2B59CA00E53A6D /* StepperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StepperView.xib; path = CustomView/StepperView.xib; sourceTree = "<group>"; };
 		023E30971F2DD3C900D16D04 /* FirebaseAuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseAuthHelper.swift; path = Helper/FirebaseAuthHelper.swift; sourceTree = "<group>"; };
 		023F48851F299C0C00B489D7 /* OrderMain1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain1ViewController.swift; path = Order/OrderMain1ViewController.swift; sourceTree = "<group>"; };
+		0242FF431F71616B00AC1D37 /* DeliveryFilter2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryFilter2ViewController.swift; path = Delivery/DeliveryFilter2ViewController.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
 		024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIOHelper.swift; path = ../Base/SocketIOHelper.swift; sourceTree = "<group>"; };
 		02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AwesomeTextField2.swift; path = CustomView/AwesomeTextField2.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				022D72A01F2793EB00CC548E /* ViewController */,
 				022D72981F2793A600CC548E /* DeliveryOrderCoordinator.swift */,
 				02530E871F2C83BD00334345 /* DeliveryFilterViewController.swift */,
+				0242FF431F71616B00AC1D37 /* DeliveryFilter2ViewController.swift */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				021B82971F242FBB00B757D7 /* OrderBaoGiaSubViewController.swift in Sources */,
 				022D72AF1F279F7C00CC548E /* OrderDialogBaoGia4ViewController.swift in Sources */,
 				02530E8A1F2C85C900334345 /* Prefs.swift in Sources */,
+				0242FF441F71616B00AC1D37 /* DeliveryFilter2ViewController.swift in Sources */,
 				024C6A101F3AA01100D31868 /* SocketIOHelper.swift in Sources */,
 				0207F2201F5BAD9600FDB7CA /* GoogleMapHelper.swift in Sources */,
 				02A2AEE61F20F8A7007EB372 /* AwesomeTableViewController.swift in Sources */,

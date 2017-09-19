@@ -13,6 +13,7 @@ class DeliveryNavTabBarViewController: UITabBarController {
     let bag = DisposeBag()
     var defaultTab = 0
     var showThanhToan = false
+    var cacheFilter = -1
     
     public static var sharedInstance: DeliveryNavTabBarViewController!
     override func viewDidLoad() {
@@ -34,6 +35,12 @@ class DeliveryNavTabBarViewController: UITabBarController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print("View Will Appear")
+        if DeliveryFilter2ViewController.shouldReload {
+            DeliveryFilter2ViewController.shouldReload = false
+            DeliveryMainViewController.shared.reloadPage()
+        }
+        
         if SingleDeliveryViewController.shouldReloadPage > -1 {
 //            DeliveryOrderViewController.shared.listVC[0].reloadPage()
             SingleDeliveryViewController.shouldReloadPage = -1

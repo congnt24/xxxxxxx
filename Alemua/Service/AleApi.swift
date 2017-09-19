@@ -25,9 +25,9 @@ public enum AleApi {
     case getHomeItems(page: Int?, filter_type: Int)
     case getProducts(type: Int, page: Int)
     case uploadFile(photos: [UIImage])
-    case getQuoteForShipper(page_number: Int, text_search: String)
-    case getOrderFromClient(page_number: Int, order_type: Int)//order_type = 0-4
-    case getOrderFromShipper(page_number: Int, order_type: Int)//order_type=1
+    case getQuoteForShipper(page_number: Int, text_search: String, sort_type: Int, brand_id: Int, country_id: Int)
+    case getOrderFromClient(page_number: Int, order_type: Int, sort_type: Int)//order_type = 0-4
+    case getOrderFromShipper(page_number: Int, order_type: Int, sort_type: Int)//order_type=1
     case cancelOrder(data: CancelOrderRequest)
     case reportUser(data: ReportUserRequest)
     case rateForClient(data: RateForClient)
@@ -53,6 +53,7 @@ public enum AleApi {
     case getTransferMoney(order_id: Int?, weight: Float?)
     case getAllBrand()
     case getAllCountry()
+    case getAllMoney()
 }
 
 extension AleApi: TargetType {
@@ -79,9 +80,9 @@ extension AleApi: TargetType {
             return "/api/users/uploadFile"
         case .getQuoteForShipper:
             return "/api/order/getQuoteForShipper"
-        case .getOrderFromClient( _, _):
+        case .getOrderFromClient:
             return "/api/order/getOrderFromClient"
-        case .getOrderFromShipper(_, _):
+        case .getOrderFromShipper:
             return "/api/order/getOrderFromShipper"
         case .cancelOrder(_):
             return "/api/order/cancelOrder"
@@ -129,6 +130,8 @@ extension AleApi: TargetType {
             return "/api/users/getAllBrand"
         case .getAllCountry:
             return "/api/users/getAllCountry"
+        case .getAllMoney:
+            return "/api/users/getAllMoney"
         }
     }
 
@@ -235,28 +238,33 @@ extension AleApi: TargetType {
             params["page_size"] = 20
             params["page_number"] = page
             return params
-        case .getQuoteForShipper(let page_number, let text_search):
+        case .getQuoteForShipper(let page_number, let text_search, let sort_type, let brand_id, let country_id):
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["page_size"] = 20
             params["page_number"] = page_number
             params["text_search"] = text_search
+            params["sort_type"] = sort_type
+            params["brand_id"] = brand_id
+            params["country_id"] = country_id
             return params
-        case .getOrderFromClient(let page_number, let order_type):
+        case .getOrderFromClient(let page_number, let order_type, let sort_type):
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             params["page_size"] = 20
             params["page_number"] = page_number
             params["order_type"] = order_type
+            params["sort_type"] = sort_type
             return params
-        case .getOrderFromShipper(let page_number, let order_type):
+        case .getOrderFromShipper(let page_number, let order_type, let sort_type):
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiTokenShipper
             params["page_size"] = 20
             params["page_number"] = page_number
             params["order_type"] = order_type
+            params["sort_type"] = sort_type
             return params
         case .getOrderDetailsToQuote(let order_id):
             var params = [String: Any]()
@@ -390,6 +398,11 @@ extension AleApi: TargetType {
             params["weight"] = weight
             return params
             
+        case .getAllMoney():
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            return params
             
         default:
             return nil

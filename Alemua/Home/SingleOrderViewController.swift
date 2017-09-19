@@ -31,7 +31,7 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
     var datas = Variable<[ModelOrderClientData]>([])
     var currentPage = 1
 
-    var cacheFilter = 0
+    var cacheFilter = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,7 +115,7 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         if isShowDialog{
             LoadingOverlay.shared.showOverlay(view: OrderOrderViewController.shared.view)
         }
-        return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue))//.filterSuccessfulStatusCodes()
+        return AleProvider.request(AleApi.getOrderFromClient(page_number: currentPage, order_type: orderType.rawValue, sort_type: (cacheFilter + 1)))//.filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelOrderClientData]> in
                 LoadingOverlay.shared.hideOverlayView()
                 let json = JSON(data: response.data)

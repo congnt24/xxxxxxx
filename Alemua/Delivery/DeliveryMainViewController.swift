@@ -22,6 +22,7 @@ class DeliveryMainViewController: BaseViewController {
     var datas = Variable<[ModelQuoteData]>([])
     var currentPage = 1
     var shouldReload = false
+    var cacheFilter = -1
     
     var textSearch = Variable<String>("")
 
@@ -31,6 +32,9 @@ class DeliveryMainViewController: BaseViewController {
     var refreshControl: UIRefreshControl!
     
     func refresh(_ sender: Any) {
+        DeliveryFilter2ViewController.branch = 0
+        DeliveryFilter2ViewController.country = 0
+        DeliveryFilter2ViewController.deliveryOrderFilterType = 0
         reloadPage()
         refreshControl.endRefreshing()
     }
@@ -87,19 +91,20 @@ class DeliveryMainViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
         if shouldReload {
             reloadPage()
             shouldReload = false
         }
     }
-
+    
     func reloadPage(_ isReload: Bool = false){
         currentPage = 1
         self.fetchData(isReload).drive(onNext: { (results) in
-            if results.count > 0 {
+//            if results.count > 0 {
                 self.currentPage += 1
                 self.datas.value = results
-            }
+//            }
         }).addDisposableTo(self.bag)
     }
     //Interact API
@@ -107,7 +112,7 @@ class DeliveryMainViewController: BaseViewController {
         if isReload {
             LoadingOverlay.shared.showOverlay(view: DeliveryNavTabBarViewController.sharedInstance.view)
         }
-        return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage, text_search: textSearch.value)).filterSuccessfulStatusCodes()
+        return AlemuaApi.shared.aleApi.request(.getQuoteForShipper(page_number: self.currentPage, text_search: textSearch.value, sort_type: (DeliveryFilter2ViewController.deliveryOrderFilterType + 1), brand_id: DeliveryFilter2ViewController.branch, country_id: DeliveryFilter2ViewController.country)).filterSuccessfulStatusCodes()
             .flatMap { (response) -> Observable<[ModelQuoteData]> in
                 LoadingOverlay.shared.hideOverlayView()
                 let obj = ModelQuoteResponse(json: JSON(response.data))
@@ -115,6 +120,7 @@ class DeliveryMainViewController: BaseViewController {
             }.asDriver(onErrorJustReturn: [])
     }
     @IBAction func onFilter(_ sender: Any) {
+        DeliveryCoordinator.sharedInstance.showFilter2()
     }
 
 }

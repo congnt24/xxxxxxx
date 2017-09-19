@@ -22,12 +22,14 @@ class DeliveryAccountViewController: BaseViewController {
     @IBOutlet weak var lbDangxuly: UILabel!
     @IBOutlet weak var lbHoanthanh: UILabel!
     @IBOutlet weak var lbDahuy: UILabel!
+    @IBOutlet weak var lbThuNhap: UILabel!
     
     @IBOutlet weak var danhsachKH: UIStackView!
     @IBOutlet weak var donhangDunghan: UIStackView!
     @IBOutlet weak var donhangTruochan: UIStackView!
     @IBOutlet weak var donhangGiaocham: UIStackView!
     @IBOutlet weak var donhangBihuy: UIStackView!
+    @IBOutlet weak var thunhap: UIStackView!
     
     @IBOutlet weak var userView: UserView!
     
@@ -45,6 +47,7 @@ class DeliveryAccountViewController: BaseViewController {
             self.uiMoreDetails.toggleHeight()
         }
         setupOnclick()
+        fetchData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -166,12 +169,30 @@ extension DeliveryAccountViewController {
         DeliveryOrderViewController.defaultTab = 3
         DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
     }
+    func showThuNhap(){
+        
+    }
     
     
     
     
     
-    
-    
+    func fetchData(){
+        AlemuaApi.shared.aleApi.request(AleApi.getAllMoney())
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    print("get all money success")
+                    if let arr = result.array {
+                        self.lbThuNhap.text = "\(arr.map { $0["total_money"].int ?? 0}.reduce(0, +))".toFormatedPrice()
+                    }
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
+    }
     
 }

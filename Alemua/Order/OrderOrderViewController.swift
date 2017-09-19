@@ -24,6 +24,7 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
     public static var selectViewController = -1
     
     var indexShouldReload = [Int]()
+    var cacheFilter = -1
     
     
     override func viewDidLoad() {
@@ -59,6 +60,11 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
             OrderOrderViewController.selectViewController = -1
         }
         
+        if cacheFilter != OrderFilterViewController.orderOrderFilterType {
+//            cacheFilter =
+            OrderOrderViewController.shared.indexShouldReload.append(contentsOf: [0,1,2,3])
+        }
+//        OrderOrderViewController.shared.indexShouldReload.append(contentsOf: [0,1,2,3])
         for vc in indexShouldReload {
             listVc[vc].viewDidAppear(false)
         }

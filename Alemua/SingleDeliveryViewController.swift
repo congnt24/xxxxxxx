@@ -25,6 +25,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
     var datas = Variable<[ModelOrderClientData]>([])
     var currentPage = 1
+    var cacheFilter = -1
     
     public static var shouldReloadPage = -1
 
@@ -47,7 +48,10 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        if cacheFilter != OrderFilterViewController.deliveryOrderFilterType {
+            cacheFilter = OrderFilterViewController.deliveryOrderFilterType
+            reloadPage()
+        }
         if DeliveryOrderViewController.indexShouldReload.contains(deliveryType.rawValue - 1) {
             DeliveryOrderViewController.indexShouldReload = DeliveryOrderViewController.indexShouldReload.filter { $0 != (deliveryType.rawValue - 1) }
             reloadPage()
@@ -101,7 +105,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         if !isReload {
             LoadingOverlay.shared.showOverlay(view: DeliveryOrderViewController.shared.view)
         }
-        return AleProvider.request(AleApi.getOrderFromShipper(page_number: currentPage, order_type: deliveryType.rawValue)).toJSON()
+        return AleProvider.request(AleApi.getOrderFromShipper(page_number: currentPage, order_type: deliveryType.rawValue, sort_type: (cacheFilter + 1))).toJSON()
             .subscribe(onNext: { (res) in
                 LoadingOverlay.shared.hideOverlayView()
                 switch res {

@@ -11,8 +11,8 @@ import UIKit
 class OrderFilterViewController: UIViewController {
 
 
-    public static var deliveryOrderFilterType = -1
-    public static var orderOrderFilterType = -1
+    public static var deliveryOrderFilterType = 0
+    public static var orderOrderFilterType = 0
     @IBOutlet weak var view1: AwesomeUIView!
     @IBOutlet weak var view2: AwesomeUIView!
     @IBOutlet weak var view3: AwesomeUIView!

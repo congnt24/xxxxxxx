@@ -100,12 +100,12 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 //        AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
 
         if Prefs.isUserLogged {
-            if orderData!.productOption!.contains("4") { // chir mua khi có giảm giá
-                DeliveryDialogBaoGiaViewController.orderData = orderData
-                AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
-            }else{
+//            if orderData!.productOption!.contains("4") { // chir mua khi có giảm giá
+//                DeliveryDialogBaoGiaViewController.orderData = orderData
+//                AwesomeDialog.shared.show(vc: self, name: "DonHang", identify: "DeliveryDialogBaoGiaViewController")
+//            }else{
                 DeliveryCoordinator.sharedInstance.showDeliveryBaoGiaFinal(data: orderData!)
-            }
+//            }
         } else {
             HomeCoordinator.sharedInstance.showLoginScreen()
         }

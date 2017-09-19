@@ -51,6 +51,8 @@ public enum AleApi {
     case readNotification(notification_id: Int)
     case getUnreadNotification(isShipper: Int)
     case getTransferMoney(order_id: Int?, weight: Float?)
+    case getAllBrand()
+    case getAllCountry()
 }
 
 extension AleApi: TargetType {
@@ -123,6 +125,10 @@ extension AleApi: TargetType {
             return "/api/order/getUnreadNotification"
         case .getTransferMoney:
             return "/api/order/getTransferMoney"
+        case .getAllBrand:
+            return "/api/users/getAllBrand"
+        case .getAllCountry:
+            return "/api/users/getAllCountry"
         }
     }
 
@@ -168,6 +174,8 @@ extension AleApi: TargetType {
             params["website_real_price"] = data.websiteRealPrice ?? 1
             params["latitude"] = data.latitude
             params["longitude"] = data.longitude
+            params["brand_id"] = data.brand_id
+            params["country_id"] = data.country_id
             return params
         case .createQuote(let quote):
             var params = [String: Any]()

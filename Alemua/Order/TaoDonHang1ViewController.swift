@@ -13,6 +13,7 @@ import MobileCoreServices
 import RxSwift
 import Kingfisher
 import Toaster
+import DropDown
 
 class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -24,10 +25,19 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     @IBOutlet weak var stSoLuong: StepperView!
     @IBOutlet weak var grSelect: AwesomeRadioGroup!
     @IBOutlet weak var stPhoto: UIStackView!
+    @IBOutlet weak var drNhomHang: UIStackView!
+    @IBOutlet weak var drQuocGia: UIStackView!
 
+    @IBOutlet weak var tfQuocGia: AwesomeTextField!
+    @IBOutlet weak var tfNhomHang: AwesomeTextField!
     @IBOutlet weak var btnAdd: UIButton!
     var website_url: String?
     var data: ModelOrderData?
+    
+    var listBranch = [Int]()
+    var listCountry = [Int]()
+    var branch = 1
+    var country = 1
     
     //from exchange dialog
     var currencyData: CurrencyData? {
@@ -79,6 +89,12 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         }
         return false;
     }
+    
+    
+    // MARK: - Setup dropdown
+    let nhomHangDr = DropDown()
+    let quocGiaDr = DropDown()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TaoDonHang1ViewController.sharedInstance = self
@@ -96,6 +112,32 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                 }
             })
         }
+        nhomHangDr.anchorView = drNhomHang
+        nhomHangDr.dataSource = ["Tất cả"]
+        nhomHangDr.width = 180
+        nhomHangDr.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.tfNhomHang.text = item
+            self.branch = self.listBranch[index]
+        }
+        
+        quocGiaDr.anchorView = drQuocGia
+        quocGiaDr.dataSource = ["Hàng mới 100%", "Hàng sang tay", "Đã qua sử dụng"]
+        quocGiaDr.width = 180
+        quocGiaDr.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.tfQuocGia.text = item
+            self.country = self.listCountry[index]
+        }
+        
+        
+        drNhomHang.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onDrNhomHang)))
+        drQuocGia.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onDrQuocGia)))
+    }
+    
+    func onDrNhomHang(){
+        nhomHangDr.show()
+    }
+    func onDrQuocGia(){
+        quocGiaDr.show()
     }
 
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -141,6 +183,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     }
 
     func setData() {
+        taodonhangRequest.brand_id = branch
+        taodonhangRequest.country_id = country
         taodonhangRequest.productName = tfTenSP.text
         taodonhangRequest.productDescription = tfMota.text
         taodonhangRequest.websiteUrl = tfWebsite.text
@@ -193,7 +237,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                 taodonhangRequest.websitePrice = self.data?.originPrice ?? 0
             }
         }
-
+        fetchBranchAndCountry()
         
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
@@ -238,7 +282,39 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
             }).addDisposableTo(bag)
     }
 
-
-    
+    func fetchBranchAndCountry(){
+        AlemuaApi.shared.aleApi.request(AleApi.getAllBrand())
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    if let arr = result.array {
+                        self.nhomHangDr.dataSource = arr.map { $0["name"].string ?? "" }
+                        self.listBranch = arr.map { $0["id"].int ?? 0 }
+                    }
+//                    nhomHangDr.dataSource = []
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
+        AlemuaApi.shared.aleApi.request(AleApi.getAllCountry())
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    if let arr = result.array {
+                        self.quocGiaDr.dataSource = arr.map { $0["name"].string ?? "" }
+                        self.listCountry = arr.map { $0["id"].int ?? 0 }
+                        
+                    }
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
+    }
     
 }

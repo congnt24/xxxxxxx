@@ -73,6 +73,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             rateDetail.height = 240
         }
         
+        
         rateDetail.enableEditing()
         rateDetail.onPriceChange = { (price) in
             if let price = price {
@@ -105,6 +106,11 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.descriptionValue = modelQuoteData.productDescription
         req.note = modelQuoteData.note
         req.orderId = modelQuoteData.id
+        if modelQuoteData.transactionOption == 2 {
+            
+            rateDetail.rateData.phivanchuyenvealemua = 0
+            rateDetail.rateData.phivanchuyenvetaynguoimua = 0
+        }
     }
 
     @IBAction func onShowMoreRateDetail(_ sender: Any) {

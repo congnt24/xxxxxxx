@@ -202,7 +202,7 @@ extension DeliveryAccountViewController {
                     if let arr = result.array {
                         let thunhap = arr.map { $0["total_money"].int ?? 0}.reduce(0, +)
                         print("thunhap \(thunhap)")
-                        self.lbNumThuNhap.text = "\(thunhap)".toFormatedPrice()
+                        self.lbNumThuNhap.text = "\(thunhap)".toRaoVatPriceFormat()
                     }
                     break
                 case .error(let msg):

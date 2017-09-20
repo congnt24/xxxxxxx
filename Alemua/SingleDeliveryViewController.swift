@@ -51,7 +51,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         if cacheFilter != OrderFilterViewController.deliveryOrderFilterType {
             cacheFilter = OrderFilterViewController.deliveryOrderFilterType
             reloadPage()
-        }
+        }else
         if DeliveryOrderViewController.indexShouldReload.contains(deliveryType.rawValue - 1) {
             DeliveryOrderViewController.indexShouldReload = DeliveryOrderViewController.indexShouldReload.filter { $0 != (deliveryType.rawValue - 1) }
             reloadPage()

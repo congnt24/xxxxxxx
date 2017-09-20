@@ -22,7 +22,7 @@ class DeliveryMainViewController: BaseViewController {
     var datas = Variable<[ModelQuoteData]>([])
     var currentPage = 1
     var shouldReload = false
-    var cacheFilter = -1
+    var cacheFilter = 0
     
     var textSearch = Variable<String>("")
 

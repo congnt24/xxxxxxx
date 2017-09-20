@@ -12,7 +12,7 @@ target 'Alemua' do
   pod 'RxDataSources'
   pod 'Moya'
   pod 'Moya/RxSwift'
-  pod 'IQKeyboardManagerSwift'
+  pod 'IQKeyboardManagerSwift', '~> 4.0.13'
   pod 'JSQMessagesViewController'
   pod 'Kingfisher', '~> 3.0'
   pod 'XLPagerTabStrip'

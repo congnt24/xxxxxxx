@@ -240,13 +240,15 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
                         let money = result["money"].int
                         self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)"
                         self.rateData.phivanchuyenvetaynguoimua = money ?? 0
+                        if let onPriceChange = self.onPriceChange {
+                            onPriceChange(self.calculateTotal())
+                        }
                         break
                     case .error(let msg):
                         print("Error \(msg)")
                         break
                     }
                 }).addDisposableTo(bag)
-
         }
     }
 

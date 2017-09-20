@@ -38,7 +38,7 @@ class DeliveryNavTabBarViewController: UITabBarController {
         print("View Will Appear")
         if DeliveryFilter2ViewController.shouldReload {
             DeliveryFilter2ViewController.shouldReload = false
-            DeliveryMainViewController.shared.reloadPage()
+            DeliveryMainViewController.shared.reloadPage(true)
         }
         
         if SingleDeliveryViewController.shouldReloadPage > -1 {

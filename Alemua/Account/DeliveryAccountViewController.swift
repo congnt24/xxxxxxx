@@ -70,9 +70,9 @@ class DeliveryAccountViewController: BaseViewController {
                         self.userView.bindData(data: self.data!, profileType: 1)
                         self.uiSwitchNotify.isOn = self.data?.isNotify! == 0 ? false : true
                         
-                        self.lbDangxuly.text = "\(self.data?.numberOrder ?? 0)"
-                        self.lbHoanthanh.text = "\(self.data?.numberUser ?? 0)"
-                        self.lbDahuy.text = "\(self.data?.totalMoney ?? 0)"
+                        self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"
+                        self.lbHoanthanh.text = "\(self.data?.transaction_myself ?? 0)"
+                        self.lbDahuy.text = "\(self.data?.income ?? 0)".toFormatedPrice()
                         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
                         
                         print("Get Profile success")

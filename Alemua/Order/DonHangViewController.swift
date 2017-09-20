@@ -11,6 +11,7 @@ import XLPagerTabStrip
 import SwiftyJSON
 import RxSwift
 import AwesomeMVVM
+import DropDown
 
 class DonHangViewController: ButtonBarPagerTabStripViewController {
     var bag = DisposeBag()
@@ -36,8 +37,12 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
         btlFilter.isEnabled = false
-        btlFilter.plainView.isHidden = true
+//        btlFilter.plainView.isHidden = true
         fetchData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+         btlFilter.plainView.isHidden = true
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

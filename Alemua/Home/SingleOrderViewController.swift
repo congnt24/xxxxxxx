@@ -43,7 +43,7 @@ class SingleOrderViewController: UIViewController, IndicatorInfoProvider {
         if cacheFilter != OrderFilterViewController.orderOrderFilterType {
             cacheFilter = OrderFilterViewController.orderOrderFilterType
             reloadPage()
-        }
+        }else
         if OrderOrderViewController.shared.indexShouldReload.contains(orderType.rawValue) {
             OrderOrderViewController.shared.indexShouldReload = OrderOrderViewController.shared.indexShouldReload.filter { $0 != orderType.rawValue }
             reloadPage(true)

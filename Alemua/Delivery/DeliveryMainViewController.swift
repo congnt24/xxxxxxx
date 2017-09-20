@@ -91,7 +91,6 @@ class DeliveryMainViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
         if shouldReload {
             reloadPage()
             shouldReload = false

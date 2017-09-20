@@ -33,6 +33,9 @@ class ProfileData {
         static let numberUser = "number_user"
         static let totalMoney = "total_money"
         static let is_safe = "is_safe"
+        static let transaction_alemua = "transaction_alemua"
+        static let transaction_myself = "transaction_myself"
+        static let income = "income"
     }
     
     // MARK: Properties
@@ -58,6 +61,9 @@ class ProfileData {
     public var numberUser: Int?
     public var totalMoney: Int?
     public var is_safe: Int?
+    public var transaction_alemua: Int?
+    public var transaction_myself: Int?
+    public var income: Int?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -94,6 +100,9 @@ class ProfileData {
         numberUser = json[SerializationKeys.numberUser].int
         totalMoney = json[SerializationKeys.totalMoney].int
         is_safe = json[SerializationKeys.is_safe].int
+        transaction_alemua = json[SerializationKeys.transaction_alemua].int
+        transaction_myself = json[SerializationKeys.transaction_myself].int
+        income = json[SerializationKeys.income].int
     }
 
 }

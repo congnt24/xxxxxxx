@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -4152,7 +4152,7 @@
                                                         <rect key="frame" x="0.0" y="43.5" width="343.5" height="39.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tác phong làm việc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7R-y4-hux">
-                                                                <rect key="frame" x="98" y="0.0" width="148" height="20.5"/>
+                                                                <rect key="frame" x="98" y="0.0" width="147.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -4287,11 +4287,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MeC-Et-VDJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QhF-zk-5eg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBO-g5-Gi3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="850"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vO-I3-MXJ" customClass="ItemView" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="343" height="95"/>
@@ -4571,7 +4571,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="850"/>
+                    <size key="freeformSize" width="375" height="900"/>
                     <connections>
                         <outlet property="btnDeliveryBaoGia" destination="ZcM-Rk-iri" id="saS-I2-5ED"/>
                         <outlet property="itemView" destination="2vO-I3-MXJ" id="zid-EY-rBu"/>
@@ -4587,7 +4587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yzv-BS-YYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4274" y="783"/>
+            <point key="canvasLocation" x="-5591" y="751"/>
         </scene>
         <!--Dialog Set Weight-->
         <scene sceneID="Gs6-30-o7m">

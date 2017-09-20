@@ -62,9 +62,9 @@ class AccountViewController: BaseViewController {
                         self.userView.bindData(data: self.data!, profileType: 1)
                         self.uiSwitchNotify.isOn = self.data?.isNotify! == 0 ? false : true
                         
-                        self.lbDangxuly.text = "\(self.data?.numberInProgress ?? 0)"
-                        self.lbHoanthanh.text = "\(self.data?.numberDone ?? 0)"
-                        self.lbDahuy.text = "\(self.data?.numberCancelled ?? 0)"
+                        self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"
+                        self.lbHoanthanh.text = "\(self.data?.transaction_myself ?? 0)"
+                        self.lbDahuy.text = "\(self.data?.income ?? 0)".toFormatedPrice()
                         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
                         
                         

@@ -114,7 +114,9 @@ extension String {
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "vi_VN")
         var f = (formatter.string(from: price) ?? "d 0") // $123"
-        f = f.substring(from: f.index(f.startIndex, offsetBy: 2))
+//        let len = f.charactersArray.count - 2
+//        f = String(f[..<len])
+        f = f.substring(to: f.index(f.endIndex, offsetBy: -2))
         return f
     }
     func convertToLink() -> String {

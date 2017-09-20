@@ -133,6 +133,7 @@
 		028AF0E91F35BB2100387FFC /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0E81F35BB2100387FFC /* BaseResponse.swift */; };
 		028AF0EB1F35C3C500387FFC /* PictureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0EA1F35C3C500387FFC /* PictureHelper.swift */; };
 		028AF0ED1F35C7B400387FFC /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0EC1F35C7B400387FFC /* ProfileResponse.swift */; };
+		0292D0F71F72943C00A3820E /* DeliveryIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292D0F61F72943C00A3820E /* DeliveryIncomeViewController.swift */; };
 		029B09111F207C990036F01F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B090F1F207C990036F01F /* BaseViewModel.swift */; };
 		029B09121F207C990036F01F /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B09101F207C990036F01F /* TableViewViewController.swift */; };
 		02A21E3B1F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */; };
@@ -328,6 +329,7 @@
 		028AF0E81F35BB2100387FFC /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		028AF0EA1F35C3C500387FFC /* PictureHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureHelper.swift; path = Helper/PictureHelper.swift; sourceTree = "<group>"; };
 		028AF0EC1F35C7B400387FFC /* ProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileResponse.swift; path = Account/ProfileResponse.swift; sourceTree = "<group>"; };
+		0292D0F61F72943C00A3820E /* DeliveryIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryIncomeViewController.swift; path = Account/DeliveryIncomeViewController.swift; sourceTree = "<group>"; };
 		029B090F1F207C990036F01F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		029B09101F207C990036F01F /* TableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
 		02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RaoVatCategoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -729,6 +731,7 @@
 				023B39DF1F2B4EF200E53A6D /* DeliveryAccountViewController.swift */,
 				02BF727F1F23734800F1F4BC /* EditAccountViewController.swift */,
 				0223C7FC1F2A44A1005949C9 /* ThanhToanViewController.swift */,
+				0292D0F61F72943C00A3820E /* DeliveryIncomeViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				021B82AA1F24E98600B757D7 /* DeliveryTableViewCell.swift in Sources */,
 				025D400A1F23A9C300BCD5F7 /* DonHangViewController.swift in Sources */,
 				0223C7EF1F2A1516005949C9 /* UserView.swift in Sources */,
+				0292D0F71F72943C00A3820E /* DeliveryIncomeViewController.swift in Sources */,
 				02A2AEEA1F210108007EB372 /* AwesomeUIView.swift in Sources */,
 				021C97F91F5070CE0058CBF0 /* RaoVatProfileViewController.swift in Sources */,
 				02BF72791F23686100F1F4BC /* AccountViewController.swift in Sources */,

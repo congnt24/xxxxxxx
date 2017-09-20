@@ -90,6 +90,10 @@ extension DeliveryCoordinator {
         let view: DanhSachKHViewController = mainStoryboard.instantiateViewController(withClass: DanhSachKHViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
+    func showThuNhap(){
+        let view: DeliveryIncomeViewController = getProfileStoryboard().instantiateViewController(withClass: DeliveryIncomeViewController.self)
+        navigation?.pushViewController(view, animated: true)
+    }
     
 }
 

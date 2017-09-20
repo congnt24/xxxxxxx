@@ -164,6 +164,7 @@ extension DeliveryAccountViewController {
         donhangTruochan.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDHDaGiao)))
         donhangGiaocham.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDH)))
         donhangBihuy.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDHBiHuy)))
+        thunhap.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showThuNhap)))
     }
     
     func showDSKH(){
@@ -182,7 +183,8 @@ extension DeliveryAccountViewController {
         DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
     }
     func showThuNhap(){
-        
+//        DeliveryIncomeViewController
+        DeliveryCoordinator.sharedInstance.showThuNhap()
     }
     
     

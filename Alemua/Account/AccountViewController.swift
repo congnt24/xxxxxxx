@@ -64,7 +64,7 @@ class AccountViewController: BaseViewController {
                         
                         self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"
                         self.lbHoanthanh.text = "\(self.data?.transaction_myself ?? 0)"
-                        self.lbDahuy.text = "\(self.data?.income ?? 0)".toFormatedPrice()
+                        self.lbDahuy.text = "\(self.data?.totalMoney ?? 0)"
                         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
                         
                         

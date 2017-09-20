@@ -32,6 +32,11 @@ class DeliveryAccountViewController: BaseViewController {
     @IBOutlet weak var thunhap: UIStackView!
     
     @IBOutlet weak var userView: UserView!
+    @IBOutlet weak var lbNumDSKH: UILabel!
+    @IBOutlet weak var lbNumDungHan: UILabel!
+    @IBOutlet weak var lbNumTruocHan: UILabel!
+    @IBOutlet weak var lbNumCham: UILabel!
+    @IBOutlet weak var lbNumHuy: UILabel!
     
     
     var data: ProfileData?
@@ -72,8 +77,15 @@ class DeliveryAccountViewController: BaseViewController {
                         
                         self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"
                         self.lbHoanthanh.text = "\(self.data?.transaction_myself ?? 0)"
-                        self.lbDahuy.text = "\(self.data?.income ?? 0)".toFormatedPrice()
+                        self.lbDahuy.text = "\(self.data?.income ?? 0)"
                         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
+                        
+                        
+                        self.lbNumDSKH.text = "\(self.data?.numberUser ?? 0)"
+                        self.lbNumDungHan.text = "\(self.data?.number_order_in_time ?? 0)"
+                        self.lbNumTruocHan.text = "\(self.data?.number_order_in_time ?? 0)"
+                        self.lbNumCham.text = "\(self.data?.number_order_slow_time ?? 0)"
+                        self.lbNumHuy.text = "\(self.data?.number_order_cancelled ?? 0)"
                         
                         print("Get Profile success")
                         break

@@ -27,6 +27,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
+    @IBOutlet weak var tfNhapMaKM: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
     @IBOutlet weak var hightConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
@@ -137,7 +138,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.discount = rateDetail.rateData.discount
         //        req.promotion_money = rateDetail.rateData.promotion_money
         req.weight = rateDetail.rateData.weight
-//        req.magi
+        req.promotion_code = tfNhapMaKM.text
         
         LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))

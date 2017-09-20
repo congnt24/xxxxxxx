@@ -3911,6 +3911,7 @@
                         <outlet property="tfMota" destination="2ve-rO-k55" id="bWv-KD-r9K"/>
                         <outlet property="tfMuatu" destination="mFc-qS-ERL" id="Q8I-Af-j3P"/>
                         <outlet property="tfNgay" destination="ZD2-1t-kaX" id="f2b-fX-rsx"/>
+                        <outlet property="tfNhapMaKM" destination="Ww9-4i-HXw" id="BmH-fu-Qzn"/>
                         <outlet property="tfNote" destination="NZC-MB-7Cb" id="Pwq-Xp-6rj"/>
                     </connections>
                 </viewController>

@@ -24,6 +24,9 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
         tableView.dataSource = self
         tableView.delegate = self
         fetchData()
+        
+        tableView.estimatedRowHeight = 44 // some constant value
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

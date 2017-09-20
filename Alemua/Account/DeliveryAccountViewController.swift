@@ -37,6 +37,7 @@ class DeliveryAccountViewController: BaseViewController {
     @IBOutlet weak var lbNumTruocHan: UILabel!
     @IBOutlet weak var lbNumCham: UILabel!
     @IBOutlet weak var lbNumHuy: UILabel!
+    @IBOutlet weak var lbNumThuNhap: UILabel!
     
     
     var data: ProfileData?
@@ -77,7 +78,7 @@ class DeliveryAccountViewController: BaseViewController {
                         
                         self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"
                         self.lbHoanthanh.text = "\(self.data?.transaction_myself ?? 0)"
-                        self.lbDahuy.text = "\(self.data?.income ?? 0)"
+                        self.lbDahuy.text = "\(self.data?.income ?? 0)".toRaoVatPriceFormat()
                         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
                         
                         
@@ -199,7 +200,9 @@ extension DeliveryAccountViewController {
                 case .done(let result, _):
                     print("get all money success")
                     if let arr = result.array {
-                        self.lbThuNhap.text = "\(arr.map { $0["total_money"].int ?? 0}.reduce(0, +))".toFormatedPrice()
+                        let thunhap = arr.map { $0["total_money"].int ?? 0}.reduce(0, +)
+                        print("thunhap \(thunhap)")
+                        self.lbNumThuNhap.text = "\(thunhap)".toFormatedPrice()
                     }
                     break
                 case .error(let msg):

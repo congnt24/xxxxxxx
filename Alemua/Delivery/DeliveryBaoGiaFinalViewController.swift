@@ -97,7 +97,6 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.phivanchuyenvetaynguoimua.text = ""
         
         
-        tfGia.text = "\(rateDetail.calculateTotal() ?? 0)".toFormatedPrice()
         
         req.buyFrom = modelQuoteData.buyFrom
         req.deliveryDate = modelQuoteData.deliveryDate
@@ -110,7 +109,10 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             
             rateDetail.rateData.phivanchuyenvealemua = 0
             rateDetail.rateData.phivanchuyenvetaynguoimua = 0
+            rateDetail.rateData.phigiaodichquaalemua = 0
+            rateDetail.notUpdateWeight = true
         }
+        tfGia.text = "\(rateDetail.calculateTotal() ?? 0)".toFormatedPrice()
     }
 
     @IBAction func onShowMoreRateDetail(_ sender: Any) {
@@ -135,6 +137,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         req.discount = rateDetail.rateData.discount
         //        req.promotion_money = rateDetail.rateData.promotion_money
         req.weight = rateDetail.rateData.weight
+//        req.magi
         
         LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))

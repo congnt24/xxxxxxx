@@ -227,28 +227,34 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
 
     }
 
+    var notUpdateWeight = false
     func onUpdateWeight(weight: String?) {
         tfWeight.text = weight
         if let weight = weight {
             self.rateData.weight = Float(weight)
             let vc = viewController() as! DeliveryBaoGiaFinalViewController
-            AlemuaApi.shared.aleApi.request(AleApi.getTransferMoney(order_id: vc.modelQuoteData.id, weight: Float(weight)))
-                .toJSON()
-                .subscribe(onNext: { (res) in
-                    switch res {
-                    case .done( let result, _):
-                        let money = result["money"].int
-                        self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)"
-                        self.rateData.phivanchuyenvetaynguoimua = money ?? 0
-                        if let onPriceChange = self.onPriceChange {
-                            onPriceChange(self.calculateTotal())
+
+            if notUpdateWeight {
+
+            } else {
+                AlemuaApi.shared.aleApi.request(AleApi.getTransferMoney(order_id: vc.modelQuoteData.id, weight: Float(weight)))
+                    .toJSON()
+                    .subscribe(onNext: { (res) in
+                        switch res {
+                        case .done( let result, _):
+                            let money = result["money"].int
+                            self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)"
+                            self.rateData.phivanchuyenvetaynguoimua = money ?? 0
+                            if let onPriceChange = self.onPriceChange {
+                                onPriceChange(self.calculateTotal())
+                            }
+                            break
+                        case .error(let msg):
+                            print("Error \(msg)")
+                            break
                         }
-                        break
-                    case .error(let msg):
-                        print("Error \(msg)")
-                        break
-                    }
-                }).addDisposableTo(bag)
+                    }).addDisposableTo(bag)
+            }
         }
     }
 
@@ -262,7 +268,8 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         phivanchuyenvealemua.isHidden = true
         phigiaodichquaalemua.isHidden = true
 
-        tonggia.text = "\(rateData.giamua! + rateData.thue! + rateData.phinguoimua! + rateData.phigiaodichquaalemua!)".toFormatedPrice()
+        let xx = rateData.phigiaodichquaalemua! * rateData.giamua! / 100
+        tonggia.text = "\(rateData.giamua! + rateData.thue! + rateData.phinguoimua! + xx)".toFormatedPrice()
         phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua! + rateData.phivanchuyenvealemua! + rateData.phichuyennoidia!)".toFormatedPrice()
         tfWeight.text = "\(rateData.weight!)"
         magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()

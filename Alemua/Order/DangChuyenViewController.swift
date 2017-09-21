@@ -63,7 +63,7 @@ class DangChuyenViewController: UIViewController {
         //bind rate detail
         if HomeViewController.homeType == .order {
             uiRateDetail.setupRateDetailForMuaHang(RateDetailData(tonggia: modelDangChuyen.totalPrice, giamua: modelDangChuyen.buyingPrice,  discount: modelDangChuyen.discount, magiamgia: modelDangChuyen.promotion_money, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree, weight: modelDangChuyen.weight))
-            uiRateDetail.height = 140
+            uiRateDetail.height = 120
         } else {
             uiRateDetail.bindData(RateDetailData(tonggia: modelDangChuyen.totalPrice, giamua: modelDangChuyen.buyingPrice,  discount: modelDangChuyen.discount, magiamgia: modelDangChuyen.promotion_money, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree, weight: modelDangChuyen.weight))
         }

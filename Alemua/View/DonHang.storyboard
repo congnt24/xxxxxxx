@@ -1028,17 +1028,17 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5u-VG-PwZ" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="381" width="343" height="140"/>
+                                        <rect key="frame" x="16" y="381" width="343" height="120"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="NZQ-Hb-QwE"/>
+                                            <constraint firstAttribute="height" constant="120" id="NZQ-Hb-QwE"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHide" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADu-db-gx4">
-                                        <rect key="frame" x="0.0" y="529" width="375" height="266"/>
+                                        <rect key="frame" x="0.0" y="509" width="375" height="266"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XaY-m4-Asg">
                                                 <rect key="frame" x="16" y="16" width="343" height="230"/>
@@ -1535,7 +1535,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1236"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-0a-Tne">
-                                        <rect key="frame" x="0.0" y="1011" width="375" height="87"/>
+                                        <rect key="frame" x="0.0" y="991" width="375" height="87"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpB-BX-Y67">
                                                 <rect key="frame" x="16" y="24" width="343" height="39"/>
@@ -1770,17 +1770,17 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLG-2b-f8d" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="721" width="343" height="140"/>
+                                        <rect key="frame" x="16" y="721" width="343" height="120"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="l2E-Ts-7Eu"/>
+                                            <constraint firstAttribute="height" constant="120" id="l2E-Ts-7Eu"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHide" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="amK-Oe-0ve">
-                                        <rect key="frame" x="16" y="869" width="343" height="110"/>
+                                        <rect key="frame" x="16" y="849" width="343" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c8T-wN-erD">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>

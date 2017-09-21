@@ -34,6 +34,9 @@ class DeliveryDaHuyViewController: UIViewController {
                 
                 rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice ?? 0, discount: data.discount, magiamgia: data.promotion_money, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
 
+                if (orderData.transactionOption ?? 0) == 2 {
+                    rateDetail.hideForTransactionOption()
+                }
                 //
 //                rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice,giamua: 0, discount: 0, magiamgia: 0, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
                 tfMuatu.text = data.buyFrom

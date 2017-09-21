@@ -11,10 +11,15 @@ import UIKit
 class OrderDialogBaoGia1ViewController: UIViewController {
     var order_id: Int!
     var quoteId: Int!
+    var transaction_option: Int!
     @IBOutlet weak var radioGroup: AwesomeRadioGroup!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if transaction_option == 0 {
+            transaction_option = 1
+        }
+        radioGroup.checkAt(position: (transaction_option - 1))
+        radioGroup.disableInteraction()
         // Do any additional setup after loading the view.
     }
 

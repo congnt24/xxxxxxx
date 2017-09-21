@@ -58,7 +58,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     
 
     @IBAction func onDatMua(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog1(id: modelOrderBaoGia.orderId, quoteId: modelOrderBaoGia.id)
+        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog1(id: modelOrderBaoGia.orderId, quoteId: modelOrderBaoGia.id, transaction_option: orderData.transactionOption)
     }
     
     var listComment = Variable<[CommentData]>([])

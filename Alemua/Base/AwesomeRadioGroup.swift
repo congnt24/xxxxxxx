@@ -81,6 +81,12 @@ public class AwesomeRadioGroup: UIStackView {
             (btn as! AwesomeRadioGroupCell).uncheck()
         }
     }
+    
+    func disableInteraction(){
+        for item in arrangedSubviews {
+            item.isUserInteractionEnabled = false
+        }
+    }
 }
 
 extension UIView {

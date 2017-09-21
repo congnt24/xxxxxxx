@@ -295,8 +295,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     if let arr = result.array {
                         self.nhomHangDr.dataSource = arr.map { $0["name"].string ?? "" }
                         self.listBranch = arr.map { $0["id"].int ?? 0 }
-                        self.nhomHangDr.selectRow(at: 0)
-                        self.tfNhomHang.text = self.nhomHangDr.dataSource[0]
+//                        self.nhomHangDr.selectRow(at: 0)
+//                        self.tfNhomHang.text = self.nhomHangDr.dataSource[0]
                     }
 //                    nhomHangDr.dataSource = []
                     break
@@ -313,8 +313,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     if let arr = result.array {
                         self.quocGiaDr.dataSource = arr.map { $0["name"].string ?? "" }
                         self.listCountry = arr.map { $0["id"].int ?? 0 }
-                        self.quocGiaDr.selectRow(at: 0)
-                        self.tfQuocGia.text = self.quocGiaDr.dataSource[0]
+//                        self.quocGiaDr.selectRow(at: 0)
+//                        self.tfQuocGia.text = self.quocGiaDr.dataSource[0]
                         
                     }
                     break

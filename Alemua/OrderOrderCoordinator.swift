@@ -25,10 +25,11 @@ extension OrderOrderCoordinator {
         navigation?.pushViewController(view, animated: true)
     }
     
-    func showBaoGiaDetailDialog1(id: Int?, quoteId: Int?) {
+    func showBaoGiaDetailDialog1(id: Int?, quoteId: Int?, transaction_option: Int?) {
         let view = UIStoryboard(name: "DonHang", bundle: nil).instantiateViewController(withIdentifier: "OrderDialogBaoGia1ViewController") as! OrderDialogBaoGia1ViewController
         view.order_id = id!
         view.quoteId = quoteId!
+        view.transaction_option = transaction_option ?? 1
         AwesomeDialog.shared.show(vc: navigation?.topViewController, popupVC: view)
     }
     

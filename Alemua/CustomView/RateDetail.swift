@@ -175,7 +175,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
             phinguoimua.text = ""
             phivanchuyenvealemua.text = ""
             phivanchuyenvetaynguoimua.text = ""
-            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
+            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"//.toFormatedPrice()
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
             tfWeight.text = ""
         } else {
@@ -185,7 +185,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
             phinguoimua.text = "\(rateData.phinguoimua!)".toFormatedPrice()
             phivanchuyenvealemua.text = "\(rateData.phivanchuyenvealemua!)".toFormatedPrice()
             phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua!)".toFormatedPrice()
-            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)".toFormatedPrice()
+            phigiaodichquaalemua.text = "\(rateData.phigiaodichquaalemua!)"//.toFormatedPrice()
             magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()
             tfWeight.text = "\(rateData.weight!)"
             giamgia.text = "\(rateData.discount ?? 0)"
@@ -199,7 +199,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         phinguoimua.text = "\(order.transferBuyerFee!)".toFormatedPrice()
         phivanchuyenvealemua.text = "\(order.transferAlemuaFree!)".toFormatedPrice()
         phivanchuyenvetaynguoimua.text = "\(order.transferToBuyerFee!)".toFormatedPrice()
-        phigiaodichquaalemua.text = "\(order.buyingPrice!)".toFormatedPrice()
+        phigiaodichquaalemua.text = "\(order.buyingPrice!)"//.toFormatedPrice()
         magiamgia.text = "\(order.promotion_money!)".toFormatedPrice()
         tfWeight.text = "\(order.weight!)"
         giamgia.text = "\(order.discount ?? 0)"
@@ -256,6 +256,12 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
                     }).addDisposableTo(bag)
             }
         }
+    }
+    
+    func hideForTransactionOption(){
+        height = height - 70
+        phivanchuyenvealemua.isHidden = true
+        phigiaodichquaalemua.isHidden = true
     }
 
 

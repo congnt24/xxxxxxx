@@ -42,7 +42,7 @@ class OrderBaoGiaSubViewController: UIViewController, IndicatorInfoProvider {
         quoteData.asObservable().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
             // TODO: Bind data here
             if HomeViewController.homeType == .order {
-                (cell as! BaoGiaTableViewCell).bindData(data: item)
+                (cell as! BaoGiaTableViewCell).bindData(data: item, transaction_option: self.orderData?.transactionOption)
             } else {
                 (cell as! BaoGiaDeliveryTableViewCell).bindData(data: item)
             }

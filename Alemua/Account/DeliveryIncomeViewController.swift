@@ -19,14 +19,18 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
     var datas = [IncomeData]()
     
     
+    let json: JSON = [ "STT": 5,
+                       "order_id": "#235",
+                       "promotion_money": 20000,
+                       "total_price": 530000,
+                       "total_money": 550000]
+    
     
     override func bindToViewModel() {
         tableView.dataSource = self
         tableView.delegate = self
         fetchData()
         
-        tableView.estimatedRowHeight = 44 // some constant value
-        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,6 +56,10 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 70
     }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.estimatedRowHeight = 60 // some constant value
+//        tableView.rowHeight = UITableViewAutomaticDimension
+    }
     
     func fetchData(){
         LoadingOverlay.shared.showOverlay(view: view)
@@ -64,6 +72,7 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
                     print("get all money success")
                     if let arr = result.array {
                         self.datas = arr.map { IncomeData(json: $0) }
+                        self.datas.append(IncomeData(json: self.json))
                         self.tableView.reloadData()
                     }
                     break

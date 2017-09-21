@@ -34,6 +34,10 @@ class DeliveryHoanThanhViewController: UIViewController {
                 if data.userRated != 0 {
                     danhGia.isHidden = true
                 }
+                if (orderData.transactionOption ?? 0) == 2 {
+                    rateDetail.hideForTransactionOption()
+                }
+                
             }
         }
     }

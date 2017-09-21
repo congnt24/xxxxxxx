@@ -22,12 +22,13 @@ class BaoGiaTableViewCell: UITableViewCell {
     
     let bag = DisposeBag()
     var data: ModelOrderBaoGiaData!
+    var transaction_option: Int!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    public func bindData(data: ModelOrderBaoGiaData){
+    public func bindData(data: ModelOrderBaoGiaData, transaction_option: Int?){
         self.data = data
         imProduct.setItem(url: data.userPhoto)
         lbName.text = data.userPost
@@ -39,10 +40,11 @@ class BaoGiaTableViewCell: UITableViewCell {
         lbScore.text = "\(data.rating?.toFormatedRating() ?? "0")"
         star.number = Int(data.rating ?? 0)
         star.fillStar()
+        self.transaction_option = transaction_option ?? 1
     }
     
     @IBAction func onXacNhan(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog1(id: data.orderId, quoteId: data.id)
+        OrderOrderCoordinator.sharedInstance.showBaoGiaDetailDialog1(id: data.orderId, quoteId: data.id, transaction_option: transaction_option)
     }
     
     @IBAction func onSendMessage(_ sender: Any) {

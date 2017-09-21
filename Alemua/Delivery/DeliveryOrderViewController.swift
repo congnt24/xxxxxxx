@@ -19,7 +19,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     public static var defaultTab = 0
     public var listVC = [SingleDeliveryViewController]()
     public static var indexShouldReload = [Int]()
-    var cacheFilter = -1
+    var cacheFilter = 0
     
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!

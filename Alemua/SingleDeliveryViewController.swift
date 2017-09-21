@@ -41,18 +41,22 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if SingleDeliveryViewController.shouldReloadPage > -1 {
-            reloadPage()
-            SingleDeliveryViewController.shouldReloadPage = -1
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if SingleDeliveryViewController.shouldReloadPage > -1 {
+            print("run 1")
+            reloadPage()
+            SingleDeliveryViewController.shouldReloadPage = -1
+        }else
         if cacheFilter != OrderFilterViewController.deliveryOrderFilterType {
+            print("run 2")
             cacheFilter = OrderFilterViewController.deliveryOrderFilterType
             reloadPage()
         }else
         if DeliveryOrderViewController.indexShouldReload.contains(deliveryType.rawValue - 1) {
+            print("run 3")
             DeliveryOrderViewController.indexShouldReload = DeliveryOrderViewController.indexShouldReload.filter { $0 != (deliveryType.rawValue - 1) }
             reloadPage()
         }

@@ -66,7 +66,6 @@ class DangChuyenViewController: UIViewController {
             uiRateDetail.height = 120
         } else {
             uiRateDetail.bindData(RateDetailData(tonggia: modelDangChuyen.totalPrice, giamua: modelDangChuyen.buyingPrice,  discount: modelDangChuyen.discount, magiamgia: modelDangChuyen.promotion_money, thue: modelDangChuyen.tax, phichuyennoidia: modelDangChuyen.transferDomesticFee, phinguoimua: modelDangChuyen.transferBuyerFee, phivanchuyenvealemua: modelDangChuyen.transferAlemuaFree, phivanchuyenvetaynguoimua: modelDangChuyen.transferToBuyerFee, phigiaodichquaalemua: modelDangChuyen.transactionAlemuaFree, weight: modelDangChuyen.weight))
-            orderData.transactionOption = 2
             if (orderData.transactionOption ?? 0) == 2 {
                 uiRateDetail.hideForTransactionOption()
             }

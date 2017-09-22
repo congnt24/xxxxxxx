@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
     var movingCamera = GMSCameraPosition.camera(withLatitude: 21.005, longitude: 105.811, zoom: 14.0)
     var centerMarker = GMSMarker()
     var centerAddress = ""
+    var moveToCurrentAtFirst = false
     
     var onMovingMap: ((String?, CLLocationCoordinate2D?) -> Void)?
 
@@ -231,6 +232,8 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         self.curLocation = locations.last
+        
+        print("move to position")
 
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,

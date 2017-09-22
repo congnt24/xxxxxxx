@@ -72,7 +72,7 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
                     print("get all money success")
                     if let arr = result.array {
                         self.datas = arr.map { IncomeData(json: $0) }
-                        self.datas.append(IncomeData(json: self.json))
+//                        self.datas.append(IncomeData(json: self.json))
                         self.tableView.reloadData()
                     }
                     break

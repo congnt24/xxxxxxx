@@ -87,6 +87,9 @@ public class AwesomeRadioGroup: UIStackView {
             item.isUserInteractionEnabled = false
         }
     }
+    func disableCheckbox(index: Int){
+        (arrangedSubviews[index] as! AwesomeRadioGroupCell).isEnabled = false
+    }
 }
 
 extension UIView {

@@ -26,65 +26,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70y-Ga-H2s">
-                                <rect key="frame" x="163" y="605" width="48" height="30"/>
+                                <rect key="frame" x="165.5" y="607" width="43" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Bỏ qua">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onIgnore:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="r9E-N6-k05"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iO4-Sl-KSR">
-                                <rect key="frame" x="48" y="345" width="279" height="160"/>
+                                <rect key="frame" x="16" y="343" width="343" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apH-M1-2d9">
-                                        <rect key="frame" x="0.0" y="0.0" width="279" height="46.5"/>
-                                        <color key="backgroundColor" red="0.22217676043510437" green="0.33219918608665466" blue="0.55213552713394165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Đăng nhập với facebook">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onFacebook:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="DBZ-Fj-bbK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDu-dJ-jJj">
-                                        <rect key="frame" x="0.0" y="56.5" width="279" height="47"/>
-                                        <color key="backgroundColor" red="0.79686522483825684" green="0.20071485638618469" blue="0.20041635632514954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Đăng nhập với google">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="onGoogle:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="VeL-Li-4g6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kza-5q-7HG">
-                                        <rect key="frame" x="0.0" y="113.5" width="279" height="46.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Đăng nhập bằng số điện thoại">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kza-5q-7HG">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="53.5"/>
+                                        <state key="normal" image="sdt">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -102,21 +58,61 @@
                                             <action selector="onPhone:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="fXp-77-2nu"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apH-M1-2d9">
+                                        <rect key="frame" x="0.0" y="63.5" width="343" height="53"/>
+                                        <state key="normal" title="Đăng nhập với facebook" image="fb">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onFacebook:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="DBZ-Fj-bbK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDu-dJ-jJj">
+                                        <rect key="frame" x="0.0" y="126.5" width="343" height="53.5"/>
+                                        <state key="normal" title="Đăng nhập với google" image="google">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onGoogle:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="VeL-Li-4g6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="1T6-Yt-2Qa"/>
+                                    <constraint firstAttribute="height" constant="180" id="1T6-Yt-2Qa"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iO4-Sl-KSR" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leadingMargin" constant="32" id="6SY-wg-7Qg"/>
+                            <constraint firstItem="iO4-Sl-KSR" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leadingMargin" id="6SY-wg-7Qg"/>
                             <constraint firstItem="70y-Ga-H2s" firstAttribute="centerX" secondItem="UOK-6x-23h" secondAttribute="centerX" id="ClN-IO-lJD"/>
-                            <constraint firstItem="70y-Ga-H2s" firstAttribute="top" secondItem="iO4-Sl-KSR" secondAttribute="bottom" constant="100" id="Fe8-RY-VNI"/>
+                            <constraint firstItem="70y-Ga-H2s" firstAttribute="top" secondItem="iO4-Sl-KSR" secondAttribute="bottom" constant="84" id="Fe8-RY-VNI"/>
                             <constraint firstItem="GrM-sR-ctW" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leading" id="PcG-F4-xkH"/>
                             <constraint firstItem="GrM-sR-ctW" firstAttribute="top" secondItem="UOK-6x-23h" secondAttribute="top" id="Ro9-Ne-V21"/>
                             <constraint firstItem="BXK-hj-mOQ" firstAttribute="top" secondItem="GrM-sR-ctW" secondAttribute="bottom" id="SK1-Uf-Keh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iO4-Sl-KSR" secondAttribute="trailing" constant="32" id="YuY-mM-TlQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iO4-Sl-KSR" secondAttribute="trailing" id="YuY-mM-TlQ"/>
                             <constraint firstAttribute="trailing" secondItem="GrM-sR-ctW" secondAttribute="trailing" id="bLk-Fq-nfw"/>
                             <constraint firstItem="BXK-hj-mOQ" firstAttribute="top" secondItem="70y-Ga-H2s" secondAttribute="bottom" constant="32" id="jOh-30-47c"/>
                         </constraints>
@@ -258,7 +254,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Splash2" width="1242" height="2208"/>
+        <image name="Splash2" width="375" height="667"/>
         <image name="back" width="13" height="23"/>
+        <image name="fb" width="344" height="41"/>
+        <image name="google" width="344" height="41"/>
+        <image name="sdt" width="344" height="41"/>
     </resources>
 </document>

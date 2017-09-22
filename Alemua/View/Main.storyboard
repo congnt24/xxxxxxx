@@ -23,11 +23,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash2" translatesAutoresizingMaskIntoConstraints="NO" id="Kgj-Bw-r7B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash3" translatesAutoresizingMaskIntoConstraints="NO" id="Kgj-Bw-r7B">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Bzr-yn-ZR1">
-                                <rect key="frame" x="28" y="192" width="319" height="284"/>
+                                <rect key="frame" x="28" y="241.5" width="319" height="284"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng chọn một hình thức" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0B-PA-XxV">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="16"/>
@@ -38,7 +38,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQZ-KW-vZk">
                                         <rect key="frame" x="0.0" y="24" width="319" height="260"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58T-Sa-CQU" userLabel="ChuyenHang">
                                                 <rect key="frame" x="188.5" y="10" width="102.5" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="58T-Sa-CQU" secondAttribute="height" multiplier="17:20" id="295-bt-7vS"/>
@@ -51,9 +51,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nA-gQ-EAi" userLabel="DatMua">
-                                                <rect key="frame" x="31.5" y="10" width="96.5" height="120"/>
+                                                <rect key="frame" x="29" y="10" width="102" height="120"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="4:5" id="nKd-mb-q1x"/>
+                                                    <constraint firstAttribute="width" secondItem="9nA-gQ-EAi" secondAttribute="height" multiplier="17:20" id="nKd-mb-q1x"/>
                                                     <constraint firstAttribute="height" constant="120" id="vad-Y2-8F8"/>
                                                 </constraints>
                                                 <state key="normal" image="Home_DatMua"/>
@@ -61,11 +61,11 @@
                                                     <action selector="onClickOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hsy-VW-qEV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-Vg-BRa">
-                                                <rect key="frame" x="112" y="142" width="95" height="120"/>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-Vg-BRa">
+                                                <rect key="frame" x="108.5" y="142" width="102" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="cNl-9F-Opp"/>
-                                                    <constraint firstAttribute="width" secondItem="9gb-Vg-BRa" secondAttribute="height" multiplier="103:129" id="pvl-TG-ulj"/>
+                                                    <constraint firstAttribute="width" secondItem="9gb-Vg-BRa" secondAttribute="height" multiplier="17:20" id="pvl-TG-ulj"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" image="Home_RaoVat"/>
@@ -104,7 +104,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kgj-Bw-r7B" secondAttribute="bottom" id="CwW-VR-cNu"/>
-                            <constraint firstItem="Bzr-yn-ZR1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Dkb-Rg-v43"/>
+                            <constraint firstItem="Bzr-yn-ZR1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="Dkb-Rg-v43"/>
                             <constraint firstItem="Kgj-Bw-r7B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Lvr-Z0-Wag"/>
                             <constraint firstAttribute="trailing" secondItem="Bzr-yn-ZR1" secondAttribute="trailing" constant="28" id="Tc3-y0-1Iv"/>
                             <constraint firstAttribute="trailing" secondItem="Kgj-Bw-r7B" secondAttribute="trailing" id="Y09-dL-Y49"/>
@@ -4731,10 +4731,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home_ChuyenHang" width="156" height="180"/>
-        <image name="Home_DatMua" width="145" height="183"/>
-        <image name="Home_RaoVat" width="145" height="183"/>
-        <image name="Splash2" width="1242" height="2208"/>
+        <image name="Home_ChuyenHang" width="137" height="157"/>
+        <image name="Home_DatMua" width="137" height="160"/>
+        <image name="Home_RaoVat" width="137" height="159"/>
         <image name="arrow_right" width="14" height="24"/>
         <image name="back" width="13" height="23"/>
         <image name="cancel-button" width="19" height="19"/>
@@ -4839,6 +4838,7 @@ DzIPOg9HD0wPTg9QD1UPXQ9gD2UPbQ9wD4IPhQ+KAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAA
 D4w
 </mutableData>
         </image>
+        <image name="splash3" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PDL-tC-oPy"/>

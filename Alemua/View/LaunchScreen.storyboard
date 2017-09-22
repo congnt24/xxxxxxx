@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,18 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="QrS-hg-psl">
-                                <rect key="frame" x="97.5" y="213" width="180" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="cHT-fE-rcA"/>
-                                    <constraint firstAttribute="width" constant="180" id="xxi-rz-AVb"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="lSb-6o-azB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QrS-hg-psl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="S6d-cj-Uud"/>
-                            <constraint firstItem="QrS-hg-psl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Too-iF-GlO"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="lSb-6o-azB" secondAttribute="bottom" id="LXl-tD-CCa"/>
+                            <constraint firstItem="lSb-6o-azB" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="dJ3-YT-rs1"/>
+                            <constraint firstAttribute="trailing" secondItem="lSb-6o-azB" secondAttribute="trailing" id="jOg-xU-EFJ"/>
+                            <constraint firstItem="lSb-6o-azB" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jfw-zf-NTg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-76" width="76" height="76"/>
+        <image name="Splash" width="375" height="667"/>
     </resources>
 </document>

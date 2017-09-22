@@ -392,7 +392,6 @@
 		02F775551F1FB46300556BED /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		02FDFD2D1F4843A500F3A72B /* LoginByPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginByPasswordViewController.swift; sourceTree = "<group>"; };
 		02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Alemua.entitlements; sourceTree = "<group>"; };
-		02FF30561F70067800452CA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		02FF30581F70068E00452CA8 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		54291CC0F55F9222FD2AFA2C /* Pods-Alemua.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alemua.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alemua/Pods-Alemua.debug.xcconfig"; sourceTree = "<group>"; };
 		78A47C9815B1D2DF7936B4DA /* ConversationUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationUserResponse.swift; sourceTree = "<group>"; };
@@ -933,7 +932,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				vi,
 			);
 			mainGroup = 027B01241F1E621600D576CE;
@@ -1297,7 +1295,6 @@
 		02FF30551F70067800452CA8 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				02FF30561F70067800452CA8 /* Base */,
 				02FF30581F70068E00452CA8 /* vi */,
 			);
 			name = Localizable.strings;

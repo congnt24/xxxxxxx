@@ -2,22 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>38e7e69868fdf0ff947afc220c0f6c7d4c6fa683</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict/>
-                <key>KitName</key>
-                <string>Crashlytics</string>
-            </dict>
-        </array>
-    </dict>
-    
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>38e7e69868fdf0ff947afc220c0f6c7d4c6fa683</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>AccountKitClientToken</key>
 	<string>8f03e5c1ab272cc8c20035473f12b37c</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -72,11 +70,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>"Using camera"</string>
-	<key>NSLocationAlwaysUsageDescription</key>
+	<string>&quot;Using camera&quot;</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Request location permission</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Request location permission</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>"Need to get your photo and video"</string>
+	<string>&quot;Need to get your photo and video&quot;</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

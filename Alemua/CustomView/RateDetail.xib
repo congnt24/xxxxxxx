@@ -31,156 +31,355 @@
                 <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-LZ-XvL">
                     <rect key="frame" x="32" y="0.0" width="311" height="300"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLI-Ad-zhR" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="0.0" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Giá mua"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujT-g9-HN3" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="37.5" width="311" height="0.0"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Giảm giá"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-tL-cmr" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="37.5" width="311" height="0.0"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Mã giảm giá (phí)"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-Hj-pO7" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="37.5" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Thuế"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-G0-K0h" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="75" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí chuyển hàng tại nội địa"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-bw-P6g" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="112.5" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí người mua"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-dA-5Ct" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="150" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí vận chuyển về Alemua"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-eO-8kw" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="187.5" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí vận chuyển tới người mua "/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-uu-hVW" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="225" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí giao dịch qua Alemua (%)"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-ki-sfC" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                            <rect key="frame" x="0.0" y="262.5" width="311" height="37.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
-                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Khối lượng kiện hàng dự tính (kg)"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-hZ-N8j">
+                            <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLI-Ad-zhR" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Giá mua"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-ff-PXf">
+                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="rP2-wa-KSL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="QLI-Ad-zhR" secondAttribute="trailing" id="3eV-dq-kzr"/>
+                                <constraint firstAttribute="bottom" secondItem="RDF-ff-PXf" secondAttribute="bottom" id="EBf-8E-VN3"/>
+                                <constraint firstItem="RDF-ff-PXf" firstAttribute="leading" secondItem="JD0-hZ-N8j" secondAttribute="leading" id="Jde-n0-XMT"/>
+                                <constraint firstItem="QLI-Ad-zhR" firstAttribute="top" secondItem="JD0-hZ-N8j" secondAttribute="top" id="OcL-oN-2du"/>
+                                <constraint firstItem="QLI-Ad-zhR" firstAttribute="leading" secondItem="JD0-hZ-N8j" secondAttribute="leading" id="Tzj-gr-wMU"/>
+                                <constraint firstAttribute="bottom" secondItem="QLI-Ad-zhR" secondAttribute="bottom" id="VXb-al-OKK"/>
+                                <constraint firstAttribute="trailing" secondItem="RDF-ff-PXf" secondAttribute="trailing" id="fWa-dZ-DfL"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h76-sy-bXS">
+                            <rect key="frame" x="0.0" y="33.5" width="311" height="33"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujT-g9-HN3" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Giảm giá"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdP-Lc-3BK">
+                                    <rect key="frame" x="0.0" y="32" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="BM8-0m-WqN"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="a4C-4a-vDY"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="qdP-Lc-3BK" firstAttribute="leading" secondItem="h76-sy-bXS" secondAttribute="leading" id="11P-wZ-GUZ"/>
+                                <constraint firstAttribute="trailing" secondItem="qdP-Lc-3BK" secondAttribute="trailing" id="ONV-Pn-YBX"/>
+                                <constraint firstAttribute="bottom" secondItem="ujT-g9-HN3" secondAttribute="bottom" id="PoQ-bz-rUe"/>
+                                <constraint firstItem="ujT-g9-HN3" firstAttribute="top" secondItem="h76-sy-bXS" secondAttribute="top" id="jJb-xr-LFp"/>
+                                <constraint firstAttribute="trailing" secondItem="ujT-g9-HN3" secondAttribute="trailing" id="kLz-fT-p4L"/>
+                                <constraint firstAttribute="bottom" secondItem="qdP-Lc-3BK" secondAttribute="bottom" id="kd3-eA-ipc"/>
+                                <constraint firstItem="ujT-g9-HN3" firstAttribute="leading" secondItem="h76-sy-bXS" secondAttribute="leading" id="yIi-WG-zhB"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3US-7Y-sDS">
+                            <rect key="frame" x="0.0" y="66.5" width="311" height="0.0"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-tL-cmr" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="0.0"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Mã giảm giá (phí)"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3I-yH-ATK">
+                                    <rect key="frame" x="0.0" y="-1" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="JRT-yN-uvG"/>
+                                        <constraint firstAttribute="height" constant="1" id="fLI-f2-Pls"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="BHW-tL-cmr" firstAttribute="leading" secondItem="3US-7Y-sDS" secondAttribute="leading" id="6UJ-jC-h7a"/>
+                                <constraint firstItem="n3I-yH-ATK" firstAttribute="leading" secondItem="3US-7Y-sDS" secondAttribute="leading" id="InS-pB-5i0"/>
+                                <constraint firstAttribute="bottom" secondItem="BHW-tL-cmr" secondAttribute="bottom" id="Mkb-1o-ah1"/>
+                                <constraint firstAttribute="trailing" secondItem="BHW-tL-cmr" secondAttribute="trailing" id="QbP-hD-Mdz"/>
+                                <constraint firstAttribute="bottom" secondItem="n3I-yH-ATK" secondAttribute="bottom" id="fhq-gX-DXt"/>
+                                <constraint firstAttribute="trailing" secondItem="n3I-yH-ATK" secondAttribute="trailing" id="swd-dd-Jb4"/>
+                                <constraint firstItem="BHW-tL-cmr" firstAttribute="top" secondItem="3US-7Y-sDS" secondAttribute="top" id="vrQ-9Y-cgV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahL-n7-Z3a">
+                            <rect key="frame" x="0.0" y="66.5" width="311" height="33.5"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-Hj-pO7" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Thuế"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKK-CB-NTh">
+                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="BXA-uI-Xad"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="OFN-NY-rmO"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="oaK-Hj-pO7" secondAttribute="bottom" id="Woh-vh-fFy"/>
+                                <constraint firstItem="oaK-Hj-pO7" firstAttribute="top" secondItem="ahL-n7-Z3a" secondAttribute="top" id="dgZ-fg-5NQ"/>
+                                <constraint firstAttribute="bottom" secondItem="xKK-CB-NTh" secondAttribute="bottom" id="ieU-Co-uzo"/>
+                                <constraint firstAttribute="trailing" secondItem="oaK-Hj-pO7" secondAttribute="trailing" id="n2b-qQ-V8k"/>
+                                <constraint firstItem="oaK-Hj-pO7" firstAttribute="leading" secondItem="ahL-n7-Z3a" secondAttribute="leading" id="pXt-fG-E1x"/>
+                                <constraint firstAttribute="trailing" secondItem="xKK-CB-NTh" secondAttribute="trailing" id="tem-xA-tlG"/>
+                                <constraint firstItem="xKK-CB-NTh" firstAttribute="leading" secondItem="ahL-n7-Z3a" secondAttribute="leading" id="vVj-bz-j37"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taO-k9-3ui">
+                            <rect key="frame" x="0.0" y="100" width="311" height="33.5"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-G0-K0h" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí chuyển hàng tại nội địa"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWB-T3-0C4">
+                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="RKW-nB-7xp"/>
+                                        <constraint firstAttribute="height" constant="1" id="pC6-74-l7I"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="m7C-G0-K0h" secondAttribute="bottom" id="3VY-mb-oPg"/>
+                                <constraint firstAttribute="bottom" secondItem="XWB-T3-0C4" secondAttribute="bottom" id="4Uf-3E-gWE"/>
+                                <constraint firstAttribute="trailing" secondItem="m7C-G0-K0h" secondAttribute="trailing" id="BEx-Ie-suv"/>
+                                <constraint firstItem="m7C-G0-K0h" firstAttribute="leading" secondItem="taO-k9-3ui" secondAttribute="leading" id="PcY-eN-cNL"/>
+                                <constraint firstItem="m7C-G0-K0h" firstAttribute="top" secondItem="taO-k9-3ui" secondAttribute="top" id="QoQ-OW-JJm"/>
+                                <constraint firstAttribute="trailing" secondItem="XWB-T3-0C4" secondAttribute="trailing" id="fQY-HK-kfI"/>
+                                <constraint firstItem="XWB-T3-0C4" firstAttribute="leading" secondItem="taO-k9-3ui" secondAttribute="leading" id="tJ6-8G-1J1"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9f-ud-RCA">
+                            <rect key="frame" x="0.0" y="133.5" width="311" height="33"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-bw-P6g" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí người mua"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUy-BA-wYY">
+                                    <rect key="frame" x="0.0" y="32" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="84t-Aw-mhd"/>
+                                        <constraint firstAttribute="height" constant="1" id="XXe-EF-EZv"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="Vrz-bw-P6g" firstAttribute="top" secondItem="l9f-ud-RCA" secondAttribute="top" id="5QE-Zv-rrm"/>
+                                <constraint firstAttribute="trailing" secondItem="Vrz-bw-P6g" secondAttribute="trailing" id="Bgf-5o-fzu"/>
+                                <constraint firstAttribute="trailing" secondItem="hUy-BA-wYY" secondAttribute="trailing" id="V5W-xl-49T"/>
+                                <constraint firstItem="Vrz-bw-P6g" firstAttribute="leading" secondItem="l9f-ud-RCA" secondAttribute="leading" id="Yjm-z9-Zzh"/>
+                                <constraint firstAttribute="bottom" secondItem="hUy-BA-wYY" secondAttribute="bottom" id="Z9P-xI-m5x"/>
+                                <constraint firstItem="hUy-BA-wYY" firstAttribute="leading" secondItem="l9f-ud-RCA" secondAttribute="leading" id="hQ9-o2-QhX"/>
+                                <constraint firstAttribute="bottom" secondItem="Vrz-bw-P6g" secondAttribute="bottom" id="spx-6q-xmv"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-Wh-Nmr">
+                            <rect key="frame" x="0.0" y="166.5" width="311" height="33.5"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-dA-5Ct" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí vận chuyển về Alemua"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLK-Xx-R2A">
+                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="1qZ-k7-8ge"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="wq5-Nh-7jE"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="sLK-Xx-R2A" secondAttribute="trailing" id="7fm-Rz-mNk"/>
+                                <constraint firstItem="sLK-Xx-R2A" firstAttribute="leading" secondItem="C7W-Wh-Nmr" secondAttribute="leading" id="MCZ-wx-H2d"/>
+                                <constraint firstItem="UD9-dA-5Ct" firstAttribute="leading" secondItem="C7W-Wh-Nmr" secondAttribute="leading" id="VCq-Bt-Gn6"/>
+                                <constraint firstAttribute="bottom" secondItem="sLK-Xx-R2A" secondAttribute="bottom" id="hBB-sR-2cP"/>
+                                <constraint firstAttribute="bottom" secondItem="UD9-dA-5Ct" secondAttribute="bottom" id="i6K-kP-Gfm"/>
+                                <constraint firstAttribute="trailing" secondItem="UD9-dA-5Ct" secondAttribute="trailing" id="mEh-aY-HH8"/>
+                                <constraint firstItem="UD9-dA-5Ct" firstAttribute="top" secondItem="C7W-Wh-Nmr" secondAttribute="top" id="rxB-6s-am3"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqL-5n-7gm">
+                            <rect key="frame" x="0.0" y="200" width="311" height="33.5"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-eO-8kw" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí vận chuyển tới người mua "/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sni-aj-ohf">
+                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="RXo-YX-4QK"/>
+                                        <constraint firstAttribute="height" constant="1" id="jxI-2W-Mub"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="xsk-eO-8kw" secondAttribute="trailing" id="40L-eB-MSj"/>
+                                <constraint firstAttribute="bottom" secondItem="sni-aj-ohf" secondAttribute="bottom" id="JBx-c8-5cL"/>
+                                <constraint firstItem="xsk-eO-8kw" firstAttribute="top" secondItem="bqL-5n-7gm" secondAttribute="top" id="JxI-8D-BHP"/>
+                                <constraint firstAttribute="bottom" secondItem="xsk-eO-8kw" secondAttribute="bottom" id="N6D-8V-hn1"/>
+                                <constraint firstItem="sni-aj-ohf" firstAttribute="leading" secondItem="bqL-5n-7gm" secondAttribute="leading" id="Oyp-VK-cGV"/>
+                                <constraint firstItem="xsk-eO-8kw" firstAttribute="leading" secondItem="bqL-5n-7gm" secondAttribute="leading" id="Z67-05-Wpf"/>
+                                <constraint firstAttribute="trailing" secondItem="sni-aj-ohf" secondAttribute="trailing" id="hPh-NJ-oic"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keH-yf-aVX">
+                            <rect key="frame" x="0.0" y="233.5" width="311" height="33"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-uu-hVW" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Phí giao dịch qua Alemua (%)"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-Wl-G9l">
+                                    <rect key="frame" x="0.0" y="32" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="dJQ-zO-NT0"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="lbv-UG-xMl"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="c4E-uu-hVW" secondAttribute="bottom" id="7RH-Bo-mHh"/>
+                                <constraint firstItem="pxc-Wl-G9l" firstAttribute="leading" secondItem="keH-yf-aVX" secondAttribute="leading" id="CHj-sk-on9"/>
+                                <constraint firstAttribute="bottom" secondItem="pxc-Wl-G9l" secondAttribute="bottom" id="FXL-2u-KMB"/>
+                                <constraint firstAttribute="trailing" secondItem="c4E-uu-hVW" secondAttribute="trailing" id="TYj-bW-K62"/>
+                                <constraint firstItem="c4E-uu-hVW" firstAttribute="leading" secondItem="keH-yf-aVX" secondAttribute="leading" id="m9s-uN-dBc"/>
+                                <constraint firstAttribute="trailing" secondItem="pxc-Wl-G9l" secondAttribute="trailing" id="pAV-28-UcV"/>
+                                <constraint firstItem="c4E-uu-hVW" firstAttribute="top" secondItem="keH-yf-aVX" secondAttribute="top" id="weL-nD-CfM"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUe-Pa-vcW">
+                            <rect key="frame" x="0.0" y="266.5" width="311" height="33.5"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-ki-sfC" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="labelLeftColor">
+                                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="labelLeft" value="Khối lượng kiện hàng dự tính (kg)"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-hP-bgs">
+                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="5xS-5b-qYM"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="6rM-6o-eiR"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="AbE-ki-sfC" secondAttribute="trailing" id="0C5-So-LPG"/>
+                                <constraint firstAttribute="bottom" secondItem="6hu-hP-bgs" secondAttribute="bottom" id="6im-k5-d4g"/>
+                                <constraint firstItem="AbE-ki-sfC" firstAttribute="leading" secondItem="gUe-Pa-vcW" secondAttribute="leading" id="L7G-5M-fOw"/>
+                                <constraint firstAttribute="bottom" secondItem="AbE-ki-sfC" secondAttribute="bottom" id="kuV-5L-3G0"/>
+                                <constraint firstAttribute="trailing" secondItem="6hu-hP-bgs" secondAttribute="trailing" id="kxr-iP-hlz"/>
+                                <constraint firstItem="AbE-ki-sfC" firstAttribute="top" secondItem="gUe-Pa-vcW" secondAttribute="top" id="qfM-Wm-Qct"/>
+                                <constraint firstItem="6hu-hP-bgs" firstAttribute="leading" secondItem="gUe-Pa-vcW" secondAttribute="leading" id="zxL-bF-vUS"/>
+                            </constraints>
+                        </view>
                     </subviews>
                 </stackView>
             </subviews>

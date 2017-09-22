@@ -42,10 +42,6 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfGia.text = "\(modelQuoteData.websitePrice! + modelQuoteData.transaction_alemua_free!)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
-        
-        if modelQuoteData.productOption!.contains("4") {
-            rateDetail.showGiamGia()
-        }
 //        let rate = RateDetailData()
         
 //        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 1, orderId: self.modelQuoteData.id!))
@@ -68,11 +64,12 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         
         
         if modelQuoteData.transactionOption == 2 {
-            rateDetail.phivanchuyenvealemua.isHidden = true
-            rateDetail.phigiaodichquaalemua.isHidden = true
+            rateDetail.phivanchuyenvealemua.superview?.isHidden = true
+            rateDetail.phigiaodichquaalemua.superview?.isHidden = true
             rateDetail.phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
             rateDetail.height = 240
         }
+        
         
         
         rateDetail.enableEditing()
@@ -114,6 +111,14 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             rateDetail.notUpdateWeight = true
         }
         tfGia.text = "\(rateDetail.calculateTotal() ?? 0)".toFormatedPrice()
+        
+        
+        
+        if modelQuoteData.productOption!.contains("4") {
+            rateDetail.showGiamGia()
+//            rateDetail.giamgia.bottomLineWidth = 10
+//            rateDetail.giamgia.bottomLineColor = UIColor.red
+        }
     }
 
     @IBAction func onShowMoreRateDetail(_ sender: Any) {

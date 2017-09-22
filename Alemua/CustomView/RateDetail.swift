@@ -68,11 +68,12 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         super.init(coder: aDecoder)
         super.setupView(nibName: "RateDetail")
         //7 item
-        listView = uiStackView.arrangedSubviews.map { ($0 as! AwesomeTextField) }
+        listView = uiStackView.arrangedSubviews.map { ($0.subviews[0] as! AwesomeTextField) }
+        giamgia.superview?.isHidden = true
     }
 
     public func showGiamGia() {
-        giamgia.isHidden = false
+        giamgia.superview?.isHidden = false
     }
     public func enableEditing() {
 //        tonggia.isUserInteractionEnabled = true
@@ -260,19 +261,19 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
     
     func hideForTransactionOption(){
         height = height - 70
-        phivanchuyenvealemua.isHidden = true
-        phigiaodichquaalemua.isHidden = true
+        phivanchuyenvealemua.superview?.isHidden = true
+        phigiaodichquaalemua.superview?.isHidden = true
     }
 
 
 
     func setupRateDetailForMuaHang(_ rateData: RateDetailData) {
-        giamgia.isHidden = true
-        thue.isHidden = true
-        phichuyennoidia.isHidden = true
-        phinguoimua.isHidden = true
-        phivanchuyenvealemua.isHidden = true
-        phigiaodichquaalemua.isHidden = true
+        giamgia.superview?.isHidden = true
+        thue.superview?.isHidden = true
+        phichuyennoidia.superview?.isHidden = true
+        phinguoimua.superview?.isHidden = true
+        phivanchuyenvealemua.superview?.isHidden = true
+        phigiaodichquaalemua.superview?.isHidden = true
 
         let xx = rateData.phigiaodichquaalemua! * rateData.giamua! / 100
         tonggia.text = "\(rateData.giamua! + rateData.thue! + rateData.phinguoimua! + xx)".toFormatedPrice()

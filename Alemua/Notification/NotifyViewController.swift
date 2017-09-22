@@ -90,7 +90,16 @@ class NotifyViewController: BaseViewController {
 
 
         }).addDisposableTo(bag)
-        fetchData()
+        
+        //Loadmore
+        tableView.addInfiniteScroll { (tv) in
+            // update table view
+            self.fetchData()
+            // finish infinite scroll animation
+            tv.finishInfiniteScroll()
+        }
+        
+        tableView.beginInfiniteScroll(true)
     }
 
     override func responseFromViewModel() {
@@ -115,12 +124,14 @@ class NotifyViewController: BaseViewController {
     }
 
     func reloadPage() {
+        self.currentPage = 1
         let isShipper = HomeViewController.homeType == .order ? 0 : 1
         AlemuaApi.shared.aleApi.request(.getNotifications(page_number: currentPage, is_shipper: isShipper))
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done(let result, _):
+                    self.currentPage += 1
                     if let arr = result.array {
                         self.datas.value = arr.map { NotifyData(json: $0) }
                     }
@@ -140,6 +151,7 @@ class NotifyViewController: BaseViewController {
             .subscribe(onNext: { (res) in
                 switch res {
                 case .done(let result, _):
+                    self.currentPage += 1
                     if let arr = result.array {
                         self.datas.value.append(contentsOf: arr.map { NotifyData(json: $0) })
                     }

@@ -21,6 +21,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
                 lbGiaoDen.text = orderData.deliveryTo
                 lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
                 lbGia.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+                tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
                 lbMota.text = orderData.note
                 lbLuaChon.text =
                     (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
@@ -37,6 +38,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var lbMuaTu: AwesomeTextField!
     @IBOutlet weak var lbGiaoDen: AwesomeTextField!
     @IBOutlet weak var lbNgay: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var lbGia: AwesomeTextField!
     @IBOutlet weak var lbMota: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!

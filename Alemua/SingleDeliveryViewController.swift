@@ -25,7 +25,7 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
     let AleProvider = RxMoyaProvider<AleApi>(endpointClosure: endpointClosure)
     var datas = Variable<[ModelOrderClientData]>([])
     var currentPage = 1
-    var cacheFilter = -1
+    var cacheFilter = 0
     
     public static var shouldReloadPage = -1
 
@@ -38,9 +38,6 @@ class SingleDeliveryViewController: UIViewController, IndicatorInfoProvider {
         tableView.addSubview(refreshControl)
         
         setupTableView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
     }
     
     override func viewDidAppear(_ animated: Bool) {

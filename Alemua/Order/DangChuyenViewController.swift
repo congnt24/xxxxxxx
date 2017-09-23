@@ -20,6 +20,7 @@ class DangChuyenViewController: UIViewController {
     @IBOutlet weak var tfMuaTu: AwesomeTextField!
     @IBOutlet weak var tfGiaoDen: AwesomeTextField!
     @IBOutlet weak var tfTruocNgay: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var ifTongGia: AwesomeTextField!
     @IBOutlet weak var tfMoTa: AwesomeTextField!
     @IBOutlet weak var tfGhiChu: AwesomeTextField!
@@ -57,7 +58,8 @@ class DangChuyenViewController: UIViewController {
         tfMuaTu.text = modelDangChuyen.buyFrom
         tfGiaoDen.text = modelDangChuyen.deliveryTo
         tfTruocNgay.text = modelDangChuyen.deliveryDate?.toFormatedDate()
-        ifTongGia.text = "\(modelDangChuyen.getTotal())".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+        ifTongGia.text = "\(modelDangChuyen.totalPrice ?? 0)".toFormatedPrice()
         tfMoTa.text = modelDangChuyen.descriptionValue
         tfGhiChu.text = modelDangChuyen.note
         //bind rate detail

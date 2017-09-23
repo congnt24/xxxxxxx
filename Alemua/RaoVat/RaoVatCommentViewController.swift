@@ -87,7 +87,7 @@ class RaoVatCommentViewController: BaseViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {
                 LoginViewController.isIgnore = false
@@ -104,9 +104,6 @@ class RaoVatCommentViewController: BaseViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
     
     func reloadPage(){
         currentPage = 1

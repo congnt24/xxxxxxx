@@ -41,7 +41,7 @@ class AccountViewController: BaseViewController {
 
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         //TODO: Check if user is logged
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {

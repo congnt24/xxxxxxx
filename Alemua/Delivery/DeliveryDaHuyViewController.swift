@@ -16,6 +16,7 @@ class DeliveryDaHuyViewController: UIViewController {
     @IBOutlet weak var tfMuatu: AwesomeTextField!
     @IBOutlet weak var tfGiaoden: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfLydo: AwesomeTextField!
     @IBOutlet weak var tfGhichu: AwesomeTextField!
@@ -42,6 +43,7 @@ class DeliveryDaHuyViewController: UIViewController {
                 tfMuatu.text = data.buyFrom
                 tfNgay.text = data.deliveryDate?.toFormatedDate()
                 tfGia.text = "\(orderData.totalPrice ?? 0)".toFormatedPrice()
+                tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
                 tfLydo.text = data.cancelReason
                 tfGhichu.text = data.note
             }

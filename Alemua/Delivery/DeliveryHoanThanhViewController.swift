@@ -16,6 +16,7 @@ class DeliveryHoanThanhViewController: UIViewController {
     @IBOutlet weak var tfMuatu: AwesomeTextField!
     @IBOutlet weak var tfGiaoden: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
@@ -52,8 +53,8 @@ class DeliveryHoanThanhViewController: UIViewController {
         tfMuatu.text = orderData.buyFrom
         tfGiaoden.text = orderData.deliveryTo
         tfNgay.text = orderData.deliveryDate?.toFormatedDate()
-        tfGia.text = "\(orderData.totalPrice!)"
-        
+        tfGia.text = "\(orderData.totalPrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
         AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 3, orderId: orderData.id!))
             .toJSON()
             .subscribe(onNext: { (res) in

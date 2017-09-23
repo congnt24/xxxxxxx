@@ -24,6 +24,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var tfMuatu: AwesomeTextField!
     @IBOutlet weak var tfGiaoden: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
@@ -40,6 +41,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfGiaoden.text = modelQuoteData.deliveryTo
         tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(modelQuoteData.websitePrice! + modelQuoteData.transaction_alemua_free!)".toFormatedPrice()
+        tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
 //        let rate = RateDetailData()

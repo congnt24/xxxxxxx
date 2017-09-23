@@ -15,19 +15,19 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
     @IBAction func onBack(_ sender: Any) {
         if HomeViewController.homeType == .order {
             OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
-        }else{
+        } else {
             DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
         }
     }
-    
+
     var listVc = [SingleOrderViewController]()
     public static var selectViewController = -1
-    
+
     var indexShouldReload = [Int]()
     var cacheFilter = 0
-    
-    
-    
+
+
+
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -52,24 +52,26 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
             if LoginViewController.isIgnore {
                 onBack("")
                 LoginViewController.isIgnore = false
-            }else{
+            } else {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
+            return
         }
         if OrderOrderViewController.selectViewController > 0 {
             moveToViewController(at: OrderOrderViewController.selectViewController)
             OrderOrderViewController.selectViewController = -1
         }
-        
+
         if cacheFilter != OrderFilterViewController.orderOrderFilterType {
             cacheFilter = OrderFilterViewController.orderOrderFilterType
-            OrderOrderViewController.shared.indexShouldReload.append(contentsOf: [0,1,2,3])
+            OrderOrderViewController.shared.indexShouldReload.append(contentsOf: [0, 1, 2, 3])
         }
 //        OrderOrderViewController.shared.indexShouldReload.append(contentsOf: [0,1,2,3])
         for vc in indexShouldReload {
             listVc[vc].viewDidAppear(false)
         }
-        
+
+
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -77,7 +79,7 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         let child2: SingleOrderViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: SingleOrderViewController.self)
         let child3: SingleOrderViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: SingleOrderViewController.self)
         let child4: SingleOrderViewController = UIStoryboard.mainStoryboard!.instantiateViewController(withClass: SingleOrderViewController.self)
-        
+
         child1.itemInfo = IndicatorInfo(title: "Đơn mua")
         child2.itemInfo = IndicatorInfo(title: "Báo giá")
         child3.itemInfo = IndicatorInfo(title: "Đang chuyển")
@@ -86,7 +88,7 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
         child2.orderType = .BaoGia
         child3.orderType = .DangChuyen
         child4.orderType = .DaMua
-        
+
         listVc = [child1, child2, child3, child4]
         return listVc
     }

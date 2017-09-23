@@ -60,7 +60,7 @@ class ConversationViewController: BaseViewController {
         // Simple view controller -> Don't need viewmodel
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {
                 onBack("")

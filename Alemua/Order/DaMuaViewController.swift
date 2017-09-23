@@ -17,6 +17,7 @@ class DaMuaViewController: UIViewController {
     @IBOutlet weak var tfGiaoden: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
     @IBOutlet weak var tfGia: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var uiMoreDetail: RateDetail!
     @IBOutlet weak var review1: ReviewView!
     @IBOutlet weak var review2: ReviewView!
@@ -30,7 +31,6 @@ class DaMuaViewController: UIViewController {
                 review2.bindData(name: data.userShipPhone, rating: data.userShipRating, nguoidang: 1)
                 uiMoreDetail.setupRateDetailForMuaHang(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice,  discount: data.discount, magiamgia: data.promotion_money, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
                 tfGia.text = "\(data.totalPrice ?? 0)".toFormatedPrice()
-                
 //                if (orderData.transactionOption ?? 0) == 2 {
 //                    uiMoreDetail.hideForTransactionOption()
 //                }
@@ -52,6 +52,7 @@ class DaMuaViewController: UIViewController {
         tfGiaoden.text = orderData.deliveryTo
         tfNgay.text = orderData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
         
         AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 3, orderId: orderData.id!))
             .toJSON()

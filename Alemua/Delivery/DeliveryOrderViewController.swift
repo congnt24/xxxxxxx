@@ -58,7 +58,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         listVC = [child1, child2, child3, child4]
         return listVC
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         //change to default index
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {
@@ -67,15 +67,13 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
             }else{
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
+            return
         }
         
         if SingleDeliveryViewController.shouldReloadPage > 0 {
             listVC[0].reloadPage()
             SingleDeliveryViewController.shouldReloadPage = -1
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if DeliveryOrderViewController.defaultTab > 0 {
             moveToViewController(at: DeliveryOrderViewController.defaultTab)
             DeliveryOrderViewController.defaultTab = 0
@@ -90,6 +88,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
             listVC[vc].viewDidAppear(false)
         }
     }
+    
     
 
     override func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {

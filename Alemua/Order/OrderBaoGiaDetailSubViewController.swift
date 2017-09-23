@@ -21,6 +21,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     @IBOutlet weak var tfMuatu: AwesomeTextField!
     @IBOutlet weak var tfGiaoden: AwesomeTextField!
     @IBOutlet weak var tfNgay: AwesomeTextField!
+    @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfLuachon: AwesomeTextField!
@@ -68,7 +69,8 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
         tfMuatu.text = modelOrderBaoGia.buyFrom
         tfGiaoden.text = modelOrderBaoGia.deliveryTo
         tfNgay.labelLeft = modelOrderBaoGia.deliveryDate!.toFormatedDate()
-        tfGia.text = "\(modelOrderBaoGia.totalPrice!)".toFormatedPrice()
+        tfGia.text = "\(modelOrderBaoGia.totalPrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
         tfMota.text = modelOrderBaoGia.descriptionValue
         tfLuachon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
         

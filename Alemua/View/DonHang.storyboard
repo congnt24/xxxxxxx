@@ -251,7 +251,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Jhq-b5-Ioh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vz3-Xj-vlO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VQ-fP-J4x" userLabel="Navigation">
@@ -279,7 +279,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-OQ-S2X">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1186"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1286"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHm-nv-rce">
                                         <rect key="frame" x="8" y="8" width="360" height="95"/>
@@ -435,7 +435,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKe-2Q-6DW">
-                                        <rect key="frame" x="0.0" y="281" width="376" height="914"/>
+                                        <rect key="frame" x="0.0" y="281" width="376" height="938"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-9e-zSS" customClass="ItemView" customModule="Alemua" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="344" height="95"/>
@@ -677,7 +677,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOg-2k-cBO" customClass="AwesomeToggleViewByHeight" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="859" width="344" height="0.0"/>
+                                                <rect key="frame" x="16" y="883" width="344" height="0.0"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-VN-7pB">
                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="0.0"/>
@@ -705,11 +705,14 @@
                                                     <constraint firstAttribute="bottom" secondItem="7iJ-VN-7pB" secondAttribute="bottom" id="yPq-px-76e"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHide" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHide" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99k-bo-8AI" customClass="HTMLLabel" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="843" width="344" height="0.0"/>
+                                                <rect key="frame" x="16" y="843" width="344" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="rTf-NN-Z00"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -720,7 +723,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-2O-xP1">
-                                                <rect key="frame" x="16" y="859" width="344" height="39"/>
+                                                <rect key="frame" x="16" y="883" width="344" height="39"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a32-o1-dEJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="39"/>
@@ -765,26 +768,39 @@
                                                     <constraint firstAttribute="height" constant="39" id="4mZ-7q-NW9"/>
                                                 </constraints>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJ6-PY-cFF" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="407" width="344" height="300"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="tou-QR-v4D"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHide" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="BEG-2N-HeX" firstAttribute="top" secondItem="jJ6-PY-cFF" secondAttribute="bottom" constant="8" id="0QE-9h-qtE"/>
                                             <constraint firstAttribute="trailing" secondItem="MJs-kk-5zS" secondAttribute="trailing" constant="18" id="0jP-kO-Y0r"/>
                                             <constraint firstItem="xgi-2O-xP1" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="4QO-sU-lCR"/>
+                                            <constraint firstItem="YOg-2k-cBO" firstAttribute="top" secondItem="99k-bo-8AI" secondAttribute="bottom" constant="8" id="5Tj-Jk-jCX"/>
                                             <constraint firstAttribute="trailing" secondItem="99k-bo-8AI" secondAttribute="trailing" constant="16" id="5dL-Mw-GPC"/>
                                             <constraint firstItem="aNj-9e-zSS" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="GJh-AD-Uhy"/>
-                                            <constraint firstAttribute="height" constant="914" id="OdF-lx-OAE"/>
+                                            <constraint firstItem="jJ6-PY-cFF" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="MbM-Jx-ZhF"/>
                                             <constraint firstItem="YOg-2k-cBO" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="P3p-St-Tk8"/>
                                             <constraint firstAttribute="trailing" secondItem="xgi-2O-xP1" secondAttribute="trailing" constant="16" id="TBc-fx-saC"/>
                                             <constraint firstAttribute="trailing" secondItem="BEG-2N-HeX" secondAttribute="trailing" constant="16" id="Wtt-l9-tBi"/>
                                             <constraint firstItem="xgi-2O-xP1" firstAttribute="top" secondItem="YOg-2k-cBO" secondAttribute="bottom" id="Xna-sY-Ttx"/>
+                                            <constraint firstItem="jJ6-PY-cFF" firstAttribute="top" secondItem="MJs-kk-5zS" secondAttribute="bottom" constant="8" id="YW7-Np-eWB"/>
                                             <constraint firstAttribute="bottom" secondItem="xgi-2O-xP1" secondAttribute="bottom" constant="16" id="aBo-0f-beV"/>
                                             <constraint firstItem="99k-bo-8AI" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="afj-jK-zok"/>
                                             <constraint firstItem="BEG-2N-HeX" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="16" id="biA-Oi-0Hd"/>
                                             <constraint firstAttribute="trailing" secondItem="YOg-2k-cBO" secondAttribute="trailing" constant="16" id="cZz-n2-pDP"/>
                                             <constraint firstItem="MJs-kk-5zS" firstAttribute="top" secondItem="aNj-9e-zSS" secondAttribute="bottom" constant="8" id="dYK-ch-7oh"/>
                                             <constraint firstItem="aNj-9e-zSS" firstAttribute="top" secondItem="lKe-2Q-6DW" secondAttribute="top" constant="16" id="gUC-wH-Nlk"/>
-                                            <constraint firstItem="YOg-2k-cBO" firstAttribute="top" secondItem="99k-bo-8AI" secondAttribute="bottom" constant="16" id="jwt-8t-Kga"/>
                                             <constraint firstItem="99k-bo-8AI" firstAttribute="top" secondItem="BEG-2N-HeX" secondAttribute="bottom" constant="16" id="mcK-rf-Hdo"/>
+                                            <constraint firstAttribute="trailing" secondItem="jJ6-PY-cFF" secondAttribute="trailing" constant="16" id="s1o-Fi-LQj"/>
                                             <constraint firstItem="MJs-kk-5zS" firstAttribute="leading" secondItem="lKe-2Q-6DW" secondAttribute="leading" constant="18" id="wjE-3C-FSi"/>
                                             <constraint firstAttribute="trailing" secondItem="aNj-9e-zSS" secondAttribute="trailing" constant="16" id="x75-xK-gZQ"/>
                                         </constraints>
@@ -822,7 +838,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1250"/>
+                    <size key="freeformSize" width="375" height="1350"/>
                     <connections>
                         <outlet property="ifTongGia" destination="rkA-5z-vic" id="mt7-gO-l5B"/>
                         <outlet property="lbGio" destination="wPd-jP-Mho" id="L1P-bh-03o"/>
@@ -838,6 +854,7 @@
                         <outlet property="uiDelivery" destination="YOg-2k-cBO" id="xRU-5Y-gas"/>
                         <outlet property="uiItemView" destination="aNj-9e-zSS" id="Xjd-s9-D22"/>
                         <outlet property="uiOrder" destination="xgi-2O-xP1" id="A3S-JA-sa0"/>
+                        <outlet property="uiRateDetail" destination="jJ6-PY-cFF" id="MXc-4N-D1z"/>
                         <outlet property="uiReview1" destination="sbu-4V-6Mb" id="rtK-13-14a"/>
                         <outlet property="uiReview2" destination="Gu6-Je-Nf5" id="43C-qy-iQX"/>
                     </connections>

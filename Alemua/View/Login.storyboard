@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70y-Ga-H2s">
-                                <rect key="frame" x="165.5" y="607" width="43" height="28"/>
+                                <rect key="frame" x="166" y="607" width="43" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Bỏ qua">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,12 +36,13 @@
                                     <action selector="onIgnore:" destination="Pb7-8a-Yx1" eventType="touchUpInside" id="r9E-N6-k05"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iO4-Sl-KSR">
-                                <rect key="frame" x="16" y="343" width="343" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iO4-Sl-KSR">
+                                <rect key="frame" x="16" y="379" width="343" height="164"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kza-5q-7HG">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="53.5"/>
-                                        <state key="normal" image="sdt">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" backgroundImage="sdt">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -59,8 +61,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apH-M1-2d9">
-                                        <rect key="frame" x="0.0" y="63.5" width="343" height="53"/>
-                                        <state key="normal" image="fb">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="44"/>
+                                        <state key="normal" backgroundImage="fb">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -79,8 +81,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDu-dJ-jJj">
-                                        <rect key="frame" x="0.0" y="126.5" width="343" height="53.5"/>
-                                        <state key="normal" image="google">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="44"/>
+                                        <state key="normal" backgroundImage="google">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -100,15 +102,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="1T6-Yt-2Qa"/>
+                                    <constraint firstAttribute="width" secondItem="iO4-Sl-KSR" secondAttribute="height" multiplier="343:164" id="G9Y-wX-MaC"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iO4-Sl-KSR" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leadingMargin" id="6SY-wg-7Qg"/>
+                            <constraint firstItem="iO4-Sl-KSR" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leadingMargin" id="78E-JE-YLC"/>
                             <constraint firstItem="70y-Ga-H2s" firstAttribute="centerX" secondItem="UOK-6x-23h" secondAttribute="centerX" id="ClN-IO-lJD"/>
-                            <constraint firstItem="70y-Ga-H2s" firstAttribute="top" secondItem="iO4-Sl-KSR" secondAttribute="bottom" constant="84" id="Fe8-RY-VNI"/>
+                            <constraint firstItem="70y-Ga-H2s" firstAttribute="top" secondItem="iO4-Sl-KSR" secondAttribute="bottom" constant="64" id="Fe8-RY-VNI"/>
                             <constraint firstItem="GrM-sR-ctW" firstAttribute="leading" secondItem="UOK-6x-23h" secondAttribute="leading" id="PcG-F4-xkH"/>
                             <constraint firstItem="GrM-sR-ctW" firstAttribute="top" secondItem="UOK-6x-23h" secondAttribute="top" id="Ro9-Ne-V21"/>
                             <constraint firstItem="BXK-hj-mOQ" firstAttribute="top" secondItem="GrM-sR-ctW" secondAttribute="bottom" id="SK1-Uf-Keh"/>

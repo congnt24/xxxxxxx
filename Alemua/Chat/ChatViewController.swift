@@ -49,7 +49,7 @@ class ChatViewController: JSQMessagesViewController, MessageReceivedDelegate {
 
         //init delegate
         self.senderId = "\(Prefs.userId)"
-        self.senderDisplayName = "Cong"
+        self.senderDisplayName = "\(Prefs.userName)"
 //        navigationController?.navigationBar.isHidden = false
         //change send item on inputtoolbar
         let rightButton = UIButton(frame: CGRect.zero)

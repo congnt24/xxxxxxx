@@ -135,6 +135,7 @@ public class UpdateProfileRequest {
     public var photo: String?
     public var profileType: Int?
     public var isNotify: Int?
+    public var phoneNumber: String?
 }
 
 

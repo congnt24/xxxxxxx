@@ -171,13 +171,13 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
 
 
     }
-    
-    
+
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
-    
+
+
     override func responseFromViewModel() {
 
     }
@@ -193,8 +193,16 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
     @IBAction func btnLike(_ sender: Any) {
         if !Prefs.isUserLogged {
             HomeCoordinator.sharedInstance.showLoginScreen()
+            return
+        }
+        if isNotEnoughInfo() {
+            if EditAccountViewController.isIgnore {
+                EditAccountViewController.isIgnore = false
+                navigationController?.popViewController()
+            } else {
+                AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
+            }
         } else {
-
             RaoVatService.shared.api.request(RaoVatApi.addFavorite(adv_detail_id: data.id!))
                 .toJSON()
                 .subscribe(onNext: { (res) in

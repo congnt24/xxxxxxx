@@ -57,6 +57,16 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
             }
             return
         }
+        if isNotEnoughInfo() {
+            print("EditAccountViewController.isIgnore \(EditAccountViewController.isIgnore )")
+            if EditAccountViewController.isIgnore {
+                EditAccountViewController.isIgnore = false
+                navigationController?.popViewController()
+            } else {
+                AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
+            }
+            return
+        }
     }
     
     func bindRequest(){

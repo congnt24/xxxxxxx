@@ -25,7 +25,7 @@ class AccountViewController: BaseViewController {
     @IBOutlet weak var lbHoanthanh: UILabel!
     @IBOutlet weak var lbDahuy: UILabel!
     @IBOutlet weak var lbDesc: UILabel!
-    
+
     var data: ProfileData?
     override func bindToViewModel() {
         let tapSetting = UITapGestureRecognizer(target: self, action: #selector(self.showAccountSetting(_:)))
@@ -47,11 +47,12 @@ class AccountViewController: BaseViewController {
             if LoginViewController.isIgnore {
                 onBack("")
                 LoginViewController.isIgnore = false
-            }else{
+            } else {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
             return
         }
+
         if Prefs.isUserLogged {
             AlemuaApi.shared.aleApi.request(.getUserProfile(profileType: 1))
                 .toJSON()
@@ -61,13 +62,13 @@ class AccountViewController: BaseViewController {
                         self.data = ProfileData(json: result)
                         self.userView.bindData(data: self.data!, profileType: 1)
                         self.uiSwitchNotify.isOn = self.data?.isNotify! == 0 ? false : true
-                        
+
                         self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"
                         self.lbHoanthanh.text = "\(self.data?.transaction_myself ?? 0)"
                         self.lbDahuy.text = "\(self.data?.totalMoney ?? 0)".toRaoVatPriceFormat()
                         self.lbDesc.text = "\"\(self.data?.description ?? "")\""
-                        
-                        
+
+
                         print("Get Profile success")
                         break
                     case .error(let msg):

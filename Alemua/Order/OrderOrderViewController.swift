@@ -57,6 +57,17 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
             }
             return
         }
+        
+        if isNotEnoughInfo() {
+            if EditAccountViewController.isIgnore {
+                EditAccountViewController.isIgnore = false
+                onBack("")
+            } else {
+                AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
+            }
+            return
+        }
+        
         if OrderOrderViewController.selectViewController > 0 {
             moveToViewController(at: OrderOrderViewController.selectViewController)
             OrderOrderViewController.selectViewController = -1

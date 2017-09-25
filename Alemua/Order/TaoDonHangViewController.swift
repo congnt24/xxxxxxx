@@ -43,6 +43,17 @@ class TaoDonHangViewController: ButtonBarPagerTabStripViewController {
             }else{
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
+            return
+        }
+        
+        if isNotEnoughInfo() {
+            if EditAccountViewController.isIgnore {
+                EditAccountViewController.isIgnore = false
+                navigationController?.popViewController()
+            } else {
+                AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
+            }
+            return
         }
     }
 

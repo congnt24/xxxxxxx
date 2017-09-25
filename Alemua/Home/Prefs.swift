@@ -8,6 +8,15 @@
 
 import Foundation
 
+
+
+func isNotEnoughInfo() -> Bool {
+    if Prefs.phoneNumber == "" || Prefs.userName == "" || Prefs.address == "" || Prefs.desc == "" || Prefs.email == "" {
+        return true
+    }
+    return false
+}
+
 class Prefs {
     static let isTest = false
     
@@ -49,6 +58,33 @@ class Prefs {
         }
         set(token) {
             UserDefaults.standard.set(token, forKey: "userName")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    class var email: String {
+        get {
+            return UserDefaults.standard.string(forKey: "email") ?? ""
+        }
+        set(token) {
+            UserDefaults.standard.set(token, forKey: "email")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    class var address: String {
+        get {
+            return UserDefaults.standard.string(forKey: "address") ?? ""
+        }
+        set(token) {
+            UserDefaults.standard.set(token, forKey: "address")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    class var desc: String {
+        get {
+            return UserDefaults.standard.string(forKey: "desc") ?? ""
+        }
+        set(token) {
+            UserDefaults.standard.set(token, forKey: "desc")
             UserDefaults.standard.synchronize()
         }
     }

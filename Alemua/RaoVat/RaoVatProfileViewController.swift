@@ -14,7 +14,7 @@ import RxCocoa
 
 class RaoVatProfileViewController: BaseViewController {
     var bag = DisposeBag()
-    
+
     var profileData: ProfileData? {
         didSet {
             if let data = profileData {
@@ -22,7 +22,7 @@ class RaoVatProfileViewController: BaseViewController {
             }
         }
     }
-    
+
     @IBOutlet weak var userView: RaoVatUserView!
     @IBOutlet weak var stFavorite: UIStackView!
     @IBOutlet weak var stPublished: UIStackView!
@@ -31,23 +31,32 @@ class RaoVatProfileViewController: BaseViewController {
         stPublished.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onPublished)))
         fetchProfile()
     }
-    
+
     override func responseFromViewModel() {
-        
+
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if !Prefs.isUserLogged {
             if LoginViewController.isIgnore {
                 LoginViewController.isIgnore = false
                 RaoVatCoordinator.sharedInstance.navigation?.popViewController()
-            }else{
+            } else {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
             return
+        } else {
+            if isNotEnoughInfo() {
+                if EditAccountViewController.isIgnore {
+                    EditAccountViewController.isIgnore = false
+                    navigationController?.popViewController()
+                } else {
+                    AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
+                }
+            }
         }
     }
-    
+
     func fetchProfile() {
         LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(AleApi.getUserProfile(profileType: 1))
@@ -65,11 +74,11 @@ class RaoVatProfileViewController: BaseViewController {
                 LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
     }
-    
+
     func onFavorite() {
         RaoVatCoordinator.sharedInstance.showRaoVatListAction(data: .Favorite)
     }
-    
+
     func onPublished() {
         RaoVatCoordinator.sharedInstance.showRaoVatListAction(data: .Published)
     }

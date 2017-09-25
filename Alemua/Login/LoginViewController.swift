@@ -51,12 +51,14 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
                         LoadingOverlay.shared.hideOverlayView()
                         switch res {
                         case .done(let result, _):
+                            
                             Prefs.isUserLogged = true
                             Prefs.userId = result["id"].int!
                             Prefs.apiToken = result["ApiToken"].string!
                             Prefs.phoneNumber = phone
                             Prefs.photo = result["photo"].string ?? ""
                             Prefs.userName = result["name"].string ?? "" //start socketio
+                            
 
                             SocketIOHelper.shared.connectToSocketIO()
                             self.navigationController?.popViewController(animated: false)

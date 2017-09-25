@@ -48,6 +48,11 @@ class AccountSettingViewController: BaseViewController {
         Prefs.isUserLogged = false
         Prefs.userId = 0
         Prefs.apiToken = ""
+        Prefs.userName = ""
+        Prefs.address = ""
+        Prefs.email = ""
+        Prefs.desc = ""
+        Prefs.phoneNumber = ""
     }
 }
 

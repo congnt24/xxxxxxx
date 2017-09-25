@@ -308,6 +308,7 @@ extension AleApi: TargetType {
             params["profile_type"] = data.profileType ?? 2
             params["is_notify"] = data.isNotify ?? 0
             params["name"] = data.name ?? ""
+            params["phone_number"] = data.phoneNumber ?? ""
             return params
         case .uploadFile(_):
             var params = [String: Any]()

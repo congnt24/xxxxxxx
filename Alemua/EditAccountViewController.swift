@@ -13,6 +13,8 @@ import RxCocoa
 import MobileCoreServices
 
 class EditAccountViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    public static var isIgnore = false
+    
     @IBOutlet weak var uiMoreDetails: AwesomeToggleViewByHeight!
 
     @IBOutlet weak var tfTen: AwesomeTextField!
@@ -21,38 +23,63 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
     @IBOutlet weak var userView: UserView!
     var coordinator: AccountCoordinator!
     
+    @IBOutlet weak var heighPhone: NSLayoutConstraint!
+    @IBOutlet weak var stPhone: UIStackView!
+    @IBOutlet weak var tfPhone: AwesomeTextField!
     @IBOutlet weak var tvGioiThieu: UITextView!
     @IBOutlet weak var lbDangxuly: UILabel!
     @IBOutlet weak var lbDahuy: UILabel!
     @IBOutlet weak var lbHoanthanh: UILabel!
     @IBOutlet weak var lbDesc: UILabel!
     var data: ProfileData?
+    var user_id: Int?
+    
+    
+    var data2: ProfileData? {
+        didSet {
+            if let data = data2 {
+                tfTen.text = data.name
+                tfDiachi.text = data.address ?? ""
+                tfEmail.text = data.email ?? ""
+                tvGioiThieu.text = data.description ?? ""
+                let phone = data.phoneNumber ?? ""
+                tfPhone.text = phone
+                if phone != "" {
+//                    heighPhone.constant = 0
+//                    stPhone.isHidden = true
+                    tfPhone.isEnabled = false
+                    tfPhone.textColor = UIColor.darkGray
+                }
+                
+                if HomeViewController.homeType == .order {
+                    self.userView.bindData(data: data, profileType: 1)
+                    self.lbDangxuly.text = "\(data.numberInProgress ?? 0)"
+                    self.lbHoanthanh.text = "\(data.numberDone ?? 0)"
+                    self.lbDahuy.text = "\(data.numberCancelled ?? 0)"
+                }else{
+                    self.userView.bindData(data: data, profileType: 2)
+                    self.lbDangxuly.text = "\(data.numberOrder ?? 0)"
+                    self.lbHoanthanh.text = "\(data.numberUser ?? 0)"
+                    self.lbDahuy.text = "\(data.totalMoney ?? 0)"
+                }
+                
+                self.lbDesc.text = "\"\(data.description ?? "")\""
+                
+            }
+        }
+    }
+    
     let bag = DisposeBag()
     
     override func bindToViewModel() {
         userView.toggleView = {
             self.uiMoreDetails.toggleHeight()
         }
-
-        tfTen.text = data?.name
-        tfDiachi.text = data?.address ?? ""
-        tfEmail.text = data?.email ?? ""
-        tvGioiThieu.text = data?.description ?? ""
-        
-        if HomeViewController.homeType == .order {
-            self.userView.bindData(data: self.data, profileType: 1)
-            self.lbDangxuly.text = "\(self.data?.numberInProgress ?? 0)"
-            self.lbHoanthanh.text = "\(self.data?.numberDone ?? 0)"
-            self.lbDahuy.text = "\(self.data?.numberCancelled ?? 0)"
+        if let user_id = user_id {
+            fetchData(user_id)
         }else{
-            self.userView.bindData(data: self.data, profileType: 2)
-            self.lbDangxuly.text = "\(self.data?.numberOrder ?? 0)"
-            self.lbHoanthanh.text = "\(self.data?.numberUser ?? 0)"
-            self.lbDahuy.text = "\(self.data?.totalMoney ?? 0)"
+            data2 = data
         }
-
-        self.lbDesc.text = "\"\(self.data?.description ?? "")\""
-        
         userView.onAvatar = { imgView in
 //            PictureHelper.pickPhoto(delegate: self, vc: self)
             
@@ -74,6 +101,9 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
         req.photo = data?.photo
         req.profileType = 2
         req.isNotify = data?.isNotify
+        if tfPhone.text != "" {
+            req.phoneNumber = tfPhone.text
+        }
         
         LoadingOverlay.shared.showOverlay(view: view)
         //            upload image
@@ -105,12 +135,32 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
                 case .done( _):
                     AppCoordinator.sharedInstance.navigation?.popViewController()
                     Prefs.userName = req.name ?? ""
+                    Prefs.address = req.address ?? ""
+                    Prefs.email = req.email ?? ""
+                    Prefs.desc = req.descriptionValue ?? ""
+                    Prefs.phoneNumber = req.phoneNumber ?? ""
                     print("Update profile success")
                     break
                 case .error(let msg):
                     print("Error \(msg)")
                     break
                 default: break
+                }
+            }).addDisposableTo(bag)
+    }
+    
+    func fetchData(_ user_id: Int){
+        AlemuaApi.shared.aleApi.request(.getUserProfile(profileType: 1))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    self.data2 = ProfileData(json: result)
+                    print("Get Profile success")
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
                 }
             }).addDisposableTo(bag)
     }
@@ -127,6 +177,11 @@ class EditAccountViewController: BaseViewController, UIImagePickerControllerDele
             userView.avatar.image = image
             
         }
+    }
+    @IBAction func onCancel(_ sender: Any) {
+        EditAccountViewController.isIgnore = true
+        navigationController?.popViewController()
+        
     }
 }
 

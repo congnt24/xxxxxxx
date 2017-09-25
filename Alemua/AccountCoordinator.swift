@@ -22,6 +22,12 @@ class AccountCoordinator: Coordinator {
         account.data = data
         navigation?.pushViewController(account, animated: true)
     }
+    public func openEditAccount(user_id: Int){
+        let account: EditAccountViewController = getProfileStoryboard().instantiateViewController(withClass: EditAccountViewController.self)
+        account.coordinator = self
+        account.user_id = user_id
+        navigation?.pushViewController(account, animated: true)
+    }
 }
 
 extension AccountCoordinator {

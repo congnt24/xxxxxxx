@@ -70,6 +70,16 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
             return
         }
         
+        if isNotEnoughInfo() {
+            if EditAccountViewController.isIgnore {
+                EditAccountViewController.isIgnore = false
+                onBack("")
+            } else {
+                AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
+            }
+            return
+        }
+        
         if SingleDeliveryViewController.shouldReloadPage > 0 {
             listVC[0].reloadPage()
             SingleDeliveryViewController.shouldReloadPage = -1

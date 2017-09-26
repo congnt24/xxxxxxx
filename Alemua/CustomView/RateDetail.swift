@@ -231,8 +231,11 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
     var notUpdateWeight = false
     func onUpdateWeight(weight: String?) {
         tfWeight.text = weight
-        if let weight = weight {
+        if var weight = weight {
+            weight = weight.replacing(",", with: ".")
+            tfWeight.text = weight
             self.rateData.weight = Float(weight)
+            print(self.rateData.weight)
             let vc = viewController() as! DeliveryBaoGiaFinalViewController
 
             if notUpdateWeight {

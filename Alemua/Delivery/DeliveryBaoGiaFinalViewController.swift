@@ -44,7 +44,6 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)"//.toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
-        rateDetail.toggleHeight()
 //        let rate = RateDetailData()
         
 //        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 1, orderId: self.modelQuoteData.id!))
@@ -70,7 +69,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             rateDetail.phivanchuyenvealemua.superview?.isHidden = true
             rateDetail.phigiaodichquaalemua.superview?.isHidden = true
             rateDetail.phivanchuyenvetaynguoimua.isUserInteractionEnabled = true
-            rateDetail.height = 240
+            rateDetail.height = rateDetail.height - 80
         }
         
         
@@ -119,9 +118,11 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         
         if modelQuoteData.productOption!.contains("4") {
             rateDetail.showGiamGia()
+            rateDetail.height = rateDetail.height - 40
 //            rateDetail.giamgia.bottomLineWidth = 10
 //            rateDetail.giamgia.bottomLineColor = UIColor.red
         }
+        rateDetail.toggleHeight()
     }
 
     @IBAction func onShowMoreRateDetail(_ sender: Any) {

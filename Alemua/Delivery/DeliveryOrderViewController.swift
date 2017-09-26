@@ -58,6 +58,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         listVC = [child1, child2, child3, child4]
         return listVC
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         //change to default index
         if !Prefs.isUserLogged {
@@ -71,6 +72,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         }
         
         if isNotEnoughInfo() {
+            print("Run here")
             if EditAccountViewController.isIgnore {
                 EditAccountViewController.isIgnore = false
                 onBack("")
@@ -78,7 +80,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
                 AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
             }
             return
-        }
+        }else{
         
         if SingleDeliveryViewController.shouldReloadPage > 0 {
             listVC[0].reloadPage()
@@ -96,6 +98,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         
         for vc in DeliveryOrderViewController.indexShouldReload {
             listVC[vc].viewDidAppear(false)
+        }
         }
     }
     

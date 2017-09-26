@@ -105,8 +105,10 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
             }
         }).addDisposableTo(bag)
 
+        tonggia.isUserInteractionEnabled = true
         tonggia.rx.text.subscribe(onNext: { (str) in
             self.rateData.giamua = Int(str ?? "0")
+            print(self.rateData.giamua)
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
@@ -211,7 +213,8 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
         let dis = Float(rateData.discount ?? 0) / Float(100)
         let tong = Float(rateData.tonggia ?? 0)
         let discount = dis * tong
-        arr.append(Int(tong - discount))
+        arr.append(Int(rateData.giamua ?? 0) - Int(discount))
+//        arr.append(Int(tong - discount))
         arr.append(rateData.thue ?? 0)
         arr.append(rateData.phichuyennoidia ?? 0)
         let xx = (rateData.phigiaodichquaalemua!) * Int(tong) / 100

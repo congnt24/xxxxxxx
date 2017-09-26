@@ -83,6 +83,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
         } else {
             btnDeliveryBaoGia.isHidden = false
             showDetailButton.isHidden = true
+            
         }
     }
 

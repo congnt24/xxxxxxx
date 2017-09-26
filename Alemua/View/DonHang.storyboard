@@ -236,6 +236,7 @@
                         <outlet property="lbMau" destination="846-8Q-bLH" id="sfl-39-gEk"/>
                         <outlet property="lbMuaTu" destination="gpN-zJ-7U8" id="X9B-JM-lvl"/>
                         <outlet property="lbNgay" destination="yaU-VW-pdC" id="5Q9-K8-9Ru"/>
+                        <outlet property="navTitle" destination="OCb-9O-BCK" id="uud-CK-4eA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vku-fv-GV0" userLabel="First Responder" sceneMemberID="firstResponder"/>

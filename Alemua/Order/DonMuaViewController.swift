@@ -21,11 +21,16 @@ class DonMuaViewController: UIViewController {
     @IBOutlet weak var lbMau: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!
     
+    @IBOutlet weak var navTitle: UINavigationItem!
     
     var orderData: ModelOrderClientData!
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
+        
+        if HomeViewController.homeType == .delivery {
+            navTitle.title = "Chi tiết báo giá"
+        }
         // Do any additional setup after loading the view.
     }
     func bindData(){

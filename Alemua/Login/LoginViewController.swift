@@ -57,8 +57,11 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
                             Prefs.apiToken = result["ApiToken"].string!
                             Prefs.phoneNumber = phone
                             Prefs.photo = result["photo"].string ?? ""
+                            Prefs.phoneNumber = result["phone_number"].string ?? ""
                             Prefs.userName = result["name"].string ?? "" //start socketio
-                            
+                            Prefs.desc = result["description"].string ?? ""
+                            Prefs.address = result["address"].string ?? ""
+                            Prefs.email = result["email"].string ?? ""
 
                             SocketIOHelper.shared.connectToSocketIO()
                             self.navigationController?.popViewController(animated: false)
@@ -192,15 +195,22 @@ extension LoginViewController {
                     Prefs.isUserLogged = true
                     Prefs.userId = result["id"].int!
                     Prefs.apiToken = result["ApiToken"].string!
-//                    Prefs.phoneNumber = phone
                     Prefs.photo = result["photo"].string ?? ""
+                    Prefs.phoneNumber = result["phone_number"].string ?? ""
                     Prefs.userName = result["name"].string ?? "" //start socketio
+                    Prefs.desc = result["description"].string ?? ""
+                    Prefs.address = result["address"].string ?? ""
+                    Prefs.email = result["email"].string ?? ""
+                    
+                    print(Prefs.phoneNumber)
+                    print(Prefs.userName)
+                    print(Prefs.desc)
+                    print(Prefs.address)
+                    print(Prefs.email)
                     self.navigationController?.popViewController()
-
                     Toast.init(text: msg).show()
                     break
                 case .error(let msg):
-
                     Toast.init(text: msg).show()
                     print("Error \(msg)")
                     break

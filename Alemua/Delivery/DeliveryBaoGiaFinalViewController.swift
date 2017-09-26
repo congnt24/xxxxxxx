@@ -80,8 +80,9 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                 self.tfGia.text = "\(price)".toFormatedPrice()
             }
         }
-        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
+        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)"//.toFormatedPrice()
         rateDetail.rateData.tonggia = modelQuoteData.websitePrice ?? 0
+        rateDetail.rateData.giamua = modelQuoteData.websitePrice ?? 0
         rateDetail.phigiaodichquaalemua.text = "\(modelQuoteData.transaction_alemua_free ?? 0)"
         rateDetail.rateData.phigiaodichquaalemua = modelQuoteData.transaction_alemua_free ?? 0
         if (modelQuoteData.promotionMoney ?? 0) == 0 {
@@ -95,7 +96,6 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         rateDetail.phinguoimua.text = ""
         rateDetail.phivanchuyenvealemua.text = ""
         rateDetail.phivanchuyenvetaynguoimua.text = ""
-        
         
         
         req.buyFrom = modelQuoteData.buyFrom
@@ -113,7 +113,6 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
             rateDetail.notUpdateWeight = true
         }
         tfGia.text = "\(rateDetail.calculateTotal() ?? 0)".toFormatedPrice()
-        
         
         
         if modelQuoteData.productOption!.contains("4") {

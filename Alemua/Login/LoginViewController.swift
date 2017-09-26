@@ -63,8 +63,14 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
                             Prefs.address = result["address"].string ?? ""
                             Prefs.email = result["email"].string ?? ""
 
+                            print(Prefs.phoneNumber)
+                            print(Prefs.userName)
+                            print(Prefs.desc)
+                            print(Prefs.address)
+                            print(Prefs.email)
+                            
                             SocketIOHelper.shared.connectToSocketIO()
-                            self.navigationController?.popViewController(animated: false)
+                            self.navigationController?.popViewController()
                             break
                         case .error(let msg):
                             print("Error \(msg)")
@@ -165,6 +171,7 @@ extension LoginViewController {
                         req.name = (name as? String) ?? ""
                         req.facebookId = (data["id"] as? String) ?? ""
                         req.photo = (photo as? String) ?? ""
+                        SocketIOHelper.shared.connectToSocketIO()
                         self.sendToServer(data: req)
                     }
                 }) //                TODO: AUTHEN BY FACEBOOK

@@ -77,6 +77,7 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
                 EditAccountViewController.isIgnore = false
                 onBack("")
             } else {
+                print("Run Heree 2")
                 AccountCoordinator.sharedInstance.openEditAccount(user_id: Prefs.userId)
             }
             return

@@ -88,6 +88,7 @@ public class CreateQuoteRequest {
     public var promotion_money: Int?
     public var weight: Float?
     public var promotion_code: String?
+    public var website_price: Int?
 }
 
 public class AcceptQuoteRequest {

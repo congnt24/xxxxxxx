@@ -35,15 +35,16 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         super.viewDidLoad()
         DeliveryBaoGiaFinalViewController.shared = self
         print("DeliveryBaoGiaFinalViewController")
-
+        tfGiaWeb.isUserInteractionEnabled = true
         itemView.bindData(title: modelQuoteData.productName, imageUrl: modelQuoteData.photo, baogia: "\(modelQuoteData.quotes?.count ?? 0)")
         tfMuatu.text = modelQuoteData.buyFrom
         tfGiaoden.text = modelQuoteData.deliveryTo
         tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(modelQuoteData.websitePrice! + modelQuoteData.transaction_alemua_free!)".toFormatedPrice()
-        tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)"//.toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
+        rateDetail.toggleHeight()
 //        let rate = RateDetailData()
         
 //        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 1, orderId: self.modelQuoteData.id!))
@@ -146,6 +147,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         //        req.promotion_money = rateDetail.rateData.promotion_money
         req.weight = rateDetail.rateData.weight
         req.promotion_code = tfNhapMaKM.text
+        req.website_price = Int(tfGiaWeb.text ?? "0")
         
         LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.createQuote(quote: req))

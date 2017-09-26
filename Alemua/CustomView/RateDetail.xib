@@ -29,13 +29,13 @@
             <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
             <subviews>
                 <stackView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-LZ-XvL">
-                    <rect key="frame" x="32" y="0.0" width="311" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-hZ-N8j">
-                            <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QLI-Ad-zhR" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -47,7 +47,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDF-ff-PXf">
-                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="rP2-wa-KSL"/>
@@ -66,10 +66,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h76-sy-bXS">
-                            <rect key="frame" x="0.0" y="33.5" width="311" height="33"/>
+                            <rect key="frame" x="0.0" y="33.5" width="343" height="33"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujT-g9-HN3" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -81,7 +81,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdP-Lc-3BK">
-                                    <rect key="frame" x="0.0" y="32" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="BM8-0m-WqN"/>
@@ -101,10 +101,10 @@
                             </constraints>
                         </view>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3US-7Y-sDS">
-                            <rect key="frame" x="0.0" y="66.5" width="311" height="0.0"/>
+                            <rect key="frame" x="0.0" y="66.5" width="343" height="0.0"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-tL-cmr" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="0.0"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -116,7 +116,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3I-yH-ATK">
-                                    <rect key="frame" x="0.0" y="-1" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="-1" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="JRT-yN-uvG"/>
@@ -136,10 +136,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahL-n7-Z3a">
-                            <rect key="frame" x="0.0" y="66.5" width="311" height="33.5"/>
+                            <rect key="frame" x="0.0" y="66.5" width="343" height="33.5"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-Hj-pO7" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -151,7 +151,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKK-CB-NTh">
-                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="BXA-uI-Xad"/>
@@ -171,10 +171,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taO-k9-3ui">
-                            <rect key="frame" x="0.0" y="100" width="311" height="33.5"/>
+                            <rect key="frame" x="0.0" y="100" width="343" height="33.5"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-G0-K0h" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -186,7 +186,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWB-T3-0C4">
-                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="RKW-nB-7xp"/>
@@ -206,10 +206,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9f-ud-RCA">
-                            <rect key="frame" x="0.0" y="133.5" width="311" height="33"/>
+                            <rect key="frame" x="0.0" y="133.5" width="343" height="33"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrz-bw-P6g" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -221,7 +221,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUy-BA-wYY">
-                                    <rect key="frame" x="0.0" y="32" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="84t-Aw-mhd"/>
@@ -241,10 +241,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7W-Wh-Nmr">
-                            <rect key="frame" x="0.0" y="166.5" width="311" height="33.5"/>
+                            <rect key="frame" x="0.0" y="166.5" width="343" height="33.5"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-dA-5Ct" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -256,7 +256,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLK-Xx-R2A">
-                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="1qZ-k7-8ge"/>
@@ -276,10 +276,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqL-5n-7gm">
-                            <rect key="frame" x="0.0" y="200" width="311" height="33.5"/>
+                            <rect key="frame" x="0.0" y="200" width="343" height="33.5"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xsk-eO-8kw" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -291,7 +291,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sni-aj-ohf">
-                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="RXo-YX-4QK"/>
@@ -311,10 +311,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keH-yf-aVX">
-                            <rect key="frame" x="0.0" y="233.5" width="311" height="33"/>
+                            <rect key="frame" x="0.0" y="233.5" width="343" height="33"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-uu-hVW" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -326,7 +326,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-Wl-G9l">
-                                    <rect key="frame" x="0.0" y="32" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="dJQ-zO-NT0"/>
@@ -346,10 +346,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUe-Pa-vcW">
-                            <rect key="frame" x="0.0" y="266.5" width="311" height="33.5"/>
+                            <rect key="frame" x="0.0" y="266.5" width="343" height="33.5"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-ki-sfC" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                    <rect key="frame" x="0.0" y="0.0" width="311" height="33.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="33.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
@@ -361,7 +361,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hu-hP-bgs">
-                                    <rect key="frame" x="0.0" y="32.5" width="311" height="1"/>
+                                    <rect key="frame" x="0.0" y="32.5" width="343" height="1"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="5xS-5b-qYM"/>
@@ -387,7 +387,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="r4D-LZ-XvL" secondAttribute="bottom" id="UUu-3N-So3"/>
                 <constraint firstItem="r4D-LZ-XvL" firstAttribute="top" secondItem="h1H-5k-fgr" secondAttribute="top" id="WQj-DO-oEi"/>
-                <constraint firstItem="r4D-LZ-XvL" firstAttribute="leading" secondItem="h1H-5k-fgr" secondAttribute="leading" constant="32" id="hfA-68-GLa"/>
+                <constraint firstItem="r4D-LZ-XvL" firstAttribute="leading" secondItem="h1H-5k-fgr" secondAttribute="leading" id="hfA-68-GLa"/>
                 <constraint firstAttribute="trailing" secondItem="r4D-LZ-XvL" secondAttribute="trailing" id="yPd-9C-eG7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

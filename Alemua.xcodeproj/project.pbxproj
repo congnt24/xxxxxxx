@@ -99,6 +99,7 @@
 		0242FF441F71616B00AC1D37 /* DeliveryFilter2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0242FF431F71616B00AC1D37 /* DeliveryFilter2ViewController.swift */; };
 		0247A0821F203FFF0057455A /* AwesomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0247A0811F203FFF0057455A /* AwesomeButton.swift */; };
 		024C6A101F3AA01100D31868 /* SocketIOHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */; };
+		0250746D1F7B478F000ACE95 /* DeliveryBaoGiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0250746C1F7B478F000ACE95 /* DeliveryBaoGiaViewController.swift */; };
 		02525C3B1F2B793600EBCBA7 /* AwesomeTextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */; };
 		02525C3E1F2B8AB600EBCBA7 /* ThanhToanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */; };
 		02525C411F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02525C3F1F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift */; };
@@ -293,6 +294,7 @@
 		0242FF431F71616B00AC1D37 /* DeliveryFilter2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeliveryFilter2ViewController.swift; path = Delivery/DeliveryFilter2ViewController.swift; sourceTree = "<group>"; };
 		0247A0811F203FFF0057455A /* AwesomeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeButton.swift; sourceTree = "<group>"; };
 		024C6A0F1F3AA01100D31868 /* SocketIOHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIOHelper.swift; path = ../Base/SocketIOHelper.swift; sourceTree = "<group>"; };
+		0250746C1F7B478F000ACE95 /* DeliveryBaoGiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBaoGiaViewController.swift; sourceTree = "<group>"; };
 		02525C3A1F2B793600EBCBA7 /* AwesomeTextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AwesomeTextField2.swift; path = CustomView/AwesomeTextField2.swift; sourceTree = "<group>"; };
 		02525C3D1F2B8AB600EBCBA7 /* ThanhToanModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThanhToanModel.swift; sourceTree = "<group>"; };
 		02525C3F1F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMainOnlineTableViewCell.swift; path = CustomView/OrderMainOnlineTableViewCell.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				02BC24C51F25CAB300C917CD /* DeliveryOrderViewController.swift */,
 				02DC0F7D1F643C8900F98ECE /* DialogSetWeight.swift */,
 				02BC24C71F25CB2A00C917CD /* SingleDeliveryViewController.swift */,
+				0250746C1F7B478F000ACE95 /* DeliveryBaoGiaViewController.swift */,
 				0223C7F81F2A4210005949C9 /* DeliveryDaHuyViewController.swift */,
 				0223C7FA1F2A422A005949C9 /* DeliveryHoanThanhViewController.swift */,
 				023B39D41F2B075400E53A6D /* DeliveryBaoGiaFinalViewController.swift */,
@@ -1128,6 +1131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0250746D1F7B478F000ACE95 /* DeliveryBaoGiaViewController.swift in Sources */,
 				020D42651F5CECE800A13464 /* RaoVatSelectMapViewController.swift in Sources */,
 				021C97FC1F5070CF0058CBF0 /* RaoVatViewController.swift in Sources */,
 				02DC0F801F644E8300F98ECE /* TaoDonHangSelectMapViewController.swift in Sources */,

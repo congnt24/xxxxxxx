@@ -40,6 +40,15 @@ public class ModelOrderClientData: BaseResult {
         static let cancelReason = "cancel_reason"
         static let totalPrice = "total_price"
         static let transaction_alemua_free = "transaction_alemua_free"
+        static let transferBuyerFee = "transfer_buyer_fee"
+        static let transferAlemuaFree = "transfer_alemua_free"
+        static let promotion_money = "promotion_money"
+        static let weight = "weight"
+        static let tax = "tax"
+        static let transferDomesticFee = "transfer_domestic_fee"
+        static let buyingPrice = "buying_price"
+        static let discount = "discount"
+        static let transferToBuyerFee = "transfer_to_buyer_fee"
 //        static let buying_price = "buying_price"
         
     }
@@ -70,6 +79,15 @@ public class ModelOrderClientData: BaseResult {
     public var quotes: [ModelOrderBaoGiaData]?
     public var totalPrice: Int?
     public var transaction_alemua_free: Int?
+    public var transferBuyerFee: Int?
+    public var transferAlemuaFree: Int?
+    public var promotion_money: Int?
+    public var weight: Float?
+    public var tax: Int?
+    public var transferDomesticFee: Int?
+    public var buyingPrice: Int?
+    public var discount: Int?
+    public var transferToBuyerFee: Int?
 //    public var buying_price: Int?
     
     // MARK: SwiftyJSON Initializers
@@ -113,6 +131,15 @@ public class ModelOrderClientData: BaseResult {
 //        buying_price = json[SerializationKeys.buying_price].int
         if let items = json[SerializationKeys.quotes].array { quotes = items.map { ModelOrderBaoGiaData(json: $0) } }
 
+        transferBuyerFee = json[SerializationKeys.transferBuyerFee].int
+        transferAlemuaFree = json[SerializationKeys.transferAlemuaFree].int
+        promotion_money = json[SerializationKeys.promotion_money].int
+        weight = json[SerializationKeys.weight].float
+        tax = json[SerializationKeys.tax].int
+        transferDomesticFee = json[SerializationKeys.transferDomesticFee].int
+        buyingPrice = json[SerializationKeys.buyingPrice].int
+        discount = json[SerializationKeys.discount].int
+        transferToBuyerFee = json[SerializationKeys.transferToBuyerFee].int
     }
 }
 

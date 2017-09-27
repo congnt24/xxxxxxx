@@ -38,7 +38,7 @@ extension DeliveryCoordinator: DeliveryCoordinatorDelegate {
         }
     }
     func showBaoGia(_ data: ModelOrderClientData) {
-        let view: DonMuaViewController = getDonHangStoryboard().instantiateViewController(withClass: DonMuaViewController.self)
+        let view: DeliveryBaoGiaViewController = getDonHangStoryboard().instantiateViewController(withClass: DeliveryBaoGiaViewController.self)
         view.orderData = data
         navigation?.pushViewController(view, animated: true)
     }

@@ -21,6 +21,9 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
     public static var indexShouldReload = [Int]()
     var cacheFilter = 0
     
+    public static var backToAccount = false
+    public static var backToNoti = false
+    
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
         settings.style.buttonBarItemBackgroundColor = UIColor.clear
@@ -115,7 +118,15 @@ class DeliveryOrderViewController: ButtonBarPagerTabStripViewController {
         if HomeViewController.homeType == .order {
             OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
         }else{
-            DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+            if DeliveryOrderViewController.backToAccount {
+                DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 4)
+            }else if DeliveryOrderViewController.backToNoti {
+                DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 3)
+            }else {
+                DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
+            }
+            DeliveryOrderViewController.backToNoti = false
+            DeliveryOrderViewController.backToAccount = false
         }
     }
 }

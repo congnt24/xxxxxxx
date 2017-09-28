@@ -12,9 +12,20 @@ import XLPagerTabStrip
 
 class OrderOrderViewController: ButtonBarPagerTabStripViewController {
     public static var shared: OrderOrderViewController!
+    public static var backToAccount = false
+    public static var backToNoti = false
     @IBAction func onBack(_ sender: Any) {
         if HomeViewController.homeType == .order {
-            OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+            
+            if OrderOrderViewController.backToAccount {
+                OrderNavTabBarViewController.sharedInstance.switchTab(index: 4)
+            }else if OrderOrderViewController.backToNoti {
+                OrderNavTabBarViewController.sharedInstance.switchTab(index: 3)
+            }else {
+                OrderNavTabBarViewController.sharedInstance.switchTab(index: 0)
+            }
+            OrderOrderViewController.backToNoti = false
+            OrderOrderViewController.backToAccount = false
         } else {
             DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 0)
         }

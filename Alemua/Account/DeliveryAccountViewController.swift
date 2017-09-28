@@ -169,17 +169,21 @@ extension DeliveryAccountViewController {
     }
     
     func showDSKH(){
+        DeliveryOrderViewController.backToAccount = true
         DeliveryCoordinator.sharedInstance.showDanhSachKH()
     }
     func showDHDaGiao(){
+        DeliveryOrderViewController.backToAccount = true
         DeliveryOrderViewController.defaultTab = 2
         DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
     }
     func showDH(){
+        DeliveryOrderViewController.backToAccount = true
         DeliveryOrderViewController.defaultTab = 0
         DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
     }
     func showDHBiHuy(){
+        DeliveryOrderViewController.backToAccount = true
         DeliveryOrderViewController.defaultTab = 3
         DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
     }

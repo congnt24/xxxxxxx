@@ -68,18 +68,23 @@ class NotifyViewController: BaseViewController {
 
             switch self.datas.value[ip.row].notificationType! {
             case 1:
+//                if HomeViewController.homeType == .order
+                OrderOrderViewController.backToNoti = true
                 OrderNavTabBarViewController.sharedInstance.switchTab(index: 1)
                 OrderOrderViewController.selectViewController = 1
                 break
             case 2:
+                DeliveryOrderViewController.backToNoti = true
                 DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
                 DeliveryOrderViewController.defaultTab = 1
                 break
             case 3:
+                DeliveryOrderViewController.backToNoti = true
                 DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
                 DeliveryOrderViewController.defaultTab = 3
                 break
             case 4:
+                DeliveryOrderViewController.backToNoti = true
                 DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
                 DeliveryOrderViewController.defaultTab = 2
                 break

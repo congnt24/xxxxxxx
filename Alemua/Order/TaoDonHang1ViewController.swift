@@ -256,22 +256,25 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                         self.tfTenSP.text = title
                     }
                     
-                    if let price = result["price"].int, price > 0 {
-                        self.tfGia.text = "\(price)".toFormatedPrice()
-                        self.taodonhangRequest.websitePrice = price
+                    if let price = result["price"].float, price > 0 {
+                        self.tfGia.text = "\(Int(price))".toFormatedPrice()
+                        self.taodonhangRequest.websitePrice = Int(price)
                     }
                     
                     if let link = result["link"].string {
                         let arr = link.splitted(by: ",")
                         for url in arr {
-                            KingfisherManager.shared.retrieveImage(with: URL(string: url)!, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
-                                if let img = image {
-                                    self.stPhoto.addArrangedSubview(PhotoView(image: img))
-                                    self.listImage.append(img)
-                                    self.stPhoto.removeArrangedSubview(self.btnAdd)
-                                    self.stPhoto.addArrangedSubview(self.btnAdd)
-                                }
-                            })
+                            if let url2 = URL(string: url){
+                                KingfisherManager.shared.retrieveImage(with: url2, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+                                    if let img = image {
+                                        self.stPhoto.addArrangedSubview(PhotoView(image: img))
+                                        self.listImage.append(img)
+                                        self.stPhoto.removeArrangedSubview(self.btnAdd)
+                                        self.stPhoto.addArrangedSubview(self.btnAdd)
+                                    }
+                                })
+                            }
+                            
                         }
                     }
 

@@ -59,7 +59,7 @@ public enum AleApi {
 extension AleApi: TargetType {
 
     public var baseURL: URL {
-        return URL(string: "http://128.199.228.205/alemua/public/")!
+        return URL(string: "http://188.166.243.25/alemua/public/")!
     }
 
     public var path: String {

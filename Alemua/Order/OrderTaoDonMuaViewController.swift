@@ -75,4 +75,12 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
         OrderCoordinator.sharedInstance.showTaoDonHang(url: orderData?.websiteUrl ?? parentUrl , data: orderData)
         
     }
+    
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        if let text = webView.request?.url?.absoluteString{
+            self.input.text = text
+            self.parentUrl = text
+        }
+    }
 }

@@ -96,8 +96,6 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     let quocGiaDr = DropDown()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        TaoDonHang1ViewController.sharedInstance = self
         if let url = website_url {
             getDataFromUrl(website_url: url)
         }
@@ -241,7 +239,6 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                 taodonhangRequest.websitePrice = self.data?.originPrice ?? 0
             }
         }
-        fetchBranchAndCountry()
         
         AlemuaApi.shared.aleApi.request(.getDataFromUrl(website_url: website_url))
             .toJSON()
@@ -287,6 +284,9 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     break
                 }
             }).addDisposableTo(bag)
+        
+        
+        fetchBranchAndCountry()
     }
 
     func fetchBranchAndCountry(){

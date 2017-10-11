@@ -13,6 +13,8 @@ import UIKit
 /// To set sample data, we set string for stringData field, each item separate by a semicolon ';'
 public class AwesomeRadioGroup: UIStackView {
     
+    
+    @IBInspectable var boldOnSelect: Bool = false
     @IBInspectable var enableMultiSelect = false
     
     @IBInspectable var stringData: String = ""

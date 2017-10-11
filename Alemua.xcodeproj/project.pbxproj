@@ -15,6 +15,7 @@
 		0207F2281F5BB9F200FDB7CA /* RaoVatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F2271F5BB9F200FDB7CA /* RaoVatSearchViewController.swift */; };
 		020D42651F5CECE800A13464 /* RaoVatSelectMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020D42641F5CECE800A13464 /* RaoVatSelectMapViewController.swift */; };
 		020D42671F5D0D7F00A13464 /* GoogleSigninHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020D42661F5D0D7F00A13464 /* GoogleSigninHelper.swift */; };
+		02127D2E1F8E5C56009F0117 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02127D2D1F8E5C56009F0117 /* AccountInfoViewController.swift */; };
 		0213995F1F286ABB00BB0642 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0213995E1F286ABB00BB0642 /* ItemView.swift */; };
 		021399611F286AC700BB0642 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021399601F286AC700BB0642 /* ItemView.xib */; };
 		021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021399621F286B1000BB0642 /* BaseCustomView.swift */; };
@@ -210,6 +211,7 @@
 		0207F2271F5BB9F200FDB7CA /* RaoVatSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatSearchViewController.swift; path = RaoVat/RaoVatSearchViewController.swift; sourceTree = "<group>"; };
 		020D42641F5CECE800A13464 /* RaoVatSelectMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaoVatSelectMapViewController.swift; path = RaoVat/RaoVatSelectMapViewController.swift; sourceTree = "<group>"; };
 		020D42661F5D0D7F00A13464 /* GoogleSigninHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleSigninHelper.swift; path = Helper/GoogleSigninHelper.swift; sourceTree = "<group>"; };
+		02127D2D1F8E5C56009F0117 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		0213995E1F286ABB00BB0642 /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemView.swift; path = CustomView/ItemView.swift; sourceTree = "<group>"; };
 		021399601F286AC700BB0642 /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemView.xib; path = CustomView/ItemView.xib; sourceTree = "<group>"; };
 		021399621F286B1000BB0642 /* BaseCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomView.swift; sourceTree = "<group>"; };
@@ -734,6 +736,7 @@
 				02BF727F1F23734800F1F4BC /* EditAccountViewController.swift */,
 				0223C7FC1F2A44A1005949C9 /* ThanhToanViewController.swift */,
 				0292D0F61F72943C00A3820E /* DeliveryIncomeViewController.swift */,
+				02127D2D1F8E5C56009F0117 /* AccountInfoViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				0223C7F71F2A36B0005949C9 /* DeliveryMainViewController.swift in Sources */,
 				023B39E21F2B59BB00E53A6D /* StepperView.swift in Sources */,
 				02B340321F4551050027803A /* Repository.swift in Sources */,
+				02127D2E1F8E5C56009F0117 /* AccountInfoViewController.swift in Sources */,
 				02F775291F1F390300556BED /* LoginCoordinator.swift in Sources */,
 				02F775541F1FB23100556BED /* InputField.swift in Sources */,
 				0223C7F31F2A2361005949C9 /* DanhGiaView.swift in Sources */,

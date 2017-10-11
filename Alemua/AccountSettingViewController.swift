@@ -26,10 +26,12 @@ class AccountSettingViewController: BaseViewController {
         self.navigationController?.popViewController()
     }
     @IBAction func onHelp(_ sender: Any) {
+        AccountCoordinator.sharedInstance.showAccountInfo(title: "Trợ giúp", url: "http://alemua.net/help.html")
     }
     
     
     @IBAction func onAppInfo(_ sender: Any) {
+        AccountCoordinator.sharedInstance.showAccountInfo(title: "Thông tin ứng dụng", url: "http://alemua.net/info.html")
     }
     @IBAction func onLogout(_ sender: Any) {
         AlemuaApi.shared.aleApi.request(.logout())

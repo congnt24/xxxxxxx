@@ -96,6 +96,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     let quocGiaDr = DropDown()
     
     override func viewDidLoad() {
+        TaoDonHang1ViewController.sharedInstance = self
         if let url = website_url {
             getDataFromUrl(website_url: url)
         }

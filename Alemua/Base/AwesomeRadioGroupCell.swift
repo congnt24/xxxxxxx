@@ -35,8 +35,14 @@ open class AwesomeRadioGroupCell: UIButton {
             isChecked = !isChecked
             if isChecked {
                 setImage(checkedImage, for: .normal)
+                if (superview as! AwesomeRadioGroup).boldOnSelect {
+                    titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+                }
             }else{
                 setImage(normalImage, for: .normal)
+                if (superview as! AwesomeRadioGroup).boldOnSelect {
+                    titleLabel?.font = UIFont.systemFont(ofSize: 12)
+                }
             }
         }else{
             isChecked = true

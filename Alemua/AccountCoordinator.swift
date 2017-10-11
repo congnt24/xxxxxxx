@@ -48,4 +48,11 @@ extension AccountCoordinator {
         let view: ThanhToanViewController = mainStoryboard.instantiateViewController(withClass: ThanhToanViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
+    
+    func showAccountInfo(title: String!, url: String!){
+        let view: AccountInfoViewController = getProfileStoryboard().instantiateViewController(withClass: AccountInfoViewController.self)
+        view.titleStr = title
+        view.url = url
+        navigation?.pushViewController(view, animated: true)
+    }
 }

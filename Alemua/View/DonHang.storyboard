@@ -2361,10 +2361,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9F-Zv-mpc">
-                                <rect key="frame" x="52" y="183.5" width="271" height="300"/>
+                                <rect key="frame" x="48" y="168.5" width="279" height="330"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-dc-YfV" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="247" y="4" width="20" height="20"/>
+                                        <rect key="frame" x="255" y="4" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7ac-uV-CpA"/>
                                             <constraint firstAttribute="width" constant="20" id="XuO-gz-LoR"/>
@@ -2372,7 +2372,7 @@
                                         <state key="normal" image="ic_cancel"/>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-zA-JYD">
-                                        <rect key="frame" x="24.5" y="19.5" width="223" height="18"/>
+                                        <rect key="frame" x="28.5" y="19.5" width="223" height="18"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số đơn hàng của bạn là" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8K-Q9-6Th">
                                                 <rect key="frame" x="0.0" y="0.0" width="159.5" height="18"/>
@@ -2392,14 +2392,14 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUD-ez-eny">
-                                        <rect key="frame" x="0.0" y="45.5" width="271" height="1"/>
+                                        <rect key="frame" x="0.0" y="45.5" width="279" height="1"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="7KG-FG-etQ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II1-qj-Py4" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="244.5" width="239" height="39"/>
+                                        <rect key="frame" x="16" y="274.5" width="247" height="39"/>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="zlg-SY-F5y"/>
@@ -2418,53 +2418,61 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn vui lòng thanh toán bằng hình thức chuyển khoản qua ngân hàng với nội dung:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM9-hB-L6X">
-                                        <rect key="frame" x="20" y="54" width="243" height="29"/>
+                                        <rect key="frame" x="20" y="54" width="251" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hHU-6g-eKI">
-                                        <rect key="frame" x="44" y="91" width="211" height="100"/>
+                                        <rect key="frame" x="36" y="91" width="227" height="130"/>
                                         <subviews>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6B-hm-n12" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="●  Thanh toán đơn hàng XXXX">
+                                                <state key="normal" title="●  Ngân hàng: VPBANK – Chi nhánh Thăng Long">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-wW-QPL" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="26" width="211" height="22"/>
+                                                <rect key="frame" x="0.0" y="27" width="227" height="22.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="●  Ngân hàng vietcombank">
+                                                <state key="normal" title="●  Số tài khoản: 132090246">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEp-k2-ag1" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="52" width="211" height="22"/>
+                                                <rect key="frame" x="0.0" y="53.5" width="227" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="●  Chủ tài khoảng công ty alemua">
+                                                <state key="normal" title="●  Tên tài khoản: Công ty Cổ Phần Dịch vụ và Công nghệ Quốc Tế H2T">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdx-57-Afb" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="78" width="211" height="22"/>
+                                                <rect key="frame" x="0.0" y="80.5" width="227" height="22.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="●  Số tài khoản XXXX">
+                                                <state key="normal" title="●  Địa chỉ chi nhánh: M3 - M4, Nguyễn Chí Thanh, Láng Hạ, Hà Nội">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBD-oM-mpZ" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="107" width="227" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="●  Thanh toán ĐH: [DH] - SĐT: 0928.40.28.28">
+                                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="bLR-fl-6TL"/>
+                                            <constraint firstAttribute="height" constant="130" id="bLR-fl-6TL"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoặc liên hệ với Admin của Alemua qua hotline: 0123456789 để biết thêm chi tiết" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whL-PQ-V9K">
-                                        <rect key="frame" x="20" y="199.5" width="243" height="29"/>
+                                        <rect key="frame" x="20" y="229.5" width="251" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -2490,7 +2498,7 @@
                                     <constraint firstItem="OZO-zA-JYD" firstAttribute="top" secondItem="e9F-Zv-mpc" secondAttribute="top" constant="20" id="jVs-QV-o6Y"/>
                                     <constraint firstItem="AUD-ez-eny" firstAttribute="leading" secondItem="e9F-Zv-mpc" secondAttribute="leading" id="nK3-Vm-cSA"/>
                                     <constraint firstItem="hHU-6g-eKI" firstAttribute="top" secondItem="aM9-hB-L6X" secondAttribute="bottom" constant="8" id="qCS-Qf-h3z"/>
-                                    <constraint firstItem="hHU-6g-eKI" firstAttribute="leading" secondItem="e9F-Zv-mpc" secondAttribute="leading" constant="44" id="vW6-lo-t0m"/>
+                                    <constraint firstItem="hHU-6g-eKI" firstAttribute="leading" secondItem="e9F-Zv-mpc" secondAttribute="leading" constant="36" id="vW6-lo-t0m"/>
                                     <constraint firstItem="whL-PQ-V9K" firstAttribute="top" secondItem="hHU-6g-eKI" secondAttribute="bottom" constant="8" id="zPW-tU-shB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -2504,8 +2512,8 @@
                         <constraints>
                             <constraint firstItem="e9F-Zv-mpc" firstAttribute="centerY" secondItem="Qt3-5r-JJf" secondAttribute="centerY" id="KXR-SR-6ud"/>
                             <constraint firstItem="e9F-Zv-mpc" firstAttribute="centerX" secondItem="Qt3-5r-JJf" secondAttribute="centerX" id="MhM-Sq-SLr"/>
-                            <constraint firstItem="e9F-Zv-mpc" firstAttribute="leading" secondItem="Qt3-5r-JJf" secondAttribute="leadingMargin" constant="36" id="dyB-r0-pny"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e9F-Zv-mpc" secondAttribute="trailing" constant="36" id="xMy-5O-Obx"/>
+                            <constraint firstItem="e9F-Zv-mpc" firstAttribute="leading" secondItem="Qt3-5r-JJf" secondAttribute="leadingMargin" constant="32" id="dyB-r0-pny"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e9F-Zv-mpc" secondAttribute="trailing" constant="32" id="xMy-5O-Obx"/>
                         </constraints>
                     </view>
                     <connections>

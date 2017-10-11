@@ -1910,7 +1910,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4z-Sy-mut" customClass="AwesomeRadioGroupCell" customModule="Alemua" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <state key="normal" image="ic_unchecked_circle">
+                                                <state key="normal" image="ic_unchecked_circle2">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -2285,7 +2285,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuc-CT-OV5" customClass="AwesomeRadioGroupCell" customModule="Alemua" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <state key="normal" image="ic_unchecked_circle">
+                                                        <state key="normal" image="ic_unchecked_circle2">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -4762,6 +4762,7 @@
         <image name="ic_shopping" width="21" height="26"/>
         <image name="ic_shopping_cart" width="42" height="42"/>
         <image name="ic_unchecked_circle" width="15" height="15"/>
+        <image name="ic_unchecked_circle2" width="15" height="15"/>
         <image name="ic_user" width="21" height="27"/>
         <image name="ic_user_blu" width="27" height="27"/>
         <image name="ic_viet_nam" width="21" height="21"/>

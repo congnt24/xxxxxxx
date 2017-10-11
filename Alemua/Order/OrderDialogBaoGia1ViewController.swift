@@ -15,7 +15,7 @@ class OrderDialogBaoGia1ViewController: UIViewController {
     @IBOutlet weak var radioGroup: AwesomeRadioGroup!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if transaction_option == 0 {
+        if transaction_option <= 0 {
             transaction_option = 1
         }
         radioGroup.checkAt(position: (transaction_option - 1))

@@ -11,8 +11,15 @@ import UIKit
 class StepperView: BaseCustomView {
 
     @IBOutlet weak var lbNumber: UILabel!
-    @IBInspectable var number: Int = 1
+@IBInspectable var number: Int = 1 {
+        didSet {
+            if let onChange = onChange {
+                onChange(number)
+            }
+        }
+    }
     
+    public var onChange: ((Int) -> Void)?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

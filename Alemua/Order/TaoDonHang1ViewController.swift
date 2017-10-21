@@ -47,9 +47,9 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     }
     var gia: String? {
         didSet {
-            if var gia = gia {
+            if let gia = gia {
 //                gia = String(gia.characters.filter { Int("\($0)") != nil })
-                let f = Double(gia) ?? 0
+                let f = (Double(gia) ?? 0) * Double(stSoLuong.number)
                 taodonhangRequest.websiteRealPrice = Float(f)
                 if let currencyData = currencyData, currencyData.conversion != "1" {
                     let exchange = Float(currencyData.conversion!) ?? 0
@@ -57,7 +57,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     taodonhangRequest.websitePrice = vnd
                     tfGia.text = "\(f) \(currencyData.name!) - \("\(vnd)".toFormatedPrice())"
                 } else {
-                    let intgia = Int(Double(gia) ?? 0) ?? 0
+                    let intgia = Int(Double(gia) ?? 0) * stSoLuong.number
                     print(intgia)
                     print(gia)
                     tfGia.text = "\(intgia)".toFormatedPrice()
@@ -130,6 +130,12 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         
         drNhomHang.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onDrNhomHang)))
         drQuocGia.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onDrQuocGia)))
+        
+        
+        stSoLuong.onChange = {number in
+            print(number)
+            self.gia = { self.gia }()
+        }
     }
     
     func onDrNhomHang(){
@@ -233,10 +239,12 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         LoadingOverlay.shared.showOverlay(view: parent?.view)
                 if let proPrice = data?.promotionPrice {
             if proPrice > 0 {
-                self.tfGia.text = "\(proPrice)".toFormatedPrice()
+                self.gia = "\(proPrice)"
+//                self.tfGia.text = "\(proPrice)".toFormatedPrice()
                 taodonhangRequest.websitePrice = proPrice
             }else{
-                self.tfGia.text = "\(self.data?.originPrice ?? 0)".toFormatedPrice()
+                self.gia = "\(self.data?.originPrice ?? 0)"
+//                self.tfGia.text = "\(self.data?.originPrice ?? 0)".toFormatedPrice()
                 taodonhangRequest.websitePrice = self.data?.originPrice ?? 0
             }
         }

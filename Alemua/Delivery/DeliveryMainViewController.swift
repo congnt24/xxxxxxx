@@ -52,14 +52,20 @@ class DeliveryMainViewController: BaseViewController {
 
         datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: nibName)) { (row, item, cell) in
             (cell as! DeliveryTableViewCell).bindData(data: item)
-            (cell as! DeliveryTableViewCell).onClickBaoGia = {
-                DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: item)
+            if item.is_quote == 0 {
+                (cell as! DeliveryTableViewCell).onClickBaoGia = {
+                    DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: item)
+                }
+            } else {
+                (cell as! DeliveryTableViewCell).onClickBaoGia = nil
             }
         }.addDisposableTo(bag)
         tableView.estimatedRowHeight = 96 // some constant value
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
-            DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: self.datas.value[ip.row])
+            if self.datas.value[ip.row].is_quote == 0 {
+                DeliveryCoordinator.sharedInstance.showDeliveryDonHang(data: self.datas.value[ip.row])
+            }
         }).addDisposableTo(bag)
         
         tableView.addInfiniteScroll { (tv) in

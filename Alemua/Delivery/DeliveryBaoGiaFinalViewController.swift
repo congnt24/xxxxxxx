@@ -26,6 +26,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var tfNgay: AwesomeTextField!
     @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var tfGia: AwesomeTextField!
+    @IBOutlet weak var lbTongDonHang: UILabel!
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfNote: AwesomeTextField!
     @IBOutlet weak var tfNhapMaKM: AwesomeTextField!
@@ -44,6 +45,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)"//.toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(modelQuoteData.numberProduct ?? 1))"
 //        let rate = RateDetailData()
         
 //        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 1, orderId: self.modelQuoteData.id!))

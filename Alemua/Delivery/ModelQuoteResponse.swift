@@ -40,6 +40,7 @@ public class ModelQuoteData: BaseResult {
         static let numberQuote = "number_quote"
         static let deliveryDate = "delivery_date"
         static let timeAgo = "time_ago"
+        static let is_quote = "is_quote"
     }
 
     // MARK: Properties
@@ -67,6 +68,7 @@ public class ModelQuoteData: BaseResult {
     public var numberQuote: Int?
     public var deliveryDate: String?
     public var timeAgo: Int?
+    public var is_quote: Int?
 
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -106,5 +108,6 @@ public class ModelQuoteData: BaseResult {
         numberQuote = json[SerializationKeys.numberQuote].int
         deliveryDate = json[SerializationKeys.deliveryDate].string
         timeAgo = json[SerializationKeys.timeAgo].int
+        is_quote = json[SerializationKeys.is_quote].int
     }
 }

@@ -25,6 +25,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
                 lbMota.text = orderData.note
                 lbLuaChon.text =
                     (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
                 if HomeViewController.homeType == .order {
 //                    print()
 //                    rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice, giamua: orderData.buying_price,  discount: orderData.discount, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
@@ -40,6 +41,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var lbNgay: AwesomeTextField!
     @IBOutlet weak var tfGiaWeb: AwesomeTextField!
     @IBOutlet weak var lbGia: AwesomeTextField!
+    @IBOutlet weak var lbTongDonHang: UILabel!
     @IBOutlet weak var lbMota: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!
 

@@ -19,6 +19,7 @@ class DeliveryTableViewCell: UITableViewCell {
     @IBOutlet weak var lbPrice: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
     @IBOutlet weak var lbDate: UILabel!
+    @IBOutlet weak var btnBaoGia: UIButton!
     
     var onClickBaoGia: (() -> Void)?
     override func awakeFromNib() {
@@ -47,5 +48,10 @@ class DeliveryTableViewCell: UITableViewCell {
         lbAddress.text = data.deliveryTo
         lbPrice.text = "\(data.websitePrice ?? 0)".toFormatedPrice()
         lbTime.text = data.timeAgo?.toFormatedTime()
+        if data.is_quote == 1 {
+            btnBaoGia.isHidden = true
+        }else{
+            btnBaoGia.isHidden = false
+        }
     }
 }

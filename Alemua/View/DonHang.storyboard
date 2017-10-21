@@ -3890,7 +3890,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5IU-w1-K8q">
                                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="45"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-fj-RdO">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng (SL: 1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-fj-RdO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -4068,6 +4068,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="itemView" destination="Xfr-aE-xj1" id="jUS-4C-Ggr"/>
+                        <outlet property="lbTongDonHang" destination="cdW-fj-RdO" id="w98-rU-r2e"/>
                         <outlet property="rateDetail" destination="aTO-5s-zEg" id="6Hj-rT-eSK"/>
                         <outlet property="tfGia" destination="lVj-wT-Lde" id="j1P-ev-oZP"/>
                         <outlet property="tfGiaWeb" destination="qUT-5I-OmS" id="vay-JN-Ghg"/>
@@ -4491,10 +4492,10 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JNi-sa-60t">
-                                        <rect key="frame" x="16" y="127" width="343" height="280"/>
+                                        <rect key="frame" x="16" y="127" width="343" height="230"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fiX-Ho-3Lg">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="45.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mua từ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-4T-ZpL">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -4503,7 +4504,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjy-Hg-gBw" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="26"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="28.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -4519,7 +4520,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ucC-vq-haf">
-                                                <rect key="frame" x="0.0" y="59" width="343" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="61.5" width="343" height="45.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao đến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1J-eC-KTk">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -4528,7 +4529,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zvg-yF-wzZ" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="28.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -4544,7 +4545,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YQM-TC-AVi">
-                                                <rect key="frame" x="0.0" y="118.5" width="343" height="43"/>
+                                                <rect key="frame" x="0.0" y="123" width="343" height="45.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giao hàng trước ngày" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCl-Ah-sJ9">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -4553,7 +4554,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APE-It-Jg8" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="26"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="28.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -4569,7 +4570,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bQ7-nV-sEB">
-                                                <rect key="frame" x="0.0" y="177.5" width="343" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="184.5" width="343" height="45.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá trên web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaI-BQ-VoN">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -4578,7 +4579,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-Ve-kHP" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="28.5"/>
                                                         <color key="textColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -4593,78 +4594,13 @@
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ak-XQ-IgB" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="237" width="343" height="43"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d56-eV-LAw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-BL-cpH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="43"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tb-Sf-S8q">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6W-al-w0X" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                                        <rect key="frame" x="0.0" y="17" width="323" height="26"/>
-                                                                        <nil key="textColor"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                                <real key="value" value="0.0"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                                                                <real key="value" value="1"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </textField>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jff-9A-r7M" customClass="AwesomeToggleButton" customModule="Alemua" customModuleProvider="target">
-                                                                <rect key="frame" x="323" y="11.5" width="20" height="20"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="20" id="FjP-yk-p51"/>
-                                                                    <constraint firstAttribute="width" constant="20" id="dAj-Pc-M8d"/>
-                                                                </constraints>
-                                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="image1" value="ic_back_down"/>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="image2" value="ic_back_up"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="onShowMore:" destination="2UR-NG-Au4" eventType="touchUpInside" id="4ub-cg-JnV"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="0Qe-BL-cpH" secondAttribute="bottom" id="YQw-ql-XFN"/>
-                                                            <constraint firstItem="0Qe-BL-cpH" firstAttribute="top" secondItem="d56-eV-LAw" secondAttribute="top" id="sOH-7s-Ay8"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="d56-eV-LAw" firstAttribute="leading" secondItem="6Ak-XQ-IgB" secondAttribute="leading" id="CTA-Sm-P3c"/>
-                                                    <constraint firstAttribute="bottom" secondItem="d56-eV-LAw" secondAttribute="bottom" id="G5h-aQ-qj9"/>
-                                                    <constraint firstAttribute="trailing" secondItem="d56-eV-LAw" secondAttribute="trailing" id="GGs-D0-iTw"/>
-                                                    <constraint firstItem="d56-eV-LAw" firstAttribute="top" secondItem="6Ak-XQ-IgB" secondAttribute="top" id="OgT-sU-LH5"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="Z2S-Mq-aGE"/>
+                                            <constraint firstAttribute="height" constant="230" id="Z2S-Mq-aGE"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zy1-UG-mcW" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="415" width="343" height="300"/>
+                                        <rect key="frame" x="16" y="418" width="343" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="300" id="C4B-Qa-TE6"/>
@@ -4674,7 +4610,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="680-zz-lzx">
-                                        <rect key="frame" x="16" y="723" width="343" height="110"/>
+                                        <rect key="frame" x="16" y="726" width="343" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-4O-mZY">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
@@ -4735,7 +4671,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcM-Rk-iri" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="865" width="343" height="39"/>
+                                        <rect key="frame" x="16" y="868" width="343" height="39"/>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="pwT-UU-iRM"/>
@@ -4754,6 +4690,72 @@
                                             <action selector="onClickDeliveryBaoGia:" destination="2UR-NG-Au4" eventType="touchUpInside" id="th8-0h-ro4"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ak-XQ-IgB" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="365" width="343" height="45"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d56-eV-LAw">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="45"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-BL-cpH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="45"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng (SL: 1)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tb-Sf-S8q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q6W-al-w0X" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                                <rect key="frame" x="0.0" y="17" width="323" height="28"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jff-9A-r7M" customClass="AwesomeToggleButton" customModule="Alemua" customModuleProvider="target">
+                                                        <rect key="frame" x="323" y="12.5" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="FjP-yk-p51"/>
+                                                            <constraint firstAttribute="width" constant="20" id="dAj-Pc-M8d"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image1" value="ic_back_down"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="image2" value="ic_back_up"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="onShowMore:" destination="2UR-NG-Au4" eventType="touchUpInside" id="4ub-cg-JnV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="0Qe-BL-cpH" secondAttribute="bottom" id="YQw-ql-XFN"/>
+                                                    <constraint firstItem="0Qe-BL-cpH" firstAttribute="top" secondItem="d56-eV-LAw" secondAttribute="top" id="sOH-7s-Ay8"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="d56-eV-LAw" firstAttribute="leading" secondItem="6Ak-XQ-IgB" secondAttribute="leading" id="CTA-Sm-P3c"/>
+                                            <constraint firstAttribute="bottom" secondItem="d56-eV-LAw" secondAttribute="bottom" id="G5h-aQ-qj9"/>
+                                            <constraint firstAttribute="trailing" secondItem="d56-eV-LAw" secondAttribute="trailing" id="GGs-D0-iTw"/>
+                                            <constraint firstItem="d56-eV-LAw" firstAttribute="top" secondItem="6Ak-XQ-IgB" secondAttribute="top" id="OgT-sU-LH5"/>
+                                            <constraint firstAttribute="height" constant="45" id="W0F-qh-Wfo"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ZcM-Rk-iri" firstAttribute="leading" secondItem="LBO-g5-Gi3" secondAttribute="leading" constant="16" id="2vo-x2-Dnt"/>
@@ -4763,14 +4765,17 @@
                                     <constraint firstItem="ZcM-Rk-iri" firstAttribute="top" secondItem="680-zz-lzx" secondAttribute="bottom" constant="32" id="9IY-9c-qsL"/>
                                     <constraint firstAttribute="trailing" secondItem="2vO-I3-MXJ" secondAttribute="trailing" constant="16" id="9JV-Aj-eap"/>
                                     <constraint firstItem="2vO-I3-MXJ" firstAttribute="top" secondItem="LBO-g5-Gi3" secondAttribute="top" constant="16" id="9cp-om-nbp"/>
+                                    <constraint firstItem="Zy1-UG-mcW" firstAttribute="top" secondItem="6Ak-XQ-IgB" secondAttribute="bottom" constant="8" id="C6z-gY-i5u"/>
                                     <constraint firstItem="2vO-I3-MXJ" firstAttribute="centerX" secondItem="LBO-g5-Gi3" secondAttribute="centerX" id="CR2-yG-HeH"/>
                                     <constraint firstAttribute="trailing" secondItem="JNi-sa-60t" secondAttribute="trailing" constant="16" id="E7J-3z-sWH"/>
-                                    <constraint firstItem="Zy1-UG-mcW" firstAttribute="top" secondItem="JNi-sa-60t" secondAttribute="bottom" constant="8" id="GJq-lz-QF0"/>
                                     <constraint firstAttribute="bottom" secondItem="ZcM-Rk-iri" secondAttribute="bottom" constant="16" id="RgO-yO-t3V"/>
                                     <constraint firstItem="680-zz-lzx" firstAttribute="leading" secondItem="LBO-g5-Gi3" secondAttribute="leading" constant="16" id="SuR-cd-HVV"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Ak-XQ-IgB" secondAttribute="trailing" constant="16" id="ezV-E6-5bh"/>
+                                    <constraint firstItem="6Ak-XQ-IgB" firstAttribute="leading" secondItem="LBO-g5-Gi3" secondAttribute="leading" constant="16" id="faA-DA-wU6"/>
                                     <constraint firstItem="JNi-sa-60t" firstAttribute="top" secondItem="2vO-I3-MXJ" secondAttribute="bottom" constant="16" id="fua-JB-Nfa"/>
                                     <constraint firstAttribute="trailing" secondItem="Zy1-UG-mcW" secondAttribute="trailing" constant="16" id="ldt-rT-fWg"/>
                                     <constraint firstItem="JNi-sa-60t" firstAttribute="leading" secondItem="LBO-g5-Gi3" secondAttribute="leading" constant="16" id="mEG-BG-6OC"/>
+                                    <constraint firstItem="6Ak-XQ-IgB" firstAttribute="top" secondItem="JNi-sa-60t" secondAttribute="bottom" constant="8" id="ntn-Im-Bc5"/>
                                     <constraint firstAttribute="trailing" secondItem="680-zz-lzx" secondAttribute="trailing" constant="16" id="ovk-1p-Q2p"/>
                                     <constraint firstItem="2vO-I3-MXJ" firstAttribute="leading" secondItem="LBO-g5-Gi3" secondAttribute="leading" constant="16" id="zb4-c2-8cs"/>
                                 </constraints>
@@ -4796,6 +4801,7 @@
                         <outlet property="lbMota" destination="1kM-LL-9om" id="jLK-Ey-yFa"/>
                         <outlet property="lbMuaTu" destination="Rjy-Hg-gBw" id="Ejr-Cy-Nyy"/>
                         <outlet property="lbNgay" destination="APE-It-Jg8" id="dwq-n4-EJH"/>
+                        <outlet property="lbTongDonHang" destination="5tb-Sf-S8q" id="E0D-hR-IFN"/>
                         <outlet property="rateDetail" destination="Zy1-UG-mcW" id="JNZ-F6-tQy"/>
                         <outlet property="showDetailButton" destination="jff-9A-r7M" id="SgB-lj-P01"/>
                         <outlet property="tfGiaWeb" destination="SPi-Ve-kHP" id="PlR-R8-537"/>

@@ -793,6 +793,23 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aS-eb-TPh">
+                                <rect key="frame" x="273" y="532" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4aS-eb-TPh" secondAttribute="height" multiplier="1:1" id="P5X-U7-dnP"/>
+                                    <constraint firstAttribute="width" constant="70" id="Pw0-9n-gzP"/>
+                                </constraints>
+                                <state key="normal" image="ic_shopping_cart"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onTaoDonHang:" destination="7H6-ps-BGq" eventType="touchUpInside" id="PrF-WS-5KA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -801,10 +818,12 @@
                             <constraint firstItem="5Ng-PW-V4r" firstAttribute="leading" secondItem="jpc-u4-hb0" secondAttribute="leading" id="D2K-OA-OfQ"/>
                             <constraint firstItem="5Ng-PW-V4r" firstAttribute="top" secondItem="Vxw-wr-qRn" secondAttribute="bottom" id="Mu6-rK-TDI"/>
                             <constraint firstAttribute="trailing" secondItem="2vq-Iq-ifD" secondAttribute="trailing" id="bDw-lA-afa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4aS-eb-TPh" secondAttribute="trailing" constant="16" id="h9k-Qx-htq"/>
                             <constraint firstAttribute="trailing" secondItem="Vxw-wr-qRn" secondAttribute="trailing" id="hEK-5U-rQ7"/>
                             <constraint firstItem="2vq-Iq-ifD" firstAttribute="leading" secondItem="jpc-u4-hb0" secondAttribute="leading" id="lB0-cs-ke0"/>
                             <constraint firstAttribute="trailing" secondItem="5Ng-PW-V4r" secondAttribute="trailing" id="pBN-Uh-UZn"/>
                             <constraint firstItem="2vq-Iq-ifD" firstAttribute="top" secondItem="jpc-u4-hb0" secondAttribute="top" id="pTz-5I-Ddk"/>
+                            <constraint firstItem="6cY-xv-OTo" firstAttribute="top" secondItem="4aS-eb-TPh" secondAttribute="bottom" constant="16" id="tyN-aO-UMr"/>
                             <constraint firstItem="6cY-xv-OTo" firstAttribute="top" secondItem="5Ng-PW-V4r" secondAttribute="bottom" id="u58-6W-jJ2"/>
                         </constraints>
                     </view>
@@ -2491,14 +2510,14 @@
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="yyyy-MM-dd" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8M-IT-J6c" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/MM/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p8M-IT-J6c" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                                 <rect key="frame" x="0.0" y="17" width="179" height="33.5"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd-MM-yyyy"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd/MM/yyyy"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                         </subviews>
@@ -4197,7 +4216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JBO-pE-r3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1279.2" y="-2230.434782608696"/>
+            <point key="canvasLocation" x="-1278" y="-2319"/>
         </scene>
         <!--Dialog Tao Don Hang2-->
         <scene sceneID="qto-zT-jZI">
@@ -4843,7 +4862,7 @@ AgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAD6Q
         <image name="splash3" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PDL-tC-oPy"/>
+        <segue reference="CX0-EY-bs5"/>
         <segue reference="jfi-fd-Tl2"/>
         <segue reference="c6W-pI-I18"/>
     </inferredMetricsTieBreakers>

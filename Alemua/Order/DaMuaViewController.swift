@@ -21,6 +21,7 @@ class DaMuaViewController: UIViewController {
     @IBOutlet weak var uiMoreDetail: RateDetail!
     @IBOutlet weak var review1: ReviewView!
     @IBOutlet weak var review2: ReviewView!
+    @IBOutlet weak var navTitle: UINavigationItem!
     
     let bag = DisposeBag()
     var orderData: ModelOrderClientData!
@@ -44,6 +45,8 @@ class DaMuaViewController: UIViewController {
         super.viewDidLoad()
             bindData()
         // Do any additional setup after loading the view.
+        
+        navTitle.title = "Đơn hàng đã mua- Đơn hàng #\(orderData.id ?? 0)"
     }
     
     func bindData(){

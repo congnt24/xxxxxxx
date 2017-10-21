@@ -26,6 +26,7 @@ class DangChuyenViewController: UIViewController {
     @IBOutlet weak var tfGhiChu: AwesomeTextField!
     @IBOutlet weak var uiDelivery: AwesomeToggleViewByHeight!
     @IBOutlet weak var uiOrder: UIStackView!
+    @IBOutlet weak var navTitle: UINavigationItem!
 
     @IBOutlet weak var uiRateDetail: RateDetail!
     let bag = DisposeBag()
@@ -50,6 +51,7 @@ class DangChuyenViewController: UIViewController {
             }
         }).addDisposableTo(bag)
         
+        navTitle.title = "Đơn đang vận chuyển- Đơn hàng #\(orderData.id ?? 0)"
     }
     
     func bindData(){

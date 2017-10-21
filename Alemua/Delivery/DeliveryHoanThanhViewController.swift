@@ -24,6 +24,8 @@ class DeliveryHoanThanhViewController: UIViewController {
     @IBOutlet weak var review2: ReviewView!
     @IBOutlet weak var danhGia: AwesomeCloseButton!
     
+    @IBOutlet weak var navTitle: UINavigationItem!
+    
     var orderData: ModelOrderClientData!
     let bag = DisposeBag()
     var hoanThanhData: ModelHoanThanhData? {
@@ -38,6 +40,7 @@ class DeliveryHoanThanhViewController: UIViewController {
                 if (orderData.transactionOption ?? 0) == 2 {
                     rateDetail.hideForTransactionOption()
                 }
+                navTitle.title = "Đơn đã hoàn thành - Đơn hàng #\(data.id ?? 0)"
                 
             }
         }

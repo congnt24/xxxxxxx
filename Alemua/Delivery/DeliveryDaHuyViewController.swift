@@ -23,6 +23,8 @@ class DeliveryDaHuyViewController: UIViewController {
     @IBOutlet weak var rateDetail: RateDetail!
     @IBOutlet weak var review: ReviewView!
     
+    @IBOutlet weak var navTitle: UINavigationItem!
+    
     
     var orderData: ModelOrderClientData!
     let bag = DisposeBag()
@@ -38,6 +40,7 @@ class DeliveryDaHuyViewController: UIViewController {
                 if (orderData.transactionOption ?? 0) == 2 {
                     rateDetail.hideForTransactionOption()
                 }
+                navTitle.title = "Đơn hàng đã hủy - Đơn hàng #\(data.id ?? 0)"
                 //
 //                rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice,giamua: 0, discount: 0, magiamgia: 0, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
                 tfMuatu.text = data.buyFrom

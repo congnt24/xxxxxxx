@@ -25,6 +25,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     @IBOutlet weak var tfGia: AwesomeTextField!
     @IBOutlet weak var tfMota: AwesomeTextField!
     @IBOutlet weak var tfLuachon: AwesomeTextField!
+    @IBOutlet weak var navTitle: UINavigationItem!
     
     @IBOutlet weak var rateDetail: RateDetail!
     @IBAction func onShowMore(_ sender: Any) {
@@ -55,6 +56,9 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
             }
         }
         bindData()
+        
+        
+        navTitle.title = "Thông tin báo giá- Đơn hàng #\(orderData.id ?? 0)"
     }
     
 

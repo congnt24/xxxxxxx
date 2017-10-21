@@ -29,7 +29,9 @@ class DonMuaViewController: UIViewController {
         bindData()
         
         if HomeViewController.homeType == .delivery {
-            navTitle.title = "Chi tiết báo giá"
+            navTitle.title = "Chi tiết báo giá - Đơn hàng #\(orderData.id ?? 0)"
+        }else{
+            navTitle.title = "Đơn mua - Đơn hàng #\(orderData.id ?? 0)"
         }
         // Do any additional setup after loading the view.
     }

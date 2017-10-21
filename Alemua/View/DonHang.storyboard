@@ -845,6 +845,7 @@
                         <outlet property="lbGio" destination="wPd-jP-Mho" id="L1P-bh-03o"/>
                         <outlet property="lbNgay" destination="kGX-QW-kdJ" id="m5K-w3-5kF"/>
                         <outlet property="lbPhut" destination="7lI-a3-kSX" id="Gpk-Ja-Z5y"/>
+                        <outlet property="navTitle" destination="qYK-HM-Jej" id="FPc-FY-XRO"/>
                         <outlet property="onToggleRateView" destination="Aa8-pG-4sm" id="jKM-FB-xMc"/>
                         <outlet property="tfGhiChu" destination="lAv-xt-hDG" id="DQK-Yd-8xj"/>
                         <outlet property="tfGiaWeb" destination="uHA-GU-eZi" id="f2f-0D-0GA"/>
@@ -1173,6 +1174,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="itemView" destination="viM-Zm-pC3" id="0zi-pr-OFS"/>
+                        <outlet property="navTitle" destination="2tq-ee-8am" id="BjH-I2-IKD"/>
                         <outlet property="review1" destination="Cld-aH-vwg" id="c3N-3S-HYk"/>
                         <outlet property="review2" destination="4dX-oW-Bjq" id="dsr-Gq-9AM"/>
                         <outlet property="tfGia" destination="ywt-eV-95y" id="Nw8-CR-GTw"/>
@@ -1548,7 +1550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOX-i4-XKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3508" y="25"/>
+            <point key="canvasLocation" x="-3508" y="-46"/>
         </scene>
         <!--Order Bao Gia Detail Sub View Controller-->
         <scene sceneID="Bhy-GS-WLu">
@@ -1960,6 +1962,7 @@
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="itemView" destination="7GE-Wy-d8i" id="eCx-XH-6s8"/>
+                        <outlet property="navTitle" destination="bRm-ig-OMW" id="KrM-Ki-x1E"/>
                         <outlet property="rateDetail" destination="uLG-2b-f8d" id="hNe-It-PSg"/>
                         <outlet property="tableView" destination="KQJ-tP-6XY" id="UXg-sO-L7p"/>
                         <outlet property="tfGia" destination="Hzu-MI-xQH" id="5A8-kB-mBa"/>
@@ -3102,6 +3105,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="itemView" destination="KWd-1b-BTA" id="Hdw-Bm-hmb"/>
+                        <outlet property="navTitle" destination="vTv-9F-VKK" id="gMj-gF-Bp7"/>
                         <outlet property="rateDetail" destination="gaV-6D-Uwv" id="Pjq-zf-khb"/>
                         <outlet property="review" destination="yJH-rk-ukt" id="0lG-zv-lfg"/>
                         <outlet property="tfGhichu" destination="I0f-yQ-7P6" id="Mjm-1O-04a"/>
@@ -3475,6 +3479,7 @@
                     <connections>
                         <outlet property="danhGia" destination="QeJ-cg-J7M" id="kBj-hC-VMU"/>
                         <outlet property="itemView" destination="8s0-6v-CbC" id="JbT-bU-Hoy"/>
+                        <outlet property="navTitle" destination="f9r-kK-EcM" id="DjK-4u-9jy"/>
                         <outlet property="rateDetail" destination="oBP-h7-QKN" id="scy-cO-N7r"/>
                         <outlet property="review1" destination="vKI-sY-2A0" id="nyL-P8-pkR"/>
                         <outlet property="review2" destination="Vqt-IA-w6i" id="2tZ-dV-oRX"/>
@@ -5121,10 +5126,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Xzf-nP-L49">
-                                        <rect key="frame" x="16" y="755" width="343" height="80"/>
+                                        <rect key="frame" x="16" y="755" width="343" height="92"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ePr-1T-g3H">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mô tả" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eaa-Gc-OX2">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
@@ -5133,7 +5138,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lah-6A-Yrf" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="17" width="343" height="15"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -5149,16 +5154,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e6t-LG-CP8">
-                                                <rect key="frame" x="0.0" y="48" width="343" height="32"/>
+                                                <rect key="frame" x="0.0" y="54" width="343" height="38"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Lựa chọn sản phẩm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0N-cE-rSJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="12"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypu-ae-82i" customClass="AwesomeTextField" customModule="AwesomeMVVM">
-                                                        <rect key="frame" x="0.0" y="12" width="343" height="20"/>
+                                                        <rect key="frame" x="0.0" y="17" width="343" height="21"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -5175,7 +5180,7 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="ifZ-eg-pT3"/>
+                                            <constraint firstAttribute="height" constant="92" id="ifZ-eg-pT3"/>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRG-ap-Vp3" customClass="RateDetail" customModule="Alemua" customModuleProvider="target">
@@ -5231,6 +5236,7 @@
                         <outlet property="lbMau" destination="lah-6A-Yrf" id="2mS-8N-uaK"/>
                         <outlet property="lbMuaTu" destination="57K-Py-D5e" id="SDR-Sm-Uof"/>
                         <outlet property="lbNgay" destination="k3a-B5-Y8d" id="bDD-rP-iOt"/>
+                        <outlet property="navTitle" destination="i2b-oI-arW" id="LdP-Ze-z3I"/>
                         <outlet property="onShowMoew" destination="ufV-lg-SDQ" id="FCW-hj-UIm"/>
                         <outlet property="rateDetail" destination="pRG-ap-Vp3" id="Z49-6s-ngM"/>
                     </connections>

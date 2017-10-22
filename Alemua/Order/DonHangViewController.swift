@@ -19,6 +19,7 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
     var orderData: ModelOrderClientData!
     var donhang: DonHangSubViewController!
     var baogia: OrderBaoGiaSubViewController!
+    @IBOutlet weak var navTitle: UINavigationItem!
 
     override func viewDidLoad() {
         settings.style.buttonBarBackgroundColor = UIColor(hexString: "#E94F2E")!
@@ -39,6 +40,7 @@ class DonHangViewController: ButtonBarPagerTabStripViewController {
         btlFilter.isEnabled = false
 //        btlFilter.plainView.isHidden = true
         fetchData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,6 +83,7 @@ extension DonHangViewController {
         LoadingOverlay.shared.showOverlay(view: view)
         if HomeViewController.homeType == .delivery {
             orderID = modelQuoteData.id!
+            navTitle.title = "Đơn hàng - Đơn hàng #\(modelQuoteData.id ?? 0)"
             AlemuaApi.shared.aleApi.request(AleApi.getOrderDetailsToQuote(order_id: orderID))
                 .toJSON()
                 .subscribe(onNext: { (res) in
@@ -102,6 +105,7 @@ extension DonHangViewController {
             
         }else{
             orderID = orderData.id!
+            navTitle.title = "Đơn hàng - Đơn hàng #\(orderData.id ?? 0)"
             AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 1, orderId: orderID))
                 .toJSON()
                 .subscribe(onNext: { (res) in

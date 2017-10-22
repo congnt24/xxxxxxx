@@ -24,6 +24,7 @@ class DeliveryHoanThanhViewController: UIViewController {
     @IBOutlet weak var review2: ReviewView!
     @IBOutlet weak var danhGia: AwesomeCloseButton!
     
+    @IBOutlet weak var lbTongDonHang: UILabel!
     @IBOutlet weak var navTitle: UINavigationItem!
     
     var orderData: ModelOrderClientData!
@@ -31,6 +32,7 @@ class DeliveryHoanThanhViewController: UIViewController {
     var hoanThanhData: ModelHoanThanhData? {
         didSet {
             if let data = hoanThanhData {
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
                 review1.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 review2.bindData(name: data.userShipPhone, rating: data.userShipRating, nguoidang: 1)
                 rateDetail.bindData(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice, discount: data.discount, magiamgia: 0, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))

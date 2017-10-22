@@ -27,6 +27,7 @@ class DangChuyenViewController: UIViewController {
     @IBOutlet weak var uiDelivery: AwesomeToggleViewByHeight!
     @IBOutlet weak var uiOrder: UIStackView!
     @IBOutlet weak var navTitle: UINavigationItem!
+    @IBOutlet weak var lbTongDonHang: UILabel!
 
     @IBOutlet weak var uiRateDetail: RateDetail!
     let bag = DisposeBag()
@@ -104,6 +105,7 @@ class DangChuyenViewController: UIViewController {
             }
         }
         
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
     }
 
     override func viewWillAppear(_ animated: Bool) {

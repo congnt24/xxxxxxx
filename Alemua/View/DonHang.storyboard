@@ -557,7 +557,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NDP-OU-08n">
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it2-wl-d35">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng (SL: 1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="it2-wl-d35">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -845,6 +845,7 @@
                         <outlet property="lbGio" destination="wPd-jP-Mho" id="L1P-bh-03o"/>
                         <outlet property="lbNgay" destination="kGX-QW-kdJ" id="m5K-w3-5kF"/>
                         <outlet property="lbPhut" destination="7lI-a3-kSX" id="Gpk-Ja-Z5y"/>
+                        <outlet property="lbTongDonHang" destination="it2-wl-d35" id="5OK-eO-pRb"/>
                         <outlet property="navTitle" destination="qYK-HM-Jej" id="FPc-FY-XRO"/>
                         <outlet property="onToggleRateView" destination="Aa8-pG-4sm" id="jKM-FB-xMc"/>
                         <outlet property="tfGhiChu" destination="lAv-xt-hDG" id="DQK-Yd-8xj"/>
@@ -1017,7 +1018,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tvn-I4-XBP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="43"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzo-h9-2pi">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng (SL: 1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzo-h9-2pi">
                                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1174,6 +1175,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="itemView" destination="viM-Zm-pC3" id="0zi-pr-OFS"/>
+                        <outlet property="lbTongDonHang" destination="Fzo-h9-2pi" id="esb-Vy-GhM"/>
                         <outlet property="navTitle" destination="2tq-ee-8am" id="BjH-I2-IKD"/>
                         <outlet property="review1" destination="Cld-aH-vwg" id="c3N-3S-HYk"/>
                         <outlet property="review2" destination="4dX-oW-Bjq" id="dsr-Gq-9AM"/>
@@ -1272,6 +1274,7 @@
                         <outlet property="btlFilter" destination="Wri-wf-FtS" id="JG0-7l-qDn"/>
                         <outlet property="buttonBarView" destination="gNT-tk-xDm" id="JXk-0X-eTO"/>
                         <outlet property="containerView" destination="ebL-94-jbu" id="82c-CW-ycV"/>
+                        <outlet property="navTitle" destination="5QI-Of-IGi" id="Z50-le-tiB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxj-oa-bqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1751,7 +1754,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9dF-z2-TYM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="43"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2j-Yi-S0M">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2j-Yi-S0M">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1962,6 +1965,7 @@
                     <size key="freeformSize" width="375" height="1300"/>
                     <connections>
                         <outlet property="itemView" destination="7GE-Wy-d8i" id="eCx-XH-6s8"/>
+                        <outlet property="lbTongDonHang" destination="U2j-Yi-S0M" id="hLL-Fx-sC4"/>
                         <outlet property="navTitle" destination="bRm-ig-OMW" id="KrM-Ki-x1E"/>
                         <outlet property="rateDetail" destination="uLG-2b-f8d" id="hNe-It-PSg"/>
                         <outlet property="tableView" destination="KQJ-tP-6XY" id="UXg-sO-L7p"/>
@@ -2924,7 +2928,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fnd-u5-RtD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="43"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x22-2H-NhU">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x22-2H-NhU">
                                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -3105,6 +3109,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="itemView" destination="KWd-1b-BTA" id="Hdw-Bm-hmb"/>
+                        <outlet property="lbTongDonHang" destination="x22-2H-NhU" id="cuh-vo-C40"/>
                         <outlet property="navTitle" destination="vTv-9F-VKK" id="gMj-gF-Bp7"/>
                         <outlet property="rateDetail" destination="gaV-6D-Uwv" id="Pjq-zf-khb"/>
                         <outlet property="review" destination="yJH-rk-ukt" id="0lG-zv-lfg"/>
@@ -3479,6 +3484,7 @@
                     <connections>
                         <outlet property="danhGia" destination="QeJ-cg-J7M" id="kBj-hC-VMU"/>
                         <outlet property="itemView" destination="8s0-6v-CbC" id="JbT-bU-Hoy"/>
+                        <outlet property="lbTongDonHang" destination="b9E-5f-51c" id="dkV-X5-4Cv"/>
                         <outlet property="navTitle" destination="f9r-kK-EcM" id="DjK-4u-9jy"/>
                         <outlet property="rateDetail" destination="oBP-h7-QKN" id="scy-cO-N7r"/>
                         <outlet property="review1" destination="vKI-sY-2A0" id="nyL-P8-pkR"/>
@@ -4074,6 +4080,7 @@
                     <connections>
                         <outlet property="itemView" destination="Xfr-aE-xj1" id="jUS-4C-Ggr"/>
                         <outlet property="lbTongDonHang" destination="cdW-fj-RdO" id="w98-rU-r2e"/>
+                        <outlet property="navTitle" destination="YBN-VM-Mzp" id="TSe-WS-rh4"/>
                         <outlet property="rateDetail" destination="aTO-5s-zEg" id="6Hj-rT-eSK"/>
                         <outlet property="tfGia" destination="lVj-wT-Lde" id="j1P-ev-oZP"/>
                         <outlet property="tfGiaWeb" destination="qUT-5I-OmS" id="vay-JN-Ghg"/>

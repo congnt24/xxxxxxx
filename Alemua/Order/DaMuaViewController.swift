@@ -23,6 +23,8 @@ class DaMuaViewController: UIViewController {
     @IBOutlet weak var review2: ReviewView!
     @IBOutlet weak var navTitle: UINavigationItem!
     
+    @IBOutlet weak var lbTongDonHang: UILabel!
+    
     let bag = DisposeBag()
     var orderData: ModelOrderClientData!
     var hoanThanhData: ModelHoanThanhData? {
@@ -35,6 +37,8 @@ class DaMuaViewController: UIViewController {
 //                if (orderData.transactionOption ?? 0) == 2 {
 //                    uiMoreDetail.hideForTransactionOption()
 //                }
+                
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
                 
             }
         }

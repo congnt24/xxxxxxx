@@ -25,12 +25,15 @@ class DeliveryDaHuyViewController: UIViewController {
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
+    @IBOutlet weak var lbTongDonHang: UILabel!
     
     var orderData: ModelOrderClientData!
     let bag = DisposeBag()
     var dahuyData: ModelHoanThanhData? {
         didSet {
             if let data = dahuyData {
+                
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
                 review.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 
                 itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(data.number_quote ?? 0)")

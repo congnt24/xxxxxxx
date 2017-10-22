@@ -27,6 +27,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     @IBOutlet weak var tfLuachon: AwesomeTextField!
     @IBOutlet weak var navTitle: UINavigationItem!
     
+    @IBOutlet weak var lbTongDonHang: UILabel!
     @IBOutlet weak var rateDetail: RateDetail!
     @IBAction func onShowMore(_ sender: Any) {
         rateDetail.toggleHeight()
@@ -69,6 +70,8 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     var listComment = Variable<[CommentData]>([])
     
     func bindData () {
+        
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
         itemView.bindData(title: orderData.productName!, imageUrl: orderData.photo!, baogia: "\(orderData.quotes!.count)")
         tfMuatu.text = modelOrderBaoGia.buyFrom
         tfGiaoden.text = modelOrderBaoGia.deliveryTo

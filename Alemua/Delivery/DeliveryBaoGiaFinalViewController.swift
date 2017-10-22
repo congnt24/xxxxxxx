@@ -32,6 +32,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
     @IBOutlet weak var tfNhapMaKM: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
     @IBOutlet weak var hightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var navTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         DeliveryBaoGiaFinalViewController.shared = self
@@ -46,6 +47,10 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
         lbTongDonHang.text = "Tổng đơn hàng (SL: \(modelQuoteData.numberProduct ?? 1))"
+        
+        
+        navTitle.title = "Báo giá- Đơn hàng #\(modelQuoteData.id ?? 0)"
+        
 //        let rate = RateDetailData()
         
 //        AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 1, orderId: self.modelQuoteData.id!))
@@ -118,8 +123,8 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         
         
         if modelQuoteData.productOption!.contains("4") {
-            rateDetail.showGiamGia()
-            rateDetail.height = rateDetail.height - 40
+//            rateDetail.showGiamGia()
+//            rateDetail.height = rateDetail.height - 40
 //            rateDetail.giamgia.bottomLineWidth = 10
 //            rateDetail.giamgia.bottomLineColor = UIColor.red
         }
@@ -168,7 +173,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                     AppCoordinator.sharedInstance.navigation?.popToViewController(DeliveryNavTabBarViewController.sharedInstance, animated: true)
                     SingleDeliveryViewController.shouldReloadPage = 1
                     
-//                    DeliveryMainViewController.shared.reloadPage()
+                    DeliveryMainViewController.shared.reloadPage()
                     break
                 case .error(let msg):
                     Toast.init(text: msg).show()

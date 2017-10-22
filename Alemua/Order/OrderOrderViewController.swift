@@ -122,7 +122,7 @@ class OrderOrderViewController: ButtonBarPagerTabStripViewController {
     }
     @IBAction func onTaoDonHang(_ sender: Any) {
 //        OrderCoordinator.sharedInstance.showTaoDonHang(url: "" , data: nil)
-        OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: "http://google.com")
+        OrderCoordinator.sharedInstance.showTaoDonHang(data: nil, text: "")
         
     }
 }

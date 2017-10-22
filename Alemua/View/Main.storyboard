@@ -1580,23 +1580,36 @@
                                     <action selector="onTaoDonHang:" destination="4Rg-j2-WJd" eventType="touchUpInside" id="TKz-6w-NPB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập link đến sản phẩm hoặc bấm vào biểu tượng tạo đơn hàng để tiến hành đặt hàng" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uay-1w-MWj">
+                                <rect key="frame" x="16" y="88" width="343" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="FKN-gm-lP5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="art-Eu-b0K" secondAttribute="trailing" id="826-h8-erV"/>
                             <constraint firstItem="B7L-4b-8v8" firstAttribute="top" secondItem="431-5L-eu0" secondAttribute="bottom" id="B2d-xh-T9t"/>
                             <constraint firstItem="art-Eu-b0K" firstAttribute="top" secondItem="bqz-lm-bBl" secondAttribute="top" id="ELI-2G-p8U"/>
+                            <constraint firstItem="Uay-1w-MWj" firstAttribute="top" secondItem="art-Eu-b0K" secondAttribute="bottom" constant="24" id="R1h-eH-puF"/>
                             <constraint firstAttribute="trailing" secondItem="431-5L-eu0" secondAttribute="trailing" id="Rv1-iO-G2d"/>
                             <constraint firstItem="B7L-4b-8v8" firstAttribute="top" secondItem="cHq-q5-gFY" secondAttribute="bottom" constant="16" id="VbN-si-mBW"/>
                             <constraint firstAttribute="trailing" secondItem="cHq-q5-gFY" secondAttribute="trailing" constant="16" id="cOv-ts-dl7"/>
                             <constraint firstItem="art-Eu-b0K" firstAttribute="leading" secondItem="bqz-lm-bBl" secondAttribute="leading" id="ePX-Xm-fvv"/>
                             <constraint firstItem="431-5L-eu0" firstAttribute="top" secondItem="art-Eu-b0K" secondAttribute="bottom" id="g4g-EG-AkM"/>
+                            <constraint firstAttribute="trailing" secondItem="Uay-1w-MWj" secondAttribute="trailing" constant="16" id="q4K-qo-xKE"/>
                             <constraint firstItem="431-5L-eu0" firstAttribute="leading" secondItem="bqz-lm-bBl" secondAttribute="leading" id="q4W-XH-DX3"/>
+                            <constraint firstItem="Uay-1w-MWj" firstAttribute="leading" secondItem="bqz-lm-bBl" secondAttribute="leading" constant="16" id="qZw-Uw-DdT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btnClear" destination="uIC-UU-EAr" id="m77-ar-49f"/>
                         <outlet property="input" destination="qOL-db-bmG" id="LDc-WF-sOs"/>
+                        <outlet property="lbNull" destination="Uay-1w-MWj" id="215-Mp-1cc"/>
                         <outlet property="webView" destination="431-5L-eu0" id="NrR-Ei-r9r"/>
                     </connections>
                 </viewController>

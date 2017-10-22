@@ -16,6 +16,7 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var input: AwesomeTextField2!
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var btnClear: UIButton!
+    @IBOutlet weak var lbNull: UILabel!
     
     var parentUrl: String?
     var orderData: ModelOrderData?
@@ -37,25 +38,35 @@ class OrderTaoDonMuaViewController: UIViewController, UIWebViewDelegate {
 
             }
         }).addDisposableTo(bag)
-        
-        if let parentUrl = parentUrl {
-            input.text = parentUrl
-            openPage()
-        }
-        if let orderData = orderData {
-            print(orderData.websiteUrl)
-            input.text = orderData.websiteUrl
-            openPage()
-        }
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        lbNull.isHidden = false
+        if let parentUrl = parentUrl {
+            if parentUrl != "" {
+                input.text = parentUrl
+                openPage()
+            }
+        }else
+            if let orderData = orderData {
+                print(orderData.websiteUrl)
+                if let url = orderData.websiteUrl {
+                    if url != "" {
+                        input.text = url
+                        openPage()
+                    }
+                }
+        }
+    }
 
     func openPage() {
-        if let text = self.input.text {
+        if let text = input.text {
             //format http
             let strUrl = text.convertToLink()
             if let url = URL(string: strUrl) {
+                lbNull.isHidden = true
                 let request = URLRequest(url: url)
                 self.webView.loadRequest(request)
             }

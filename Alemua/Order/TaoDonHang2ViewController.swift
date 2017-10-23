@@ -36,6 +36,7 @@ class TaoDonHang2ViewController: UIViewController, IndicatorInfoProvider, UIText
         taodonhangRequest = TaoDonHang1ViewController.sharedInstance.taodonhangRequest
         tfMuaTu.text = data?.address
         tfGiaoDen.delegate = self
+        tfNgay.text = ""
         // Do any additional setup after loading the view.
     }
 

@@ -1131,7 +1131,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-Jf-OAX">
                                                         <rect key="frame" x="0.0" y="0.0" width="169.5" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá sản phẩm (VNĐ)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8CZ-PP-YGt" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nguyên giá (VNĐ)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8CZ-PP-YGt" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="169.5" height="48"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1156,7 +1156,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MVs-Fr-kns">
                                                         <rect key="frame" x="173.5" y="0.0" width="169.5" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Khuyến mãi (%)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dri-dw-qpX" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giảm giá (%)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dri-dw-qpX" customClass="AwesomeTextField" customModule="AwesomeMVVM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="169.5" height="48"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1183,7 +1183,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5av-aJ-N2l">
                                                 <rect key="frame" x="0.0" y="64" width="343" height="48"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá khuyến mãi (VNĐ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTj-8a-A1M">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá bán (VNĐ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTj-8a-A1M">
                                                         <rect key="frame" x="0.0" y="0.0" width="333.5" height="48"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -1247,7 +1247,7 @@
                                                                                         <real key="value" value="0.0"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableDatePicker" value="YES"/>
-                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd-MM-yyyy"/>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="dateTimeFormat" value="dd/MM/yyyy"/>
                                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     </userDefinedRuntimeAttribute>

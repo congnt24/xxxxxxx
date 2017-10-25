@@ -91,6 +91,10 @@ public class AwesomeRadioGroup: UIStackView {
     }
     func disableCheckbox(index: Int){
         (arrangedSubviews[index] as! AwesomeRadioGroupCell).isEnabled = false
+        
+    }
+    func hideCheckbox(index: Int){
+        (arrangedSubviews[index] as! AwesomeRadioGroupCell).isHidden = true
     }
 }
 

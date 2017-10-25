@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -80,8 +81,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-EG-ocO">
-                                                    <rect key="frame" x="24.5" y="36" width="44.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-EG-ocO">
+                                                    <rect key="frame" x="8" y="8" width="77" height="77"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -91,13 +92,17 @@
                                         <constraints>
                                             <constraint firstItem="gXH-YY-Zil" firstAttribute="top" secondItem="hff-6U-zMS" secondAttribute="top" id="2Ic-XB-BUe"/>
                                             <constraint firstItem="5iX-EG-ocO" firstAttribute="centerY" secondItem="hff-6U-zMS" secondAttribute="centerY" id="55Z-sR-HwD"/>
+                                            <constraint firstAttribute="trailing" secondItem="5iX-EG-ocO" secondAttribute="trailing" constant="8" id="BXY-ff-wgR"/>
+                                            <constraint firstItem="5iX-EG-ocO" firstAttribute="leading" secondItem="hff-6U-zMS" secondAttribute="leading" constant="8" id="Ekr-NS-9Bd"/>
                                             <constraint firstAttribute="trailing" secondItem="gXH-YY-Zil" secondAttribute="trailing" id="NWO-Np-r8f"/>
                                             <constraint firstAttribute="bottom" secondItem="gXH-YY-Zil" secondAttribute="bottom" id="UiA-gf-JHv"/>
                                             <constraint firstItem="DHk-AX-vT5" firstAttribute="leading" secondItem="hff-6U-zMS" secondAttribute="leading" id="aPZ-dz-mkS"/>
                                             <constraint firstAttribute="bottom" secondItem="DHk-AX-vT5" secondAttribute="bottom" id="e7P-va-DeV"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="5iX-EG-ocO" secondAttribute="bottom" constant="8" id="g0z-RN-4Kp"/>
                                             <constraint firstItem="5iX-EG-ocO" firstAttribute="centerX" secondItem="hff-6U-zMS" secondAttribute="centerX" id="gtJ-1d-sIb"/>
                                             <constraint firstItem="gXH-YY-Zil" firstAttribute="leading" secondItem="hff-6U-zMS" secondAttribute="leading" id="nVH-eT-0oH"/>
                                             <constraint firstAttribute="trailing" secondItem="DHk-AX-vT5" secondAttribute="trailing" id="qhk-kh-onw"/>
+                                            <constraint firstItem="5iX-EG-ocO" firstAttribute="top" secondItem="hff-6U-zMS" secondAttribute="topMargin" constant="8" id="uir-kH-vQT"/>
                                             <constraint firstItem="DHk-AX-vT5" firstAttribute="top" secondItem="hff-6U-zMS" secondAttribute="top" id="zf4-2v-z8q"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>

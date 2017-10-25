@@ -20,7 +20,8 @@ class OrderDialogBaoGia1ViewController: UIViewController {
         }
         radioGroup.checkAt(position: (transaction_option - 1))
         radioGroup.disableInteraction()
-        radioGroup.disableCheckbox(index: (transaction_option - 1))
+//        radioGroup.disableCheckbox(index: (transaction_option - 1))
+        radioGroup.hideCheckbox(index: (transaction_option - 1) == 0 ? 1 : 0)
         
         // Do any additional setup after loading the view.
     }

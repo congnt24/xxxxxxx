@@ -675,7 +675,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="MFJ-bn-2jA"/>
                                 </constraints>
-                                <string key="text">Mình đã dùng thử Alemua và thấy đây là ứng dụng đăng và tìm đơn hàng vận chuyển rất hay và bổ ích nên muốn giới thiệu cho bạn. Nhớ nhập mã giớp thiệu XXYZML để nhân được nhiều ưu đãi khi tải ứng dụng lần đầu nhé</string>
+                                <string key="text">Mình đã dùng thử Alemua và thấy đây là ứng dụng đăng và tìm đơn hàng vận chuyển rất hay và bổ ích nên muốn giới thiệu cho bạn. Nhớ nhập mã giới thiệu XXYZML để nhân được nhiều ưu đãi khi tải ứng dụng lần đầu nhé</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

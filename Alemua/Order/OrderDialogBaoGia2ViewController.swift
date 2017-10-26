@@ -12,9 +12,11 @@ class OrderDialogBaoGia2ViewController: UIViewController {
     var order_id: Int?
     var quoteId: Int!
     @IBOutlet weak var lbSoDonHang: UILabel!
+    @IBOutlet weak var btnDonHang: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         lbSoDonHang.text = "\(order_id ?? 0)"
+        btnDonHang.setTitle("● Thanh toán đơn hàng \(order_id ?? 0)", for: .normal) 
         // Do any additional setup after loading the view.
     }
     

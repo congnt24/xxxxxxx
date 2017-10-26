@@ -73,7 +73,7 @@ class DeliveryAccountViewController: BaseViewController {
                     switch res {
                     case .done(let result, _):
                         self.data = ProfileData(json: result)
-                        self.userView.bindData(data: self.data!, profileType: 1)
+                        self.userView.bindData(data: self.data!, profileType: 2)
                         self.uiSwitchNotify.isOn = self.data?.isNotify! == 0 ? false : true
                         
                         self.lbDangxuly.text = "\(self.data?.transaction_alemua ?? 0)"

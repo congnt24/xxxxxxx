@@ -69,6 +69,7 @@ class ConversationViewController: BaseViewController {
                 HomeCoordinator.sharedInstance.showLoginScreen()
             }
         }
+        reloadPage()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

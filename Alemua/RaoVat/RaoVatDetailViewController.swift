@@ -218,6 +218,21 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
         }
 
     }
+    
+    @IBAction func onReport(_ sender: Any) {
+        RaoVatService.shared.api.request(RaoVatApi.reportAdv(adv_detail_id: data.id!))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, let msg):
+                    Toast.init(text: msg).show()
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }).addDisposableTo(bag)
+    }
     @IBAction func obMap(_ sender: Any) {
         RaoVatCoordinator.sharedInstance.showMapViewController(data: data)
     }

@@ -433,13 +433,16 @@
                                                     <constraint firstAttribute="height" constant="32" id="E6k-di-rQ6"/>
                                                 </constraints>
                                                 <state key="normal" image="icons8-filled_flag"/>
+                                                <connections>
+                                                    <action selector="onReport:" destination="o9x-TL-gnR" eventType="touchUpInside" id="weO-se-en7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="gG9-3V-Yjw" secondAttribute="trailing" constant="8" id="K7o-cc-5gg"/>
-                                            <constraint firstItem="gG9-3V-Yjw" firstAttribute="top" secondItem="Dkz-j2-pMn" secondAttribute="top" constant="8" id="ZNp-ym-7By"/>
+                                            <constraint firstItem="gG9-3V-Yjw" firstAttribute="top" secondItem="Dkz-j2-pMn" secondAttribute="top" constant="8" id="XJm-rl-xzu"/>
                                             <constraint firstAttribute="height" constant="265" id="wsJ-63-VFZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="gG9-3V-Yjw" secondAttribute="trailing" constant="8" id="xwE-h9-CtG"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rzp-0l-uBk">

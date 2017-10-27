@@ -238,6 +238,20 @@ extension ObservableType {
             }
         }
     }
+    
+    
+    func toJSONPlace() -> Observable<AleResult> {
+        return map { (response) in
+            let response = response as! Response
+            if response.statusCode != 200 {
+                return AleResult.error(msg: "\(response.statusCode) Unhandled Error")
+            }
+            let json = JSON(response.data)
+            print(json)
+            return AleResult.done(result: json["predictions"], msg: "")
+            
+        }
+    }
 }
 
 extension Collection {
@@ -247,4 +261,7 @@ extension Collection {
         return jsonData
     }
 }
+
+
+
 

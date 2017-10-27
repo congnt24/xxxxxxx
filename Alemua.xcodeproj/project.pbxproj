@@ -164,6 +164,7 @@
 		02BF727C1F2368CD00F1F4BC /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF727B1F2368CD00F1F4BC /* NotifyViewController.swift */; };
 		02BF727E1F23708100F1F4BC /* AccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF727D1F23708100F1F4BC /* AccountCoordinator.swift */; };
 		02BF72801F23734800F1F4BC /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF727F1F23734800F1F4BC /* EditAccountViewController.swift */; };
+		02CE35991FA36B4F00C83AF5 /* PlaceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE35981FA36B4F00C83AF5 /* PlaceApi.swift */; };
 		02D1CBFB1F36164000E7666A /* ModelHoanThanhResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D1CBFA1F36164000E7666A /* ModelHoanThanhResponse.swift */; };
 		02D1CBFD1F361F1400E7666A /* ModelDaHuyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D1CBFC1F361F1400E7666A /* ModelDaHuyResponse.swift */; };
 		02D32B771F30A98D00A8A4B6 /* AwesomeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D32B761F30A98D00A8A4B6 /* AwesomeSwitch.swift */; };
@@ -362,6 +363,7 @@
 		02BF727B1F2368CD00F1F4BC /* NotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
 		02BF727D1F23708100F1F4BC /* AccountCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCoordinator.swift; sourceTree = "<group>"; };
 		02BF727F1F23734800F1F4BC /* EditAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
+		02CE35981FA36B4F00C83AF5 /* PlaceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceApi.swift; sourceTree = "<group>"; };
 		02D1CBFA1F36164000E7666A /* ModelHoanThanhResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelHoanThanhResponse.swift; path = Order/ModelHoanThanhResponse.swift; sourceTree = "<group>"; };
 		02D1CBFC1F361F1400E7666A /* ModelDaHuyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDaHuyResponse.swift; path = Delivery/ModelDaHuyResponse.swift; sourceTree = "<group>"; };
 		02D32B761F30A98D00A8A4B6 /* AwesomeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeSwitch.swift; sourceTree = "<group>"; };
@@ -802,6 +804,7 @@
 				0218B7A51F59B54F0042E54B /* RaoVatRequest.swift */,
 				0218B7A71F59B55C0042E54B /* RaoVatResponse.swift */,
 				02F328A61F5FADB600DB4E0E /* AlamofireManager.swift */,
+				02CE35981FA36B4F00C83AF5 /* PlaceApi.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1029,6 +1032,7 @@
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -1038,6 +1042,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/StarscreamSocketIO/StarscreamSocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1066,6 +1071,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -1075,6 +1081,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarscreamSocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1271,6 +1278,7 @@
 				021C97F41F5070CE0058CBF0 /* RaoVatCoordinator.swift in Sources */,
 				0218B7A61F59B54F0042E54B /* RaoVatRequest.swift in Sources */,
 				02F775381F1F3ABD00556BED /* StarView.swift in Sources */,
+				02CE35991FA36B4F00C83AF5 /* PlaceApi.swift in Sources */,
 				0223C7FD1F2A44A1005949C9 /* ThanhToanViewController.swift in Sources */,
 				022A8D0F1F28F04200D69411 /* TaoDonHang1ViewController.swift in Sources */,
 				022D72A91F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift in Sources */,
@@ -1413,6 +1421,7 @@
 			baseConfigurationReference = 54291CC0F55F9222FD2AFA2C /* Pods-Alemua.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Alemua/Alemua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5S42UFKL84;
@@ -1421,6 +1430,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = Alemua/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.redix.Alemua;
@@ -1435,6 +1445,7 @@
 			baseConfigurationReference = C6B19EAE6BF40EFE2F52A3FC /* Pods-Alemua.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Alemua/Alemua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5S42UFKL84;
@@ -1443,6 +1454,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = Alemua/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.redix.Alemua;

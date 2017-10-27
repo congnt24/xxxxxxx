@@ -20,7 +20,6 @@ class NotifyViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var refreshControl: UIRefreshControl!
-
     var datas = Variable<[NotifyData]>([])
     var currentPage = 1
 

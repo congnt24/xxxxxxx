@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
       Fabric.with([Crashlytics.self])
         let _ = AlemuaApi()
         let _ = RaoVatService()
+        PlaceService()
         //SOcket io
         let _ = SocketIOHelper()
         GoogleMapHelper.configure()

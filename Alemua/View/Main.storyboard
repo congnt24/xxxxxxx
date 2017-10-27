@@ -4399,7 +4399,7 @@
                                     <segue destination="bGo-oH-8pa" kind="embed" id="8G4-Mb-BYv"/>
                                 </connections>
                             </containerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-BV-baR" customClass="AwesomeTextField" customModule="AwesomeMVVM">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-BV-baR" customClass="SearchTextField" customModule="SearchTextField">
                                 <rect key="frame" x="16" y="80" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VMf-wu-6tq"/>

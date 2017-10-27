@@ -30,6 +30,7 @@ class NotifyTableViewCell: UITableViewCell {
     func bindData(data: NotifyData) {
         subTitle.text = data.content
         title.text = "Notification"
+        lbDate.text = data.createdAt?.toFormatedDate()
         if let p = data.photo {
             photo.kf.setImage(with: URL(string: p))
         }

@@ -96,6 +96,25 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     let quocGiaDr = DropDown()
     
     override func viewDidLoad() {
+        grSelect.onValueChange = {pos in
+            var listChecked = self.grSelect.getCheckedPositions();
+            if (listChecked.contains(0) || listChecked.contains(3)) {
+                //disable 2,3
+                listChecked = listChecked.filter({ (item) -> Bool in
+                    return item != 1 && item != 2
+                })
+                if (pos != 0 && pos != 3) {
+                    listChecked = [pos]
+                }
+            }
+            if (listChecked.contains(1) || listChecked.contains(2)) {
+                listChecked = listChecked.filter({ (item) -> Bool in
+                    return item != 0 && item != 3
+                })
+            }
+            self.grSelect.multiCheck(poss: listChecked)
+            print("Asdasdasd as dsa das   \(pos)")
+        }
         TaoDonHang1ViewController.sharedInstance = self
         if let url = website_url {
             getDataFromUrl(website_url: url)

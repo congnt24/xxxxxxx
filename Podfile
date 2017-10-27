@@ -36,4 +36,6 @@ target 'Alemua' do
   pod 'FacebookLogin'
   pod 'Fabric'
   pod 'Crashlytics'
+  pod 'MarqueeLabel'
+  pod 'SearchTextField', '~>1.1.8'
 end

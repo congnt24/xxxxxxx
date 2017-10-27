@@ -33,6 +33,26 @@ open class AwesomeRadioGroupCell: UIButton {
     public func check(){
         if (superview as! AwesomeRadioGroup).enableMultiSelect {
             isChecked = !isChecked
+            (superview as! AwesomeRadioGroup).checkedPosition = position
+            if isChecked {
+                setImage(checkedImage, for: .normal)
+                if (superview as! AwesomeRadioGroup).boldOnSelect {
+                    titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+                }
+            }else{
+                setImage(normalImage, for: .normal)
+                if (superview as! AwesomeRadioGroup).boldOnSelect {
+                    titleLabel?.font = UIFont.systemFont(ofSize: 12)
+                }
+            }
+        }else{
+            isChecked = true
+            setImage(checkedImage, for: .normal)
+        }
+    }
+    public func checkWithoutDelegate(){
+        if (superview as! AwesomeRadioGroup).enableMultiSelect {
+            isChecked = !isChecked
             if isChecked {
                 setImage(checkedImage, for: .normal)
                 if (superview as! AwesomeRadioGroup).boldOnSelect {
@@ -58,6 +78,19 @@ open class AwesomeRadioGroupCell: UIButton {
     public func uncheck() {
         isChecked = false
         setImage(normalImage, for: .normal)
+        if (superview as! AwesomeRadioGroup).enableMultiSelect {
+            if isChecked {
+                setImage(checkedImage, for: .normal)
+                if (superview as! AwesomeRadioGroup).boldOnSelect {
+                    titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
+                }
+            }else{
+                setImage(normalImage, for: .normal)
+                if (superview as! AwesomeRadioGroup).boldOnSelect {
+                    titleLabel?.font = UIFont.systemFont(ofSize: 12)
+                }
+            }
+        }
     }
     
 }

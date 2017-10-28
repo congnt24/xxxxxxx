@@ -44,6 +44,9 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
     override func responseFromViewModel() {
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+        reloadPage()
+    }
 
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
@@ -85,11 +88,11 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
 
     func initData() {
         
-        tableView.register(nib: UINib(nibName: "RaoVatCategoryTableViewCell", bundle: nil), withCellClass: RaoVatCategoryTableViewCell.self)
-        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "RaoVatCategoryTableViewCell")) { (ip, item, cell) in
-            (cell as! RaoVatCategoryTableViewCell).bindData(data: item)
+        tableView.register(nib: UINib(nibName: "RaoVatCateTableViewCell", bundle: nil), withCellClass: RaoVatCateTableViewCell.self)
+        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "RaoVatCateTableViewCell")) { (ip, item, cell) in
+            (cell as! RaoVatCateTableViewCell).bindData(data: item)
             if self.actionType == .Published {
-                (cell as! RaoVatCategoryTableViewCell).delegate = self
+                (cell as! RaoVatCateTableViewCell).delegate = self
             }
         }.addDisposableTo(bag)
 
@@ -105,7 +108,7 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
             tv.finishInfiniteScroll()
         }
 
-        tableView.beginInfiniteScroll(true)
+//        tableView.beginInfiniteScroll(true)
     }
 
     func reloadPage() {
@@ -118,6 +121,7 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
     //Interact API
     func fetchData() {
         //2 = yeu thichs, 3 = da dang
+        LoadingOverlay.shared.showOverlay(view: view)
         RaoVatService.shared.api.request(RaoVatApi.getAllAdv(adv_type: actionType.rawValue, category_id: nil, latitude: 0, longitude: 0, page_number: currentPage, text_search: nil))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -133,6 +137,8 @@ class RaoVatProfileListActionViewController: BaseViewController, SwipeTableViewC
                     print("Error \(msg)")
                     break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
 
 

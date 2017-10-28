@@ -109,6 +109,7 @@ class AccountViewController: BaseViewController {
         req.photo = data?.photo
         req.profileType = 1
         req.isNotify = sender.isOn ? 1 : 0
+        LoadingOverlay.shared.showOverlay(view: view)
         AlemuaApi.shared.aleApi.request(.updateProfile(data: req))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -121,6 +122,8 @@ class AccountViewController: BaseViewController {
                     sender.isOn = !sender.isOn
                     break
                 }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
             }).addDisposableTo(bag)
 
 

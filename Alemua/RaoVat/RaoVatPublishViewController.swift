@@ -322,6 +322,7 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
                     case .done(let result, let msg):
                         Toast(text: msg).show()
                         RaoVatCategoryViewController.shared.reload = true
+                        RaoVatCategoryViewController.shared.shouldRefresh = true
                         RaoVatCoordinator.sharedInstance.navigation?.popViewController()
                         break
                     case .error(let msg):
@@ -339,6 +340,10 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
                     switch res {
                     case .done(let result, let msg):
                         Toast(text: msg).show()
+                        if let _ = RaoVatCategoryViewController.shared {
+                            RaoVatCategoryViewController.shared.shouldRefresh = true
+                            RaoVatCategoryViewController.shared.reload = true
+                        }
                         RaoVatCoordinator.sharedInstance.navigation?.popViewController()
                         break
                     case .error(let msg):

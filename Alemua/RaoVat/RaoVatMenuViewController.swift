@@ -17,7 +17,22 @@ class RaoVatMenuViewController: BaseViewController {
     
     @IBOutlet weak var uiSwitch: AwesomeSwitch!
     override func bindToViewModel() {
-        
+        LoadingOverlay.shared.showOverlay(view: view)
+        AlemuaApi.shared.aleApi.request(AleApi.getUserProfile(profileType: 1))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(let result, _):
+                    let profileData = ProfileData(json: result)
+                    self.uiSwitch.isOn = profileData.isNotify == 1 ? true : false
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
+            }).addDisposableTo(bag)
     }
     
     override func responseFromViewModel() {
@@ -37,7 +52,24 @@ class RaoVatMenuViewController: BaseViewController {
     }
     @IBAction func onNotify(_ sender: Any) {
         uiSwitch.isOn = !uiSwitch.isOn
-        
+        let req = UpdateProfileRequest()
+        req.profileType = 1
+        req.isNotify = uiSwitch.isOn ? 1 : 0
+        LoadingOverlay.shared.showOverlay(view: view)
+        AlemuaApi.shared.aleApi.request(.updateProfile(data: req))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done( _):
+                    print("Update profile success")
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    break
+                }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
+            }).addDisposableTo(bag)
         
     }
     @IBAction func onSwitchNotify(_ sender: Any) {

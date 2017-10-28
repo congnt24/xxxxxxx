@@ -27,6 +27,7 @@ class RaoVatCategoryViewController: BaseViewController {
 
     var reload = false
     var textSearch: String?
+    var shouldRefresh: Bool = false
 
 
     var refreshControl: UIRefreshControl!
@@ -50,16 +51,16 @@ class RaoVatCategoryViewController: BaseViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if (filterRequest != nil) {
+        if (filterRequest != nil || shouldRefresh) {
             refresh("")
         }
     }
 
 
     func initData() {
-        tableView.register(nib: UINib(nibName: "RaoVatCategoryTableViewCell", bundle: nil), withCellClass: RaoVatCategoryTableViewCell.self)
-        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "RaoVatCategoryTableViewCell")) { (ip, item, cell) in
-            (cell as RaoVatCategoryTableViewCell).bindData(data: item)
+        tableView.register(nib: UINib(nibName: "RaoVatCateTableViewCell", bundle: nil), withCellClass: RaoVatCateTableViewCell.self)
+        datas.asObservable().bind(to: tableView.rx.items(cellIdentifier: "RaoVatCateTableViewCell")) { (ip, item, cell) in
+            (cell as RaoVatCateTableViewCell).bindData(data: item)
         }.addDisposableTo(bag)
 
         tableView.rx.itemSelected.subscribe(onNext: { (ip) in
@@ -191,31 +192,31 @@ class RaoVatCategoryTableViewCell: SwipeTableViewCell {
     }
 
     func bindData(data: ProductResponse) {
-        if let p = data.photo, p != "" {
-            let arr = p.splitted(by: ",")
-            photo.kf.setImage(with: URL(string: arr[0]), placeholder: UIImage(named: "no_image"))
-        }
-        if let pro = data.promotion, pro > 0 {
-            discount.isHidden = false
-            oldPrice.isHidden = false
-            discount.setTitle("\(pro)%", for: .normal)
-        } else {
-            discount.isHidden = true
-            oldPrice.isHidden = true
-        }
-        name.text = data.title
-        distance.text = "\((data.distance ?? 0).toDistanceFormated())"
-        if data.productType! == 1 {
-            newItem.text = "Hàng mới"
-        } else if data.productType! == 2 {
-            newItem.text = "Hàng sang tay"
-        } else {
-            newItem.text = "Đã qua sử dụng"
-        }
-        oldPrice.setText(str: "\(data.price!)".toFormatedPrice())
-        newPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
-        views.text = "\(data.numberViewed ?? 0)"
-        duration.text = data.timeAgo?.toFormatedTime()
+//        if let p = data.photo, p != "" {
+//            let arr = p.splitted(by: ",")
+//            photo.kf.setImage(with: URL(string: arr[0]), placeholder: UIImage(named: "no_image"))
+//        }
+//        if let pro = data.promotion, pro > 0 {
+//            discount.isHidden = false
+//            oldPrice.isHidden = false
+//            discount.setTitle("\(pro)%", for: .normal)
+//        } else {
+//            discount.isHidden = true
+//            oldPrice.isHidden = true
+//        }
+//        name.text = data.title
+//        distance.text = "\((data.distance ?? 0).toDistanceFormated())"
+//        if data.productType! == 1 {
+//            newItem.text = "Hàng mới"
+//        } else if data.productType! == 2 {
+//            newItem.text = "Hàng sang tay"
+//        } else {
+//            newItem.text = "Đã qua sử dụng"
+//        }
+//        oldPrice.setText(str: "\(data.price!)".toFormatedPrice())
+//        newPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
+//        views.text = "\(data.numberViewed ?? 0)"
+//        duration.text = data.timeAgo?.toFormatedTime()
 //        duration.text = data.endDate?.toDate()?.toFormatedDuration()
     }
 }

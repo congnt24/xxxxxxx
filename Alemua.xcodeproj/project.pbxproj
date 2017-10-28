@@ -131,6 +131,8 @@
 		027B01311F1E621600D576CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B01301F1E621600D576CE /* AppDelegate.swift */; };
 		027B01381F1E621600D576CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027B01371F1E621600D576CE /* Assets.xcassets */; };
 		027B01501F1EF14A00D576CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B014F1F1EF14A00D576CE /* AppCoordinator.swift */; };
+		027D5A681FA4C6E800979B00 /* RaoVatCateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D5A661FA4C6E800979B00 /* RaoVatCateTableViewCell.swift */; };
+		027D5A691FA4C6E800979B00 /* RaoVatCateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027D5A671FA4C6E800979B00 /* RaoVatCateTableViewCell.xib */; };
 		028AF0E71F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0E61F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift */; };
 		028AF0E91F35BB2100387FFC /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0E81F35BB2100387FFC /* BaseResponse.swift */; };
 		028AF0EB1F35C3C500387FFC /* PictureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0EA1F35C3C500387FFC /* PictureHelper.swift */; };
@@ -330,6 +332,8 @@
 		027B01371F1E621600D576CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		027B013C1F1E621600D576CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027B014F1F1EF14A00D576CE /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		027D5A661FA4C6E800979B00 /* RaoVatCateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoVatCateTableViewCell.swift; sourceTree = "<group>"; };
+		027D5A671FA4C6E800979B00 /* RaoVatCateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaoVatCateTableViewCell.xib; sourceTree = "<group>"; };
 		028AF0E61F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDonHangDangChuyenResponse.swift; path = Order/ModelDonHangDangChuyenResponse.swift; sourceTree = "<group>"; };
 		028AF0E81F35BB2100387FFC /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		028AF0EA1F35C3C500387FFC /* PictureHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PictureHelper.swift; path = Helper/PictureHelper.swift; sourceTree = "<group>"; };
@@ -468,6 +472,8 @@
 				02A21E3F1F5AF8A10036326C /* CommentTableViewCell.xib */,
 				0207F2241F5BB6B300FDB7CA /* ReplyCommentTableViewCell.xib */,
 				0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */,
+				027D5A661FA4C6E800979B00 /* RaoVatCateTableViewCell.swift */,
+				027D5A671FA4C6E800979B00 /* RaoVatCateTableViewCell.xib */,
 			);
 			name = CustomView;
 			path = RaoVat/CustomView;
@@ -983,6 +989,7 @@
 				02D32B7F1F30BD2700A8A4B6 /* AccountKitStrings.bundle in Resources */,
 				02144A751F38AACF00187481 /* DanhGiaTableViewCell.xib in Resources */,
 				02F775561F1FB46300556BED /* Profile.storyboard in Resources */,
+				027D5A691FA4C6E800979B00 /* RaoVatCateTableViewCell.xib in Resources */,
 				023B39DE1F2B43EE00E53A6D /* KhachHangTableViewCell.xib in Resources */,
 				021399611F286AC700BB0642 /* ItemView.xib in Resources */,
 				02525C421F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib in Resources */,
@@ -1190,6 +1197,7 @@
 				02A647461F3410E4006D66D4 /* RequestsModel.swift in Sources */,
 				0223C7F71F2A36B0005949C9 /* DeliveryMainViewController.swift in Sources */,
 				023B39E21F2B59BB00E53A6D /* StepperView.swift in Sources */,
+				027D5A681FA4C6E800979B00 /* RaoVatCateTableViewCell.swift in Sources */,
 				02B340321F4551050027803A /* Repository.swift in Sources */,
 				02127D2E1F8E5C56009F0117 /* AccountInfoViewController.swift in Sources */,
 				02F775291F1F390300556BED /* LoginCoordinator.swift in Sources */,

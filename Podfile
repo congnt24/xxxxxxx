@@ -26,7 +26,6 @@ target 'Alemua' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Toaster'
-  pod 'SwipeCellKit'
   pod 'ImageSlideshow', '~> 1.3'
   pod 'ImageSlideshow/Kingfisher'
   pod 'GoogleMaps'
@@ -38,4 +37,5 @@ target 'Alemua' do
   pod 'Crashlytics'
   pod 'MarqueeLabel'
   pod 'SearchTextField', '~>1.1.8'
+  pod 'SwipeCellKit', '~> 2.0.0'
 end

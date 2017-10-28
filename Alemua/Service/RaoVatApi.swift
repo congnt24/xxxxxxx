@@ -163,7 +163,7 @@ extension RaoVatApi: TargetType {
     public /// The HTTP method used in the request.
     var method: Moya.Method {
         switch self {
-        case .createAdv, .updateAdv, .addFavorite, .increaseView, .addComment, .deleteAdv:
+        case .createAdv, .updateAdv, .addFavorite, .increaseView, .addComment, .deleteAdv, .reportAdv:
             return .post
         default:
             return .get

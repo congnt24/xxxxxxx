@@ -75,8 +75,8 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
 //                        self.btnShare.setTitleColor(UIColor.lightGray, for: .normal)
 //                    }
                 }
-                btnFav.isChecked = !(data.isLike! == 1)
-                btnShare.isChecked = !(data.isSafe! == 1)
+                btnFav.isChecked = (data.isLike! == 1)
+                btnShare.isChecked = (data.isSafe! == 1)
 
                 btnFav.onChange = { bo in
                     if !bo {
@@ -220,6 +220,7 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
     }
     
     @IBAction func onReport(_ sender: Any) {
+        print("RUN HERER")
         RaoVatService.shared.api.request(RaoVatApi.reportAdv(adv_detail_id: data.id!))
             .toJSON()
             .subscribe(onNext: { (res) in
@@ -229,6 +230,7 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
                     break
                 case .error(let msg):
                     print("Error \(msg)")
+                    Toast.init(text: msg).show()
                     break
                 }
             }).addDisposableTo(bag)
@@ -309,6 +311,12 @@ class RelateCollectionViewCell: UICollectionViewCell {
         lbOldPrice.setText(str: "\(data.price!)".toFormatedPrice())
         lbNewPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
         btnPromo.setTitle("\(data.promotion ?? 0)%", for: .normal)
+        btnPromo.isHidden = false
+        lbOldPrice.isHidden = false
+        if (data.promotion ?? 0) == 0 {
+            btnPromo.isHidden = true
+            lbOldPrice.isHidden = true
+        }
 
     }
 }

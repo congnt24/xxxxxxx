@@ -205,7 +205,7 @@
                                     <constraint firstItem="ewR-EL-VKk" firstAttribute="leading" secondItem="mMm-l5-drj" secondAttribute="leading" id="j92-V6-aEb"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P3N-K5-AqG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P3N-K5-AqG">
                                 <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -425,26 +425,22 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkz-j2-pMn" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-3V-Yjw" customClass="AwesomeBackButton" customModule="Alemua" customModuleProvider="target">
-                                                <rect key="frame" x="335" y="8" width="32" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="32" id="92x-iV-mY3"/>
-                                                    <constraint firstAttribute="height" constant="32" id="E6k-di-rQ6"/>
-                                                </constraints>
-                                                <state key="normal" image="icons8-filled_flag"/>
-                                                <connections>
-                                                    <action selector="onReport:" destination="o9x-TL-gnR" eventType="touchUpInside" id="weO-se-en7"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="gG9-3V-Yjw" firstAttribute="top" secondItem="Dkz-j2-pMn" secondAttribute="top" constant="8" id="XJm-rl-xzu"/>
                                             <constraint firstAttribute="height" constant="265" id="wsJ-63-VFZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="gG9-3V-Yjw" secondAttribute="trailing" constant="8" id="xwE-h9-CtG"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-3V-Yjw">
+                                        <rect key="frame" x="335" y="8" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="92x-iV-mY3"/>
+                                            <constraint firstAttribute="height" constant="32" id="E6k-di-rQ6"/>
+                                        </constraints>
+                                        <state key="normal" image="icons8-filled_flag"/>
+                                        <connections>
+                                            <action selector="onReport:" destination="o9x-TL-gnR" eventType="touchUpInside" id="weO-se-en7"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rzp-0l-uBk">
                                         <rect key="frame" x="8" y="273" width="359" height="97.5"/>
                                         <subviews>
@@ -560,7 +556,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFV-Hj-JPS" customClass="RaoVatUserView" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="378.5" width="351" height="75"/>
+                                        <rect key="frame" x="8" y="378.5" width="359" height="75"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Yor-IH-ZGA"/>
@@ -790,8 +786,10 @@
                                     <constraint firstItem="BFV-Hj-JPS" firstAttribute="top" secondItem="rzp-0l-uBk" secondAttribute="bottom" constant="8" id="9eA-aF-S5S"/>
                                     <constraint firstItem="eka-WV-lx9" firstAttribute="leading" secondItem="NBK-fe-aWA" secondAttribute="leading" constant="8" id="Cpj-LM-a39"/>
                                     <constraint firstAttribute="trailing" secondItem="tA5-Cq-DtE" secondAttribute="trailing" constant="8" id="H2K-9m-8NU"/>
-                                    <constraint firstItem="BFV-Hj-JPS" firstAttribute="leading" secondItem="NBK-fe-aWA" secondAttribute="leading" constant="16" id="JvW-1I-0Nn"/>
+                                    <constraint firstItem="gG9-3V-Yjw" firstAttribute="top" secondItem="NBK-fe-aWA" secondAttribute="top" constant="8" id="HXO-H2-Kwy"/>
+                                    <constraint firstItem="BFV-Hj-JPS" firstAttribute="leading" secondItem="NBK-fe-aWA" secondAttribute="leading" constant="8" id="JvW-1I-0Nn"/>
                                     <constraint firstItem="rzp-0l-uBk" firstAttribute="top" secondItem="Dkz-j2-pMn" secondAttribute="bottom" constant="8" id="UIA-E0-cFX"/>
+                                    <constraint firstAttribute="trailing" secondItem="gG9-3V-Yjw" secondAttribute="trailing" constant="8" id="UTC-oC-htG"/>
                                     <constraint firstItem="eka-WV-lx9" firstAttribute="top" secondItem="BFV-Hj-JPS" secondAttribute="bottom" constant="8" id="Wqu-e6-Zh7"/>
                                     <constraint firstItem="m7j-Bj-kW9" firstAttribute="top" secondItem="eka-WV-lx9" secondAttribute="bottom" constant="8" id="XnJ-11-zxc"/>
                                     <constraint firstItem="Dkz-j2-pMn" firstAttribute="centerX" secondItem="NBK-fe-aWA" secondAttribute="centerX" id="ayr-sl-JOt"/>
@@ -2653,7 +2651,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="go"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="4"/>

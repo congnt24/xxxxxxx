@@ -24,6 +24,7 @@ class HTMLLabel: UILabel {
 }
 extension UILabel {
     func setHTMLFromString(htmlText: String) {
+        self.numberOfLines = 3
         let modifiedFont = NSString(format:"<span style=\"font-family: '-apple-system', 'HelveticaNeue'; font-size: \(self.font!.pointSize)\">%@</span>" as NSString, htmlText) as String
         
         //process collection values

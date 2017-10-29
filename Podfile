@@ -37,5 +37,5 @@ target 'Alemua' do
   pod 'Crashlytics'
   pod 'MarqueeLabel'
   pod 'SearchTextField', '~>1.1.8'
-  pod 'SwipeCellKit', '~> 2.0.0'
+  pod 'SwipeCellKit', '~> 1.9.1'
 end

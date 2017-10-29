@@ -42,6 +42,7 @@ class TaoDonHangSelectMapViewController: BaseViewController{
         
         //Audo suggest map
         tfSearch.theme.bgColor = UIColor.white
+        tfSearch.maxResultsListHeight = 120
         tfSearch.rx.value
             .filter { $0 != nil && $0 != "" }//.throttle(300, latest: true, scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: { (str) in

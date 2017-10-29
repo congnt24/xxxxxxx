@@ -32,7 +32,10 @@ class RaoVatSelectMapViewController: BaseViewController{
         }).addDisposableTo(bag)
         
         //Audo suggest map
+        
         tfSearch.theme.bgColor = UIColor.white
+        tfSearch.maxResultsListHeight = 120
+//        tfSearch.theme.font = UIFont.systemFont(ofSize: UserInterface.defaultFontSize)
         tfSearch.rx.value
             .filter { $0 != nil && $0 != "" }//.throttle(300, latest: true, scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: { (str) in
@@ -45,6 +48,7 @@ class RaoVatSelectMapViewController: BaseViewController{
                             if let res = result.array {
                                 let filterString = res.map { PlaceData(description: $0["description"].string ?? "") }.map { $0.description }
                                 self.tfSearch.filterStrings(filterString)
+                                self.tfSearch.layoutSubviews()
                             }
                             break
                         case .error(let msg):

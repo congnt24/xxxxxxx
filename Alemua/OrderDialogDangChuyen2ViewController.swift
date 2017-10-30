@@ -39,12 +39,16 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
             lb3.text = "Giá cả"
             lb3.isHidden = false
             star3.isHidden = false
+            lbNguoiMuaHang.text = "Người bán hàng"
         } else {
             lb1.text = "Thái độ"
             lb2.text = "Thanh toán"
+            lbNguoiMuaHang.text = "Người mua hàng"
             lb3.isHidden = true
             star3.isHidden = true
         }
+        lbName.text = Prefs.userName
+        avatar.kf.setImage(with: URL(string: Prefs.photo), placeholder: UIImage(named: "no_image"))
     }
 
     @IBAction func onCamera(_ sender: Any) {

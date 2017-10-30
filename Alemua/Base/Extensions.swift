@@ -88,7 +88,9 @@ extension Int {
 }
 
 extension String {
-    
+    func contains(_ find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
     func share(vc: UIViewController) {
         let vc2 = UIActivityViewController(activityItems: [self], applicationActivities: nil)
         vc.present(vc2, animated: true)
@@ -116,7 +118,15 @@ extension String {
         var f = (formatter.string(from: price) ?? "d 0") // $123"
 //        let len = f.charactersArray.count - 2
 //        f = String(f[..<len])
-        f = f.substring(to: f.index(f.endIndex, offsetBy: -2))
+        
+        let numbers = "0123456789";
+        if let first = f.firstCharacter {
+            if numbers.contains(first){
+                f = f.substring(to: f.index(f.endIndex, offsetBy: -2))
+            } else {
+                f = f.substring(from: f.index(f.startIndex, offsetBy: 2))
+            }
+        }
         return f
     }
     func convertToLink() -> String {

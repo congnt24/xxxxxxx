@@ -102,6 +102,7 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
     }
     
     override func bindToViewModel() {
+        tfDate.text = ""
         RaoVatPublishViewController.shared = self
         categoryData = RaoVatViewController.shared.datas.value
         btnCoSan.onChange = {bo in

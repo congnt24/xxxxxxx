@@ -8,20 +8,23 @@
 
 import UIKit
 import Kingfisher
+import MarqueeLabel
 
 class OrderViewCell: UITableViewCell {
 
     @IBOutlet weak var btnPromo: UIButton!
-    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productName: MarqueeLabel!
     @IBOutlet weak var productPhoto: UIImageView!
     @IBOutlet weak var lbNoiMua: UILabel!
-    @IBOutlet weak var lbWebsite: UILabel!
+    @IBOutlet weak var lbWebsite: MarqueeLabel!
     @IBOutlet weak var lbGia: UILabel!
     @IBOutlet weak var lbGiaCu: StrikeThroughLabel!
     var data: ModelOrderData!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        productName.scrollDuration = 16
+        lbWebsite.scrollDuration = 16
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

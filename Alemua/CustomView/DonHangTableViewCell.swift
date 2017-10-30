@@ -8,11 +8,12 @@
 
 import UIKit
 import Kingfisher
+import MarqueeLabel
 
 class DonHangTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var name: MarqueeLabel!
     @IBOutlet weak var lbGiadexuat: UILabel!
     @IBOutlet weak var lbGiamua: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
@@ -21,6 +22,7 @@ class DonHangTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        name.scrollDuration = 16
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

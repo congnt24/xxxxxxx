@@ -9,6 +9,7 @@
 import UIKit
 import AwesomeMVVM
 import RxSwift
+import Toaster
 
 class DangChuyenViewController: UIViewController {
     @IBOutlet weak var lbNgay: UILabel!
@@ -28,7 +29,9 @@ class DangChuyenViewController: UIViewController {
     @IBOutlet weak var uiOrder: UIStackView!
     @IBOutlet weak var navTitle: UINavigationItem!
     @IBOutlet weak var lbTongDonHang: UILabel!
-
+    @IBOutlet weak var changeDate: HTMLLabel!
+    @IBOutlet weak var report: HTMLLabel!
+    
     @IBOutlet weak var uiRateDetail: RateDetail!
     let bag = DisposeBag()
     var orderData: ModelOrderClientData!
@@ -53,6 +56,9 @@ class DangChuyenViewController: UIViewController {
         }).addDisposableTo(bag)
         
         navTitle.title = "Đơn đang vận chuyển- Đơn hàng #\(orderData.id ?? 0)"
+        
+        report.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBaoXau(_:))))
+        changeDate.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onChangeDate)))
     }
     
     func bindData(){
@@ -122,6 +128,34 @@ class DangChuyenViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    func onChangeDate(){
+        DatePickerDialog().show("DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+            (date) -> Void in
+            if let dt = date {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                let text = formatter.string(from: dt)
+                AlemuaApi.shared.aleApi.request(AleApi.updateDeliveryDate(order_id: self.modelDangChuyen.id, delivery_date: text))
+                    .toJSON()
+                    .subscribe(onNext: { (res) in
+                        LoadingOverlay.shared.hideOverlayView()
+                        switch res {
+                        case .done(let result, let msg):
+                            Toast(text: msg).show()
+                            break
+                        case .error(let msg):
+                            Toast(text: msg).show()
+                            break
+                        }
+                    }).addDisposableTo(self.bag)
+                
+                print(text)
+            }
+        }
+    }
 
     @IBAction func onToggleMoreDetails(_ sender: Any) {
 //        uiMoreDetails.toggleHeight()
@@ -135,7 +169,7 @@ class DangChuyenViewController: UIViewController {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
     }
     @IBAction func onDaGiaoHangOrder(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: modelDangChuyen.id)
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: modelDangChuyen.id, userPostName: modelDangChuyen.userPostName, userPostPhoto: modelDangChuyen.userPostPhoto)
     }
     @IBAction func onHuyDon(_ sender: Any) {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog3HuyDon(orderId: orderData.id)

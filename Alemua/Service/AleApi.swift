@@ -54,6 +54,7 @@ public enum AleApi {
     case getAllBrand()
     case getAllCountry()
     case getAllMoney()
+    case updateDeliveryDate(order_id: Int?, delivery_date: String)
 }
 
 extension AleApi: TargetType {
@@ -132,13 +133,15 @@ extension AleApi: TargetType {
             return "/api/users/getAllCountry"
         case .getAllMoney:
             return "/api/users/getAllMoney"
+        case .updateDeliveryDate:
+            return "/api/order/updateDeliveryDate"
         }
     }
 
     public var method: Moya.Method {
         switch self {
         case .login, .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_)
-             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook, .readNotification(_):
+             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook, .readNotification(_), .updateDeliveryDate:
             return .post
         default:
             return .get
@@ -405,6 +408,13 @@ extension AleApi: TargetType {
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
+            return params
+        case .updateDeliveryDate(let order_id, let delivery_date):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["order_id"] = order_id
+            params["delivery_date"] = delivery_date
             return params
             
         default:

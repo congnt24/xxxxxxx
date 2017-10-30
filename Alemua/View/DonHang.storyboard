@@ -712,7 +712,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mn6-Qv-jGp">
                                                 <rect key="frame" x="16" y="843" width="344" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99k-bo-8AI" customClass="HTMLLabel" customModule="Alemua" customModuleProvider="target">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99k-bo-8AI" customClass="HTMLLabel" customModule="Alemua" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="344" height="25"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -723,7 +723,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfQ-Fg-FKd" customClass="HTMLLabel" customModule="Alemua" customModuleProvider="target">
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfQ-Fg-FKd" customClass="HTMLLabel" customModule="Alemua" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="25" width="344" height="25"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -855,6 +855,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
+                        <outlet property="changeDate" destination="99k-bo-8AI" id="ZYV-nZ-gag"/>
                         <outlet property="ifTongGia" destination="rkA-5z-vic" id="mt7-gO-l5B"/>
                         <outlet property="lbGio" destination="wPd-jP-Mho" id="L1P-bh-03o"/>
                         <outlet property="lbNgay" destination="kGX-QW-kdJ" id="m5K-w3-5kF"/>
@@ -862,6 +863,7 @@
                         <outlet property="lbTongDonHang" destination="it2-wl-d35" id="5OK-eO-pRb"/>
                         <outlet property="navTitle" destination="qYK-HM-Jej" id="FPc-FY-XRO"/>
                         <outlet property="onToggleRateView" destination="Aa8-pG-4sm" id="jKM-FB-xMc"/>
+                        <outlet property="report" destination="NfQ-Fg-FKd" id="h1E-ni-m3G"/>
                         <outlet property="tfGhiChu" destination="lAv-xt-hDG" id="DQK-Yd-8xj"/>
                         <outlet property="tfGiaWeb" destination="uHA-GU-eZi" id="f2f-0D-0GA"/>
                         <outlet property="tfGiaoDen" destination="gry-pr-Dcu" id="P5p-41-TGI"/>
@@ -4315,7 +4317,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6Yj-jq-sV9">
                                                 <rect key="frame" x="0.0" y="157" width="343.5" height="86"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-PF-BqR">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-PF-BqR">
                                                         <rect key="frame" x="148" y="0.0" width="48" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="48" id="0bo-ZV-Ddk"/>

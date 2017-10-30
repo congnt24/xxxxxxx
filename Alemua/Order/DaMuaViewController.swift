@@ -31,7 +31,7 @@ class DaMuaViewController: UIViewController {
         didSet {
             if let data = hoanThanhData {
                 review1.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
-                review2.bindData(name: data.userShipPhone, rating: data.userShipRating, nguoidang: 1)
+                review2.bindData(name: data.userShipName, rating: data.userShipRating, nguoidang: 1)
                 uiMoreDetail.setupRateDetailForMuaHang(RateDetailData(tonggia: data.totalPrice, giamua: data.buyingPrice,  discount: data.discount, magiamgia: data.promotion_money, thue: data.tax, phichuyennoidia: data.transferDomesticFee, phinguoimua: data.transferBuyerFee, phivanchuyenvealemua: data.transferAlemuaFree, phivanchuyenvetaynguoimua: data.transferToBuyerFee, phigiaodichquaalemua: data.transactionAlemuaFree, weight: data.weight))
                 tfGia.text = "\(data.totalPrice ?? 0)".toFormatedPrice()
 //                if (orderData.transactionOption ?? 0) == 2 {

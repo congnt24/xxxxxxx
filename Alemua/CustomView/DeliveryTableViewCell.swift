@@ -8,9 +8,10 @@
 
 import UIKit
 import Kingfisher
+import MarqueeLabel
 
 class DeliveryTableViewCell: UITableViewCell {
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: MarqueeLabel!
 
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lbOwner: UILabel!
@@ -25,6 +26,7 @@ class DeliveryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        title.scrollDuration = 16
     }
     
     @IBAction func onClickBaogia(_ sender: UIButton) {

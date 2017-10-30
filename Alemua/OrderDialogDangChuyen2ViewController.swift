@@ -29,6 +29,8 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
 
     let bag = DisposeBag()
     var ratingId: Int?
+    var userPostName: String?
+    var userPostPhoto: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

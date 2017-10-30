@@ -131,6 +131,7 @@
 		027B01311F1E621600D576CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B01301F1E621600D576CE /* AppDelegate.swift */; };
 		027B01381F1E621600D576CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027B01371F1E621600D576CE /* Assets.xcassets */; };
 		027B01501F1EF14A00D576CE /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027B014F1F1EF14A00D576CE /* AppCoordinator.swift */; };
+		027C8A0A1FA7687800D7A756 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C8A091FA7687800D7A756 /* DatePickerDialog.swift */; };
 		027D5A681FA4C6E800979B00 /* RaoVatCateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027D5A661FA4C6E800979B00 /* RaoVatCateTableViewCell.swift */; };
 		027D5A691FA4C6E800979B00 /* RaoVatCateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027D5A671FA4C6E800979B00 /* RaoVatCateTableViewCell.xib */; };
 		028AF0E71F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028AF0E61F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift */; };
@@ -332,6 +333,7 @@
 		027B01371F1E621600D576CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		027B013C1F1E621600D576CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027B014F1F1EF14A00D576CE /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		027C8A091FA7687800D7A756 /* DatePickerDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		027D5A661FA4C6E800979B00 /* RaoVatCateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaoVatCateTableViewCell.swift; sourceTree = "<group>"; };
 		027D5A671FA4C6E800979B00 /* RaoVatCateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaoVatCateTableViewCell.xib; sourceTree = "<group>"; };
 		028AF0E61F35B8CA00387FFC /* ModelDonHangDangChuyenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelDonHangDangChuyenResponse.swift; path = Order/ModelDonHangDangChuyenResponse.swift; sourceTree = "<group>"; };
@@ -873,6 +875,7 @@
 				02144A721F38AACF00187481 /* DanhGiaTableViewCell.swift */,
 				02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */,
 				021915511F51792E007E18EE /* CheckedButton.swift */,
+				027C8A091FA7687800D7A756 /* DatePickerDialog.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -1291,6 +1294,7 @@
 				022A8D0F1F28F04200D69411 /* TaoDonHang1ViewController.swift in Sources */,
 				022D72A91F279EDE00CC548E /* OrderDialogBaoGia1ViewController.swift in Sources */,
 				021B82951F242FAD00B757D7 /* DonHangSubViewController.swift in Sources */,
+				027C8A0A1FA7687800D7A756 /* DatePickerDialog.swift in Sources */,
 				02F775481F1F556100556BED /* ChatViewController.swift in Sources */,
 				021B82A51F2489C600B757D7 /* AwesomeRadioGroupCell.swift in Sources */,
 				025860941F3760740012DD49 /* AlemuaResult.swift in Sources */,

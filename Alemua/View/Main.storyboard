@@ -4796,7 +4796,7 @@
         <image name="ic_unchecked_circle2" width="15" height="15"/>
         <image name="ic_user" width="21" height="27"/>
         <image name="ic_user_blu" width="27" height="27"/>
-        <image name="ic_viet_nam" width="21" height="21"/>
+        <image name="ic_viet_nam" width="21" height="14"/>
         <image name="icons8-settings" width="27" height="27"/>
         <image name="imageView:xe0-66-mOx:image" width="14" height="24">
             <mutableData key="keyedArchiveRepresentation">

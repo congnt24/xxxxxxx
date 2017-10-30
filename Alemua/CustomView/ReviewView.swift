@@ -33,7 +33,7 @@ class ReviewView: BaseCustomView {
     func bindData(name: String?, rating: Float?, nguoidang: Int){
         lbName.text = name
         lbDanhgia.text = "Đánh giá \(rating?.toFormatedRating() ?? "0")"
-        star.number = Int(rating ?? 0)
+        star.number = Int(ceil(Double(rating ?? 0)))
         star.fillStar()
         lbNguoidang.text = nguoidang.toNguoiDangOrNguoiVanChuyen()
     }

@@ -166,10 +166,10 @@ class DangChuyenViewController: UIViewController {
     }
 
     @IBAction func onDaGiaoHangDelivery(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0)
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: 0, userPostName: modelDangChuyen.userShipName, userPostPhoto: modelDangChuyen.userShipPhoto)
     }
     @IBAction func onDaGiaoHangOrder(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: modelDangChuyen.id, userPostName: modelDangChuyen.userPostName, userPostPhoto: modelDangChuyen.userPostPhoto)
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: modelDangChuyen.id, userPostName: modelDangChuyen.userShipName, userPostPhoto: modelDangChuyen.userShipPhoto)
     }
     @IBAction func onHuyDon(_ sender: Any) {
         OrderOrderCoordinator.sharedInstance.showDangChuyenDialog3HuyDon(orderId: orderData.id)

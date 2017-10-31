@@ -52,7 +52,7 @@ class RaoVatCateTableViewCell: SwipeTableViewCell {
         newPrice.text = "\(data.price! * (100 - (data.promotion ?? 0)) / 100)".toFormatedPrice()
         views.text = "\(data.numberViewed ?? 0)"
         duration.text = data.timeAgo?.toFormatedTime()
-        duration.text = data.endDate?.toDate()?.toFormatedDuration()
+//        duration.text = data.endDate?.toDate()?.toFormatedDuration()
     }
     
 }

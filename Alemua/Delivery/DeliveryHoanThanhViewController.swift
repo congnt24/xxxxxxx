@@ -80,6 +80,6 @@ class DeliveryHoanThanhViewController: UIViewController {
         rateDetail.toggleHeight()
     }
     @IBAction func onDanhGia(_ sender: Any) {
-        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: hoanThanhData?.ratingId)
+        OrderOrderCoordinator.sharedInstance.showDangChuyenDialog2DaGiao(id: hoanThanhData?.ratingId, userPostName: hoanThanhData?.userShipName, userPostPhoto: hoanThanhData?.userShipPhoto)
     }
 }

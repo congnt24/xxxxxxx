@@ -55,6 +55,8 @@ public enum AleApi {
     case getAllCountry()
     case getAllMoney()
     case updateDeliveryDate(order_id: Int?, delivery_date: String)
+    case updateBankAccount(req: UpdateBankAccountRequest)
+    case checkAccountAdded()
 }
 
 extension AleApi: TargetType {
@@ -135,13 +137,17 @@ extension AleApi: TargetType {
             return "/api/users/getAllMoney"
         case .updateDeliveryDate:
             return "/api/order/updateDeliveryDate"
+        case .updateBankAccount:
+            return "/api/users/updateBankAccount"
+        case .checkAccountAdded:
+            return "/api/users/checkAccountAdded"
         }
     }
 
     public var method: Moya.Method {
         switch self {
         case .login, .createOrder(_), .createQuote(_), .acceptQuote(_), .reportUser(_), .cancelOrder(_), .rateForClient(_), .uploadFile(_), .updateProfile, .setDeliveredOrder(_)
-             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook, .readNotification(_), .updateDeliveryDate:
+             , .logout(), .activeAccount(_, _), .addChattingLog(_), .loginAndRegisterFacebook, .readNotification(_), .updateDeliveryDate, .updateBankAccount:
             return .post
         default:
             return .get
@@ -415,6 +421,25 @@ extension AleApi: TargetType {
             params["ApiToken"] = Prefs.apiToken
             params["order_id"] = order_id
             params["delivery_date"] = delivery_date
+            return params
+        case .updateBankAccount(let req):
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
+            params["account_name"] = req.account_name
+            params["account_number"] = req.account_number
+            params["bank_name"] = req.bank_name
+            params["bank_brand"] = req.bank_brand
+            params["phone_number"] = req.phone_number
+            params["id_number"] = req.id_number
+            params["address"] = req.address
+            params["confirm_type"] = req.confirm_type
+            params["note"] = req.note
+            return params
+        case .checkAccountAdded():
+            var params = [String: Any]()
+            params["UserID"] = Prefs.userId
+            params["ApiToken"] = Prefs.apiToken
             return params
             
         default:

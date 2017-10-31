@@ -9,6 +9,8 @@
 import UIKit
 import AwesomeMVVM
 import DropDown
+import RxSwift
+import Toaster
 
 class ThanhToanViewController: BaseViewController {
     @IBOutlet weak var tfTenTaiKhoan: AwesomeTextField!
@@ -24,6 +26,7 @@ class ThanhToanViewController: BaseViewController {
     @IBOutlet weak var stackChiNhanh: UIStackView!
     let nganHangDrop = DropDown()
     let chiNhanhDrop = DropDown()
+    var bag = DisposeBag()
     override func bindToViewModel() {
         //create Dropdown
         nganHangDrop.anchorView = stackNganHang
@@ -41,13 +44,39 @@ class ThanhToanViewController: BaseViewController {
         }
 
 
-        stackNganHang.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectNganHang)))
-        stackChiNhanh.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectChiNhanh)))
+        //stackNganHang.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectNganHang)))
+        //stackChiNhanh.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectChiNhanh)))
 
     }
 
     @IBAction func onXacNhan(_ sender: Any) {
-
+        LoadingOverlay.shared.showOverlay(view: view)
+        let request = UpdateBankAccountRequest()
+        request.account_name = tfTenTaiKhoan.text
+        request.account_number = tfSoTaiKhoan.text
+        request.bank_name = tfNganHang.text
+        request.bank_brand = tfChiNhanh.text
+        request.phone_number = tfSoDienThoai.text
+        request.id_number = tfCMND.text
+        request.address = tfDiaChi.text
+        request.confirm_type = (grSelect.checkedPosition + 1)
+        request.note = tfGhiChu.text
+        AlemuaApi.shared.aleApi.request(AleApi.updateBankAccount(req: request))
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done(_, let msg):
+                    Toast.init(text: msg).show()
+                    self.navigationController?.popViewController()
+                    break
+                case .error(let msg):
+                    print("Error \(msg)")
+                    Toast.init(text: msg).show()
+                    break
+                }
+            }, onDisposed: {
+                LoadingOverlay.shared.hideOverlayView()
+            }).addDisposableTo(bag)
     }
 
     func onSelectNganHang() {

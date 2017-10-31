@@ -276,6 +276,8 @@ class RaoVatPublishViewController: BaseViewController, UIImagePickerControllerDe
         }
     }
     @IBAction func onPublish(_ sender: Any) {
+        let na = Array(stPhoto.arrangedSubviews[0..<(stPhoto.arrangedSubviews.count - 1)])
+        listImage = na.map { ($0 as! PhotoView).image! }
         bindRequest()
         
         //validation

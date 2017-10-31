@@ -16,7 +16,7 @@ class OrderViewCell: UITableViewCell {
     @IBOutlet weak var productName: MarqueeLabel!
     @IBOutlet weak var productPhoto: UIImageView!
     @IBOutlet weak var lbNoiMua: UILabel!
-    @IBOutlet weak var lbWebsite: MarqueeLabel!
+    @IBOutlet weak var lbWebsite: UILabel!
     @IBOutlet weak var lbGia: UILabel!
     @IBOutlet weak var lbGiaCu: StrikeThroughLabel!
     var data: ModelOrderData!
@@ -24,7 +24,7 @@ class OrderViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         productName.scrollDuration = 16
-        lbWebsite.scrollDuration = 16
+        //lbWebsite.scrollDuration = 16
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

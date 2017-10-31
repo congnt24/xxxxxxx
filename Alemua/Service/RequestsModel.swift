@@ -152,6 +152,19 @@ public class DeliveredOrderData {
     public var apiToken: String?
 }
 
+public class UpdateBankAccountRequest {
+    // MARK: DeliveredOrderData Properties
+    public var account_name: String?
+    public var account_number: String?
+    public var bank_name: String?
+    public var bank_brand: String?
+    public var phone_number: String?
+    public var id_number: String?
+    public var address: String?
+    public var confirm_type: Int?
+    public var note: String?
+}
+
 
 
 

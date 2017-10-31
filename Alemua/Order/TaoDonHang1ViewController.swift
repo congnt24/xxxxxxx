@@ -169,6 +169,8 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
     }
 
     @IBAction func onNext(_ sender: Any) {
+        let na = Array(stPhoto.arrangedSubviews[0..<(stPhoto.arrangedSubviews.count - 1)])
+        listImage = na.map { ($0 as! PhotoView).image! }
         setData()
         if taodonhangRequest.validateStep1() {
             
@@ -220,7 +222,6 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         taodonhangRequest.quantity = stSoLuong.number
         taodonhangRequest.productOption = grSelect.getCheckedPositions().map {"\($0 + 1)"}.joined(separator: ",")
         taodonhangRequest.numberProduct = stSoLuong.number
-        print("asd")
         print(grSelect.getCheckedPositions().map {"\($0)"}.joined(separator: ","))
     }
     @IBAction func onAddPhoto(_ sender: Any) {

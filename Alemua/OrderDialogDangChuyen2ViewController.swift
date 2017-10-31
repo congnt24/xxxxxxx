@@ -50,8 +50,10 @@ class OrderDialogDangChuyen2ViewController: UIViewController, UIImagePickerContr
             lbNguoiMuaHang.text = "Người mua hàng"
             lb3.isHidden = true
             star3.isHidden = true
-            lbName.text = Prefs.userName
-            avatar.kf.setImage(with: URL(string: Prefs.photo), placeholder: UIImage(named: "no_image"))
+//            lbName.text = Prefs.userName
+//            avatar.kf.setImage(with: URL(string: Prefs.photo), placeholder: UIImage(named: "no_image"))
+            lbName.text = userPostName
+            avatar.kf.setImage(with: URL(string: userPostPhoto ?? ""), placeholder: UIImage(named: "no_image"))
         }
     }
 

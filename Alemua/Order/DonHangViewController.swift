@@ -83,7 +83,7 @@ extension DonHangViewController {
         LoadingOverlay.shared.showOverlay(view: view)
         if HomeViewController.homeType == .delivery {
             orderID = modelQuoteData.id!
-            navTitle.title = "Đơn hàng - Đơn hàng #\(modelQuoteData.id ?? 0)"
+            navTitle.title = "Đơn hàng - #\(modelQuoteData.id ?? 0)"
             AlemuaApi.shared.aleApi.request(AleApi.getOrderDetailsToQuote(order_id: orderID))
                 .toJSON()
                 .subscribe(onNext: { (res) in
@@ -105,7 +105,7 @@ extension DonHangViewController {
             
         }else{
             orderID = orderData.id!
-            navTitle.title = "Đơn hàng - Đơn hàng #\(orderData.id ?? 0)"
+            navTitle.title = "Đơn hàng - #\(orderData.id ?? 0)"
             AlemuaApi.shared.aleApi.request(.getOrderDetails(orderType: 1, orderId: orderID))
                 .toJSON()
                 .subscribe(onNext: { (res) in

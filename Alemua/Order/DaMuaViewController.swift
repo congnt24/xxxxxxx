@@ -50,7 +50,7 @@ class DaMuaViewController: UIViewController {
             bindData()
         // Do any additional setup after loading the view.
         
-        navTitle.title = "Đơn hàng đã mua- Đơn hàng #\(orderData.id ?? 0)"
+        navTitle.title = "Đơn hàng đã mua - #\(orderData.id ?? 0)"
     }
     
     func bindData(){

@@ -661,14 +661,13 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiN-lu-vjw">
-                                                                                            <rect key="frame" x="64" y="4" width="32" height="20"/>
-                                                                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                            <rect key="frame" x="72" y="4" width="24" height="24"/>
                                                                                             <constraints>
-                                                                                                <constraint firstAttribute="height" constant="20" id="DGV-Vl-zzb"/>
-                                                                                                <constraint firstAttribute="width" constant="32" id="cK8-QT-DZU"/>
+                                                                                                <constraint firstAttribute="height" constant="24" id="DGV-Vl-zzb"/>
+                                                                                                <constraint firstAttribute="width" constant="24" id="cK8-QT-DZU"/>
                                                                                             </constraints>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                                                            <state key="normal" title="10%">
+                                                                                            <state key="normal" title="10%" backgroundImage="ic_giamgia">
                                                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                                             </state>
                                                                                             <userDefinedRuntimeAttributes>
@@ -2927,6 +2926,7 @@
         <image name="ic_favorites_grey" width="25" height="25"/>
         <image name="ic_favorites_red" width="25" height="25"/>
         <image name="ic_filter" width="24" height="22"/>
+        <image name="ic_giamgia" width="21" height="24"/>
         <image name="ic_home_red" width="24" height="24"/>
         <image name="ic_location_red" width="42" height="42"/>
         <image name="ic_logout" width="24" height="19"/>

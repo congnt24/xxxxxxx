@@ -35,7 +35,7 @@ class DeliveryBaoGiaViewController: UIViewController {
             rateDetail.hideForTransactionOption()
         }
         if HomeViewController.homeType == .delivery {
-            navTitle.title = "Chi tiết báo giá - Đơn hàng #\(orderData.id ?? 0)"
+            navTitle.title = "Chi tiết báo giá -#\(orderData.id ?? 0)"
         }
         // Do any additional setup after loading the view.
     }

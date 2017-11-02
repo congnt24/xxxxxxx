@@ -37,19 +37,19 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         super.viewDidLoad()
         DeliveryBaoGiaFinalViewController.shared = self
         print("DeliveryBaoGiaFinalViewController")
-        tfGiaWeb.isUserInteractionEnabled = true
+//        tfGiaWeb.isUserInteractionEnabled = true
         itemView.bindData(title: modelQuoteData.productName, imageUrl: modelQuoteData.photo, baogia: "\(modelQuoteData.quotes?.count ?? 0)")
         tfMuatu.text = modelQuoteData.buyFrom
         tfGiaoden.text = modelQuoteData.deliveryTo
         tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(modelQuoteData.websitePrice! + modelQuoteData.transaction_alemua_free!)".toFormatedPrice()
-        tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)"//.toFormatedPrice()
+        tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
         lbTongDonHang.text = "Tổng đơn hàng (SL: \(modelQuoteData.numberProduct ?? 1))"
         
         
-        navTitle.title = "Báo giá- Đơn hàng #\(modelQuoteData.id ?? 0)"
+        navTitle.title = "Báo giá - #\(modelQuoteData.id ?? 0)"
         
 //        let rate = RateDetailData()
         

@@ -3741,7 +3741,7 @@
                         <viewControllerLayoutGuide type="top" id="85I-ot-ifO"/>
                         <viewControllerLayoutGuide type="bottom" id="zwU-Bh-bvA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pFZ-lJ-aj9">
+                    <view key="view" contentMode="scaleToFill" id="pFZ-lJ-aj9" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -4514,7 +4514,7 @@
                         <viewControllerLayoutGuide type="top" id="g51-gW-Sbj"/>
                         <viewControllerLayoutGuide type="bottom" id="MeC-Et-VDJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QhF-zk-5eg">
+                    <view key="view" contentMode="scaleToFill" id="QhF-zk-5eg" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

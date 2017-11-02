@@ -59,7 +59,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
         bindData()
         
         
-        navTitle.title = "Thông tin báo giá- Đơn hàng #\(orderData.id ?? 0)"
+        navTitle.title = "Thông tin báo giá - #\(orderData.id ?? 0)"
     }
     
 

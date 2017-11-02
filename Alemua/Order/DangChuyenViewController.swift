@@ -55,7 +55,7 @@ class DangChuyenViewController: UIViewController {
             }
         }).addDisposableTo(bag)
         
-        navTitle.title = "Đơn đang vận chuyển- Đơn hàng #\(orderData.id ?? 0)"
+        navTitle.title = "Đơn đang vận chuyển - #\(orderData.id ?? 0)"
         
         report.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onBaoXau(_:))))
         changeDate.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onChangeDate)))

@@ -42,7 +42,7 @@ class DeliveryHoanThanhViewController: UIViewController {
                 if (orderData.transactionOption ?? 0) == 2 {
                     rateDetail.hideForTransactionOption()
                 }
-                navTitle.title = "Đơn đã hoàn thành - Đơn hàng #\(data.id ?? 0)"
+                navTitle.title = "Đơn đã hoàn thành - #\(data.id ?? 0)"
                 
             }
         }

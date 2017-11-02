@@ -98,20 +98,20 @@ extension MapViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
         if let onMovingMap = onMovingMap {
-            geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
-                guard error == nil else {
-                    return
-                }
-
-                if let result = response?.firstResult() {
-                    self.centerMarker.position = cameraPosition.target
-                    self.centerMarker.title = result.lines?[0]
-                    self.centerMarker.snippet = result.lines?[1]
-                    self.centerAddress = result.lines?[0] ?? ""
-                    self.centerMarker.map = mapView
-                    onMovingMap(result.lines?[0], cameraPosition.target)
-                }
-            }
+//            geocoder.reverseGeocodeCoordinate(cameraPosition.target) { (response, error) in
+//                guard error == nil else {
+//                    return
+//                }
+//
+//                if let result = response?.firstResult() {
+//                    self.centerMarker.position = cameraPosition.target
+//                    self.centerMarker.title = result.lines?[0]
+//                    self.centerMarker.snippet = result.lines?[1]
+//                    self.centerAddress = result.lines?[0] ?? ""
+//                    self.centerMarker.map = mapView
+//                    onMovingMap(result.lines?[0], cameraPosition.target)
+//                }
+//            }
         }
     }
     
@@ -214,6 +214,29 @@ extension MapViewController: CLLocationManagerDelegate {
             //            }
         }
     }
+    
+    func moveToPlaceId(place_id: String?){
+        print("PLACE ID \(place_id)")
+        placesClient.lookUpPlaceID(place_id!, callback: { (place, error) -> Void in
+            if let error = error {
+                print("lookup place id query error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let place = place else {
+                return
+            }
+            
+            
+            self.movingCamera = GMSCameraPosition.camera(withTarget: place.coordinate, zoom: self.ZOOM)
+            self.centerMarker.position = place.coordinate
+            self.centerMarker.map = self.mapView
+            self.mapView.animate(to: self.movingCamera)
+        })
+    }
+    
+    
+    
     func getCurrentPlace() {
         placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
             if let error = error {

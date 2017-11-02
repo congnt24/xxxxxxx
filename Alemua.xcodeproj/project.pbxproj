@@ -141,6 +141,7 @@
 		0292D0F71F72943C00A3820E /* DeliveryIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292D0F61F72943C00A3820E /* DeliveryIncomeViewController.swift */; };
 		029B09111F207C990036F01F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B090F1F207C990036F01F /* BaseViewModel.swift */; };
 		029B09121F207C990036F01F /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029B09101F207C990036F01F /* TableViewViewController.swift */; };
+		02A170F01FAB1DE700D53F0E /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A170EF1FAB1DE700D53F0E /* SearchTextField.swift */; };
 		02A21E3B1F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */; };
 		02A21E411F5AF8A10036326C /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02A21E3F1F5AF8A10036326C /* CommentTableViewCell.xib */; };
 		02A2AEE41F20E569007EB372 /* SingleOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */; };
@@ -343,6 +344,7 @@
 		0292D0F61F72943C00A3820E /* DeliveryIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeliveryIncomeViewController.swift; path = Account/DeliveryIncomeViewController.swift; sourceTree = "<group>"; };
 		029B090F1F207C990036F01F /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		029B09101F207C990036F01F /* TableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
+		02A170EF1FAB1DE700D53F0E /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		02A21E391F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RaoVatCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		02A21E3F1F5AF8A10036326C /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		02A2AEE31F20E569007EB372 /* SingleOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleOrderViewController.swift; path = Home/SingleOrderViewController.swift; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 				02144A731F38AACF00187481 /* DanhGiaTableViewCell.xib */,
 				021915511F51792E007E18EE /* CheckedButton.swift */,
 				027C8A091FA7687800D7A756 /* DatePickerDialog.swift */,
+				02A170EF1FAB1DE700D53F0E /* SearchTextField.swift */,
 			);
 			name = CustomView;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				021399631F286B1000BB0642 /* BaseCustomView.swift in Sources */,
 				0207F2281F5BB9F200FDB7CA /* RaoVatSearchViewController.swift in Sources */,
 				02F328A71F5FADB600DB4E0E /* AlamofireManager.swift in Sources */,
+				02A170F01FAB1DE700D53F0E /* SearchTextField.swift in Sources */,
 				021C97F81F5070CE0058CBF0 /* RaoVatProfileListActionViewController.swift in Sources */,
 				02A2AEF11F21025D007EB372 /* OrderViewCell.swift in Sources */,
 				023B39DD1F2B43EE00E53A6D /* KhachHangTableViewCell.swift in Sources */,

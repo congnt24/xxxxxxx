@@ -9,16 +9,18 @@
 import Foundation
 import AwesomeMVVM
 import RxSwift
-import SearchTextField
+//import SearchTextField
 
 struct PlaceData {
     var description: String
+    var place_id: String
 }
 class TaoDonHangSelectMapViewController: BaseViewController{
     public static var lat: Float?
     public static var lon: Float?
     var mapVc: MapViewController!
     let bag = DisposeBag()
+    var placeDatas = [PlaceData]()
     
     @IBOutlet weak var tfSearch: SearchTextField!
     override func bindToViewModel() {
@@ -53,8 +55,11 @@ class TaoDonHangSelectMapViewController: BaseViewController{
                         switch res {
                         case .done(let result, _):
                             if let res = result.array {
-                                let filterString = res.map { PlaceData(description: $0["description"].string ?? "") }.map { $0.description }
+                                self.placeDatas = res.map { PlaceData(description: $0["description"].string!, place_id: $0["place_id"].string!) }
+                                print("placeDatas \(self.placeDatas.count)")
+                                let filterString = self.placeDatas.map { $0.description }
                                 self.tfSearch.filterStrings(filterString)
+                                self.tfSearch.layoutSubviews()
                             }
                             break
                         case .error(let msg):
@@ -63,16 +68,32 @@ class TaoDonHangSelectMapViewController: BaseViewController{
                         }
                     }).addDisposableTo(self.bag)
             })
+        
+        
         tfSearch.itemSelectionHandler = { filteredResults, itemPosition in
+            let place = self.placeDatas[itemPosition]
             self.tfSearch.text = filteredResults[itemPosition].title
-            self.mapVc.searchlocation(locSearch: self.tfSearch.text!)
+            self.mapVc.moveToPlaceId(place_id: place.place_id)
+            TaoDonHang2ViewController.shared.tfGiaoDen.text = self.tfSearch.text
+            //            self.mapVc.searchlocation(locSearch: self.tfSearch.text!)
         }
         
         tfSearch.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
             if let search = self.tfSearch.text {
+                TaoDonHang2ViewController.shared.tfGiaoDen.text = search
                 self.mapVc.searchlocation(locSearch: search)
             }
         }).addDisposableTo(bag)
+//        tfSearch.itemSelectionHandler = { filteredResults, itemPosition in
+//            self.tfSearch.text = filteredResults[itemPosition].title
+//            self.mapVc.searchlocation(locSearch: self.tfSearch.text!)
+//        }
+//
+//        tfSearch.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
+//            if let search = self.tfSearch.text {
+//                self.mapVc.searchlocation(locSearch: search)
+//            }
+//        }).addDisposableTo(bag)
         
     }
     

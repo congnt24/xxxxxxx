@@ -32,7 +32,7 @@ open class SearchTextField: UITextField {
             
             if let placeholderColor = theme.placeholderColor {
                 if let placeholderString = placeholder {
-                    self.attributedPlaceholder = NSAttributedString(string: placeholderString, attributes: [NSAttributedStringKey.foregroundColor: placeholderColor])
+                    self.attributedPlaceholder = NSAttributedString(string: placeholderString, attributes: [NSForegroundColorAttributeName: placeholderColor])
                 }
                 
                 self.placeholderLabel?.textColor = placeholderColor
@@ -72,10 +72,10 @@ open class SearchTextField: UITextField {
     open var itemSelectionHandler: SearchTextFieldItemHandler?
     
     /// Closure to handle when the user stops typing
-    open var userStoppedTypingHandler: (() -> Void)?
+    open var userStoppedTypingHandler: ((Void) -> Void)?
     
     /// Set your custom set of attributes in order to highlight the string found in each item
-    open var highlightAttributes: [NSAttributedStringKey: AnyObject] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont.boldSystemFont(ofSize: 10)]
+    open var highlightAttributes: [String: AnyObject] = [NSFontAttributeName:UIFont.boldSystemFont(ofSize: 10)]
     
     /// Start showing the default loading indicator, useful for searches that take some time.
     open func showLoadingIndicator() {
@@ -134,7 +134,7 @@ open class SearchTextField: UITextField {
     fileprivate var filteredResults = [SearchTextFieldItem]()
     fileprivate var filterDataSource = [SearchTextFieldItem]() {
         didSet {
-            filter(forceShowAll: false)
+            filter(forceShowAll: true)
             buildSearchTableView()
             
             if startVisibleWithoutInteraction {
@@ -235,7 +235,7 @@ open class SearchTextField: UITextField {
             placeholderLabel?.backgroundColor = UIColor.clear
             placeholderLabel?.lineBreakMode = .byClipping
             
-            if let placeholderColor = self.attributedPlaceholder?.attribute(NSAttributedStringKey.foregroundColor, at: 0, effectiveRange: nil) as? UIColor {
+            if let placeholderColor = self.attributedPlaceholder?.attribute(NSForegroundColorAttributeName, at: 0, effectiveRange: nil) as? UIColor {
                 placeholderLabel?.textColor = placeholderColor
             } else {
                 placeholderLabel?.textColor = UIColor ( red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0 )
@@ -311,7 +311,7 @@ open class SearchTextField: UITextField {
     }
     
     // Handle keyboard events
-    @objc open func keyboardWillShow(_ notification: Notification) {
+    open func keyboardWillShow(_ notification: Notification) {
         if !keyboardIsShowing && isEditing {
             keyboardIsShowing = true
             keyboardFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
@@ -320,7 +320,7 @@ open class SearchTextField: UITextField {
         }
     }
     
-    @objc open func keyboardWillHide(_ notification: Notification) {
+    open func keyboardWillHide(_ notification: Notification) {
         if keyboardIsShowing {
             keyboardIsShowing = false
             direction = .down
@@ -328,21 +328,21 @@ open class SearchTextField: UITextField {
         }
     }
     
-    @objc open func keyboardDidChangeFrame(_ notification: Notification) {
+    open func keyboardDidChangeFrame(_ notification: Notification) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
             self?.keyboardFrame = ((notification as NSNotification).userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
             self?.prepareDrawTableResult()
         }
     }
     
-    @objc open func typingDidStop() {
+    open func typingDidStop() {
         if userStoppedTypingHandler != nil {
             self.userStoppedTypingHandler!()
         }
     }
     
     // Handle text field changes
-    @objc open func textFieldDidChange() {
+    open func textFieldDidChange() {
         if !inlineMode && tableView == nil {
             buildSearchTableView()
         }
@@ -368,7 +368,7 @@ open class SearchTextField: UITextField {
         buildPlaceholderLabel()
     }
     
-    @objc open func textFieldDidBeginEditing() {
+    open func textFieldDidBeginEditing() {
         if (startVisible || startVisibleWithoutInteraction) && text!.isEmpty {
             clearResults()
             filter(forceShowAll: true)
@@ -376,13 +376,13 @@ open class SearchTextField: UITextField {
         placeholderLabel?.attributedText = nil
     }
     
-    @objc open func textFieldDidEndEditing() {
+    open func textFieldDidEndEditing() {
         clearResults()
         tableView?.reloadData()
         placeholderLabel?.attributedText = nil
     }
     
-    @objc open func textFieldDidEndEditingOnExit() {
+    open func textFieldDidEndEditingOnExit() {
         if let firstElement = filteredResults.first {
             if let itemSelectionHandler = self.itemSelectionHandler {
                 itemSelectionHandler(filteredResults, 0)
@@ -450,10 +450,8 @@ open class SearchTextField: UITextField {
                 }
                 
                 if item.title.lowercased().hasPrefix(textToFilter) {
-                    let indexFrom = textToFilter.index(textToFilter.startIndex, offsetBy: textToFilter.characters.count)
-                    let itemSuffix = item.title[indexFrom...]
-                    
-                    item.attributedTitle = NSMutableAttributedString(string: String(itemSuffix))
+                    let itemSuffix = item.title.substring(from: textToFilter.index(textToFilter.startIndex, offsetBy: textToFilter.characters.count))
+                    item.attributedTitle = NSMutableAttributedString(string: itemSuffix)
                     filteredResults.append(item)
                 }
             }
@@ -473,11 +471,11 @@ open class SearchTextField: UITextField {
     }
     
     // Look for Font attribute, and if it exists, adapt to the subtitle font size
-    fileprivate func highlightAttributesForSubtitle() -> [NSAttributedStringKey: AnyObject] {
-        var highlightAttributesForSubtitle = [NSAttributedStringKey: AnyObject]()
+    fileprivate func highlightAttributesForSubtitle() -> [String: AnyObject] {
+        var highlightAttributesForSubtitle = [String: AnyObject]()
         
         for attr in highlightAttributes {
-            if attr.0 == NSAttributedStringKey.font {
+            if attr.0 == NSFontAttributeName {
                 let fontName = (attr.1 as! UIFont).fontName
                 let pointSize = (attr.1 as! UIFont).pointSize * fontConversionRate
                 highlightAttributesForSubtitle[attr.0] = UIFont(name: fontName, size: pointSize)

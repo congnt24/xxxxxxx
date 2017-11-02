@@ -27,6 +27,7 @@ class MapViewController: UIViewController {
     var moveToCurrentAtFirst = false
     
     var onMovingMap: ((String?, CLLocationCoordinate2D?) -> Void)?
+    var onInitCurrentPosition: ((String)->Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -247,7 +248,10 @@ extension MapViewController: CLLocationManagerDelegate {
             if let placeLikelihoodList = placeLikelihoodList {
                 let place = placeLikelihoodList.likelihoods.first?.place
                 if let place = place {
-
+                    
+                    if  let onInitCurrentPosition = self.onInitCurrentPosition {
+                        onInitCurrentPosition(place.formattedAddress ?? "")
+                    }
                 }
             }
         })
@@ -267,6 +271,7 @@ extension MapViewController: CLLocationManagerDelegate {
         } else {
             mapView.animate(to: camera)
         }
+        getCurrentPlace()
 
     }
 

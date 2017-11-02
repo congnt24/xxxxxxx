@@ -30,6 +30,11 @@ class TaoDonHangSelectMapViewController: BaseViewController{
             TaoDonHangSelectMapViewController.lat = Float(location?.latitude ?? 21.0)
             TaoDonHangSelectMapViewController.lon = Float(location?.longitude ?? 105.81)
         }
+        mapVc.onInitCurrentPosition = { add in
+            print("onInitCurrentPosition")
+            self.tfSearch.text = add
+            TaoDonHang2ViewController.shared.tfGiaoDen.text = add
+        }
         
         tfSearch.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
             if let search = self.tfSearch.text {

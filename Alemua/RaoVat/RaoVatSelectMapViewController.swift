@@ -25,6 +25,11 @@ class RaoVatSelectMapViewController: BaseViewController{
             RaoVatPublishViewController.shared.selectedLat = location?.latitude ?? 21.0
             RaoVatPublishViewController.shared.selectedLon = location?.longitude ?? 105.81
         }
+        mapVc.onInitCurrentPosition = { add in
+            print("onInitCurrentPosition")
+            self.tfSearch.text = add
+            RaoVatPublishViewController.shared.tfAddress.text = add
+        }
         
         tfSearch.rx.controlEvent(UIControlEvents.editingDidEnd).subscribe(onNext: {
             if let search = self.tfSearch.text {

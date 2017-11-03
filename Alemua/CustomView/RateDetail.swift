@@ -261,7 +261,7 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
                         switch res {
                         case .done( let result, _):
                             let money = result["money"].int
-                            self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)"
+                            self.phivanchuyenvetaynguoimua.text = "\(money ?? 0)".toRaoVatPriceFormat()
                             self.rateData.phivanchuyenvetaynguoimua = money ?? 0
                             if let onPriceChange = self.onPriceChange {
                                 onPriceChange(self.calculateTotal())

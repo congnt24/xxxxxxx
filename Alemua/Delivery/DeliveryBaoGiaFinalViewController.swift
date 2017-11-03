@@ -87,7 +87,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
                 self.tfGia.text = "\(price)".toFormatedPrice()
             }
         }
-        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)"//.toFormatedPrice()
+        rateDetail.tonggia.text = "\(modelQuoteData.websitePrice ?? 0)".toRaoVatPriceFormat()//.toFormatedPrice()
         rateDetail.rateData.tonggia = modelQuoteData.websitePrice ?? 0
         rateDetail.rateData.giamua = modelQuoteData.websitePrice ?? 0
         rateDetail.phigiaodichquaalemua.text = "\(modelQuoteData.transaction_alemua_free ?? 0)"

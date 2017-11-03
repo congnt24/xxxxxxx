@@ -38,7 +38,7 @@ class DaMuaViewController: UIViewController {
 //                    uiMoreDetail.hideForTransactionOption()
 //                }
                 
-                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
                 
             }
         }

@@ -2116,7 +2116,7 @@
                                                 <barButtonItem key="leftBarButtonItem" image="back" id="s07-9z-dKu" customClass="AwesomeBackBarButton" customModule="Alemua" customModuleProvider="target">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" title="Edit" id="rFA-ph-2sQ">
+                                                <barButtonItem key="rightBarButtonItem" title="Sửa" id="rFA-ph-2sQ">
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <connections>
                                                         <action selector="onEdit:" destination="dZA-45-BU5" id="h1b-6z-MnR"/>

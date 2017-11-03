@@ -46,7 +46,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
-        lbTongDonHang.text = "Tổng đơn hàng (SL: \(modelQuoteData.numberProduct ?? 1))"
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(modelQuoteData.quantity ?? 1))"
         
         
         navTitle.title = "Báo giá - #\(modelQuoteData.id ?? 0)"

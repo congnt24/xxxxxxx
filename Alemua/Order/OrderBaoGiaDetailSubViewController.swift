@@ -71,7 +71,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
     
     func bindData () {
         
-        lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
         itemView.bindData(title: orderData.productName!, imageUrl: orderData.photo!, baogia: "\(orderData.quotes!.count)")
         tfMuatu.text = modelOrderBaoGia.buyFrom
         tfGiaoden.text = modelOrderBaoGia.deliveryTo

@@ -22,6 +22,8 @@ class DeliveryBaoGiaViewController: UIViewController {
     @IBOutlet weak var lbMau: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
+    @IBOutlet weak var lbTongGia: UILabel!
+    @IBOutlet weak var lbTongGiaWeb: UILabel!
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
@@ -35,7 +37,7 @@ class DeliveryBaoGiaViewController: UIViewController {
             rateDetail.hideForTransactionOption()
         }
         if HomeViewController.homeType == .delivery {
-            navTitle.title = "Chi tiết báo giá -#\(orderData.id ?? 0)"
+            navTitle.title = "Chi tiết báo giá - #\(orderData.id ?? 0)"
         }
         // Do any additional setup after loading the view.
     }
@@ -46,6 +48,7 @@ class DeliveryBaoGiaViewController: UIViewController {
         lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
         lbGiaTrenWeb.text = "\(orderData.websitePrice!)".toFormatedPrice()
         lbGia.text = "\(orderData.totalPrice!)".toFormatedPrice()
+        lbTongGia.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
         lbMau.text = orderData.productDescription
         lbLuaChon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
         

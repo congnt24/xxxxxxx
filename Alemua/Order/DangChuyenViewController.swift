@@ -111,7 +111,7 @@ class DangChuyenViewController: UIViewController {
             }
         }
         
-        lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
     }
 
     override func viewWillAppear(_ animated: Bool) {

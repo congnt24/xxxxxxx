@@ -25,7 +25,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
                 lbMota.text = orderData.note
                 lbLuaChon.text =
                     (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
-                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
                 if HomeViewController.homeType == .order {
 //                    print()
 //                    rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice, giamua: orderData.buying_price,  discount: orderData.discount, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))

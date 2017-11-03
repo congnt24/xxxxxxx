@@ -236,6 +236,7 @@
                         <outlet property="lbMau" destination="846-8Q-bLH" id="sfl-39-gEk"/>
                         <outlet property="lbMuaTu" destination="gpN-zJ-7U8" id="X9B-JM-lvl"/>
                         <outlet property="lbNgay" destination="yaU-VW-pdC" id="5Q9-K8-9Ru"/>
+                        <outlet property="lbThongDonHang" destination="BYs-Tv-cpa" id="ALr-er-7p6"/>
                         <outlet property="navTitle" destination="OCb-9O-BCK" id="uud-CK-4eA"/>
                     </connections>
                 </viewController>
@@ -5268,6 +5269,8 @@
                         <outlet property="lbMau" destination="lah-6A-Yrf" id="2mS-8N-uaK"/>
                         <outlet property="lbMuaTu" destination="57K-Py-D5e" id="SDR-Sm-Uof"/>
                         <outlet property="lbNgay" destination="k3a-B5-Y8d" id="bDD-rP-iOt"/>
+                        <outlet property="lbTongGia" destination="zLS-ye-ggA" id="Fr6-O1-yyf"/>
+                        <outlet property="lbTongGiaWeb" destination="BQZ-aH-DqU" id="vZl-jZ-hut"/>
                         <outlet property="navTitle" destination="i2b-oI-arW" id="LdP-Ze-z3I"/>
                         <outlet property="onShowMoew" destination="ufV-lg-SDQ" id="FCW-hj-UIm"/>
                         <outlet property="rateDetail" destination="pRG-ap-Vp3" id="Z49-6s-ngM"/>

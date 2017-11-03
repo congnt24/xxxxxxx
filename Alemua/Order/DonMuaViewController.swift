@@ -20,6 +20,7 @@ class DonMuaViewController: UIViewController {
     @IBOutlet weak var lbGiaTrenWeb: AwesomeTextField!
     @IBOutlet weak var lbMau: AwesomeTextField!
     @IBOutlet weak var lbLuaChon: AwesomeTextField!
+    @IBOutlet weak var lbThongDonHang: UILabel!
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
@@ -42,6 +43,8 @@ class DonMuaViewController: UIViewController {
         lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
         lbGiaTrenWeb.text = "\(orderData.websitePrice!)".toFormatedPrice()
         lbMau.text = orderData.productDescription
-        lbLuaChon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")    }
+        lbLuaChon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
+        lbThongDonHang.text = "Giá trên web (SL: \(orderData.quantity ?? 1))"
+    }
 
 }

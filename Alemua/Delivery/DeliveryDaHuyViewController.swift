@@ -33,7 +33,7 @@ class DeliveryDaHuyViewController: UIViewController {
         didSet {
             if let data = dahuyData {
                 
-                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.numberProduct ?? 1))"
+                lbTongDonHang.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
                 review.bindData(name: data.userPostName, rating: data.userPostRating, nguoidang: 0)
                 
                 itemView.bindData(title: data.productName, imageUrl: data.photo, baogia: "\(data.number_quote ?? 0)")

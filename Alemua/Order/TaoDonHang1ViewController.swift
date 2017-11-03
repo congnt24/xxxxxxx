@@ -50,7 +50,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
             if let gia = gia {
 //                gia = String(gia.characters.filter { Int("\($0)") != nil })
                 let f = (Double(gia) ?? 0)
-                taodonhangRequest.websiteRealPrice = Float(f)
+                taodonhangRequest.websitePrice = Int(f)
                 if let currencyData = currencyData, currencyData.conversion != "1" {
                     let exchange = Float(currencyData.conversion!) ?? 0
                     let vnd = Int(Double(exchange) * f)
@@ -285,6 +285,7 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
                     if let price = result["price"].float, price > 0 {
                         self.tfGia.text = "\(Int(price))".toFormatedPrice()
                         self.taodonhangRequest.websitePrice = Int(price)
+                        self.gia = "\(Int(price))"
                     }
                     
                     if let link = result["link"].string {

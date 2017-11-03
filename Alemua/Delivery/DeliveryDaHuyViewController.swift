@@ -49,7 +49,7 @@ class DeliveryDaHuyViewController: UIViewController {
                 tfMuatu.text = data.buyFrom
                 tfNgay.text = data.deliveryDate?.toFormatedDate()
                 tfGia.text = "\(orderData.totalPrice ?? 0)".toFormatedPrice()
-                tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+                tfGiaWeb.text = "\(orderData.webwebsitePrice ?? 0)".toFormatedPrice()
                 tfLydo.text = data.cancelReason
                 tfGhichu.text = data.note
             }

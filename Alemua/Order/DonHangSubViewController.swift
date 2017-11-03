@@ -21,7 +21,7 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
                 lbGiaoDen.text = orderData.deliveryTo
                 lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
                 lbGia.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
-                tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+                tfGiaWeb.text = "\(orderData.webwebsitePrice ?? 0)".toFormatedPrice()
                 lbMota.text = orderData.note
                 lbLuaChon.text =
                     (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")

@@ -11,7 +11,7 @@ import Foundation
 
 
 func isNotEnoughInfo() -> Bool {
-    if Prefs.phoneNumber == "" || Prefs.userName == "" || Prefs.address == "" || Prefs.desc == "" || Prefs.email == "" {
+    if Prefs.phoneNumber == "" || Prefs.userName == "" || Prefs.address == "" || Prefs.email == "" {
         return true
     }
     return false

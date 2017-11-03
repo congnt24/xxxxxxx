@@ -92,62 +92,73 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
 
 
         magiamgia.rx.text.subscribe(onNext: { (str) in
-            self.rateData.discount = Int(str ?? "0")
+            self.rateData.discount = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.magiamgia.text = "\(self.rateData.discount!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
 
         giamgia.rx.text.subscribe(onNext: { (str) in
-            self.rateData.discount = Int(str ?? "0")
+            self.rateData.discount = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.giamgia.text = "\(self.rateData.discount!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
 
         tonggia.isUserInteractionEnabled = true
         tonggia.rx.text.subscribe(onNext: { (str) in
-            self.rateData.giamua = Int(str ?? "0")
+            self.rateData.giamua = (str ?? "0").toNumber()
             print(self.rateData.giamua)
+            print("\(self.rateData.giamua!)".toRaoVatPriceFormat())
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.tonggia.text = "\(self.rateData.giamua!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
         thue.rx.text.subscribe(onNext: { (str) in
-            self.rateData.thue = Int(str ?? "0")
+            self.rateData.thue = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            print("\(self.rateData.thue!)".toRaoVatPriceFormat())
+            self.thue.text = "\(self.rateData.thue!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
         phichuyennoidia.rx.text.subscribe(onNext: { (str) in
-            self.rateData.phichuyennoidia = Int(str ?? "0")
+            self.rateData.phichuyennoidia = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.phichuyennoidia.text = "\(self.rateData.phichuyennoidia!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
         phinguoimua.rx.text.subscribe(onNext: { (str) in
-            self.rateData.phinguoimua = Int(str ?? "0")
+            self.rateData.phinguoimua = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.phinguoimua.text = "\(self.rateData.phinguoimua!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
         phivanchuyenvealemua.rx.text.subscribe(onNext: { (str) in
-            self.rateData.phivanchuyenvealemua = Int(str ?? "0")
+            self.rateData.phivanchuyenvealemua = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.phivanchuyenvealemua.text = "\(self.rateData.phivanchuyenvealemua!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
         phivanchuyenvetaynguoimua.rx.text.subscribe(onNext: { (str) in
-            self.rateData.phivanchuyenvetaynguoimua = Int(str ?? "0")
+            self.rateData.phivanchuyenvetaynguoimua = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.phivanchuyenvetaynguoimua.text = "\(self.rateData.phivanchuyenvetaynguoimua!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
         phigiaodichquaalemua.rx.text.subscribe(onNext: { (str) in
-            self.rateData.phigiaodichquaalemua = Int(str ?? "0")
+            self.rateData.phigiaodichquaalemua = (str ?? "0").toNumber()
             if let onPriceChange = self.onPriceChange {
                 onPriceChange(self.calculateTotal())
             }
+            self.phigiaodichquaalemua.text = "\(self.rateData.phigiaodichquaalemua!)".toRaoVatPriceFormat()
         }).addDisposableTo(bag)
 
 
@@ -283,6 +294,9 @@ class RateDetail: AwesomeToggleViewByHeight, UITextFieldDelegate {
 
         let xx = rateData.phigiaodichquaalemua! * rateData.giamua! / 100
         tonggia.text = "\(rateData.giamua! + rateData.thue! + rateData.phinguoimua! + xx)".toFormatedPrice()
+        print("tonggia.text")
+        print(tonggia.text)
+        print(rateData.giamua! + rateData.thue! + rateData.phinguoimua! + xx)
         phivanchuyenvetaynguoimua.text = "\(rateData.phivanchuyenvetaynguoimua! + rateData.phivanchuyenvealemua! + rateData.phichuyennoidia!)".toFormatedPrice()
         tfWeight.text = "\(rateData.weight!)"
         magiamgia.text = "\(rateData.magiamgia!)".toFormatedPrice()

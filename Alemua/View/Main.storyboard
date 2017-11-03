@@ -2412,6 +2412,7 @@
                     <connections>
                         <outlet property="grTransaction" destination="k2N-gV-gdl" id="hCv-wx-QWf"/>
                         <outlet property="itemView" destination="skR-Dn-kcH" id="v1g-xa-mcn"/>
+                        <outlet property="lbTongDonHang" destination="SGt-pr-ANC" id="xJ7-5g-qbd"/>
                         <outlet property="rateDetail" destination="cKa-ph-mVJ" id="bxa-ay-8c7"/>
                         <outlet property="tfGia" destination="Scs-0S-Qrm" id="wvO-B9-RfD"/>
                         <outlet property="tfGiaoDen" destination="2lS-dP-07b" id="VHI-LC-DqE"/>

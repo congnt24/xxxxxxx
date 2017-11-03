@@ -41,7 +41,7 @@ class DonMuaViewController: UIViewController {
         lbMuaTu.text = orderData.buyFrom
         lbGiaoDen.text = orderData.deliveryTo
         lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
-        lbGiaTrenWeb.text = "\(orderData.websitePrice!)".toFormatedPrice()
+        lbGiaTrenWeb.text = "\(orderData.webwebsitePrice!)".toFormatedPrice()
         lbMau.text = orderData.productDescription
         lbLuaChon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
         lbThongDonHang.text = "Giá trên web (SL: \(orderData.quantity ?? 1))"

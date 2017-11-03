@@ -88,6 +88,7 @@ public class ModelOrderClientData: BaseResult {
     public var buyingPrice: Int?
     public var discount: Int?
     public var transferToBuyerFee: Int?
+    public var webwebsitePrice: Int?
 //    public var buying_price: Int?
     
     // MARK: SwiftyJSON Initializers
@@ -140,6 +141,7 @@ public class ModelOrderClientData: BaseResult {
         buyingPrice = json[SerializationKeys.buyingPrice].int
         discount = json[SerializationKeys.discount].int
         transferToBuyerFee = json[SerializationKeys.transferToBuyerFee].int
+        webwebsitePrice = (websitePrice ?? 0) / (quantity ?? 1)
     }
 }
 

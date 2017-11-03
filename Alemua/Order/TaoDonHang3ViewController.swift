@@ -23,6 +23,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tfNote: AwesomeTextField!
     @IBOutlet weak var rateDetail: RateDetail!
     @IBOutlet weak var grTransaction: AwesomeRadioGroup!
+    @IBOutlet weak var lbTongDonHang: UILabel!
     var taodonhangRequest: TaoDonHangRequest!
     let bag = DisposeBag()
     override func viewDidLoad() {
@@ -63,6 +64,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         tfNgay.text = taodonhangRequest.deliveryDate
         tfGia.text = "\(taodonhangRequest.websitePrice ?? 0)".toFormatedPrice()
         tfNote.text = taodonhangRequest.note
+        lbTongDonHang.text = "Tổng đơn hàng (SL: \(taodonhangRequest.quantity ?? 1))"
         
     }
 

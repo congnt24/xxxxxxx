@@ -101,6 +101,7 @@ class RaoVatProfileViewController: BaseViewController {
         Prefs.apiToken = ""
     }
     @IBAction func onEdit(_ sender: Any) {
+        AccountCoordinator.sharedInstance.openEditAccount(data: profileData)
     }
 }
 

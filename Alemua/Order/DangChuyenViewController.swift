@@ -67,7 +67,7 @@ class DangChuyenViewController: UIViewController {
         tfMuaTu.text = modelDangChuyen.buyFrom
         tfGiaoDen.text = modelDangChuyen.deliveryTo
         tfTruocNgay.text = modelDangChuyen.deliveryDate?.toFormatedDate()
-        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.webwebsitePrice ?? 0)".toFormatedPrice()
         ifTongGia.text = "\(modelDangChuyen.totalPrice ?? 0)".toFormatedPrice()
         tfMoTa.text = modelDangChuyen.descriptionValue
         tfGhiChu.text = modelDangChuyen.note

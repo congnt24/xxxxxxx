@@ -31,6 +31,7 @@ class DeliveryBaoGiaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindData()
+        itemView.hideBaoGia()
         rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice, giamua: orderData.buyingPrice ?? 0, discount: orderData.discount, magiamgia: orderData.promotion_money, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transaction_alemua_free, weight: orderData.weight))
 //
         if (orderData.transactionOption ?? 0) == 2 {
@@ -46,7 +47,7 @@ class DeliveryBaoGiaViewController: UIViewController {
         lbMuaTu.text = orderData.buyFrom
         lbGiaoDen.text = orderData.deliveryTo
         lbNgay.labelLeft = orderData.deliveryDate?.toFormatedDate() ?? ""
-        lbGiaTrenWeb.text = "\(orderData.websitePrice!)".toFormatedPrice()
+        lbGiaTrenWeb.text = "\(orderData.webwebsitePrice!)".toFormatedPrice()
         lbGia.text = "\(orderData.totalPrice!)".toFormatedPrice()
         lbTongGia.text = "Tổng đơn hàng (SL: \(orderData.quantity ?? 1))"
         lbMau.text = orderData.productDescription

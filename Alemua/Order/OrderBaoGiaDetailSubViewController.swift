@@ -77,7 +77,7 @@ class OrderBaoGiaDetailSubViewController: BaseViewController {
         tfGiaoden.text = modelOrderBaoGia.deliveryTo
         tfNgay.labelLeft = modelOrderBaoGia.deliveryDate!.toFormatedDate()
         tfGia.text = "\(modelOrderBaoGia.totalPrice ?? 0)".toFormatedPrice()
-        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.webwebsitePrice ?? 0)".toFormatedPrice()
         tfMota.text = modelOrderBaoGia.descriptionValue
         tfLuachon.text = (orderData.productOption ?? "").splitted(by: ",").map { Int($0)!.toProductOptionName() }.joined(separator: ", ")
         

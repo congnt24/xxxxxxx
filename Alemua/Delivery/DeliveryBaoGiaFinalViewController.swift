@@ -43,7 +43,7 @@ class DeliveryBaoGiaFinalViewController: UIViewController {
         tfGiaoden.text = modelQuoteData.deliveryTo
         tfNgay.text = modelQuoteData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(modelQuoteData.websitePrice! + modelQuoteData.transaction_alemua_free!)".toFormatedPrice()
-        tfGiaWeb.text = "\(modelQuoteData.websitePrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(modelQuoteData.webwebsitePrice ?? 0)".toFormatedPrice()
         tfMota.text = modelQuoteData.productDescription
         tfNote.text = modelQuoteData.note
         lbTongDonHang.text = "Tổng đơn hàng (SL: \(modelQuoteData.quantity ?? 1))"

@@ -49,19 +49,19 @@ class TaoDonHang1ViewController: UIViewController, IndicatorInfoProvider, UIImag
         didSet {
             if let gia = gia {
 //                gia = String(gia.characters.filter { Int("\($0)") != nil })
-                let f = (Double(gia) ?? 0) * Double(stSoLuong.number)
+                let f = (Double(gia) ?? 0)
                 taodonhangRequest.websiteRealPrice = Float(f)
                 if let currencyData = currencyData, currencyData.conversion != "1" {
                     let exchange = Float(currencyData.conversion!) ?? 0
                     let vnd = Int(Double(exchange) * f)
-                    taodonhangRequest.websitePrice = vnd
+                    taodonhangRequest.websitePrice = vnd * stSoLuong.number
                     tfGia.text = "\(f) \(currencyData.name!) - \("\(vnd)".toFormatedPrice())"
                 } else {
-                    let intgia = Int(Double(gia) ?? 0) * stSoLuong.number
+                    let intgia = Int(Double(gia) ?? 0)
                     print(intgia)
                     print(gia)
                     tfGia.text = "\(intgia)".toFormatedPrice()
-                    taodonhangRequest.websitePrice = intgia
+                    taodonhangRequest.websitePrice = intgia * stSoLuong.number
                 }
             }
         }

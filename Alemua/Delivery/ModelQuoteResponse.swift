@@ -49,6 +49,7 @@ public class ModelQuoteData: BaseResult {
     public var buyFrom: String?
     public var updatedAt: String?
     public var websitePrice: Int?
+    public var webwebsitePrice: Int?
     public var numberProduct: Int?
     public var websiteUrl: String?
     public var productName: String?
@@ -109,5 +110,6 @@ public class ModelQuoteData: BaseResult {
         deliveryDate = json[SerializationKeys.deliveryDate].string
         timeAgo = json[SerializationKeys.timeAgo].int
         is_quote = json[SerializationKeys.is_quote].int
+        webwebsitePrice = (websitePrice ?? 0) / (quantity ?? 1)
     }
 }

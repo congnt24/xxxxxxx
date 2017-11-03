@@ -59,6 +59,7 @@ class ModelDaHuyData {
     public var promotionMoney: Int?
     public var userPost: String?
     public var numberProduct: Int?
+    public var webwebsitePrice: Int?
     
     // MARK: SwiftyJSON Initializers
     /// Initiates the instance based on the object.
@@ -96,6 +97,7 @@ class ModelDaHuyData {
         promotionMoney = json[SerializationKeys.promotionMoney].int
         userPost = json[SerializationKeys.userPost].string
         numberProduct = json[SerializationKeys.numberProduct].int
+        webwebsitePrice = (websitePrice ?? 0) / (quantity ?? 1)
     }
 
 }

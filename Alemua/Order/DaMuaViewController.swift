@@ -59,7 +59,7 @@ class DaMuaViewController: UIViewController {
         tfGiaoden.text = orderData.deliveryTo
         tfNgay.text = orderData.deliveryDate?.toFormatedDate()
         tfGia.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
-        tfGiaWeb.text = "\(orderData.websitePrice ?? 0)".toFormatedPrice()
+        tfGiaWeb.text = "\(orderData.webwebsitePrice ?? 0)".toFormatedPrice()
         
         AlemuaApi.shared.aleApi.request(AleApi.getOrderDetails(orderType: 3, orderId: orderData.id!))
             .toJSON()

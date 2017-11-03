@@ -50,5 +50,9 @@ class ItemView: BaseCustomView {
             image.setItem(url: (arr.count == 0 ? "" : arr[0]))
         }
     }
+    
+    func hideBaoGia() {
+        baogia.isHidden = true
+    }
 
 }

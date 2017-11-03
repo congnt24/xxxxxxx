@@ -111,6 +111,10 @@ extension String {
     }
     
     func toRaoVatPriceFormat() -> String {
+        print("self \(self)")
+        if self == "0" || self == "" {
+            return "0"
+        }
         let price = (Int(self) ?? 0) as NSNumber
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -119,7 +123,7 @@ extension String {
 //        let len = f.charactersArray.count - 2
 //        f = String(f[..<len])
         
-        let numbers = "0123456789";
+        let numbers = "0123456789 ";
         if let first = f.firstCharacter {
             if numbers.contains(first){
                 f = f.substring(to: f.index(f.endIndex, offsetBy: -2))
@@ -129,6 +133,11 @@ extension String {
         }
         return f
     }
+    
+    func toNumber() -> Int {
+        return Int(self.replacingOccurrences(of: ".", with: "")) ?? 0
+    }
+    
     func convertToLink() -> String {
         return self.hasPrefix("http://") || self.hasPrefix("https://") ? self : "http://\(self)"
     }

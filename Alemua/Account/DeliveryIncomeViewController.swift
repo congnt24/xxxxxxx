@@ -128,8 +128,8 @@ class IncomeTableViewCell: UITableViewCell {
     func bindData(data: IncomeData){
         lbSTT.text = "\(data.sTT ?? 0)"
         lbID.text = "\(data.orderId ?? "#0")"
-        lbPromo.text = "\(data.promotionMoney ?? 0)"
-        lbPrice.text = "\(data.totalPrice ?? 0)"
-        lbMoney.text = "\(data.totalMoney ?? 0)"
+        lbPromo.text = "\(data.promotionMoney ?? 0)".toRaoVatPriceFormat()
+        lbPrice.text = "\(data.totalPrice ?? 0)".toRaoVatPriceFormat()
+        lbMoney.text = "\(data.totalMoney ?? 0)".toRaoVatPriceFormat()
     }
 }

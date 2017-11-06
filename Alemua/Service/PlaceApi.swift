@@ -48,7 +48,7 @@ extension PlaceApi: TargetType {
         case .queryByName(let query):
             var params = [String: Any]()
             params["input"] = query
-            params["key"] = "AIzaSyAgjPOUhpz8fGT_GcTT-qGfvCtW0h81g9c"
+            params["key"] = "AIzaSyBYZFWStzxJ4icSpb7yVj1Ox7k3LLnRYsE"
             return params
         default:
             return nil

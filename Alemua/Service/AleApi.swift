@@ -53,7 +53,7 @@ public enum AleApi {
     case getTransferMoney(order_id: Int?, weight: Float?)
     case getAllBrand()
     case getAllCountry()
-    case getAllMoney()
+    case getAllMoney(infor_type: Int?)
     case updateDeliveryDate(order_id: Int?, delivery_date: String)
     case updateBankAccount(req: UpdateBankAccountRequest)
     case checkAccountAdded()
@@ -410,10 +410,12 @@ extension AleApi: TargetType {
             params["weight"] = weight
             return params
             
-        case .getAllMoney():
+        case .getAllMoney(let infor_type):
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
+            params["infor_type"] = infor_type
+            
             return params
         case .updateDeliveryDate(let order_id, let delivery_date):
             var params = [String: Any]()

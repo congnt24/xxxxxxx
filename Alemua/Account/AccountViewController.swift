@@ -18,6 +18,7 @@ class AccountViewController: BaseViewController {
     @IBOutlet weak var uiNotify: UIStackView!
     @IBOutlet weak var uiSetting: UIStackView!
     @IBOutlet weak var uiInviteFriend: UIStackView!
+    @IBOutlet weak var uiHistory: UIStackView!
     let bag = DisposeBag()
 
     @IBOutlet weak var userView: UserView!
@@ -33,6 +34,7 @@ class AccountViewController: BaseViewController {
         uiSetting.addGestureRecognizer(tapSetting)
         uiInviteFriend.addGestureRecognizer(tapInvite)
         uiNotify.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.toggleNotify(_:))))
+        uiHistory.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showHistory(_:))))
 
         userView.toggleView = {
             self.uiMoreDetails.toggleHeight()
@@ -80,7 +82,9 @@ class AccountViewController: BaseViewController {
 
     }
 
-
+    func showHistory(_ sender: UITapGestureRecognizer) {
+        DeliveryCoordinator.sharedInstance.showLichSuMuaHang()
+    }
 
     func toggleNotify(_ sender: UITapGestureRecognizer) {
         uiSwitchNotify.isOn = !uiSwitchNotify.isOn

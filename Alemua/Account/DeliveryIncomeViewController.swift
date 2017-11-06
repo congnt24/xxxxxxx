@@ -17,6 +17,7 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
     @IBOutlet weak var tableView: UITableView!
     let bag = DisposeBag()
     var datas = [IncomeData]()
+    var type = 1
     
     
     let json: JSON = [ "STT": 5,
@@ -63,7 +64,7 @@ class DeliveryIncomeViewController: BaseViewController, UITableViewDataSource, U
     
     func fetchData(){
         LoadingOverlay.shared.showOverlay(view: view)
-        AlemuaApi.shared.aleApi.request(AleApi.getAllMoney())
+        AlemuaApi.shared.aleApi.request(AleApi.getAllMoney(infor_type: type))
             .toJSON()
             .subscribe(onNext: { (res) in
                 LoadingOverlay.shared.hideOverlayView()

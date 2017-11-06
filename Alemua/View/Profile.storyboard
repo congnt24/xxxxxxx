@@ -851,6 +851,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="KHB-fV-0cu" secondAttribute="trailing" id="1wb-4z-Djm"/>
                                                 <constraint firstItem="KHB-fV-0cu" firstAttribute="leading" secondItem="6ZR-wk-NIE" secondAttribute="leading" id="55w-zq-AH3"/>

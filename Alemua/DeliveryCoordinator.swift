@@ -94,6 +94,11 @@ extension DeliveryCoordinator {
         let view: DeliveryIncomeViewController = getProfileStoryboard().instantiateViewController(withClass: DeliveryIncomeViewController.self)
         navigation?.pushViewController(view, animated: true)
     }
+    func showLichSuMuaHang(){
+        let view: DeliveryIncomeViewController = getProfileStoryboard().instantiateViewController(withClass: DeliveryIncomeViewController.self)
+        view.type = 2
+        navigation?.pushViewController(view, animated: true)
+    }
     
 }
 

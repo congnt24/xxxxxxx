@@ -197,7 +197,7 @@ extension DeliveryAccountViewController {
     
     
     func fetchData(){
-        AlemuaApi.shared.aleApi.request(AleApi.getAllMoney())
+        AlemuaApi.shared.aleApi.request(AleApi.getAllMoney(infor_type: 1))
             .toJSON()
             .subscribe(onNext: { (res) in
                 switch res {

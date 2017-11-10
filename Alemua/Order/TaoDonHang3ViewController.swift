@@ -63,7 +63,7 @@ class TaoDonHang3ViewController: UIViewController, IndicatorInfoProvider {
         tfGiaoDen.text = taodonhangRequest.deliveryTo
         tfNgay.text = taodonhangRequest.deliveryDate
         tfGia.text = "\((taodonhangRequest.websitePrice ?? 0)/(taodonhangRequest.quantity ?? 1))".toFormatedPrice()
-        tfNote.text = taodonhangRequest.note
+        tfNote.text = taodonhangRequest.productDescription
         lbTongDonHang.text = "Giá trên web (SL: \(taodonhangRequest.quantity ?? 1))"
         
     }

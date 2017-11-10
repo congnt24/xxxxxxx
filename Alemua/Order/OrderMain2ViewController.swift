@@ -47,7 +47,7 @@ class OrderMain2ViewController: UIViewController {
     @IBAction func onClickFilter(_ sender: Any) {
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if cacheFilter != OrderFilterViewController.orderOrderFilterType {
             cacheFilter = OrderFilterViewController.orderOrderFilterType
             reloadPage()

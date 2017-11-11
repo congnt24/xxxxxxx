@@ -16,7 +16,7 @@ class OrderDialogBaoGia2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lbSoDonHang.text = "\(order_id ?? 0)"
-        btnDonHang.setTitle("● Thanh toán 50% giá trị đơn hàng \(order_id ?? 0)", for: .normal) 
+        btnDonHang.setTitle("● Thanh toán 50% giá trị đơn hàng \(order_id ?? 0)", for: .normal)
         // Do any additional setup after loading the view.
     }
     

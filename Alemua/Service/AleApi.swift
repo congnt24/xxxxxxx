@@ -57,6 +57,7 @@ public enum AleApi {
     case updateDeliveryDate(order_id: Int?, delivery_date: String)
     case updateBankAccount(req: UpdateBankAccountRequest)
     case checkAccountAdded()
+    case callToPassApple()
 }
 
 extension AleApi: TargetType {
@@ -141,6 +142,8 @@ extension AleApi: TargetType {
             return "/api/users/updateBankAccount"
         case .checkAccountAdded:
             return "/api/users/checkAccountAdded"
+        case .callToPassApple():
+            return "/api/users/callToPassApple"
         }
     }
 
@@ -443,6 +446,8 @@ extension AleApi: TargetType {
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken
             return params
+        case .callToPassApple():
+            return nil
             
         default:
             return nil

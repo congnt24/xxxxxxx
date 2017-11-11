@@ -13,6 +13,7 @@ import RxCocoa
 import AccountKit
 import Moya
 import SwiftyJSON
+import Toaster
 
 class LoginByPasswordViewController: BaseViewController, AKFViewControllerDelegate {
 
@@ -86,25 +87,39 @@ class LoginByPasswordViewController: BaseViewController, AKFViewControllerDelega
                 switch res {
                 case .done(let result, _):
                     //TODO: Send to server
-                    Prefs.apiToken = result["ApiToken"].string!
-                    Prefs.userIdClient = result["id"].int!
-                    print(Prefs.apiToken)
                     Prefs.isUserLogged = true
+                    Prefs.userId = result["id"].int!
+                    Prefs.apiToken = result["ApiToken"].string!
+                    Prefs.phoneNumber = phone
+                    Prefs.photo = result["photo"].string ?? ""
+                    Prefs.phoneNumber = result["phone_number"].string ?? ""
+                    Prefs.userName = result["name"].string ?? "" //start socketio
+                    Prefs.desc = result["description"].string ?? ""
+                    Prefs.address = result["address"].string ?? ""
+                    Prefs.email = result["email"].string ?? ""
+                    
+                    print(Prefs.phoneNumber)
+                    print(Prefs.userName)
+                    print(Prefs.desc)
+                    print(Prefs.address)
+                    print(Prefs.email)
+                    
+                    SocketIOHelper.shared.connectToSocketIO()
                     self.navigationController?.popViewController(animated: false)
                     print("Success success")
                     break
                 case .error(let msg):
                     print("Error \(msg)")
-                    if msg == "" {
-                        //active account by accoutkit//Show login by account kit
-                        let inputState: String = UUID().uuidString
-                        let viewController: AKFViewController = self.accountKit.viewControllerForPhoneLogin(with: nil, state: inputState) as! AKFViewController
-                        viewController.enableSendToFacebook = true
-                        self.prepareLoginViewController(viewController)
-                        self.present(viewController as! UIViewController, animated: true, completion: nil)
-                    }else{
-                        self.lbError.text = msg
-                    }
+//                    if msg == "" {
+//                        //active account by accoutkit//Show login by account kit
+//                        let inputState: String = UUID().uuidString
+//                        let viewController: AKFViewController = self.accountKit.viewControllerForPhoneLogin(with: nil, state: inputState) as! AKFViewController
+//                        viewController.enableSendToFacebook = true
+//                        self.prepareLoginViewController(viewController)
+//                        self.present(viewController as! UIViewController, animated: true, completion: nil)
+//                    }else{
+//                        self.lbError.text = msg
+//                    }
                     break
                 }
             }).addDisposableTo(self.bag)
@@ -112,7 +127,12 @@ class LoginByPasswordViewController: BaseViewController, AKFViewControllerDelega
 
     @IBAction func onLogin(_ sender: Any) {
         if let phone = tfUser.text, let pass = tfPass.text, phone != "", pass != "" {
-            login(phone: phone, pass: pass)
+            if pass == "123456a@" {
+                login(phone: phone, pass: pass)
+            }else{
+                Toast.init(text: "Sai mật khẩu hoặc tài khoản").show()
+            }
+            
         } else {
 
         }

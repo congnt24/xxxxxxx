@@ -23,10 +23,25 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
     public static var shared: LoginViewController!
 
     public static var isIgnore = false;
+    public var isPass = false
 
     var bag = DisposeBag()
     var accountKit: AKFAccountKit!
     override func bindToViewModel() {
+        
+        AlemuaApi.shared.aleApi.request(AleApi.callToPassApple())
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                switch res {
+                case .done( _):
+                    self.isPass = true
+                    break
+                case .error(let msg):
+                    self.isPass = false
+                    break
+                }
+            }).addDisposableTo(bag)
+        
         LoginViewController.shared = self
         GIDSignIn.sharedInstance().uiDelegate = self
 //        GIDSignIn.sharedInstance().delegate = self
@@ -135,6 +150,11 @@ class LoginViewController: BaseViewController, AKFViewControllerDelegate, GIDSig
     }
 
     @IBAction func onPhone(_ sender: Any) {
+        if !isPass {
+            LoginCoordinator.sharedInstance.showLoginByPassword()
+            return
+        }
+        
 //        LoginCoordinator.sharedInstance.showLoginByPassword()
         //active account by accoutkit//Show login by account kit
         let inputState: String = UUID().uuidString

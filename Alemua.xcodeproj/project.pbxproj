@@ -152,7 +152,6 @@
 		02A647461F3410E4006D66D4 /* RequestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A647451F3410E4006D66D4 /* RequestsModel.swift */; };
 		02AD2A6A1F4F0F8600DDEFE9 /* DialogTaoDonHang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD2A691F4F0F8600DDEFE9 /* DialogTaoDonHang.swift */; };
 		02AD2A6C1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD2A6B1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift */; };
-		02AD2A6E1F4F20B200DDEFE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */; };
 		02B340321F4551050027803A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B340311F4551050027803A /* Repository.swift */; };
 		02B340341F45547D0027803A /* ChatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B340331F45547D0027803A /* ChatRepository.swift */; };
 		02B5EC0A1F29A1270048B34A /* OrderMain2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */; };
@@ -208,6 +207,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0201FB121FB945C20059EA5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeShareButton.swift; sourceTree = "<group>"; };
 		0207F21D1F5BAC7E00FDB7CA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = RaoVat/MapViewController.swift; sourceTree = "<group>"; };
 		0207F21F1F5BAD9600FDB7CA /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleMapHelper.swift; path = RaoVat/GoogleMapHelper.swift; sourceTree = "<group>"; };
@@ -355,7 +355,6 @@
 		02A647451F3410E4006D66D4 /* RequestsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsModel.swift; sourceTree = "<group>"; };
 		02AD2A691F4F0F8600DDEFE9 /* DialogTaoDonHang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogTaoDonHang.swift; path = Order/DialogTaoDonHang.swift; sourceTree = "<group>"; };
 		02AD2A6B1F4F1CD600DDEFE9 /* DialogTaoDonHang2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogTaoDonHang2.swift; path = Order/DialogTaoDonHang2.swift; sourceTree = "<group>"; };
-		02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02B340311F4551050027803A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		02B340331F45547D0027803A /* ChatRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRepository.swift; sourceTree = "<group>"; };
 		02B5EC091F29A1270048B34A /* OrderMain2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderMain2ViewController.swift; path = Order/OrderMain2ViewController.swift; sourceTree = "<group>"; };
@@ -657,7 +656,7 @@
 		027B012F1F1E621600D576CE /* Alemua */ = {
 			isa = PBXGroup;
 			children = (
-				02AD2A6D1F4F20B200DDEFE9 /* GoogleService-Info.plist */,
+				0201FB121FB945C20059EA5A /* GoogleService-Info.plist */,
 				02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */,
 				027B013C1F1E621600D576CE /* Info.plist */,
 				027B014F1F1EF14A00D576CE /* AppCoordinator.swift */,
@@ -938,7 +937,7 @@
 				TargetAttributes = {
 					027B012C1F1E621600D576CE = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 5S42UFKL84;
+						DevelopmentTeam = XNWEEB2ZC7;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -975,7 +974,6 @@
 				02BF72651F224B8A00F1F4BC /* DonHang.storyboard in Resources */,
 				02F775321F1F390300556BED /* Login.storyboard in Resources */,
 				021B82AB1F24E98600B757D7 /* DeliveryTableViewCell.xib in Resources */,
-				02AD2A6E1F4F20B200DDEFE9 /* GoogleService-Info.plist in Resources */,
 				02A21E3B1F5AD1FE0036326C /* RaoVatCategoryTableViewCell.xib in Resources */,
 				02F775331F1F390300556BED /* Main.storyboard in Resources */,
 				02A21E411F5AF8A10036326C /* CommentTableViewCell.xib in Resources */,
@@ -1440,7 +1438,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Alemua/Alemua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5S42UFKL84;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XNWEEB2ZC7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1448,8 +1447,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = Alemua/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.redix.Alemua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.h2t.alemua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1464,7 +1464,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Alemua/Alemua.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5S42UFKL84;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XNWEEB2ZC7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1472,8 +1473,9 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				INFOPLIST_FILE = Alemua/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.redix.Alemua;
+				PRODUCT_BUNDLE_IDENTIFIER = com.h2t.alemua;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

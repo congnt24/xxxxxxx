@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0201FB141FB94C3A0059EA5A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0201FB131FB94C3A0059EA5A /* GoogleService-Info.plist */; };
 		0207F21C1F5BA4A900FDB7CA /* LikeShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */; };
 		0207F21E1F5BAC7E00FDB7CA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F21D1F5BAC7E00FDB7CA /* MapViewController.swift */; };
 		0207F2201F5BAD9600FDB7CA /* GoogleMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0207F21F1F5BAD9600FDB7CA /* GoogleMapHelper.swift */; };
@@ -207,7 +208,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0201FB121FB945C20059EA5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0201FB131FB94C3A0059EA5A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0207F21B1F5BA4A900FDB7CA /* LikeShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeShareButton.swift; sourceTree = "<group>"; };
 		0207F21D1F5BAC7E00FDB7CA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = RaoVat/MapViewController.swift; sourceTree = "<group>"; };
 		0207F21F1F5BAD9600FDB7CA /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleMapHelper.swift; path = RaoVat/GoogleMapHelper.swift; sourceTree = "<group>"; };
@@ -638,6 +639,7 @@
 		027B01241F1E621600D576CE = {
 			isa = PBXGroup;
 			children = (
+				0201FB131FB94C3A0059EA5A /* GoogleService-Info.plist */,
 				027B012F1F1E621600D576CE /* Alemua */,
 				027B012E1F1E621600D576CE /* Products */,
 				549A082178F877DD961E5941 /* Pods */,
@@ -656,7 +658,6 @@
 		027B012F1F1E621600D576CE /* Alemua */ = {
 			isa = PBXGroup;
 			children = (
-				0201FB121FB945C20059EA5A /* GoogleService-Info.plist */,
 				02FDFD2F1F4856A800F3A72B /* Alemua.entitlements */,
 				027B013C1F1E621600D576CE /* Info.plist */,
 				027B014F1F1EF14A00D576CE /* AppCoordinator.swift */,
@@ -994,6 +995,7 @@
 				02144A751F38AACF00187481 /* DanhGiaTableViewCell.xib in Resources */,
 				02F775561F1FB46300556BED /* Profile.storyboard in Resources */,
 				027D5A691FA4C6E800979B00 /* RaoVatCateTableViewCell.xib in Resources */,
+				0201FB141FB94C3A0059EA5A /* GoogleService-Info.plist in Resources */,
 				023B39DE1F2B43EE00E53A6D /* KhachHangTableViewCell.xib in Resources */,
 				021399611F286AC700BB0642 /* ItemView.xib in Resources */,
 				02525C421F2B927900EBCBA7 /* OrderMainOnlineTableViewCell.xib in Resources */,

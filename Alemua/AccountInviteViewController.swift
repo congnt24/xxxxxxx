@@ -27,7 +27,7 @@ class AccountInviteViewController: BaseViewController {
     }
     
     @IBAction func onInvite(_ sender: Any) {
-        "Alemua".share(vc: self)
+        "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1312719769&mt=8".openUrl()
     }
 }
 

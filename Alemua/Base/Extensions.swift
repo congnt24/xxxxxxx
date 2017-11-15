@@ -95,6 +95,12 @@ extension String {
         let vc2 = UIActivityViewController(activityItems: [self], applicationActivities: nil)
         vc.present(vc2, animated: true)
     }
+    func openUrl(){
+        if let url = URL(string: self),
+            UIApplication.shared.canOpenURL(url){
+            UIApplication.shared.openURL(url)
+        }
+    }
     
     func fromReadableToDate() -> Date? {
         let dateFormatter = DateFormatter()

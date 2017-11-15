@@ -242,7 +242,9 @@ class RaoVatDetailViewController: BaseViewController, UICollectionViewDelegateFl
         if !Prefs.isUserLogged {
             HomeCoordinator.sharedInstance.showLoginScreen()
         } else {
-            "".share(vc: self)
+            
+            "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1312719769&mt=8".openUrl()
+//            "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1312719769&mt=8".share(vc: self)
         }
     }
 }

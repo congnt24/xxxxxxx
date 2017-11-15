@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -3313,7 +3312,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vE4-lB-Qbt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fbh-ZF-aHb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8R-e3-URc" userLabel="Navigation">
@@ -3351,7 +3350,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH4-NN-azI">
-                                <rect key="frame" x="0.0" y="64" width="375" height="787"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="887"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOi-YJ-sU2" customClass="UserView" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
@@ -3846,10 +3845,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-lo-TSa">
-                                        <rect key="frame" x="0.0" y="620" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="620" width="375" height="230"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xY7-o9-AKb">
-                                                <rect key="frame" x="16" y="16" width="343" height="148"/>
+                                                <rect key="frame" x="16" y="16" width="343" height="198"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-t8-epN">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="46"/>
@@ -3912,22 +3911,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RSa-3m-LYG">
-                                                        <rect key="frame" x="0.0" y="51" width="343" height="46"/>
+                                                        <rect key="frame" x="0.0" y="51" width="343" height="45.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-settings" translatesAutoresizingMaskIntoConstraints="NO" id="PcA-QF-9hS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="26" height="46"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="26" height="45.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="26" id="Lfb-74-Tdy"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4El-gg-JKo" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
-                                                                <rect key="frame" x="36" y="0.0" width="307" height="46"/>
+                                                                <rect key="frame" x="36" y="0.0" width="307" height="45.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXU-20-Epr">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="46"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="45.5"/>
                                                                         <subviews>
                                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-km-Ajj" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="297" height="46"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="297" height="45.5"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <state key="normal" title="Cài đặt">
                                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -3942,7 +3941,7 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </button>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="B6E-0a-BbD">
-                                                                                <rect key="frame" x="297" y="0.0" width="10" height="46"/>
+                                                                                <rect key="frame" x="297" y="0.0" width="10" height="45.5"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="10" id="5VQ-As-V2Y"/>
                                                                                 </constraints>
@@ -3969,7 +3968,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SwF-Z0-7lA">
-                                                        <rect key="frame" x="0.0" y="102" width="343" height="46"/>
+                                                        <rect key="frame" x="0.0" y="101.5" width="343" height="46"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gift" translatesAutoresizingMaskIntoConstraints="NO" id="P5I-Pc-mxB">
                                                                 <rect key="frame" x="0.0" y="0.0" width="26" height="46"/>
@@ -4016,6 +4015,60 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nSj-Ex-Pvh">
+                                                        <rect key="frame" x="0.0" y="152.5" width="343" height="45.5"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_info" translatesAutoresizingMaskIntoConstraints="NO" id="OVK-TA-yHh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="26" height="45.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="26" id="Gdj-bW-dAl"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3J6-y6-er3" customClass="AwesomeUIView" customModule="Alemua" customModuleProvider="target">
+                                                                <rect key="frame" x="36" y="0.0" width="307" height="45.5"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMp-gU-4vZ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="45.5"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRQ-90-hhi" customClass="AwesomeButton" customModule="Alemua" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="297" height="45.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <state key="normal" title="Thông tin thanh toán">
+                                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                </state>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
+                                                                                        <real key="value" value="0.0"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomLineColor">
+                                                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </button>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="Ucz-2p-g8h">
+                                                                                <rect key="frame" x="297" y="0.0" width="10" height="45.5"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="10" id="3RJ-eg-COU"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="PMp-gU-4vZ" firstAttribute="top" secondItem="3J6-y6-er3" secondAttribute="top" id="H9n-dj-GIh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="PMp-gU-4vZ" secondAttribute="trailing" id="jOy-hf-SzI"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="PMp-gU-4vZ" secondAttribute="bottom" id="wB2-LU-Tod"/>
+                                                                    <constraint firstItem="PMp-gU-4vZ" firstAttribute="leading" secondItem="3J6-y6-er3" secondAttribute="leading" id="zEy-Xl-OOY"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomLineWidth">
                                                                         <real key="value" value="0.0"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
@@ -4031,7 +4084,7 @@
                                             <constraint firstItem="xY7-o9-AKb" firstAttribute="top" secondItem="5OP-lo-TSa" secondAttribute="top" constant="16" id="8BO-yG-9wL"/>
                                             <constraint firstAttribute="trailing" secondItem="xY7-o9-AKb" secondAttribute="trailing" constant="16" id="ZwJ-Zs-7Wj"/>
                                             <constraint firstAttribute="bottom" secondItem="xY7-o9-AKb" secondAttribute="bottom" constant="16" id="oKd-fu-Cfe"/>
-                                            <constraint firstAttribute="height" constant="180" id="uL9-Dr-NYv"/>
+                                            <constraint firstAttribute="height" constant="230" id="uL9-Dr-NYv"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -4065,7 +4118,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Tài khoản" image="ic_user" selectedImage="ic_user_blu" id="lLj-Am-hAp"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="danhsachKH" destination="CPw-OB-UM6" id="vyD-Pw-Dd4"/>
                         <outlet property="donhangBihuy" destination="ZbT-O7-Cg5" id="Lb4-ss-bRX"/>
@@ -4089,6 +4142,7 @@
                         <outlet property="uiNotify" destination="DDp-t8-epN" id="4BX-We-1Dc"/>
                         <outlet property="uiSetting" destination="RSa-3m-LYG" id="gNc-0N-iNf"/>
                         <outlet property="uiSwitchNotify" destination="mof-mr-aZ4" id="0HP-JP-NLF"/>
+                        <outlet property="uiThongTinThanhToan" destination="nSj-Ex-Pvh" id="UjD-AU-wcI"/>
                         <outlet property="userView" destination="iOi-YJ-sU2" id="9FK-6x-C3n"/>
                     </connections>
                 </viewController>

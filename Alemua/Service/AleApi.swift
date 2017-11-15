@@ -58,6 +58,7 @@ public enum AleApi {
     case updateBankAccount(req: UpdateBankAccountRequest)
     case checkAccountAdded()
     case callToPassApple()
+    case getBankAccount()
 }
 
 extension AleApi: TargetType {
@@ -144,6 +145,8 @@ extension AleApi: TargetType {
             return "/api/users/checkAccountAdded"
         case .callToPassApple():
             return "/api/users/callToPassApple"
+        case .getBankAccount():
+            return "/api/users/getBankAccount"
         }
     }
 
@@ -441,7 +444,7 @@ extension AleApi: TargetType {
             params["confirm_type"] = req.confirm_type
             params["note"] = req.note
             return params
-        case .checkAccountAdded():
+        case .checkAccountAdded(), .getBankAccount():
             var params = [String: Any]()
             params["UserID"] = Prefs.userId
             params["ApiToken"] = Prefs.apiToken

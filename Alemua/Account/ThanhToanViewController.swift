@@ -42,6 +42,7 @@ class ThanhToanViewController: BaseViewController {
         chiNhanhDrop.selectionAction = { [unowned self] (index: Int, item: String) in
             self.tfChiNhanh.text = item
         }
+        fetchData()
 
 
         //stackNganHang.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onSelectNganHang)))
@@ -94,5 +95,33 @@ class ThanhToanViewController: BaseViewController {
             , selection: grSelect.checkedPosition)
 
         return tt
+    }
+    
+    
+    func fetchData(){
+        AlemuaApi.shared.aleApi.request(AleApi.getBankAccount())
+            .toJSON()
+            .subscribe(onNext: { (res) in
+                LoadingOverlay.shared.hideOverlayView()
+                switch res {
+                case .done(let result, let msg):
+                    self.tfTenTaiKhoan.text = result["account_name"].string ?? ""
+                    self.tfSoTaiKhoan.text = result["account_number"].string ?? ""
+                    self.tfNganHang.text = result["bank_name"].string ?? ""
+                    self.tfChiNhanh.text = result["bank_brand"].string ?? ""
+                    self.tfSoDienThoai.text = result["phone_number"].string ?? ""
+                    self.tfDiaChi.text = result["address"].string ?? ""
+                    self.tfCMND.text = result["id_number"].string ?? ""
+                    self.tfGhiChu.text = result["note"].string ?? ""
+                    let type = result["confirm_type"].int ?? 0
+                    if type > 0 {
+                        self.grSelect.checkAt(position: (type-1))
+                    }
+                    break
+                case .error(let msg):
+                    Toast(text: msg).show()
+                    break
+                }
+            }).addDisposableTo(bag)
     }
 }

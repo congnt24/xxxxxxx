@@ -17,6 +17,7 @@ class DeliveryAccountViewController: BaseViewController {
     @IBOutlet weak var uiNotify: UIStackView!
     @IBOutlet weak var uiSetting: UIStackView!
     @IBOutlet weak var uiInviteFriend: UIStackView!
+    @IBOutlet weak var uiThongTinThanhToan: UIStackView!
     
     @IBOutlet weak var lbDesc: UILabel!
     @IBOutlet weak var lbDangxuly: UILabel!
@@ -48,6 +49,8 @@ class DeliveryAccountViewController: BaseViewController {
         uiSetting.addGestureRecognizer(tapSetting)
         uiInviteFriend.addGestureRecognizer(tapInvite)
         uiNotify.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.toggleNotify(_:))))
+        
+        uiThongTinThanhToan.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onSHowThanhToan(_:))))
         
         userView.toggleView = {
             self.uiMoreDetails.toggleHeight()
@@ -102,6 +105,9 @@ class DeliveryAccountViewController: BaseViewController {
     
     func toggleNotify(_ sender: UITapGestureRecognizer) {
         uiSwitchNotify.isOn = !uiSwitchNotify.isOn
+    }
+    func onSHowThanhToan(_ sender: UITapGestureRecognizer) {
+        DeliveryCoordinator.sharedInstance.showThanhToanViewController()
     }
     
     func showAccountSetting(_ sender: UITapGestureRecognizer) {

@@ -23,7 +23,7 @@ class OrderViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        productName.scrollDuration = 16
+        productName.scrollDuration = 20
         //lbWebsite.scrollDuration = 16
     }
 

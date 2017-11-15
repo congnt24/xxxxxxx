@@ -26,7 +26,7 @@ class DeliveryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        title.scrollDuration = 16
+        title.scrollDuration = 20
     }
     
     @IBAction func onClickBaogia(_ sender: UIButton) {

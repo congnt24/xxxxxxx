@@ -22,7 +22,7 @@ class DonHangTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        name.scrollDuration = 16
+        name.scrollDuration = 20
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

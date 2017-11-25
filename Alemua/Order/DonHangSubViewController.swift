@@ -30,9 +30,16 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
 //                    print()
 //                    rateDetail.bindData(RateDetailData(tonggia: orderData.totalPrice, giamua: orderData.buying_price,  discount: orderData.discount, thue: orderData.tax, phichuyennoidia: orderData.transferDomesticFee, phinguoimua: orderData.transferBuyerFee, phivanchuyenvealemua: orderData.transferAlemuaFree, phivanchuyenvetaynguoimua: orderData.transferToBuyerFee, phigiaodichquaalemua: orderData.transactionAlemuaFree))
                 }
+                tfWebsite.text = orderData.websiteUrl
+                tfWebsite.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onOpenLink)))
             }
         }
     }
+    
+    @objc func onOpenLink(){
+        (tfWebsite.text ?? "").openUrl()
+    }
+    
     @IBOutlet weak var btnDeliveryBaoGia: AwesomeCloseButton!
 
     @IBOutlet weak var itemView: ItemView!
@@ -48,7 +55,8 @@ class DonHangSubViewController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var showDetailButton: AwesomeToggleButton!
     @IBOutlet weak var rateDetail: RateDetail!
 
-
+    @IBOutlet weak var tfWebsite: UILabel!
+    
     @IBAction func onShowMore(_ sender: Any) {
         rateDetail.toggleHeight()
     }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -4516,11 +4515,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MeC-Et-VDJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QhF-zk-5eg" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBO-g5-Gi3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2vO-I3-MXJ" customClass="ItemView" customModule="Alemua" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="343" height="95"/>
@@ -4648,7 +4647,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="680-zz-lzx">
-                                        <rect key="frame" x="16" y="726" width="343" height="110"/>
+                                        <rect key="frame" x="16" y="726" width="343" height="165"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kVf-4O-mZY">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="55"/>
@@ -4703,13 +4702,33 @@
                                                     <constraint firstAttribute="bottom" secondItem="ndz-Qp-m1Q" secondAttribute="bottom" constant="20" symbolic="YES" id="izL-XO-Pew"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Ur-oE-uUn">
+                                                <rect key="frame" x="0.0" y="110" width="343" height="55"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGf-UE-oZe">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akA-ZU-4lx" customClass="MarqueeLabel">
+                                                        <rect key="frame" x="0.0" y="35" width="343" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="qGf-UE-oZe" secondAttribute="bottom" constant="20" symbolic="YES" id="t0s-Gb-i22"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="BQ2-C5-yXo"/>
+                                            <constraint firstAttribute="height" constant="165" id="BQ2-C5-yXo"/>
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcM-Rk-iri" customClass="AwesomeCloseButton" customModule="Alemua" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="868" width="343" height="39"/>
+                                        <rect key="frame" x="16" y="923" width="343" height="39"/>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.30980392159999998" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="pwT-UU-iRM"/>
@@ -4829,7 +4848,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="900"/>
+                    <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="btnDeliveryBaoGia" destination="ZcM-Rk-iri" id="saS-I2-5ED"/>
                         <outlet property="itemView" destination="2vO-I3-MXJ" id="zid-EY-rBu"/>
@@ -4843,6 +4862,7 @@
                         <outlet property="rateDetail" destination="Zy1-UG-mcW" id="JNZ-F6-tQy"/>
                         <outlet property="showDetailButton" destination="jff-9A-r7M" id="SgB-lj-P01"/>
                         <outlet property="tfGiaWeb" destination="SPi-Ve-kHP" id="PlR-R8-537"/>
+                        <outlet property="tfWebsite" destination="akA-ZU-4lx" id="QRN-Ly-Rgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yzv-BS-YYg" userLabel="First Responder" sceneMemberID="firstResponder"/>

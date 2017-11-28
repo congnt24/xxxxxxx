@@ -87,6 +87,9 @@ class NotifyViewController: BaseViewController {
                 DeliveryNavTabBarViewController.sharedInstance.switchTab(index: 1)
                 DeliveryOrderViewController.defaultTab = 2
                 break
+            case 6:
+                "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1312719769&mt=8".openUrl()
+                break
             default:
                 AccountCoordinator.sharedInstance.showNotifyThanhToan()
                 break

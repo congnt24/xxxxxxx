@@ -90,6 +90,9 @@ class NotifyViewController: BaseViewController {
             case 6:
                 "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1312719769&mt=8".openUrl()
                 break
+            case 7:
+//                "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1312719769&mt=8".openUrl()
+                break
             default:
                 AccountCoordinator.sharedInstance.showNotifyThanhToan()
                 break

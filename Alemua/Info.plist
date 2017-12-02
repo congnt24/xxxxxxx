@@ -31,7 +31,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.259311042399-ameg5f2hub8nq1rf6bts451o8bg9c5ob</string>
+				<string>com.googleusercontent.apps.259311042399-kj2fts3n54g1keqmobkporpm3h8b2v0v</string>
 			</array>
 		</dict>
 	</array>
@@ -70,13 +70,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>"Using camera"</string>
+	<string>&quot;Using camera&quot;</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Request location permission</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Request location permission</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>"Need to get your photo and video"</string>
+	<string>&quot;Need to get your photo and video&quot;</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
